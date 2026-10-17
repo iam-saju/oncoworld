@@ -1,0 +1,10 @@
+{
+  "reward": 1.0,
+  "diagnosis_and_biology": 1.0,
+  "genomic_risk": 1.0,
+  "chemotherapy_decision": 1.0,
+  "endocrine_therapy": 1.0,
+  "radiotherapy": 1.0,
+  "supportive_monitoring": 1.0,
+  "missing_information": 1.0
+}

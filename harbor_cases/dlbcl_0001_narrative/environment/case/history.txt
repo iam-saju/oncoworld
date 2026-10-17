@@ -1,0 +1,6 @@
+A 62-year-old man presents with rapidly progressive cervical and abdominal lymphadenopathy, fever, night sweats, and 7-kg weight loss over 3 months.
+
+Performance status:
+- ECOG: 1
+
+This is a synthetic training case for AI evaluation. It is not clinical decision support.

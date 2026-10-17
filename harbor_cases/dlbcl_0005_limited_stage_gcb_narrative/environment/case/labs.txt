@@ -1,0 +1,7 @@
+CBC:
+- Hemoglobin: 13.2 g/dL
+- WBC: 5,900/uL
+- Platelets: 240,000/uL
+
+Chemistry:
+- LDH: 190 U/L, within normal range

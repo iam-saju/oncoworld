@@ -1,0 +1,19 @@
+Lymph-node biopsy:
+- Diffuse large B-cell lymphoma
+
+IHC:
+- CD20+
+- CD10-
+- BCL6+
+- MUM1+
+- BCL2 80%
+- MYC 50%
+- Ki-67 approximately 85%
+
+FISH:
+- MYC rearrangement not detected
+- BCL2 rearrangement not detected
+- BCL6 rearrangement not detected
+
+Bone marrow:
+- No lymphoma involvement

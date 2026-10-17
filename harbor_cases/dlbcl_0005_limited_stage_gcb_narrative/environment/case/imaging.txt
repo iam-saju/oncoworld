@@ -1,0 +1,3 @@
+FDG PET-CT:
+- Single FDG-avid right cervical lymph-node region, maximum diameter 3.1 cm
+- No mediastinal, abdominal, splenic, marrow, kidney, adrenal, testicular/breast, or CNS lesions

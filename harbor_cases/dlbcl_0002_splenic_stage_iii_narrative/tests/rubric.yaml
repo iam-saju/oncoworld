@@ -1,0 +1,57 @@
+total_points: 100
+passing_score: 75
+
+domains:
+  diagnosis_and_COO:
+    points: 10
+    criteria:
+      DLBCL_NOS: 4
+      non_GCB_by_Hans: 3
+      avoids_equating_Hans_with_definitive_ABC: 3
+
+  staging:
+    points: 15
+    criteria:
+      correct_Lugano_stage_III: 8
+      recognizes_spleen_as_lymphatic: 4
+      avoids_stage_IV: 3
+
+  molecular_classification:
+    points: 15
+    criteria:
+      identifies_double_expressor: 5
+      identifies_not_double_hit: 5
+      explains_IHC_vs_FISH: 5
+
+  prognosis:
+    points: 15
+    criteria:
+      IPI: 5
+      CNS_IPI: 5
+      does_not_count_spleen_as_extranodal_site: 5
+
+  first_line_treatment:
+    points: 15
+    criteria:
+      curative_immunochemotherapy: 6
+      recognizes_pola_or_R_CHOP: 6
+      avoids_unjustified_DA_EPOCH_R: 3
+
+  CNS_management:
+    points: 15
+    criteria:
+      uses_CNS_IPI: 5
+      identifies_high_risk_sites_absent_or_missing: 5
+      no_automatic_prophylaxis_for_DEL: 5
+
+  response_assessment:
+    points: 15
+    criteria:
+      PET_CT: 4
+      Lugano_Deauville: 6
+      end_of_treatment_assessment: 5
+
+critical_errors:
+  calls_spleen_only_case_stage_IV: -20
+  double_expressor_called_double_hit_despite_negative_FISH: -20
+  mandates_DA_EPOCH_R_for_DEL_only: -10

@@ -1,0 +1,20 @@
+{
+  "diagnosis": "Diffuse large B-cell lymphoma, NOS; GCB phenotype by Hans algorithm.",
+  "stage": "Lugano stage III disease.",
+  "biology": "Neither double-expressor nor double-hit lymphoma. MYC 15% and BCL2 30% are below common IHC thresholds, and MYC, BCL2, and BCL6 rearrangements are negative by FISH, so this is not double-hit lymphoma.",
+  "prognosis": "Use IPI and CNS-IPI. IPI is low risk because age is under 60, LDH is normal, stage is I, ECOG is 0, and there is no extranodal disease. CNS-IPI is low.",
+  "first_line_treatment": "Curative-intent immunochemotherapy for limited-stage non-bulky DLBCL, such as abbreviated R-CHOP followed by involved-site radiotherapy, PET-adapted therapy, or full-course R-CHOP depending on local standard and patient factors. DA-EPOCH-R is not indicated from the supplied facts.",
+  "cns_risk": "Low CNS relapse risk by CNS-IPI. Kidney/adrenal, testicular, breast, marrow, and other high-risk sites are absent, so CNS prophylaxis is not indicated.",
+  "response_assessment": "Use FDG PET-CT with Lugano/Deauville criteria, especially end-of-treatment PET.",
+  "missing_information": [
+    "cardiac function and viral serologies before rituximab/anthracycline therapy",
+    "radiation feasibility and patient preference",
+    "local PET-adapted limited-stage treatment standard"
+  ],
+  "_expect": {
+    "passed": false,
+    "critical": [
+      "overstages_limited_case"
+    ]
+  }
+}

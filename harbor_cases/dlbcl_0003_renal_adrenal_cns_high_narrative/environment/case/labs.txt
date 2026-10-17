@@ -1,0 +1,8 @@
+CBC:
+- Hemoglobin: 9.9 g/dL
+- WBC: 9,400/uL
+- Platelets: 145,000/uL
+
+Chemistry:
+- LDH: 1,120 U/L, elevated
+- Creatinine: 1.4 mg/dL

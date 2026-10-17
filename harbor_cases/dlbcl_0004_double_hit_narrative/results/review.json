@@ -1,0 +1,165 @@
+{
+  "reward": 1.0,
+  "score": 100,
+  "max_score": 100,
+  "passed": true,
+  "raw_score": 100,
+  "penalty": 0,
+  "metrics": {
+    "diagnosis_and_COO": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "high_grade_or_DLBCL": {
+          "score": 7,
+          "max": 7,
+          "matched": true
+        },
+        "GCB_by_Hans": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "identifies_double_hit_entity": {
+          "score": 3,
+          "max": 3,
+          "matched": true
+        }
+      }
+    },
+    "staging": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "correct_Lugano_stage_II": {
+          "score": 8,
+          "max": 8,
+          "matched": true
+        },
+        "bulky_disease": {
+          "score": 4,
+          "max": 4,
+          "matched": true
+        },
+        "no_disease_below_diaphragm_or_marrow": {
+          "score": 3,
+          "max": 3,
+          "matched": true
+        }
+      }
+    },
+    "molecular_classification": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "identifies_double_hit": {
+          "score": 6,
+          "max": 6,
+          "matched": true
+        },
+        "identifies_double_expressor": {
+          "score": 4,
+          "max": 4,
+          "matched": true
+        },
+        "explains_FISH_rearrangements": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        }
+      }
+    },
+    "prognosis": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "IPI": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "CNS_IPI": {
+          "score": 4,
+          "max": 4,
+          "matched": true
+        },
+        "recognizes_double_hit_adverse_risk": {
+          "score": 6,
+          "max": 6,
+          "matched": true
+        }
+      }
+    },
+    "first_line_treatment": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "curative_intensive_immunochemotherapy": {
+          "score": 6,
+          "max": 6,
+          "matched": true
+        },
+        "DA_EPOCH_R_or_clinical_trial": {
+          "score": 6,
+          "max": 6,
+          "matched": true
+        },
+        "avoids_R_CHOP_alone_as_preferred": {
+          "score": 3,
+          "max": 3,
+          "matched": true
+        }
+      }
+    },
+    "CNS_management": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "uses_CNS_IPI": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "considers_double_hit_CNS_risk": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "individualized_prophylaxis": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        }
+      }
+    },
+    "response_assessment": {
+      "score": 1.0,
+      "points": 10,
+      "max_points": 10,
+      "criteria": {
+        "PET_CT": {
+          "score": 3,
+          "max": 3,
+          "matched": true
+        },
+        "Lugano_Deauville": {
+          "score": 4,
+          "max": 4,
+          "matched": true
+        },
+        "end_of_treatment_assessment": {
+          "score": 3,
+          "max": 3,
+          "matched": true
+        }
+      }
+    }
+  },
+  "critical_errors": []
+}

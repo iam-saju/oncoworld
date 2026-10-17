@@ -1,0 +1,57 @@
+total_points: 100
+passing_score: 75
+
+domains:
+  diagnosis_and_COO:
+    points: 10
+    criteria:
+      high_grade_or_DLBCL: 5
+      GCB_by_Hans: 3
+      identifies_double_hit_entity: 2
+
+  staging:
+    points: 15
+    criteria:
+      correct_Lugano_stage_II: 8
+      bulky_disease: 4
+      no_disease_below_diaphragm_or_marrow: 3
+
+  molecular_classification:
+    points: 15
+    criteria:
+      identifies_double_hit: 6
+      identifies_double_expressor: 4
+      explains_FISH_rearrangements: 5
+
+  prognosis:
+    points: 15
+    criteria:
+      IPI: 5
+      CNS_IPI: 4
+      recognizes_double_hit_adverse_risk: 6
+
+  first_line_treatment:
+    points: 15
+    criteria:
+      curative_intensive_immunochemotherapy: 6
+      DA_EPOCH_R_or_clinical_trial: 6
+      avoids_R_CHOP_alone_as_preferred: 3
+
+  CNS_management:
+    points: 15
+    criteria:
+      uses_CNS_IPI: 5
+      considers_double_hit_CNS_risk: 5
+      individualized_prophylaxis: 5
+
+  response_assessment:
+    points: 15
+    criteria:
+      PET_CT: 4
+      Lugano_Deauville: 6
+      end_of_treatment_assessment: 5
+
+critical_errors:
+  misses_double_hit_FISH_positive: -25
+  treats_as_standard_DEL_only: -15
+  recommends_R_CHOP_alone_as_preferred: -15

@@ -1,0 +1,15 @@
+{
+  "diagnosis": "Diffuse large B-cell lymphoma, NOS; GCB phenotype by Hans algorithm because CD10 is positive.",
+  "stage": "Lugano/Ann Arbor stage IV because kidney, adrenal, and liver involvement are non-lymphatic extranodal sites; bone marrow is negative, but marrow involvement is not required for stage IV when disseminated extranodal organ disease is present.",
+  "biology": "Not double-expressor lymphoma because MYC 20% and BCL2 30% are below common IHC thresholds. Not double-hit lymphoma because MYC, BCL2, and BCL6 rearrangements are negative by FISH.",
+  "prognosis": "Use IPI and CNS-IPI. IPI is high risk with age over 60, stage IV, elevated LDH, ECOG 2, and multiple extranodal sites.",
+  "first_line_treatment": "Curative-intent immunochemotherapy if organ function permits. Pola-R-CHP or R-CHOP are appropriate first-line options; DA-EPOCH-R is not required by double-hit biology because FISH is negative.",
+  "cns_risk": "High CNS relapse risk by CNS-IPI because of kidney/adrenal involvement plus age over 60, stage IV, elevated LDH, ECOG 2, and multiple extranodal sites. CNS staging and prophylaxis should be strongly considered; renal function affects high-dose methotrexate feasibility.",
+  "response_assessment": "Use FDG PET-CT with Lugano/Deauville criteria, especially end-of-treatment PET.",
+  "missing_information": [
+    "LDH upper limit of normal",
+    "creatinine clearance for methotrexate feasibility",
+    "CSF cytology/flow if CNS staging is pursued",
+    "cardiac function and viral serologies before immunochemotherapy"
+  ]
+}

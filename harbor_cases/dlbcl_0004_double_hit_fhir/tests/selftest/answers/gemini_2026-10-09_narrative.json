@@ -1,0 +1,23 @@
+{
+  "diagnosis": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (HGBL-DH-BCL2)",
+  "stage": "Ann Arbor Stage IIA with bulky mediastinal disease (12 cm mass)",
+  "biology": "Double-hit lymphoma (DHL) with germinal center B-cell-like (GCB) phenotype (CD10+, BCL6+, MUM1-), high expression of MYC (80%) and BCL2 (90%) (double-expressor), and high proliferative index (Ki-67 ~95%).",
+  "prognosis": "Standard International Prognostic Index (IPI) score is 1 (low-intermediate risk, based on elevated LDH; age <=60, stage II, ECOG 1, 0 extranodal sites). However, the presence of MYC and BCL2 rearrangements confers an inherently aggressive clinical biology and historically high risk of treatment failure with standard chemoimmunotherapy.",
+  "first_line_treatment": "Intensive immunochemotherapy regimen such as Dose-Adjusted EPOCH-R (DA-EPOCH-R) or R-CHOP within a clinical trial, with DA-EPOCH-R being widely preferred over standard R-CHOP due to the high-grade double-hit biology.",
+  "cns_risk": "High biological risk for central nervous system (CNS) relapse due to MYC and BCL2 rearrangements and bulky mediastinal disease, despite a standard CNS-IPI score of 1 (low risk). CNS prophylaxis (e.g., systemic high-dose methotrexate or intrathecal therapy) should be strongly considered.",
+  "response_assessment": "Baseline staging with PET-CT followed by interim PET-CT (typically after 2-4 cycles) and end-of-treatment PET-CT evaluated using the Lugano 2014 classification and Deauville 5-point scale.",
+  "missing_information": "Hepatitis B/C serologies, HIV status, baseline cardiac function evaluation (LVEF via echocardiogram or MUGA scan), baseline renal and hepatic function panels (creatinine, bilirubin, transaminases), and cerebrospinal fluid (CSF) analysis (cytology and flow cytometry via lumbar puncture) to rule out occult CNS involvement.",
+  "_expect": {
+    "passed": true,
+    "critical": [],
+    "must_match": [
+      "first_line_treatment.avoids_R_CHOP_alone_as_preferred",
+      "first_line_treatment.curative_intensive_immunochemotherapy",
+      "molecular_classification.identifies_double_hit",
+      "response_assessment.end_of_treatment_assessment"
+    ],
+    "must_miss": [],
+    "source_job": "2026-10-09__22-20-20",
+    "old_score": 94
+  }
+}

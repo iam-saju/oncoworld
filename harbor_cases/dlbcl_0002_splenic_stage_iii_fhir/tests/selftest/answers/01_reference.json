@@ -1,0 +1,20 @@
+{
+  "diagnosis": "Diffuse large B-cell lymphoma, NOS; non-GCB phenotype by Hans algorithm. Hans non-GCB should not be treated as definitive molecular ABC subtype.",
+  "stage": "Lugano/Ann Arbor stage III with B symptoms. Disease is above and below the diaphragm with splenic involvement, and the spleen is lymphatic tissue; there is no non-lymphatic extranodal, marrow, or CNS disease to make this stage IV.",
+  "biology": "Double-expressor lymphoma because MYC is 45% and BCL2 is 70% by IHC. Not double-hit lymphoma because MYC, BCL2, and BCL6 rearrangements are negative by FISH.",
+  "prognosis": "Use IPI and CNS-IPI. Supplied IPI factors include elevated LDH and stage III disease; age is not over 60, ECOG is 1, and spleen should not be counted as a non-lymphatic extranodal IPI site.",
+  "first_line_treatment": "Curative-intent immunochemotherapy. Pola-R-CHP or R-CHOP for 6 cycles are appropriate; do not escalate to DA-EPOCH-R solely for double-expressor biology without double-hit rearrangements.",
+  "cns_risk": "CNS prophylaxis is not automatically indicated from supplied data. Calculate CNS-IPI and assess kidney/adrenal, testicular, breast, and other high-risk anatomical sites; none are documented here.",
+  "response_assessment": "Use FDG PET-CT with Lugano/Deauville criteria, especially end-of-treatment PET.",
+  "missing_information": [
+    "LDH upper limit of normal",
+    "complete kidney/adrenal review",
+    "testicular and breast involvement assessment",
+    "cardiac function and viral serologies before immunochemotherapy"
+  ],
+  "_expect": {
+    "passed": true,
+    "critical": [],
+    "score": 100
+  }
+}

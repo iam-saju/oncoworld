@@ -1,0 +1,152 @@
+{
+  "reward": 1.0,
+  "score": 100,
+  "max_score": 100,
+  "passed": true,
+  "raw_score": 100,
+  "penalty": 0,
+  "infra_failure": false,
+  "invalid_json": false,
+  "metrics": {
+    "diagnosis_and_biology": {
+      "score": 1.0,
+      "points": 25,
+      "max_points": 25,
+      "criteria": {
+        "IDC": {
+          "score": 5,
+          "max": 5,
+          "matched": true,
+          "evidence": "invasive ductal carcinoma, no special type (nst), right breast upper outer quadrant;"
+        },
+        "HR_positive": {
+          "score": 5,
+          "max": 5,
+          "matched": true,
+          "evidence": "hormone-receptor-positive (er 95% strong, pr 80%), her2-negative: her2 ihc 1+ is her2-negative (her2-low), so anti-her2 therapy is not indicated."
+        },
+        "HER2_negative": {
+          "score": 5,
+          "max": 5,
+          "matched": true,
+          "evidence": "hormone-receptor-positive (er 95% strong, pr 80%), her2-negative: her2 ihc 1+ is her2-negative (her2-low), so anti-her2 therapy is not indicated."
+        },
+        "stage_IA": {
+          "score": 10,
+          "max": 10,
+          "matched": true,
+          "evidence": "anatomic stage ia;"
+        }
+      }
+    },
+    "genomic_risk": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "recognizes_low_risk": {
+          "score": 8,
+          "max": 8,
+          "matched": true,
+          "evidence": "21-gene recurrence score 14 is low genomic risk;"
+        },
+        "links_score_to_chemotherapy": {
+          "score": 7,
+          "max": 7,
+          "matched": true,
+          "evidence": "in a postmenopausal, node-negative patient this predicts no meaningful benefit from adding chemotherapy (tailorx)."
+        }
+      }
+    },
+    "chemotherapy_decision": {
+      "score": 1.0,
+      "points": 20,
+      "max_points": 20,
+      "criteria": {
+        "chemotherapy_not_indicated": {
+          "score": 14,
+          "max": 14,
+          "matched": true,
+          "evidence": "adjuvant chemotherapy is not indicated: node-negative (0/2 sentinel nodes), postmenopausal, recurrence score 14."
+        },
+        "gives_rationale": {
+          "score": 6,
+          "max": 6,
+          "matched": true,
+          "evidence": "adjuvant chemotherapy is not indicated: node-negative (0/2 sentinel nodes), postmenopausal, recurrence score 14."
+        }
+      }
+    },
+    "endocrine_therapy": {
+      "score": 1.0,
+      "points": 20,
+      "max_points": 20,
+      "criteria": {
+        "recommends_endocrine_therapy": {
+          "score": 10,
+          "max": 10,
+          "matched": true,
+          "evidence": "adjuvant endocrine therapy with an aromatase inhibitor (anastrozole, letrozole or exemestane) for 5 years;"
+        },
+        "names_AI_or_tamoxifen": {
+          "score": 5,
+          "max": 5,
+          "matched": true,
+          "evidence": "adjuvant endocrine therapy with an aromatase inhibitor (anastrozole, letrozole or exemestane) for 5 years;"
+        },
+        "states_duration": {
+          "score": 5,
+          "max": 5,
+          "matched": true,
+          "evidence": "adjuvant endocrine therapy with an aromatase inhibitor (anastrozole, letrozole or exemestane) for 5 years;"
+        }
+      }
+    },
+    "radiotherapy": {
+      "score": 1.0,
+      "points": 10,
+      "max_points": 10,
+      "criteria": {
+        "recommends_breast_RT": {
+          "score": 10,
+          "max": 10,
+          "matched": true,
+          "evidence": "whole-breast radiotherapy after lumpectomy (hypofractionated)."
+        }
+      }
+    },
+    "supportive_monitoring": {
+      "score": 1.0,
+      "points": 5,
+      "max_points": 5,
+      "criteria": {
+        "bone_health": {
+          "score": 5,
+          "max": 5,
+          "matched": true,
+          "evidence": "baseline dexa bone density scan before starting the aromatase inhibitor, calcium and vitamin d supplementation, weight-bearing exercise, and repeat bone-health monitoring on therapy."
+        }
+      }
+    },
+    "missing_information": {
+      "score": 1.0,
+      "points": 5,
+      "max_points": 5,
+      "criteria": {
+        "names_relevant_gap": {
+          "score": 5,
+          "max": 5,
+          "matched": true,
+          "evidence": "baseline dexa bone density result"
+        }
+      }
+    }
+  },
+  "critical_errors": [],
+  "needs_doctor_review": [
+    {
+      "reason": "conditional endocrine wording",
+      "sentence": "tamoxifen is an acceptable alternative if an aromatase inhibitor is not tolerated."
+    }
+  ]
+}

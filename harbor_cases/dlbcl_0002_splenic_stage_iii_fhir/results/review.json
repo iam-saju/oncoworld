@@ -1,0 +1,165 @@
+{
+  "reward": 1.0,
+  "score": 100,
+  "max_score": 100,
+  "passed": true,
+  "raw_score": 100,
+  "penalty": 0,
+  "metrics": {
+    "diagnosis_and_COO": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "DLBCL_NOS": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "non_GCB_by_Hans": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "avoids_equating_Hans_with_definitive_ABC": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        }
+      }
+    },
+    "staging": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "correct_Lugano_stage_III": {
+          "score": 8,
+          "max": 8,
+          "matched": true
+        },
+        "recognizes_spleen_as_lymphatic": {
+          "score": 4,
+          "max": 4,
+          "matched": true
+        },
+        "avoids_stage_IV": {
+          "score": 3,
+          "max": 3,
+          "matched": true
+        }
+      }
+    },
+    "molecular_classification": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "identifies_double_expressor": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "identifies_not_double_hit": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "explains_IHC_vs_FISH": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        }
+      }
+    },
+    "prognosis": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "IPI": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "CNS_IPI": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "does_not_count_spleen_as_extranodal_site": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        }
+      }
+    },
+    "first_line_treatment": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "curative_immunochemotherapy": {
+          "score": 6,
+          "max": 6,
+          "matched": true
+        },
+        "recognizes_pola_or_R_CHOP": {
+          "score": 6,
+          "max": 6,
+          "matched": true
+        },
+        "avoids_unjustified_DA_EPOCH_R": {
+          "score": 3,
+          "max": 3,
+          "matched": true
+        }
+      }
+    },
+    "CNS_management": {
+      "score": 1.0,
+      "points": 15,
+      "max_points": 15,
+      "criteria": {
+        "uses_CNS_IPI": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "identifies_high_risk_sites_absent_or_missing": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        },
+        "no_automatic_prophylaxis_for_DEL": {
+          "score": 5,
+          "max": 5,
+          "matched": true
+        }
+      }
+    },
+    "response_assessment": {
+      "score": 1.0,
+      "points": 10,
+      "max_points": 10,
+      "criteria": {
+        "PET_CT": {
+          "score": 3,
+          "max": 3,
+          "matched": true
+        },
+        "Lugano_Deauville": {
+          "score": 4,
+          "max": 4,
+          "matched": true
+        },
+        "end_of_treatment_assessment": {
+          "score": 3,
+          "max": 3,
+          "matched": true
+        }
+      }
+    }
+  },
+  "critical_errors": []
+}

@@ -1,0 +1,57 @@
+total_points: 100
+passing_score: 75
+
+domains:
+  diagnosis_and_COO:
+    points: 10
+    criteria:
+      DLBCL_NOS: 5
+      GCB_by_Hans: 3
+      avoids_non_GCB_or_ABC_call: 2
+
+  staging:
+    points: 15
+    criteria:
+      correct_Lugano_stage_IV: 8
+      recognizes_extranodal_kidney_adrenal_liver: 5
+      notes_bone_marrow_negative_not_required_for_stage_IV: 2
+
+  molecular_classification:
+    points: 15
+    criteria:
+      identifies_not_double_expressor: 5
+      identifies_not_double_hit: 5
+      explains_IHC_vs_FISH: 5
+
+  prognosis:
+    points: 15
+    criteria:
+      IPI_high_risk: 6
+      CNS_IPI_high_risk: 6
+      identifies_multiple_extranodal_sites: 3
+
+  first_line_treatment:
+    points: 15
+    criteria:
+      curative_immunochemotherapy: 7
+      recognizes_pola_or_R_CHOP: 5
+      avoids_unjustified_DA_EPOCH_R: 3
+
+  CNS_management:
+    points: 15
+    criteria:
+      kidney_adrenal_high_risk: 6
+      prophylaxis_considered: 6
+      renal_function_or_CSF_missing: 3
+
+  response_assessment:
+    points: 15
+    criteria:
+      PET_CT: 4
+      Lugano_Deauville: 6
+      end_of_treatment_assessment: 5
+
+critical_errors:
+  misses_stage_IV_extranodal_disease: -20
+  misses_kidney_adrenal_CNS_risk: -20
+  calls_low_expression_case_double_expressor_or_double_hit: -15

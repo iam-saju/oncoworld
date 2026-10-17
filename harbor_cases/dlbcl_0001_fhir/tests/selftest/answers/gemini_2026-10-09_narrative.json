@@ -1,0 +1,26 @@
+{
+  "diagnosis": "Diffuse Large B-Cell Lymphoma, Not Otherwise Specified (DLBCL, NOS)",
+  "stage": "Stage IVB (Ann Arbor / Lugano classification). Staging is based on nodal involvement on both sides of the diaphragm (cervical, mediastinal, and bulky retroperitoneal adenopathy measuring 11 cm) and extranodal involvement (FDG-avid splenic lesions). The 'B' suffix designates the presence of B-symptoms (fever, night sweats, 7-kg weight loss over 3 months).",
+  "biology": "Cell of origin is Non-GCB / Activated B-cell-like (ABC) subtype by Hans algorithm (CD10-, BCL6+, MUM1+). Immunohistochemistry demonstrates a double-expressor phenotype with BCL2 expression at 80% (exceeding the 50% cutoff) and MYC expression at 50% (exceeding the 40% cutoff). Fluorescence in situ hybridization (FISH) analysis is negative for MYC, BCL2, and BCL6 rearrangements, confirming that this is not a double-hit or triple-hit high-grade B-cell lymphoma.",
+  "prognosis": "Standard International Prognostic Index (IPI) score is 3 (Intermediate-High risk), driven by age > 60 years (62), elevated LDH (680 U/L), and Ann Arbor Stage IV disease. The NCCN-IPI score is 4-5 (High-Intermediate to High risk). Additional adverse biological prognostic factors include the ABC cellular subtype and double-expressor lymphoma (DEL) status, which are associated with inferior outcomes compared to GCB non-DEL DLBCL.",
+  "first_line_treatment": "Polatuzumab vedotin plus R-CHP (Pola-R-CHP) for 6 cycles is the preferred first-line chemoimmunotherapy regimen for intermediate-to-high risk DLBCL, supported by the POLARIX trial demonstrating superior progression-free survival compared to standard R-CHOP. Standard R-CHOP for 6 cycles remains a well-established alternative. Post-treatment consolidation radiation therapy to bulky sites (retroperitoneal 11 cm) may be considered depending on PET response (Deauville score) after systemic therapy.",
+  "cns_risk": "CNS-IPI score is 3 (Intermediate risk), based on age > 60 years, elevated LDH, and Stage III-IV disease (approximate 5-10% 2-year CNS relapse risk). Routine CNS prophylaxis (e.g., intrathecal or systemic methotrexate) is generally not recommended for intermediate CNS risk DLBCL without high-risk extranodal sites (such as testicular, renal, adrenal, or epidural/paraspinal involvement), as systemic relapse predominates and prophylaxis has not demonstrated an overall survival benefit. CNS prophylaxis may be considered on an individual basis if high-risk occult features are identified.",
+  "response_assessment": "FDG-PET/CT scan at the end of systemic therapy (typically 6-8 weeks post-treatment) evaluated using the Lugano Classification and Deauville 5-Point Scale (Deauville score 1-3 defines Complete Metabolic Response). Interim response assessment via PET-CT or contrast-enhanced CT may be performed if clinically indicated. Regular clinical evaluation of B-symptoms, physical examination, and laboratory monitoring (CBC, LDH) should be conducted prior to each treatment cycle.",
+  "missing_information": "Key missing clinical information includes: (1) Baseline cardiac function assessment (ECHO or MUGA to evaluate left ventricular ejection fraction for anthracycline safety); (2) Viral serologies including Hepatitis B surface antigen (HBsAg), anti-HBc, anti-HBs, and HIV screening prior to anti-CD20 monoclonal antibody therapy; (3) Complete metabolic panel, baseline renal function (creatinine clearance), and hepatic function tests (bilirubin, transaminases); (4) Detailed functional or nutritional assessment beyond ECOG performance status.",
+  "_expect": {
+    "passed": true,
+    "critical": [],
+    "must_match": [
+      "CNS_management.no_automatic_prophylaxis_for_DEL",
+      "first_line_treatment.avoids_unjustified_DA_EPOCH_R",
+      "molecular_classification.identifies_not_double_hit",
+      "response_assessment.end_of_treatment_assessment"
+    ],
+    "must_miss": [
+      "staging.correct_Lugano_stage_III",
+      "diagnosis_and_COO.avoids_equating_Hans_with_definitive_ABC"
+    ],
+    "source_job": "2026-10-09__22-20-20",
+    "old_score": 75
+  }
+}

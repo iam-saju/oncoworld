@@ -1,0 +1,6 @@
+A 67-year-old man presents with abdominal pain, early satiety, night sweats, and weight loss.
+
+Performance status:
+- ECOG: 2
+
+This is a synthetic training case for AI evaluation. It is not clinical decision support.

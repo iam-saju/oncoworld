@@ -1,0 +1,19 @@
+Retroperitoneal mass biopsy:
+- Diffuse large B-cell lymphoma
+
+IHC:
+- CD20+
+- CD10+
+- BCL6+
+- MUM1-
+- BCL2 30%
+- MYC 20%
+- Ki-67 approximately 70%
+
+FISH:
+- MYC rearrangement not detected
+- BCL2 rearrangement not detected
+- BCL6 rearrangement not detected
+
+Bone marrow:
+- No lymphoma involvement

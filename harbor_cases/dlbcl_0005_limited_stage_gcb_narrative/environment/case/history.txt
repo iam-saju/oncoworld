@@ -1,0 +1,6 @@
+A 45-year-old woman presents with a painless enlarging right cervical lymph node found on self-exam. She has no fever, night sweats, or weight loss.
+
+Performance status:
+- ECOG: 0
+
+This is a synthetic training case for AI evaluation. It is not clinical decision support.

@@ -1,0 +1,10 @@
+{
+  "reward": 1.0,
+  "clinical_correctness": 1.0,
+  "staging": 1.0,
+  "molecular_classification": 1.0,
+  "prognosis": 1.0,
+  "first_line_treatment": 1.0,
+  "cns_management": 1.0,
+  "response_assessment": 1.0
+}

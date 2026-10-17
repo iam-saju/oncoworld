@@ -1,0 +1,22 @@
+{
+  "diagnosis": "Diffuse Large B-cell Lymphoma (DLBCL), Not Otherwise Specified (NOS)",
+  "stage": "Ann Arbor Stage I (Lugano Stage I, localized nodal disease with single FDG-avid right cervical lymph-node region)",
+  "biology": "Germinal Center B-cell-like (GCB) subtype based on Hans immunohistochemistry algorithm (CD10+, BCL6+, MUM1-). Fluorescence in situ hybridization (FISH) is negative for MYC, BCL2, and BCL6 rearrangements (not a double-hit or triple-hit lymphoma). Immunohistochemistry shows low protein expression for MYC (15%) and BCL2 (30%), ruling out double-expressor lymphoma. Proliferative index (Ki-67) is approximately 55%.",
+  "prognosis": "International Prognostic Index (IPI) score of 0 (Low risk): Age <= 60 (0 points), Ann Arbor Stage I (0 points), normal serum LDH (0 points), ECOG performance status 0 (0 points), and zero extranodal disease sites (0 points). This portends an excellent prognosis with high long-term progression-free and overall survival rates (>85-90%) with standard chemoimmunotherapy.",
+  "first_line_treatment": "4 cycles of R-CHOP (rituximab, cyclophosphamide, doxorubicin, vincristine, and prednisone) combined with or followed by involved-site radiation therapy (ISRT), or 6 cycles of R-CHOP alone (supported by trials such as FLYER for favorable prognosis early-stage DLBCL).",
+  "cns_risk": "Low risk for central nervous system (CNS) relapse, given early-stage disease, low IPI (0), normal LDH, and absence of high-risk extranodal involvement (such as testicular, renal, adrenal, or epidural disease). CNS prophylaxis is not indicated.",
+  "response_assessment": "18F-FDG PET-CT performed after completion of therapy (and/or interim PET-CT), evaluated using the Lugano classification criteria and Deauville 5-point scale (where a Deauville score of 1-3 indicates complete metabolic response).",
+  "missing_information": "Baseline infectious disease screening (hepatitis B serologies [HBsAg and anti-HBc] due to the risk of rituximab-associated HBV reactivation, and HIV status), baseline cardiac assessment (echocardiogram or MUGA scan to establish left ventricular ejection fraction prior to anthracycline administration), and serum beta-2 microglobulin.",
+  "_expect": {
+    "passed": true,
+    "critical": [],
+    "must_match": [
+      "molecular_classification.identifies_not_double_expressor",
+      "molecular_classification.identifies_not_double_hit",
+      "response_assessment.end_of_treatment_assessment"
+    ],
+    "must_miss": [],
+    "source_job": "2026-10-09__22-20-20",
+    "old_score": 87
+  }
+}

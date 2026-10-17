@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Harbor Task Review Mockup</title>
+    <style>
+      :root {
+        --bg: #f6f5f1;
+        --panel: #ffffff;
+        --ink: #171715;
+        --muted: #6f6b62;
+        --line: #ddd8cd;
+        --green: #17633a;
+        --green-soft: #e4f1e7;
+        --amber: #9b6722;
+        --amber-soft: #f4ead9;
+        --red: #9d2f2f;
+        --red-soft: #f4dddd;
+        --blue: #254f75;
+        --blue-soft: #e1edf6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.45;
+      }
+
+      button,
+      select {
+        font: inherit;
+      }
+
+      .shell {
+        width: min(1380px, calc(100% - 32px));
+        margin: 24px auto;
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      header {
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 24px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .mark {
+        width: 28px;
+        height: 28px;
+        background: var(--ink);
+        position: relative;
+        flex: 0 0 auto;
+      }
+
+      .mark::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--panel);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 2px;
+        font-size: clamp(22px, 2.1vw, 34px);
+        font-weight: 620;
+        letter-spacing: 0;
+      }
+
+      .subtitle {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .toolbar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .toolbar label {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      select {
+        min-height: 38px;
+        padding: 0 34px 0 12px;
+        border: 1px solid var(--line);
+        border-radius: 4px;
+        background: #fff;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: minmax(240px, 300px) minmax(0, 1fr);
+        min-height: calc(100vh - 126px);
+      }
+
+      aside {
+        border-right: 1px solid var(--line);
+        background: #fbfaf7;
+        padding: 22px;
+      }
+
+      .case-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .case-button {
+        width: 100%;
+        min-height: 84px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #fff;
+        color: var(--ink);
+        text-align: left;
+        padding: 14px;
+        cursor: pointer;
+      }
+
+      .case-button.active {
+        border-color: var(--green);
+        box-shadow: inset 3px 0 0 var(--green);
+      }
+
+      .case-button strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 15px;
+      }
+
+      .case-button span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .content {
+        padding: clamp(22px, 3vw, 38px);
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 26px;
+      }
+
+      .metric {
+        min-height: 128px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 18px;
+        background: #fff;
+      }
+
+      .metric span {
+        display: block;
+        margin-bottom: 16px;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .metric strong {
+        display: block;
+        font-size: clamp(32px, 4vw, 56px);
+        line-height: 0.92;
+        font-weight: 620;
+      }
+
+      .metric small {
+        display: block;
+        margin-top: 12px;
+        color: var(--muted);
+      }
+
+      .status-pass {
+        color: var(--green);
+      }
+
+      .review-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+        gap: 18px;
+        align-items: start;
+      }
+
+      section {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      section h2 {
+        margin: 0;
+        padding: 16px 18px;
+        border-bottom: 1px solid var(--line);
+        font-size: 17px;
+        font-weight: 650;
+      }
+
+      .domain-list {
+        display: grid;
+      }
+
+      .domain {
+        display: grid;
+        grid-template-columns: minmax(190px, 0.9fr) minmax(0, 1.5fr) 72px;
+        gap: 16px;
+        align-items: center;
+        padding: 16px 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .domain:last-child {
+        border-bottom: 0;
+      }
+
+      .domain h3 {
+        margin: 0 0 4px;
+        font-size: 15px;
+      }
+
+      .domain p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .bar {
+        height: 9px;
+        border-radius: 999px;
+        background: #ebe7dd;
+        overflow: hidden;
+      }
+
+      .bar span {
+        display: block;
+        height: 100%;
+        background: var(--green);
+      }
+
+      .score {
+        text-align: right;
+        font-weight: 700;
+      }
+
+      .panel-body {
+        padding: 18px;
+      }
+
+      .checks {
+        display: grid;
+        gap: 10px;
+      }
+
+      .check {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: #fbfaf7;
+        font-size: 14px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 24px;
+        padding: 0 8px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .pill.pass {
+        background: var(--green-soft);
+        color: var(--green);
+      }
+
+      .pill.warn {
+        background: var(--amber-soft);
+        color: var(--amber);
+      }
+
+      .pill.info {
+        background: var(--blue-soft);
+        color: var(--blue);
+      }
+
+      .notes {
+        display: grid;
+        gap: 12px;
+      }
+
+      .note {
+        border-left: 3px solid var(--green);
+        padding: 2px 0 2px 12px;
+      }
+
+      .note strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .note p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .comparison {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .text-panel pre {
+        margin: 0;
+        white-space: pre-wrap;
+        font: 13px/1.55 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        color: #302d28;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      @media (max-width: 1020px) {
+        main,
+        .review-grid,
+        .comparison {
+          grid-template-columns: 1fr;
+        }
+
+        aside {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .case-list {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .summary {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .shell {
+          width: 100%;
+          margin: 0;
+          border-left: 0;
+          border-right: 0;
+        }
+
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .toolbar,
+        .toolbar select {
+          width: 100%;
+        }
+
+        .case-list,
+        .summary {
+          grid-template-columns: 1fr;
+        }
+
+        .domain {
+          grid-template-columns: 1fr;
+        }
+
+        .score {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <div class="brand">
+          <div class="mark" aria-hidden="true"></div>
+          <div>
+            <h1>Harbor Review</h1>
+            <p class="subtitle">DLBCL oncology task results and detailed rubric audit</p>
+          </div>
+        </div>
+        <div class="toolbar">
+          <label for="runSelect">Run</label>
+          <select id="runSelect">
+            <option value="narrative">DLBCL narrative sample</option>
+            <option value="fhir">DLBCL FHIR sample</option>
+          </select>
+        </div>
+      </header>
+
+      <main>
+        <aside>
+          <p class="subtitle">Cases</p>
+          <div class="case-list">
+            <button class="case-button active" type="button" data-case="narrative">
+              <strong>DLBCL-0001 Narrative</strong>
+              <span>Clinical prose input · sample response passed</span>
+            </button>
+            <button class="case-button" type="button" data-case="fhir">
+              <strong>DLBCL-0001 FHIR</strong>
+              <span>Structured Bundle input · sample response passed</span>
+            </button>
+          </div>
+        </aside>
+
+        <div class="content">
+          <div class="summary" aria-label="Run summary">
+            <div class="metric">
+              <span>Final score</span>
+              <strong id="finalScore">100</strong>
+              <small>/ 100</small>
+            </div>
+            <div class="metric">
+              <span>Status</span>
+              <strong class="status-pass" id="status">Pass</strong>
+              <small id="statusNote">No critical errors</small>
+            </div>
+            <div class="metric">
+              <span>Input</span>
+              <strong id="inputType">Narrative</strong>
+              <small id="inputNote">Clinical scenario</small>
+            </div>
+            <div class="metric">
+              <span>Reviewer queue</span>
+              <strong>Ready</strong>
+              <small>Needs physician sign-off before production</small>
+            </div>
+          </div>
+
+          <div class="review-grid">
+            <section aria-labelledby="domainTitle">
+              <h2 id="domainTitle">Domain Scores</h2>
+              <div class="domain-list" id="domainList"></div>
+            </section>
+
+            <section aria-labelledby="checkTitle">
+              <h2 id="checkTitle">Critical Error Checks</h2>
+              <div class="panel-body">
+                <div class="checks" id="checks"></div>
+              </div>
+            </section>
+          </div>
+
+          <div class="comparison">
+            <section class="text-panel" aria-labelledby="reviewTitle">
+              <h2 id="reviewTitle">Detailed Review</h2>
+              <div class="panel-body">
+                <div class="notes" id="notes"></div>
+              </div>
+            </section>
+
+            <section class="text-panel" aria-labelledby="ioTitle">
+              <h2 id="ioTitle">Input And Output Shape</h2>
+              <div class="panel-body">
+                <pre id="ioText"></pre>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const runs = {
+        narrative: {
+          score: 100,
+          status: "Pass",
+          inputType: "Narrative",
+          inputNote: "Clinical scenario",
+          domains: [
+            ["Diagnosis & COO", 15, 15, "DLBCL NOS; non-GCB by Hans; does not overcall ABC."],
+            ["Staging", 10, 10, "Stage III bulky disease with above/below diaphragm reasoning."],
+            ["Molecular classification", 15, 15, "Correctly separates double-expressor from double-hit."],
+            ["Prognosis", 15, 15, "Uses IPI and CNS-IPI; notes missing variables."],
+            ["First-line treatment", 25, 25, "Curative immunochemotherapy; Pola-R-CHP or R-CHOP."],
+            ["CNS management", 10, 10, "No automatic prophylaxis without CNS-IPI/site review."],
+            ["Response assessment", 10, 10, "FDG PET-CT with Lugano/Deauville at end of treatment."]
+          ],
+          checks: [
+            ["Double-expressor incorrectly called double-hit", "Pass"],
+            ["Non-curative treatment for fit patient", "Pass"],
+            ["Mandatory CNS prophylaxis without risk assessment", "Pass"],
+            ["DA-EPOCH-R escalation solely for DEL", "Pass"]
+          ],
+          notes: [
+            ["Strong diagnosis reasoning", "The response identifies DLBCL NOS and correctly treats Hans non-GCB as phenotype, not definitive molecular ABC."],
+            ["Safe treatment recommendation", "The answer recommends curative-intent immunochemotherapy and avoids escalation to DA-EPOCH-R based only on double-expressor biology."],
+            ["Good uncertainty handling", "The response flags kidney/adrenal and other high-risk extranodal sites as missing data for CNS-risk decisions."]
+          ],
+          io: `MODEL INPUT\ninstruction.md: prose clinical case with labs, PET-CT, pathology, IHC, FISH and marrow result.\n\nMODEL OUTPUT\nStructured answer with diagnosis, stage, biology, prognosis, treatment, CNS risk, response assessment and missing information.\n\nEVALUATOR OUTPUT\nscore: 100/100\npassed: true\ncritical_errors: []`
+        },
+        fhir: {
+          score: 100,
+          status: "Pass",
+          inputType: "FHIR",
+          inputNote: "Bundle resource",
+          domains: [
+            ["Diagnosis & COO", 15, 15, "Extracts DLBCL, CD10-, BCL6+, MUM1+ from DiagnosticReport."],
+            ["Staging", 10, 10, "Uses PET-CT text to infer stage III bulky disease."],
+            ["Molecular classification", 15, 15, "Uses IHC expression and negative FISH appropriately."],
+            ["Prognosis", 15, 15, "Pulls age, LDH, stage and ECOG into prognostic framework."],
+            ["First-line treatment", 25, 25, "Pola-R-CHP recognized; R-CHOP acceptable."],
+            ["CNS management", 10, 10, "Requires CNS-IPI and anatomic high-risk site review."],
+            ["Response assessment", 10, 10, "FDG PET-CT, Lugano/Deauville, end-of-treatment."]
+          ],
+          checks: [
+            ["Double-expressor incorrectly called double-hit", "Pass"],
+            ["Non-curative treatment for fit patient", "Pass"],
+            ["Mandatory CNS prophylaxis without risk assessment", "Pass"],
+            ["DA-EPOCH-R escalation solely for DEL", "Pass"]
+          ],
+          notes: [
+            ["Structured data extraction passed", "The response converts FHIR observations and diagnostic reports into the same clinical reasoning frame as the narrative case."],
+            ["Molecular distinction preserved", "The answer uses negative MYC/BCL2/BCL6 rearrangements to reject double-hit lymphoma."],
+            ["Production caveat", "A real FHIR task should replace free-text labels with validated codes where available."]
+          ],
+          io: `MODEL INPUT\ninstruction.md: FHIR Bundle containing Patient, ECOG Observation, LDH Observation, PET-CT report, pathology, FISH and marrow report.\n\nMODEL OUTPUT\nStructured answer with evidence-based reasoning from FHIR resources.\n\nEVALUATOR OUTPUT\nscore: 100/100\npassed: true\ncritical_errors: []`
+        }
+      };
+
+      const runSelect = document.getElementById("runSelect");
+      const caseButtons = [...document.querySelectorAll(".case-button")];
+      const finalScore = document.getElementById("finalScore");
+      const status = document.getElementById("status");
+      const statusNote = document.getElementById("statusNote");
+      const inputType = document.getElementById("inputType");
+      const inputNote = document.getElementById("inputNote");
+      const domainList = document.getElementById("domainList");
+      const checks = document.getElementById("checks");
+      const notes = document.getElementById("notes");
+      const ioText = document.getElementById("ioText");
+
+      function renderRun(key) {
+        const run = runs[key];
+        finalScore.textContent = run.score;
+        status.textContent = run.status;
+        statusNote.textContent = "No critical errors";
+        inputType.textContent = run.inputType;
+        inputNote.textContent = run.inputNote;
+
+        domainList.innerHTML = run.domains.map(([name, score, max, detail]) => {
+          const pct = Math.round((score / max) * 100);
+          return `
+            <div class="domain">
+              <div>
+                <h3>${name}</h3>
+                <p>${detail}</p>
+              </div>
+              <div class="bar" aria-label="${name} ${score} of ${max}">
+                <span style="width:${pct}%"></span>
+              </div>
+              <div class="score">${score}/${max}</div>
+            </div>
+          `;
+        }).join("");
+
+        checks.innerHTML = run.checks.map(([name, result]) => `
+          <div class="check">
+            <span>${name}</span>
+            <span class="pill pass">${result}</span>
+          </div>
+        `).join("");
+
+        notes.innerHTML = run.notes.map(([title, body]) => `
+          <div class="note">
+            <strong>${title}</strong>
+            <p>${body}</p>
+          </div>
+        `).join("");
+
+        ioText.textContent = run.io;
+
+        caseButtons.forEach((button) => {
+          button.classList.toggle("active", button.dataset.case === key);
+        });
+        runSelect.value = key;
+      }
+
+      runSelect.addEventListener("change", () => renderRun(runSelect.value));
+      caseButtons.forEach((button) => {
+        button.addEventListener("click", () => renderRun(button.dataset.case));
+      });
+
+      renderRun("narrative");
+    </script>
+  </body>
+</html>

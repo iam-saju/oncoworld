@@ -1,0 +1,6 @@
+A 59-year-old woman presents with fatigue, intermittent fevers, and enlarging left axillary and abdominal lymph nodes.
+
+Performance status:
+- ECOG: 1
+
+This is a synthetic training case for AI evaluation. It is not clinical decision support.

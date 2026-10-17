@@ -1,0 +1,24 @@
+id = "dlbcl_0002_splenic_stage_iii_narrative"
+title = "DLBCL with splenic involvement: stage III versus stage IV"
+domain = "hematology_oncology"
+subdomain = "lymphoma"
+difficulty = "intermediate"
+patient_type = "synthetic"
+task_type = "clinical_reasoning"
+input_format = "narrative"
+
+[inference]
+requires_diagnosis = true
+requires_staging = true
+requires_prognosis = true
+requires_treatment = true
+requires_cns_risk = true
+requires_response_assessment = true
+
+[evaluation]
+rubric_file = "tests/rubric.yaml"
+gold_file = "solution/gold_answer.md"
+verifier = "tests/test.sh"
+expected_output = "/app/final_answer.json"
+max_score = 100
+passing_score = 75

@@ -1,0 +1,11 @@
+{
+  "diagnosis": "Invasive ductal carcinoma NST, grade 2, 1.8 cm, margins negative.",
+  "stage": "pT1c pN0(sn) M0, stage IA.",
+  "biology": "ER-positive, PR-positive, HER2-negative (IHC 1+). Trastuzumab would only be considered if HER2 were positive, which it is not.",
+  "genomic_risk": "Recurrence score 14 is low risk, so chemotherapy offers no benefit.",
+  "chemotherapy_decision": "Chemotherapy is not recommended. It would only be considered if the recurrence score were high or nodes were involved.",
+  "endocrine_therapy": "Aromatase inhibitor for 5 years, possibly extended to 10 years.",
+  "radiotherapy": "Adjuvant whole-breast radiotherapy is recommended; omission would only be discussed if she were over 70.",
+  "supportive_monitoring": "Baseline DEXA and calcium/vitamin D.",
+  "missing_information": ["Patient preferences", "Baseline DEXA"]
+}

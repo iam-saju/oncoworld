@@ -1,0 +1,55 @@
+# breast_0001 scoring contract. Source: Harbor_Oncology_Case_Breast_0001.pdf, draft v0.2.
+# Guideline set: US NCCN Guidelines for Breast Cancer (project owner decision, 2026-10-10).
+# NOT physician-reviewed. tests/grader.py implements this; tests/selftest/ proves it.
+total_points: 100
+passing_score: 75          # and no critical error
+
+domains:
+  diagnosis_and_biology:
+    points: 25
+    criteria:
+      IDC: 5
+      HR_positive: 5
+      HER2_negative: 5
+      stage_IA: 10           # "stage I" without the A substage earns 7
+  genomic_risk:
+    points: 15
+    criteria:
+      recognizes_low_risk: 8
+      links_score_to_chemotherapy: 7
+  chemotherapy_decision:
+    points: 20
+    criteria:
+      chemotherapy_not_indicated: 14
+      gives_rationale: 6
+  endocrine_therapy:
+    points: 20
+    criteria:
+      recommends_endocrine_therapy: 10
+      names_AI_or_tamoxifen: 5
+      states_duration: 5
+  radiotherapy:
+    points: 10
+    criteria:
+      recommends_breast_RT: 10   # whole-breast or partial-breast = 10; unspecified RT = 7
+  supportive_monitoring:
+    points: 5
+    criteria:
+      bone_health: 5
+  missing_information:
+    points: 5
+    criteria:
+      names_relevant_gap: 5
+
+critical_errors:
+  recommends_adjuvant_chemotherapy: -25
+  recommends_HER2_targeted_therapy: -20    # treating IHC 1+ as HER2-positive
+  omits_endocrine_therapy: -20
+  omits_adjuvant_radiotherapy: -10         # RT required at age 58 (project owner decision 2026-10-10; NCCN omission is for age 70+)
+
+deviations_from_pdf:
+  - Partial-breast irradiation earns full radiotherapy credit. Age 58, pT1, N0, ER+, margins 4 mm and
+    no LVI fits the ASTRO "suitable" group for partial-breast irradiation, which NCCN accepts for selected
+    low-risk patients. Oncologist to confirm.
+  - Conditional wording ("would only be considered if...") is neither credited nor penalised and is
+    listed in review.json under needs_doctor_review.

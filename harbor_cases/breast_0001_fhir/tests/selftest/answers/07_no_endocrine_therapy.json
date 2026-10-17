@@ -1,0 +1,13 @@
+{
+  "diagnosis": "Invasive ductal carcinoma, no special type (NST), right breast upper outer quadrant; Nottingham grade 2, 1.8 cm, no lymphovascular invasion, margins negative (closest 4 mm).",
+  "stage": "pT1c pN0(sn) cM0 (AJCC 8th edition). Anatomic stage IA; pathological prognostic stage IA.",
+  "biology": "Hormone-receptor-positive (ER 95% strong, PR 80%), HER2-negative: HER2 IHC 1+ is HER2-negative (HER2-low), so anti-HER2 therapy is not indicated. Ki-67 15%.",
+  "genomic_risk": "Recurrence Score 14 is low risk, so there is no chemotherapy benefit.",
+  "chemotherapy_decision": "Adjuvant chemotherapy is not indicated given node-negative disease and recurrence score 14.",
+  "endocrine_therapy": "Endocrine therapy is not needed after complete excision.",
+  "radiotherapy": "Whole-breast radiotherapy after lumpectomy (hypofractionated). Partial-breast irradiation is a reasonable alternative given age, tumor size, negative margins and node-negative disease.",
+  "supportive_monitoring": "Routine survivorship follow-up; DEXA for bone health.",
+  "missing_information": [
+    "Patient preferences"
+  ]
+}

@@ -1,0 +1,6 @@
+A 54-year-old man presents with rapidly enlarging right cervical and mediastinal lymphadenopathy and dysphagia.
+
+Performance status:
+- ECOG: 1
+
+This is a synthetic training case for AI evaluation. It is not clinical decision support.

@@ -1,0 +1,15 @@
+{
+  "diagnosis": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements, GCB phenotype by Hans algorithm.",
+  "stage": "Lugano/Ann Arbor stage II bulky disease, with cervical and mediastinal nodal disease above the diaphragm only and a 12 cm mediastinal mass.",
+  "biology": "Double-hit lymphoma because MYC and BCL2 rearrangements are detected by FISH. It is also double-expressor by IHC because MYC is 80% and BCL2 is 90%, but the FISH-defined double-hit biology is the key classification.",
+  "prognosis": "Use IPI and CNS-IPI. Elevated LDH and bulky disease are adverse, and double-hit genetics are a major high-risk biological feature.",
+  "first_line_treatment": "Curative-intent intensive immunochemotherapy. DA-EPOCH-R or clinical trial enrollment is appropriate; R-CHOP alone is generally not preferred for rearrangement-defined double-hit lymphoma.",
+  "cns_risk": "Calculate CNS-IPI and consider CNS prophylaxis because double-hit biology and elevated LDH raise concern, although kidney/adrenal, testicular, and breast sites are absent. Prophylaxis should be individualized based on renal function and fitness.",
+  "response_assessment": "Use FDG PET-CT with Lugano/Deauville criteria, especially end-of-treatment PET.",
+  "missing_information": [
+    "cardiac function and viral serologies",
+    "renal function for methotrexate feasibility",
+    "CSF assessment if CNS staging is pursued",
+    "fitness for intensive immunochemotherapy"
+  ]
+}

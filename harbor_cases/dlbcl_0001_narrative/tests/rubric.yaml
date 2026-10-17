@@ -1,0 +1,58 @@
+total_points: 100
+passing_score: 75
+
+domains:
+  diagnosis_and_COO:
+    points: 10
+    criteria:
+      DLBCL_NOS: 5
+      non_GCB_by_Hans: 3
+      avoids_equating_Hans_with_definitive_ABC: 2
+
+  staging:
+    points: 15
+    criteria:
+      correct_Lugano_stage_III: 10
+      correct_staging_reasoning: 5
+
+  molecular_classification:
+    points: 15
+    criteria:
+      identifies_double_expressor: 5
+      identifies_not_double_hit: 5
+      explains_IHC_vs_FISH: 5
+
+  prognosis:
+    points: 15
+    criteria:
+      IPI: 8
+      CNS_IPI: 4
+      identifies_missing_variables: 3
+
+  first_line_treatment:
+    points: 15
+    criteria:
+      curative_immunochemotherapy: 7
+      recognizes_pola_R_CHP: 4
+      accepts_R_CHOP_alternative: 2
+      avoids_unjustified_DA_EPOCH_R: 2
+
+  CNS_management:
+    points: 15
+    criteria:
+      uses_CNS_IPI: 6
+      identifies_high_risk_sites: 5
+      no_automatic_prophylaxis_for_DEL: 4
+
+  response_assessment:
+    points: 15
+    criteria:
+      PET_CT: 4
+      Lugano_Deauville: 6
+      end_of_treatment_assessment: 5
+
+critical_errors:
+  double_expressor_called_double_hit_despite_negative_FISH: -20
+  unjustified_non_curative_treatment: -25
+  mandates_CNS_prophylaxis_without_risk_assessment: -10
+  DA_EPOCH_R_escalation_solely_for_DEL: -10

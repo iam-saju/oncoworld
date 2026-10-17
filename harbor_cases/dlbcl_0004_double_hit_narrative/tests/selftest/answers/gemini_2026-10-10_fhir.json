@@ -1,0 +1,23 @@
+{
+  "diagnosis": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (Double-Hit Lymphoma), presenting as large B-cell lymphoma with high-grade morphology (ICD-10: C85.10; SNOMED CT: 109979007).",
+  "stage": "Ann Arbor Stage IIX (Stage II with bulky disease). Evidence: FDG-avid right cervical and mediastinal lymphadenopathy restricted to above the diaphragm, with a bulky mediastinal mass measuring 12 cm (>10 cm threshold for 'X' bulky designator). Bone marrow biopsy is negative for lymphoma involvement.",
+  "biology": "Double-hit lymphoma (HGBL-DH-BCL2). FISH testing confirms concurrent MYC and BCL2 gene rearrangements (BCL6 rearrangement not detected). Immunohistochemistry demonstrates a Germinal Center B-cell-like (GCB) cell of origin (CD10+, BCL6+, MUM1-), high protein expression of MYC (80%) and BCL2 (90%) (double-expressor phenotype), and an extremely high proliferative rate (Ki-67 index of 95%).",
+  "prognosis": "Standard International Prognostic Index (IPI) score is 1 (Low-Intermediate risk, driven by elevated LDH). NCCN-IPI score is 2 (Low risk, based on age 54 [1 point] and elevated LDH [1 point]). However, clinical prognosis is heavily tempered by the molecular biology (Double-Hit Lymphoma), which confers high risk, rapid cell turnover, and aggressive clinical behavior with historically lower progression-free survival on standard R-CHOP.",
+  "first_line_treatment": "Dose-adjusted EPOCH-R (DA-EPOCH-R: etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin, and rituximab). DA-EPOCH-R is widely favored over R-CHOP in expert guidelines for double-hit lymphoma (HGBL-DH-BCL2) due to superior disease control in retrospective and prospective studies, though clinical trial enrollment should be considered when available.",
+  "cns_risk": "CNS-IPI score is 1 (Low risk, based on elevated LDH; age 54, stage II, ECOG 1, and no kidney/adrenal involvement). Routine CNS prophylaxis (e.g., intrathecal chemotherapy or high-dose methotrexate) is generally not recommended for low CNS-IPI risk patients. However, uncertainty exists regarding whether high-risk genetic features (double-hit lymphoma with high Ki-67 and bulky disease) independently warrant CNS prophylaxis, though parenchymal relapses in double-hit lymphoma are often systemic rather than isolated leptomeningeal.",
+  "response_assessment": "Interim FDG PET-CT (typically after 3-4 cycles) and end-of-treatment FDG PET-CT, evaluated using the Lugano Classification and interpreted via the Deauville 5-Point Scale (scores 1-3 indicate complete metabolic response).",
+  "missing_information": "Essential missing clinical information includes: (1) Hepatitis B serologies (HBsAg, anti-HBc total) and HIV status prior to initiating anti-CD20 chemoimmunotherapy; (2) Baseline cardiac ejection fraction (echocardiogram or MUGA scan) prior to anthracycline administration (doxorubicin); (3) Institutional upper limit of normal (ULN) for LDH; and (4) Baseline renal and hepatic function panels for chemotherapy dose adjustment.",
+  "_expect": {
+    "passed": true,
+    "critical": [],
+    "must_match": [
+      "first_line_treatment.avoids_R_CHOP_alone_as_preferred",
+      "first_line_treatment.curative_intensive_immunochemotherapy",
+      "molecular_classification.identifies_double_hit",
+      "response_assessment.end_of_treatment_assessment"
+    ],
+    "must_miss": [],
+    "source_job": "2026-10-10__01-01-23",
+    "old_score": 60
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "diagnosis": "Diffuse Large B-Cell Lymphoma (DLBCL), NOS. Cell of Origin: Germinal Center B-cell (GCB) subtype based on Hans immunohistochemical algorithm (CD10 positive, BCL6 positive, MUM1 negative).",
+  "stage": "Ann Arbor Stage IV-B. Evidence: FDG PET-CT demonstrates retroperitoneal and mesenteric lymphadenopathy along with multiple extranodal involvement sites including right renal cortical lesion (3.2 cm), left adrenal mass (2.6 cm), and liver lesion (1.8 cm). Presenting symptoms include night sweats and weight loss (B-symptoms). Bone marrow biopsy is negative.",
+  "biology": "Non-double-hit and non-double-expressor lymphoma. Fluorescence in situ hybridization (FISH) testing demonstrates no MYC, BCL2, or BCL6 gene rearrangements. Immunohistochemistry shows MYC expression in 20% of tumor cells (below the 40% threshold) and BCL2 expression in 30% of tumor cells (below the 50% threshold). Cell of origin is GCB.",
+  "prognosis": "High Risk. International Prognostic Index (IPI) score is 5 out of 5, driven by age 67 (>60 years: 1 pt), Ann Arbor Stage IV (1 pt), ECOG performance status 2 (1 pt), elevated serum LDH of 1120 U/L (1 pt), and involvement of >1 extranodal site (liver, kidney, adrenal: 1 pt).",
+  "first_line_treatment": "Polatuzumab vedotin combined with R-CHP (Polatuzumab vedotin, Rituximab, Cyclophosphamide, Doxorubicin, Prednisone) for 6 cycles, or standard R-CHOP for 6 cycles. Pola-R-CHP is preferred given the high-risk IPI (IPI 5) demonstrating superior progression-free survival in clinical trials (POLARIX).",
+  "cns_risk": "High CNS-Relapse Risk. CNS-IPI score is elevated (5-6) due to advanced age, stage IV, elevated LDH, ECOG 2, multiple extranodal sites, and high-risk extranodal involvement (renal and adrenal glands). CNS prophylaxis (e.g., intrathecal or systemic methotrexate) should be considered, though clinical consensus on efficacy remains debated. Baseline lumbar puncture (CSF cytology/flow cytometry) and brain MRI are required to rule out occult CNS involvement.",
+  "response_assessment": "Interim FDG PET-CT (typically after 2 to 4 cycles) and end-of-treatment FDG PET-CT evaluated using the Lugano 2014 criteria (Deauville 5-point scale). Complete Metabolic Response (CMR) is defined as a Deauville score of 1-3 in all involved nodal and extranodal sites.",
+  "missing_information": "Baseline cardiac evaluation (ECHO or MUGA scan) to assess left ventricular ejection fraction prior to anthracycline therapy; Hepatitis B serologies (HBsAg, anti-HBc, anti-HBs) prior to anti-CD20 monoclonal antibody therapy to assess reactivation risk; baseline brain MRI and lumbar puncture with CSF evaluation for staging; and baseline HIV/HCV serologies.",
+  "_expect": {
+    "passed": true,
+    "critical": [],
+    "must_match": [
+      "first_line_treatment.avoids_unjustified_DA_EPOCH_R",
+      "molecular_classification.identifies_not_double_expressor",
+      "molecular_classification.identifies_not_double_hit",
+      "response_assessment.end_of_treatment_assessment"
+    ],
+    "must_miss": [],
+    "source_job": "2026-10-10__01-01-23",
+    "old_score": 72
+  }
+}

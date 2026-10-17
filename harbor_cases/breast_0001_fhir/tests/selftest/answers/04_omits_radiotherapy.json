@@ -1,0 +1,16 @@
+{
+  "diagnosis": "Invasive ductal carcinoma, no special type (NST), right breast upper outer quadrant; Nottingham grade 2, 1.8 cm, no lymphovascular invasion, margins negative (closest 4 mm).",
+  "stage": "pT1c pN0(sn) cM0 (AJCC 8th edition). Anatomic stage IA; pathological prognostic stage IA.",
+  "biology": "Hormone-receptor-positive (ER 95% strong, PR 80%), HER2-negative: HER2 IHC 1+ is HER2-negative (HER2-low), so anti-HER2 therapy is not indicated. Ki-67 15%.",
+  "genomic_risk": "21-gene Recurrence Score 14 is low genomic risk; in a postmenopausal, node-negative patient this predicts no meaningful benefit from adding chemotherapy (TAILORx).",
+  "chemotherapy_decision": "Adjuvant chemotherapy is not indicated: node-negative (0/2 sentinel nodes), postmenopausal, Recurrence Score 14. Grade 2 and Ki-67 15% do not override the low genomic risk.",
+  "endocrine_therapy": "Adjuvant endocrine therapy with an aromatase inhibitor (anastrozole, letrozole or exemestane) for 5 years; extended therapy up to 10 years may be considered based on tolerance and risk. Tamoxifen is an acceptable alternative if an aromatase inhibitor is not tolerated.",
+  "radiotherapy": "Radiotherapy can be omitted because she will take endocrine therapy.",
+  "supportive_monitoring": "Baseline DEXA bone density scan before starting the aromatase inhibitor, calcium and vitamin D supplementation, weight-bearing exercise, and repeat bone-health monitoring on therapy.",
+  "missing_information": [
+    "Baseline DEXA bone density result",
+    "Patient preferences and goals regarding endocrine therapy and radiotherapy",
+    "Expected tolerance of aromatase inhibitor side effects (arthralgia, bone loss)",
+    "Vitamin D level"
+  ]
+}

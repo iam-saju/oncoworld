@@ -1,0 +1,6 @@
+FDG PET-CT:
+- FDG-avid cervical nodes
+- Mediastinal lymphadenopathy
+- Bulky retroperitoneal lymphadenopathy, maximum diameter 11 cm
+- FDG-avid splenic lesions
+- No CNS lesions

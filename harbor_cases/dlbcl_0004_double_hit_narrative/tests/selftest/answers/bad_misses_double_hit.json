@@ -1,0 +1,22 @@
+{
+  "diagnosis": "DLBCL, NOS, GCB type.",
+  "stage": "Lugano/Ann Arbor stage II bulky disease, with cervical and mediastinal nodal disease above the diaphragm only and a 12 cm mediastinal mass.",
+  "biology": "Double-expressor lymphoma; not double-hit lymphoma, FISH negative.",
+  "prognosis": "Use IPI and CNS-IPI. Elevated LDH and bulky disease are adverse.",
+  "first_line_treatment": "Curative-intent immunochemotherapy with Pola-R-CHP for 6 cycles.",
+  "cns_risk": "Calculate CNS-IPI; prophylaxis individualized based on renal function and fitness.",
+  "response_assessment": "Use FDG PET-CT with Lugano/Deauville criteria, especially end-of-treatment PET.",
+  "missing_information": [
+    "cardiac function and viral serologies",
+    "renal function for methotrexate feasibility",
+    "CSF assessment if CNS staging is pursued",
+    "fitness for intensive immunochemotherapy"
+  ],
+  "_expect": {
+    "passed": false,
+    "critical": [
+      "misses_double_hit_FISH_positive",
+      "treats_as_standard_DEL_only"
+    ]
+  }
+}

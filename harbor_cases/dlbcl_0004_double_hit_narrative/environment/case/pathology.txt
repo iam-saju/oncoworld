@@ -1,0 +1,19 @@
+Lymph-node biopsy:
+- Large B-cell lymphoma with high-grade morphology
+
+IHC:
+- CD20+
+- CD10+
+- BCL6+
+- MUM1-
+- BCL2 90%
+- MYC 80%
+- Ki-67 approximately 95%
+
+FISH:
+- MYC rearrangement detected
+- BCL2 rearrangement detected
+- BCL6 rearrangement not detected
+
+Bone marrow:
+- No lymphoma involvement

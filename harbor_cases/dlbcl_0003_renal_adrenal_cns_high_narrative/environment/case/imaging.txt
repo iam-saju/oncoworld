@@ -1,0 +1,6 @@
+FDG PET-CT:
+- FDG-avid retroperitoneal and mesenteric lymphadenopathy
+- FDG-avid right renal cortical lesion, 3.2 cm
+- FDG-avid left adrenal mass, 2.6 cm
+- FDG-avid liver lesion, 1.8 cm
+- No testicular, breast, or CNS lesions

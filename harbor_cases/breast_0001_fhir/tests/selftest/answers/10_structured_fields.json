@@ -1,0 +1,11 @@
+{
+  "diagnosis": {"histology": "Invasive ductal carcinoma, NST", "grade": "Nottingham grade 2", "size_cm": 1.8},
+  "stage": {"tnm": "pT1c pN0(sn) cM0", "anatomic_stage": "Stage IA", "prognostic_stage": "Stage IA"},
+  "biology": {"ER": "positive (95%)", "PR": "positive (80%)", "HER2": "Negative (IHC 1+, HER2-low)", "anti_HER2_therapy": "Not indicated"},
+  "genomic_risk": {"recurrence_score": 14, "category": "Low risk"},
+  "chemotherapy_decision": {"recommendation": "No adjuvant chemotherapy", "rationale": "Node-negative, postmenopausal, Recurrence Score 14 predicts no chemotherapy benefit"},
+  "endocrine_therapy": {"agent": "Aromatase inhibitor (letrozole)", "duration": "5 years, consider extending to 10 years", "alternative": "Tamoxifen"},
+  "radiotherapy": {"recommendation": "Whole-breast radiotherapy after lumpectomy"},
+  "supportive_monitoring": ["Baseline DEXA", "Calcium and vitamin D"],
+  "missing_information": ["Baseline DEXA result", "Patient preferences"]
+}

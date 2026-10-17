@@ -1,0 +1,11 @@
+{
+  "diagnosis": "Right breast IDC (infiltrating ductal carcinoma), grade 2, 18 mm, clear margins.",
+  "stage": "T1c N0 M0, AJCC stage IA.",
+  "biology": "ER+/PR+ luminal disease. HER2 1+ by IHC which counts as HER2-low, i.e. HER2 negative for adjuvant purposes.",
+  "genomic_risk": "Oncotype DX RS of 14 places her in the low-risk group.",
+  "chemotherapy_decision": "Skip chemo. With RS 14, node-negative disease and postmenopausal status, chemotherapy adds no benefit; endocrine therapy alone is appropriate.",
+  "endocrine_therapy": "Start letrozole daily, planned for five years, with consideration of extension to 10 years.",
+  "radiotherapy": "She should receive whole breast radiation following breast-conserving surgery.",
+  "supportive_monitoring": "Get a bone density scan at baseline and supplement calcium/vitamin D.",
+  "missing_information": ["Her preference regarding treatment burden", "Baseline bone density"]
+}

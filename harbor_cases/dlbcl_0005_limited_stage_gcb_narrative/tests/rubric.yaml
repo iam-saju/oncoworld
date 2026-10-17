@@ -1,0 +1,57 @@
+total_points: 100
+passing_score: 75
+
+domains:
+  diagnosis_and_COO:
+    points: 10
+    criteria:
+      DLBCL_NOS: 5
+      GCB_by_Hans: 3
+      avoids_non_GCB_or_ABC_call: 2
+
+  staging:
+    points: 15
+    criteria:
+      correct_Lugano_stage_I: 8
+      non_bulky_limited_stage_reasoning: 4
+      no_extranodal_or_marrow_disease: 3
+
+  molecular_classification:
+    points: 15
+    criteria:
+      identifies_not_double_expressor: 5
+      identifies_not_double_hit: 5
+      explains_IHC_vs_FISH: 5
+
+  prognosis:
+    points: 15
+    criteria:
+      IPI_low_risk: 6
+      CNS_IPI_low_risk: 5
+      identifies_absent_high_risk_features: 4
+
+  first_line_treatment:
+    points: 15
+    criteria:
+      curative_limited_stage_treatment: 6
+      R_CHOP_based: 5
+      considers_ISRT_or_PET_adapted: 4
+
+  CNS_management:
+    points: 15
+    criteria:
+      low_CNS_risk: 6
+      high_risk_sites_absent: 4
+      no_CNS_prophylaxis: 5
+
+  response_assessment:
+    points: 15
+    criteria:
+      PET_CT: 4
+      Lugano_Deauville: 6
+      end_of_treatment_assessment: 5
+
+critical_errors:
+  overstages_limited_case: -20
+  calls_low_expression_case_double_expressor_or_double_hit: -15
+  mandates_CNS_prophylaxis_low_risk: -15

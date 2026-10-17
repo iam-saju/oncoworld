@@ -1,0 +1,25 @@
+id = "dlbcl_0005_limited_stage_gcb_fhir"
+title = "Limited-stage GCB DLBCL: avoid overtreatment (FHIR)"
+domain = "hematology_oncology"
+subdomain = "lymphoma"
+difficulty = "intermediate"
+patient_type = "synthetic"
+task_type = "clinical_reasoning"
+input_format = "fhir_bundle"
+input_standard = "HL7 FHIR R4 (4.0.1); mCODE STU4 (hl7.fhir.us.mcode#4.0.0); US Core 6.1.0"
+
+[inference]
+requires_diagnosis = true
+requires_staging = true
+requires_prognosis = true
+requires_treatment = true
+requires_cns_risk = true
+requires_response_assessment = true
+
+[evaluation]
+rubric_file = "tests/rubric.yaml"
+gold_file = "solution/gold_answer.md"
+verifier = "tests/test.sh"
+expected_output = "/app/final_answer.json"
+max_score = 100
+passing_score = 75
