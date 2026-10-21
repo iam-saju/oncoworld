@@ -1,0 +1,17 @@
+{
+  "n_concurrent_trials": 1,
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "opencode/beam-free",
+      "kwargs": {
+        "disable_web_search": true
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "harbor_cases/dlbcl_0003_journey_v2"
+    }
+  ]
+}

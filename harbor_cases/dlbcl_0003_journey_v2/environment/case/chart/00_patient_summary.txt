@@ -1,0 +1,23 @@
+PATIENT SUMMARY (EHR export 2026-09-17)
+
+Name: Robert Sample (synthetic)    MRN: OW-0003
+DOB: 1959-06-21 (67 y)    Sex: male
+
+PROBLEM LIST
+- Type 2 diabetes mellitus (since 2014). On metformin. Last HbA1c 7.4%.
+- Essential hypertension (since 2011)
+- Gout (since 2019). Two flares of the left first MTP joint; no urate-lowering therapy.
+- Hyperlipidemia (since 2015)
+- Benign prostatic hyperplasia (since 2021)
+
+ACTIVE MEDICATIONS
+- Metformin 1000 mg tablet, 1 tablet by mouth twice daily
+- Lisinopril 20 mg tablet, 1 tablet by mouth daily
+- Atorvastatin 40 mg tablet, 1 tablet by mouth nightly
+- Tamsulosin 0.4 mg capsule, 1 capsule by mouth nightly
+- Ibuprofen 400 mg tablet, 1 tablet by mouth three to four times daily as needed for abdominal pain (patient-reported, started August 2026)
+
+ALLERGIES
+- Sulfonamide antibiotics: Generalized maculopapular rash (2009)
+
+This is a synthetic training case for AI evaluation. It is not clinical decision support.

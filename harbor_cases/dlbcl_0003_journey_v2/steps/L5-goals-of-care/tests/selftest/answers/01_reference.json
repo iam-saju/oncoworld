@@ -1,0 +1,10 @@
+{
+  "q1": "ECOG 3 (in bed or chair more than half the day, needs help with self-care) after CAR-T failure means intensive therapy and most clinical trials (usually ECOG 0-2) are not options. Lower-intensity options exist (bispecific antibodies such as glofitamab or epcoritamab, loncastuximab tesirine, polatuzumab-based regimens), but at ECOG 3 their expected benefit is modest, toxicity and hospital time are substantial, and his prognosis is likely a few months. The performance status helps frame a realistic conversation about his goals.",
+  "q2": "First confirm decision-making capacity. After his recent ICANS it is reasonable to check, and the note documents that he is oriented, understands, and repeats the information back accurately. Then hold a goals-of-care conversation: what matters most to him (being at home with family), his understanding of the prognosis, and his fears. Respect and honour his informed decision to stop anticancer treatment, and make clear he can revisit it at any time. Refer to specialist palliative care and home hospice. Treat symptoms: scheduled opioid for liver capsule pain, bowel regimen, assessment of the pleural effusion (thoracentesis or an indwelling pleural catheter for dyspnea), and palliative radiotherapy or steroids for painful sites if they help. Complete advance care planning: code status (DNR/POLST), healthcare proxy, preferred place of death. Continue to follow him; stopping treatment is not abandonment.",
+  "q3": "Address financial toxicity directly: refer to oncology social work and a financial navigator; explain that the hospice benefit covers home nursing, equipment and symptom medications related to the terminal illness; apply for co-pay foundation grants (e.g. lymphoma/leukemia patient assistance funds), utility and bill-relief programs, and transportation assistance; advise on job-protected leave (FMLA) and paid family-leave or caregiver benefits for the daughter. Caregiver support for his exhausted wife: hospice home health aides, respite care, counselling, and bereavement support for the family.",
+  "_expect": {
+    "passed": true,
+    "dangerous": [],
+    "all_met": true
+  }
+}

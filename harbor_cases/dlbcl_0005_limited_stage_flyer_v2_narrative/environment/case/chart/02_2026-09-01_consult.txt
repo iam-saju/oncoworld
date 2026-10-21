@@ -1,0 +1,38 @@
+HEMATOLOGY-ONCOLOGY NEW PATIENT CONSULTATION
+Date: 2026-09-01    Author: Synthetic Hematologist-Oncologist
+
+HPI: 45F referred for a right cervical lymph node, first noticed on self-exam about seven weeks ago and
+slowly enlarging. Painless. No dysphagia, odynophagia, hoarseness or stridor. Specifically denies
+fevers, drenching night sweats and unintentional weight loss (weight stable at 64 kg over the past year).
+No pruritus, no alcohol-induced pain. Energy normal; she is teaching full time and runs three times a week.
+No headache other than her usual migraines, no visual change apart from her typical auras, no focal
+weakness or numbness.
+
+PMH: migraine with aura since 2006 (visual zigzag aura of 15-20 minutes followed by unilateral throbbing
+headache, 2-3 per month; managed with sumatriptan; neurology follow-up every few years). Seasonal
+allergic rhinitis. No prior cancer, chemotherapy or radiation. No cardiac history. No history of blood
+clots.
+Gynecologic/obstetric: G2P2 (vaginal deliveries 2014 and 2017). Premenopausal with regular 28-day
+menses; LMP 2026-08-28. Contraception: combined oral contraceptive (ethinyl estradiol/levonorgestrel),
+started in 2019 by an outside clinic for contraception and cycle control; she has taken it continuously
+since. Last cervical screening 2024, normal. Has two children and is undecided about further pregnancy.
+Medications: see medication list.
+Allergies: codeine (severe nausea and vomiting).
+Social: elementary school teacher (third grade); married, lives with her husband and two children (ages
+9 and 12). Never smoker. Alcohol one or two glasses of wine per week. Very keen to keep working during
+treatment if at all possible.
+Family history: sister treated for Hodgkin lymphoma at 24 with chemotherapy and neck/chest radiation,
+in remission, later developed hypothyroidism. Mother with breast cancer at 62. Father with hypertension.
+
+Exam: T 36.7 C, HR 72, BP 118/72, RR 14, SpO2 99% RA. Weight 64 kg, height 166 cm (BSA 1.72 m2).
+Well-appearing. Right neck: firm, non-tender, mobile 3 cm node below the angle of the mandible (level II)
+and a 2 cm node in mid-neck (level III). No left cervical, supraclavicular, axillary or inguinal
+lymphadenopathy. Waldeyer ring unremarkable. Thyroid not enlarged. Breasts without masses. Chest clear,
+heart regular without murmur. Abdomen soft; no hepatosplenomegaly. Neuro non-focal.
+
+ECOG performance status 0.
+
+Plan today: CBC, CMP, LDH, beta-2 microglobulin, hepatitis B/C and HIV serologies; FDG PET-CT;
+referral to ENT for excisional biopsy of a right cervical node with flow cytometry and FISH;
+transthoracic echocardiogram. Bone marrow biopsy will not be performed if PET-CT shows no marrow uptake.
+Return after results.

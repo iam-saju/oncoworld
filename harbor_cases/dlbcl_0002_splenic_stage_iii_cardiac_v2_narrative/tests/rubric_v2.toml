@@ -1,0 +1,316 @@
+# HIDDEN. OncoWorld v2 rubric for dlbcl_0002. Copied to tests/rubric_v2.toml; never visible to the model.
+# Drafted by engineering from current practice (NCCN B-cell lymphomas, Lugano 2014, IPI/CNS-IPI,
+# ESC 2022 cardio-oncology guideline definitions of cancer therapy-related cardiac dysfunction).
+# Every item is PENDING_ONCOLOGIST until signed off in harbor_cases/<task>/review/signoff.md.
+#
+# The decision-changing fact: cumulative doxorubicin 240 mg/m2 + left breast radiotherapy (2016) and a new
+# LVEF decline 62% -> 45% (GLS -14%). Standard full-dose anthracycline (R-CHOP / Pola-R-CHP) must not be given
+# without addressing cardiac function.
+#
+# Regex fallback fields are a coarse safety net for runs without a judge; the judge reads `text`.
+# All regexes run on the lower-cased answer.
+
+version = "dlbcl_0002.v2.0"
+review_status = "PENDING_ONCOLOGIST"
+passing_score = 0.75
+
+[leak_check]
+# Strings that would give the answer away if they appeared anywhere in the model-visible chart.
+# "doxorubicin" and "anthracycline" are deliberately NOT here: the 2016 breast-cancer history names them.
+forbidden_in_case = ["stage iii", "stage iv", "ipi", "cns-ipi", "r-chop", "pola-r-chp", "polatuzumab", "r-ceop",
+                     "r-gcvp", "r-comp", "etoposide", "gemcitabine", "liposomal", "dexrazoxane", "cardiotoxicity",
+                     "cardiotoxic", "cardio-oncology", "cardiooncology", "ctrcd", "cardiac dysfunction",
+                     "cardiomyopathy", "cardioprotection", "cardioprotective", "carvedilol", "anthracycline-free",
+                     "double-expressor", "double expressor", "double-hit", "double hit", "lugano", "deauville",
+                     "prophylaxis", "bulk", "bulky", "b symptoms", "da-epoch-r", "tumor lysis", "allopurinol",
+                     "pegfilgrastim"]
+
+# ---------------- diagnosis
+[[items]]
+id = "dx_dlbcl_non_gcb"
+domain = "diagnosis"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response states the diagnosis is diffuse large B-cell lymphoma (NOS) with a non-germinal-center (non-GCB) phenotype by the Hans algorithm."
+all = ["dlbcl|diffuse large b[- ]cell", "non[- ]?gcb|non[- ]germinal|activated b[- ]cell|\\babc\\b"]
+
+[[items]]
+id = "dx_hans_not_abc"
+domain = "diagnosis"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes that Hans non-GCB is an immunohistochemical surrogate and is not equivalent to molecular ABC cell-of-origin by gene-expression profiling."
+any = ["(?:surrogate|approximat|not (?:equivalent|the same|equal|definitive|identical)|does not equal)[^.]{0,80}(?:\\babc\\b|activated b|molecular|gene[- ]expression|cell[- ]of[- ]origin)",
+       "(?:\\babc\\b|molecular|gene[- ]expression|cell[- ]of[- ]origin)[^.]{0,80}(?:not (?:equivalent|the same|established|determined|definitive|identical)|surrogate|requires)"]
+
+[[items]]
+id = "dx_not_breast_recurrence"
+domain = "diagnosis"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response states the left axillary node is lymphoma and not recurrent breast carcinoma (cytokeratin AE1/AE3 and GATA3 negative)."
+all = ["keratin|ae1/ae3|gata3", "breast|carcinoma"]
+
+# ---------------- staging
+[[items]]
+id = "stage_iii"
+domain = "staging"
+kind = "must"
+severity = "dangerous"
+points = 8
+text = "The response stages the disease as Lugano/Ann Arbor stage III (nodes on both sides of the diaphragm with splenic involvement)."
+any = ["\\bstage\\s*(?:iii|3)\\b"]
+
+[[items]]
+id = "stage_spleen_lymphatic"
+domain = "staging"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response explains that the spleen is lymphatic tissue (a nodal site), so splenic nodules do not make the disease stage IV, and that there is no non-lymphatic extranodal or marrow involvement."
+all = ["spleen|splenic", "lymph(?:atic|oid) (?:tissue|organ|site|structure)|(?<!extra)nodal site|not (?:an? |counted as (?:an? )?)?extranodal"]
+
+[[items]]
+id = "stage_b_symptoms"
+domain = "staging"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes B symptoms (documented fevers >38 C and drenching night sweats)."
+any = ["b[- ]symptoms", "fevers?[^.]{0,30}38"]
+
+[[items]]
+id = "stage_bulk_definition"
+domain = "staging"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes the 7.5 cm mass is below the 10 cm Lugano bulk threshold, acknowledging that bulk definitions vary (some trials use 7.5 cm)."
+all = ["bulk", "10\\s*cm"]
+
+[[items]]
+id = "mn_stage_iv"
+domain = "staging"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response stages this patient as stage IV (e.g. by counting splenic involvement as extranodal disease)."
+affirm = ["\\bstage\\s*(?:iv|4)\\b"]
+
+# ---------------- molecular classification
+[[items]]
+id = "mol_del_not_dh"
+domain = "molecular_classification"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response classifies the lymphoma as double-expressor by IHC (MYC 45% >=40%, BCL2 70% >=50%) but NOT double-hit (FISH shows no MYC, BCL2 or BCL6 rearrangement)."
+check = "denies_double_hit"
+any = ["double[- ]expressor|dual[- ]expressor|\\bdel\\b"]
+
+[[items]]
+id = "mn_calls_double_hit"
+domain = "molecular_classification"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response classifies this lymphoma as double-hit / high-grade B-cell lymphoma with MYC and BCL2 rearrangements."
+check = "affirms_double_hit"
+
+[[items]]
+id = "mn_da_epoch"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "important"
+points = 5
+text = "The response recommends DA-EPOCH-R (or another intensified regimen) on the basis of double-expressor biology."
+check = "recommends_da_epoch"
+
+# ---------------- prognosis
+[[items]]
+id = "prog_ipi_2"
+domain = "prognosis"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response calculates IPI as 2 (low-intermediate risk): elevated LDH and stage III; age 59, ECOG 1 and no extranodal sites (spleen is not counted as extranodal) score zero."
+any = ["(?<!cns[- ])\\bipi\\b[^.]{0,40}\\b2\\b", "(?<!cns[- ])\\bipi\\b[^.]{0,40}low[- ]intermediate", "low[- ]intermediate[^.]{0,20}\\bipi\\b"]
+
+[[items]]
+id = "prog_cns_ipi_2"
+domain = "prognosis"
+kind = "should"
+severity = "important"
+points = 3
+text = "The response calculates CNS-IPI as 2 (intermediate risk)."
+any = ["cns[- ]ipi[^.]{0,40}\\b2\\b", "cns[- ]ipi[^.]{0,60}intermediate"]
+
+# ---------------- CNS
+[[items]]
+id = "cns_no_routine_prophylaxis"
+domain = "cns_management"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response states that routine CNS prophylaxis is not indicated (CNS-IPI 2, no kidney/adrenal, testicular or breast involvement)."
+any = ["(?:no|not|without)[^.]{0,40}(?:routine )?(?:cns )?prophyla",
+       "prophyla[^.]{0,60}(?:not (?:automatically |routinely )?(?:indicated|recommended|required|needed|warranted)|unnecessary)"]
+
+[[items]]
+id = "mn_mandates_cns_prophylaxis"
+domain = "cns_management"
+kind = "must_not"
+severity = "important"
+points = 4
+text = "The response mandates CNS prophylaxis (high-dose methotrexate or intrathecal therapy) for this patient."
+recommend = ["(?:cns|central nervous system)[^.]{0,20}prophyla|high[- ]dose methotrexate|hd[- ]?mtx|intrathecal"]
+
+# ---------------- first-line treatment: the cardiac twist
+[[items]]
+id = "tx_cardiac_aware_no_full_dox"
+domain = "first_line_treatment"
+kind = "must"
+severity = "dangerous"
+points = 10
+text = "The response recognizes anthracycline-related cardiac risk (prior doxorubicin 240 mg/m2, left chest radiotherapy, LVEF fall from 62% to 45%, i.e. cancer therapy-related cardiac dysfunction) and does NOT plan standard full-dose doxorubicin (R-CHOP or Pola-R-CHP) without first addressing cardiac function."
+all = ["lvef|ejection fraction|\\bef\\b", "anthracycline|doxorubicin",
+       "cardiotox|cardiac dysfunction|ctrcd|cardiomyopathy|heart failure|cardiac (?:risk|toxicity|injury)"]
+
+[[items]]
+id = "mn_standard_dox_ignores_heart"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response recommends standard R-CHOP or Pola-R-CHP (full-dose doxorubicin) without conditioning it on the reduced LVEF / prior anthracycline exposure (e.g. without cardio-oncology clearance, a cardioprotective modification, or a non-anthracycline alternative)."
+# Sentence-scoped: fires on a sentence that puts R-CHOP / Pola-R-CHP forward as the plan with no cardiac,
+# conditional or substitution language in that same sentence. A conditional, cardiac-aware mention
+# ("R-CHOP with dexrazoxane only if cardio-oncology clears her") does not fire.
+recommend = ["^(?!.*(?:lvef|ejection|\\bef\\b|cardi|heart|echo|anthracycline|liposomal|dexrazoxane|contraindicat|unsafe|inappropriate|instead|rather than|substitut|in place of|replac|\\bif\\b|\\bonly\\b|\\bnot\\b|\\bunless\\b)).*?(?:pola[- ]?r[- ]?chp|polatuzumab|\\br[- ]?chop\\b)"]
+
+[[items]]
+id = "tx_cardio_onc_referral"
+domain = "first_line_treatment"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response requests urgent cardio-oncology (or cardiology) evaluation before starting therapy."
+any = ["cardio[- ]?oncolog"]
+
+[[items]]
+id = "tx_cardioprotection"
+domain = "first_line_treatment"
+kind = "must"
+severity = "important"
+points = 5
+text = "The response starts or optimizes guideline-directed cardioprotective therapy: an ACE inhibitor/ARB (or ARNI) plus a beta-blocker (e.g. carvedilol), for example replacing amlodipine."
+all = ["ace[- ]?inhibitor|\\bacei?\\b|\\barb\\b|lisinopril|ramipril|enalapril|perindopril|candesartan|losartan|valsartan|telmisartan|sacubitril|\\barni\\b",
+       "beta[- ]?blocker|carvedilol|metoprolol|bisoprolol|nebivolol"]
+
+[[items]]
+id = "tx_anthracycline_free_curative"
+domain = "first_line_treatment"
+kind = "must"
+severity = "important"
+points = 8
+text = "The response recommends a curative-intent anthracycline-free or anthracycline-modified regimen, e.g. R-CEOP (etoposide in place of doxorubicin) or R-GCVP; R-CHOP with liposomal doxorubicin or dexrazoxane is acceptable only if conditioned on cardio-oncology judging it safe."
+recommend = ["\\br[- ]?ceop\\b|\\br[- ]?gcvp\\b|anthracycline[- ]free|non[- ]anthracycline|etoposide|gemcitabine|liposomal|\\br[- ]comp\\b|dexrazoxane"]
+any = ["curative|\\bcure\\b"]
+
+[[items]]
+id = "tx_lower_efficacy_ack"
+domain = "first_line_treatment"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response acknowledges that anthracycline-free regimens likely have lower efficacy than anthracycline-based therapy."
+any = ["(?:lower|less|inferior|reduced|worse)[^.]{0,40}(?:efficacy|effective|cure|outcomes?|survival)",
+       "(?:efficacy|cure rates?|outcomes?|survival)[^.]{0,40}(?:lower|less|inferior|reduced|worse)"]
+
+[[items]]
+id = "tx_cardiac_monitoring"
+domain = "first_line_treatment"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response plans serial cardiac monitoring during therapy: repeat LVEF/GLS imaging plus troponin and/or natriuretic peptide (BNP/NT-proBNP)."
+all = ["troponin|bnp|natriuretic", "echo|lvef|strain|muga|cardiac mri"]
+
+[[items]]
+id = "mn_non_curative"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response recommends palliative-only treatment, best supportive care, or hospice as the plan."
+recommend = ["palliative[- ](?:only|intent|care alone)|best supportive care|hospice"]
+
+# ---------------- response assessment
+[[items]]
+id = "resp_eot_pet_lugano"
+domain = "response_assessment"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response plans an end-of-treatment FDG PET-CT read with Lugano criteria / Deauville 5-point scale."
+all = ["pet", "deauville|lugano", "end[- ]of[- ](?:treatment|therapy)|after (?:completion|completing)|completion of|\\beot\\b|post[- ]treatment|final pet"]
+
+# ---------------- supportive care
+[[items]]
+id = "sup_tls_allopurinol"
+domain = "supportive_care"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response assesses tumor lysis risk as low-intermediate (normal creatinine and uric acid, LDH ~2x ULN) and gives allopurinol with hydration for cycle 1."
+all = ["tumou?r lysis|\\btls\\b", "allopurinol"]
+
+[[items]]
+id = "sup_gcsf"
+domain = "supportive_care"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response recommends (or reasonably considers) primary G-CSF support with each cycle."
+any = ["g[- ]?csf", "pegfilgrastim", "filgrastim", "growth factor"]
+
+[[items]]
+id = "sup_anastrozole"
+domain = "supportive_care"
+kind = "should"
+severity = "minor"
+points = 1
+text = "The response addresses the ongoing anastrozole: continuing it is acceptable (no meaningful interaction), or holding it in coordination with breast oncology is also acceptable."
+any = ["anastrozole|aromatase inhibitor"]
+
+[[items]]
+id = "work_hbv_reviewed"
+domain = "pretreatment_workup"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response confirms hepatitis B serology was checked (HBsAg and anti-HBc nonreactive) before rituximab."
+any = ["hbsag|hepatitis b|anti[- ]hbc|\\bhbv\\b"]
+
+# ---------------- fitness and goals
+[[items]]
+id = "fit_curative_ecog1"
+domain = "fitness_and_goals"
+kind = "must"
+severity = "important"
+points = 4
+text = "The response judges the patient fit for curative-intent therapy (ECOG 1, normal organ function apart from the LVEF) and acknowledges her goal of cure."
+all = ["ecog[^.]{0,15}\\b1\\b", "cur(?:e|ative)"]
+
+# ---------------- missing information
+[[items]]
+id = "miss_cardiac_workup"
+domain = "missing_information"
+kind = "should"
+severity = "important"
+points = 3
+text = "The response lists the cause of the LVEF decline / cardio-oncology work-up as missing (e.g. ischemic evaluation given prior left chest radiotherapy, cardiac MRI, baseline troponin and NT-proBNP)."
+any = ["ischemi|coronary|stress (?:test|imaging|echo)|cardiac mri|\\bcmr\\b|(?:cause|etiology|aetiology) of[^.]{0,30}(?:lvef|ef\\b|decline|dysfunction)"]

@@ -1,0 +1,306 @@
+# OncoWorld v2 case source: dlbcl_0005 (limited-stage GCB DLBCL in a young woman; contraception and RT-avoidance).
+# MODEL-VISIBLE. Everything in this file is rendered into the narrative chart AND the FHIR bundle by
+# scripts/build_cases_v2.py. Never put interpretations, scores, stage or treatment here: those live in
+# gold.json / rubric_v2.toml. review_status stays PENDING_ONCOLOGIST until signed off.
+#
+# No bone marrow biopsy was performed (PET-CT without marrow uptake), so there is no marrow_report document.
+# No pregnancy test was performed before the tumor-board visit; do not add hcg_urine to the labs.
+
+[meta]
+case_id = "dlbcl_0005"
+slug = "limited_stage_flyer"
+title = "Localized cervical DLBCL in a 45-year-old teacher on a combined oral contraceptive: tumor-board plan"
+difficulty = "intermediate"
+record_date = "2026-09-17"        # the chart is exported the day before tumor board
+review_status = "PENDING_ONCOLOGIST"
+
+[patient]
+given = "Laura"
+family = "Sample"
+gender = "female"
+birth_date = "1981-02-19"
+mrn = "OW-0005"
+
+[ecog]
+date = "2026-09-01"
+value = 0
+
+# Past medical history -> FHIR Condition (problem list), narrative consult note.
+[[conditions]]
+code = "4473006"
+display = "Migraine with aura"
+onset = "2006"
+note = "Typical visual aura (scintillating zigzag lines for 15-20 minutes) followed by unilateral headache, 2-3 episodes per month. Diagnosed by neurology 2006."
+
+[[conditions]]
+code = "61582004"
+display = "Allergic rhinitis"
+onset = "2012"
+note = "Seasonal; cetirizine as needed."
+
+[[medications]]
+text = "Ethinyl estradiol 0.03 mg / levonorgestrel 0.15 mg tablet (combined oral contraceptive), 1 tablet by mouth daily (since 2019)"
+
+[[medications]]
+text = "Sumatriptan 50 mg tablet, 1 tablet by mouth at headache onset as needed, may repeat once after 2 hours"
+
+[[medications]]
+text = "Cetirizine 10 mg tablet, 1 tablet by mouth daily as needed (seasonal)"
+
+[[allergies]]
+substance = "Codeine"
+reaction = "Severe nausea and vomiting (2015)"
+
+# Laboratory results. flag is computed from low/high by the builder; never hand-written.
+[[labs]]
+date = "2026-09-01"
+panel = "Complete blood count with differential"
+items = [
+  { key = "hb", value = 13.2 },
+  { key = "mcv", value = 88 },
+  { key = "wbc", value = 5.9 },
+  { key = "anc", value = 3.6 },
+  { key = "alc", value = 1.7 },
+  { key = "plt", value = 240 },
+]
+
+[[labs]]
+date = "2026-09-01"
+panel = "Comprehensive metabolic panel and tumor markers"
+items = [
+  { key = "na", value = 139 },
+  { key = "k", value = 4.1 },
+  { key = "cl", value = 103 },
+  { key = "co2", value = 25 },
+  { key = "bun", value = 12 },
+  { key = "creatinine", value = 0.7 },
+  { key = "egfr", value = 108 },
+  { key = "glucose", value = 88 },
+  { key = "ca", value = 9.4 },
+  { key = "albumin", value = 4.4 },
+  { key = "protein", value = 7.1 },
+  { key = "ast", value = 21 },
+  { key = "alt", value = 18 },
+  { key = "alp", value = 72 },
+  { key = "tbili", value = 0.5 },
+  { key = "urate", value = 4.6 },
+  { key = "phos", value = 3.5 },
+  { key = "ldh", value = 190 },
+  { key = "b2m", value = 1.6 },
+]
+
+[[labs]]
+date = "2026-09-01"
+panel = "Infectious disease serologies"
+items = [
+  { key = "hbsag", value = "Nonreactive" },
+  { key = "anti_hbc", value = "Nonreactive" },
+  { key = "anti_hbs", value = "Reactive" },
+  { key = "hcv_ab", value = "Nonreactive" },
+  { key = "hiv_agab", value = "Nonreactive" },
+]
+
+# Structured pathology for the FHIR tumor-marker Observations. The builder checks every value here
+# also appears in the pathology document text, so the two formats cannot drift.
+[pathology]
+specimen_label = "Excisional biopsy, right cervical lymph node (level III)"
+biopsy = ["21911005", "Biopsy of lymph node", "309079007", "Lymph node biopsy specimen", "81105003", "Cervical lymph node structure"]
+collected = "2026-09-04"
+diagnosis = "dlbcl"
+ihc = { CD20 = true, CD10 = true, BCL6 = true, MUM1 = false, BCL2 = 30, MYC = 15, KI67 = 55 }
+ihc_date = "2026-09-09"
+fish = { MYC = false, BCL2 = false, BCL6 = false }
+fish_date = "2026-09-15"
+marrow_involved = false          # no marrow biopsy performed; PET-CT shows no marrow uptake
+
+[[documents]]
+id = "referral"
+date = "2026-08-19"
+kind = "referral_note"
+title = "Primary care referral to hematology-oncology"
+author = "Synthetic Primary Care Physician"
+text = """
+Reason for referral: enlarging right neck lymph node, suspected lymphoma.
+
+Ms. Sample is a 45-year-old elementary school teacher, otherwise well apart from migraine with aura.
+About six weeks ago she noticed a painless lump on the right side of her neck on self-exam while
+putting on a necklace. It has slowly enlarged. No recent sore throat, dental infection, cat scratch or
+travel. She feels well and denies fevers, night sweats or weight loss.
+
+Exam: firm, non-tender, mobile right cervical lymph node about 3 cm below the angle of the jaw, with a
+smaller adjacent node. Oropharynx clear. No other palpable lymphadenopathy.
+
+Neck ultrasound 2026-08-14 (outside facility): several enlarged right level II-III lymph nodes, the
+largest 3.0 x 2.3 cm, rounded, with loss of the fatty hilum and increased vascularity. Thyroid normal.
+Impression: suspicious for lymphoma; tissue diagnosis recommended.
+
+A two-week course of amoxicillin-clavulanate made no difference. Please evaluate.
+"""
+
+[[documents]]
+id = "consult"
+date = "2026-09-01"
+kind = "consult_note"
+title = "Hematology-oncology new patient consultation"
+author = "Synthetic Hematologist-Oncologist"
+text = """
+HPI: 45F referred for a right cervical lymph node, first noticed on self-exam about seven weeks ago and
+slowly enlarging. Painless. No dysphagia, odynophagia, hoarseness or stridor. Specifically denies
+fevers, drenching night sweats and unintentional weight loss (weight stable at 64 kg over the past year).
+No pruritus, no alcohol-induced pain. Energy normal; she is teaching full time and runs three times a week.
+No headache other than her usual migraines, no visual change apart from her typical auras, no focal
+weakness or numbness.
+
+PMH: migraine with aura since 2006 (visual zigzag aura of 15-20 minutes followed by unilateral throbbing
+headache, 2-3 per month; managed with sumatriptan; neurology follow-up every few years). Seasonal
+allergic rhinitis. No prior cancer, chemotherapy or radiation. No cardiac history. No history of blood
+clots.
+Gynecologic/obstetric: G2P2 (vaginal deliveries 2014 and 2017). Premenopausal with regular 28-day
+menses; LMP 2026-08-28. Contraception: combined oral contraceptive (ethinyl estradiol/levonorgestrel),
+started in 2019 by an outside clinic for contraception and cycle control; she has taken it continuously
+since. Last cervical screening 2024, normal. Has two children and is undecided about further pregnancy.
+Medications: see medication list.
+Allergies: codeine (severe nausea and vomiting).
+Social: elementary school teacher (third grade); married, lives with her husband and two children (ages
+9 and 12). Never smoker. Alcohol one or two glasses of wine per week. Very keen to keep working during
+treatment if at all possible.
+Family history: sister treated for Hodgkin lymphoma at 24 with chemotherapy and neck/chest radiation,
+in remission, later developed hypothyroidism. Mother with breast cancer at 62. Father with hypertension.
+
+Exam: T 36.7 C, HR 72, BP 118/72, RR 14, SpO2 99% RA. Weight 64 kg, height 166 cm (BSA 1.72 m2).
+Well-appearing. Right neck: firm, non-tender, mobile 3 cm node below the angle of the mandible (level II)
+and a 2 cm node in mid-neck (level III). No left cervical, supraclavicular, axillary or inguinal
+lymphadenopathy. Waldeyer ring unremarkable. Thyroid not enlarged. Breasts without masses. Chest clear,
+heart regular without murmur. Abdomen soft; no hepatosplenomegaly. Neuro non-focal.
+
+ECOG performance status 0.
+
+Plan today: CBC, CMP, LDH, beta-2 microglobulin, hepatitis B/C and HIV serologies; FDG PET-CT;
+referral to ENT for excisional biopsy of a right cervical node with flow cytometry and FISH;
+transthoracic echocardiogram. Bone marrow biopsy will not be performed if PET-CT shows no marrow uptake.
+Return after results.
+"""
+
+[[documents]]
+id = "pet"
+date = "2026-09-03"
+kind = "pet_ct_report"
+title = "FDG PET-CT, skull base to mid-thigh"
+author = "Synthetic Nuclear Medicine Physician"
+text = """
+CLINICAL INDICATION: Right cervical lymphadenopathy, suspected lymphoma. Initial staging before biopsy.
+
+TECHNIQUE: 8.6 mCi 18F-FDG IV; uptake time 60 minutes; serum glucose at injection 91 mg/dL.
+Low-dose non-contrast CT for attenuation correction and localization. Mediastinal blood pool SUVmax
+1.9; liver SUVmax 2.6.
+
+FINDINGS:
+Head and neck: physiologic brain uptake (PET is insensitive for intracranial disease). Cluster of
+FDG-avid right cervical lymph nodes at levels II and III, contiguous within a single nodal region:
+the largest right level IIA node measures 3.1 x 2.4 cm (SUVmax 14.2); the level III node measures
+2.1 x 1.6 cm (SUVmax 11.8). No FDG-avid left cervical, supraclavicular or retropharyngeal nodes.
+Waldeyer ring with symmetric physiologic tonsillar uptake. Thyroid without focal uptake.
+Chest: no FDG-avid mediastinal, hilar, internal mammary or axillary nodes. Lungs clear. Breasts without
+focal uptake. No effusion.
+Abdomen and pelvis: no FDG-avid retroperitoneal, mesenteric, pelvic or inguinal nodes. Liver without
+focal uptake. Spleen normal in size (10 cm) with homogeneous uptake below liver. Kidneys and adrenal
+glands normal. Physiologic bowel and urinary tract activity. Physiologic endometrial uptake, consistent
+with menstrual-cycle phase. Small right ovarian follicular cyst (2.0 cm) with mild physiologic uptake.
+Musculoskeletal: homogeneous marrow activity, no focal osseous or marrow FDG uptake.
+
+IMPRESSION:
+1. FDG-avid right cervical (level II-III) lymphadenopathy, largest node 3.1 cm, SUVmax 14.2, consistent
+   with lymphoma. Tissue confirmation pending.
+2. No other FDG-avid nodal or extranodal disease; no splenic, hepatic, osseous or marrow involvement.
+3. Physiologic endometrial and ovarian uptake.
+"""
+
+[[documents]]
+id = "pathology"
+date = "2026-09-09"
+kind = "pathology_report"
+title = "Surgical pathology: excisional biopsy, right cervical lymph node"
+author = "Synthetic Hematopathologist"
+amended = "2026-09-15"
+text = """
+SPECIMEN: Right cervical lymph node, level III, excisional biopsy (ENT), collected 2026-09-04.
+Received fresh: one intact lymph node, 2.2 x 1.7 x 1.4 cm. Portions sent for flow cytometry and
+cytogenetics. The larger level IIA node was not excised.
+
+FINAL DIAGNOSIS: DIFFUSE LARGE B-CELL LYMPHOMA, NOT OTHERWISE SPECIFIED.
+
+MICROSCOPIC: Effacement of nodal architecture by diffuse sheets of large atypical lymphoid cells with
+vesicular chromatin and one to several nucleoli; scattered mitoses. No residual follicles; no
+low-grade (follicular) component identified. No necrosis. Capsular involvement without extranodal
+soft-tissue extension.
+
+IMMUNOHISTOCHEMISTRY (adequate controls):
+  CD20       positive (diffuse, strong)
+  PAX5       positive
+  CD3        negative in tumor cells (scattered background T cells)
+  CD5        negative
+  CD10       positive (diffuse)
+  BCL6       positive
+  MUM1/IRF4  negative (<10% of tumor cells)
+  BCL2       positive in approximately 30% of tumor cells
+  MYC        positive in approximately 15% of tumor cells
+  Cyclin D1  negative
+  CD30       negative
+  Ki-67      approximately 55%
+  EBER ISH   negative
+
+FLOW CYTOMETRY: CD19+, CD20+, CD10+ kappa-restricted B-cell population of large cells (about 70% of
+events); CD5 negative.
+
+COMMENT: Germinal-center B-cell-like immunophenotype by the Hans algorithm. FISH for MYC, BCL2 and
+BCL6 rearrangements has been requested on block A2; results will be reported in an addendum.
+
+ADDENDUM (2026-09-15): FISH, interphase, break-apart probes, 200 nuclei scored.
+  MYC (8q24):   no rearrangement detected
+  BCL2 (18q21): no rearrangement detected
+  BCL6 (3q27):  no rearrangement detected
+The final diagnosis is unchanged.
+"""
+
+[[documents]]
+id = "echo"
+date = "2026-09-08"
+kind = "echo_report"
+title = "Transthoracic echocardiogram"
+author = "Synthetic Cardiologist"
+text = """
+Indication: baseline before possible anthracycline-containing chemotherapy.
+Left ventricle normal in size with normal wall thickness. LVEF 63% (biplane Simpson's).
+No regional wall-motion abnormality. Normal diastolic function. Global longitudinal strain -21%.
+Right ventricle normal. Valves structurally normal without significant regurgitation. No pericardial
+effusion.
+"""
+
+[[documents]]
+id = "progress"
+date = "2026-09-17"
+kind = "progress_note"
+title = "Hematology-oncology follow-up (results visit, pre-tumor board)"
+author = "Synthetic Hematologist-Oncologist"
+text = """
+Results reviewed with the patient and her husband. Biopsy shows DLBCL; FISH addendum received.
+Neck incision healing well. The remaining right upper neck node is unchanged to palpation (about 3 cm).
+Still no fevers, night sweats or weight loss; weight 64 kg. Working full time.
+
+Interval history: two migraine episodes with her usual visual aura this month, both relieved by
+sumatriptan. She continues her combined oral contraceptive daily without breaks. Currently day 21 of her
+cycle. No new medications.
+
+Exam: T 36.6 C, HR 70, BP 116/70. Healed right neck incision. Residual right level II node about 3 cm,
+mobile. No new lymphadenopathy. Abdomen benign.
+
+Patient questions and goals:
+- She asks whether she can avoid radiation to her neck. Her sister became hypothyroid after neck
+  radiation for Hodgkin lymphoma and she is worried about her thyroid, dry mouth and taste changes.
+- She wants treatment aimed at cure and hopes to keep teaching, taking as few days off as possible;
+  the school can adjust her timetable around treatment days.
+- She and her husband have not decided whether they want another child and would like to know how
+  treatment affects her fertility.
+
+Case to be presented at lymphoma tumor board 2026-09-18 for a treatment plan; no treatment started yet.
+"""

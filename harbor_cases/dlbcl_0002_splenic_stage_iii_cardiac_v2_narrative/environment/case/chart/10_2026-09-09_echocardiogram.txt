@@ -1,0 +1,22 @@
+TRANSTHORACIC ECHOCARDIOGRAM
+Date: 2026-09-09    Author: Synthetic Cardiologist
+
+Indication: baseline before planned lymphoma chemotherapy. Prior doxorubicin (2016) and left breast
+radiotherapy (2016). Hypertension.
+BP 148/90, HR 82, sinus rhythm.
+
+Left ventricle: normal size (LVIDd 4.9 cm), normal wall thickness. Mild global hypokinesis without a
+regional wall-motion abnormality. LVEF 45% (biplane Simpson's). Global longitudinal strain -14%
+(laboratory normal more negative than -18%). Grade I diastolic dysfunction.
+Right ventricle: normal size and function (TAPSE 2.1 cm).
+Valves: mild mitral regurgitation; aortic valve trileaflet without stenosis.
+No pericardial effusion. Estimated RV systolic pressure 28 mmHg.
+
+Comparison: transthoracic echocardiogram 2016-02-15, LVEF 62% (biplane), normal wall motion; strain not
+performed.
+
+CONCLUSION:
+1. Mildly reduced left ventricular systolic function, LVEF 45%, with mild global hypokinesis and
+   reduced global longitudinal strain (-14%).
+2. LVEF decreased from 62% on the 2016 study.
+3. Grade I diastolic dysfunction. Mild mitral regurgitation.

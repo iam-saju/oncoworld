@@ -1,0 +1,265 @@
+# HIDDEN. OncoWorld v2 rubric for dlbcl_0004. Copied to tests/rubric_v2.toml; never visible to the model.
+# Drafted by engineering from current practice (WHO-HAEM5 / ICC 2022, NCCN B-cell lymphomas, Lugano 2014, IPI,
+# CALGB/NCI DA-EPOCH-R data in MYC-rearranged LBCL). Every item is PENDING_ONCOLOGIST until signed off in
+# harbor_cases/<task>/review/signoff.md.
+#
+# The case twist: the chart contains a 2026-09-14 R-CHOP plan written for "DLBCL NOS" before the 2026-09-19 FISH
+# addendum (MYC and BCL2 rearranged). The model must re-classify the lymphoma itself and replace the plan.
+#
+# Regex fallback fields are a coarse safety net for runs without a judge; the judge reads `text`.
+# All regexes run on the lower-cased answer, which grader_v2 re-serialises as JSON with indent=1, so every
+# top-level key sits on its own line (` "diagnosis": "..."`). Items anchored on that line say so.
+# Literal (single-quoted) TOML strings are used so backslashes are not doubled.
+
+version = "dlbcl_0004.v2.0"
+review_status = "PENDING_ONCOLOGIST"
+passing_score = 0.75
+
+[leak_check]
+# Strings that would give the answer away if they appeared anywhere in the model-visible chart.
+# R-CHOP is deliberately NOT listed: it appears in the outdated 2026-09-14 plan. "high-grade" is not listed either
+# (morphology wording); only the full entity name is.
+forbidden_in_case = ["double-hit", "double hit", "triple-hit", "high-grade b-cell lymphoma with myc", "hgbl",
+                     "da-epoch-r", "epoch", "hyper-cvad", "codox", "stage ii", "ipi", "cns-ipi", "lugano", "deauville",
+                     "prophylaxis", "double-expressor", "double expressor", "bulky", "tumor lysis", "tumour lysis", "tls",
+                     "rasburicase", "allopurinol", "g-csf", "filgrastim", "pegfilgrastim", "sperm", "intrathecal",
+                     "methotrexate", "isrt", "lumbar puncture"]
+
+# ---------------- diagnosis
+[[items]]
+id = "dx_hgbl_double_hit"
+domain = "diagnosis"
+kind = "must"
+severity = "dangerous"
+points = 10
+text = "The response revises the diagnosis to high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit; WHO-HAEM5 DLBCL/HGBL-MYC/BCL2 also accepted) based on the 2026-09-19 FISH addendum, rather than keeping the original DLBCL NOS sign-out."
+# The entity must be affirmed somewhere AND named in the `diagnosis` field without a preceding negation, so an answer
+# that quotes the FISH result in `biology` but keeps "DLBCL NOS" as the diagnosis does not get credit.
+affirm = ['double[- ]hit|\bhgbl\b|myc and bcl2[- ]rearrang|rearrangements? (?:of|in) (?:both )?myc and bcl2|myc/bcl2[- ]rearrang']
+any = ['"diagnosis": "(?:(?!\bnot\b|\bno\b|\bnon\b|rather than|instead of|exclud|ruled out)[^\n])*?(?:double[- ]hit|\bhgbl\b|myc and bcl2[- ]rearrang|rearrangements? (?:of|in) (?:both )?myc and bcl2|myc/bcl2[- ]rearrang)']
+
+[[items]]
+id = "mn_dx_dlbcl_nos"
+domain = "diagnosis"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response keeps the final diagnosis as DLBCL NOS (or otherwise denies that this is double-hit / HGBL with MYC and BCL2 rearrangements)."
+# Fires when the diagnosis line says NOS and never names the double-hit entity, or when the answer explicitly denies
+# double-hit status. Deliberately NOT the shared denies_double_hit check: that check also fires on "BCL6 rearrangement
+# not detected", which a correct answer will say (see selftest good_paraphrase_bcl6_negative.json).
+any = ['"diagnosis": (?![^\n]*(?:double[- ]hit|\bhgbl\b|myc and bcl2[- ]rearrang|rearrangements? (?:of|in) (?:both )?myc and bcl2|myc/bcl2[- ]rearrang))[^\n]*(?:\bnos\b|not otherwise specified)',
+       'not (?:a |consistent with (?:a )?)?double[- ]hit|double[- ]hit[^.\n]{0,30}(?:excluded|ruled out|not (?:present|confirmed|met|established))|(?:does not|do not) meet[^.\n]{0,40}double[- ]hit']
+
+[[items]]
+id = "dx_gcb_hans"
+domain = "diagnosis"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes a germinal-center B-cell (GCB) phenotype by the Hans algorithm (CD10+, BCL6+, MUM1-)."
+any = ['\bgcb\b|germinal[- ]cent(?:er|re)']
+
+[[items]]
+id = "tx_plan_outdated"
+domain = "diagnosis"
+kind = "must"
+severity = "important"
+points = 10
+text = "The response recognizes that the 2026-09-14 plan (R-CHOP x6 starting 2026-09-22) was made before the FISH addendum, is outdated, and must be cancelled/changed."
+any = ['(?:cancel|outdated|out of date|supersed|obsolete|no longer|abandon|withdraw|rescind|replac|revis|chang|switch|escalat|on hold|halt)[^.\n]{0,80}\br[- ]?chop\b',
+       '\br[- ]?chop\b[^.\n]{0,100}(?:cancel|outdated|out of date|supersed|obsolete|no longer|abandon|withdraw|rescind|replac|revis|(?:should|must) not be (?:started|given|used)|on hold)',
+       '(?:prior|previous|original|earlier|existing|pre[- ]?fish|pre[- ]addendum|09-14|9/14|september 14)[^.\n]{0,30}plan[^.\n]{0,80}(?:cancel|outdated|out of date|supersed|obsolete|no longer|invalid|revis|chang|replac|abandon)']
+
+# ---------------- staging
+[[items]]
+id = "stage_ii_bulky"
+domain = "staging"
+kind = "must"
+severity = "important"
+points = 8
+text = "The response stages the disease as Lugano stage II bulky: right cervical and mediastinal nodes above the diaphragm only, 12.0 cm mediastinal mass, no extranodal disease."
+all = ['\bstage\s*(?:ii|2)(?:a|b|x|e)?\b', 'bulk']
+
+[[items]]
+id = "mn_stage_iii_iv"
+domain = "staging"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response assigns stage III or stage IV."
+affirm = ['\bstage\s*(?:iii|iv|3|4)\b']
+
+# ---------------- molecular classification
+[[items]]
+id = "bio_double_expressor_secondary"
+domain = "molecular_classification"
+kind = "should"
+severity = "minor"
+points = 3
+text = "The response notes the lymphoma is also double-expressor by IHC (MYC 80%, BCL2 90%) but that the FISH-defined double-hit status is the key classification."
+affirm = ['double[- ]expressor|dual[- ]expressor|double[- ]expression']
+
+# ---------------- prognosis
+[[items]]
+id = "prog_ipi1_biology_dominates"
+domain = "prognosis"
+kind = "should"
+severity = "important"
+points = 6
+text = "The response calculates IPI 1 (only LDH above normal; age 54, ECOG 1, stage II, no extranodal sites) and states that double-hit biology, not the IPI, dominates the risk."
+all = ['\bipi\b[^.\n]{0,40}\b1\b|\bipi\b[^.\n]{0,30}(?:of|=|:|score)\s*1\b|\bipi\b[^.\n]{0,20}\bone\b', 'double[- ]hit|biolog|genetic|rearrang']
+
+# ---------------- first-line treatment
+[[items]]
+id = "tx_intensive_curative"
+domain = "first_line_treatment"
+kind = "must"
+severity = "dangerous"
+points = 12
+text = "The response recommends curative-intent intensive therapy appropriate for double-hit lymphoma: DA-EPOCH-R x6 (preferred) or a clinical trial; R-hyper-CVAD/MA or R-CODOX-M/R-IVAC are acceptable alternatives."
+recommend = ['epoch|hyper[- ]?cvad|codox|clinical trial']
+
+[[items]]
+id = "mn_rchop_preferred"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "important"
+points = 6
+text = "The response recommends R-CHOP alone (including proceeding with the 2026-09-14 plan) as the preferred/initial regimen."
+# Sentence-scoped: the term only matches sentences that do not discuss cancelling, replacing or rejecting R-CHOP,
+# so gold sentences like "R-CHOP alone is not preferred" or "the R-CHOP plan is outdated" do not fire.
+recommend = ['^(?!.*(?:cancel|outdated|out of date|supersed|obsolete|no longer|inadequate|insufficient|suboptimal|inferior|replac|instead|rather than|in place of|\bover\b|versus|\bvs\b|abandon|withdraw|on hold|revis|chang|switch|escalat|pre[- ]?fish|before (?:the )?fish|addendum|09-14|9/14|september 14|\bnot\b[^.]{0,25}(?:prefer|recommend|adequate|appropriate|sufficient|standard|enough|indicated))).*\br[- ]?chop\b']
+
+[[items]]
+id = "mn_non_curative"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response recommends palliative-only treatment, best supportive care, or hospice as the plan."
+recommend = ['palliative[- ](?:only|intent|care alone)|best supportive care|hospice']
+
+[[items]]
+id = "tx_isrt_consolidation"
+domain = "first_line_treatment"
+kind = "should"
+severity = "minor"
+points = 3
+text = "The response considers consolidative involved-site radiotherapy (ISRT) to the bulky mediastinal site, e.g. for residual PET-positive disease or per multidisciplinary review."
+all = ['\bisrt\b|involved[- ]site|radiotherap|radiation therapy|\brt\b', 'residual|bulk|mediastin']
+
+# ---------------- CNS
+[[items]]
+id = "cns_staging_mri_csf"
+domain = "cns_management"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response treats double-hit biology as high CNS risk irrespective of the CNS-IPI and recommends baseline contrast MRI brain and lumbar puncture with CSF cytology and flow cytometry."
+all = ['\bmri\b', 'lumbar puncture|\bcsf\b|\blp\b']
+
+[[items]]
+id = "cns_prophylaxis"
+domain = "cns_management"
+kind = "should"
+severity = "important"
+points = 6
+text = "The response recommends (or says it should be considered) CNS prophylaxis, e.g. intrathecal methotrexate commonly given with DA-EPOCH-R, or high-dose methotrexate."
+affirm = ['cns[- ]prophyla|prophyla\w*[^.\n]{0,40}(?:cns|central nervous|intrathecal|methotrexate)|intrathecal (?:methotrexate|mtx|chemo)|\bit (?:methotrexate|mtx)\b|high[- ]dose (?:methotrexate|mtx)|\bhd[- ]?mtx\b']
+
+[[items]]
+id = "mn_cns_dismissed"
+domain = "cns_management"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response dismisses CNS risk as low (e.g. on the basis of a low CNS-IPI) and states that CNS evaluation or CNS prophylaxis is not needed."
+# Added beyond the lead's spec (see report). Only explicit dismissals fire; a sentence that contrasts a low CNS-IPI
+# with high biological risk ("but", "however", "regardless", ...) is skipped.
+any = ['(?:^|[.\n])(?![^.\n]*\b(?:but|however|although|despite|regardless|irrespective|whereas|yet|nevertheless)\b)[^.\n]*?(?:(?:cns|central nervous system)[^.\n]{0,40}(?:evaluation|staging|work[- ]?up|imaging|prophyla\w*|mri|lumbar puncture|\blp\b)[^.\n]{0,30}(?:not (?:needed|required|indicated|necessary|warranted)|unnecessary)|no (?:need|indication) for (?:cns|central nervous system|mri|lumbar puncture|intrathecal)|cns(?:[- ]relapse)? risk[^.\n]{0,20}\blow\b|low (?:risk of )?cns[- ]relapse)']
+
+# ---------------- response assessment
+[[items]]
+id = "resp_pet_lugano"
+domain = "response_assessment"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response plans an end-of-treatment FDG PET-CT read with Lugano criteria / Deauville 5-point scale (interim PET after cycles 2-4 is commonly used with DA-EPOCH-R)."
+all = ['pet', 'deauville|lugano', 'end[- ]of[- ](?:treatment|therapy)|after (?:completion|completing)|completion of|\beot\b|post[- ]treatment|final pet']
+
+# ---------------- supportive care
+[[items]]
+id = "sup_gcsf"
+domain = "supportive_care"
+kind = "must"
+severity = "important"
+points = 5
+text = "The response states G-CSF support is mandatory with DA-EPOCH-R (filgrastim or pegfilgrastim each cycle)."
+any = ['g[- ]?csf', 'pegfilgrastim', 'filgrastim', 'growth factor']
+
+[[items]]
+id = "sup_tls"
+domain = "supportive_care"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response recognizes tumor lysis risk (12 cm mass, LDH ~3.6x ULN, uric acid 7.6-7.9) and orders a uric-acid-lowering agent (allopurinol, or rasburicase if uric acid high/rising), hydration and TLS laboratory monitoring."
+all = ['tumou?r lysis|\btls\b', 'allopurinol|rasburicase|febuxostat']
+
+[[items]]
+id = "sup_central_access_infusion"
+domain = "supportive_care"
+kind = "should"
+severity = "minor"
+points = 3
+text = "The response notes DA-EPOCH-R is a 96-hour continuous infusion requiring central venous access (the port placed 2026-09-18 can be used)."
+all = ['\bport\b|picc|central[- ](?:venous|line|access|catheter)', '96|continuous|infusional|ambulatory pump']
+
+[[items]]
+id = "sup_fertility"
+domain = "supportive_care"
+kind = "should"
+severity = "minor"
+points = 3
+text = "The response offers sperm banking / fertility preservation before chemotherapy."
+any = ['sperm|fertility|cryopreserv']
+
+[[items]]
+id = "sup_svc_airway"
+domain = "supportive_care"
+kind = "should"
+severity = "minor"
+points = 3
+text = "The response addresses the mediastinal mass with SVC narrowing: monitoring for SVC syndrome / airway compromise and patient education."
+all = ['\bsvc\b|superior vena cava|airway', 'monitor|watch|warn|educat|precaution|stridor|return precautions|urgent']
+
+# ---------------- pretreatment workup
+[[items]]
+id = "work_hbv_reviewed"
+domain = "pretreatment_workup"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response confirms hepatitis B serology was checked (HBsAg and anti-HBc nonreactive) before rituximab."
+any = ['hbsag|hepatitis b|anti[- ]hbc|\bhbv\b']
+
+[[items]]
+id = "work_echo_reviewed"
+domain = "pretreatment_workup"
+kind = "should"
+severity = "minor"
+points = 1
+text = "The response notes the baseline LVEF of 60% permits anthracycline."
+any = ['lvef|ejection fraction|echo']
+
+# ---------------- fitness and goals
+[[items]]
+id = "fit_intensive"
+domain = "fitness_and_goals"
+kind = "must"
+severity = "important"
+points = 5
+text = "The response judges the patient fit for intensive curative therapy (age 54, ECOG 1, LVEF 60%, normal organ function) in line with his goal of cure."
+all = ['\bfit\b|eligible|candidate|able to tolerate|suitable', 'intensive|curative|epoch']

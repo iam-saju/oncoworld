@@ -1,0 +1,8 @@
+FDG PET-CT, END OF TREATMENT (6 weeks after cycle 6), 2027-02-17
+
+Comparison: baseline PET-CT 2026-09-05.
+Mediastinal blood pool SUVmax 1.9; liver SUVmax 2.8.
+- Retroperitoneal mass decreased from 9.4 x 6.8 cm to 3.4 x 2.1 cm; residual SUVmax 6.2 (baseline 24.1).
+- Right renal, left adrenal and hepatic lesions: resolved, no residual uptake.
+- No new FDG-avid lesions. No marrow uptake.
+Deauville score: 4 (residual retroperitoneal mass, uptake moderately above liver).

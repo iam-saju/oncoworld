@@ -1,0 +1,10 @@
+{
+  "q1": "Second-line CD19-directed CAR T-cell therapy: axicabtagene ciloleucel (ZUMA-7) or lisocabtagene maraleucel (TRANSFORM). He has biopsy-proven refractory/early-relapsed DLBCL, progressing about 3.5 months after Pola-R-CHP (within 12 months), where CAR-T improved event-free and overall survival compared with salvage chemotherapy plus autologous transplant. CD19 expression is confirmed, organ function is adequate (creatinine 1.0, LVEF 58%), and he is ECOG 1 with caregiver support. Refer urgently to a CAR-T center for leukapheresis.",
+  "q2": "Adding more drugs does not improve his chances and adds toxicity and infection risk before CAR-T. Bridging should be the minimum needed to control disease until infusion, for example dexamethasone and/or radiotherapy to the dominant retroperitoneal mass, or a limited chemoimmunotherapy regimen if disease is rapidly progressing. Avoid bendamustine before leukapheresis because it depletes T cells and impairs collection.",
+  "q3": "The NGS shows a typical germinal-center (GCB-DLBCL) pattern: activating EZH2 Y646F, truncating CREBBP and KMT2D mutations, and TNFRSF14 deletion. TP53 is wild-type, which is favorable for CAR-T outcomes. TMB is low and MSI is stable, so there is no checkpoint-inhibitor rationale. Tazemetostat is approved for EZH2-mutant follicular lymphoma, not DLBCL, so it is not standard here and would be considered only in a clinical trial or a later line. The report does not change the recommendation for CAR-T.",
+  "_expect": {
+    "passed": true,
+    "dangerous": [],
+    "all_met": true
+  }
+}

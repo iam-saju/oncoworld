@@ -8,39 +8,39 @@
   "metrics": {
     "diagnosis_and_COO": {
       "score": 1.0,
-      "points": 15,
-      "max_points": 15,
+      "points": 10,
+      "max_points": 10,
       "criteria": {
         "DLBCL_NOS": {
-          "score": 7,
-          "max": 7,
-          "matched": true
-        },
-        "non_GCB_by_Hans": {
           "score": 5,
           "max": 5,
           "matched": true
         },
-        "avoids_equating_Hans_with_definitive_ABC": {
+        "non_GCB_by_Hans": {
           "score": 3,
           "max": 3,
+          "matched": true
+        },
+        "avoids_equating_Hans_with_definitive_ABC": {
+          "score": 2,
+          "max": 2,
           "matched": true
         }
       }
     },
     "staging": {
       "score": 1.0,
-      "points": 10,
-      "max_points": 10,
+      "points": 15,
+      "max_points": 15,
       "criteria": {
         "correct_Lugano_stage_III": {
-          "score": 7,
-          "max": 7,
+          "score": 10,
+          "max": 10,
           "matched": true
         },
         "correct_staging_reasoning": {
-          "score": 3,
-          "max": 3,
+          "score": 5,
+          "max": 5,
           "matched": true
         }
       }
@@ -91,71 +91,71 @@
     },
     "first_line_treatment": {
       "score": 1.0,
-      "points": 25,
-      "max_points": 25,
+      "points": 15,
+      "max_points": 15,
       "criteria": {
         "curative_immunochemotherapy": {
-          "score": 12,
-          "max": 12,
+          "score": 7,
+          "max": 7,
           "matched": true
         },
         "recognizes_pola_R_CHP": {
-          "score": 6,
-          "max": 6,
+          "score": 4,
+          "max": 4,
           "matched": true
         },
         "accepts_R_CHOP_alternative": {
-          "score": 3,
-          "max": 3,
+          "score": 2,
+          "max": 2,
           "matched": true
         },
         "avoids_unjustified_DA_EPOCH_R": {
-          "score": 4,
-          "max": 4,
+          "score": 2,
+          "max": 2,
           "matched": true
         }
       }
     },
     "CNS_management": {
       "score": 1.0,
-      "points": 10,
-      "max_points": 10,
+      "points": 15,
+      "max_points": 15,
       "criteria": {
         "uses_CNS_IPI": {
-          "score": 4,
-          "max": 4,
+          "score": 6,
+          "max": 6,
           "matched": true
         },
         "identifies_high_risk_sites": {
-          "score": 3,
-          "max": 3,
+          "score": 5,
+          "max": 5,
           "matched": true
         },
         "no_automatic_prophylaxis_for_DEL": {
-          "score": 3,
-          "max": 3,
+          "score": 4,
+          "max": 4,
           "matched": true
         }
       }
     },
     "response_assessment": {
       "score": 1.0,
-      "points": 10,
-      "max_points": 10,
+      "points": 15,
+      "max_points": 15,
       "criteria": {
         "PET_CT": {
-          "score": 3,
-          "max": 3,
-          "matched": true
-        },
-        "Lugano_Deauville": {
           "score": 4,
           "max": 4,
           "matched": true
         },
+        "Lugano_Deauville": {
+          "score": 6,
+          "max": 6,
+          "matched": true
+        },
         "end_of_treatment_assessment": {
-          "score": 3,
-          "max": 3,
+          "score": 5,
+          "max": 5,
           "matched": true
         }
       }

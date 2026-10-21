@@ -1,0 +1,15 @@
+{
+  "q1": "Complete metabolic response; the residual mass is just scar. Move to routine surveillance with CT every 6 months.",
+  "q2": "Recommend an adequate repeat biopsy: a PET/CT-guided core biopsy targeting the most FDG-avid part of the mass with multiple larger cores, or a laparoscopic/surgical biopsy if needed, sent for histology, flow cytometry and molecular studies. Histologic confirmation is required before committing to second-line therapy such as CAR T-cell therapy.",
+  "q3": "Respect his informed refusal; explain that without tissue we cannot distinguish lymphoma from fibrosis/inflammation, and document the shared decision. Reasonable plan: short-interval repeat PET-CT in about 8 weeks. If uptake falls or resolves, continue observation; if it progresses, re-discuss biopsy, which would be needed before second-line therapy. Consolidative involved-site radiotherapy to the single residual site is a reasonable alternative to discuss. Because biopsy-proven early relapse would make him a candidate for second-line CAR T-cell therapy, an early introductory referral to a cellular-therapy center is sensible. Do not start salvage therapy on PET alone.",
+  "q4": "No routine CNS-directed action is needed now: baseline MRI and CSF were negative and he is neurologically well. Do not repeat LP or MRI or give prophylaxis now; evaluate promptly (MRI brain, LP) if new neurological symptoms develop, given his history of high CNS-IPI.",
+  "_expect": {
+    "passed": false,
+    "dangerous": [
+      "l2_mn_declares_cure"
+    ],
+    "must_unmet": [
+      "l2_pmr"
+    ]
+  }
+}

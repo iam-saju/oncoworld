@@ -1,0 +1,20 @@
+PATIENT SUMMARY (EHR export 2026-09-17)
+
+Name: Grace Sample (synthetic)    MRN: OW-0002
+DOB: 1967-03-08 (59 y)    Sex: female
+
+PROBLEM LIST
+- Malignant neoplasm of left breast, ER-positive, HER2-negative (since 2016). Stage IIA (pT2 pN0). Lumpectomy and sentinel node biopsy, adjuvant chemotherapy (doxorubicin/cyclophosphamide then paclitaxel), left breast radiotherapy; on anastrozole since November 2016. No evidence of recurrence at last surveillance visit (March 2026).
+- Essential hypertension (since 2018). On amlodipine.
+- Osteopenia (since 2019). On aromatase inhibitor. DEXA 2025: lumbar spine T-score -1.8.
+
+ACTIVE MEDICATIONS
+- Anastrozole 1 mg tablet, 1 tablet by mouth daily (since November 2016)
+- Amlodipine 5 mg tablet, 1 tablet by mouth daily
+- Calcium carbonate 600 mg / vitamin D3 800 IU tablet, 1 tablet by mouth twice daily
+- Acetaminophen 500 mg tablet, 1-2 tablets by mouth every 6 hours as needed for fever (patient-reported, started August 2026)
+
+ALLERGIES
+- Penicillin: Hives (childhood)
+
+This is a synthetic training case for AI evaluation. It is not clinical decision support.

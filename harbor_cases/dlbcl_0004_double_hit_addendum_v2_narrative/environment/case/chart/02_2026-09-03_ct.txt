@@ -1,0 +1,23 @@
+CT NECK AND CHEST WITH IV CONTRAST
+Date: 2026-09-03    Author: Synthetic Radiologist
+
+CLINICAL INDICATION: Enlarging right neck mass, dysphagia.
+
+TECHNIQUE: Axial CT of the neck and chest after 80 mL IV iodinated contrast; multiplanar reformats.
+
+FINDINGS:
+Neck: conglomerate of enlarged right level II, III and IV lymph nodes, largest 3.8 x 3.2 cm (level III),
+with mild mass effect on the right lateral pharyngeal wall. Oropharyngeal and laryngeal airway patent.
+No left cervical adenopathy. Thyroid normal.
+Chest: lobulated soft-tissue mass in the anterior mediastinum measuring 12.0 x 8.6 x 9.8 cm (AP x TR x CC),
+mildly heterogeneous, insinuating around the great vessels. The superior vena cava is narrowed by
+extrinsic compression to about 50% of its normal caliber over 3 cm; contrast opacifies the SVC and
+right atrium normally with no filling defect to suggest thrombus and no prominent chest-wall collaterals.
+The trachea is displaced slightly to the left without significant luminal narrowing (narrowest
+cross-sectional diameter 15 mm). No hilar or axillary adenopathy. No pericardial or pleural effusion.
+Lungs clear. Upper abdomen on included images unremarkable.
+
+IMPRESSION:
+1. Large anterior mediastinal mass (12.0 cm) with right cervical lymphadenopathy, most consistent with
+   lymphoma.
+2. Moderate extrinsic narrowing of the SVC without thrombosis. Airway patent.

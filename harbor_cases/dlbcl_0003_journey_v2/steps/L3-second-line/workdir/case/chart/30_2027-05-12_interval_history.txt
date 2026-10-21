@@ -1,0 +1,13 @@
+INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-02-24 to 2027-05-12)
+
+The patient chose a short-interval PET-CT instead of a repeat biopsy.
+- PET-CT 2027-04-20: retroperitoneal mass enlarged to 5.8 x 4.4 cm, SUVmax 18.3; two new FDG-avid
+  liver lesions (1.4 and 2.0 cm). Deauville 5.
+- He then agreed to biopsy. CT-guided core biopsy of the retroperitoneal mass 2027-04-28: diffuse large
+  B-cell lymphoma, GCB phenotype, CD20+, CD19+ (IHC and flow cytometry), MYC 20%, BCL2 30%. FISH: no
+  MYC or BCL2 rearrangement.
+- Current status: ECOG 1. Creatinine 1.0 mg/dL, bilirubin 0.6 mg/dL, Hb 12.1 g/dL, ANC 3.4 x10^3/uL,
+  platelets 188 x10^3/uL, LDH 410 U/L (135-225). Echo 2027-05-05: LVEF 58%. No neurological symptoms.
+- He has good family support (wife, daughter within 20 minutes) and is willing to stay near a treatment
+  center for several weeks.
+- First-line therapy (Pola-R-CHP) finished 2027-01-08; progression documented about 3.5 months later.

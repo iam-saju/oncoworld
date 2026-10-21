@@ -1,0 +1,380 @@
+# OncoWorld v2 case source: dlbcl_0004 (FISH addendum after the treatment plan was already written).
+# MODEL-VISIBLE. Everything in this file is rendered into the narrative chart AND the FHIR bundle by
+# scripts/build_cases_v2.py. Never put interpretations, scores, stage or treatment here: those live in
+# gold.json / rubric_v2.toml. review_status stays PENDING_ONCOLOGIST until signed off.
+#
+# Design note (not visible to the model once rendered; comments are dropped by the TOML parser):
+# the pathology report was signed out as DLBCL NOS with FISH pending; a 2026-09-14 progress note planned R-CHOP;
+# the 2026-09-19 FISH addendum shows MYC and BCL2 rearrangements but deliberately does not name the revised entity,
+# and the EHR problem-list Condition was never updated (pathology.diagnosis stays "dlbcl").
+
+[meta]
+case_id = "dlbcl_0004"
+slug = "double_hit_addendum"
+title = "Large B-cell lymphoma with a late FISH addendum and an outdated R-CHOP plan: tumor-board plan"
+difficulty = "advanced"
+record_date = "2026-09-21"        # the chart is exported the day before tumor board
+review_status = "PENDING_ONCOLOGIST"
+
+[patient]
+given = "Daniel"
+family = "Sample"
+gender = "male"
+birth_date = "1972-01-30"
+mrn = "OW-0004"
+
+[ecog]
+date = "2026-09-08"
+value = 1
+
+# Past medical history -> FHIR Condition (problem list), narrative consult note.
+[[conditions]]
+code = "78275009"
+display = "Obstructive sleep apnea syndrome"
+onset = "2019"
+note = "Moderate (AHI 22 on 2019 sleep study). Uses CPAP nightly with good adherence."
+
+[[conditions]]
+code = "427679007"
+display = "Mild intermittent asthma"
+onset = "1990"
+note = "Albuterol as needed, about once a month. No hospitalizations or oral steroids in over 10 years."
+
+[[conditions]]
+code = "235595009"
+display = "Gastroesophageal reflux disease"
+onset = "2016"
+note = "Controlled on omeprazole."
+
+[[conditions]]
+code = "414916001"
+display = "Obesity"
+onset = "2015"
+note = "BMI 30.2 (September 2026)."
+
+[[medications]]
+text = "Omeprazole 20 mg capsule, 1 capsule by mouth daily before breakfast"
+
+[[medications]]
+text = "Albuterol HFA 90 mcg/actuation inhaler, 2 puffs inhaled every 4-6 hours as needed for wheeze"
+
+[[medications]]
+text = "Cetirizine 10 mg tablet, 1 tablet by mouth daily as needed for seasonal allergies"
+
+[[allergies]]
+substance = "Penicillin"
+reaction = "Urticaria (childhood)"
+
+# Laboratory results. flag is computed from low/high by the builder; never hand-written.
+[[labs]]
+date = "2026-09-04"
+panel = "Complete blood count with differential"
+items = [
+  { key = "hb", value = 12.6 },
+  { key = "mcv", value = 88 },
+  { key = "wbc", value = 8.1 },
+  { key = "anc", value = 5.6 },
+  { key = "alc", value = 1.5 },
+  { key = "plt", value = 225 },
+]
+
+[[labs]]
+date = "2026-09-04"
+panel = "Comprehensive metabolic panel and tumor markers"
+items = [
+  { key = "na", value = 139 },
+  { key = "k", value = 4.3 },
+  { key = "cl", value = 102 },
+  { key = "co2", value = 25 },
+  { key = "bun", value = 14 },
+  { key = "creatinine", value = 0.9 },
+  { key = "egfr", value = 101 },
+  { key = "glucose", value = 96 },
+  { key = "ca", value = 9.5 },
+  { key = "albumin", value = 4.0 },
+  { key = "protein", value = 7.1 },
+  { key = "ast", value = 29 },
+  { key = "alt", value = 33 },
+  { key = "alp", value = 94 },
+  { key = "tbili", value = 0.6 },
+  { key = "urate", value = 7.6 },
+  { key = "phos", value = 3.9 },
+  { key = "ldh", value = 740 },
+  { key = "b2m", value = 2.6 },
+]
+
+[[labs]]
+date = "2026-09-04"
+panel = "Infectious disease serologies"
+items = [
+  { key = "hbsag", value = "Nonreactive" },
+  { key = "anti_hbc", value = "Nonreactive" },
+  { key = "anti_hbs", value = "Reactive" },
+  { key = "hcv_ab", value = "Nonreactive" },
+  { key = "hiv_agab", value = "Nonreactive" },
+]
+
+[[labs]]
+date = "2026-09-18"
+panel = "Pre-procedure chemistry (day of port placement)"
+items = [
+  { key = "k", value = 4.4 },
+  { key = "creatinine", value = 0.9 },
+  { key = "egfr", value = 101 },
+  { key = "ca", value = 9.4 },
+  { key = "phos", value = 4.0 },
+  { key = "urate", value = 7.9 },
+  { key = "ldh", value = 812 },
+]
+
+# Structured pathology for the FHIR tumor-marker Observations. The builder checks every value here
+# also appears in the pathology document text, so the two formats cannot drift.
+[pathology]
+specimen_label = "Excisional biopsy, right cervical lymph node (level III)"
+biopsy = ["21911005", "Biopsy of lymph node", "309079007", "Lymph node biopsy specimen", "59441001", "Structure of lymph node"]
+collected = "2026-09-09"
+diagnosis = "dlbcl"              # problem-list Condition code as recorded in the EHR at export time (never updated after the addendum)
+ihc = { CD20 = true, CD10 = true, BCL6 = true, MUM1 = false, BCL2 = 90, MYC = 80, KI67 = 95 }
+ihc_date = "2026-09-12"
+fish = { MYC = true, BCL2 = true, BCL6 = false }
+fish_date = "2026-09-19"
+marrow_involved = false          # not biopsied; PET shows no marrow uptake (not rendered)
+
+# Imaging, pathology and notes: rendered verbatim into the narrative chart and as
+# DiagnosticReport.presentedForm / DocumentReference in FHIR.
+[[documents]]
+id = "referral"
+date = "2026-08-27"
+kind = "referral_note"
+title = "Primary care referral to hematology-oncology"
+author = "Synthetic Primary Care Physician"
+text = """
+Reason for referral: rapidly enlarging right neck mass, abnormal neck ultrasound.
+
+Mr. Sample is a 54-year-old accountant with obstructive sleep apnea on CPAP, mild intermittent asthma
+and GERD. He noticed a right-sided neck lump about four weeks ago; it has roughly doubled in size since.
+A 10-day course of azithromycin (penicillin allergy) for presumed reactive adenitis made no difference.
+Over the last two weeks he has had mild difficulty swallowing solid food (meat and bread "stick"), which
+he first put down to his reflux. He denies fevers, night sweats or weight loss.
+
+Neck ultrasound 2026-08-25: multiple enlarged, rounded right level II-IV lymph nodes with loss of the
+fatty hilum, largest 3.6 cm. Not cystic.
+
+I have ordered contrast CT of the neck and chest. Please see urgently.
+"""
+
+[[documents]]
+id = "ct"
+date = "2026-09-03"
+kind = "ct_report"
+title = "CT neck and chest with IV contrast"
+author = "Synthetic Radiologist"
+text = """
+CLINICAL INDICATION: Enlarging right neck mass, dysphagia.
+
+TECHNIQUE: Axial CT of the neck and chest after 80 mL IV iodinated contrast; multiplanar reformats.
+
+FINDINGS:
+Neck: conglomerate of enlarged right level II, III and IV lymph nodes, largest 3.8 x 3.2 cm (level III),
+with mild mass effect on the right lateral pharyngeal wall. Oropharyngeal and laryngeal airway patent.
+No left cervical adenopathy. Thyroid normal.
+Chest: lobulated soft-tissue mass in the anterior mediastinum measuring 12.0 x 8.6 x 9.8 cm (AP x TR x CC),
+mildly heterogeneous, insinuating around the great vessels. The superior vena cava is narrowed by
+extrinsic compression to about 50% of its normal caliber over 3 cm; contrast opacifies the SVC and
+right atrium normally with no filling defect to suggest thrombus and no prominent chest-wall collaterals.
+The trachea is displaced slightly to the left without significant luminal narrowing (narrowest
+cross-sectional diameter 15 mm). No hilar or axillary adenopathy. No pericardial or pleural effusion.
+Lungs clear. Upper abdomen on included images unremarkable.
+
+IMPRESSION:
+1. Large anterior mediastinal mass (12.0 cm) with right cervical lymphadenopathy, most consistent with
+   lymphoma.
+2. Moderate extrinsic narrowing of the SVC without thrombosis. Airway patent.
+"""
+
+[[documents]]
+id = "consult"
+date = "2026-09-08"
+kind = "consult_note"
+title = "Hematology-oncology new patient consultation"
+author = "Synthetic Hematologist-Oncologist"
+text = """
+HPI: 54M with a rapidly enlarging right neck mass for about five weeks and a large anterior mediastinal
+mass on CT 2026-09-03. Mild dysphagia to solids (no odynophagia; liquids fine). For about ten days he has
+noticed mild facial fullness on waking that resolves within an hour of getting up. Mild dyspnea climbing
+two flights of stairs; none at rest. No orthopnea, stridor, hoarseness, cough or chest pain. No fevers,
+night sweats or weight loss (weight stable at 98 kg). No headache, visual change, confusion, focal
+weakness or numbness. No testicular swelling.
+
+PMH: obstructive sleep apnea on CPAP (2019), mild intermittent asthma (albuterol about monthly), GERD,
+obesity. PSH: laparoscopic appendectomy (2004). No prior cancer, chemotherapy or radiation. No known
+heart disease.
+Medications: see medication list.
+Allergies: penicillin (urticaria in childhood).
+Social: works full time as an accountant. Married, lives with his wife (46) and two children, ages 9 and
+12. Never smoker. Alcohol: 2-3 beers per week. Lives 20 minutes from the cancer center.
+Family history: mother with breast cancer at 70; no hematologic malignancy.
+
+Exam: T 36.8 C, HR 84, BP 134/82, RR 16, SpO2 97% RA. Weight 98 kg, height 180 cm (BMI 30.2,
+BSA 2.18 m2). Firm, fixed, non-tender right cervical nodal mass about 5 cm (levels II-IV). No left
+cervical, supraclavicular, axillary or inguinal lymphadenopathy. Mild facial fullness; no plethora, no
+distended neck or chest-wall veins, no stridor. Lungs clear. Abdomen soft, no hepatosplenomegaly. Testes
+normal without masses. Neuro: alert and oriented, cranial nerves intact, strength 5/5, sensation intact.
+
+ECOG performance status 1: still working, but tires by mid-afternoon and has stopped going to the gym.
+
+Plan today: labs reviewed (LDH, uric acid, serologies); FDG PET-CT; echocardiogram; ENT for excisional
+biopsy of a right cervical node (scheduled 2026-09-09). Discussed sleeping with the head of the bed
+raised and to call or present to the emergency department for worsening facial swelling, breathlessness,
+noisy breathing or trouble swallowing liquids.
+"""
+
+[[documents]]
+id = "pet"
+date = "2026-09-10"
+kind = "pet_ct_report"
+title = "FDG PET-CT, skull base to mid-thigh"
+author = "Synthetic Nuclear Medicine Physician"
+text = """
+CLINICAL INDICATION: Cervical and anterior mediastinal masses, suspected lymphoma. Initial staging.
+
+TECHNIQUE: 12.4 mCi 18F-FDG IV; uptake time 60 minutes; serum glucose at injection 98 mg/dL.
+Low-dose non-contrast CT for attenuation correction and localization. Mediastinal blood pool SUVmax
+1.9; liver SUVmax 2.7.
+
+FINDINGS:
+Head and neck: physiologic brain uptake (PET is insensitive for intracranial disease). Intensely FDG-avid
+right level II-IV cervical lymph nodes, largest 3.9 cm, SUVmax 21.3. Post-biopsy changes in the right
+neck. No FDG-avid left cervical or supraclavicular nodes. Waldeyer ring without focal uptake.
+Chest: anterior mediastinal mass, 12.0 cm in greatest dimension, SUVmax 27.8, with a few photopenic
+(likely necrotic) foci; extrinsic compression of the SVC as on the diagnostic CT. No FDG-avid hilar,
+axillary or internal mammary nodes. No pulmonary nodules. No pleural or pericardial effusion and no
+abnormal pleural, pericardial or chest-wall uptake.
+Abdomen and pelvis: no FDG-avid lymph nodes. Liver, spleen (10.5 cm), kidneys and adrenal glands without
+focal uptake. No FDG-avid disease below the diaphragm.
+Musculoskeletal: no focal osseous or marrow FDG uptake.
+Testes: no abnormal uptake.
+
+IMPRESSION:
+1. Intensely FDG-avid right cervical lymphadenopathy and a 12.0 cm FDG-avid anterior mediastinal mass,
+   consistent with lymphoma.
+2. No FDG-avid disease below the diaphragm. No FDG-avid extranodal organ, osseous or marrow lesions.
+"""
+
+[[documents]]
+id = "echo"
+date = "2026-09-11"
+kind = "echo_report"
+title = "Transthoracic echocardiogram"
+author = "Synthetic Cardiologist"
+text = """
+Indication: baseline before possible anthracycline-containing chemotherapy; mediastinal mass.
+Left ventricle normal in size with normal wall thickness. LVEF 60% (biplane Simpson's).
+No regional wall-motion abnormality. Normal diastolic function. Global longitudinal strain -20%.
+Right ventricle normal size and function. Valves without significant stenosis or regurgitation.
+No pericardial effusion. Anterior mediastinal soft tissue noted adjacent to the right heart border,
+without chamber compression.
+"""
+
+[[documents]]
+id = "pathology"
+date = "2026-09-12"
+kind = "pathology_report"
+title = "Surgical pathology: excisional biopsy, right cervical lymph node"
+author = "Synthetic Hematopathologist"
+amended = "2026-09-19"
+text = """
+SPECIMEN: Right cervical lymph node, level III, excisional biopsy (3.6 x 2.9 x 2.2 cm), collected
+2026-09-09. Fresh tissue sent for flow cytometry; blocks A1-A4.
+
+FINAL DIAGNOSIS (2026-09-12): DIFFUSE LARGE B-CELL LYMPHOMA, NOT OTHERWISE SPECIFIED. See addendum.
+
+MICROSCOPIC: Effaced nodal architecture with diffuse sheets of medium-to-large atypical lymphoid cells,
+round to irregular nuclei, vesicular chromatin and small nucleoli. Numerous mitoses and apoptotic
+bodies with a focal starry-sky pattern; geographic necrosis.
+
+IMMUNOHISTOCHEMISTRY (adequate controls):
+  CD20       positive (diffuse, strong)
+  PAX5       positive
+  CD3        negative in tumor cells (scattered background T cells)
+  CD5        negative
+  CD10       positive (diffuse)
+  BCL6       positive
+  MUM1/IRF4  negative (<10% of tumor cells)
+  BCL2       positive in approximately 90% of tumor cells (strong)
+  MYC        positive in approximately 80% of tumor cells
+  Cyclin D1  negative
+  CD23       negative
+  CD30       negative
+  TdT        negative
+  Ki-67      approximately 95%
+  EBER ISH   negative
+
+FLOW CYTOMETRY: CD19+, CD20+, CD10+ monotypic B cells with lambda light-chain restriction, large forward
+scatter. CD5 negative. CD34 negative.
+
+COMMENT: Germinal-center B-cell-like immunophenotype by the Hans algorithm. FISH for MYC, BCL2
+and BCL6 rearrangements has been requested on block A2; results will be reported in an addendum.
+
+ADDENDUM (2026-09-19): FISH, interphase, block A2, 200 nuclei scored per probe.
+MYC break-apart, IGH::MYC dual-fusion, BCL2 break-apart and BCL6 break-apart probes.
+  MYC (8q24):   rearrangement detected (break-apart signal in 78% of nuclei; IGH::MYC fusion
+                detected, consistent with t(8;14)(q24;q32))
+  BCL2 (18q21): rearrangement detected (break-apart signal in 85% of nuclei; IGH::BCL2 fusion
+                detected, consistent with t(14;18)(q32;q21))
+  BCL6 (3q27):  no rearrangement detected
+These FISH results change the classification of this lymphoma. The final diagnosis is amended per the
+FISH findings; the treating hematologist was informed by telephone on 2026-09-19.
+"""
+
+[[documents]]
+id = "progress_0914"
+date = "2026-09-14"
+kind = "progress_note"
+title = "Hematology-oncology follow-up (results visit)"
+author = "Synthetic Hematologist-Oncologist"
+text = """
+Results visit with the patient and his wife.
+
+Pathology (2026-09-12): diffuse large B-cell lymphoma, germinal-center type by IHC; MYC and BCL2 protein
+expression both high; Ki-67 about 95%. FISH sent, result pending.
+PET-CT 2026-09-10 and echo 2026-09-11 reviewed with the patient (see reports). Labs 2026-09-04 reviewed.
+
+Symptoms: neck mass a little larger. Dysphagia to solids unchanged. Morning facial fullness persists,
+resolving within an hour. No stridor, orthopnea or dyspnea at rest. No fevers, night sweats or weight
+loss. Weight 98 kg. Working half days.
+
+Exam: unchanged right cervical mass. No stridor. No distended neck veins. Lungs clear.
+
+Assessment: DLBCL, GCB type, with cervical and mediastinal disease.
+
+Plan:
+1. R-CHOP (rituximab, cyclophosphamide, doxorubicin, vincristine, prednisone) every 21 days x 6 cycles,
+   cycle 1 to start 2026-09-22. Consent discussed; patient agrees.
+2. Port placement with interventional radiology 2026-09-18.
+3. Chemotherapy teaching visit 2026-09-19.
+4. Will follow up the pending FISH result.
+5. Return 2026-09-22 for cycle 1.
+"""
+
+[[documents]]
+id = "progress_0921"
+date = "2026-09-21"
+kind = "progress_note"
+title = "Hematology-oncology brief note (pre-tumor board)"
+author = "Synthetic Hematologist-Oncologist"
+text = """
+Pathology addendum (FISH) issued 2026-09-19; hematopathologist called the same day. Results discussed
+with the patient by telephone today; he understands the plan may change and wants the treatment with the
+best chance of cure. He hopes to keep working part time from home if he can.
+
+Port placed 2026-09-18 by interventional radiology (left chest, via left internal jugular vein) without
+complication; tip at the cavoatrial junction.
+
+Telephone symptom check: neck mass slightly larger; dysphagia to solids unchanged; morning facial
+fullness unchanged. No stridor, orthopnea, dyspnea at rest, headache or new neurological symptoms.
+
+Pre-procedure labs 2026-09-18 reviewed (see results).
+
+Cycle 1 chemotherapy (scheduled 2026-09-22) is ON HOLD pending lymphoma tumor board review on 2026-09-22.
+"""

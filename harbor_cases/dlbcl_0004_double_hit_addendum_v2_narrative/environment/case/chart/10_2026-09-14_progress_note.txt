@@ -1,0 +1,24 @@
+HEMATOLOGY-ONCOLOGY FOLLOW-UP (RESULTS VISIT)
+Date: 2026-09-14    Author: Synthetic Hematologist-Oncologist
+
+Results visit with the patient and his wife.
+
+Pathology (2026-09-12): diffuse large B-cell lymphoma, germinal-center type by IHC; MYC and BCL2 protein
+expression both high; Ki-67 about 95%. FISH sent, result pending.
+PET-CT 2026-09-10 and echo 2026-09-11 reviewed with the patient (see reports). Labs 2026-09-04 reviewed.
+
+Symptoms: neck mass a little larger. Dysphagia to solids unchanged. Morning facial fullness persists,
+resolving within an hour. No stridor, orthopnea or dyspnea at rest. No fevers, night sweats or weight
+loss. Weight 98 kg. Working half days.
+
+Exam: unchanged right cervical mass. No stridor. No distended neck veins. Lungs clear.
+
+Assessment: DLBCL, GCB type, with cervical and mediastinal disease.
+
+Plan:
+1. R-CHOP (rituximab, cyclophosphamide, doxorubicin, vincristine, prednisone) every 21 days x 6 cycles,
+   cycle 1 to start 2026-09-22. Consent discussed; patient agrees.
+2. Port placement with interventional radiology 2026-09-18.
+3. Chemotherapy teaching visit 2026-09-19.
+4. Will follow up the pending FISH result.
+5. Return 2026-09-22 for cycle 1.

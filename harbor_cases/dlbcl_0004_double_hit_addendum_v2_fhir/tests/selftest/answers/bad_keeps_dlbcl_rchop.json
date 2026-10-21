@@ -1,0 +1,34 @@
+{
+  "diagnosis": "Diffuse large B-cell lymphoma, NOS, germinal-center B-cell (GCB) phenotype by the Hans algorithm (CD10+, BCL6+, MUM1-), as signed out on 2026-09-12 and as recorded on the problem list.",
+  "stage": "Lugano (Ann Arbor) stage II bulky (IIA-X): FDG-avid right cervical nodes and a 12.0 cm anterior mediastinal mass, all above the diaphragm. No B symptoms. No extranodal, splenic, osseous, marrow, testicular or CNS involvement on PET-CT. A 12 cm mass is bulky, so this is managed as advanced-stage disease rather than limited-stage disease.",
+  "biology": "Double-expressor by IHC (MYC 80%, BCL2 90%), Ki-67 95%. The FISH addendum reports MYC and BCL2 rearrangements; BCL6 not rearranged. High-risk biology, but treat per the existing DLBCL plan.",
+  "prognosis": "IPI 1 (only LDH elevated); high-risk biology by IHC.",
+  "first_line_treatment": "Proceed with R-CHOP every 21 days for 6 cycles, cycle 1 on 2026-09-22 as planned; the port is already in place. Consolidative involved-site radiotherapy to the bulky mediastinal mass if residual disease.",
+  "cns_risk": "CNS-IPI 1. Given high-risk biology, contrast MRI brain and lumbar puncture with CSF cytology and flow cytometry before cycle 1; consider intrathecal methotrexate as CNS prophylaxis.",
+  "response_assessment": "End-of-treatment FDG PET-CT read with Lugano 2014 criteria and the Deauville 5-point scale.",
+  "pretreatment_workup": "HBsAg and anti-HBc nonreactive. Echo LVEF 60%, anthracycline permitted.",
+  "supportive_care": "Tumor lysis syndrome risk intermediate: allopurinol and hydration with TLS labs. G-CSF (pegfilgrastim) with each cycle. Use the port. Offer sperm banking. Monitor for SVC symptoms and airway compromise.",
+  "fitness_and_goals": "Fit for full-dose curative R-CHOP: age 54, ECOG 1, LVEF 60%.",
+  "missing_information": [
+    "Contrast MRI brain and CSF cytology/flow cytometry results (CNS staging not yet done)",
+    "Whether sperm banking has been offered and the patient's fertility wishes",
+    "G6PD status in case rasburicase is needed",
+    "Clinical trial availability for MYC/BCL2-rearranged lymphoma"
+  ],
+  "_expect": {
+    "passed": false,
+    "dangerous": [
+      "dx_hgbl_double_hit",
+      "mn_dx_dlbcl_nos",
+      "tx_intensive_curative"
+    ],
+    "must_met": [
+      "mn_rchop_preferred",
+      "bio_double_expressor_secondary",
+      "stage_ii_bulky"
+    ],
+    "must_unmet": [
+      "tx_plan_outdated"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+PRIMARY CARE REFERRAL TO HEMATOLOGY-ONCOLOGY
+Date: 2026-08-18    Author: Synthetic Primary Care Physician
+
+Reason for referral: abnormal CT, suspected lymphoma.
+
+Mr. Sample is a 67-year-old retired electrician with T2DM, HTN, gout and BPH. Six weeks of
+epigastric/left upper quadrant pain, early satiety, drenching night sweats most nights, and about 8 kg
+unintentional weight loss over two months (79 -> 71 kg). Started OTC ibuprofen for the pain.
+
+CT abdomen/pelvis with IV contrast 2026-08-15 (outside facility): large retroperitoneal and mesenteric
+soft-tissue mass encasing the aorta and IVC, a right renal cortical mass, a left adrenal mass and a
+small hypodense liver lesion. No hydronephrosis. Impression: lymphoma favored; metastatic carcinoma
+less likely.
+
+Please see urgently. Labs from this visit attached by the patient portal.

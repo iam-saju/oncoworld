@@ -1,0 +1,28 @@
+FDG PET-CT, SKULL BASE TO MID-THIGH
+Date: 2026-09-03    Author: Synthetic Nuclear Medicine Physician
+
+CLINICAL INDICATION: Right cervical lymphadenopathy, suspected lymphoma. Initial staging before biopsy.
+
+TECHNIQUE: 8.6 mCi 18F-FDG IV; uptake time 60 minutes; serum glucose at injection 91 mg/dL.
+Low-dose non-contrast CT for attenuation correction and localization. Mediastinal blood pool SUVmax
+1.9; liver SUVmax 2.6.
+
+FINDINGS:
+Head and neck: physiologic brain uptake (PET is insensitive for intracranial disease). Cluster of
+FDG-avid right cervical lymph nodes at levels II and III, contiguous within a single nodal region:
+the largest right level IIA node measures 3.1 x 2.4 cm (SUVmax 14.2); the level III node measures
+2.1 x 1.6 cm (SUVmax 11.8). No FDG-avid left cervical, supraclavicular or retropharyngeal nodes.
+Waldeyer ring with symmetric physiologic tonsillar uptake. Thyroid without focal uptake.
+Chest: no FDG-avid mediastinal, hilar, internal mammary or axillary nodes. Lungs clear. Breasts without
+focal uptake. No effusion.
+Abdomen and pelvis: no FDG-avid retroperitoneal, mesenteric, pelvic or inguinal nodes. Liver without
+focal uptake. Spleen normal in size (10 cm) with homogeneous uptake below liver. Kidneys and adrenal
+glands normal. Physiologic bowel and urinary tract activity. Physiologic endometrial uptake, consistent
+with menstrual-cycle phase. Small right ovarian follicular cyst (2.0 cm) with mild physiologic uptake.
+Musculoskeletal: homogeneous marrow activity, no focal osseous or marrow FDG uptake.
+
+IMPRESSION:
+1. FDG-avid right cervical (level II-III) lymphadenopathy, largest node 3.1 cm, SUVmax 14.2, consistent
+   with lymphoma. Tissue confirmation pending.
+2. No other FDG-avid nodal or extranodal disease; no splenic, hepatic, osseous or marrow involvement.
+3. Physiologic endometrial and ovarian uptake.

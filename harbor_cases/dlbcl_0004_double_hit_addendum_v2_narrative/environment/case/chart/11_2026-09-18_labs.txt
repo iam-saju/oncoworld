@@ -1,0 +1,11 @@
+LABORATORY RESULTS: Pre-procedure chemistry (day of port placement)
+Collected: 2026-09-18    Synthetic Clinical Laboratory
+
+Test                                    Result  Flag  Units           Reference
+Potassium                                  4.4        mmol/L          3.5-5.1
+Creatinine                                 0.9        mg/dL           0.7-1.3
+eGFR (CKD-EPI 2021)                        101        mL/min/1.73m2   >=60
+Calcium                                    9.4        mg/dL           8.6-10.3
+Phosphorus                                 4.0        mg/dL           2.5-4.5
+Uric acid                                  7.9  H     mg/dL           3.4-7.0
+LDH                                        812  H     U/L             135-225

@@ -1,0 +1,430 @@
+{
+  "reward": 1.0,
+  "raw_points": 100,
+  "max_points": 100,
+  "passed": true,
+  "dangerous_errors": [],
+  "judge": "none",
+  "rubric_version": "dlbcl_0002.v2.0",
+  "review_status": "PENDING_ONCOLOGIST",
+  "domains": {
+    "diagnosis": {
+      "points": 10,
+      "max_points": 10,
+      "score": 1.0
+    },
+    "staging": {
+      "points": 16,
+      "max_points": 16,
+      "score": 1.0
+    },
+    "molecular_classification": {
+      "points": 6,
+      "max_points": 6,
+      "score": 1.0
+    },
+    "first_line_treatment": {
+      "points": 35,
+      "max_points": 35,
+      "score": 1.0
+    },
+    "prognosis": {
+      "points": 9,
+      "max_points": 9,
+      "score": 1.0
+    },
+    "cns_management": {
+      "points": 4,
+      "max_points": 4,
+      "score": 1.0
+    },
+    "response_assessment": {
+      "points": 6,
+      "max_points": 6,
+      "score": 1.0
+    },
+    "supportive_care": {
+      "points": 5,
+      "max_points": 5,
+      "score": 1.0
+    },
+    "pretreatment_workup": {
+      "points": 2,
+      "max_points": 2,
+      "score": 1.0
+    },
+    "fitness_and_goals": {
+      "points": 4,
+      "max_points": 4,
+      "score": 1.0
+    },
+    "missing_information": {
+      "points": 3,
+      "max_points": 3,
+      "score": 1.0
+    }
+  },
+  "items": [
+    {
+      "id": "dx_dlbcl_non_gcb",
+      "domain": "diagnosis",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "dx_hans_not_abc",
+      "domain": "diagnosis",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "dx_not_breast_recurrence",
+      "domain": "diagnosis",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "stage_iii",
+      "domain": "staging",
+      "kind": "must",
+      "severity": "dangerous",
+      "points": 8,
+      "met": true,
+      "delta": 8,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "stage_spleen_lymphatic",
+      "domain": "staging",
+      "kind": "should",
+      "severity": "important",
+      "points": 4,
+      "met": true,
+      "delta": 4,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "stage_b_symptoms",
+      "domain": "staging",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "stage_bulk_definition",
+      "domain": "staging",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_stage_iv",
+      "domain": "staging",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mol_del_not_dh",
+      "domain": "molecular_classification",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_calls_double_hit",
+      "domain": "molecular_classification",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mn_da_epoch",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 5,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "prog_ipi_2",
+      "domain": "prognosis",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "prog_cns_ipi_2",
+      "domain": "prognosis",
+      "kind": "should",
+      "severity": "important",
+      "points": 3,
+      "met": true,
+      "delta": 3,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "cns_no_routine_prophylaxis",
+      "domain": "cns_management",
+      "kind": "should",
+      "severity": "important",
+      "points": 4,
+      "met": true,
+      "delta": 4,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_mandates_cns_prophylaxis",
+      "domain": "cns_management",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 4,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "tx_cardiac_aware_no_full_dox",
+      "domain": "first_line_treatment",
+      "kind": "must",
+      "severity": "dangerous",
+      "points": 10,
+      "met": true,
+      "delta": 10,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_standard_dox_ignores_heart",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "tx_cardio_onc_referral",
+      "domain": "first_line_treatment",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_cardioprotection",
+      "domain": "first_line_treatment",
+      "kind": "must",
+      "severity": "important",
+      "points": 5,
+      "met": true,
+      "delta": 5,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_anthracycline_free_curative",
+      "domain": "first_line_treatment",
+      "kind": "must",
+      "severity": "important",
+      "points": 8,
+      "met": true,
+      "delta": 8,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_lower_efficacy_ack",
+      "domain": "first_line_treatment",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_cardiac_monitoring",
+      "domain": "first_line_treatment",
+      "kind": "should",
+      "severity": "important",
+      "points": 4,
+      "met": true,
+      "delta": 4,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_non_curative",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "resp_eot_pet_lugano",
+      "domain": "response_assessment",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_tls_allopurinol",
+      "domain": "supportive_care",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_gcsf",
+      "domain": "supportive_care",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_anastrozole",
+      "domain": "supportive_care",
+      "kind": "should",
+      "severity": "minor",
+      "points": 1,
+      "met": true,
+      "delta": 1,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "work_hbv_reviewed",
+      "domain": "pretreatment_workup",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "fit_curative_ecog1",
+      "domain": "fitness_and_goals",
+      "kind": "must",
+      "severity": "important",
+      "points": 4,
+      "met": true,
+      "delta": 4,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "miss_cardiac_workup",
+      "domain": "missing_information",
+      "kind": "should",
+      "severity": "important",
+      "points": 3,
+      "met": true,
+      "delta": 3,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    }
+  ],
+  "judge_regex_disagreements": []
+}

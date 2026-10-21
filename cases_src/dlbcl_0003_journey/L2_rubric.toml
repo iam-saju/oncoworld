@@ -1,0 +1,75 @@
+# HIDDEN. Journey dlbcl_0003, Layer 2 (after first-line). DRAFT_NEEDS_ONCOLOGIST.
+version = "dlbcl_0003_journey.L2.v0.1"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+passing_score = 0.75
+
+[[items]]
+id = "l2_pmr"
+domain = "response_interpretation"
+kind = "must"
+severity = "important"
+points = 20
+text = "The response classifies end-of-treatment Deauville 4 with reduced uptake as a partial metabolic response (not complete metabolic response) per Lugano, noting it may be residual lymphoma or post-treatment inflammation/necrosis."
+any = ["partial metabolic", "\\bpmr\\b", "partial response"]
+
+[[items]]
+id = "l2_repeat_biopsy"
+domain = "tissue"
+kind = "must"
+severity = "important"
+points = 20
+text = "The response recommends an adequate repeat biopsy (e.g. PET/CT-guided core targeting the most FDG-avid area, or surgical/laparoscopic) because histologic confirmation is needed before second-line therapy."
+any = ["repeat[^.]{0,30}biops", "re-?biops", "(?:another|second|new|further)[^.]{0,20}biops"]
+
+[[items]]
+id = "l2_respect_refusal"
+domain = "shared_decision"
+kind = "must"
+severity = "important"
+points = 15
+text = "The response respects the informed refusal of repeat biopsy, explains its implications, and documents a shared decision."
+any = ["respect", "informed (?:refusal|decision|choice)", "shared decision", "patient'?s (?:choice|wishes|decision|preference)"]
+
+[[items]]
+id = "l2_short_interval_pet_or_rt"
+domain = "shared_decision"
+kind = "must"
+severity = "important"
+points = 20
+text = "Without a repeat biopsy, the response proposes a reasonable path: short-interval repeat PET-CT (about 6-12 weeks) with biopsy if progression, and/or consolidative involved-site radiotherapy to the single residual site."
+any = ["(?:repeat|short[- ]interval|interval)[^.]{0,30}pet", "pet[^.]{0,30}(?:in|after)\\s*(?:6|8|10|12|six|eight)", "isrt", "involved[- ]site radiotherapy", "radiotherapy to the residual", "consolidat\\w* (?:radiation|radiotherapy)"]
+
+[[items]]
+id = "l2_no_cns_action"
+domain = "cns"
+kind = "should"
+severity = "minor"
+points = 10
+text = "The response states no routine CNS-directed action (no repeat LP/MRI or prophylaxis) is needed now while he is neurologically well, with prompt evaluation if symptoms develop."
+any = ["no (?:routine |further |additional )?(?:cns|lp|lumbar|mri|imaging|intrathecal)", "not (?:needed|indicated|required)[^.]{0,40}(?:cns|lumbar|mri)", "(?:cns|lumbar|mri)[^.]{0,60}not (?:needed|indicated|required)", "unless[^.]{0,40}symptom"]
+
+[[items]]
+id = "l2_car_t_awareness"
+domain = "planning"
+kind = "should"
+severity = "minor"
+points = 15
+text = "The response anticipates that biopsy-proven refractory/early-relapsed disease would make him a candidate for second-line CAR T-cell therapy and suggests early referral/discussion with a cellular-therapy center."
+any = ["car[- ]?t", "cellular therap"]
+
+[[items]]
+id = "l2_mn_declares_cure"
+domain = "response_interpretation"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response calls this a complete (metabolic) response / cure and moves to routine surveillance with no further evaluation of the residual uptake."
+affirm = ["complete metabolic response", "complete remission", "\\bcmr\\b"]
+
+[[items]]
+id = "l2_mn_salvage_without_histology"
+domain = "planning"
+kind = "must_not"
+severity = "important"
+points = 10
+text = "The response starts salvage chemotherapy or CAR T-cell therapy now, on PET findings alone, without histologic confirmation or documented progression."

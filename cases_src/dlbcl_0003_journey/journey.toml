@@ -1,0 +1,240 @@
+# OncoWorld v2 longitudinal journey: patient dlbcl_0003 (Robert Sample) followed through five layers.
+# Built by scripts/build_journey_v2.py into ONE Harbor multi-step task (harbor_cases/dlbcl_0003_journey_v2).
+#
+# Rules (from docs/oncologist-longitudinal-case-form.pdf):
+#  - the model sees one layer at a time, never a future layer (each layer's files arrive via steps/<L>/workdir);
+#  - each layer opens with what ACTUALLY happened (written here), not the model's previous answer;
+#  - each "if..." is a stated fact, so there is one answer;
+#  - each layer is scored on its own; a dangerous error in any layer fails the whole case.
+# Layer 1 reuses cases_src/dlbcl_0003 (chart, rubric, gold). Layers 2-5 are DRAFTS: review_status DRAFT_NEEDS_ONCOLOGIST.
+# MODEL-VISIBLE: [[layers]].questions and [[layers.documents]]. HIDDEN: Lx_rubric.toml, Lx_gold.json.
+
+[meta]
+journey_id = "dlbcl_0003_journey"
+base_case = "dlbcl_0003"
+title = "DLBCL with kidney/adrenal involvement: the patient journey (diagnosis to goals of care)"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+consistency_notes = """
+- CNS-IPI 6 at diagnosis (Layer 1) must stay in the Layer 4 differential (CNS relapse) even though baseline CSF was negative.
+- Type 2 diabetes (Layer 1) matters for steroid dosing/glucose in Layer 4.
+- Renal function recovered after cycle 1 (Layer 2 history), so it no longer limits Layer 3 choices.
+- Sulfonamide allergy persists (PJP prophylaxis choice after CAR-T).
+"""
+
+[[layers]]
+id = "L1"
+step = "L1-diagnosis"
+weight = 20
+date = "2026-09-17"
+answer_file = "/app/answers/L1_diagnosis.json"
+source = "dlbcl_0003"          # chart, rubric and gold come from the single-case v2 source
+
+[[layers]]
+id = "L2"
+step = "L2-after-first-line"
+weight = 15
+date = "2027-02-24"
+answer_file = "/app/answers/L2_after_first_line.json"
+heading = "After first-line treatment"
+questions = [
+  "What is the response category at the end of first-line treatment, and what does it mean?",
+  "The biopsy of the residual mass was inadequate for diagnosis. What do you recommend next?",
+  "The patient and his family decline a repeat biopsy. How do you proceed?",
+  "Baseline CSF studies were negative. Is any CNS-directed action needed now?",
+]
+
+[[layers.documents]]
+name = "20_2027-02-24_interval_history.txt"
+text = """
+INTERVAL HISTORY: WHAT ACTUALLY HAPPENED SINCE TUMOR BOARD (2026-09-18 to 2027-02-24)
+
+Tumor board 2026-09-18 recommended prednisone prephase, then Pola-R-CHP x6 with pegfilgrastim.
+- 2026-09-19 to 09-23: prednisone 100 mg daily. Ibuprofen stopped. Lisinopril and metformin held.
+- 2026-09-24: cycle 1 given as an inpatient with IV hydration and rasburicase (G6PD normal). Laboratory
+  TLS on day 2 (uric acid 8.9, phosphate 5.2, potassium 5.4) resolved with fluids; no dialysis.
+- 2026-09-25: MRI brain with contrast: no intracranial lesion. Lumbar puncture: CSF cytology and flow
+  cytometry negative for lymphoma.
+- CNS prophylaxis with high-dose methotrexate was discussed; after counselling on uncertain benefit the
+  patient declined it.
+- Creatinine 1.0 mg/dL by cycle 2 and stable since. Insulin correction scale during steroid days.
+- Cycles 2-6 outpatient. Cycle 5 delayed one week (grade 2 neuropathy resolved to grade 1; he attended
+  his granddaughter's wedding on 2026-12-13). Cycle 6 given 2027-01-08.
+- Now ECOG 1. Weight 74 kg. No B symptoms. Mild residual tingling in the toes.
+"""
+
+[[layers.documents]]
+name = "21_2027-02-17_pet_ct.txt"
+text = """
+FDG PET-CT, END OF TREATMENT (6 weeks after cycle 6), 2027-02-17
+
+Comparison: baseline PET-CT 2026-09-05.
+Mediastinal blood pool SUVmax 1.9; liver SUVmax 2.8.
+- Retroperitoneal mass decreased from 9.4 x 6.8 cm to 3.4 x 2.1 cm; residual SUVmax 6.2 (baseline 24.1).
+- Right renal, left adrenal and hepatic lesions: resolved, no residual uptake.
+- No new FDG-avid lesions. No marrow uptake.
+Deauville score: 4 (residual retroperitoneal mass, uptake moderately above liver).
+"""
+
+[[layers.documents]]
+name = "22_2027-02-22_pathology.txt"
+text = """
+SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RESIDUAL RETROPERITONEAL MASS, 2027-02-22
+Two 18-gauge cores, total 0.6 cm. Predominantly necrosis and dense fibrosis with scattered histiocytes.
+Rare large atypical cells, CD20-positive on immunostain, too few to characterize.
+DIAGNOSIS: Necrosis and fibrosis; rare atypical CD20+ cells. Insufficient for a definitive diagnosis
+of residual lymphoma. Tissue insufficient for flow cytometry or molecular studies.
+"""
+
+[[layers.documents]]
+name = "23_2027-02-24_progress_note.txt"
+text = """
+Results visit with the patient, his wife and daughter. Explained the biopsy was not diagnostic.
+The patient says he "has had enough needles" and, with his family's agreement, declines a repeat biopsy
+at this time. He feels well and asks what his options are. Neuro exam normal; no headache or
+neurological symptoms.
+"""
+
+[[layers]]
+id = "L3"
+step = "L3-second-line"
+weight = 20
+date = "2027-05-12"
+answer_file = "/app/answers/L3_second_line.json"
+heading = "Second-line therapy and a molecular report"
+questions = [
+  "Which second-line strategy do you recommend, and why?",
+  "He feels well and asks whether adding more drugs now would improve his chances. What do you advise (including any bridging therapy)?",
+  "How do you interpret the NGS report, and does it change treatment?",
+]
+
+[[layers.documents]]
+name = "30_2027-05-12_interval_history.txt"
+text = """
+INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-02-24 to 2027-05-12)
+
+The patient chose a short-interval PET-CT instead of a repeat biopsy.
+- PET-CT 2027-04-20: retroperitoneal mass enlarged to 5.8 x 4.4 cm, SUVmax 18.3; two new FDG-avid
+  liver lesions (1.4 and 2.0 cm). Deauville 5.
+- He then agreed to biopsy. CT-guided core biopsy of the retroperitoneal mass 2027-04-28: diffuse large
+  B-cell lymphoma, GCB phenotype, CD20+, CD19+ (IHC and flow cytometry), MYC 20%, BCL2 30%. FISH: no
+  MYC or BCL2 rearrangement.
+- Current status: ECOG 1. Creatinine 1.0 mg/dL, bilirubin 0.6 mg/dL, Hb 12.1 g/dL, ANC 3.4 x10^3/uL,
+  platelets 188 x10^3/uL, LDH 410 U/L (135-225). Echo 2027-05-05: LVEF 58%. No neurological symptoms.
+- He has good family support (wife, daughter within 20 minutes) and is willing to stay near a treatment
+  center for several weeks.
+- First-line therapy (Pola-R-CHP) finished 2027-01-08; progression documented about 3.5 months later.
+"""
+
+[[layers.documents]]
+name = "31_2027-05-08_ngs_report.txt"
+text = """
+TUMOR NEXT-GENERATION SEQUENCING (DNA, 523-gene hybrid-capture panel), specimen 2027-04-28
+Tumor content estimated 60%.
+
+Variants of clinical or possible significance:
+  EZH2    c.1937A>T  p.Y646F   missense   VAF 34%
+  CREBBP  c.4336C>T  p.R1446*  nonsense   VAF 29%
+  KMT2D   c.11563dup p.Q3855fs frameshift VAF 31%
+  TNFRSF14 deletion (exons 1-3)
+Not detected: TP53, MYD88, CD79B, BCL2 amplification, MYC amplification.
+Tumor mutational burden: 6 mutations/Mb. Microsatellite status: stable.
+Comment: mutation pattern is typical of germinal-center-derived lymphoma. EZH2 Y646 is an activating
+hotspot mutation. Correlate clinically.
+"""
+
+[[layers]]
+id = "L4"
+step = "L4-acute-admission"
+weight = 30
+date = "2027-07-07"
+answer_file = "/app/answers/L4_acute_admission.json"
+heading = "Acute admission"
+questions = [
+  "What do you consider first (immediate priorities)?",
+  "What are your differential diagnoses?",
+  "How do you investigate?",
+]
+
+[[layers.documents]]
+name = "40_2027-07-07_interval_history.txt"
+text = """
+INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-05-12 to 2027-07-07)
+
+- Referred to the cellular therapy center. Leukapheresis 2027-05-27. Bridging: dexamethasone pulse and
+  radiotherapy to the retroperitoneal mass (20 Gy in 5 fractions).
+- Lymphodepletion fludarabine/cyclophosphamide 2027-06-28 to 06-30 (fludarabine dose-adjusted).
+- Axicabtagene ciloleucel infused 2027-07-01 (day 0).
+- Day 2: fever 38.6 C, normotensive, no oxygen (CRS grade 1). Day 3: tocilizumab 8 mg/kg x1; fever resolved.
+- Prophylaxis: levetiracetam 500 mg twice daily since day 0, acyclovir, fluconazole. Atovaquone for
+  Pneumocystis prophylaxis is planned (sulfonamide allergy).
+"""
+
+[[layers.documents]]
+name = "41_2027-07-07_admission_note.txt"
+text = """
+ADMISSION / RAPID RESPONSE NOTE, DAY +6 (2027-07-07, 06:40), cellular therapy unit
+
+Overnight the nurse noted new confusion. This morning he reports a severe headache and has vomited twice.
+His wife says he could not find words for objects last night and his handwriting "looks strange".
+
+Vitals: T 38.9 C, HR 112, BP 96/58 (baseline 124/76), RR 22, SpO2 95% on room air.
+Neuro: GCS 13 (E3 V4 M6). Oriented to person only. ICE score 5/10 (cannot name 3 objects, cannot write a
+standard sentence, cannot count backwards from 100 by 10). No focal limb weakness. Pupils equal and
+reactive. No neck stiffness. No witnessed seizure activity. Mild tremor of both hands.
+Chest clear. Abdomen soft. Central line site clean.
+
+Current medications: levetiracetam 500 mg BID, acyclovir 400 mg BID, fluconazole 400 mg daily,
+insulin correction scale, ondansetron PRN, pantoprazole.
+
+Labs 05:30:
+  WBC 0.4 x10^3/uL (ANC 0.2), Hb 8.6 g/dL, platelets 44 x10^3/uL
+  Na 131 mmol/L, K 3.6, creatinine 1.2 mg/dL, glucose 242 mg/dL
+  CRP 214 mg/L (<5), ferritin 4,820 ng/mL (30-400)
+  INR 1.3, fibrinogen 210 mg/dL (200-400)
+  Lactate 2.6 mmol/L (0.5-2.0)
+Blood cultures: not yet drawn this episode.
+"""
+
+[[layers]]
+id = "L5"
+step = "L5-goals-of-care"
+weight = 15
+date = "2027-10-06"
+answer_file = "/app/answers/L5_goals_of_care.json"
+heading = "Recovery and goals of care"
+questions = [
+  "What does his current performance status mean for treatment options?",
+  "He declines further anticancer treatment. How do you proceed?",
+  "The family is financially drained. How do you address this?",
+]
+
+[[layers.documents]]
+name = "50_2027-10-06_interval_history.txt"
+text = """
+INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-07-07 to 2027-10-06)
+
+- The day +6 episode was grade 3 ICANS with grade 2 CRS. Blood cultures negative; CT head and MRI brain
+  without hemorrhage or lymphoma; EEG with diffuse slowing, no seizures; CSF (after platelet transfusion)
+  without malignant cells or infection. Treated with dexamethasone and anakinra; neurological recovery
+  over 9 days. Discharged day +24.
+- Day +30 PET-CT: partial metabolic response.
+- Day +90 PET-CT 2027-09-29: progression: new liver lesions (largest 3.8 cm), enlarging
+  retroperitoneal disease, new left pleural effusion. Biopsy of a liver lesion: DLBCL, CD20+, CD19-dim.
+"""
+
+[[layers.documents]]
+name = "51_2027-10-06_clinic_note.txt"
+text = """
+Clinic visit with the patient, his wife and daughter.
+He spends most of the day in bed or in a recliner, needs help with bathing and dressing, and walks
+only to the bathroom (ECOG 3). Weight 61 kg. Moderate right upper quadrant pain controlled with
+oxycodone 5 mg every 6 hours as needed; mild dyspnea on exertion. Cognition: alert, oriented, follows
+the conversation, repeats back the information accurately, and asks appropriate questions.
+
+He states clearly: "I don't want any more treatment for the lymphoma. I want to be at home with my
+family." He asks what hospice would involve.
+
+His wife says she is exhausted from caregiving. The daughter has taken unpaid leave from work. The family
+has used most of their savings on travel, lodging near the CAR-T center and co-payments, and they are
+behind on bills.
+"""

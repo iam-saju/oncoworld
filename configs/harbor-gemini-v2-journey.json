@@ -1,0 +1,17 @@
+{
+  "n_concurrent_trials": 1,
+  "agents": [
+    {
+      "name": "gemini-cli",
+      "model_name": "google/gemini-3.8-flash",
+      "kwargs": {
+        "disable_web_search": true
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "harbor_cases/dlbcl_0003_journey_v2"
+    }
+  ]
+}

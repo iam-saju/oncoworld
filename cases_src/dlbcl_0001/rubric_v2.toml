@@ -1,0 +1,312 @@
+# HIDDEN. OncoWorld v2 rubric for dlbcl_0001. Copied to tests/rubric_v2.toml; never visible to the model.
+# Drafted by engineering from current practice (NCCN B-cell lymphomas, POLARIX, Lugano 2014, CNS-IPI,
+# AGA/ASCO/EASL guidance on HBV reactivation with anti-CD20 therapy).
+# Every item is PENDING_ONCOLOGIST until signed off in harbor_cases/<task>/review/signoff.md.
+#
+# The decision-changing element of this case is the hepatitis B serology (HBsAg nonreactive, anti-HBc total
+# reactive, anti-HBs reactive) that nothing in the chart comments on: rituximab without antiviral prophylaxis
+# is a dangerous omission.
+#
+# Regex fallback fields are a coarse safety net for runs without a judge; the judge reads `text`.
+# All regexes run on the lower-cased answer.
+
+version = "dlbcl_0001.v2.0"
+review_status = "PENDING_ONCOLOGIST"
+passing_score = 0.75
+
+[leak_check]
+# Strings that would give the answer away if they appeared anywhere in the model-visible chart.
+forbidden_in_case = ["stage iii", "stage iv", "ipi", "cns-ipi", "high-intermediate", "polatuzumab", "pola-r-chp",
+                     "r-chop", "da-epoch-r", "entecavir", "tenofovir", "lamivudine", "antiviral", "reactivation",
+                     "occult", "hbv dna", "prophylaxis", "double-expressor", "double expressor", "double-hit",
+                     "double hit", "lugano", "deauville", "bulky", "bulk", "allopurinol", "rasburicase",
+                     "tumor lysis", "tumour lysis", "methotrexate", "isrt", "g-csf", "pegfilgrastim", "filgrastim"]
+
+# ---------------- diagnosis
+[[items]]
+id = "dx_dlbcl_non_gcb"
+domain = "diagnosis"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response states the diagnosis is diffuse large B-cell lymphoma (NOS) with a non-germinal-center (non-GCB) phenotype by the Hans algorithm."
+all = ["dlbcl|diffuse large b[- ]cell", "non[- ]?gcb|non[- ]germinal[- ]cent(?:er|re)"]
+
+[[items]]
+id = "dx_hans_not_abc"
+domain = "diagnosis"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes that Hans non-GCB is an immunohistochemical surrogate and is not the same as the molecular activated B-cell (ABC) subtype defined by gene-expression profiling."
+any = ["not (?:the same as|equivalent to|equal to|identical to|synonymous with|a substitute for|definitive)[^.]{0,40}(?:abc|activated|molecular|gene[- ]expression|cell[- ]of[- ]origin)",
+       "(?:surrogate|approximat\\w*|proxy)[^.]{0,60}(?:abc|activated|cell[- ]of[- ]origin|gene[- ]expression)",
+       "(?:abc|activated b)[^.]{0,60}(?:requires|needs|defined by|by) gene[- ]expression"]
+
+# ---------------- staging
+[[items]]
+id = "stage_iii"
+domain = "staging"
+kind = "must"
+severity = "dangerous"
+points = 8
+text = "The response stages the disease as Lugano/Ann Arbor stage III."
+any = ["\\bstage\\s*(?:iii|3)\\b(?!\\s*(?:-|to|or|/)\\s*(?:iv|4))"]
+
+[[items]]
+id = "stage_spleen_nodal"
+domain = "staging"
+kind = "should"
+severity = "important"
+points = 3
+text = "The response bases stage III on nodal disease above and below the diaphragm plus splenic involvement, treating the spleen as lymphatic (nodal) tissue rather than an extranodal site."
+all = ["spleen|splenic", "diaphragm", "lymphatic|lymphoid|not (?:an? )?extranodal|nodal"]
+
+[[items]]
+id = "stage_bulky_b_symptoms"
+domain = "staging"
+kind = "should"
+severity = "minor"
+points = 3
+text = "The response notes bulky disease (11 cm retroperitoneal mass, >=10 cm) and B symptoms (fevers, night sweats)."
+all = ["bulk|11(?:\\.0)?\\s*cm", "b[- ]symptoms|night sweats|fevers?"]
+
+[[items]]
+id = "mn_stage_iv"
+domain = "staging"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response assigns stage IV (for example by counting the spleen as an extranodal organ)."
+affirm = ["(?<![iv/-])\\bstage\\s*(?:iv|4)\\b(?![a-z0-9])"]
+
+[[items]]
+id = "mn_spleen_extranodal_count"
+domain = "staging"
+kind = "must_not"
+severity = "important"
+points = 3
+text = "The response counts the spleen as an extranodal site when scoring IPI or CNS-IPI."
+
+# ---------------- molecular classification
+[[items]]
+id = "mol_de_not_dh"
+domain = "molecular_classification"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response classifies the lymphoma as double-expressor (MYC 50% >=40%, BCL2 80% >=50% by IHC) but NOT double-hit (FISH negative for MYC, BCL2 and BCL6 rearrangements)."
+check = "denies_double_hit"
+all = ["double[- ]expressor|dual[- ]expressor|\\bdel\\b|co[- ]?express"]
+
+[[items]]
+id = "mn_calls_double_hit"
+domain = "molecular_classification"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response classifies this lymphoma as double-hit / high-grade B-cell lymphoma with MYC and BCL2 rearrangements."
+check = "affirms_double_hit"
+
+[[items]]
+id = "mn_denies_double_expressor"
+domain = "molecular_classification"
+kind = "must_not"
+severity = "minor"
+points = 3
+text = "The response states the lymphoma is NOT double-expressor despite MYC 50% and BCL2 80% by IHC."
+
+# ---------------- prognosis
+[[items]]
+id = "prog_ipi_3"
+domain = "prognosis"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response calculates IPI as 3 (high-intermediate risk): age >60, elevated LDH, stage III; ECOG 1 and zero extranodal sites do not score."
+any = ["(?<!cns-)(?<!cns )\\bipi\\b[^.]{0,40}\\b3\\b", "(?<!cns-)(?<!cns )\\bipi\\b[^.]{0,60}high[- ]intermediate", "high[- ]intermediate[^.]{0,30}(?<!cns-)(?<!cns )\\bipi\\b"]
+
+[[items]]
+id = "prog_cns_ipi_intermediate"
+domain = "prognosis"
+kind = "must"
+severity = "important"
+points = 5
+text = "The response calculates CNS-IPI as 3 (intermediate risk), without counting the spleen as an extranodal site."
+any = ["cns[- ]ipi[^.]{0,40}\\b3\\b", "cns[- ]ipi[^.]{0,60}intermediate", "intermediate[^.]{0,30}cns[- ]ipi"]
+
+# ---------------- first-line treatment
+[[items]]
+id = "tx_curative_pola_or_rchop"
+domain = "first_line_treatment"
+kind = "must"
+severity = "dangerous"
+points = 8
+text = "The response recommends curative-intent full-dose immunochemotherapy with Pola-R-CHP or R-CHOP for 6 cycles."
+recommend = ["pola[- ]?r[- ]?chp|polatuzumab|r[- ]?chop"]
+
+[[items]]
+id = "tx_pola_preferred"
+domain = "first_line_treatment"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response names Pola-R-CHP as the preferred regimen given IPI >=2 (noting the POLARIX benefit appeared greatest in non-GCB/ABC disease), with R-CHOP an acceptable alternative."
+recommend = ["pola[- ]?r[- ]?chp|polatuzumab"]
+any = ["prefer|favou?r"]
+
+[[items]]
+id = "tx_isrt_residual_bulk"
+domain = "first_line_treatment"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response considers ISRT to the initially bulky site if it remains PET-positive (residual Deauville 4-5) at the end of systemic therapy."
+all = ["radiation|radiotherapy|\\brt\\b|isrt", "residual|pet[- ]positive|deauville|initially bulky"]
+
+[[items]]
+id = "mn_non_curative"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response recommends palliative-only treatment, best supportive care, or hospice as the plan."
+recommend = ["palliative[- ](?:only|intent|care alone)|best supportive care|hospice"]
+
+[[items]]
+id = "mn_da_epoch"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "important"
+points = 5
+text = "The response recommends DA-EPOCH-R or another intensified regimen on the basis of double-expressor status alone."
+check = "recommends_da_epoch"
+
+[[items]]
+id = "mn_dose_reduced_initial"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "important"
+points = 4
+text = "The response recommends a dose-reduced regimen (e.g. R-mini-CHOP) for this fit 62-year-old with ECOG 1."
+recommend = ["r[- ]?mini[- ]?chop|dose[- ]reduced (?:r[- ]?chop|chemo)"]
+
+# ---------------- hepatitis B (the decision-changing element)
+[[items]]
+id = "hbv_prophylaxis"
+domain = "pretreatment_workup"
+kind = "must"
+severity = "dangerous"
+points = 12
+text = "The response recognizes resolved/occult hepatitis B (HBsAg negative, anti-HBc positive) with a high risk of HBV reactivation on anti-CD20 therapy, and starts antiviral prophylaxis (entecavir or tenofovir) before the first rituximab dose, continued for at least 12 months after the last dose."
+recommend = ["entecavir|tenofovir|antiviral|nucleos"]
+all = ["hbv|hepatitis b|anti[- ]hbc|core antibody"]
+
+[[items]]
+id = "hbv_dna_lft_monitoring"
+domain = "pretreatment_workup"
+kind = "should"
+severity = "important"
+points = 5
+text = "The response orders a baseline quantitative HBV DNA and liver function tests and monitors them (ALT, HBV DNA) during and after therapy."
+all = ["hbv[- ]dna|hbv viral load|hepatitis b (?:virus )?dna", "lfts?\\b|liver (?:function|enzymes|tests|panel)|\\balt\\b|transaminase|hepatic (?:function|panel)", "monitor|every|during"]
+
+[[items]]
+id = "mn_no_hbv_action"
+domain = "pretreatment_workup"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response states that no HBV-directed action or antiviral prophylaxis is needed (e.g. because HBsAg is negative)."
+any = ["\\b(?:no|not)\\s+(?:\\w+\\s+){0,3}(?:antiviral|hbv|hepatitis b)\\s+(?:\\w+\\s+){0,2}(?:prophylaxis|action|therapy|treatment|monitoring)\\s+(?:is\\s+)?(?:needed|required|necessary|indicated)",
+       "(?:antiviral|hbv|hepatitis b)\\s+(?:\\w+\\s+){0,2}(?:prophylaxis|therapy|treatment)\\s+(?:is|are)\\s+not\\s+(?:needed|required|necessary|indicated)",
+       "(?:hbsag|surface antigen)[^.]{0,30}(?:negative|nonreactive|non-reactive)[^.]{0,40}\\b(?:so|therefore|thus|hence)\\b[^.]{0,20}\\b(?:no|not)\\b"]
+
+# ---------------- CNS
+[[items]]
+id = "cns_no_routine_prophylaxis"
+domain = "cns_management"
+kind = "should"
+severity = "important"
+points = 5
+text = "The response judges CNS relapse risk as intermediate and states that routine CNS prophylaxis and routine MRI brain / lumbar puncture are not indicated without neurologic symptoms or high-risk sites."
+any = ["(?:prophylaxis|methotrexate|hd[- ]?mtx)[^.]{0,60}not (?:routinely )?(?:indicated|recommended|needed|required|warranted)",
+       "not (?:routinely )?(?:indicated|recommended|needed|warranted)[^.]{0,40}(?:prophylaxis|methotrexate)",
+       "no (?:routine )?cns prophylaxis"]
+all = ["\\bmri\\b|lumbar puncture|\\blp\\b|\\bcsf\\b"]
+
+[[items]]
+id = "mn_mandates_cns_prophylaxis"
+domain = "cns_management"
+kind = "must_not"
+severity = "important"
+points = 5
+text = "The response mandates CNS prophylaxis (high-dose methotrexate or intrathecal chemotherapy) for this intermediate-risk patient."
+recommend = ["hd[- ]?mtx|high[- ]dose methotrexate|intrathecal|cns prophylaxis"]
+
+# ---------------- response assessment
+[[items]]
+id = "resp_eot_pet_lugano"
+domain = "response_assessment"
+kind = "must"
+severity = "important"
+points = 7
+text = "The response plans an end-of-treatment FDG PET-CT read with Lugano criteria / Deauville 5-point scale."
+all = ["pet", "deauville|lugano", "end[- ]of[- ](?:treatment|therapy)|after (?:completion|completing)|completion of|\\beot\\b|post[- ]treatment|final pet"]
+
+[[items]]
+id = "resp_ds45_biopsy"
+domain = "response_assessment"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response says residual Deauville 4-5 uptake at end of treatment should be biopsied before changing therapy when it would change management."
+any = ["biops[^.]{0,80}(?:residual|deauville|ds\\s*[45]|pet[- ]positive)", "(?:residual|deauville\\s*(?:4|5)|ds\\s*[45]|pet[- ]positive)[^.]{0,80}biops"]
+
+# ---------------- supportive care
+[[items]]
+id = "sup_tls_allopurinol"
+domain = "supportive_care"
+kind = "should"
+severity = "important"
+points = 5
+text = "The response recognizes at least intermediate tumor-lysis risk (11 cm mass, LDH ~3x ULN) and orders allopurinol plus hydration (with TLS lab monitoring)."
+all = ["tumou?r lysis|\\btls\\b", "allopurinol|rasburicase", "hydrat"]
+
+[[items]]
+id = "sup_gcsf"
+domain = "supportive_care"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response considers primary G-CSF prophylaxis (e.g. pegfilgrastim) as reasonable with this regimen."
+any = ["g[- ]?csf", "pegfilgrastim", "filgrastim", "growth factor"]
+
+[[items]]
+id = "work_echo_reviewed"
+domain = "pretreatment_workup"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes the baseline LVEF of 58% permits anthracycline."
+all = ["lvef|ejection fraction|echocardiogra", "anthracycline|doxorubicin"]
+
+# ---------------- fitness and goals
+[[items]]
+id = "fit_full_dose"
+domain = "fitness_and_goals"
+kind = "must"
+severity = "important"
+points = 5
+text = "The response judges the patient fit for full-dose curative-intent therapy (ECOG 1, normal organ function, controlled comorbidities) in line with his goal of cure."
+any = ["fit for (?:full[- ]dose|curative|standard|intensive)", "full[- ]dose[^.]{0,40}(?:appropriate|curative|indicated|aligned|fit)", "(?:ecog|performance status)\\s*1[^.]{0,60}(?:fit|full[- ]dose|curative)"]
+
+# ---------------- missing information
+[[items]]
+id = "miss_hbv_dna"
+domain = "missing_information"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response lists the quantitative HBV DNA level as missing information still needed."
+any = ["hbv[- ]dna|hbv viral load|hepatitis b (?:virus )?dna"]

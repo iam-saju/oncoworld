@@ -1,0 +1,353 @@
+{
+  "reward": 1.0,
+  "raw_points": 100,
+  "max_points": 100,
+  "passed": true,
+  "dangerous_errors": [],
+  "judge": "none",
+  "rubric_version": "dlbcl_0004.v2.0",
+  "review_status": "PENDING_ONCOLOGIST",
+  "domains": {
+    "diagnosis": {
+      "points": 22,
+      "max_points": 22,
+      "score": 1.0
+    },
+    "staging": {
+      "points": 8,
+      "max_points": 8,
+      "score": 1.0
+    },
+    "molecular_classification": {
+      "points": 3,
+      "max_points": 3,
+      "score": 1.0
+    },
+    "prognosis": {
+      "points": 6,
+      "max_points": 6,
+      "score": 1.0
+    },
+    "first_line_treatment": {
+      "points": 15,
+      "max_points": 15,
+      "score": 1.0
+    },
+    "cns_management": {
+      "points": 12,
+      "max_points": 12,
+      "score": 1.0
+    },
+    "response_assessment": {
+      "points": 6,
+      "max_points": 6,
+      "score": 1.0
+    },
+    "supportive_care": {
+      "points": 20,
+      "max_points": 20,
+      "score": 1.0
+    },
+    "pretreatment_workup": {
+      "points": 3,
+      "max_points": 3,
+      "score": 1.0
+    },
+    "fitness_and_goals": {
+      "points": 5,
+      "max_points": 5,
+      "score": 1.0
+    }
+  },
+  "items": [
+    {
+      "id": "dx_hgbl_double_hit",
+      "domain": "diagnosis",
+      "kind": "must",
+      "severity": "dangerous",
+      "points": 10,
+      "met": true,
+      "delta": 10,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_dx_dlbcl_nos",
+      "domain": "diagnosis",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "dx_gcb_hans",
+      "domain": "diagnosis",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_plan_outdated",
+      "domain": "diagnosis",
+      "kind": "must",
+      "severity": "important",
+      "points": 10,
+      "met": true,
+      "delta": 10,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "stage_ii_bulky",
+      "domain": "staging",
+      "kind": "must",
+      "severity": "important",
+      "points": 8,
+      "met": true,
+      "delta": 8,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_stage_iii_iv",
+      "domain": "staging",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "bio_double_expressor_secondary",
+      "domain": "molecular_classification",
+      "kind": "should",
+      "severity": "minor",
+      "points": 3,
+      "met": true,
+      "delta": 3,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "prog_ipi1_biology_dominates",
+      "domain": "prognosis",
+      "kind": "should",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_intensive_curative",
+      "domain": "first_line_treatment",
+      "kind": "must",
+      "severity": "dangerous",
+      "points": 12,
+      "met": true,
+      "delta": 12,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_rchop_preferred",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 6,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mn_non_curative",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "tx_isrt_consolidation",
+      "domain": "first_line_treatment",
+      "kind": "should",
+      "severity": "minor",
+      "points": 3,
+      "met": true,
+      "delta": 3,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "cns_staging_mri_csf",
+      "domain": "cns_management",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "cns_prophylaxis",
+      "domain": "cns_management",
+      "kind": "should",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_cns_dismissed",
+      "domain": "cns_management",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "resp_pet_lugano",
+      "domain": "response_assessment",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_gcsf",
+      "domain": "supportive_care",
+      "kind": "must",
+      "severity": "important",
+      "points": 5,
+      "met": true,
+      "delta": 5,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_tls",
+      "domain": "supportive_care",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_central_access_infusion",
+      "domain": "supportive_care",
+      "kind": "should",
+      "severity": "minor",
+      "points": 3,
+      "met": true,
+      "delta": 3,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_fertility",
+      "domain": "supportive_care",
+      "kind": "should",
+      "severity": "minor",
+      "points": 3,
+      "met": true,
+      "delta": 3,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_svc_airway",
+      "domain": "supportive_care",
+      "kind": "should",
+      "severity": "minor",
+      "points": 3,
+      "met": true,
+      "delta": 3,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "work_hbv_reviewed",
+      "domain": "pretreatment_workup",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "work_echo_reviewed",
+      "domain": "pretreatment_workup",
+      "kind": "should",
+      "severity": "minor",
+      "points": 1,
+      "met": true,
+      "delta": 1,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "fit_intensive",
+      "domain": "fitness_and_goals",
+      "kind": "must",
+      "severity": "important",
+      "points": 5,
+      "met": true,
+      "delta": 5,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    }
+  ],
+  "judge_regex_disagreements": []
+}

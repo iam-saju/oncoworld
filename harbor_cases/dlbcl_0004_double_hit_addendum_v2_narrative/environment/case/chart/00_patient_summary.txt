@@ -1,0 +1,20 @@
+PATIENT SUMMARY (EHR export 2026-09-21)
+
+Name: Daniel Sample (synthetic)    MRN: OW-0004
+DOB: 1972-01-30 (54 y)    Sex: male
+
+PROBLEM LIST
+- Obstructive sleep apnea syndrome (since 2019). Moderate (AHI 22 on 2019 sleep study). Uses CPAP nightly with good adherence.
+- Mild intermittent asthma (since 1990). Albuterol as needed, about once a month. No hospitalizations or oral steroids in over 10 years.
+- Gastroesophageal reflux disease (since 2016). Controlled on omeprazole.
+- Obesity (since 2015). BMI 30.2 (September 2026).
+
+ACTIVE MEDICATIONS
+- Omeprazole 20 mg capsule, 1 capsule by mouth daily before breakfast
+- Albuterol HFA 90 mcg/actuation inhaler, 2 puffs inhaled every 4-6 hours as needed for wheeze
+- Cetirizine 10 mg tablet, 1 tablet by mouth daily as needed for seasonal allergies
+
+ALLERGIES
+- Penicillin: Urticaria (childhood)
+
+This is a synthetic training case for AI evaluation. It is not clinical decision support.

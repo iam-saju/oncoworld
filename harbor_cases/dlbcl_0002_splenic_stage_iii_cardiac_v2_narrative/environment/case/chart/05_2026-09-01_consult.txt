@@ -1,0 +1,42 @@
+HEMATOLOGY-ONCOLOGY NEW PATIENT CONSULTATION
+Date: 2026-09-01    Author: Synthetic Hematologist-Oncologist
+
+HPI: 59-year-old woman referred after excisional biopsy of a left axillary node (2026-08-25) showed
+diffuse large B-cell lymphoma (FISH pending). She first noticed the left axillary lump in mid-July.
+For about 5 weeks she has had evening fevers several times a week; her home log, brought today,
+documents temperatures of 37.9 to 38.4 C, maximum 38.4 C on 2026-08-27, without infectious symptoms.
+Drenching night sweats requiring a change of nightclothes two to three times a week. Fatigue: still
+working her usual hours at the school library and independent in all activities, but has stopped her
+exercise classes. Weight 70.5 kg today vs 72.8 kg in March 2026 (about 3% loss). No abdominal pain,
+early satiety, bone pain, cough, headache, visual change, focal weakness or confusion.
+Cardiovascular: no exertional dyspnea, orthopnea, paroxysmal nocturnal dyspnea, ankle swelling, chest
+pain, palpitations or syncope; climbs two flights of stairs without stopping (NYHA class I).
+
+ONCOLOGY HISTORY: Left breast invasive ductal carcinoma 2016, pT2 pN0, stage IIA, ER-positive,
+PR-positive, HER2-negative. Lumpectomy and sentinel node biopsy (2016-02); dose-dense AC (doxorubicin
+60 mg/m2 and cyclophosphamide 600 mg/m2, 4 cycles; cumulative doxorubicin 240 mg/m2) followed by weekly
+paclitaxel x 12 (2016-03 to 2016-07); left whole-breast radiotherapy 50 Gy + 10 Gy boost (2016-08 to
+2016-10); anastrozole since 2016-11, now in year 10, planned to stop November 2026. Last mammogram
+2026-03 benign.
+
+PMH: hypertension (2018) on amlodipine; osteopenia on calcium/vitamin D. No known coronary disease,
+diabetes or arrhythmia. No other cardiac history.
+Medications: see medication list.
+Allergies: penicillin (hives).
+Social: school librarian, married, lives with her husband 20 minutes from the cancer center. Never
+smoker. Rare alcohol. Two adult children.
+Family history: mother with heart failure in her 70s; father with colon cancer at 74. No known
+BRCA testing; criteria were not met in 2016.
+
+Exam: T 37.8 C, HR 84, BP 146/88, RR 14, SpO2 98% RA. Weight 70.5 kg, height 165 cm (BSA 1.79 m2).
+Well-appearing. Healing left axillary incision; residual 2 cm firm left axillary node. No cervical,
+supraclavicular or inguinal lymphadenopathy. Breasts: healed left lumpectomy scar, no masses
+bilaterally. Heart: regular rhythm, no murmur or gallop; JVP not elevated. Lungs clear. Abdomen soft,
+non-tender; spleen tip palpable 2 cm below the left costal margin; no hepatomegaly. No peripheral
+edema. Neuro: non-focal.
+
+ECOG performance status 1.
+
+Plan today: CBC, CMP, LDH, uric acid, beta-2 microglobulin, viral serologies; FDG PET-CT;
+transthoracic echocardiogram (prior doxorubicin and left breast radiotherapy); bone marrow biopsy;
+await FISH. Return after results.

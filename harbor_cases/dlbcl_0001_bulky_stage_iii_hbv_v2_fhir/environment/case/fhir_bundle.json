@@ -1,0 +1,4965 @@
+{
+  "resourceType": "Bundle",
+  "id": "dlbcl-0001-v2",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-patient-bundle"
+    ],
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "http://oncoworld.example/fhir/sid/bundle",
+    "value": "dlbcl-0001-v2"
+  },
+  "type": "collection",
+  "timestamp": "2026-09-17T18:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Patient/dlbcl-0001-v2-patient",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "dlbcl-0001-v2-patient",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient"
+          ],
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+              "code": "HTEST",
+              "display": "test health data"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex",
+            "valueCode": "M"
+          }
+        ],
+        "identifier": [
+          {
+            "use": "usual",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "MR",
+                  "display": "Medical record number"
+                }
+              ]
+            },
+            "system": "http://oncoworld.example/fhir/sid/mrn",
+            "value": "OW-0001"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Sample",
+            "given": [
+              "Thomas"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1964-05-11",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Synthetic patient Thomas Sample, male, born 1964-05-11. Test data, not a real person.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Condition/dlbcl-0001-v2-condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "dlbcl-0001-v2-condition-1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "40930008",
+              "display": "Hypothyroidism"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "onsetDateTime": "2012",
+        "note": [
+          {
+            "text": "On levothyroxine. TSH 2.1 mIU/L (June 2026)."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem: Hypothyroidism (since 2012).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Condition/dlbcl-0001-v2-condition-2",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "dlbcl-0001-v2-condition-2",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "235595009",
+              "display": "Gastroesophageal reflux disease"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "onsetDateTime": "2018",
+        "note": [
+          {
+            "text": "Controlled on omeprazole. EGD 2019: mild esophagitis, no Barrett's."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem: Gastroesophageal reflux disease (since 2018).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Condition/dlbcl-0001-v2-condition-3",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "dlbcl-0001-v2-condition-3",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "55822004",
+              "display": "Hyperlipidemia"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "onsetDateTime": "2016",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem: Hyperlipidemia (since 2016).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0001-v2-med-1",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0001-v2-med-1",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Levothyroxine 100 mcg tablet"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Levothyroxine 100 mcg tablet, 1 tablet by mouth daily before breakfast"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication: Levothyroxine 100 mcg tablet, 1 tablet by mouth daily before breakfast.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0001-v2-med-2",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0001-v2-med-2",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Omeprazole 20 mg capsule"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Omeprazole 20 mg capsule, 1 capsule by mouth daily"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication: Omeprazole 20 mg capsule, 1 capsule by mouth daily.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0001-v2-med-3",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0001-v2-med-3",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Atorvastatin 20 mg tablet"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Atorvastatin 20 mg tablet, 1 tablet by mouth nightly"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication: Atorvastatin 20 mg tablet, 1 tablet by mouth nightly.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0001-v2-med-4",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0001-v2-med-4",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Acetaminophen 500 mg tablet"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Acetaminophen 500 mg tablet, 1-2 tablets by mouth every 6 hours as needed for fever (patient-reported, started August 2026)"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication: Acetaminophen 500 mg tablet, 1-2 tablets by mouth every 6 hours as needed for fever (patient-reported, started August 2026).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-ecog",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-ecog",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-ecog-performance-status"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "89247-1",
+              "display": "ECOG Performance Status score"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-02",
+        "performer": [
+          {
+            "reference": "Practitioner/dlbcl-0001-v2-hematologist"
+          }
+        ],
+        "valueInteger": 1,
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ECOG performance status 1.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-1-hb",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-1-hb",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 10.8,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 13.5,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "high": {
+              "value": 17.5,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hemoglobin: 10.8 g/dL (L), 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-1-mcv",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-1-mcv",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "787-2",
+              "display": "MCV [Entitic volume] by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 88,
+          "unit": "fL",
+          "system": "http://unitsofmeasure.org",
+          "code": "fL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 80,
+              "unit": "fL",
+              "system": "http://unitsofmeasure.org",
+              "code": "fL"
+            },
+            "high": {
+              "value": 100,
+              "unit": "fL",
+              "system": "http://unitsofmeasure.org",
+              "code": "fL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MCV: 88 fL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-1-wbc",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-1-wbc",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6690-2",
+              "display": "Leukocytes [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 7.8,
+          "unit": "x10^3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 4.0,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "high": {
+              "value": 11.0,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>WBC: 7.8 x10^3/uL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-1-anc",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-1-anc",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "751-8",
+              "display": "Neutrophils [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 5.6,
+          "unit": "x10^3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 1.8,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "high": {
+              "value": 7.7,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Absolute neutrophils: 5.6 x10^3/uL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-1-alc",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-1-alc",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "731-0",
+              "display": "Lymphocytes [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 1.2,
+          "unit": "x10^3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 1.0,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "high": {
+              "value": 4.8,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Absolute lymphocytes: 1.2 x10^3/uL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-1-plt",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-1-plt",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "777-3",
+              "display": "Platelets [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 210,
+          "unit": "x10^3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 150,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "high": {
+              "value": 400,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Platelets: 210 x10^3/uL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0001-v2-labpanel-1",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0001-v2-labpanel-1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "LAB",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Complete blood count with differential"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "issued": "2026-09-03T14:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "result": [
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-1-hb"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-1-mcv"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-1-wbc"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-1-anc"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-1-alc"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-1-plt"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Complete blood count with differential, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-na",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-na",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2951-2",
+              "display": "Sodium [Moles/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 138,
+          "unit": "mmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mmol/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 135,
+              "unit": "mmol/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mmol/L"
+            },
+            "high": {
+              "value": 145,
+              "unit": "mmol/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mmol/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Sodium: 138 mmol/L, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-k",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-k",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2823-3",
+              "display": "Potassium [Moles/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 4.2,
+          "unit": "mmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mmol/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 3.5,
+              "unit": "mmol/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mmol/L"
+            },
+            "high": {
+              "value": 5.1,
+              "unit": "mmol/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mmol/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Potassium: 4.2 mmol/L, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-cl",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-cl",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2075-0",
+              "display": "Chloride [Moles/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 102,
+          "unit": "mmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mmol/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 98,
+              "unit": "mmol/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mmol/L"
+            },
+            "high": {
+              "value": 107,
+              "unit": "mmol/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mmol/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Chloride: 102 mmol/L, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-co2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-co2",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2028-9",
+              "display": "Carbon dioxide, total [Moles/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 25,
+          "unit": "mmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mmol/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 22,
+              "unit": "mmol/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mmol/L"
+            },
+            "high": {
+              "value": 29,
+              "unit": "mmol/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mmol/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>CO2, total: 25 mmol/L, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-bun",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-bun",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3094-0",
+              "display": "Urea nitrogen [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 15,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 7,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 20,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>BUN: 15 mg/dL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-creatinine",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-creatinine",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Creatinine [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 0.9,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.7,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 1.3,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Creatinine: 0.9 mg/dL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-egfr",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-egfr",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "98979-8",
+              "display": "Glomerular filtration rate/1.73 sq M.predicted [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI 2021)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 96,
+          "unit": "mL/min/1.73m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL/min/{1.73_m2}"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 60,
+              "unit": "mL/min/1.73m2",
+              "system": "http://unitsofmeasure.org",
+              "code": "mL/min/{1.73_m2}"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>eGFR (CKD-EPI 2021): 96 mL/min/1.73m2, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-glucose",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-glucose",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2345-7",
+              "display": "Glucose [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 104,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 70,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 99,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Glucose: 104 mg/dL (H), 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-ca",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-ca",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "17861-6",
+              "display": "Calcium [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 9.3,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 8.6,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 10.3,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Calcium: 9.3 mg/dL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-albumin",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-albumin",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1751-7",
+              "display": "Albumin [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 3.7,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 3.5,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "high": {
+              "value": 5.0,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Albumin: 3.7 g/dL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-protein",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-protein",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2885-2",
+              "display": "Protein [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 7.1,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 6.0,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "high": {
+              "value": 8.3,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Total protein: 7.1 g/dL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-ast",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-ast",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1920-8",
+              "display": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 27,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 10,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            },
+            "high": {
+              "value": 40,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>AST: 27 U/L, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-alt",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-alt",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1742-6",
+              "display": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 31,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 7,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            },
+            "high": {
+              "value": 56,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ALT: 31 U/L, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-alp",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-alp",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "6768-6",
+              "display": "Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 112,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 40,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            },
+            "high": {
+              "value": 129,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Alkaline phosphatase: 112 U/L, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-tbili",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-tbili",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Bilirubin.total [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 0.6,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.2,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 1.2,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Bilirubin, total: 0.6 mg/dL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-urate",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-urate",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3084-1",
+              "display": "Urate [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 6.8,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 3.4,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 7.0,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Uric acid: 6.8 mg/dL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-phos",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-phos",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2777-1",
+              "display": "Phosphate [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 3.9,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 2.5,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 4.5,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Phosphorus: 3.9 mg/dL, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-ldh",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-ldh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "14804-9",
+              "display": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma by Lactate to pyruvate reaction"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 680,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 135,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            },
+            "high": {
+              "value": 225,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>LDH: 680 U/L (H), 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-2-b2m",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-2-b2m",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1952-1",
+              "display": "Beta-2-Microglobulin [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 3.4,
+          "unit": "mg/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.8,
+              "unit": "mg/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/L"
+            },
+            "high": {
+              "value": 2.2,
+              "unit": "mg/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Beta-2 microglobulin: 3.4 mg/L (H), 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0001-v2-labpanel-2",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0001-v2-labpanel-2",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "LAB",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Comprehensive metabolic panel and tumor markers"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "issued": "2026-09-03T14:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "result": [
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-na"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-k"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-cl"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-co2"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-bun"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-creatinine"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-egfr"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-glucose"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-ca"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-albumin"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-protein"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-ast"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-alt"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-alp"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-tbili"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-urate"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-phos"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-ldh"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-2-b2m"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Comprehensive metabolic panel and tumor markers, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-3-hbsag",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-3-hbsag",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "5196-1",
+              "display": "Hepatitis B virus surface Ag [Presence] in Serum or Plasma by Immunoassay"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "131194007",
+              "display": "Non-Reactive"
+            }
+          ],
+          "text": "Nonreactive"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hepatitis B surface antigen: Nonreactive, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-3-anti-hbc",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-3-anti-hbc",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "16933-4",
+              "display": "Hepatitis B virus core Ab [Presence] in Serum"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "11214006",
+              "display": "Reactive"
+            }
+          ],
+          "text": "Reactive"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hepatitis B core antibody, total: Reactive, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-3-anti-hbs",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-3-anti-hbs",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "16935-9",
+              "display": "Hepatitis B virus surface Ab [Presence] in Serum"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "11214006",
+              "display": "Reactive"
+            }
+          ],
+          "text": "Reactive"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hepatitis B surface antibody: Reactive, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-3-hcv-ab",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-3-hcv-ab",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "13955-0",
+              "display": "Hepatitis C virus Ab [Presence] in Serum or Plasma by Immunoassay"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "131194007",
+              "display": "Non-Reactive"
+            }
+          ],
+          "text": "Nonreactive"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hepatitis C antibody: Nonreactive, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-3-hiv-agab",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-3-hiv-agab",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "56888-1",
+              "display": "HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "131194007",
+              "display": "Non-Reactive"
+            }
+          ],
+          "text": "Nonreactive"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>HIV-1/2 Ag/Ab screen: Nonreactive, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0001-v2-labpanel-3",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0001-v2-labpanel-3",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "LAB",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Infectious disease serologies"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-03T08:00:00Z",
+        "issued": "2026-09-03T14:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "result": [
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-3-hbsag"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-3-anti-hbc"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-3-anti-hbs"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-3-hcv-ab"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-3-hiv-agab"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Infectious disease serologies, 2026-09-03.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-4-k",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-4-k",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2823-3",
+              "display": "Potassium [Moles/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 4.3,
+          "unit": "mmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mmol/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 3.5,
+              "unit": "mmol/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mmol/L"
+            },
+            "high": {
+              "value": 5.1,
+              "unit": "mmol/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "mmol/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Potassium: 4.3 mmol/L, 2026-09-16.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-4-creatinine",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-4-creatinine",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Creatinine [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 0.9,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.7,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 1.3,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Creatinine: 0.9 mg/dL, 2026-09-16.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-4-egfr",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-4-egfr",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "98979-8",
+              "display": "Glomerular filtration rate/1.73 sq M.predicted [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI 2021)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 96,
+          "unit": "mL/min/1.73m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL/min/{1.73_m2}"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 60,
+              "unit": "mL/min/1.73m2",
+              "system": "http://unitsofmeasure.org",
+              "code": "mL/min/{1.73_m2}"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>eGFR (CKD-EPI 2021): 96 mL/min/1.73m2, 2026-09-16.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-4-ca",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-4-ca",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "17861-6",
+              "display": "Calcium [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 9.2,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 8.6,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 10.3,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Calcium: 9.2 mg/dL, 2026-09-16.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-4-phos",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-4-phos",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2777-1",
+              "display": "Phosphate [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 4.0,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 2.5,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 4.5,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Phosphorus: 4.0 mg/dL, 2026-09-16.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-4-urate",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-4-urate",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3084-1",
+              "display": "Urate [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 7.1,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 3.4,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 7.0,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Uric acid: 7.1 mg/dL (H), 2026-09-16.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-4-ast",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-4-ast",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1920-8",
+              "display": "Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 29,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 10,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            },
+            "high": {
+              "value": 40,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>AST: 29 U/L, 2026-09-16.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-4-alt",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-4-alt",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1742-6",
+              "display": "Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 34,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 7,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            },
+            "high": {
+              "value": 56,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ALT: 34 U/L, 2026-09-16.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-lab-4-ldh",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-lab-4-ldh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "14804-9",
+              "display": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma by Lactate to pyruvate reaction"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 735,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 135,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            },
+            "high": {
+              "value": 225,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>LDH: 735 U/L (H), 2026-09-16.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0001-v2-labpanel-4",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0001-v2-labpanel-4",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "LAB",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Repeat chemistry"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16T08:00:00Z",
+        "issued": "2026-09-16T14:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-clinical-lab"
+          }
+        ],
+        "result": [
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-4-k"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-4-creatinine"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-4-egfr"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-4-ca"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-4-phos"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-4-urate"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-4-ast"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-4-alt"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-lab-4-ldh"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Repeat chemistry, 2026-09-16.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Procedure/dlbcl-0001-v2-biopsy",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "dlbcl-0001-v2-biopsy",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "21911005",
+              "display": "Biopsy of lymph node"
+            }
+          ],
+          "text": "Excisional biopsy, left cervical lymph node"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "performedDateTime": "2026-09-09",
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "59441001",
+                "display": "Structure of lymph node"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Excisional biopsy, left cervical lymph node, 2026-09-09.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Specimen/dlbcl-0001-v2-biopsy-specimen",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "dlbcl-0001-v2-biopsy-specimen",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-human-specimen"
+          ]
+        },
+        "status": "available",
+        "type": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v2-0487",
+              "code": "TISS",
+              "display": "Tissue"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "309079007",
+              "display": "Lymph node biopsy specimen"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "collection": {
+          "collectedDateTime": "2026-09-09",
+          "bodySite": {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "59441001",
+                "display": "Structure of lymph node"
+              }
+            ]
+          }
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Excisional biopsy, left cervical lymph node specimen.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Condition/dlbcl-0001-v2-primary-cancer",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "dlbcl-0001-v2-primary-cancer",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-histology-morphology-behavior",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "1172695008",
+                  "display": "Diffuse large B cell malignant lymphoma (morphologic abnormality)"
+                }
+              ]
+            }
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "109969005",
+              "display": "Diffuse large B-cell lymphoma"
+            },
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10-cm",
+              "code": "C83.30",
+              "display": "Diffuse large B-cell lymphoma, unspecified site"
+            }
+          ],
+          "text": "Diffuse large B-cell lymphoma"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "recordedDate": "2026-09-11",
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "DiagnosticReport/dlbcl-0001-v2-doc-pathology"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Primary cancer: Diffuse large B-cell lymphoma.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-ihc-cd20",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-ihc-cd20",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker-test"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-condition",
+            "valueReference": {
+              "reference": "Condition/dlbcl-0001-v2-primary-cancer"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "10438-0",
+              "display": "CD20 Ag [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-11",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/dlbcl-0001-v2-biopsy-specimen"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>IHC CD20: positive.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-ihc-cd10",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-ihc-cd10",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker-test"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-condition",
+            "valueReference": {
+              "reference": "Condition/dlbcl-0001-v2-primary-cancer"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "40551-4",
+              "display": "CD10 Ag [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-11",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260385009",
+              "display": "Negative"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/dlbcl-0001-v2-biopsy-specimen"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>IHC CD10: negative.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-ihc-bcl6",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-ihc-bcl6",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker-test"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-condition",
+            "valueReference": {
+              "reference": "Condition/dlbcl-0001-v2-primary-cancer"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "47009-6",
+              "display": "BCL6 Ag [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-11",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/dlbcl-0001-v2-biopsy-specimen"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>IHC BCL6: positive.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-ihc-mum1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-ihc-mum1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker-test"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-condition",
+            "valueReference": {
+              "reference": "Condition/dlbcl-0001-v2-primary-cancer"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://oncoworld.example/fhir/CodeSystem/lab-local",
+              "code": "MUM1-IHC",
+              "display": "MUM1/IRF4 Ag [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-11",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/dlbcl-0001-v2-biopsy-specimen"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>IHC MUM1: positive.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-ihc-bcl2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-ihc-bcl2",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker-test"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-condition",
+            "valueReference": {
+              "reference": "Condition/dlbcl-0001-v2-primary-cancer"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://oncoworld.example/fhir/CodeSystem/lab-local",
+              "code": "BCL2-IHC-PCT",
+              "display": "BCL2 Ag positive tumor cells/cells in Tissue by Immune stain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-11",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 80,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "specimen": {
+          "reference": "Specimen/dlbcl-0001-v2-biopsy-specimen"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>IHC BCL2: 80%.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-ihc-myc",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-ihc-myc",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker-test"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-condition",
+            "valueReference": {
+              "reference": "Condition/dlbcl-0001-v2-primary-cancer"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://oncoworld.example/fhir/CodeSystem/lab-local",
+              "code": "MYC-IHC-PCT",
+              "display": "c-MYC Ag positive tumor cells/cells in Tissue by Immune stain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-11",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 50,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "specimen": {
+          "reference": "Specimen/dlbcl-0001-v2-biopsy-specimen"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>IHC MYC: 50%.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-ihc-ki67",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-ihc-ki67",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker-test"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-condition",
+            "valueReference": {
+              "reference": "Condition/dlbcl-0001-v2-primary-cancer"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29593-1",
+              "display": "Cells.Ki-67 nuclear Ag/cells in Tissue by Immune stain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-11",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 85,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "specimen": {
+          "reference": "Specimen/dlbcl-0001-v2-biopsy-specimen"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>IHC KI67: 85%.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-fish-myc",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-fish-myc",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker-test"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-condition",
+            "valueReference": {
+              "reference": "Condition/dlbcl-0001-v2-primary-cancer"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "78215-1",
+              "display": "MYC gene rearrangements [Presence] in Blood or Tissue by FISH"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16",
+        "issued": "2026-09-16T15:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260415000",
+              "display": "Not detected"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/dlbcl-0001-v2-biopsy-specimen"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>FISH MYC rearrangement: not detected.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-fish-bcl2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-fish-bcl2",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker-test"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-condition",
+            "valueReference": {
+              "reference": "Condition/dlbcl-0001-v2-primary-cancer"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "78218-5",
+              "display": "BCL2 gene rearrangements [Presence] in Blood or Tissue by FISH"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16",
+        "issued": "2026-09-16T15:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260415000",
+              "display": "Not detected"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/dlbcl-0001-v2-biopsy-specimen"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>FISH BCL2 rearrangement: not detected.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0001-v2-fish-bcl6",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0001-v2-fish-bcl6",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker-test"
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-condition",
+            "valueReference": {
+              "reference": "Condition/dlbcl-0001-v2-primary-cancer"
+            }
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "78203-7",
+              "display": "BCL6 gene rearrangements [Presence] in Blood or Tissue by FISH"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-16",
+        "issued": "2026-09-16T15:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260415000",
+              "display": "Not detected"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/dlbcl-0001-v2-biopsy-specimen"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>FISH BCL6 rearrangement: not detected.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DocumentReference/dlbcl-0001-v2-doc-referral",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dlbcl-0001-v2-doc-referral",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
+          ]
+        },
+        "status": "current",
+        "docStatus": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "57133-1",
+              "display": "Referral note"
+            }
+          ],
+          "text": "Primary care referral to hematology-oncology"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+                "code": "clinical-note",
+                "display": "Clinical Note"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "date": "2026-08-20T17:00:00Z",
+        "author": [
+          {
+            "display": "Synthetic Primary Care Physician"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain; charset=utf-8",
+              "title": "Primary care referral to hematology-oncology",
+              "data": "UmVhc29uIGZvciByZWZlcnJhbDogZW5sYXJnaW5nIG5lY2sgbm9kZXMgYW5kIGFibm9ybWFsIENULCBzdXNwZWN0ZWQgbHltcGhvbWEuCgpNci4gU2FtcGxlIGlzIGEgNjIteWVhci1vbGQgY2l2aWwgZW5naW5lZXIgd2l0aCBoeXBvdGh5cm9pZGlzbSwgR0VSRCBhbmQgaHlwZXJsaXBpZGVtaWEuIEFib3V0IHRocmVlCm1vbnRocyBvZiBwcm9ncmVzc2l2ZWx5IGVubGFyZ2luZywgcGFpbmxlc3MgbGVmdC1zaWRlZCBuZWNrIGx1bXBzLCBldmVuaW5nIGZldmVycyB0byAzOC41IEMgc2V2ZXJhbAp0aW1lcyBhIHdlZWssIGRyZW5jaGluZyBuaWdodCBzd2VhdHMgcmVxdWlyaW5nIGEgY2hhbmdlIG9mIHNoZWV0cywgYW5kIGFib3V0IDcga2cgdW5pbnRlbnRpb25hbCB3ZWlnaHQKbG9zcyBvdmVyIHRocmVlIG1vbnRocyAoODYgLT4gNzkga2cpLiBUYWtpbmcgYWNldGFtaW5vcGhlbiBmb3IgdGhlIGZldmVycy4gTm8gYW50aWJpb3RpYy1yZXNwb25zaXZlCmluZmVjdGlvbiBpZGVudGlmaWVkOyBjaGVzdCBYLXJheSBjbGVhciwgdXJpbmFseXNpcyBhbmQgYmxvb2QgY3VsdHVyZXMgbmVnYXRpdmUgKEF1Z3VzdCAyMDI2KS4KCkNUIG5lY2ssIGNoZXN0LCBhYmRvbWVuIGFuZCBwZWx2aXMgd2l0aCBJViBjb250cmFzdCAyMDI2LTA4LTE4IChvdXRzaWRlIGZhY2lsaXR5KTogZW5sYXJnZWQgbGVmdApjZXJ2aWNhbCBub2RlcyB1cCB0byAzLjIgY207IGVubGFyZ2VkIG1lZGlhc3RpbmFsIChyaWdodCBwYXJhdHJhY2hlYWwgYW5kIHN1YmNhcmluYWwpIG5vZGVzIHVwIHRvCjIuNiBjbTsgYSBsYXJnZSBjb25mbHVlbnQgcmV0cm9wZXJpdG9uZWFsIG5vZGFsIG1hc3MsIGFwcHJveGltYXRlbHkgMTAuOCBjbSBpbiBncmVhdGVzdCBkaW1lbnNpb247CnNwbGVlbiAxNC4yIGNtIHdpdGggc2V2ZXJhbCBoeXBvZGVuc2UgbGVzaW9ucy4gS2lkbmV5cywgYWRyZW5hbHMgYW5kIGxpdmVyIHVucmVtYXJrYWJsZS4KSW1wcmVzc2lvbjogbHltcGhvbWEgZmF2b3JlZC4KClRTSCAyLjEgb24gbGV2b3RoeXJveGluZSBpbiBKdW5lLiBQbGVhc2Ugc2VlIHNvb24u",
+              "creation": "2026-08-20"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Primary care referral to hematology-oncology, 2026-08-20 (text attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DocumentReference/dlbcl-0001-v2-doc-consult",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dlbcl-0001-v2-doc-consult",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
+          ]
+        },
+        "status": "current",
+        "docStatus": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11488-4",
+              "display": "Consult note"
+            }
+          ],
+          "text": "Hematology-oncology new patient consultation"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+                "code": "clinical-note",
+                "display": "Clinical Note"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "date": "2026-09-02T17:00:00Z",
+        "author": [
+          {
+            "display": "Synthetic Hematologist-Oncologist"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain; charset=utf-8",
+              "title": "Hematology-oncology new patient consultation",
+              "data": "SFBJOiA2Mk0gcmVmZXJyZWQgZm9yIGNlcnZpY2FsIGx5bXBoYWRlbm9wYXRoeSBhbmQgYSByZXRyb3Blcml0b25lYWwgbWFzcy4gU3ltcHRvbXMgYXMgcGVyIHJlZmVycmFsLgpTdGlsbCB3b3JraW5nIGZ1bGwtdGltZSBmcm9tIGhvbWUsIGJ1dCB0aXJlcyBieSBtaWQtYWZ0ZXJub29uIGFuZCBoYXMgc3RvcHBlZCBoaXMgd2Vla2VuZCBoaWtpbmc7CmZ1bGx5IGluZGVwZW5kZW50IGluIGFsbCBzZWxmLWNhcmUuIE1pbGQgZWFybHkgc2F0aWV0eSBhbmQgYSBkdWxsIGxlZnQtZmxhbmsgYWNoZS4gTm8gaGVhZGFjaGUsCnZpc3VhbCBjaGFuZ2UsIGNvbmZ1c2lvbiwgZm9jYWwgd2Vha25lc3MsIGJhY2sgcGFpbiwgb3IgYmxhZGRlci9ib3dlbCBjaGFuZ2UuIE5vIG51bWJuZXNzIG9yIHRpbmdsaW5nCmluIHRoZSBoYW5kcyBvciBmZWV0LiBObyB0ZXN0aWN1bGFyIHN3ZWxsaW5nLiBObyBjb3VnaCwgZHlzcG5lYSwgb3IgZHlzcGhhZ2lhLiBObyBwcnVyaXR1cy4KClBNSDogaHlwb3RoeXJvaWRpc20gKDIwMTIpLCBHRVJEICgyMDE4OyBFR0QgMjAxOSBtaWxkIGVzb3BoYWdpdGlzKSwgaHlwZXJsaXBpZGVtaWEgKDIwMTYpLgpBcHBlbmRlY3RvbXkgYWdlIDE5LiBObyBwcmlvciBjYW5jZXIsIGNoZW1vdGhlcmFweSBvciByYWRpYXRpb24uIE5vIGtub3duIGhlYXJ0LCBsdW5nLCBraWRuZXkgb3IKbGl2ZXIgZGlzZWFzZS4gTm8gZGlhYmV0ZXMuCk1lZGljYXRpb25zOiBzZWUgbWVkaWNhdGlvbiBsaXN0LgpBbGxlcmdpZXM6IG5vIGtub3duIGRydWcgYWxsZXJnaWVzLgpTb2NpYWw6IGNpdmlsIGVuZ2luZWVyOyBtYXJyaWVkLCBsaXZlcyB3aXRoIGhpcyB3aWZlOyB0d28gYWR1bHQgY2hpbGRyZW4uIE5ldmVyIHNtb2tlci4gQWxjb2hvbCAyLTMKZ2xhc3NlcyBvZiB3aW5lIHBlciB3ZWVrLiBObyBpbmplY3Rpb24gZHJ1ZyB1c2UuIExpdmVzIDIwIG1pbnV0ZXMgZnJvbSB0aGUgY2FuY2VyIGNlbnRlci4KRmFtaWx5IGhpc3Rvcnk6IG1vdGhlciB3aXRoIGJyZWFzdCBjYW5jZXIgYXQgNzA7IG5vIGZhbWlseSBoaXN0b3J5IG9mIGx5bXBob21hLgoKRXhhbTogVCAzOC4xIEMsIEhSIDk0LCBCUCAxMzIvODAsIFJSIDE0LCBTcE8yIDk4JSBSQS4gV2VpZ2h0IDc5IGtnLCBoZWlnaHQgMTc4IGNtIChCU0EgMS45OCBtMikuCldlbGwtYXBwZWFyaW5nLCBtaWxkbHkgcGFsZS4gTGVmdCBjZXJ2aWNhbCAobGV2ZWxzIElJSS1JVikgbWF0dGVkIGx5bXBoIG5vZGVzLCBsYXJnZXN0IGFib3V0IDMgY20sCmZpcm0sIG5vbi10ZW5kZXIuIE5vIHJpZ2h0IGNlcnZpY2FsLCBzdXByYWNsYXZpY3VsYXIsIGF4aWxsYXJ5IG9yIGluZ3VpbmFsIGx5bXBoYWRlbm9wYXRoeS4gT3JvcGhhcnlueApjbGVhciwgdG9uc2lscyBub3QgZW5sYXJnZWQuIENoZXN0IGNsZWFyLiBIZWFydCByZWd1bGFyLCBubyBtdXJtdXIuIEFiZG9tZW46IHNvZnQsIHZhZ3VlIGZ1bGxuZXNzIGluCnRoZSBsZWZ0IG1pZC1hYmRvbWVuOyBzcGxlZW4gdGlwIHBhbHBhYmxlIDIgY20gYmVsb3cgdGhlIGNvc3RhbCBtYXJnaW47IG5vIGhlcGF0b21lZ2FseS4gVGVzdGVzIG5vcm1hbAp3aXRob3V0IG1hc3Nlcy4gTm8gZWRlbWEuIE5ldXJvOiBhbGVydCBhbmQgb3JpZW50ZWQsIGNyYW5pYWwgbmVydmVzIGludGFjdCwgc3RyZW5ndGggNS81IHRocm91Z2hvdXQsCnNlbnNhdGlvbiBpbnRhY3QsIHJlZmxleGVzIHN5bW1ldHJpYy4KCkVDT0cgcGVyZm9ybWFuY2Ugc3RhdHVzIDEuCgpQbGFuIHRvZGF5OiBDQkMsIENNUCwgTERILCB1cmljIGFjaWQsIGJldGEtMiBtaWNyb2dsb2J1bGluLCBoZXBhdGl0aXMgQiwgaGVwYXRpdGlzIEMgYW5kIEhJVgpzZXJvbG9naWVzOyBGREcgUEVULUNUOyBlY2hvY2FyZGlvZ3JhbTsgZXhjaXNpb25hbCBiaW9wc3kgb2YgYSBsZWZ0IGNlcnZpY2FsIGx5bXBoIG5vZGUgKHN1cmdlcnkKY29uc3VsdGVkKTsgYm9uZSBtYXJyb3cgYmlvcHN5LiBSZXR1cm4gYWZ0ZXIgcmVzdWx0cy4=",
+              "creation": "2026-09-02"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hematology-oncology new patient consultation, 2026-09-02 (text attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0001-v2-doc-pet",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0001-v2-doc-pet",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LP29684-5",
+                "display": "Radiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81554-8",
+              "display": "PET+CT Guidance for localization of tumor of Skull base to mid-thigh-- W 18F-FDG IV"
+            }
+          ],
+          "text": "FDG PET-CT, skull base to mid-thigh"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-05",
+        "issued": "2026-09-05T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-imaging"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "FDG PET-CT, skull base to mid-thigh",
+            "data": "Q0xJTklDQUwgSU5ESUNBVElPTjogQ2VydmljYWwgYW5kIHJldHJvcGVyaXRvbmVhbCBseW1waGFkZW5vcGF0aHksIHN1c3BlY3RlZCBseW1waG9tYS4gSW5pdGlhbCBzdGFnaW5nLgoKVEVDSE5JUVVFOiAxMS40IG1DaSAxOEYtRkRHIElWOyB1cHRha2UgdGltZSA2MCBtaW51dGVzOyBzZXJ1bSBnbHVjb3NlIGF0IGluamVjdGlvbiA5OCBtZy9kTC4KTG93LWRvc2Ugbm9uLWNvbnRyYXN0IENUIGZvciBhdHRlbnVhdGlvbiBjb3JyZWN0aW9uIGFuZCBsb2NhbGl6YXRpb24uIE1lZGlhc3RpbmFsIGJsb29kIHBvb2wgU1VWbWF4CjIuMDsgbGl2ZXIgU1VWbWF4IDIuNi4KCkZJTkRJTkdTOgpIZWFkIGFuZCBuZWNrOiBwaHlzaW9sb2dpYyBicmFpbiB1cHRha2UgKFBFVCBpcyBpbnNlbnNpdGl2ZSBmb3IgaW50cmFjcmFuaWFsIGRpc2Vhc2UpLiBNdWx0aXBsZQpGREctYXZpZCBsZWZ0IGNlcnZpY2FsIGx5bXBoIG5vZGVzIChsZXZlbHMgSUlJLUlWKSwgbGFyZ2VzdCAzLjEgeCAyLjQgY20sIFNVVm1heCAxOC43LiBObyBGREctYXZpZApyaWdodCBjZXJ2aWNhbCBvciBzdXByYWNsYXZpY3VsYXIgbm9kZXMuIFdhbGRleWVyIHJpbmcsIHNhbGl2YXJ5IGdsYW5kcyBhbmQgdGh5cm9pZDogcGh5c2lvbG9naWMuCkNoZXN0OiBGREctYXZpZCByaWdodCBwYXJhdHJhY2hlYWwgbm9kZSAyLjYgY20gKFNVVm1heCAxNS4yKSBhbmQgc3ViY2FyaW5hbCBub2RlIDIuMiBjbSAoU1VWbWF4CjEzLjkpLiBObyBGREctYXZpZCBoaWxhciBvciBheGlsbGFyeSBub2Rlcy4gTHVuZ3MgY2xlYXIgd2l0aG91dCBGREctYXZpZCBub2R1bGVzLiBObyBwbGV1cmFsIG9yCnBlcmljYXJkaWFsIGVmZnVzaW9uLgpBYmRvbWVuIGFuZCBwZWx2aXM6Ci0gQ29uZmx1ZW50IHJldHJvcGVyaXRvbmVhbCAobGVmdCBwYXJhLWFvcnRpYyBhbmQgYW9ydG9jYXZhbCkgbm9kYWwgbWFzcywgMTEuMCB4IDguMSBjbSBpbiBheGlhbAogIGRpbWVuc2lvbiwgU1VWbWF4IDIyLjQsIGRpc3BsYWNpbmcgdGhlIGxlZnQgcmVuYWwgdmVpbiB3aXRob3V0IG9ic3RydWN0aW9uLiBObyBoeWRyb25lcGhyb3Npcy4KLSBTcGxlZW4gZW5sYXJnZWQgYXQgMTQuMiBjbSB3aXRoIGF0IGxlYXN0IGZvdXIgRkRHLWF2aWQgaHlwb2RlbnNlIGxlc2lvbnMsIGxhcmdlc3QgMi40IGNtLAogIFNVVm1heCAxNi4zLgotIExpdmVyIG5vcm1hbCBpbiBzaXplIHdpdGhvdXQgZm9jYWwgRkRHIHVwdGFrZS4KLSBLaWRuZXlzIGFuZCBhZHJlbmFsIGdsYW5kcyB3aXRob3V0IGZvY2FsIEZERyB1cHRha2Ugb3IgbWFzcy4KLSBObyBGREctYXZpZCBtZXNlbnRlcmljLCBpbGlhYyBvciBpbmd1aW5hbCBub2Rlcy4gTm8gYXNjaXRlcy4KLSBTdG9tYWNoIGFuZCBib3dlbDogcGh5c2lvbG9naWMgdXB0YWtlIG9ubHkuCk11c2N1bG9za2VsZXRhbDogZGlmZnVzZSBtaWxkbHkgaW5jcmVhc2VkIG1hcnJvdyB1cHRha2UsIGxlc3MgdGhhbiBsaXZlciwgd2l0aG91dCBmb2NhbCBvc3Nlb3VzIG9yCm1hcnJvdyBsZXNpb25zLiBObyBseXRpYyBvciBzY2xlcm90aWMgbGVzaW9ucy4KVGVzdGVzOiBubyBhYm5vcm1hbCB1cHRha2UuCgpJTVBSRVNTSU9OOgoxLiBGREctYXZpZCBseW1waGFkZW5vcGF0aHkgYWJvdmUgdGhlIGRpYXBocmFnbSAobGVmdCBjZXJ2aWNhbCwgbWVkaWFzdGluYWwpIGFuZCBiZWxvdyB0aGUgZGlhcGhyYWdtCiAgIChyZXRyb3Blcml0b25lYWwgbWFzcywgMTEuMCBjbSksIGNvbnNpc3RlbnQgd2l0aCBseW1waG9tYS4gVGlzc3VlIGNvbmZpcm1hdGlvbiBwZW5kaW5nLgoyLiBTcGxlbm9tZWdhbHkgd2l0aCBtdWx0aXBsZSBGREctYXZpZCBzcGxlbmljIGxlc2lvbnMsIGNvbnNpc3RlbnQgd2l0aCBzcGxlbmljIGludm9sdmVtZW50LgozLiBObyBGREctYXZpZCBkaXNlYXNlIGluIHRoZSBsaXZlciwga2lkbmV5cywgYWRyZW5hbCBnbGFuZHMsIGx1bmdzLCBib25lcyBvciBtYXJyb3cgKGRpZmZ1c2UgbWlsZAogICBtYXJyb3cgdXB0YWtlIGlzIGxpa2VseSByZWFjdGl2ZSksIHRlc3Rlcywgb3IgZ2FzdHJvaW50ZXN0aW5hbCB0cmFjdC4=",
+            "creation": "2026-09-05"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>FDG PET-CT, skull base to mid-thigh, 2026-09-05 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0001-v2-doc-echo",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0001-v2-doc-echo",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LP29684-5",
+                "display": "Radiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Transthoracic echocardiogram"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-08",
+        "issued": "2026-09-08T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-imaging"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "Transthoracic echocardiogram",
+            "data": "SW5kaWNhdGlvbjogYmFzZWxpbmUgYmVmb3JlIHBvc3NpYmxlIGFudGhyYWN5Y2xpbmUtY29udGFpbmluZyBjaGVtb3RoZXJhcHkuCkxlZnQgdmVudHJpY2xlIG5vcm1hbCBpbiBzaXplIHdpdGggbm9ybWFsIHdhbGwgdGhpY2tuZXNzLiBMVkVGIDU4JSAoYmlwbGFuZSBTaW1wc29uJ3MpLgpObyByZWdpb25hbCB3YWxsLW1vdGlvbiBhYm5vcm1hbGl0eS4gTm9ybWFsIGRpYXN0b2xpYyBmdW5jdGlvbi4gR2xvYmFsIGxvbmdpdHVkaW5hbCBzdHJhaW4gLTIwJS4KUmlnaHQgdmVudHJpY2xlIG5vcm1hbCBpbiBzaXplIGFuZCBmdW5jdGlvbi4gVmFsdmVzIHdpdGhvdXQgc2lnbmlmaWNhbnQgc3Rlbm9zaXMgb3IgcmVndXJnaXRhdGlvbi4KTm8gcGVyaWNhcmRpYWwgZWZmdXNpb24u",
+            "creation": "2026-09-08"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Transthoracic echocardiogram, 2026-09-08 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0001-v2-doc-pathology",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0001-v2-doc-pathology",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "amended",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "SP",
+                "display": "Surgical Pathology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60568-3",
+              "display": "Pathology synoptic report"
+            }
+          ],
+          "text": "Surgical pathology: excisional biopsy, left cervical lymph node"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-11",
+        "issued": "2026-09-16T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "Surgical pathology: excisional biopsy, left cervical lymph node",
+            "data": "U1BFQ0lNRU46IEx5bXBoIG5vZGUsIGxlZnQgY2VydmljYWwgbGV2ZWwgSVYsIGV4Y2lzaW9uYWwgYmlvcHN5LCBjb2xsZWN0ZWQgMjAyNi0wOS0wOS4gUmVjZWl2ZWQgZnJlc2g7CjMuMSB4IDIuNSB4IDEuOCBjbS4gUG9ydGlvbnMgc3VibWl0dGVkIGZvciBmbG93IGN5dG9tZXRyeSBhbmQgY3l0b2dlbmV0aWNzLgoKRklOQUwgRElBR05PU0lTOiBESUZGVVNFIExBUkdFIEItQ0VMTCBMWU1QSE9NQSwgTk9UIE9USEVSV0lTRSBTUEVDSUZJRUQuCgpNSUNST1NDT1BJQzogTm9kYWwgYXJjaGl0ZWN0dXJlIGVmZmFjZWQgYnkgZGlmZnVzZSBzaGVldHMgb2YgbGFyZ2UgYXR5cGljYWwgbHltcGhvaWQgY2VsbHMgd2l0aApjZW50cm9ibGFzdGljIGFuZCBvY2Nhc2lvbmFsIGltbXVub2JsYXN0aWMgbW9ycGhvbG9neTsgbnVtZXJvdXMgbWl0b3NlcyBhbmQgZm9jYWwgbmVjcm9zaXMuCk5vIHJlc2lkdWFsIGZvbGxpY2xlcy4gTm8gc3RhcnJ5LXNreSBwYXR0ZXJuLgoKRkxPVyBDWVRPTUVUUlk6IENEMTkrLCBDRDIwKyBsYW1iZGEtcmVzdHJpY3RlZCBCLWNlbGwgcG9wdWxhdGlvbiwgQ0Q1IG5lZ2F0aXZlLCBDRDEwIG5lZ2F0aXZlLgoKSU1NVU5PSElTVE9DSEVNSVNUUlkgKGFkZXF1YXRlIGNvbnRyb2xzKToKICBDRDIwICAgICAgIHBvc2l0aXZlIChkaWZmdXNlLCBzdHJvbmcpCiAgUEFYNSAgICAgICBwb3NpdGl2ZQogIENEMyAgICAgICAgbmVnYXRpdmUgaW4gdHVtb3IgY2VsbHMgKHNjYXR0ZXJlZCBiYWNrZ3JvdW5kIFQgY2VsbHMpCiAgQ0Q1ICAgICAgICBuZWdhdGl2ZQogIENEMTAgICAgICAgbmVnYXRpdmUKICBCQ0w2ICAgICAgIHBvc2l0aXZlCiAgTVVNMS9JUkY0ICBwb3NpdGl2ZSAoYXBwcm94aW1hdGVseSA3MCUgb2YgdHVtb3IgY2VsbHMpCiAgQkNMMiAgICAgICBwb3NpdGl2ZSBpbiBhcHByb3hpbWF0ZWx5IDgwJSBvZiB0dW1vciBjZWxscwogIE1ZQyAgICAgICAgcG9zaXRpdmUgaW4gYXBwcm94aW1hdGVseSA1MCUgb2YgdHVtb3IgY2VsbHMKICBDeWNsaW4gRDEgIG5lZ2F0aXZlCiAgQ0QzMCAgICAgICBuZWdhdGl2ZQogIEtpLTY3ICAgICAgYXBwcm94aW1hdGVseSA4NSUKICBFQkVSIElTSCAgIG5lZ2F0aXZlCgpDT01NRU5UOiBOb24tZ2VybWluYWwtY2VudGVyIEItY2VsbC1saWtlIGltbXVub3BoZW5vdHlwZSBieSB0aGUgSGFucyBhbGdvcml0aG0uIEZJU0ggZm9yIE1ZQywgQkNMMgphbmQgQkNMNiByZWFycmFuZ2VtZW50cyBoYXMgYmVlbiByZXF1ZXN0ZWQgb24gYmxvY2sgQTI7IHJlc3VsdHMgd2lsbCBiZSByZXBvcnRlZCBpbiBhbiBhZGRlbmR1bS4KCkFEREVORFVNICgyMDI2LTA5LTE2KTogRklTSCwgaW50ZXJwaGFzZSwgYnJlYWstYXBhcnQgcHJvYmVzLCAyMDAgbnVjbGVpIHNjb3JlZC4KICBNWUMgKDhxMjQpOiAgIG5vIHJlYXJyYW5nZW1lbnQgZGV0ZWN0ZWQKICBCQ0wyICgxOHEyMSk6IG5vIHJlYXJyYW5nZW1lbnQgZGV0ZWN0ZWQKICBCQ0w2ICgzcTI3KTogIG5vIHJlYXJyYW5nZW1lbnQgZGV0ZWN0ZWQKVGhlIGZpbmFsIGRpYWdub3NpcyBpcyB1bmNoYW5nZWQu",
+            "creation": "2026-09-11"
+          }
+        ],
+        "result": [
+          {
+            "reference": "Observation/dlbcl-0001-v2-ihc-cd20"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-ihc-cd10"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-ihc-bcl6"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-ihc-mum1"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-ihc-bcl2"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-ihc-myc"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-ihc-ki67"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-fish-myc"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-fish-bcl2"
+          },
+          {
+            "reference": "Observation/dlbcl-0001-v2-fish-bcl6"
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "Specimen/dlbcl-0001-v2-biopsy-specimen"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Surgical pathology: excisional biopsy, left cervical lymph node, 2026-09-11 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0001-v2-doc-marrow",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0001-v2-doc-marrow",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "SP",
+                "display": "Surgical Pathology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33721-2",
+              "display": "Bone marrow Pathology biopsy report"
+            }
+          ],
+          "text": "Bone marrow aspirate and biopsy, right posterior iliac crest"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-12",
+        "issued": "2026-09-12T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0001-v2-pathology-lab"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "Bone marrow aspirate and biopsy, right posterior iliac crest",
+            "data": "Q29sbGVjdGVkIDIwMjYtMDktMTAuIENvcmUgbGVuZ3RoIDIuMCBjbSwgYWRlcXVhdGUuIE5vcm1vY2VsbHVsYXIgbWFycm93IGZvciBhZ2UgKGFib3V0IDQ1JSkgd2l0aAp0cmlsaW5lYWdlIGhlbWF0b3BvaWVzaXMgYW5kIG1pbGQgcmVhY3RpdmUgbXllbG9pZCBoeXBlcnBsYXNpYS4gTm8gbHltcGhvbWEgaWRlbnRpZmllZCBvbiBtb3JwaG9sb2d5Cm9yIENEMjAvUEFYNSBpbW11bm9zdGFpbnMuIEZsb3cgY3l0b21ldHJ5IG9mIHRoZSBhc3BpcmF0ZTogbm8gbW9ub3R5cGljIEItY2VsbCBwb3B1bGF0aW9uLgpJcm9uIHN0b3JlcyBpbmNyZWFzZWQsIGNvbnNpc3RlbnQgd2l0aCBhbmVtaWEgb2YgaW5mbGFtbWF0aW9uLgpESUFHTk9TSVM6IE5vIGludm9sdmVtZW50IGJ5IGx5bXBob21hLg==",
+            "creation": "2026-09-12"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Bone marrow aspirate and biopsy, right posterior iliac crest, 2026-09-12 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DocumentReference/dlbcl-0001-v2-doc-progress",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dlbcl-0001-v2-doc-progress",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
+          ]
+        },
+        "status": "current",
+        "docStatus": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11506-3",
+              "display": "Progress note"
+            }
+          ],
+          "text": "Hematology-oncology follow-up (results visit, pre-tumor board)"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+                "code": "clinical-note",
+                "display": "Clinical Note"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/dlbcl-0001-v2-patient"
+        },
+        "date": "2026-09-17T17:00:00Z",
+        "author": [
+          {
+            "display": "Synthetic Hematologist-Oncologist"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain; charset=utf-8",
+              "title": "Hematology-oncology follow-up (results visit, pre-tumor board)",
+              "data": "UmVzdWx0cyByZXZpZXdlZCB3aXRoIHRoZSBwYXRpZW50IGFuZCBoaXMgd2lmZS4gQmlvcHN5IHNob3dzIERMQkNMOyBGSVNIIGFkZGVuZHVtIHJlY2VpdmVkLiBCb25lIG1hcnJvdwpuZWdhdGl2ZS4gRWNobyBub3JtYWwuClN0aWxsIGhhdmluZyBldmVuaW5nIGZldmVycyB0byAzOC4zIEMgdGhyZWUgb3IgZm91ciBuaWdodHMgYSB3ZWVrIGFuZCBuaWdodCBzd2VhdHMuIFdlaWdodCA3OC40IGtnLgpXb3JraW5nIHJlZHVjZWQgaG91cnMgZnJvbSBob21lOyBpbmRlcGVuZGVudCBpbiBhbGwgYWN0aXZpdGllcywgbm8gbG9uZ2VyIGhpa2luZy4gTm8gaGVhZGFjaGUsCnZvbWl0aW5nLCBjb25mdXNpb24sIHZpc3VhbCBjaGFuZ2Ugb3IgbmV3IG5ldXJvbG9naWNhbCBzeW1wdG9tcy4gTm8gbnVtYm5lc3Mgb3IgdGluZ2xpbmcuCk5lY2sgaW5jaXNpb24gaGVhbGluZyB3ZWxsLgoKRXhhbTogVCAzNy40IEMsIEhSIDg4LCBCUCAxMjgvNzguIExlZnQgY2VydmljYWwgbm9kZXMgdW5jaGFuZ2VkLCBpbmNpc2lvbiBjbGVhbi4gU3BsZWVuIHRpcCBwYWxwYWJsZS4KTmV1cm8gZXhhbSBub24tZm9jYWwuCgpSZXBlYXQgbGFicyAyMDI2LTA5LTE2IHJldmlld2VkIChzZWUgcmVzdWx0cykuCgpQYXRpZW50IGdvYWxzOiB3YW50cyB0cmVhdG1lbnQgYWltZWQgYXQgY3VyZSBhbmQgd291bGQgbGlrZSB0byBrZWVwIHdvcmtpbmcgcGFydC10aW1lIGZyb20gaG9tZSBpZiBoZQpjYW4uIEhpcyBkYXVnaHRlciBpcyBnZXR0aW5nIG1hcnJpZWQgaW4gTWF5IDIwMjcgYW5kIGhlIHdhbnRzIHRvIGJlIHdlbGwgZm9yIGl0LiBBc2tlZCBhYm91dCBoYWlyCmxvc3MgYW5kIHdoZXRoZXIgaGUgY2FuIGtlZXAgdHJhdmVsaW5nIHRvIGpvYiBzaXRlcyAoYWJvdXQgb25jZSBhIG1vbnRoKS4KCkNhc2UgdG8gYmUgcHJlc2VudGVkIGF0IGx5bXBob21hIHR1bW9yIGJvYXJkIDIwMjYtMDktMTggZm9yIGEgdHJlYXRtZW50IHBsYW47IG5vIHRyZWF0bWVudCBzdGFydGVkIHlldC4=",
+              "creation": "2026-09-17"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hematology-oncology follow-up (results visit, pre-tumor board), 2026-09-17 (text attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Organization/dlbcl-0001-v2-pathology-lab",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "dlbcl-0001-v2-pathology-lab",
+        "active": true,
+        "name": "Synthetic Hematopathology Laboratory",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Synthetic Hematopathology Laboratory (synthetic).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Organization/dlbcl-0001-v2-clinical-lab",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "dlbcl-0001-v2-clinical-lab",
+        "active": true,
+        "name": "Synthetic Clinical Laboratory",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Synthetic Clinical Laboratory (synthetic).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Organization/dlbcl-0001-v2-imaging",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "dlbcl-0001-v2-imaging",
+        "active": true,
+        "name": "Synthetic Imaging Department",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Synthetic Imaging Department (synthetic).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Practitioner/dlbcl-0001-v2-hematologist",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "dlbcl-0001-v2-hematologist",
+        "active": true,
+        "name": [
+          {
+            "family": "Hematologist",
+            "given": [
+              "Synthetic"
+            ],
+            "prefix": [
+              "Dr."
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Treating hematologist-oncologist (synthetic).</p></div>"
+        }
+      }
+    }
+  ]
+}

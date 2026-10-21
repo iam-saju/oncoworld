@@ -1,0 +1,38 @@
+SURGICAL PATHOLOGY: EXCISIONAL BIOPSY, LEFT CERVICAL LYMPH NODE
+Date: 2026-09-11    Author: Synthetic Hematopathologist
+Status: amended 2026-09-16
+
+SPECIMEN: Lymph node, left cervical level IV, excisional biopsy, collected 2026-09-09. Received fresh;
+3.1 x 2.5 x 1.8 cm. Portions submitted for flow cytometry and cytogenetics.
+
+FINAL DIAGNOSIS: DIFFUSE LARGE B-CELL LYMPHOMA, NOT OTHERWISE SPECIFIED.
+
+MICROSCOPIC: Nodal architecture effaced by diffuse sheets of large atypical lymphoid cells with
+centroblastic and occasional immunoblastic morphology; numerous mitoses and focal necrosis.
+No residual follicles. No starry-sky pattern.
+
+FLOW CYTOMETRY: CD19+, CD20+ lambda-restricted B-cell population, CD5 negative, CD10 negative.
+
+IMMUNOHISTOCHEMISTRY (adequate controls):
+  CD20       positive (diffuse, strong)
+  PAX5       positive
+  CD3        negative in tumor cells (scattered background T cells)
+  CD5        negative
+  CD10       negative
+  BCL6       positive
+  MUM1/IRF4  positive (approximately 70% of tumor cells)
+  BCL2       positive in approximately 80% of tumor cells
+  MYC        positive in approximately 50% of tumor cells
+  Cyclin D1  negative
+  CD30       negative
+  Ki-67      approximately 85%
+  EBER ISH   negative
+
+COMMENT: Non-germinal-center B-cell-like immunophenotype by the Hans algorithm. FISH for MYC, BCL2
+and BCL6 rearrangements has been requested on block A2; results will be reported in an addendum.
+
+ADDENDUM (2026-09-16): FISH, interphase, break-apart probes, 200 nuclei scored.
+  MYC (8q24):   no rearrangement detected
+  BCL2 (18q21): no rearrangement detected
+  BCL6 (3q27):  no rearrangement detected
+The final diagnosis is unchanged.

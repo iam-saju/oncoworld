@@ -1,0 +1,9 @@
+LABORATORY RESULTS: Infectious disease serologies
+Collected: 2026-09-03    Synthetic Clinical Laboratory
+
+Test                                    Result  Flag  Units           Reference
+Hepatitis B surface antigen        Nonreactive                        Nonreactive
+Hepatitis B core antibody, total      Reactive                        Nonreactive
+Hepatitis B surface antibody          Reactive                        Nonreactive
+Hepatitis C antibody               Nonreactive                        Nonreactive
+HIV-1/2 Ag/Ab screen               Nonreactive                        Nonreactive

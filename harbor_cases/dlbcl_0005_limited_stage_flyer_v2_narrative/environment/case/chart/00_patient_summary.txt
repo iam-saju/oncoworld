@@ -1,0 +1,18 @@
+PATIENT SUMMARY (EHR export 2026-09-17)
+
+Name: Laura Sample (synthetic)    MRN: OW-0005
+DOB: 1981-02-19 (45 y)    Sex: female
+
+PROBLEM LIST
+- Migraine with aura (since 2006). Typical visual aura (scintillating zigzag lines for 15-20 minutes) followed by unilateral headache, 2-3 episodes per month. Diagnosed by neurology 2006.
+- Allergic rhinitis (since 2012). Seasonal; cetirizine as needed.
+
+ACTIVE MEDICATIONS
+- Ethinyl estradiol 0.03 mg / levonorgestrel 0.15 mg tablet (combined oral contraceptive), 1 tablet by mouth daily (since 2019)
+- Sumatriptan 50 mg tablet, 1 tablet by mouth at headache onset as needed, may repeat once after 2 hours
+- Cetirizine 10 mg tablet, 1 tablet by mouth daily as needed (seasonal)
+
+ALLERGIES
+- Codeine: Severe nausea and vomiting (2015)
+
+This is a synthetic training case for AI evaluation. It is not clinical decision support.

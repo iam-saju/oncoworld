@@ -1,0 +1,20 @@
+PATIENT SUMMARY (EHR export 2026-09-17)
+
+Name: Thomas Sample (synthetic)    MRN: OW-0001
+DOB: 1964-05-11 (62 y)    Sex: male
+
+PROBLEM LIST
+- Hypothyroidism (since 2012). On levothyroxine. TSH 2.1 mIU/L (June 2026).
+- Gastroesophageal reflux disease (since 2018). Controlled on omeprazole. EGD 2019: mild esophagitis, no Barrett's.
+- Hyperlipidemia (since 2016)
+
+ACTIVE MEDICATIONS
+- Levothyroxine 100 mcg tablet, 1 tablet by mouth daily before breakfast
+- Omeprazole 20 mg capsule, 1 capsule by mouth daily
+- Atorvastatin 20 mg tablet, 1 tablet by mouth nightly
+- Acetaminophen 500 mg tablet, 1-2 tablets by mouth every 6 hours as needed for fever (patient-reported, started August 2026)
+
+ALLERGIES
+- No known drug allergies
+
+This is a synthetic training case for AI evaluation. It is not clinical decision support.

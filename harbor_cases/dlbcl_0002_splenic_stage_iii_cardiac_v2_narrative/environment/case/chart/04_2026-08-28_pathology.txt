@@ -1,0 +1,47 @@
+SURGICAL PATHOLOGY: EXCISIONAL BIOPSY, LEFT AXILLARY LYMPH NODE
+Date: 2026-08-28    Author: Synthetic Hematopathologist
+Status: amended 2026-09-08
+
+SPECIMEN: Left axillary lymph node, excisional biopsy, collected 2026-08-25. Received fresh; portions
+submitted for flow cytometry and cytogenetics.
+CLINICAL HISTORY: Left breast carcinoma 2016 (ER-positive, HER2-negative). New left axillary
+lymphadenopathy, fevers.
+
+GROSS: Lymph node, 3.6 x 2.8 x 2.0 cm, tan-white fleshy cut surface with focal necrosis.
+
+FINAL DIAGNOSIS: DIFFUSE LARGE B-CELL LYMPHOMA, NOT OTHERWISE SPECIFIED.
+
+MICROSCOPIC: Effacement of nodal architecture by diffuse sheets of large atypical lymphoid cells with
+vesicular chromatin and one or more nucleoli; numerous mitoses and focal necrosis. No cohesive
+epithelial nests, glands or single-file infiltrating epithelial cells.
+
+IMMUNOHISTOCHEMISTRY (adequate controls):
+  CD20              positive (diffuse, strong)
+  PAX5              positive
+  CD3               negative in tumor cells (scattered background T cells)
+  CD5               negative
+  CD10              negative
+  BCL6              positive
+  MUM1/IRF4         positive (approximately 80% of tumor cells)
+  BCL2              positive in approximately 70% of tumor cells
+  MYC               positive in approximately 45% of tumor cells
+  Cyclin D1         negative
+  CD30              negative
+  Ki-67             approximately 80%
+  EBER ISH          negative
+  Cytokeratin AE1/AE3   negative in lesional cells
+  GATA3             negative in lesional cells
+
+FLOW CYTOMETRY: CD19+, CD20+, CD10-, kappa light-chain restricted large B-cell population (62% of
+events).
+
+COMMENT: Non-germinal-center B-cell-like immunophenotype by the Hans algorithm (CD10 negative, BCL6
+positive, MUM1 positive). Cytokeratin AE1/AE3 and GATA3 are negative in the lesional cells and there is
+no morphologic evidence of metastatic carcinoma. Interphase FISH has been requested on block A2;
+results will be reported in an addendum.
+
+ADDENDUM (2026-09-08): FISH, interphase, break-apart probes, 200 nuclei scored.
+  MYC (8q24):   no rearrangement detected
+  BCL2 (18q21): no rearrangement detected
+  BCL6 (3q27):  no rearrangement detected
+The final diagnosis is unchanged.

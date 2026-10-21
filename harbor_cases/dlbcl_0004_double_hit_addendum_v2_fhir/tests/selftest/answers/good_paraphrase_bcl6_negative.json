@@ -1,0 +1,27 @@
+{
+  "diagnosis": "HGBL with MYC and BCL2 rearrangements per the FISH addendum of 19 Sep 2026 (DLBCL/HGBL-MYC/BCL2 in WHO 5th edition); the initial report of DLBCL NOS no longer applies. Germinal centre phenotype (Hans).",
+  "stage": "Ann Arbor/Lugano stage IIA with bulk (12 cm anterior mediastinal mass plus right neck nodes), nothing below the diaphragm and no extranodal sites.",
+  "biology": "FISH: MYC rearranged, BCL2 rearranged, BCL6 rearrangement not detected (BCL6 not rearranged; FISH negative for BCL6), so double-hit rather than triple-hit. MYC/BCL2 protein co-expression (double-expressor) is present but is superseded by the rearrangement-based classification.",
+  "prognosis": "IPI score of 1 (elevated LDH only), which understates risk; the genetics drive a poor prognosis.",
+  "first_line_treatment": "Cancel the R-CHOP planned before the FISH result. Treat with DA-EPOCH-R x 6 cycles with curative intent; a clinical trial is an equally reasonable choice if open. Radiation therapy to residual mediastinal disease after chemotherapy, to be discussed at tumor board.",
+  "cns_risk": "Although the CNS-IPI is low (1), the CNS risk is high because of the double-hit genetics. Obtain gadolinium MRI of the brain and an LP for CSF cytology and flow before starting. Give intrathecal methotrexate with DA-EPOCH-R as CNS prophylaxis.",
+  "response_assessment": "PET-CT after cycle 2 and an end-of-treatment PET-CT scored by Deauville (Lugano 2014).",
+  "pretreatment_workup": "HBV serologies negative (HBsAg-, anti-HBc-). Echo with LVEF 60% allows doxorubicin.",
+  "supportive_care": "TLS risk intermediate: allopurinol, IV fluids, TLS labs twice daily for cycle 1. Filgrastim support with every cycle. The new port will carry the 96-hour infusion. Discuss sperm cryopreservation. Watch for SVC syndrome or airway symptoms and give return precautions.",
+  "fitness_and_goals": "Good candidate for intensive therapy (54 years, ECOG 1, normal heart, kidney and liver function); wants cure.",
+  "missing_information": [
+    "Brain MRI and CSF results",
+    "Trial availability"
+  ],
+  "_expect": {
+    "passed": true,
+    "dangerous": [],
+    "all_met": true,
+    "must_unmet": [
+      "mn_dx_dlbcl_nos",
+      "mn_rchop_preferred",
+      "mn_cns_dismissed",
+      "mn_stage_iii_iv"
+    ]
+  }
+}

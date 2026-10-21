@@ -1,0 +1,31 @@
+FDG PET-CT, SKULL BASE TO MID-THIGH
+Date: 2026-09-05    Author: Synthetic Nuclear Medicine Physician
+
+CLINICAL INDICATION: Retroperitoneal mass, suspected lymphoma. Initial staging.
+
+TECHNIQUE: 10.2 mCi 18F-FDG IV; uptake time 62 minutes; serum glucose at injection 142 mg/dL.
+Low-dose non-contrast CT for attenuation correction and localization. Mediastinal blood pool SUVmax
+2.1; liver SUVmax 2.9.
+
+FINDINGS:
+Head and neck: physiologic brain uptake (PET is insensitive for intracranial disease). No
+FDG-avid cervical or supraclavicular lymph nodes.
+Chest: no FDG-avid mediastinal, hilar or axillary nodes. 4 mm right upper lobe pulmonary nodule,
+below PET resolution, not FDG-avid. No effusion.
+Abdomen and pelvis:
+- Conglomerate retroperitoneal (para-aortic and aortocaval) and mesenteric nodal mass,
+  9.4 x 6.8 cm, SUVmax 24.1, encasing the aorta and IVC without occlusion.
+- Right renal cortical lesion, 3.2 cm, SUVmax 19.6.
+- Left adrenal mass, 2.6 cm, SUVmax 17.2.
+- Hepatic segment VI lesion, 1.8 cm, SUVmax 15.0.
+- Spleen normal in size (11 cm) without focal uptake.
+- No hydronephrosis. No ascites.
+- No FDG-avid pelvic or inguinal nodes.
+Musculoskeletal: no focal osseous or marrow FDG uptake.
+Testes: no abnormal uptake.
+
+IMPRESSION:
+1. Intensely FDG-avid retroperitoneal and mesenteric nodal mass with FDG-avid lesions in the right
+   kidney, left adrenal gland and liver, consistent with lymphoma. Tissue confirmation pending.
+2. No FDG-avid disease above the diaphragm.
+3. Incidental 4 mm right upper lobe nodule, indeterminate given size.

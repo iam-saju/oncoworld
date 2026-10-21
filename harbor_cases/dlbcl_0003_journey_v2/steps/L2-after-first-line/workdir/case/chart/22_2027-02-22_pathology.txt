@@ -1,0 +1,5 @@
+SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RESIDUAL RETROPERITONEAL MASS, 2027-02-22
+Two 18-gauge cores, total 0.6 cm. Predominantly necrosis and dense fibrosis with scattered histiocytes.
+Rare large atypical cells, CD20-positive on immunostain, too few to characterize.
+DIAGNOSIS: Necrosis and fibrosis; rare atypical CD20+ cells. Insufficient for a definitive diagnosis
+of residual lymphoma. Tissue insufficient for flow cytometry or molecular studies.

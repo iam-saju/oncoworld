@@ -1,0 +1,10 @@
+LABORATORY RESULTS: Complete blood count with differential
+Collected: 2026-09-03    Synthetic Clinical Laboratory
+
+Test                                    Result  Flag  Units           Reference
+Hemoglobin                                 9.9  L     g/dL            13.5-17.5
+MCV                                         86        fL              80-100
+WBC                                        9.4        x10^3/uL        4.0-11.0
+Absolute neutrophils                       7.1        x10^3/uL        1.8-7.7
+Absolute lymphocytes                       1.0        x10^3/uL        1.0-4.8
+Platelets                                  145  L     x10^3/uL        150-400

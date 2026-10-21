@@ -1,0 +1,6 @@
+LABORATORY RESULTS: Prior primary-care chemistry
+Collected: 2025-07-14    Synthetic Clinical Laboratory
+
+Test                                    Result  Flag  Units           Reference
+Creatinine                                 1.1        mg/dL           0.7-1.3
+eGFR (CKD-EPI 2021)                         72        mL/min/1.73m2   >=60

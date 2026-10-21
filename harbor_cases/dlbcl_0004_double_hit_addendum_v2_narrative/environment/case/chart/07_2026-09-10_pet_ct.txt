@@ -1,0 +1,26 @@
+FDG PET-CT, SKULL BASE TO MID-THIGH
+Date: 2026-09-10    Author: Synthetic Nuclear Medicine Physician
+
+CLINICAL INDICATION: Cervical and anterior mediastinal masses, suspected lymphoma. Initial staging.
+
+TECHNIQUE: 12.4 mCi 18F-FDG IV; uptake time 60 minutes; serum glucose at injection 98 mg/dL.
+Low-dose non-contrast CT for attenuation correction and localization. Mediastinal blood pool SUVmax
+1.9; liver SUVmax 2.7.
+
+FINDINGS:
+Head and neck: physiologic brain uptake (PET is insensitive for intracranial disease). Intensely FDG-avid
+right level II-IV cervical lymph nodes, largest 3.9 cm, SUVmax 21.3. Post-biopsy changes in the right
+neck. No FDG-avid left cervical or supraclavicular nodes. Waldeyer ring without focal uptake.
+Chest: anterior mediastinal mass, 12.0 cm in greatest dimension, SUVmax 27.8, with a few photopenic
+(likely necrotic) foci; extrinsic compression of the SVC as on the diagnostic CT. No FDG-avid hilar,
+axillary or internal mammary nodes. No pulmonary nodules. No pleural or pericardial effusion and no
+abnormal pleural, pericardial or chest-wall uptake.
+Abdomen and pelvis: no FDG-avid lymph nodes. Liver, spleen (10.5 cm), kidneys and adrenal glands without
+focal uptake. No FDG-avid disease below the diaphragm.
+Musculoskeletal: no focal osseous or marrow FDG uptake.
+Testes: no abnormal uptake.
+
+IMPRESSION:
+1. Intensely FDG-avid right cervical lymphadenopathy and a 12.0 cm FDG-avid anterior mediastinal mass,
+   consistent with lymphoma.
+2. No FDG-avid disease below the diaphragm. No FDG-avid extranodal organ, osseous or marrow lesions.

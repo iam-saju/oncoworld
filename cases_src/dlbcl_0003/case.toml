@@ -1,0 +1,336 @@
+# OncoWorld v2 case source: dlbcl_0003 (kidney/adrenal involvement, high CNS-IPI).
+# MODEL-VISIBLE. Everything in this file is rendered into the narrative chart AND the FHIR bundle by
+# scripts/build_cases_v2.py. Never put interpretations, scores, stage or treatment here: those live in
+# gold.json / rubric_v2.toml. review_status stays PENDING_ONCOLOGIST until signed off.
+
+[meta]
+case_id = "dlbcl_0003"
+slug = "renal_adrenal_cns_high"
+title = "DLBCL with kidney, adrenal and liver involvement, rising creatinine: tumor-board plan"
+difficulty = "advanced"
+record_date = "2026-09-17"        # the chart is exported the day before tumor board
+review_status = "PENDING_ONCOLOGIST"
+
+[patient]
+given = "Robert"
+family = "Sample"
+gender = "male"
+birth_date = "1959-06-21"
+mrn = "OW-0003"
+
+[ecog]
+date = "2026-09-02"
+value = 2
+
+# Past medical history -> FHIR Condition (problem list), narrative consult note.
+[[conditions]]
+code = "44054006"
+display = "Type 2 diabetes mellitus"
+onset = "2014"
+note = "On metformin. Last HbA1c 7.4%."
+
+[[conditions]]
+code = "59621000"
+display = "Essential hypertension"
+onset = "2011"
+
+[[conditions]]
+code = "90560007"
+display = "Gout"
+onset = "2019"
+note = "Two flares of the left first MTP joint; no urate-lowering therapy."
+
+[[conditions]]
+code = "55822004"
+display = "Hyperlipidemia"
+onset = "2015"
+
+[[conditions]]
+code = "266569009"
+display = "Benign prostatic hyperplasia"
+onset = "2021"
+
+[[medications]]
+text = "Metformin 1000 mg tablet, 1 tablet by mouth twice daily"
+
+[[medications]]
+text = "Lisinopril 20 mg tablet, 1 tablet by mouth daily"
+
+[[medications]]
+text = "Atorvastatin 40 mg tablet, 1 tablet by mouth nightly"
+
+[[medications]]
+text = "Tamsulosin 0.4 mg capsule, 1 capsule by mouth nightly"
+
+[[medications]]
+text = "Ibuprofen 400 mg tablet, 1 tablet by mouth three to four times daily as needed for abdominal pain (patient-reported, started August 2026)"
+
+[[allergies]]
+substance = "Sulfonamide antibiotics"
+reaction = "Generalized maculopapular rash (2009)"
+
+# Laboratory results. flag is computed from low/high by the builder; never hand-written.
+# panel groups results into DiagnosticReports and narrative tables.
+[[labs]]
+date = "2025-07-14"
+panel = "Prior primary-care chemistry"
+items = [
+  { key = "creatinine", value = 1.1 },
+  { key = "egfr", value = 72 },
+]
+
+[[labs]]
+date = "2026-09-03"
+panel = "Complete blood count with differential"
+items = [
+  { key = "hb", value = 9.9 },
+  { key = "mcv", value = 86 },
+  { key = "wbc", value = 9.4 },
+  { key = "anc", value = 7.1 },
+  { key = "alc", value = 1.0 },
+  { key = "plt", value = 145 },
+]
+
+[[labs]]
+date = "2026-09-03"
+panel = "Comprehensive metabolic panel and tumor markers"
+items = [
+  { key = "na", value = 136 },
+  { key = "k", value = 4.9 },
+  { key = "cl", value = 101 },
+  { key = "co2", value = 22 },
+  { key = "bun", value = 28 },
+  { key = "creatinine", value = 1.4 },
+  { key = "egfr", value = 55 },
+  { key = "glucose", value = 168 },
+  { key = "ca", value = 9.4 },
+  { key = "albumin", value = 3.1 },
+  { key = "protein", value = 6.4 },
+  { key = "ast", value = 38 },
+  { key = "alt", value = 41 },
+  { key = "alp", value = 168 },
+  { key = "tbili", value = 0.9 },
+  { key = "urate", value = 9.8 },
+  { key = "phos", value = 4.4 },
+  { key = "ldh", value = 1120 },
+  { key = "b2m", value = 4.8 },
+  { key = "hba1c", value = 7.4 },
+]
+
+[[labs]]
+date = "2026-09-03"
+panel = "Infectious disease serologies"
+items = [
+  { key = "hbsag", value = "Nonreactive" },
+  { key = "anti_hbc", value = "Nonreactive" },
+  { key = "anti_hbs", value = "Reactive" },
+  { key = "hcv_ab", value = "Nonreactive" },
+  { key = "hiv_agab", value = "Nonreactive" },
+]
+
+[[labs]]
+date = "2026-09-16"
+panel = "Repeat chemistry"
+items = [
+  { key = "k", value = 5.0 },
+  { key = "creatinine", value = 1.5 },
+  { key = "egfr", value = 50 },
+  { key = "ca", value = 9.2 },
+  { key = "phos", value = 4.6 },
+  { key = "urate", value = 10.4 },
+  { key = "ldh", value = 1290 },
+]
+
+# Structured pathology for the FHIR tumor-marker Observations. The builder checks every value here
+# also appears in the pathology document text, so the two formats cannot drift.
+[pathology]
+specimen_label = "CT-guided core biopsy, retroperitoneal mass"
+biopsy = ["9911007", "Core needle biopsy", "119376003", "Tissue specimen", "82849001", "Retroperitoneal compartment structure"]
+collected = "2026-09-10"
+diagnosis = "dlbcl"              # problem-list Condition code (as recorded in the EHR at export time)
+ihc = { CD20 = true, CD10 = true, BCL6 = true, MUM1 = false, BCL2 = 30, MYC = 20, KI67 = 70 }
+ihc_date = "2026-09-12"
+fish = { MYC = false, BCL2 = false, BCL6 = false }
+fish_date = "2026-09-16"
+marrow_involved = false
+
+# Imaging, pathology and notes: rendered verbatim into the narrative chart and as
+# DiagnosticReport.presentedForm / DocumentReference in FHIR.
+[[documents]]
+id = "referral"
+date = "2026-08-18"
+kind = "referral_note"
+title = "Primary care referral to hematology-oncology"
+author = "Synthetic Primary Care Physician"
+text = """
+Reason for referral: abnormal CT, suspected lymphoma.
+
+Mr. Sample is a 67-year-old retired electrician with T2DM, HTN, gout and BPH. Six weeks of
+epigastric/left upper quadrant pain, early satiety, drenching night sweats most nights, and about 8 kg
+unintentional weight loss over two months (79 -> 71 kg). Started OTC ibuprofen for the pain.
+
+CT abdomen/pelvis with IV contrast 2026-08-15 (outside facility): large retroperitoneal and mesenteric
+soft-tissue mass encasing the aorta and IVC, a right renal cortical mass, a left adrenal mass and a
+small hypodense liver lesion. No hydronephrosis. Impression: lymphoma favored; metastatic carcinoma
+less likely.
+
+Please see urgently. Labs from this visit attached by the patient portal.
+"""
+
+[[documents]]
+id = "consult"
+date = "2026-09-02"
+kind = "consult_note"
+title = "Hematology-oncology new patient consultation"
+author = "Synthetic Hematologist-Oncologist"
+text = """
+HPI: 67M referred for retroperitoneal mass. Symptoms as per referral, worse over the last two weeks;
+now spends most of the afternoon resting but walks around the house and manages his own self-care.
+Taking ibuprofen 400 mg three to four times a day. No headache, visual change, confusion, focal
+weakness, numbness or bladder/bowel change. No testicular swelling. No cough or dyspnea.
+
+PMH: T2DM (2014), HTN (2011), gout (2019, two flares, no urate-lowering therapy), hyperlipidemia,
+BPH. No prior cancer, no prior chemotherapy or radiation. No known heart disease.
+Medications: see medication list.
+Allergies: sulfonamide antibiotics (rash).
+Social: retired electrician, lives with his wife; daughter lives nearby. Former smoker, 30 pack-years,
+quit 2010. Two drinks per week. Lives 45 minutes' drive from the cancer center; wife drives.
+Family history: father with prostate cancer at 78.
+
+Exam: T 37.9 C, HR 96, BP 128/76, RR 16, SpO2 97% RA. Weight 71 kg, height 175 cm (BSA 1.86 m2).
+Thin, tired-appearing. No palpable cervical, supraclavicular, axillary or inguinal lymphadenopathy.
+Abdomen: fullness and tenderness in the epigastrium and left upper quadrant; liver edge 2 cm below the
+costal margin; spleen not palpable. Testes normal without masses. Neuro: alert and oriented, cranial
+nerves intact, strength 5/5 throughout, no sensory deficit.
+
+ECOG performance status 2.
+
+Plan today: labs incl. LDH, uric acid, viral serologies; FDG PET-CT; echocardiogram; CT-guided core
+biopsy of the retroperitoneal mass; bone marrow biopsy. Return after results.
+"""
+
+[[documents]]
+id = "pet"
+date = "2026-09-05"
+kind = "pet_ct_report"
+title = "FDG PET-CT, skull base to mid-thigh"
+author = "Synthetic Nuclear Medicine Physician"
+text = """
+CLINICAL INDICATION: Retroperitoneal mass, suspected lymphoma. Initial staging.
+
+TECHNIQUE: 10.2 mCi 18F-FDG IV; uptake time 62 minutes; serum glucose at injection 142 mg/dL.
+Low-dose non-contrast CT for attenuation correction and localization. Mediastinal blood pool SUVmax
+2.1; liver SUVmax 2.9.
+
+FINDINGS:
+Head and neck: physiologic brain uptake (PET is insensitive for intracranial disease). No
+FDG-avid cervical or supraclavicular lymph nodes.
+Chest: no FDG-avid mediastinal, hilar or axillary nodes. 4 mm right upper lobe pulmonary nodule,
+below PET resolution, not FDG-avid. No effusion.
+Abdomen and pelvis:
+- Conglomerate retroperitoneal (para-aortic and aortocaval) and mesenteric nodal mass,
+  9.4 x 6.8 cm, SUVmax 24.1, encasing the aorta and IVC without occlusion.
+- Right renal cortical lesion, 3.2 cm, SUVmax 19.6.
+- Left adrenal mass, 2.6 cm, SUVmax 17.2.
+- Hepatic segment VI lesion, 1.8 cm, SUVmax 15.0.
+- Spleen normal in size (11 cm) without focal uptake.
+- No hydronephrosis. No ascites.
+- No FDG-avid pelvic or inguinal nodes.
+Musculoskeletal: no focal osseous or marrow FDG uptake.
+Testes: no abnormal uptake.
+
+IMPRESSION:
+1. Intensely FDG-avid retroperitoneal and mesenteric nodal mass with FDG-avid lesions in the right
+   kidney, left adrenal gland and liver, consistent with lymphoma. Tissue confirmation pending.
+2. No FDG-avid disease above the diaphragm.
+3. Incidental 4 mm right upper lobe nodule, indeterminate given size.
+"""
+
+[[documents]]
+id = "echo"
+date = "2026-09-09"
+kind = "echo_report"
+title = "Transthoracic echocardiogram"
+author = "Synthetic Cardiologist"
+text = """
+Indication: baseline before possible anthracycline-containing chemotherapy.
+Left ventricle normal in size with normal wall thickness. LVEF 60% (biplane Simpson's).
+No regional wall-motion abnormality. Grade I diastolic dysfunction. Global longitudinal strain -19%.
+Valves without significant stenosis or regurgitation. No pericardial effusion.
+"""
+
+[[documents]]
+id = "pathology"
+date = "2026-09-12"
+kind = "pathology_report"
+title = "Surgical pathology: CT-guided core biopsy, retroperitoneal mass"
+author = "Synthetic Hematopathologist"
+amended = "2026-09-16"
+text = """
+SPECIMEN: Retroperitoneal mass, CT-guided core needle biopsy (four 18-gauge cores), collected
+2026-09-10.
+
+FINAL DIAGNOSIS: DIFFUSE LARGE B-CELL LYMPHOMA, NOT OTHERWISE SPECIFIED.
+
+MICROSCOPIC: Diffuse sheets of large atypical lymphoid cells with vesicular chromatin and prominent
+nucleoli; frequent mitoses and focal necrosis. No starry-sky pattern.
+
+IMMUNOHISTOCHEMISTRY (adequate controls):
+  CD20       positive (diffuse, strong)
+  PAX5       positive
+  CD3        negative in tumor cells (scattered background T cells)
+  CD5        negative
+  CD10       positive (diffuse)
+  BCL6       positive
+  MUM1/IRF4  negative (<10% of tumor cells)
+  BCL2       positive in approximately 30% of tumor cells
+  MYC        positive in approximately 20% of tumor cells
+  Cyclin D1  negative
+  CD30       negative
+  Ki-67      approximately 70%
+  EBER ISH   negative
+
+COMMENT: Germinal-center B-cell-like immunophenotype by the Hans algorithm. FISH for MYC, BCL2 and
+BCL6 rearrangements has been requested on block A1; results will be reported in an addendum.
+
+ADDENDUM (2026-09-16): FISH, interphase, break-apart probes, 200 nuclei scored.
+  MYC (8q24):   no rearrangement detected
+  BCL2 (18q21): no rearrangement detected
+  BCL6 (3q27):  no rearrangement detected
+The final diagnosis is unchanged.
+"""
+
+[[documents]]
+id = "marrow"
+date = "2026-09-13"
+kind = "marrow_report"
+title = "Bone marrow aspirate and biopsy, right posterior iliac crest"
+author = "Synthetic Hematopathologist"
+text = """
+Collected 2026-09-11. Core length 1.8 cm, adequate. Normocellular marrow for age (about 40%) with
+trilineage hematopoiesis. No lymphoma identified on morphology or CD20/PAX5 immunostains. Flow
+cytometry of the aspirate: no monotypic B-cell population. Iron stores adequate.
+DIAGNOSIS: No involvement by lymphoma.
+"""
+
+[[documents]]
+id = "progress"
+date = "2026-09-17"
+kind = "progress_note"
+title = "Hematology-oncology follow-up (results visit, pre-tumor board)"
+author = "Synthetic Hematologist-Oncologist"
+text = """
+Results reviewed with the patient, his wife and daughter. Biopsy shows DLBCL; FISH addendum received.
+Abdominal pain is worse; he is now taking ibuprofen 400 mg four times daily. Night sweats persist.
+Weight 70.2 kg. Still independent in self-care, resting much of the afternoon. No headache, vomiting,
+confusion or new neurological symptoms. Urine output normal per patient.
+
+Exam: T 37.6 C, HR 92, BP 122/74. Unchanged abdominal tenderness. Neuro exam non-focal.
+
+Repeat labs 2026-09-16 reviewed (see results).
+
+Patient goals: wants treatment aimed at cure. His granddaughter's wedding is in mid-December and he
+very much wants to attend. Concerned about the 45-minute drive for frequent visits.
+
+Case to be presented at lymphoma tumor board 2026-09-18 for a treatment plan; no treatment started yet.
+"""

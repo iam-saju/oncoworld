@@ -8,22 +8,22 @@
   "metrics": {
     "diagnosis_and_COO": {
       "score": 1.0,
-      "points": 15,
-      "max_points": 15,
+      "points": 10,
+      "max_points": 10,
       "criteria": {
         "DLBCL_NOS": {
-          "score": 7,
-          "max": 7,
-          "matched": true
-        },
-        "GCB_by_Hans": {
           "score": 5,
           "max": 5,
           "matched": true
         },
-        "avoids_non_GCB_or_ABC_call": {
+        "GCB_by_Hans": {
           "score": 3,
           "max": 3,
+          "matched": true
+        },
+        "avoids_non_GCB_or_ABC_call": {
+          "score": 2,
+          "max": 2,
           "matched": true
         }
       }
@@ -140,22 +140,22 @@
     },
     "response_assessment": {
       "score": 1.0,
-      "points": 10,
-      "max_points": 10,
+      "points": 15,
+      "max_points": 15,
       "criteria": {
         "PET_CT": {
-          "score": 3,
-          "max": 3,
-          "matched": true
-        },
-        "Lugano_Deauville": {
           "score": 4,
           "max": 4,
           "matched": true
         },
+        "Lugano_Deauville": {
+          "score": 6,
+          "max": 6,
+          "matched": true
+        },
         "end_of_treatment_assessment": {
-          "score": 3,
-          "max": 3,
+          "score": 5,
+          "max": 5,
           "matched": true
         }
       }

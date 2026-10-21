@@ -1,0 +1,8 @@
+LABORATORY RESULTS: Breast oncology survivorship chemistry
+Collected: 2026-03-10    Synthetic Clinical Laboratory
+
+Test                                    Result  Flag  Units           Reference
+Creatinine                                 0.8        mg/dL           0.5-1.1
+eGFR (CKD-EPI 2021)                         85        mL/min/1.73m2   >=60
+Alkaline phosphatase                        88        U/L             40-129
+LDH                                        182        U/L             135-225

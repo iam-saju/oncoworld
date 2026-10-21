@@ -1,0 +1,413 @@
+{
+  "reward": 1.0,
+  "raw_points": 100,
+  "max_points": 100,
+  "passed": true,
+  "dangerous_errors": [],
+  "judge": "none",
+  "rubric_version": "dlbcl_0005.v2.0",
+  "review_status": "PENDING_ONCOLOGIST",
+  "domains": {
+    "diagnosis": {
+      "points": 5,
+      "max_points": 5,
+      "score": 1.0
+    },
+    "staging": {
+      "points": 11,
+      "max_points": 11,
+      "score": 1.0
+    },
+    "molecular_classification": {
+      "points": 5,
+      "max_points": 5,
+      "score": 1.0
+    },
+    "prognosis": {
+      "points": 8,
+      "max_points": 8,
+      "score": 1.0
+    },
+    "first_line_treatment": {
+      "points": 22,
+      "max_points": 22,
+      "score": 1.0
+    },
+    "cns_management": {
+      "points": 4,
+      "max_points": 4,
+      "score": 1.0
+    },
+    "response_assessment": {
+      "points": 8,
+      "max_points": 8,
+      "score": 1.0
+    },
+    "pretreatment_workup": {
+      "points": 13,
+      "max_points": 13,
+      "score": 1.0
+    },
+    "supportive_care": {
+      "points": 19,
+      "max_points": 19,
+      "score": 1.0
+    },
+    "fitness_and_goals": {
+      "points": 5,
+      "max_points": 5,
+      "score": 1.0
+    }
+  },
+  "items": [
+    {
+      "id": "dx_dlbcl_gcb",
+      "domain": "diagnosis",
+      "kind": "must",
+      "severity": "important",
+      "points": 5,
+      "met": true,
+      "delta": 5,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "stage_i",
+      "domain": "staging",
+      "kind": "must",
+      "severity": "important",
+      "points": 7,
+      "met": true,
+      "delta": 7,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "stage_nonbulky_no_b",
+      "domain": "staging",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "stage_pet_no_marrow_biopsy",
+      "domain": "staging",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_overstaged",
+      "domain": "staging",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mol_not_de_not_dh",
+      "domain": "molecular_classification",
+      "kind": "must",
+      "severity": "important",
+      "points": 5,
+      "met": true,
+      "delta": 5,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_calls_double_hit",
+      "domain": "molecular_classification",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mn_calls_double_expressor",
+      "domain": "molecular_classification",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 5,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "prog_ipi_low",
+      "domain": "prognosis",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "prog_cns_ipi_low",
+      "domain": "prognosis",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_curative_rchop",
+      "domain": "first_line_treatment",
+      "kind": "must",
+      "severity": "dangerous",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_flyer_4rchop_2r",
+      "domain": "first_line_treatment",
+      "kind": "must",
+      "severity": "important",
+      "points": 10,
+      "met": true,
+      "delta": 10,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_no_rt_goals",
+      "domain": "first_line_treatment",
+      "kind": "should",
+      "severity": "important",
+      "points": 4,
+      "met": true,
+      "delta": 4,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_alternatives",
+      "domain": "first_line_treatment",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_six_cycles",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 16,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mn_pola_preferred",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 8,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mn_da_epoch",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 5,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mn_observation_or_rt_alone",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "cns_low_no_prophylaxis",
+      "domain": "cns_management",
+      "kind": "should",
+      "severity": "important",
+      "points": 4,
+      "met": true,
+      "delta": 4,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_mandates_cns_prophylaxis",
+      "domain": "cns_management",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 4,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "resp_eot_pet_lugano",
+      "domain": "response_assessment",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "resp_interim_pet",
+      "domain": "response_assessment",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "work_pregnancy_test",
+      "domain": "pretreatment_workup",
+      "kind": "must",
+      "severity": "important",
+      "points": 10,
+      "met": true,
+      "delta": 10,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "work_hbv_reviewed",
+      "domain": "pretreatment_workup",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "work_echo_reviewed",
+      "domain": "pretreatment_workup",
+      "kind": "should",
+      "severity": "minor",
+      "points": 1,
+      "met": true,
+      "delta": 1,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_stop_coc_switch",
+      "domain": "supportive_care",
+      "kind": "must",
+      "severity": "important",
+      "points": 12,
+      "met": true,
+      "delta": 12,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_coc_reason",
+      "domain": "supportive_care",
+      "kind": "should",
+      "severity": "important",
+      "points": 4,
+      "met": true,
+      "delta": 4,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_fertility_counselling",
+      "domain": "supportive_care",
+      "kind": "should",
+      "severity": "minor",
+      "points": 3,
+      "met": true,
+      "delta": 3,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "fit_goals",
+      "domain": "fitness_and_goals",
+      "kind": "must",
+      "severity": "important",
+      "points": 5,
+      "met": true,
+      "delta": 5,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    }
+  ],
+  "judge_regex_disagreements": []
+}

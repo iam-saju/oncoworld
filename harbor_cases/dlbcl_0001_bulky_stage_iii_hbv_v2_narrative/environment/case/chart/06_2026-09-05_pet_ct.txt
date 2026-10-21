@@ -1,0 +1,35 @@
+FDG PET-CT, SKULL BASE TO MID-THIGH
+Date: 2026-09-05    Author: Synthetic Nuclear Medicine Physician
+
+CLINICAL INDICATION: Cervical and retroperitoneal lymphadenopathy, suspected lymphoma. Initial staging.
+
+TECHNIQUE: 11.4 mCi 18F-FDG IV; uptake time 60 minutes; serum glucose at injection 98 mg/dL.
+Low-dose non-contrast CT for attenuation correction and localization. Mediastinal blood pool SUVmax
+2.0; liver SUVmax 2.6.
+
+FINDINGS:
+Head and neck: physiologic brain uptake (PET is insensitive for intracranial disease). Multiple
+FDG-avid left cervical lymph nodes (levels III-IV), largest 3.1 x 2.4 cm, SUVmax 18.7. No FDG-avid
+right cervical or supraclavicular nodes. Waldeyer ring, salivary glands and thyroid: physiologic.
+Chest: FDG-avid right paratracheal node 2.6 cm (SUVmax 15.2) and subcarinal node 2.2 cm (SUVmax
+13.9). No FDG-avid hilar or axillary nodes. Lungs clear without FDG-avid nodules. No pleural or
+pericardial effusion.
+Abdomen and pelvis:
+- Confluent retroperitoneal (left para-aortic and aortocaval) nodal mass, 11.0 x 8.1 cm in axial
+  dimension, SUVmax 22.4, displacing the left renal vein without obstruction. No hydronephrosis.
+- Spleen enlarged at 14.2 cm with at least four FDG-avid hypodense lesions, largest 2.4 cm,
+  SUVmax 16.3.
+- Liver normal in size without focal FDG uptake.
+- Kidneys and adrenal glands without focal FDG uptake or mass.
+- No FDG-avid mesenteric, iliac or inguinal nodes. No ascites.
+- Stomach and bowel: physiologic uptake only.
+Musculoskeletal: diffuse mildly increased marrow uptake, less than liver, without focal osseous or
+marrow lesions. No lytic or sclerotic lesions.
+Testes: no abnormal uptake.
+
+IMPRESSION:
+1. FDG-avid lymphadenopathy above the diaphragm (left cervical, mediastinal) and below the diaphragm
+   (retroperitoneal mass, 11.0 cm), consistent with lymphoma. Tissue confirmation pending.
+2. Splenomegaly with multiple FDG-avid splenic lesions, consistent with splenic involvement.
+3. No FDG-avid disease in the liver, kidneys, adrenal glands, lungs, bones or marrow (diffuse mild
+   marrow uptake is likely reactive), testes, or gastrointestinal tract.

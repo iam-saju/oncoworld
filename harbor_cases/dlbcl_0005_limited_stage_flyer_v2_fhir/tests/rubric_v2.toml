@@ -1,0 +1,304 @@
+# HIDDEN. OncoWorld v2 rubric for dlbcl_0005. Copied to tests/rubric_v2.toml; never visible to the model.
+# Drafted by engineering from current practice (NCCN B-cell lymphomas; FLYER (Poeschel, Lancet 2019);
+# SWOG S1001; POLARIX eligibility; Lugano 2014; CDC/WHO medical eligibility criteria for contraceptive use).
+# Every item is PENDING_ONCOLOGIST until signed off in harbor_cases/<task>/review/signoff.md.
+#
+# Regex fallback fields are a coarse safety net for runs without a judge; the judge reads `text`.
+# All regexes run on the lower-cased answer.
+#
+# Weighting note: the two "real-world" items (pregnancy test, stopping the estrogen-containing pill) together with
+# the reason item carry 26 points, so an otherwise perfect answer that misses all three scores 0.74 and fails
+# without being flagged dangerous. The 6-cycle overtreatment deduction (16) is sized so that a 6-cycle preferred plan
+# that is otherwise perfect also fails, even if it still names the alternatives (100 - 10 FLYER - 16 = 74).
+
+version = "dlbcl_0005.v2.0"
+review_status = "PENDING_ONCOLOGIST"
+passing_score = 0.75
+
+[leak_check]
+# Strings that would give the answer away if they appeared anywhere in the model-visible chart.
+# (The chart deliberately states "migraine with aura" and "combined oral contraceptive": those are the facts.)
+forbidden_in_case = ["stage i", "stage ia", "stage iii", "stage iv", "ipi", "cns-ipi", "flyer", "r-chop", "rchop",
+                     "pola-r-chp", "polatuzumab", "isrt", "involved-site", "lugano", "deauville", "bulky",
+                     "double-expressor", "double expressor", "double-hit", "double hit", "prophylaxis",
+                     "contraindicated", "contraindication", "pregnancy test", "hcg", "thromboembolism", "stroke",
+                     "intrauterine", "iud", "fertility preservation", "methotrexate"]
+
+# ---------------- diagnosis
+[[items]]
+id = "dx_dlbcl_gcb"
+domain = "diagnosis"
+kind = "must"
+severity = "important"
+points = 5
+text = "The response states the diagnosis is diffuse large B-cell lymphoma (NOS) with a germinal-center B-cell (GCB) phenotype by the Hans algorithm."
+all = ["dlbcl|diffuse large b[- ]cell", "\\bgcb\\b|germinal[- ]cent(?:er|re)"]
+
+# ---------------- staging
+[[items]]
+id = "stage_i"
+domain = "staging"
+kind = "must"
+severity = "important"
+points = 7
+text = "The response stages the disease as Lugano/Ann Arbor stage I (stage IA acceptable): a single nodal region (right cervical levels II-III)."
+any = ["\\bstage\\s*(?:i|1)a?\\b(?!\\s*(?:-|/|to|or)\\s*(?:ii|iv|2|4)\\b)"]
+
+[[items]]
+id = "stage_nonbulky_no_b"
+domain = "staging"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes the disease is non-bulky (largest node 3.1 cm, below 7.5 cm) and that there are no B symptoms."
+all = ["non[- ]?bulky|not bulky|no bulk|<\\s*7\\.5", "(?:no|without|absence of|denies)\\s+b[- ]symptoms|stage\\s*(?:i|1)a\\b|no (?:fevers?|night sweats|weight loss)"]
+
+[[items]]
+id = "stage_pet_no_marrow_biopsy"
+domain = "staging"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes that bone marrow biopsy is unnecessary because PET-CT shows no marrow uptake."
+any = ["marrow (?:biopsy|aspirat\\w*|examination)[^.]{0,80}(?:not (?:needed|required|necessary|indicated)|unnecessary|omitted|can be skipped)",
+       "(?:pet|fdg)[^.]{0,80}(?:obviat|replac)\\w*[^.]{0,40}marrow"]
+
+[[items]]
+id = "mn_overstaged"
+domain = "staging"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response overstages the disease as stage III or IV / advanced stage."
+affirm = ["\\bstage\\s*(?:iii|iv|[34])\\b|advanced[- ]stage"]
+
+# ---------------- molecular classification
+[[items]]
+id = "mol_not_de_not_dh"
+domain = "molecular_classification"
+kind = "must"
+severity = "important"
+points = 5
+text = "The response states the lymphoma is neither double-expressor (MYC 15%, BCL2 30% below thresholds) nor double-hit (FISH negative for MYC, BCL2 and BCL6 rearrangements)."
+check = "denies_double_hit"
+any = ["not\\s+(?:a\\s+)?double[- ]expressor|neither[^.]{0,40}double[- ]expressor|below[^.]{0,60}threshold|does not meet[^.]{0,60}(?:double[- ]expressor|threshold)|not[^.]{0,30}\\bdel\\b"]
+
+[[items]]
+id = "mn_calls_double_hit"
+domain = "molecular_classification"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response classifies this lymphoma as double-hit / high-grade B-cell lymphoma with MYC and BCL2 rearrangements."
+check = "affirms_double_hit"
+
+[[items]]
+id = "mn_calls_double_expressor"
+domain = "molecular_classification"
+kind = "must_not"
+severity = "important"
+points = 5
+text = "The response classifies this lymphoma as double-expressor."
+check = "affirms_double_expressor"
+
+# ---------------- prognosis
+[[items]]
+id = "prog_ipi_low"
+domain = "prognosis"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response calculates IPI as 0 (low risk): age <=60, normal LDH, ECOG 0, stage I, no extranodal sites."
+any = ["\\bipi\\b[^.]{0,40}(?:\\b0\\b|zero|low)", "low[- ]risk\\s+(?:by\\s+)?(?:the\\s+)?ipi"]
+
+[[items]]
+id = "prog_cns_ipi_low"
+domain = "prognosis"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response calculates CNS-IPI as 0 / low risk."
+any = ["cns[- ]ipi[^.]{0,40}(?:\\b0\\b|zero|low)", "low[^.]{0,20}cns[- ]ipi"]
+
+# ---------------- first-line treatment
+[[items]]
+id = "tx_curative_rchop"
+domain = "first_line_treatment"
+kind = "must"
+severity = "dangerous"
+points = 6
+text = "The response recommends curative-intent rituximab-containing immunochemotherapy (R-CHOP-based) for this patient."
+all = ["r[- ]?chop", "curative|\\bcure"]
+
+[[items]]
+id = "tx_flyer_4rchop_2r"
+domain = "first_line_treatment"
+kind = "must"
+severity = "important"
+points = 10
+text = "The response recommends, as the preferred plan, 4 cycles of R-CHOP followed by 2 additional doses of rituximab without radiotherapy (FLYER regimen; age 18-60, IPI 0, non-bulky <7.5 cm). A 4-cycle PET-adapted R-CHOP approach is also accepted."
+all = ["r[- ]?chop",
+       "flyer|(?:\\b4|four)\\s*(?:cycles?\\s*(?:of\\s*)?|x\\s*|×\\s*)?r[- ]?chop|r[- ]?chop\\s*(?:x|×|for)\\s*(?:4|four)\\b|r[- ]?chop[^.]{0,20}\\b(?:4|four) cycles"]
+
+[[items]]
+id = "tx_no_rt_goals"
+domain = "first_line_treatment"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response notes that the chosen plan omits neck radiotherapy, which aligns with her wish to avoid radiation (thyroid and salivary late effects, sister's radiation-induced hypothyroidism)."
+all = ["radiation|radiotherapy|\\brt\\b|isrt", "thyroid|saliv|xerostomia|dry mouth|sister|preference|wish"]
+any = ["(?:avoid|omit|without|spar|no)\\w*[^.]{0,40}(?:radiation|radiotherapy|\\brt\\b|isrt)",
+       "(?:radiation|radiotherapy|\\brt\\b|isrt)[^.]{0,40}(?:avoid|omit|not (?:needed|required|necessary)|unnecessary)"]
+
+[[items]]
+id = "tx_alternatives"
+domain = "first_line_treatment"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response names R-CHOP x3 followed by involved-site radiotherapy, or a PET-adapted 4-cycle approach (S1001), as an acceptable alternative."
+any = ["(?:\\b3|three)\\s*(?:cycles?\\s*(?:of\\s*)?|x\\s*)?r[- ]?chop|r[- ]?chop\\s*(?:x|×)\\s*3\\b|\\bisrt\\b|involved[- ]site",
+       "pet[- ]adapted|s1001"]
+
+[[items]]
+id = "mn_six_cycles"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "important"
+points = 16
+text = "The response recommends 6 cycles of R-CHOP (or of Pola-R-CHP) as the preferred plan for this IPI-0, non-bulky stage I disease (overtreatment)."
+recommend = ["\\b(?:6|six)\\s*(?:cycles?\\s*(?:of\\s*)?|x\\s*|×\\s*)?(?:r[- ]?chop|pola)|(?:r[- ]?chop|pola[- ]?r[- ]?chp)\\s*(?:x|×|for)\\s*(?:6|six)\\b"]
+
+[[items]]
+id = "mn_pola_preferred"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "important"
+points = 8
+text = "The response recommends Pola-R-CHP as the preferred regimen (POLARIX enrolled IPI 2-5 only; not indicated at IPI 0)."
+recommend = ["pola[- ]?r[- ]?chp|polatuzumab"]
+
+[[items]]
+id = "mn_da_epoch"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "important"
+points = 5
+text = "The response recommends DA-EPOCH-R or another intensified regimen for this patient."
+check = "recommends_da_epoch"
+
+[[items]]
+id = "mn_observation_or_rt_alone"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response recommends observation / no systemic treatment, or radiotherapy alone, as the plan."
+recommend = ["observation|watch(?:ful)?[- ](?:and[- ])?wait|(?:radiation|radiotherapy|isrt|\\brt\\b)(?: therapy)? alone|surveillance alone|no systemic (?:therapy|treatment)"]
+
+# ---------------- CNS
+[[items]]
+id = "cns_low_no_prophylaxis"
+domain = "cns_management"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response judges CNS-relapse risk as low and states that CNS prophylaxis and CNS staging (MRI brain / lumbar puncture) are not indicated."
+all = ["cns|central nervous", "\\blow\\b"]
+any = ["prophyla\\w*[^.]{0,40}(?:not|unnecessary)", "(?:no|not|without)[^.]{0,40}prophyla"]
+
+[[items]]
+id = "mn_mandates_cns_prophylaxis"
+domain = "cns_management"
+kind = "must_not"
+severity = "important"
+points = 4
+text = "The response recommends CNS prophylaxis (intrathecal chemotherapy or high-dose methotrexate) for this patient."
+recommend = ["(?:cns|intrathecal|methotrexate|hd[- ]?mtx)[^.]{0,30}prophyla\\w*|intrathecal|hd[- ]?mtx|high[- ]dose methotrexate"]
+
+# ---------------- response assessment
+[[items]]
+id = "resp_eot_pet_lugano"
+domain = "response_assessment"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response plans an end-of-treatment FDG PET-CT read with Lugano criteria / Deauville 5-point scale."
+all = ["pet", "deauville|lugano", "end[- ]of[- ](?:treatment|therapy)|after (?:completion|completing)|completion of|\\beot\\b|post[- ]treatment|final pet"]
+
+[[items]]
+id = "resp_interim_pet"
+domain = "response_assessment"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response plans an interim PET-CT after cycle 4 (before the rituximab-only doses) and says a positive scan (Deauville 4-5) would prompt additional therapy (e.g. RT or biopsy) rather than proceeding as planned."
+any = ["interim[^.]{0,80}pet|pet[^.]{0,40}(?:after|following) (?:cycle|c)\\s*(?:4|four)|after (?:4|four) cycles[^.]{0,60}pet"]
+
+# ---------------- pretreatment workup
+[[items]]
+id = "work_pregnancy_test"
+domain = "pretreatment_workup"
+kind = "must"
+severity = "important"
+points = 10
+text = "The response requires a pregnancy test (serum or urine hCG) before starting chemotherapy, noting that none is documented in this premenopausal woman."
+any = ["pregnan\\w*\\s*test", "\\bhcg\\b", "beta[- ]?hcg"]
+
+[[items]]
+id = "work_hbv_reviewed"
+domain = "pretreatment_workup"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response confirms hepatitis B serology was checked (HBsAg and anti-HBc nonreactive) so no antiviral prophylaxis is needed before rituximab."
+any = ["hbsag|hepatitis b|anti[- ]hbc|\\bhbv\\b"]
+
+[[items]]
+id = "work_echo_reviewed"
+domain = "pretreatment_workup"
+kind = "should"
+severity = "minor"
+points = 1
+text = "The response notes the baseline LVEF of 63% permits anthracycline."
+any = ["lvef|ejection fraction|echo"]
+
+# ---------------- supportive care
+[[items]]
+id = "sup_stop_coc_switch"
+domain = "supportive_care"
+kind = "must"
+severity = "important"
+points = 12
+text = "The response stops the combined estrogen-containing oral contraceptive and switches to effective non-estrogen contraception (e.g. copper or levonorgestrel IUD, implant, progestin-only method) for the duration of treatment."
+all = ["(?:stop|discontinu\\w*|switch\\w*|cease|change|replac\\w*)[^.]{0,80}(?:oral contracepti\\w*|\\bocp\\b|\\bcoc\\b|combined (?:hormonal|pill)|estrogen|ethinyl|the pill)|(?:oral contracepti\\w*|\\bocp\\b|\\bcoc\\b|estrogen|ethinyl|combined pill)[^.]{0,80}(?:stop|discontinu|switch|contraindicat)",
+       "\\biud\\b|intrauterine|progestin[- ]only|progestogen[- ]only|non[- ]?estrogen|estrogen[- ]free|copper|implant|etonogestrel|depot|condom|barrier"]
+
+[[items]]
+id = "sup_coc_reason"
+domain = "supportive_care"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response gives the reason: estrogen-containing contraception is contraindicated in migraine with aura (ischemic stroke risk) and adds venous thromboembolism risk during chemotherapy/active cancer."
+all = ["aura|migraine", "stroke|\\bvte\\b|thrombo|clot"]
+
+[[items]]
+id = "sup_fertility_counselling"
+domain = "supportive_care"
+kind = "should"
+severity = "minor"
+points = 3
+text = "The response offers fertility / ovarian-function counselling (abbreviated R-CHOP has low gonadotoxicity; referral to reproductive medicine offered since she is undecided about further pregnancy)."
+any = ["fertilit\\w*", "ovarian (?:function|reserve|suppression)|oocyte|egg (?:freez|bank)|reproductive (?:endocrin|medicine)"]
+
+# ---------------- fitness and goals
+[[items]]
+id = "fit_goals"
+domain = "fitness_and_goals"
+kind = "must"
+severity = "important"
+points = 5
+text = "The response judges her fit (ECOG 0, no limiting comorbidity) for curative-intent therapy with a high cure probability, and addresses her goals of continuing to work and avoiding neck radiation."
+all = ["ecog\\s*(?:ps\\s*)?(?:of\\s*)?0|\\bfit\\b", "curative|\\bcure", "\\bwork|teach"]

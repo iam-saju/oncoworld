@@ -1,0 +1,12 @@
+TUMOR NEXT-GENERATION SEQUENCING (DNA, 523-gene hybrid-capture panel), specimen 2027-04-28
+Tumor content estimated 60%.
+
+Variants of clinical or possible significance:
+  EZH2    c.1937A>T  p.Y646F   missense   VAF 34%
+  CREBBP  c.4336C>T  p.R1446*  nonsense   VAF 29%
+  KMT2D   c.11563dup p.Q3855fs frameshift VAF 31%
+  TNFRSF14 deletion (exons 1-3)
+Not detected: TP53, MYD88, CD79B, BCL2 amplification, MYC amplification.
+Tumor mutational burden: 6 mutations/Mb. Microsatellite status: stable.
+Comment: mutation pattern is typical of germinal-center-derived lymphoma. EZH2 Y646 is an activating
+hotspot mutation. Correlate clinically.

@@ -1,0 +1,8 @@
+TRANSTHORACIC ECHOCARDIOGRAM
+Date: 2026-09-08    Author: Synthetic Cardiologist
+
+Indication: baseline before possible anthracycline-containing chemotherapy.
+Left ventricle normal in size with normal wall thickness. LVEF 58% (biplane Simpson's).
+No regional wall-motion abnormality. Normal diastolic function. Global longitudinal strain -20%.
+Right ventricle normal in size and function. Valves without significant stenosis or regurgitation.
+No pericardial effusion.

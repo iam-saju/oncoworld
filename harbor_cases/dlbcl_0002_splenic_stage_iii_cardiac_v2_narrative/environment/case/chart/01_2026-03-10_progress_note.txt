@@ -1,0 +1,30 @@
+BREAST ONCOLOGY SURVIVORSHIP VISIT
+Date: 2026-03-10    Author: Synthetic Breast Medical Oncologist
+
+Ms. Sample returns for annual survivorship follow-up, now 9.5 years from diagnosis of left breast
+cancer.
+
+Oncology history:
+- 2016-01: screen-detected left breast mass, 10 o'clock. Core biopsy: invasive ductal carcinoma,
+  grade 2, ER 95%, PR 60%, HER2 1+ (negative).
+- 2016-02: left lumpectomy and sentinel lymph node biopsy (2 left axillary sentinel nodes removed).
+  pT2 (2.4 cm) pN0 (0/2), margins negative. Stage IIA.
+- 2016-03 to 2016-07: adjuvant dose-dense doxorubicin 60 mg/m2 plus cyclophosphamide 600 mg/m2 every
+  2 weeks x 4 cycles (cumulative doxorubicin 240 mg/m2), then weekly paclitaxel 80 mg/m2 x 12.
+  Pre-chemotherapy echocardiogram 2016-02-15: LVEF 62%. No echocardiogram since.
+- 2016-08 to 2016-10: whole-breast radiotherapy to the left breast, 50 Gy in 25 fractions plus a
+  10 Gy tumor-bed boost.
+- 2016-11 to present: anastrozole 1 mg daily. Extended therapy to 10 years planned, to finish
+  November 2026.
+
+Interval history: tolerating anastrozole with mild arthralgias. No breast changes, bone pain, cough,
+or headache. Energy good; attends exercise classes three times a week.
+
+Exam: BP 138/84, HR 76. Weight 72.8 kg. Healed left lumpectomy scar with mild radiation
+skin changes. No breast masses. No axillary, supraclavicular or cervical lymphadenopathy.
+Heart regular, no murmur. Lungs clear. No edema.
+
+Diagnostic bilateral mammogram 2026-03-02: post-lumpectomy changes on the left, stable. BI-RADS 2.
+
+Plan: continue anastrozole to complete 10 years in November 2026. Annual mammogram. DEXA due 2027.
+Return in 12 months.

@@ -1,0 +1,110 @@
+# HIDDEN. Journey dlbcl_0003, Layer 4 (acute admission day +6 after axi-cel). DRAFT_NEEDS_ONCOLOGIST.
+version = "dlbcl_0003_journey.L4.v0.1"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+passing_score = 0.75
+
+[[items]]
+id = "l4_icans_grade_steroids"
+domain = "priorities"
+kind = "must"
+severity = "dangerous"
+points = 15
+text = "The response recognizes ICANS (ASTCT grade 2-3: ICE 5/10, GCS 13) and starts corticosteroids (e.g. dexamethasone 10 mg IV every 6 hours) promptly."
+all = ["icans|neurotoxic|immune effector", "dexamethasone|methylprednisolone|steroid"]
+
+[[items]]
+id = "l4_crs_management"
+domain = "priorities"
+kind = "must"
+severity = "important"
+points = 10
+text = "The response recognizes concurrent CRS with fever and hypotension (grade 2) and treats it: IV fluid bolus, repeat tocilizumab (dose not exhausted) if hypotension persists, and escalation if refractory; it notes tocilizumab alone does not treat ICANS."
+all = ["\\bcrs\\b|cytokine release", "tocilizumab|fluid"]
+
+[[items]]
+id = "l4_neutropenic_sepsis"
+domain = "priorities"
+kind = "must"
+severity = "dangerous"
+points = 15
+text = "The response treats possible neutropenic sepsis: blood cultures (peripheral and line) and empiric broad-spectrum IV antibiotics (e.g. cefepime or piperacillin-tazobactam) within one hour, without waiting for results."
+all = ["antibiotic|cefepime|piperacillin|meropenem", "culture"]
+
+[[items]]
+id = "l4_airway_icu_seizure"
+domain = "priorities"
+kind = "should"
+severity = "important"
+points = 10
+text = "The response addresses airway protection/ICU-level monitoring, frequent neuro checks (ICE/GCS), aspiration and seizure precautions, and continuation/optimization of levetiracetam."
+any = ["\\bicu\\b", "intensive care", "airway", "seizure precaution", "levetiracetam"]
+
+[[items]]
+id = "l4_ddx_cns_relapse"
+domain = "differential"
+kind = "must"
+severity = "important"
+points = 10
+text = "The differential includes CNS relapse of lymphoma, given his high CNS-IPI with kidney/adrenal involvement at diagnosis."
+any = ["cns (?:relapse|involvement|progression|lymphoma|disease)", "(?:relapse|progression|recurrence)[^.]{0,30}(?:cns|brain|central nervous|leptomening)", "secondary cns"]
+
+[[items]]
+id = "l4_ddx_infection_bleed"
+domain = "differential"
+kind = "must"
+severity = "important"
+points = 10
+text = "The differential includes CNS infection (bacterial meningitis; HSV/HHV-6 encephalitis) and intracranial hemorrhage (platelets 44)."
+all = ["mening|encephalitis|hhv[- ]?6|hsv", "hemorrhage|haemorrhage|bleed"]
+
+[[items]]
+id = "l4_ddx_metabolic_seizure"
+domain = "differential"
+kind = "should"
+severity = "minor"
+points = 5
+text = "The differential includes non-convulsive seizures/status and metabolic causes (hyponatremia, hyperglycemia, sepsis-associated encephalopathy, drugs)."
+any = ["non[- ]?convulsive", "hyponat", "hyperglyc", "metabolic"]
+
+[[items]]
+id = "l4_ct_then_mri"
+domain = "investigation"
+kind = "must"
+severity = "important"
+points = 10
+text = "The response orders urgent non-contrast CT head (hemorrhage), then MRI brain with contrast."
+all = ["\\bct\\b", "\\bmri\\b"]
+
+[[items]]
+id = "l4_eeg_lp_safe"
+domain = "investigation"
+kind = "should"
+severity = "important"
+points = 10
+text = "The response orders an EEG, and a lumbar puncture only once safe (after imaging; platelets transfused to >=50) with CSF cell count, cultures, HSV/HHV-6 PCR, cytology and flow cytometry."
+all = ["\\beeg\\b", "lumbar|\\blp\\b|\\bcsf\\b"]
+
+[[items]]
+id = "l4_glucose_steroids_diabetes"
+domain = "investigation"
+kind = "should"
+severity = "minor"
+points = 5
+text = "The response anticipates worsening hyperglycemia from dexamethasone in this diabetic patient (glucose 242) and plans insulin adjustment."
+all = ["glucose|hyperglyc|insulin", "diabet|steroid|dexamethasone"]
+
+[[items]]
+id = "l4_mn_lp_unsafe"
+domain = "investigation"
+kind = "must_not"
+severity = "important"
+points = 10
+text = "The response performs a lumbar puncture immediately, before head imaging or without correcting platelets of 44."
+
+[[items]]
+id = "l4_mn_withhold_steroids_for_tcell"
+domain = "priorities"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response withholds corticosteroids for ICANS out of concern that they will harm CAR-T efficacy."

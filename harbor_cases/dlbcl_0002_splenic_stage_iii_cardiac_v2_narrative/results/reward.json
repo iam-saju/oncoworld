@@ -1,0 +1,16 @@
+{
+  "reward": 1.0,
+  "passed": 1.0,
+  "dangerous_errors": 0.0,
+  "cns_management": 1.0,
+  "diagnosis": 1.0,
+  "first_line_treatment": 1.0,
+  "fitness_and_goals": 1.0,
+  "missing_information": 1.0,
+  "molecular_classification": 1.0,
+  "pretreatment_workup": 1.0,
+  "prognosis": 1.0,
+  "response_assessment": 1.0,
+  "staging": 1.0,
+  "supportive_care": 1.0
+}

@@ -1,0 +1,337 @@
+# OncoWorld v2 case source: dlbcl_0001 (nodal disease on both sides of the diaphragm with splenic involvement,
+# large retroperitoneal mass, non-GCB, MYC/BCL2 protein co-expression without rearrangement, prior HBV exposure).
+# MODEL-VISIBLE. Everything in this file is rendered into the narrative chart AND the FHIR bundle by
+# scripts/build_cases_v2.py. Never put interpretations, scores, stage or treatment here: those live in
+# gold.json / rubric_v2.toml. review_status stays PENDING_ONCOLOGIST until signed off.
+# Same patient as v1 dlbcl_0001 (Thomas Sample, born 1964-05-11, ECOG 1, same CBC/LDH/PET/IHC/FISH findings).
+
+[meta]
+case_id = "dlbcl_0001"
+slug = "bulky_stage_iii_hbv"
+title = "DLBCL with nodal disease above and below the diaphragm, splenic lesions and a large retroperitoneal mass: tumor-board plan"
+difficulty = "advanced"
+record_date = "2026-09-17"        # the chart is exported the day before tumor board
+review_status = "PENDING_ONCOLOGIST"
+
+[patient]
+given = "Thomas"
+family = "Sample"
+gender = "male"
+birth_date = "1964-05-11"
+mrn = "OW-0001"
+
+[ecog]
+date = "2026-09-02"
+value = 1
+
+# Past medical history -> FHIR Condition (problem list), narrative consult note.
+[[conditions]]
+code = "40930008"
+display = "Hypothyroidism"
+onset = "2012"
+note = "On levothyroxine. TSH 2.1 mIU/L (June 2026)."
+
+[[conditions]]
+code = "235595009"
+display = "Gastroesophageal reflux disease"
+onset = "2018"
+note = "Controlled on omeprazole. EGD 2019: mild esophagitis, no Barrett's."
+
+[[conditions]]
+code = "55822004"
+display = "Hyperlipidemia"
+onset = "2016"
+
+[[medications]]
+text = "Levothyroxine 100 mcg tablet, 1 tablet by mouth daily before breakfast"
+
+[[medications]]
+text = "Omeprazole 20 mg capsule, 1 capsule by mouth daily"
+
+[[medications]]
+text = "Atorvastatin 20 mg tablet, 1 tablet by mouth nightly"
+
+[[medications]]
+text = "Acetaminophen 500 mg tablet, 1-2 tablets by mouth every 6 hours as needed for fever (patient-reported, started August 2026)"
+
+# No [[allergies]]: no known drug allergies.
+
+# Laboratory results. flag is computed from low/high by the builder; never hand-written.
+# panel groups results into DiagnosticReports and narrative tables.
+[[labs]]
+date = "2026-09-03"
+panel = "Complete blood count with differential"
+items = [
+  { key = "hb", value = 10.8 },
+  { key = "mcv", value = 88 },
+  { key = "wbc", value = 7.8 },
+  { key = "anc", value = 5.6 },
+  { key = "alc", value = 1.2 },
+  { key = "plt", value = 210 },
+]
+
+[[labs]]
+date = "2026-09-03"
+panel = "Comprehensive metabolic panel and tumor markers"
+items = [
+  { key = "na", value = 138 },
+  { key = "k", value = 4.2 },
+  { key = "cl", value = 102 },
+  { key = "co2", value = 25 },
+  { key = "bun", value = 15 },
+  { key = "creatinine", value = 0.9 },
+  { key = "egfr", value = 96 },
+  { key = "glucose", value = 104 },
+  { key = "ca", value = 9.3 },
+  { key = "albumin", value = 3.7 },
+  { key = "protein", value = 7.1 },
+  { key = "ast", value = 27 },
+  { key = "alt", value = 31 },
+  { key = "alp", value = 112 },
+  { key = "tbili", value = 0.6 },
+  { key = "urate", value = 6.8 },
+  { key = "phos", value = 3.9 },
+  { key = "ldh", value = 680 },
+  { key = "b2m", value = 3.4 },
+]
+
+[[labs]]
+date = "2026-09-03"
+panel = "Infectious disease serologies"
+items = [
+  { key = "hbsag", value = "Nonreactive" },
+  { key = "anti_hbc", value = "Reactive" },
+  { key = "anti_hbs", value = "Reactive" },
+  { key = "hcv_ab", value = "Nonreactive" },
+  { key = "hiv_agab", value = "Nonreactive" },
+]
+
+[[labs]]
+date = "2026-09-16"
+panel = "Repeat chemistry"
+items = [
+  { key = "k", value = 4.3 },
+  { key = "creatinine", value = 0.9 },
+  { key = "egfr", value = 96 },
+  { key = "ca", value = 9.2 },
+  { key = "phos", value = 4.0 },
+  { key = "urate", value = 7.1 },
+  { key = "ast", value = 29 },
+  { key = "alt", value = 34 },
+  { key = "ldh", value = 735 },
+]
+
+# Structured pathology for the FHIR tumor-marker Observations. The builder checks every value here
+# also appears in the pathology document text, so the two formats cannot drift.
+[pathology]
+specimen_label = "Excisional biopsy, left cervical lymph node"
+biopsy = ["21911005", "Biopsy of lymph node", "309079007", "Lymph node biopsy specimen", "59441001", "Structure of lymph node"]
+collected = "2026-09-09"
+diagnosis = "dlbcl"              # problem-list Condition code (as recorded in the EHR at export time)
+ihc = { CD20 = true, CD10 = false, BCL6 = true, MUM1 = true, BCL2 = 80, MYC = 50, KI67 = 85 }
+ihc_date = "2026-09-11"
+fish = { MYC = false, BCL2 = false, BCL6 = false }
+fish_date = "2026-09-16"
+marrow_involved = false
+
+# Imaging, pathology and notes: rendered verbatim into the narrative chart and as
+# DiagnosticReport.presentedForm / DocumentReference in FHIR.
+[[documents]]
+id = "referral"
+date = "2026-08-20"
+kind = "referral_note"
+title = "Primary care referral to hematology-oncology"
+author = "Synthetic Primary Care Physician"
+text = """
+Reason for referral: enlarging neck nodes and abnormal CT, suspected lymphoma.
+
+Mr. Sample is a 62-year-old civil engineer with hypothyroidism, GERD and hyperlipidemia. About three
+months of progressively enlarging, painless left-sided neck lumps, evening fevers to 38.5 C several
+times a week, drenching night sweats requiring a change of sheets, and about 7 kg unintentional weight
+loss over three months (86 -> 79 kg). Taking acetaminophen for the fevers. No antibiotic-responsive
+infection identified; chest X-ray clear, urinalysis and blood cultures negative (August 2026).
+
+CT neck, chest, abdomen and pelvis with IV contrast 2026-08-18 (outside facility): enlarged left
+cervical nodes up to 3.2 cm; enlarged mediastinal (right paratracheal and subcarinal) nodes up to
+2.6 cm; a large confluent retroperitoneal nodal mass, approximately 10.8 cm in greatest dimension;
+spleen 14.2 cm with several hypodense lesions. Kidneys, adrenals and liver unremarkable.
+Impression: lymphoma favored.
+
+TSH 2.1 on levothyroxine in June. Please see soon.
+"""
+
+[[documents]]
+id = "consult"
+date = "2026-09-02"
+kind = "consult_note"
+title = "Hematology-oncology new patient consultation"
+author = "Synthetic Hematologist-Oncologist"
+text = """
+HPI: 62M referred for cervical lymphadenopathy and a retroperitoneal mass. Symptoms as per referral.
+Still working full-time from home, but tires by mid-afternoon and has stopped his weekend hiking;
+fully independent in all self-care. Mild early satiety and a dull left-flank ache. No headache,
+visual change, confusion, focal weakness, back pain, or bladder/bowel change. No numbness or tingling
+in the hands or feet. No testicular swelling. No cough, dyspnea, or dysphagia. No pruritus.
+
+PMH: hypothyroidism (2012), GERD (2018; EGD 2019 mild esophagitis), hyperlipidemia (2016).
+Appendectomy age 19. No prior cancer, chemotherapy or radiation. No known heart, lung, kidney or
+liver disease. No diabetes.
+Medications: see medication list.
+Allergies: no known drug allergies.
+Social: civil engineer; married, lives with his wife; two adult children. Never smoker. Alcohol 2-3
+glasses of wine per week. No injection drug use. Lives 20 minutes from the cancer center.
+Family history: mother with breast cancer at 70; no family history of lymphoma.
+
+Exam: T 38.1 C, HR 94, BP 132/80, RR 14, SpO2 98% RA. Weight 79 kg, height 178 cm (BSA 1.98 m2).
+Well-appearing, mildly pale. Left cervical (levels III-IV) matted lymph nodes, largest about 3 cm,
+firm, non-tender. No right cervical, supraclavicular, axillary or inguinal lymphadenopathy. Oropharynx
+clear, tonsils not enlarged. Chest clear. Heart regular, no murmur. Abdomen: soft, vague fullness in
+the left mid-abdomen; spleen tip palpable 2 cm below the costal margin; no hepatomegaly. Testes normal
+without masses. No edema. Neuro: alert and oriented, cranial nerves intact, strength 5/5 throughout,
+sensation intact, reflexes symmetric.
+
+ECOG performance status 1.
+
+Plan today: CBC, CMP, LDH, uric acid, beta-2 microglobulin, hepatitis B, hepatitis C and HIV
+serologies; FDG PET-CT; echocardiogram; excisional biopsy of a left cervical lymph node (surgery
+consulted); bone marrow biopsy. Return after results.
+"""
+
+[[documents]]
+id = "pet"
+date = "2026-09-05"
+kind = "pet_ct_report"
+title = "FDG PET-CT, skull base to mid-thigh"
+author = "Synthetic Nuclear Medicine Physician"
+text = """
+CLINICAL INDICATION: Cervical and retroperitoneal lymphadenopathy, suspected lymphoma. Initial staging.
+
+TECHNIQUE: 11.4 mCi 18F-FDG IV; uptake time 60 minutes; serum glucose at injection 98 mg/dL.
+Low-dose non-contrast CT for attenuation correction and localization. Mediastinal blood pool SUVmax
+2.0; liver SUVmax 2.6.
+
+FINDINGS:
+Head and neck: physiologic brain uptake (PET is insensitive for intracranial disease). Multiple
+FDG-avid left cervical lymph nodes (levels III-IV), largest 3.1 x 2.4 cm, SUVmax 18.7. No FDG-avid
+right cervical or supraclavicular nodes. Waldeyer ring, salivary glands and thyroid: physiologic.
+Chest: FDG-avid right paratracheal node 2.6 cm (SUVmax 15.2) and subcarinal node 2.2 cm (SUVmax
+13.9). No FDG-avid hilar or axillary nodes. Lungs clear without FDG-avid nodules. No pleural or
+pericardial effusion.
+Abdomen and pelvis:
+- Confluent retroperitoneal (left para-aortic and aortocaval) nodal mass, 11.0 x 8.1 cm in axial
+  dimension, SUVmax 22.4, displacing the left renal vein without obstruction. No hydronephrosis.
+- Spleen enlarged at 14.2 cm with at least four FDG-avid hypodense lesions, largest 2.4 cm,
+  SUVmax 16.3.
+- Liver normal in size without focal FDG uptake.
+- Kidneys and adrenal glands without focal FDG uptake or mass.
+- No FDG-avid mesenteric, iliac or inguinal nodes. No ascites.
+- Stomach and bowel: physiologic uptake only.
+Musculoskeletal: diffuse mildly increased marrow uptake, less than liver, without focal osseous or
+marrow lesions. No lytic or sclerotic lesions.
+Testes: no abnormal uptake.
+
+IMPRESSION:
+1. FDG-avid lymphadenopathy above the diaphragm (left cervical, mediastinal) and below the diaphragm
+   (retroperitoneal mass, 11.0 cm), consistent with lymphoma. Tissue confirmation pending.
+2. Splenomegaly with multiple FDG-avid splenic lesions, consistent with splenic involvement.
+3. No FDG-avid disease in the liver, kidneys, adrenal glands, lungs, bones or marrow (diffuse mild
+   marrow uptake is likely reactive), testes, or gastrointestinal tract.
+"""
+
+[[documents]]
+id = "echo"
+date = "2026-09-08"
+kind = "echo_report"
+title = "Transthoracic echocardiogram"
+author = "Synthetic Cardiologist"
+text = """
+Indication: baseline before possible anthracycline-containing chemotherapy.
+Left ventricle normal in size with normal wall thickness. LVEF 58% (biplane Simpson's).
+No regional wall-motion abnormality. Normal diastolic function. Global longitudinal strain -20%.
+Right ventricle normal in size and function. Valves without significant stenosis or regurgitation.
+No pericardial effusion.
+"""
+
+[[documents]]
+id = "pathology"
+date = "2026-09-11"
+kind = "pathology_report"
+title = "Surgical pathology: excisional biopsy, left cervical lymph node"
+author = "Synthetic Hematopathologist"
+amended = "2026-09-16"
+text = """
+SPECIMEN: Lymph node, left cervical level IV, excisional biopsy, collected 2026-09-09. Received fresh;
+3.1 x 2.5 x 1.8 cm. Portions submitted for flow cytometry and cytogenetics.
+
+FINAL DIAGNOSIS: DIFFUSE LARGE B-CELL LYMPHOMA, NOT OTHERWISE SPECIFIED.
+
+MICROSCOPIC: Nodal architecture effaced by diffuse sheets of large atypical lymphoid cells with
+centroblastic and occasional immunoblastic morphology; numerous mitoses and focal necrosis.
+No residual follicles. No starry-sky pattern.
+
+FLOW CYTOMETRY: CD19+, CD20+ lambda-restricted B-cell population, CD5 negative, CD10 negative.
+
+IMMUNOHISTOCHEMISTRY (adequate controls):
+  CD20       positive (diffuse, strong)
+  PAX5       positive
+  CD3        negative in tumor cells (scattered background T cells)
+  CD5        negative
+  CD10       negative
+  BCL6       positive
+  MUM1/IRF4  positive (approximately 70% of tumor cells)
+  BCL2       positive in approximately 80% of tumor cells
+  MYC        positive in approximately 50% of tumor cells
+  Cyclin D1  negative
+  CD30       negative
+  Ki-67      approximately 85%
+  EBER ISH   negative
+
+COMMENT: Non-germinal-center B-cell-like immunophenotype by the Hans algorithm. FISH for MYC, BCL2
+and BCL6 rearrangements has been requested on block A2; results will be reported in an addendum.
+
+ADDENDUM (2026-09-16): FISH, interphase, break-apart probes, 200 nuclei scored.
+  MYC (8q24):   no rearrangement detected
+  BCL2 (18q21): no rearrangement detected
+  BCL6 (3q27):  no rearrangement detected
+The final diagnosis is unchanged.
+"""
+
+[[documents]]
+id = "marrow"
+date = "2026-09-12"
+kind = "marrow_report"
+title = "Bone marrow aspirate and biopsy, right posterior iliac crest"
+author = "Synthetic Hematopathologist"
+text = """
+Collected 2026-09-10. Core length 2.0 cm, adequate. Normocellular marrow for age (about 45%) with
+trilineage hematopoiesis and mild reactive myeloid hyperplasia. No lymphoma identified on morphology
+or CD20/PAX5 immunostains. Flow cytometry of the aspirate: no monotypic B-cell population.
+Iron stores increased, consistent with anemia of inflammation.
+DIAGNOSIS: No involvement by lymphoma.
+"""
+
+[[documents]]
+id = "progress"
+date = "2026-09-17"
+kind = "progress_note"
+title = "Hematology-oncology follow-up (results visit, pre-tumor board)"
+author = "Synthetic Hematologist-Oncologist"
+text = """
+Results reviewed with the patient and his wife. Biopsy shows DLBCL; FISH addendum received. Bone marrow
+negative. Echo normal.
+Still having evening fevers to 38.3 C three or four nights a week and night sweats. Weight 78.4 kg.
+Working reduced hours from home; independent in all activities, no longer hiking. No headache,
+vomiting, confusion, visual change or new neurological symptoms. No numbness or tingling.
+Neck incision healing well.
+
+Exam: T 37.4 C, HR 88, BP 128/78. Left cervical nodes unchanged, incision clean. Spleen tip palpable.
+Neuro exam non-focal.
+
+Repeat labs 2026-09-16 reviewed (see results).
+
+Patient goals: wants treatment aimed at cure and would like to keep working part-time from home if he
+can. His daughter is getting married in May 2027 and he wants to be well for it. Asked about hair
+loss and whether he can keep traveling to job sites (about once a month).
+
+Case to be presented at lymphoma tumor board 2026-09-18 for a treatment plan; no treatment started yet.
+"""

@@ -1,0 +1,19 @@
+PRIMARY CARE REFERRAL: LEFT AXILLARY MASS
+Date: 2026-08-12    Author: Synthetic Primary Care Physician
+
+Reason for referral: new left axillary mass in a breast cancer survivor; recurrence vs other.
+
+Ms. Sample is a 59-year-old school librarian with a history of left breast cancer (2016), now on
+anastrozole, and hypertension. Noticed a firm, non-tender lump in the left armpit in mid-July.
+Over the past 4 weeks she has had evening fevers, which she has been recording at home, soaking
+night sweats two to three times a week, and fatigue. Weight down about 2 kg.
+
+Left axillary ultrasound 2026-08-05: several enlarged left axillary lymph nodes, largest 3.4 cm, with
+loss of the fatty hilum.
+
+CT chest/abdomen/pelvis with IV contrast 2026-08-07 (outside facility): enlarged left axillary and
+mediastinal lymph nodes; mesenteric and para-aortic lymphadenopathy, largest mesenteric conglomerate
+7.4 cm; mildly enlarged spleen (12.6 cm) with several hypodense lesions up to 2 cm. Liver, adrenal
+glands and kidneys normal. Impression: lymphoma favored; metastatic breast carcinoma not excluded.
+
+Referred to breast surgical oncology for excisional biopsy and to hematology-oncology.

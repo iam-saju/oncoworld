@@ -1,0 +1,45 @@
+SURGICAL PATHOLOGY: EXCISIONAL BIOPSY, RIGHT CERVICAL LYMPH NODE
+Date: 2026-09-12    Author: Synthetic Hematopathologist
+Status: amended 2026-09-19
+
+SPECIMEN: Right cervical lymph node, level III, excisional biopsy (3.6 x 2.9 x 2.2 cm), collected
+2026-09-09. Fresh tissue sent for flow cytometry; blocks A1-A4.
+
+FINAL DIAGNOSIS (2026-09-12): DIFFUSE LARGE B-CELL LYMPHOMA, NOT OTHERWISE SPECIFIED. See addendum.
+
+MICROSCOPIC: Effaced nodal architecture with diffuse sheets of medium-to-large atypical lymphoid cells,
+round to irregular nuclei, vesicular chromatin and small nucleoli. Numerous mitoses and apoptotic
+bodies with a focal starry-sky pattern; geographic necrosis.
+
+IMMUNOHISTOCHEMISTRY (adequate controls):
+  CD20       positive (diffuse, strong)
+  PAX5       positive
+  CD3        negative in tumor cells (scattered background T cells)
+  CD5        negative
+  CD10       positive (diffuse)
+  BCL6       positive
+  MUM1/IRF4  negative (<10% of tumor cells)
+  BCL2       positive in approximately 90% of tumor cells (strong)
+  MYC        positive in approximately 80% of tumor cells
+  Cyclin D1  negative
+  CD23       negative
+  CD30       negative
+  TdT        negative
+  Ki-67      approximately 95%
+  EBER ISH   negative
+
+FLOW CYTOMETRY: CD19+, CD20+, CD10+ monotypic B cells with lambda light-chain restriction, large forward
+scatter. CD5 negative. CD34 negative.
+
+COMMENT: Germinal-center B-cell-like immunophenotype by the Hans algorithm. FISH for MYC, BCL2
+and BCL6 rearrangements has been requested on block A2; results will be reported in an addendum.
+
+ADDENDUM (2026-09-19): FISH, interphase, block A2, 200 nuclei scored per probe.
+MYC break-apart, IGH::MYC dual-fusion, BCL2 break-apart and BCL6 break-apart probes.
+  MYC (8q24):   rearrangement detected (break-apart signal in 78% of nuclei; IGH::MYC fusion
+                detected, consistent with t(8;14)(q24;q32))
+  BCL2 (18q21): rearrangement detected (break-apart signal in 85% of nuclei; IGH::BCL2 fusion
+                detected, consistent with t(14;18)(q32;q21))
+  BCL6 (3q27):  no rearrangement detected
+These FISH results change the classification of this lymphoma. The final diagnosis is amended per the
+FISH findings; the treating hematologist was informed by telephone on 2026-09-19.

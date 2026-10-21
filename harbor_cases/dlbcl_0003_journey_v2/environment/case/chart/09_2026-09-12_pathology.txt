@@ -1,0 +1,35 @@
+SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RETROPERITONEAL MASS
+Date: 2026-09-12    Author: Synthetic Hematopathologist
+Status: amended 2026-09-16
+
+SPECIMEN: Retroperitoneal mass, CT-guided core needle biopsy (four 18-gauge cores), collected
+2026-09-10.
+
+FINAL DIAGNOSIS: DIFFUSE LARGE B-CELL LYMPHOMA, NOT OTHERWISE SPECIFIED.
+
+MICROSCOPIC: Diffuse sheets of large atypical lymphoid cells with vesicular chromatin and prominent
+nucleoli; frequent mitoses and focal necrosis. No starry-sky pattern.
+
+IMMUNOHISTOCHEMISTRY (adequate controls):
+  CD20       positive (diffuse, strong)
+  PAX5       positive
+  CD3        negative in tumor cells (scattered background T cells)
+  CD5        negative
+  CD10       positive (diffuse)
+  BCL6       positive
+  MUM1/IRF4  negative (<10% of tumor cells)
+  BCL2       positive in approximately 30% of tumor cells
+  MYC        positive in approximately 20% of tumor cells
+  Cyclin D1  negative
+  CD30       negative
+  Ki-67      approximately 70%
+  EBER ISH   negative
+
+COMMENT: Germinal-center B-cell-like immunophenotype by the Hans algorithm. FISH for MYC, BCL2 and
+BCL6 rearrangements has been requested on block A1; results will be reported in an addendum.
+
+ADDENDUM (2026-09-16): FISH, interphase, break-apart probes, 200 nuclei scored.
+  MYC (8q24):   no rearrangement detected
+  BCL2 (18q21): no rearrangement detected
+  BCL6 (3q27):  no rearrangement detected
+The final diagnosis is unchanged.

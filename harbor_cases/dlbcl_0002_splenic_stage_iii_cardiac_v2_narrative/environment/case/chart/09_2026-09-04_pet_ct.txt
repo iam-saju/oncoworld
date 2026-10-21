@@ -1,0 +1,33 @@
+FDG PET-CT, SKULL BASE TO MID-THIGH
+Date: 2026-09-04    Author: Synthetic Nuclear Medicine Physician
+
+CLINICAL INDICATION: Diffuse large B-cell lymphoma on left axillary node excision (2026-08-25).
+History of left breast cancer 2016. Initial staging.
+
+TECHNIQUE: 9.8 mCi 18F-FDG IV; uptake time 60 minutes; serum glucose at injection 94 mg/dL.
+Low-dose non-contrast CT for attenuation correction and localization. Mediastinal blood pool SUVmax
+1.9; liver SUVmax 2.7. Comparison: outside CT 2026-08-07.
+
+FINDINGS:
+Head and neck: physiologic brain uptake (PET is insensitive for intracranial disease). No FDG-avid
+cervical or supraclavicular lymph nodes.
+Chest:
+- Left axillary lymph nodes, largest 2.2 cm, SUVmax 17.8, adjacent to post-excision changes.
+- Mediastinal lymph nodes (prevascular and left paratracheal), largest 2.9 cm, SUVmax 15.4.
+- Left breast: post-lumpectomy changes without FDG-avid lesion. Right breast normal.
+- Mild left anterior lung fibrotic change in the prior radiation field, not FDG-avid. No pulmonary
+  nodules. No pleural or pericardial effusion. Physiologic myocardial uptake.
+Abdomen and pelvis:
+- Mesenteric nodal conglomerate, 7.5 x 5.1 cm, SUVmax 22.3 (largest nodal mass).
+- Para-aortic lymph nodes, largest 3.0 cm, SUVmax 16.9.
+- Spleen 12.8 cm with multiple FDG-avid nodules, largest 2.1 cm, SUVmax 16.2.
+- Liver normal without focal uptake. Adrenal glands and kidneys normal without focal uptake.
+- No FDG-avid pelvic or inguinal nodes. No ascites.
+Musculoskeletal: no focal osseous or marrow FDG uptake.
+
+IMPRESSION:
+1. FDG-avid lymphadenopathy above the diaphragm (left axillary, mediastinal) and below the diaphragm
+   (mesenteric, para-aortic), with multiple FDG-avid splenic nodules, consistent with lymphoma.
+   Largest nodal mass 7.5 cm (mesenteric).
+2. No FDG-avid lesion in the kidneys, adrenal glands, liver, lungs, bone, marrow or breasts.
+3. Post-treatment changes of the left breast and left anterior lung without evidence of active disease.

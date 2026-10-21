@@ -1,0 +1,399 @@
+# OncoWorld v2 case source: dlbcl_0002 (nodal + splenic DLBCL after breast cancer treated with anthracycline
+# and left chest radiotherapy; new decline in LVEF).
+# MODEL-VISIBLE. Everything in this file is rendered into the narrative chart AND the FHIR bundle by
+# scripts/build_cases_v2.py. Never put interpretations, scores, stage or treatment here: those live in
+# gold.json / rubric_v2.toml. review_status stays PENDING_ONCOLOGIST until signed off.
+# Same patient identity and core findings as v1 harbor_cases/dlbcl_0002_splenic_stage_iii_*.
+
+[meta]
+case_id = "dlbcl_0002"
+slug = "splenic_stage_iii_cardiac"
+title = "Nodal and splenic DLBCL after prior anthracycline for breast cancer, reduced LVEF: tumor-board plan"
+difficulty = "advanced"
+record_date = "2026-09-17"        # the chart is exported the day before tumor board
+review_status = "PENDING_ONCOLOGIST"
+
+[patient]
+given = "Grace"
+family = "Sample"
+gender = "female"
+birth_date = "1967-03-08"
+mrn = "OW-0002"
+
+[ecog]
+date = "2026-09-01"
+value = 1
+
+# Past medical history -> FHIR Condition (problem list), narrative consult note.
+[[conditions]]
+code = "254837009"
+display = "Malignant neoplasm of left breast, ER-positive, HER2-negative"
+onset = "2016"
+note = "Stage IIA (pT2 pN0). Lumpectomy and sentinel node biopsy, adjuvant chemotherapy (doxorubicin/cyclophosphamide then paclitaxel), left breast radiotherapy; on anastrozole since November 2016. No evidence of recurrence at last surveillance visit (March 2026)."
+
+[[conditions]]
+code = "59621000"
+display = "Essential hypertension"
+onset = "2018"
+note = "On amlodipine."
+
+[[conditions]]
+code = "312894000"
+display = "Osteopenia"
+onset = "2019"
+note = "On aromatase inhibitor. DEXA 2025: lumbar spine T-score -1.8."
+
+[[medications]]
+text = "Anastrozole 1 mg tablet, 1 tablet by mouth daily (since November 2016)"
+
+[[medications]]
+text = "Amlodipine 5 mg tablet, 1 tablet by mouth daily"
+
+[[medications]]
+text = "Calcium carbonate 600 mg / vitamin D3 800 IU tablet, 1 tablet by mouth twice daily"
+
+[[medications]]
+text = "Acetaminophen 500 mg tablet, 1-2 tablets by mouth every 6 hours as needed for fever (patient-reported, started August 2026)"
+
+[[allergies]]
+substance = "Penicillin"
+reaction = "Hives (childhood)"
+
+# Laboratory results. flag is computed from low/high by the builder; never hand-written.
+[[labs]]
+date = "2026-03-10"
+panel = "Breast oncology survivorship chemistry"
+items = [
+  { key = "creatinine", value = 0.8 },
+  { key = "egfr", value = 85 },
+  { key = "alp", value = 88 },
+  { key = "ldh", value = 182 },
+]
+
+[[labs]]
+date = "2026-09-01"
+panel = "Complete blood count with differential"
+items = [
+  { key = "hb", value = 11.4 },
+  { key = "mcv", value = 88 },
+  { key = "wbc", value = 6.9 },
+  { key = "anc", value = 4.6 },
+  { key = "alc", value = 1.2 },
+  { key = "plt", value = 178 },
+]
+
+[[labs]]
+date = "2026-09-01"
+panel = "Comprehensive metabolic panel and tumor markers"
+items = [
+  { key = "na", value = 139 },
+  { key = "k", value = 4.2 },
+  { key = "cl", value = 103 },
+  { key = "co2", value = 25 },
+  { key = "bun", value = 14 },
+  { key = "creatinine", value = 0.8 },
+  { key = "egfr", value = 85 },
+  { key = "glucose", value = 96 },
+  { key = "ca", value = 9.3 },
+  { key = "albumin", value = 3.8 },
+  { key = "protein", value = 7.0 },
+  { key = "ast", value = 24 },
+  { key = "alt", value = 22 },
+  { key = "alp", value = 92 },
+  { key = "tbili", value = 0.6 },
+  { key = "urate", value = 5.8 },
+  { key = "phos", value = 3.6 },
+  { key = "ldh", value = 510 },
+  { key = "b2m", value = 2.9 },
+]
+
+[[labs]]
+date = "2026-09-01"
+panel = "Infectious disease serologies"
+items = [
+  { key = "hbsag", value = "Nonreactive" },
+  { key = "anti_hbc", value = "Nonreactive" },
+  { key = "anti_hbs", value = "Nonreactive" },
+  { key = "hcv_ab", value = "Nonreactive" },
+  { key = "hiv_agab", value = "Nonreactive" },
+]
+
+# Structured pathology for the FHIR tumor-marker Observations. The builder checks every value here
+# also appears in the pathology document text, so the two formats cannot drift.
+[pathology]
+specimen_label = "Excisional biopsy, left axillary lymph node"
+biopsy = ["21911005", "Biopsy of lymph node", "309079007", "Lymph node biopsy specimen", "68171009", "Axillary lymph node structure"]
+collected = "2026-08-25"
+diagnosis = "dlbcl"
+ihc = { CD20 = true, CD10 = false, BCL6 = true, MUM1 = true, BCL2 = 70, MYC = 45, KI67 = 80 }
+ihc_date = "2026-08-28"
+fish = { MYC = false, BCL2 = false, BCL6 = false }
+fish_date = "2026-09-08"
+marrow_involved = false
+
+[[documents]]
+id = "survivorship"
+date = "2026-03-10"
+kind = "progress_note"
+title = "Breast oncology survivorship visit"
+author = "Synthetic Breast Medical Oncologist"
+text = """
+Ms. Sample returns for annual survivorship follow-up, now 9.5 years from diagnosis of left breast
+cancer.
+
+Oncology history:
+- 2016-01: screen-detected left breast mass, 10 o'clock. Core biopsy: invasive ductal carcinoma,
+  grade 2, ER 95%, PR 60%, HER2 1+ (negative).
+- 2016-02: left lumpectomy and sentinel lymph node biopsy (2 left axillary sentinel nodes removed).
+  pT2 (2.4 cm) pN0 (0/2), margins negative. Stage IIA.
+- 2016-03 to 2016-07: adjuvant dose-dense doxorubicin 60 mg/m2 plus cyclophosphamide 600 mg/m2 every
+  2 weeks x 4 cycles (cumulative doxorubicin 240 mg/m2), then weekly paclitaxel 80 mg/m2 x 12.
+  Pre-chemotherapy echocardiogram 2016-02-15: LVEF 62%. No echocardiogram since.
+- 2016-08 to 2016-10: whole-breast radiotherapy to the left breast, 50 Gy in 25 fractions plus a
+  10 Gy tumor-bed boost.
+- 2016-11 to present: anastrozole 1 mg daily. Extended therapy to 10 years planned, to finish
+  November 2026.
+
+Interval history: tolerating anastrozole with mild arthralgias. No breast changes, bone pain, cough,
+or headache. Energy good; attends exercise classes three times a week.
+
+Exam: BP 138/84, HR 76. Weight 72.8 kg. Healed left lumpectomy scar with mild radiation
+skin changes. No breast masses. No axillary, supraclavicular or cervical lymphadenopathy.
+Heart regular, no murmur. Lungs clear. No edema.
+
+Diagnostic bilateral mammogram 2026-03-02: post-lumpectomy changes on the left, stable. BI-RADS 2.
+
+Plan: continue anastrozole to complete 10 years in November 2026. Annual mammogram. DEXA due 2027.
+Return in 12 months.
+"""
+
+[[documents]]
+id = "referral"
+date = "2026-08-12"
+kind = "referral_note"
+title = "Primary care referral: left axillary mass"
+author = "Synthetic Primary Care Physician"
+text = """
+Reason for referral: new left axillary mass in a breast cancer survivor; recurrence vs other.
+
+Ms. Sample is a 59-year-old school librarian with a history of left breast cancer (2016), now on
+anastrozole, and hypertension. Noticed a firm, non-tender lump in the left armpit in mid-July.
+Over the past 4 weeks she has had evening fevers, which she has been recording at home, soaking
+night sweats two to three times a week, and fatigue. Weight down about 2 kg.
+
+Left axillary ultrasound 2026-08-05: several enlarged left axillary lymph nodes, largest 3.4 cm, with
+loss of the fatty hilum.
+
+CT chest/abdomen/pelvis with IV contrast 2026-08-07 (outside facility): enlarged left axillary and
+mediastinal lymph nodes; mesenteric and para-aortic lymphadenopathy, largest mesenteric conglomerate
+7.4 cm; mildly enlarged spleen (12.6 cm) with several hypodense lesions up to 2 cm. Liver, adrenal
+glands and kidneys normal. Impression: lymphoma favored; metastatic breast carcinoma not excluded.
+
+Referred to breast surgical oncology for excisional biopsy and to hematology-oncology.
+"""
+
+[[documents]]
+id = "pathology"
+date = "2026-08-28"
+kind = "pathology_report"
+title = "Surgical pathology: excisional biopsy, left axillary lymph node"
+author = "Synthetic Hematopathologist"
+amended = "2026-09-08"
+text = """
+SPECIMEN: Left axillary lymph node, excisional biopsy, collected 2026-08-25. Received fresh; portions
+submitted for flow cytometry and cytogenetics.
+CLINICAL HISTORY: Left breast carcinoma 2016 (ER-positive, HER2-negative). New left axillary
+lymphadenopathy, fevers.
+
+GROSS: Lymph node, 3.6 x 2.8 x 2.0 cm, tan-white fleshy cut surface with focal necrosis.
+
+FINAL DIAGNOSIS: DIFFUSE LARGE B-CELL LYMPHOMA, NOT OTHERWISE SPECIFIED.
+
+MICROSCOPIC: Effacement of nodal architecture by diffuse sheets of large atypical lymphoid cells with
+vesicular chromatin and one or more nucleoli; numerous mitoses and focal necrosis. No cohesive
+epithelial nests, glands or single-file infiltrating epithelial cells.
+
+IMMUNOHISTOCHEMISTRY (adequate controls):
+  CD20              positive (diffuse, strong)
+  PAX5              positive
+  CD3               negative in tumor cells (scattered background T cells)
+  CD5               negative
+  CD10              negative
+  BCL6              positive
+  MUM1/IRF4         positive (approximately 80% of tumor cells)
+  BCL2              positive in approximately 70% of tumor cells
+  MYC               positive in approximately 45% of tumor cells
+  Cyclin D1         negative
+  CD30              negative
+  Ki-67             approximately 80%
+  EBER ISH          negative
+  Cytokeratin AE1/AE3   negative in lesional cells
+  GATA3             negative in lesional cells
+
+FLOW CYTOMETRY: CD19+, CD20+, CD10-, kappa light-chain restricted large B-cell population (62% of
+events).
+
+COMMENT: Non-germinal-center B-cell-like immunophenotype by the Hans algorithm (CD10 negative, BCL6
+positive, MUM1 positive). Cytokeratin AE1/AE3 and GATA3 are negative in the lesional cells and there is
+no morphologic evidence of metastatic carcinoma. Interphase FISH has been requested on block A2;
+results will be reported in an addendum.
+
+ADDENDUM (2026-09-08): FISH, interphase, break-apart probes, 200 nuclei scored.
+  MYC (8q24):   no rearrangement detected
+  BCL2 (18q21): no rearrangement detected
+  BCL6 (3q27):  no rearrangement detected
+The final diagnosis is unchanged.
+"""
+
+[[documents]]
+id = "consult"
+date = "2026-09-01"
+kind = "consult_note"
+title = "Hematology-oncology new patient consultation"
+author = "Synthetic Hematologist-Oncologist"
+text = """
+HPI: 59-year-old woman referred after excisional biopsy of a left axillary node (2026-08-25) showed
+diffuse large B-cell lymphoma (FISH pending). She first noticed the left axillary lump in mid-July.
+For about 5 weeks she has had evening fevers several times a week; her home log, brought today,
+documents temperatures of 37.9 to 38.4 C, maximum 38.4 C on 2026-08-27, without infectious symptoms.
+Drenching night sweats requiring a change of nightclothes two to three times a week. Fatigue: still
+working her usual hours at the school library and independent in all activities, but has stopped her
+exercise classes. Weight 70.5 kg today vs 72.8 kg in March 2026 (about 3% loss). No abdominal pain,
+early satiety, bone pain, cough, headache, visual change, focal weakness or confusion.
+Cardiovascular: no exertional dyspnea, orthopnea, paroxysmal nocturnal dyspnea, ankle swelling, chest
+pain, palpitations or syncope; climbs two flights of stairs without stopping (NYHA class I).
+
+ONCOLOGY HISTORY: Left breast invasive ductal carcinoma 2016, pT2 pN0, stage IIA, ER-positive,
+PR-positive, HER2-negative. Lumpectomy and sentinel node biopsy (2016-02); dose-dense AC (doxorubicin
+60 mg/m2 and cyclophosphamide 600 mg/m2, 4 cycles; cumulative doxorubicin 240 mg/m2) followed by weekly
+paclitaxel x 12 (2016-03 to 2016-07); left whole-breast radiotherapy 50 Gy + 10 Gy boost (2016-08 to
+2016-10); anastrozole since 2016-11, now in year 10, planned to stop November 2026. Last mammogram
+2026-03 benign.
+
+PMH: hypertension (2018) on amlodipine; osteopenia on calcium/vitamin D. No known coronary disease,
+diabetes or arrhythmia. No other cardiac history.
+Medications: see medication list.
+Allergies: penicillin (hives).
+Social: school librarian, married, lives with her husband 20 minutes from the cancer center. Never
+smoker. Rare alcohol. Two adult children.
+Family history: mother with heart failure in her 70s; father with colon cancer at 74. No known
+BRCA testing; criteria were not met in 2016.
+
+Exam: T 37.8 C, HR 84, BP 146/88, RR 14, SpO2 98% RA. Weight 70.5 kg, height 165 cm (BSA 1.79 m2).
+Well-appearing. Healing left axillary incision; residual 2 cm firm left axillary node. No cervical,
+supraclavicular or inguinal lymphadenopathy. Breasts: healed left lumpectomy scar, no masses
+bilaterally. Heart: regular rhythm, no murmur or gallop; JVP not elevated. Lungs clear. Abdomen soft,
+non-tender; spleen tip palpable 2 cm below the left costal margin; no hepatomegaly. No peripheral
+edema. Neuro: non-focal.
+
+ECOG performance status 1.
+
+Plan today: CBC, CMP, LDH, uric acid, beta-2 microglobulin, viral serologies; FDG PET-CT;
+transthoracic echocardiogram (prior doxorubicin and left breast radiotherapy); bone marrow biopsy;
+await FISH. Return after results.
+"""
+
+[[documents]]
+id = "pet"
+date = "2026-09-04"
+kind = "pet_ct_report"
+title = "FDG PET-CT, skull base to mid-thigh"
+author = "Synthetic Nuclear Medicine Physician"
+text = """
+CLINICAL INDICATION: Diffuse large B-cell lymphoma on left axillary node excision (2026-08-25).
+History of left breast cancer 2016. Initial staging.
+
+TECHNIQUE: 9.8 mCi 18F-FDG IV; uptake time 60 minutes; serum glucose at injection 94 mg/dL.
+Low-dose non-contrast CT for attenuation correction and localization. Mediastinal blood pool SUVmax
+1.9; liver SUVmax 2.7. Comparison: outside CT 2026-08-07.
+
+FINDINGS:
+Head and neck: physiologic brain uptake (PET is insensitive for intracranial disease). No FDG-avid
+cervical or supraclavicular lymph nodes.
+Chest:
+- Left axillary lymph nodes, largest 2.2 cm, SUVmax 17.8, adjacent to post-excision changes.
+- Mediastinal lymph nodes (prevascular and left paratracheal), largest 2.9 cm, SUVmax 15.4.
+- Left breast: post-lumpectomy changes without FDG-avid lesion. Right breast normal.
+- Mild left anterior lung fibrotic change in the prior radiation field, not FDG-avid. No pulmonary
+  nodules. No pleural or pericardial effusion. Physiologic myocardial uptake.
+Abdomen and pelvis:
+- Mesenteric nodal conglomerate, 7.5 x 5.1 cm, SUVmax 22.3 (largest nodal mass).
+- Para-aortic lymph nodes, largest 3.0 cm, SUVmax 16.9.
+- Spleen 12.8 cm with multiple FDG-avid nodules, largest 2.1 cm, SUVmax 16.2.
+- Liver normal without focal uptake. Adrenal glands and kidneys normal without focal uptake.
+- No FDG-avid pelvic or inguinal nodes. No ascites.
+Musculoskeletal: no focal osseous or marrow FDG uptake.
+
+IMPRESSION:
+1. FDG-avid lymphadenopathy above the diaphragm (left axillary, mediastinal) and below the diaphragm
+   (mesenteric, para-aortic), with multiple FDG-avid splenic nodules, consistent with lymphoma.
+   Largest nodal mass 7.5 cm (mesenteric).
+2. No FDG-avid lesion in the kidneys, adrenal glands, liver, lungs, bone, marrow or breasts.
+3. Post-treatment changes of the left breast and left anterior lung without evidence of active disease.
+"""
+
+[[documents]]
+id = "marrow"
+date = "2026-09-10"
+kind = "marrow_report"
+title = "Bone marrow aspirate and biopsy, right posterior iliac crest"
+author = "Synthetic Hematopathologist"
+text = """
+Collected 2026-09-08. Core length 2.0 cm, adequate. Normocellular marrow for age (about 40%) with
+trilineage hematopoiesis. No lymphoma identified on morphology or CD20/PAX5 immunostains. Flow
+cytometry of the aspirate: no monotypic B-cell population. Iron stores adequate.
+DIAGNOSIS: No involvement by lymphoma.
+"""
+
+[[documents]]
+id = "echo"
+date = "2026-09-09"
+kind = "echo_report"
+title = "Transthoracic echocardiogram"
+author = "Synthetic Cardiologist"
+text = """
+Indication: baseline before planned lymphoma chemotherapy. Prior doxorubicin (2016) and left breast
+radiotherapy (2016). Hypertension.
+BP 148/90, HR 82, sinus rhythm.
+
+Left ventricle: normal size (LVIDd 4.9 cm), normal wall thickness. Mild global hypokinesis without a
+regional wall-motion abnormality. LVEF 45% (biplane Simpson's). Global longitudinal strain -14%
+(laboratory normal more negative than -18%). Grade I diastolic dysfunction.
+Right ventricle: normal size and function (TAPSE 2.1 cm).
+Valves: mild mitral regurgitation; aortic valve trileaflet without stenosis.
+No pericardial effusion. Estimated RV systolic pressure 28 mmHg.
+
+Comparison: transthoracic echocardiogram 2016-02-15, LVEF 62% (biplane), normal wall motion; strain not
+performed.
+
+CONCLUSION:
+1. Mildly reduced left ventricular systolic function, LVEF 45%, with mild global hypokinesis and
+   reduced global longitudinal strain (-14%).
+2. LVEF decreased from 62% on the 2016 study.
+3. Grade I diastolic dysfunction. Mild mitral regurgitation.
+"""
+
+[[documents]]
+id = "progress"
+date = "2026-09-17"
+kind = "progress_note"
+title = "Hematology-oncology follow-up (results visit, pre-tumor board)"
+author = "Synthetic Hematologist-Oncologist"
+text = """
+Results reviewed with the patient and her husband: PET-CT, bone marrow, FISH addendum and
+echocardiogram. Evening fevers continue (38.2 C two nights ago) with night sweats; taking
+acetaminophen. Weight 70.1 kg. Still working; fatigue unchanged. No dyspnea, orthopnea, edema or chest
+pain. No neurological symptoms.
+
+Exam: T 37.6 C, HR 86, BP 148/90. Residual left axillary node about 2 cm; spleen tip palpable. Lungs
+clear, no edema, JVP normal.
+
+Echocardiogram result discussed; she had not been told of any heart problem before and asks whether it
+affects her treatment. She also asks whether she should keep taking anastrozole.
+
+Patient goals: wants treatment aimed at cure and hopes to return to full-time work at the school
+library. Worried about her heart because her mother had heart failure. Husband drives her to all
+visits.
+
+Case to be presented at lymphoma tumor board 2026-09-18 for a treatment plan; no treatment started yet.
+"""

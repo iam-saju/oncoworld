@@ -1,0 +1,15 @@
+PRIMARY CARE REFERRAL TO HEMATOLOGY-ONCOLOGY
+Date: 2026-08-27    Author: Synthetic Primary Care Physician
+
+Reason for referral: rapidly enlarging right neck mass, abnormal neck ultrasound.
+
+Mr. Sample is a 54-year-old accountant with obstructive sleep apnea on CPAP, mild intermittent asthma
+and GERD. He noticed a right-sided neck lump about four weeks ago; it has roughly doubled in size since.
+A 10-day course of azithromycin (penicillin allergy) for presumed reactive adenitis made no difference.
+Over the last two weeks he has had mild difficulty swallowing solid food (meat and bread "stick"), which
+he first put down to his reflux. He denies fevers, night sweats or weight loss.
+
+Neck ultrasound 2026-08-25: multiple enlarged, rounded right level II-IV lymph nodes with loss of the
+fatty hilum, largest 3.6 cm. Not cystic.
+
+I have ordered contrast CT of the neck and chest. Please see urgently.

@@ -1,0 +1,430 @@
+{
+  "reward": 1.0,
+  "raw_points": 100,
+  "max_points": 100,
+  "passed": true,
+  "dangerous_errors": [],
+  "judge": "none",
+  "rubric_version": "dlbcl_0001.v2.0",
+  "review_status": "PENDING_ONCOLOGIST",
+  "domains": {
+    "diagnosis": {
+      "points": 8,
+      "max_points": 8,
+      "score": 1.0
+    },
+    "staging": {
+      "points": 14,
+      "max_points": 14,
+      "score": 1.0
+    },
+    "molecular_classification": {
+      "points": 6,
+      "max_points": 6,
+      "score": 1.0
+    },
+    "prognosis": {
+      "points": 11,
+      "max_points": 11,
+      "score": 1.0
+    },
+    "first_line_treatment": {
+      "points": 14,
+      "max_points": 14,
+      "score": 1.0
+    },
+    "pretreatment_workup": {
+      "points": 19,
+      "max_points": 19,
+      "score": 1.0
+    },
+    "cns_management": {
+      "points": 5,
+      "max_points": 5,
+      "score": 1.0
+    },
+    "response_assessment": {
+      "points": 9,
+      "max_points": 9,
+      "score": 1.0
+    },
+    "supportive_care": {
+      "points": 7,
+      "max_points": 7,
+      "score": 1.0
+    },
+    "fitness_and_goals": {
+      "points": 5,
+      "max_points": 5,
+      "score": 1.0
+    },
+    "missing_information": {
+      "points": 2,
+      "max_points": 2,
+      "score": 1.0
+    }
+  },
+  "items": [
+    {
+      "id": "dx_dlbcl_non_gcb",
+      "domain": "diagnosis",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "dx_hans_not_abc",
+      "domain": "diagnosis",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "stage_iii",
+      "domain": "staging",
+      "kind": "must",
+      "severity": "dangerous",
+      "points": 8,
+      "met": true,
+      "delta": 8,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "stage_spleen_nodal",
+      "domain": "staging",
+      "kind": "should",
+      "severity": "important",
+      "points": 3,
+      "met": true,
+      "delta": 3,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "stage_bulky_b_symptoms",
+      "domain": "staging",
+      "kind": "should",
+      "severity": "minor",
+      "points": 3,
+      "met": true,
+      "delta": 3,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_stage_iv",
+      "domain": "staging",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mn_spleen_extranodal_count",
+      "domain": "staging",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 3,
+      "met": false,
+      "delta": 0,
+      "source": "unscored",
+      "regex": null,
+      "evidence": ""
+    },
+    {
+      "id": "mol_de_not_dh",
+      "domain": "molecular_classification",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_calls_double_hit",
+      "domain": "molecular_classification",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mn_denies_double_expressor",
+      "domain": "molecular_classification",
+      "kind": "must_not",
+      "severity": "minor",
+      "points": 3,
+      "met": false,
+      "delta": 0,
+      "source": "unscored",
+      "regex": null,
+      "evidence": ""
+    },
+    {
+      "id": "prog_ipi_3",
+      "domain": "prognosis",
+      "kind": "must",
+      "severity": "important",
+      "points": 6,
+      "met": true,
+      "delta": 6,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "prog_cns_ipi_intermediate",
+      "domain": "prognosis",
+      "kind": "must",
+      "severity": "important",
+      "points": 5,
+      "met": true,
+      "delta": 5,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_curative_pola_or_rchop",
+      "domain": "first_line_treatment",
+      "kind": "must",
+      "severity": "dangerous",
+      "points": 8,
+      "met": true,
+      "delta": 8,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_pola_preferred",
+      "domain": "first_line_treatment",
+      "kind": "should",
+      "severity": "important",
+      "points": 4,
+      "met": true,
+      "delta": 4,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "tx_isrt_residual_bulk",
+      "domain": "first_line_treatment",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_non_curative",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mn_da_epoch",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 5,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "mn_dose_reduced_initial",
+      "domain": "first_line_treatment",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 4,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "hbv_prophylaxis",
+      "domain": "pretreatment_workup",
+      "kind": "must",
+      "severity": "dangerous",
+      "points": 12,
+      "met": true,
+      "delta": 12,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "hbv_dna_lft_monitoring",
+      "domain": "pretreatment_workup",
+      "kind": "should",
+      "severity": "important",
+      "points": 5,
+      "met": true,
+      "delta": 5,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_no_hbv_action",
+      "domain": "pretreatment_workup",
+      "kind": "must_not",
+      "severity": "dangerous",
+      "points": 0,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "cns_no_routine_prophylaxis",
+      "domain": "cns_management",
+      "kind": "should",
+      "severity": "important",
+      "points": 5,
+      "met": true,
+      "delta": 5,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "mn_mandates_cns_prophylaxis",
+      "domain": "cns_management",
+      "kind": "must_not",
+      "severity": "important",
+      "points": 5,
+      "met": false,
+      "delta": 0,
+      "source": "regex",
+      "regex": false,
+      "evidence": ""
+    },
+    {
+      "id": "resp_eot_pet_lugano",
+      "domain": "response_assessment",
+      "kind": "must",
+      "severity": "important",
+      "points": 7,
+      "met": true,
+      "delta": 7,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "resp_ds45_biopsy",
+      "domain": "response_assessment",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_tls_allopurinol",
+      "domain": "supportive_care",
+      "kind": "should",
+      "severity": "important",
+      "points": 5,
+      "met": true,
+      "delta": 5,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "sup_gcsf",
+      "domain": "supportive_care",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "work_echo_reviewed",
+      "domain": "pretreatment_workup",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "fit_full_dose",
+      "domain": "fitness_and_goals",
+      "kind": "must",
+      "severity": "important",
+      "points": 5,
+      "met": true,
+      "delta": 5,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    },
+    {
+      "id": "miss_hbv_dna",
+      "domain": "missing_information",
+      "kind": "should",
+      "severity": "minor",
+      "points": 2,
+      "met": true,
+      "delta": 2,
+      "source": "regex",
+      "regex": true,
+      "evidence": ""
+    }
+  ],
+  "judge_regex_disagreements": []
+}

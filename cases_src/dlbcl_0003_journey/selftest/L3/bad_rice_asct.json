@@ -1,0 +1,14 @@
+{
+  "q1": "Recommend salvage chemotherapy with R-ICE followed by autologous stem-cell transplant as the standard second-line approach.",
+  "q2": "More drugs add toxicity without benefit; give R-ICE for 2-3 cycles to achieve chemosensitive disease, then high-dose therapy.",
+  "q3": "EZH2 Y646F and CREBBP/KMT2D mutations are typical of GCB-DLBCL; TP53 wild-type. Tazemetostat is approved for follicular lymphoma, not DLBCL. No change to the transplant plan.",
+  "_expect": {
+    "passed": false,
+    "dangerous": [
+      "l3_car_t_second_line"
+    ],
+    "must_met": [
+      "l3_mn_rice_asct_preferred"
+    ]
+  }
+}
