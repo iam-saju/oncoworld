@@ -47,9 +47,20 @@ domain = "diagnosis"
 kind = "should"
 severity = "important"
 points = 4
-text = "The response names the relevant differential, including solitary fibrous tumor/hemangiopericytoma and a sarcoma such as Ewing sarcoma or rhabdomyosarcoma."
-all = ['(?:solitary fibrous|\bsft\b|hemangiopericytoma|\bhpc\b)',
-       '(?:sarcoma|ewing|rhabdomyosarcoma)']
+# redesigned 2026-10-23 against the actual source handout (Onco MysticA Case 1): the source never names solitary
+# fibrous tumor/hemangiopericytoma - it treats "intracranial mesenchymal tumor" as the working entity name itself.
+# SFT/HPC was this case's own addition, not drawn from the source, and the source's own eventual molecular reveal
+# (Step 3: FGFR2 fusion, KRAS, STK11, CTNNB1) doesn't match SFT/HPC's defining NAB2-STAT6 fusion - so requiring it
+# as THE differential was never well-founded and may have been actively penalizing more epistemically appropriate
+# answers. Every real model tested (6 models) consistently avoided naming SFT/HPC specifically while still
+# correctly flagging the entity as unestablished - not over-hedging, just not making an unsupported leap. Changed
+# from requiring SFT/HPC+a sarcoma term (both) to accepting any one plausible specific candidate - SFT/HPC remains
+# a valid answer, just no longer the only one that counts.
+text = "The response names at least one plausible specific differential entity (e.g. solitary fibrous tumor/hemangiopericytoma, a sarcoma subtype such as Ewing sarcoma or rhabdomyosarcoma, or another reasonable mesenchymal/CNS candidate) rather than staying only generic."
+any = ['(?:solitary fibrous|\bsft\b|hemangiopericytoma|\bhpc\b)',
+       '(?:sarcoma|ewing|rhabdomyosarcoma|synovial sarcoma|leiomyosarcoma|liposarcoma|chondrosarcoma|osteosarcoma|undifferentiated pleomorphic sarcoma|\bups\b)',
+       '(?:malignant peripheral nerve sheath|\bmpnst\b)',
+       '(?:anaplastic meningioma|malignant meningioma)']
 
 # ---------------- pathology and molecular confirmation
 [[items]]
@@ -67,8 +78,13 @@ domain = "pathology"
 kind = "should"
 severity = "important"
 points = 5
-text = "If solitary fibrous tumor is in the differential, the response asks for STAT6 and/or NAB2-STAT6 confirmation."
-any = ['stat6', 'nab2[- ]stat6']
+# made genuinely conditional 2026-10-23 (see dx_differential_entity's note): SFT is no longer a required
+# candidate, so this item must not cost points when the premise doesn't apply. The third alternative is a
+# whole-document negative lookahead (DOTALL so it spans the multi-line serialised JSON) that is vacuously true
+# when SFT/HPC is never mentioned anywhere in the answer - only an answer that DOES raise SFT, without then
+# asking for STAT6/NAB2-STAT6, now loses these points.
+text = "If solitary fibrous tumor is in the differential, the response asks for STAT6 and/or NAB2-STAT6 confirmation. Not applicable, and does not cost points, when SFT/hemangiopericytoma is not named at all."
+any = ['stat6', 'nab2[- ]stat6', '(?s)^(?!.*(?:solitary fibrous|\bsft\b|hemangiopericytoma|\bhpc\b)).*$']
 
 [[items]]
 id = "mol_not_sufficient_alone"
@@ -200,9 +216,13 @@ domain = "treatment"
 kind = "should"
 severity = "minor"
 points = 2
-text = "The response notes that the evidence for solitary fibrous tumor/hemangiopericytoma is largely retrospective and should not be presented as a universal Category 1 regimen."
-all = ['(?:retrospective|non[- ]randomi[sz]ed|no randomi[sz]ed|limited evidence)',
-       '(?:sft|solitary fibrous|hemangiopericytoma)']
+# made genuinely conditional 2026-10-23, same reasoning as path_stat6_if_sft. Converted from two independent
+# doc-wide "all" conditions (which could be satisfied by evidence language and an SFT mention anywhere in the
+# whole document, unrelated to each other) to one proximity-scoped pattern requiring both within the same
+# ~120-char span, in either order, plus the same vacuous-when-SFT-absent escape hatch.
+text = "The response notes that the evidence for solitary fibrous tumor/hemangiopericytoma is largely retrospective and should not be presented as a universal Category 1 regimen. Not applicable, and does not cost points, when SFT/hemangiopericytoma is not named at all."
+any = ['(?:retrospective|non[- ]randomi[sz]ed|no randomi[sz]ed|limited evidence)[^.\n]{0,120}(?:sft|solitary fibrous|hemangiopericytoma)|(?:sft|solitary fibrous|hemangiopericytoma)[^.\n]{0,120}(?:retrospective|non[- ]randomi[sz]ed|no randomi[sz]ed|limited evidence)',
+       '(?s)^(?!.*(?:solitary fibrous|\bsft\b|hemangiopericytoma|\bhpc\b)).*$']
 
 [[items]]
 id = "tx_surveillance"

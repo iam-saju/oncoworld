@@ -7,8 +7,9 @@ Status: draft, pending oncologist sign-off.
 A symptomatic left frontal extra-axial/cortically based intracranial mesenchymal neoplasm with a separate
 enhancing C6 pial nodule suspicious for spinal drop or leptomeningeal dissemination. "Intracranial mesenchymal
 tumor" is not a specific diagnosis: the entity and WHO grade are not established, so it cannot by itself
-determine therapy. The differential includes solitary fibrous tumor/hemangiopericytoma and a sarcoma such as
-Ewing sarcoma, rhabdomyosarcoma, or metastatic sarcoma.
+determine therapy. Specific candidates worth naming, without favoring one over the others on this information,
+include solitary fibrous tumor/hemangiopericytoma and a sarcoma such as Ewing sarcoma, rhabdomyosarcoma, or
+metastatic sarcoma.
 
 ## Diagnostic confirmation and staging
 
