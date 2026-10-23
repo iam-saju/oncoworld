@@ -50,8 +50,12 @@ kind = "should"
 severity = "important"
 points = 4
 text = "The response reasons that, with the entity still unconfirmed, a broadly active/well-tolerated option is preferable to committing to one entity-specific intensive regimen."
+# condition 2 widened 2026-10-23 (real Haiku answer, found via a user-prompted re-check of why Haiku scored
+# lower than MiMo on this case): Haiku wrote "should be chosen only once the entity is supported" and
+# "[entity-specific regimens] are not appropriate until those diagnoses are supported" - clinically identical to
+# "pick a broadly-active option until the entity is clearer" but missed by every existing alternative.
 all = ['(?:unconfirmed|unestablish\w*|not (?:yet )?(?:established|confirmed|known|pinned down)|no confirmed (?:entity|diagnosis)|(?:entity|diagnosis) (?:is|remains|still) (?:still )?(?:unclear|unknown|not confirmed|open))',
-       '(?:broadly active|well[- ]tolerated|favorable toxicity|pragmatic|regardless of (?:the )?(?:entity|diagnosis)|entity[- ]agnostic|across (?:several|multiple|different) (?:entities|candidates|possibilities|tumor types|diagnoses|possible diagnoses)|(?:before|until|once) (?:the|we know (?:the|more))? ?(?:entity|diagnosis) is (?:clearer|established|confirmed|better defined)|know more)']
+       '(?:broadly active|well[- ]tolerated|favorable toxicity|pragmatic|regardless of (?:the )?(?:entity|diagnosis)|entity[- ]agnostic|across (?:several|multiple|different) (?:entities|candidates|possibilities|tumor types|diagnoses|possible diagnoses)|(?:before|until|once) (?:the|we know (?:the|more))? ?(?:entity|diagnosis) is (?:clearer|established|confirmed|better defined)|know more|only once (?:the )?(?:entity|diagnosis)[^.\n]{0,20}(?:support|confirm|establish)\w*|not appropriate until[^.\n]{0,40}(?:support|confirm|establish)\w*|document\w* as empirical|empirical[^.\n]{0,40}(?:bridge|choice)|expected to redirect therapy)']
 
 # ---------------- q2: escalating from single-agent temozolomide, or not
 # q2's own wording in the source handout ("would you consider adding a second chemotherapy drug? If so, what?")
@@ -124,8 +128,17 @@ kind = "should"
 severity = "important"
 points = 6
 text = "The response notes that the co-occurring KRAS, STK11, and CTNNB1 alterations are not an established co-actionable signature with an FGFR2 fusion in this tumor type, raising doubt about a clean single-driver story (e.g. passenger alteration, low variant allele fraction, assay artifact, or genuinely complex biology)."
-all = ['(?:kras|stk11|ctnnb1)',
-       '(?:passenger|artifact|noise|coincidental|complex (?:tumor|biology)|complicated tumor|atypical|unusual|odd combination|not (?:an? )?(?:established|validated|clean|recognized|known|co[- ]?actionable|effective match)|unclear significance|uncertain significance|variant allele fraction|\bvaf\b)']
+# rebuilt 2026-10-23 (real Haiku answer, found via a user-prompted re-check of why Haiku scored lower than MiMo):
+# two bugs found together. (1) a real Haiku answer wrote "FGFR2 fusions, KRAS with STK11, and CTNNB1 are more
+# typical of epithelial tumours (biliary, lung, liver)" - a MORE clinically sophisticated way of flagging the
+# pattern as atypical than this item's own vocabulary list, which missed it entirely. (2) the old bare `all`
+# (no proximity) let a real MiMo answer get credit from "the histologic entity is still not established" in a
+# totally different sentence (about q1's entity uncertainty, not the comutation pattern) that merely happened to
+# share the document with a KRAS/STK11 mention elsewhere - the exact all/any-has-no-sentence-scoping gap in
+# docs/grader-known-issues.md. Rebuilt as sentence-scoped `any` (both orderings) so the two concepts must
+# actually co-occur, and widened the doubt vocabulary to include "doesn't fit"/"more typical of" framing.
+any = ['(?:kras|stk11|ctnnb1)[^.\n]{0,250}(?:passenger|artifact|noise|coincidental|complex (?:tumor|biology)|complicated tumor|atypical|unusual|odd combination|does ?n.t fit|inconsistent with|more typical of|more (?:commonly|often) (?:seen|found|associated)|typically (?:seen|found|associated)|(?:not|no) (?:an? )?(?:established|validated|clean|recognized|known|co[- ]?actionable|effective match)|unclear significance|uncertain significance|variant allele fractions?|variant allele frequenc(?:y|ies)|\bvaf\b|clonal hemat\w*|\bchip\b|confound\w*)',
+       '(?:passenger|artifact|noise|coincidental|complex (?:tumor|biology)|complicated tumor|atypical|unusual|odd combination|does ?n.t fit|inconsistent with|more typical of|more (?:commonly|often) (?:seen|found|associated)|typically (?:seen|found|associated)|(?:not|no) (?:an? )?(?:established|validated|clean|recognized|known|co[- ]?actionable|effective match)|unclear significance|uncertain significance|variant allele fractions?|variant allele frequenc(?:y|ies)|\bvaf\b|clonal hemat\w*|\bchip\b|confound\w*)[^.\n]{0,250}(?:kras|stk11|ctnnb1)']
 
 [[items]]
 id = "tgt_verdict_continue_chemo"
