@@ -222,7 +222,18 @@ domain = "continuity"
 kind = "should"
 severity = "minor"
 points = 4
-text = "The response's reasoning explicitly references the family's refusal of a repeat brain biopsy (not just general tissue scarcity) as the reason it relies on non-biopsy sources (liquid biopsy, archival tissue, CSF) for molecular testing."
+# widened 2026-10-24 (real Haiku answer, found via a user-prompted re-check of a live hybrid run): the original
+# 3 alternatives require the refusal to be stated explicitly. A real Haiku L3 answer requested "RNA-based fusion
+# testing of the archival tissue" when tissue correlation was needed - the clinically correct decision, fully
+# consistent with the refusal (it never proposes a new biopsy either, confirmed via the real trajectory: it did
+# `cat` its own L2 answer first) - but it never says why it's archival-only rather than fresh tissue, so the
+# original alternatives missed it entirely. That's a presence-over-decision gap: the item was only crediting
+# whether the constraint was NAMED, not whether the response's actual plan was consistent with it. Added two new
+# alternatives crediting the decision itself (archival/existing tissue specifically, for correlation/confirmation
+# of the molecular finding) alongside the original explicit-mention alternatives, which still count on their own.
+text = "The response's reasoning either explicitly references the family's refusal of a repeat brain biopsy, or makes the decision consistent with it: pursuing tissue correlation from archival/existing material (not a new/repeat biopsy) when further tissue confirmation is needed. Not just general tissue scarcity without either signal."
 any = ['(?:famil\w*|patient|he|she|they)[^.\n]{0,40}(?:declin\w*|refus\w*|not willing|unwilling|against[^.\n]{0,20}wishes)[^.\n]{0,60}biops\w*',
        'biops\w*[^.\n]{0,60}(?:declin\w*|refus\w*|not willing|unwilling)',
-       '(?:declin\w*|refus\w*|not willing|unwilling)[^.\n]{0,60}biops\w*']
+       '(?:declin\w*|refus\w*|not willing|unwilling)[^.\n]{0,60}biops\w*',
+       '(?:archival|existing)[^.\n]{0,15}(?:tissue|specimen|block|material|sample)[^.\n]{0,150}(?:correlat\w*|confirm\w*|re-?test\w*|retest\w*|fusion test\w*|\bngs\b|sequenc\w*|molecular (?:test\w*|work[- ]?up)|rna[- ]based)',
+       '(?:correlat\w*|confirm\w*|re-?test\w*|retest\w*|fusion test\w*|\bngs\b|sequenc\w*|molecular (?:test\w*|work[- ]?up)|rna[- ]based)[^.\n]{0,150}(?:archival|existing)[^.\n]{0,15}(?:tissue|specimen|block|material|sample)']
