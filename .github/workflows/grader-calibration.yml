@@ -1,0 +1,50 @@
+name: Grader calibration gate
+
+# Runs the cheat-test gate on every push/PR that could touch grading behavior: a rubric, the shared grader, or
+# a case's calibration/probe set. This is scripts/check_rules.py - stdlib-only, no API keys, no Docker, runs in
+# seconds - re-grading every hand-written calibration answer and adversarial probe straight from source. It exits
+# 1 on any calibration miss, which fails this job; probe disagreements are reported but don't fail the gate yet
+# (see the script's own docstring: "so the gate can be tightened probe by probe").
+on:
+  push:
+    paths:
+      - "graders/oncoworld_grader/grader_v2.py"
+      - "cases_src/**"
+      - "harbor_cases/intracranial_mesenchymal_0001_narrative/tests/**"
+      - "harbor_cases/intracranial_mesenchymal_0001_narrative/selftest/**"
+      - "scripts/check_rules.py"
+      - "scripts/probe_rules.py"
+      - ".github/workflows/grader-calibration.yml"
+  pull_request:
+    paths:
+      - "graders/oncoworld_grader/grader_v2.py"
+      - "cases_src/**"
+      - "harbor_cases/intracranial_mesenchymal_0001_narrative/tests/**"
+      - "harbor_cases/intracranial_mesenchymal_0001_narrative/selftest/**"
+      - "scripts/check_rules.py"
+      - "scripts/probe_rules.py"
+      - ".github/workflows/grader-calibration.yml"
+  workflow_dispatch: {}
+
+jobs:
+  check_rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Deployed grader copies must stay byte-identical to the canonical source
+        run: |
+          fail=0
+          for f in harbor_cases/*/tests/grader_v2.py harbor_cases_narrative/*/tests/grader_v2.py \
+                   harbor_cases/*/steps/*/tests/grader_v2.py harbor_cases_narrative/*/steps/*/tests/grader_v2.py; do
+            [ -f "$f" ] || continue
+            if ! diff -q graders/oncoworld_grader/grader_v2.py "$f" >/dev/null; then
+              echo "::error file=$f::deployed grader copy has drifted from graders/oncoworld_grader/grader_v2.py"
+              fail=1
+            fi
+          done
+          exit $fail
+      - name: Calibration + probes (scripts/check_rules.py)
+        run: python3 scripts/check_rules.py -v

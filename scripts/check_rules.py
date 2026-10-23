@@ -31,6 +31,12 @@ def rubric_sets():
         d = ROOT / "cases_src" / c
         yield (c, d / "rubric_v2.toml", d / "gold.json", d / "selftest" / "answers", d / "selftest" / "probes.json",
                d / "selftest" / "heldout_probes.json")
+    # hand-built cases that live directly under harbor_cases/ (no cases_src/ source, built once, edited in place):
+    # rubric/gold/calibration come from the narrative task; the fhir task's own rubric copy is kept byte-identical
+    # to it (checked separately, not duplicated here) rather than re-run against the same calibration set twice.
+    m = ROOT / "harbor_cases" / "intracranial_mesenchymal_0001_narrative"
+    yield ("intracranial_mesenchymal_0001", m / "tests" / "rubric_v2.toml", m / "solution" / "final_answer.json",
+           m / "selftest" / "answers", m / "selftest" / "probes.json", m / "selftest" / "heldout_probes.json")
     j = ROOT / "cases_src" / "dlbcl_0003_journey"
     for L in LAYERS:
         yield (f"journey_{L}", j / f"{L}_rubric.toml", j / f"{L}_gold.json", j / "selftest" / L,
