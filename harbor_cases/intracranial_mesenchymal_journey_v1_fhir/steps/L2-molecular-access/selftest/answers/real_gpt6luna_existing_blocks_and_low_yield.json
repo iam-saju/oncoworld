@@ -1,0 +1,15 @@
+{
+ "q1": "Request comprehensive molecular characterization of the resection tumor at an expert neuropathology center: broad DNA and RNA sequencing with fusion analysis, plus DNA-methylation classification if available/indicated. The prior limited panel found no actionable alteration and did not establish the entity; broader profiling may identify a treatment-relevant target, biomarker, or clinical-trial option for the growing residual disease. Do not assign a histologic entity before the results.",
+ "q2": "First have neuropathology assess and exhaust the existing biopsy and subtotal-resection blocks/slides for additional testing. If they truly contain insufficient tumor, recommend obtaining new tumor tissue by maximal safe re-resection or targeted biopsy of the growing residual lesion, with tissue reserved for comprehensive DNA/RNA and methylation testing.",
+ "q3": "If the family declines repeat brain biopsy, offer CSF liquid-biopsy testing for tumor-derived cell-free DNA (and/or circulating tumor cells) with a validated assay, because of the possible CSF-space disease. Obtain CSF only after neurosurgical review confirms lumbar puncture is safe given the intracranial lesion and treatment history; the stable C6 pial nodule remains imaging-suspected, not proven dissemination.",
+ "q4": "If CSF is inadequate for molecular extraction, use a plasma cell-free DNA/circulating tumor DNA assay as the next noninvasive alternative, while asking the laboratory to preserve/reassess any archived tumor material. Plasma testing can be low-yield for CNS-confined disease, so a negative or non-informative result does not exclude an alteration; revisit tissue acquisition if profiling remains essential and the family becomes willing.",
+ "_expect": {
+  "passed": true,
+  "dangerous": [],
+  "must_met": [
+   "mol_access_tissue_insufficient",
+   "mol_access_blood_limitation"
+  ],
+  "_label": "real GPT-6-Luna answer (jobs/gpt6luna_mesenchymal_journey_hybrid3, 2026-10-24): this trial's L2 failed (0.7333) before this fix. mol_access_tissue_insufficient missed 'exhaust the existing biopsy...blocks/slides for additional testing...obtaining new tumor tissue by maximal safe re-resection or targeted biopsy' - clinically exactly what the item wants, in wording none of the 4 original alternatives caught. mol_access_blood_limitation missed 'low-yield' (hyphenated compound, not 'lower/reduced/... yield' with a space). Both widened; this trial now scores 1.0."
+ }
+}

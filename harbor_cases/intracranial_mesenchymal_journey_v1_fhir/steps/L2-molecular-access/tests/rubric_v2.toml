@@ -48,10 +48,18 @@ kind = "must"
 severity = "important"
 points = 6
 text = "If the current tissue is inadequate for molecular testing, the response seeks additional or alternative tumor tissue (e.g. additional sections from the archival block, or a new biopsy of accessible disease) rather than abandoning molecular testing."
+# widened 2026-10-24 (real GPT-6-Luna answer, found via a user-prompted live run on the hardening-plan branch):
+# "exhaust the existing biopsy and subtotal-resection blocks/slides for additional testing... obtaining new tumor
+# tissue by maximal safe re-resection or targeted biopsy" - clinically exactly what this item wants, missed
+# because "additional" modified "testing" not the tissue noun, and neither "new tumor tissue" nor "targeted
+# biopsy" matched any existing alternative's fixed phrasing.
 any = ['(?:additional|more|further|repeat)[^.\n]{0,40}(?:tissue|sections?|block|specimen|sample)',
        're-?biops\w*',
        'archival (?:tissue|block|specimen|material)',
-       'new biopsy']
+       'new biopsy',
+       '(?:existing|prior)[^.\n]{0,25}(?:tissue|sections?|blocks?|specimens?|samples?|slides?)',
+       'new[^.\n]{0,15}tum\w+ tissue',
+       'targeted biops\w*']
 
 # ---------------- q3: family refuses repeat brain biopsy
 [[items]]
@@ -100,6 +108,10 @@ kind = "should"
 severity = "minor"
 points = 2
 text = "The response notes the lower sensitivity of a peripheral blood liquid biopsy for CNS-confined disease compared with CSF or tissue."
-any = ['(?:lower|reduced|limited|decreased|lesser)\s+(?:sensitivity|yield)[^.\n]{0,80}(?:blood|plasma|peripheral)',
-       '(?:blood|plasma|peripheral)[^.\n]{0,80}(?:lower|reduced|limited|decreased|lesser)\s+(?:sensitivity|yield)',
+# widened 2026-10-24 (real GPT-6-Luna answer, same run as mol_access_tissue_insufficient above): "Plasma testing
+# can be low-yield for CNS-confined disease" - clinically identical to "reduced yield" but missed because "low"
+# wasn't in the modifier list and the hyphenated "low-yield" compound doesn't have the required space before
+# "yield".
+any = ['(?:lower|reduced|limited|decreased|lesser|low)[\s-]+(?:sensitivity|yield)[^.\n]{0,80}(?:blood|plasma|peripheral)',
+       '(?:blood|plasma|peripheral)[^.\n]{0,80}(?:lower|reduced|limited|decreased|lesser|low)[\s-]+(?:sensitivity|yield)',
        'blood[- ]brain barrier[^.\n]{0,60}(?:ctdna|shed|sensitiv|limit)']
