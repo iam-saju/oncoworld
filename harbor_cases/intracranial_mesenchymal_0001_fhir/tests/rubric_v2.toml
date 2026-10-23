@@ -185,8 +185,21 @@ kind = "must"
 severity = "important"
 points = 6
 text = "The response refers to neurosurgery and assesses maximal safe resection, with gross-total resection as the goal when feasible."
+# condition 2 tightened 2026-10-23: found via the hybrid judge disagreeing consistently (4/4 real trials) on this
+# item. The bare "feasib|consider|assess" fallback let almost anything pass ("assess resectability... preferable
+# to a further biopsy" - no resection-EXTENT language at all - still matched). But the judge itself wasn't simply
+# right every time either: on a GLM/MiMo answer that explicitly said "maximal-safe resection" (hyphenated, which
+# the old literal "maximal safe" wouldn't have caught anyway), the judge still said not met - a judge error, not a
+# regex gap. Requiring the specific resection-extent terms (now hyphen-tolerant) fixes both cases at once,
+# independent of what the judge concludes case by case.
 all = ['(?:resect|surgery|surgical|neurosurg)',
-       '(?:maximal safe|gross[- ]total|\bgtr\b|feasib|consider|assess)']
+       '(?:maximal[- ]safe|gross[- ]total|\bgtr\b)']
+# tried widening to also accept "extent of (?:safe )?resection" (a real MiMo paraphrase) and reverted the same
+# day: that phrase contains "resect" as a substring, so it trivially satisfies condition 1 too, and a real Haiku
+# answer got spurious credit from an unrelated prognosis-section mention ("the extent of resection that becomes
+# achievable" - a prognostic factor, not a neurosurgery-assessment statement) nowhere near any actual surgery
+# discussion. Left as a known, narrower miss rather than reopening the same whole-document contamination this
+# item was just fixed for.
 
 # tx_adjuvant_rt_after_diagnosis and tx_no_routine_adjuvant_chemo REMOVED 2026-10-23: both asked the model to
 # speculate about treatment decisions (future adjuvant RT, future adjuvant chemo policy) that depend on
@@ -219,8 +232,13 @@ kind = "should"
 severity = "important"
 points = 4
 text = "The response arranges long-term serial contrast-enhanced MRI surveillance, with extracranial surveillance as clinically appropriate."
-all = ['(?:surveillance|follow[- ]up|serial)',
-       '(?:mri|imaging)']
+# rebuilt 2026-10-23: found via the hybrid judge (3/4 real trials) - the old bare `all` (no proximity) let "follow-up"
+# from a sentence about tumor-board scheduling ("schedule this case for longitudinal follow-up at the tumor
+# board once the entity and grade are known" - nothing about MRI) get credit from an unrelated "MRI" mention
+# elsewhere in the document (staging imaging, not a surveillance plan). Sentence-scoped now, same fix pattern as
+# tx_evidence_caveat above.
+any = ['(?:surveillance|follow[- ]up|serial)[^.\n]{0,150}(?:mri|imaging)',
+       '(?:mri|imaging)[^.\n]{0,150}(?:surveillance|follow[- ]up|serial)']
 
 # ---------------- supportive care and multidisciplinary review
 [[items]]
