@@ -30,6 +30,7 @@ disagreements are listed. If the judge fails, the regex verdicts are used and ju
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -37,6 +38,15 @@ import time
 import tomllib
 import urllib.request
 from pathlib import Path
+
+# A content hash of this file, not a hand-maintained number: every byte change moves it, with nothing to
+# remember to bump. Carried in every score() result as "grader_version" so a stored review.json is traceable
+# back to the exact grader that produced it - diff this file at that hash against the current one to see what
+# changed. Falls back to "unknown" rather than failing to score if the file can't be read (e.g. a frozen build).
+try:
+    GRADER_VERSION = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()[:12]
+except OSError:
+    GRADER_VERSION = "unknown"
 
 # --- sentence-scoped negation helpers, carried over from the v1 graders (patched 2026-10-10) ---
 # KNOWN GAP (found 2026-10-23, red-team of intracranial_mesenchymal_0001, not fixed - see docs/grader-known-issues.md
@@ -641,6 +651,7 @@ def score(response: str, rubric: dict, judge_verdicts: dict | None = None) -> di
             "reward": reward, "raw_points": raw, "max_points": total, "passed": reward >= passing and not dangerous,
             "dangerous_errors": dangerous, "judge": judge_model() if judge_verdicts is not None else "none",
             "rubric_version": rubric.get("version"), "review_status": rubric.get("review_status"),
+            "grader_version": GRADER_VERSION,
             "domains": domains, "items": detail, "judge_regex_disagreements": disagreements}
 
 
