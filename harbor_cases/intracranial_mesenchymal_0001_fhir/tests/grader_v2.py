@@ -56,7 +56,18 @@ except OSError:
 # too. Affects every recommend()/affirm() item across every case, not just this one. Needs real scope detection
 # (what the negation word's own object is), not a proximity patch - risk of the same kind of real-world regression
 # documented in score()'s must/must_not comment below; don't patch without full-suite recalibration + a real model run.
-_SENTENCE_SPLIT = re.compile(r"(?<=[.;!?])\s+|\n+|\"\s*,\s*\"|[\[{]\s*\"|\"\s*[\]}]")
+# a model's own embedded line break inside one JSON string field survives json.dumps only as the literal two-char
+# escape "\n" (found 2026-10-23, real Haiku answer on intracranial_mesenchymal_journey_v1's L1: a bulleted,
+# entity-triggered-pathway list introduced by "...results that would change management:" used real line breaks;
+# re-serialised, the whole list - including the "would change" lead-in that makes it hypothetical - became ONE
+# run-on sentence for sentence-scoping purposes, and recommends() read a bullet 3 lines later ("systemic therapy
+# becomes central") as an unconditional plan). Added as an extra split point alongside the real-newline case
+# (`\n+`) it mirrors, not by unescaping the response text itself: several rubric items (e.g. dlbcl_0002's
+# mn_standard_dox_ignores_heart) deliberately use `[^\n]*` to mean "the rest of this field's value", relying on
+# there never being a REAL embedded newline inside one field - unescaping literal "\n" to a real newline broke
+# that property and caused a real calibration regression; this keeps that invariant intact.
+_ESCAPED_NEWLINE = r"(?:\\n)+"
+_SENTENCE_SPLIT = re.compile(r"(?<=[.;!?])\s+|\n+|" + _ESCAPED_NEWLINE + r"|\"\s*,\s*\"|[\[{]\s*\"|\"\s*[\]}]")
 _NEGATION = re.compile(
     r"\b(?:not|no|neither|nor|without|absent|absence|excluded?|excludes|exclusion|rul(?:ed|es|ing) out|"
     r"negative(?!\s+fish)|below|lacks?|lacking|does not|do not|is not|are not|isn't|aren't|rather than|instead of|"
@@ -173,7 +184,7 @@ _EVIDENCE_BEFORE = re.compile(r"\b(?:after|following|than|over|versus|vs\.?|comp
 # regimen names, so an evidence check can find the regimen inside a rule whose pattern also matches a sentence prefix
 _REGIMEN = re.compile(r"pola[- ]?r[- ]?chp|polatuzumab|\br[- ]?(?:mini[- ]?)?chop(?:[- ]?(?:14|21))?\b|\br[- ]?ceop\b|\br[- ]?gcvp\b|"
                       r"(?:da|dose[- ]adjusted)[- ]?(?:r[- ])?epoch|\br[- ]?ice\b|\br[- ]?dhap\b|\br[- ]?codox|\bchop\b")
-_FULL_SENTENCE_SPLIT = re.compile(r"(?<=[.!?])\s+|\n+|\"\s*,\s*\"|[\[{]\s*\"|\"\s*[\]}]")
+_FULL_SENTENCE_SPLIT = re.compile(r"(?<=[.!?])\s+|\n+|" + _ESCAPED_NEWLINE + r"|\"\s*,\s*\"|[\[{]\s*\"|\"\s*[\]}]")
 # a negated list lead-in governs the list after its colon: "not indicated now: DA-EPOCH-R and upfront transplant"
 _NEG_LEAD = re.compile(r"(?:\bnot\b(?:\s+\w+){0,2}?\s+(?:indicated|recommended|needed|required|warranted|appropriate|planned|"
                        r"advised|used|offered)|\bavoid\w*|\bno role for|\bcontraindicat\w*|\b(?:do|will|would|should) not "
