@@ -1,0 +1,186 @@
+{
+ "id": "haiku55_v2_first5_r3__CTvp7ob",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "Non-germinal-center B-cell (Hans) phenotype: CD10 negative, BCL6 positive, MUM1/IRF4 positive.",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_not_breast_recurrence": {
+   "met": true,
+   "quote": "so this is not a recurrence of her 2016 ER-positive breast cancer",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Ann Arbor stage III, B (stage IIIB), with the spleen recorded as S (nodal organ).",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_lymphatic": {
+   "met": true,
+   "quote": "with the spleen recorded as S (nodal organ)",
+   "confidence": "medium",
+   "note": "Treats spleen as nodal but does not explicitly explain why it does not make stage IV."
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms are present: fever to 38.4 C and drenching night sweats",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulk_definition": {
+   "met": true,
+   "quote": "bulky at the NCCN 7.5 cm threshold but not at the Lugano 10 cm threshold",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "If the multifocal splenic nodules are scored as extranodal rather than nodal, the stage becomes IVB.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_del_not_dh": {
+   "met": true,
+   "quote": "Double-expressor by immunohistochemistry (MYC approx 45%, BCL2 approx 70%) but not double-hit",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_2": {
+   "met": true,
+   "quote": "IPI 2 (low-intermediate): age 59 (0), Ann Arbor stage III (1), LDH above ULN (1)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_2": {
+   "met": true,
+   "quote": "CNS-IPI is about 2 (stage III 1, LDH elevated 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "Intermediate; CNS-directed prophylaxis is not indicated.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_aware_no_full_dox": {
+   "met": true,
+   "quote": "R-CHOP, pola-R-CHP, DA-EPOCH-R and mini-R-CHOP all contain doxorubicin.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_standard_dox_ignores_heart": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardio_onc_referral": {
+   "met": true,
+   "quote": "Start after the cardio-oncology optimization described below",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardioprotection": {
+   "met": true,
+   "quote": "Start an ACE inhibitor or ARB (or sacubitril-valsartan) and an evidence-based beta-blocker (carvedilol or metoprolol succinate)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_anthracycline_free_curative": {
+   "met": true,
+   "quote": "Anthracycline-free immunochemotherapy: R-CEOP every 21 days for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_lower_efficacy_ack": {
+   "met": true,
+   "quote": "With the anthracycline-free regimen below I expect somewhat lower efficacy",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_monitoring": {
+   "met": false,
+   "quote": "echocardiogram with GLS after cycle 3, at end of treatment",
+   "confidence": "medium",
+   "note": "Serial echo/GLS planned but troponin/NT-proBNP only as baseline, not serially."
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT after cycle 6, scored by Lugano 2014",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "start allopurinol 300 mg daily 2-3 days before cycle 1",
+   "confidence": "medium",
+   "note": "Allopurinol given but hydration deliberately limited because of LV dysfunction."
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "primary pegfilgrastim (or on-body injector) on day 4 of each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_anastrozole": {
+   "met": true,
+   "quote": "Continue it to the planned completion in November 2026, pending agreement from breast medical oncology",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg, anti-HBc and anti-HBs are all nonreactive, so she is HBV-susceptible",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_curative_ecog1": {
+   "met": true,
+   "quote": "She is fit for curative-intent combination chemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_cardiac_workup": {
+   "met": true,
+   "quote": "12-lead ECG, high-sensitivity troponin, NT-proBNP, and the result of any ischemia evaluation",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

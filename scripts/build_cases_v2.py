@@ -7,15 +7,16 @@ One source per patient, two renderings:
   cases_src/<case>/case.toml      MODEL-VISIBLE facts and chart documents
   cases_src/<case>/gold.json      HIDDEN reference answer
   cases_src/<case>/rubric_v2.toml HIDDEN atomic rubric (graders/oncoworld_grader/grader_v2.py)
-  cases_src/<case>/selftest/      HIDDEN grader self-test answers
+  cases_src/<case>/selftest/      HIDDEN grader self-test answers (answers/) and probe sentences (probes.json)
 
-produce harbor_cases/<case>_<slug>_v2_{narrative,fhir}/. The narrative chart (chart/*.txt) and the FHIR bundle
+produce harbor_cases/<case>_<slug>_v2_fhir/ (the benchmark: only FHIR tasks are run) and
+harbor_cases_narrative/<case>_<slug>_v2_narrative/ (diagnostic only). The narrative chart (chart/*.txt) and the FHIR bundle
 are generated from the same case.toml, so values, reference ranges and flags cannot disagree between formats.
 
 Checks that fail the build:
   - a rubric leak_check term appears in any model-visible file
   - a structured pathology value is missing from the pathology report text
-  - the gold answer does not meet every must/should item, or trips a must_not item, in regex-fallback mode
+  - the gold answer does not meet every must/should item, or trips a must_not item, under the regex rules
 v1 tasks and scripts/build_dlbcl_fhir_bundles.py are frozen and untouched; FHIR helpers are imported from there.
 """
 from __future__ import annotations
@@ -73,11 +74,17 @@ LABS = {
     "hba1c": ("4548-4", "Hemoglobin A1c/Hemoglobin.total in Blood", "Hemoglobin A1c", "%", "%", 4.0, 5.6),
     "hbsag": ("5196-1", "Hepatitis B virus surface Ag [Presence] in Serum or Plasma by Immunoassay", "Hepatitis B surface antigen", None, None, None, None),
     "anti_hbc": ("16933-4", "Hepatitis B virus core Ab [Presence] in Serum", "Hepatitis B core antibody, total", None, None, None, None),
-    "anti_hbs": ("16935-9", "Hepatitis B virus surface Ab [Presence] in Serum", "Hepatitis B surface antibody", None, None, None, None),
+    "anti_hbs": ("22322-2", "Hepatitis B virus surface Ab [Presence] in Serum", "Hepatitis B surface antibody", None, None, None, None),
     "hcv_ab": ("13955-0", "Hepatitis C virus Ab [Presence] in Serum or Plasma by Immunoassay", "Hepatitis C antibody", None, None, None, None),
     "hiv_agab": ("56888-1", "HIV 1+2 Ab+HIV1 p24 Ag [Presence] in Serum or Plasma by Immunoassay", "HIV-1/2 Ag/Ab screen", None, None, None, None),
     "hcg_urine": ("2106-3", "Choriogonadotropin (pregnancy test) [Presence] in Urine", "Urine hCG (pregnancy test)", None, None, None, None),
     "hbv_dna": ("29615-2", "Hepatitis B virus DNA [#/volume] (viral load) in Serum or Plasma by NAA with probe detection", "HBV DNA, quantitative", "IU/mL", "[IU]/mL", None, None),
+    # used by the longitudinal journey (post-CAR-T admission labs)
+    "crp": ("1988-5", "C reactive protein [Mass/volume] in Serum or Plasma", "C-reactive protein", "mg/L", "mg/L", None, 5),
+    "ferritin": ("2276-4", "Ferritin [Mass/volume] in Serum or Plasma", "Ferritin", "ng/mL", "ng/mL", 30, 400),
+    "inr": ("6301-6", "INR in Platelet poor plasma by Coagulation assay", "INR", "INR", "{INR}", 0.8, 1.2),
+    "fibrinogen": ("3255-7", "Fibrinogen [Mass/volume] in Platelet poor plasma by Coagulation assay", "Fibrinogen", "mg/dL", "mg/dL", 200, 400),
+    "lactate": ("2524-7", "Lactate [Moles/volume] in Serum or Plasma", "Lactate", "mmol/L", "mmol/L", 0.5, 2.0),
 }
 QUAL = {"Reactive": (SCT, "11214006", "Reactive"), "Nonreactive": (SCT, "131194007", "Non-Reactive"),
         "Positive": POS, "Negative": NEG, "Not detected": NOT_DET, "Detected": DET}
@@ -93,6 +100,10 @@ DOC_TYPES = {  # kind: (FHIR resource, code, file label)
     "pathology_report": ("DiagnosticReport", (LOINC, "60568-3", "Pathology synoptic report"), "pathology"),
     "marrow_report": ("DiagnosticReport", (LOINC, "33721-2", "Bone marrow Pathology biopsy report"), "bone_marrow"),
     "csf_report": ("DiagnosticReport", None, "csf"),
+    # longitudinal journey documents
+    "interval_history": ("DocumentReference", (LOINC, "34133-9", "Summary of episode note"), "interval_history"),
+    "admission_note": ("DocumentReference", (LOINC, "34117-2", "History and physical note"), "admission_note"),
+    "ngs_report": ("DiagnosticReport", (LOINC, "51969-4", "Genetic analysis report"), "ngs"),
 }
 
 
@@ -340,7 +351,8 @@ Write your answer to:
 /app/final_answer.json
 ```
 
-as one JSON object with these keys (string values, except `missing_information`, which is a list of strings):
+as one JSON object with these keys (string values, except `missing_information`, which is a list of strings, and
+`decisions`, which is an object described below):
 
 - `diagnosis`
 - `stage`
@@ -353,6 +365,21 @@ as one JSON object with these keys (string values, except `missing_information`,
 - `supportive_care`
 - `fitness_and_goals`
 - `missing_information`
+- `decisions`: your key decisions restated in fixed fields so they can be read without ambiguity. They must agree
+  with your note. Fields:
+  - `stage`: the anatomic stage you assign, as a Roman numeral only (no letters, suffixes or ranges)
+  - `diagnosis`: your final diagnosis in a few words
+  - `intent`: one of `curative`, `palliative`, `observation`
+  - `regimen`: the first-line systemic regimen you are ordering, written as on the order, or `none`
+  - `cycles`: number of cycles of that regimen (integer)
+  - `cycle1_dose_percent`: percent of the full standard dose planned for cycle 1 (integer; 100 = full dose)
+  - `radiotherapy`: planned radiotherapy in a few words, or `none`
+  - `orders_now`: list of everything you order, start, stop or arrange unconditionally, now or before or with
+    cycle 1 (drugs with dose and schedule, tests, procedures, consultations, medication changes)
+  - `conditional_orders`: list of actions that depend on a future result or event, each written
+    "if <condition>: <action>"
+  - `lab_monitoring`: list of scheduled laboratory monitoring around the start of treatment, each
+    `{{"tests": "...", "every_hours": <integer or null>, "duration_hours": <integer or null>}}`
 """
 WHERE = {
     "narrative": "The chart export is in `/app/case/chart/`: a patient summary followed by dated notes, reports and\nlaboratory results, numbered in chronological order.",
@@ -409,11 +436,20 @@ passing_score = 0.75
 timeout_sec = 300.0
 
 [verifier.env]
-# LLM judge for the v2 rubric. Unset key = regex fallback (review.json says judge="none").
+# Optional LLM judge, used only when ONCOWORLD_GRADER=judge; the regex rules are the grader of record.
 ONCOWORLD_JUDGE_API_KEY = "${{ONCOWORLD_JUDGE_API_KEY:-}}"
 ONCOWORLD_JUDGE_MODEL = "${{ONCOWORLD_JUDGE_MODEL:-}}"
 ONCOWORLD_JUDGE_BASE_URL = "${{ONCOWORLD_JUDGE_BASE_URL:-https://openrouter.ai/api/v1}}"
+ONCOWORLD_JUDGE_HEADERS = "${{ONCOWORLD_JUDGE_HEADERS:-}}"
+ONCOWORLD_GRADER = "${{ONCOWORLD_GRADER:-regex}}"
 '''
+
+
+def judge_context(case_dir: Path) -> str:
+    """Patient summary for the LLM judge (hidden; tests/ only): the plain-language case card."""
+    p = case_dir / "review_labels.json"
+    card = json.loads(p.read_text()).get("case_card", {}) if p.exists() else {}
+    return (f"{card.get('patient', '')}\nWhat this case tests: " + " | ".join(card.get("tests", []))).strip() + "\n"
 
 
 def gold_md(case, gold, rubric):
@@ -421,7 +457,13 @@ def gold_md(case, gold, rubric):
              f"Review status: **{rubric.get('review_status')}**. Rubric version `{rubric.get('version')}`.", "",
              "Hidden from the model. Generated from cases_src by scripts/build_cases_v2.py.", ""]
     for k, v in gold.items():
-        lines += [f"## {k}", ""] + ([f"- {x}" for x in v] if isinstance(v, list) else [v]) + [""]
+        if isinstance(v, dict):
+            body = ["```json", json.dumps(v, ensure_ascii=False, indent=1), "```"]
+        elif isinstance(v, list):
+            body = [f"- {x}" for x in v]
+        else:
+            body = [v]
+        lines += [f"## {k}", ""] + body + [""]
     lines += ["## Rubric items", "", "| id | kind | severity | points | criterion |", "|---|---|---|---|---|"]
     lines += [f"| {i['id']} | {i['kind']} | {i['severity']} | {i['points']} | {i['text']} |" for i in rubric["items"]]
     return "\n".join(lines) + "\n"
@@ -484,7 +526,8 @@ def build(case_dir: Path):
         instruction = INSTRUCTION.format(where=WHERE[fmt_name])
         leak_check(rubric, decoded | {"instruction.md": instruction}, task_id)
 
-        out = ROOT / "harbor_cases" / task_id
+        # FHIR tasks are the benchmark; narrative renderings live apart and are only run as a diagnostic control
+        out = ROOT / ("harbor_cases" if fmt_name == "fhir" else "harbor_cases_narrative") / task_id
         if out.exists():
             shutil.rmtree(out)
         for rel, text in visible.items():
@@ -512,7 +555,10 @@ def build(case_dir: Path):
                 (tests / "selftest" / sub).mkdir(exist_ok=True)
                 for f in src.glob("*.json"):
                     shutil.copy(f, tests / "selftest" / sub / f.name)
-        print(f"built harbor_cases/{task_id} ({len(visible)} visible file(s))")
+        (tests / "judge_context.txt").write_text(judge_context(case_dir))
+        if (case_dir / "selftest" / "probes.json").exists():   # oncologist probe sentences per high-stakes rule
+            shutil.copy(case_dir / "selftest" / "probes.json", tests / "selftest" / "probes.json")
+        print(f"built {out.relative_to(ROOT)} ({len(visible)} visible file(s))")
 
 
 def main():

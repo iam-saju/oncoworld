@@ -1,0 +1,242 @@
+{
+ "id": "3model_fhir5_r1__gmBoeS8",
+ "model": "claude-haiku-5-5",
+ "task": "dlbcl_0005_limited_stage_flyer_v2_fhir",
+ "layer": null,
+ "rubric": "cases_src/dlbcl_0005/rubric_v2.toml",
+ "answer_path": "jobs/3model_fhir5_r1/dlbcl_0005_limited_stage_flyer_v__gmBoeS8/verifier/final_answer.json",
+ "context": "Patient: 45F teacher, ECOG 0, with a painless right neck node; no B symptoms, normal LDH; PET-CT shows FDG-avid right cervical level II-III nodes only (largest 3.1 cm), no extranodal or marrow uptake. Excisional biopsy: DLBCL NOS, GCB by Hans, MYC 15%, BCL2 30%, FISH negative for MYC/BCL2/BCL6; premenopausal on a combined ethinyl estradiol pill despite migraine with aura, no pregnancy test on file, and wants to avoid neck radiation.\nWhat this case tests: A single contiguous neck region with no B symptoms and a 3.1 cm node is non-bulky stage IA, not advanced disease. | MYC 15% / BCL2 30% and negative FISH mean neither double-expressor nor double-hit, so no intensified regimen. | IPI 0, age under 60, non-bulky: 4 R-CHOP + 2 rituximab without radiotherapy (FLYER) is preferred; 6 cycles or Pola-R-CHP is overtreatment. | The combined estrogen pill must be stopped (migraine with aura = stroke risk, plus chemo-related VTE) and replaced with non-estrogen contraception. | No pregnancy test is documented in this premenopausal woman, so one is required before cycle 1.",
+ "answer": {
+  "diagnosis": "Diffuse large B-cell lymphoma, NOS, germinal-center B-cell-like (Hans: CD10+, BCL6+, MUM1-), newly diagnosed, presenting as right cervical (levels II-III) nodal disease. Excisional biopsy of the right level III node 2026-09-04; pathology final 2026-09-09; FISH addendum 2026-09-15 (MYC, BCL2 and BCL6 rearrangements not detected). CD20+, PAX5+, CD10+, BCL6+, MUM1-, BCL2+ (30%), MYC+ (15%), Ki-67 ~55%, CD3-, CD5-, cyclin D1-, CD30-, EBER-negative; flow kappa-restricted CD19+/CD20+/CD10+ B-cell population. No follicular component, not high-grade B-cell lymphoma by FISH. Coding: C83.30 (unspecified site) should be C83.31 (lymph nodes of head, face and neck).",
+  "stage": "Ann Arbor stage IA (Lugano stage I), bulk-free. Single nodal region (right cervical II-III, contiguous). No B symptoms (denies fever, night sweats and weight loss; weight stable at 64 kg). No extranodal disease (no E modifier: capsular involvement without extranodal extension on pathology). Largest node 3.1 x 2.4 cm on PET (SUVmax 14.2), well below the 7.5 cm bulk threshold. FDG PET-CT 2026-09-03 (skull base to mid-thigh) shows no other avid disease, Waldeyer ring is physiologic, and marrow is not involved, so a marrow biopsy is not required. Clinical IPI 0 (age 45, LDH 190 U/L against ULN 225, ECOG 0, stage I, no extranodal sites). CNS-IPI 0. Beta-2 microglobulin 1.6 mg/L (normal).",
+  "biology": "GCB-type DLBCL, not double-hit (MYC, BCL2 and BCL6 FISH negative) and not double-expressor (MYC IHC 15% and BCL2 IHC 30%, against thresholds of 40% and 50%). Ki-67 of 55% is high but is not a discriminator for treatment in this setting. EBV-negative. TP53 status and genomic classification were not performed; they would not change first-line therapy here.",
+  "prognosis": "Favourable. Bulk-free stage I DLBCL with IPI 0 treated with R-CHOP-based chemo-immunotherapy has a published expected 5-year PFS of about 85-90% and OS of about 90% or higher. These are population-level estimates, not an individual calculation. The main modifiers are end-of-treatment PET status and adherence to the plan. Most relapses occur within 2 years. CNS relapse risk is low (about 1% or less). I would share these as approximate ranges and not as precise numbers.",
+  "first_line_treatment": "Curative-intent R-CHOP-21 for 4 cycles, then a response-adapted decision on radiotherapy based on an end-of-treatment PET-CT. No rituximab maintenance. Doses at BSA 1.72 m2 (64 kg, 166 cm), to be recalculated each cycle: rituximab 375 mg/m2 (645 mg) IV day 1; cyclophosphamide 750 mg/m2 (1,290 mg) IV day 1; doxorubicin 50 mg/m2 (86 mg) IV day 1; vincristine 1.4 mg/m2 capped at 2 mg IV day 1; prednisone 100 mg PO days 1-5. Cumulative dose after 4 cycles: cyclophosphamide 3,000 mg/m2, doxorubicin 200 mg/m2. Decision after end-of-treatment PET (Deauville 1-3): no ISRT, observation. Deauville 4-5: ISRT 30 Gy (36 Gy if residual disease is larger than 2 cm), with thyroid-sparing and parotid-sparing technique. Reasons: (1) Stage IA, bulk-free, IPI 0 is a curative setting for R-CHOP; RT alone and observation are not standard. (2) Four cycles rather than six lowers cumulative cyclophosphamide and anthracycline exposure in a 45-year-old who wants to consider another pregnancy. (3) She asked to avoid neck radiation and fears thyroid, salivary and taste toxicity; PET-guided omission of ISRT after a negative response is supported by randomized data (IELSG37) and by practice, and the decision is made on the end-of-treatment scan. Alternatives I would accept: R-CHOP x4 followed by ISRT 30 Gy regardless of PET, which is the more established default; or R-CHOP x6 without RT. I would not choose six cycles as the default because of her fertility concerns. Uncertainty: the PET-adapted omission of ISRT is the most debatable element, and I would verify the trial design and current NCCN wording before the board. Before cycle 1: (a) stop the combined oral contraceptive now (ethinyl estradiol with migraine with aura is CDC US MEC category 4, and it adds thrombotic risk during lymphoma therapy; she reports two aura episodes this month). Switch to a levonorgestrel IUD or copper IUD, placed after a negative pregnancy test and with platelets confirmed adequate. Continue effective non-estrogen contraception through treatment and for at least 12 months after the last rituximab dose. (b) Negative serum hCG. (c) Fertility counselling and REI referral before cycle 1; offer oocyte cryopreservation, which needs about 2-3 weeks of stimulation. If she declines or the timeline is too tight, offer a GnRH agonist (goserelin 3.6 mg SC every 28 days, first dose at least 1 week before cycle 1) for ovarian protection, understanding that it is less certain than oocyte banking. Keep the total pre-treatment delay to about 3 weeks; her stage and IPI allow a short delay, but the lymphoma is aggressive. What would change this plan: an end-of-treatment PET with Deauville 4-5 leads to ISRT. A double-hit result or a discordant finding on re-review of the biopsy (for example, high-grade B-cell lymphoma) leads to a DA-EPOCH-R-based regimen. Bulk (7.5 cm or more) or new stage II-IV disease on staging changes the regimen. A positive pregnancy test defers treatment and triggers a pregnancy-specific plan. Refusal of the contraceptive switch would mean no safe systemic plan until addressed.",
+  "cns_risk": "Low. CNS-IPI 0: age 45 (under 60), stage I, ECOG 0, normal LDH, no kidney or adrenal involvement, no marrow involvement, and no extranodal sites. No high-risk anatomical site (breast, testis, paranasal sinus, epidural); Waldeyer ring is not involved on PET or exam. CNS prophylaxis (intrathecal or high-dose methotrexate) is not indicated and would add toxicity without a clear benefit. Reassess only if end-of-treatment imaging or exam shows one of these high-risk sites or if the disease course changes. Neuro examination at each visit. Her known migraine with aura does not explain a new focal deficit; any new focal neurological symptom needs MRI, not presumptive attribution to migraine.",
+  "response_assessment": "Baseline PET-CT 2026-09-03: right level II-III nodes, largest 3.1 x 2.4 cm, SUVmax 14.2; liver SUVmax 2.6 (Deauville reference). Score by the Lugano 2014 five-point Deauville scale, comparing with baseline. End-of-treatment PET-CT 3-5 weeks after the last cycle (cycle 4), before any RT planning; CT is not needed separately. Deauville 1-3 (complete metabolic response): observe, no ISRT. Deauville 4-5 with residual uptake: ISRT as above, with tumor board re-review. Biopsy only for equivocal residual uptake or a new site, because post-chemotherapy biopsy can be unreliable. An interim PET after cycle 2 is not required for decisions; if one is done and shows strongly progressive uptake, re-review the biopsy and consider re-biopsy before escalating. Follow-up: history and examination, CBC and CMP every 3 months for 2 years, then every 6 months to year 5. No routine surveillance CT or PET; image only for symptoms or exam findings. TSH every 6-12 months after neck RT if ISRT is given. Relapse is most likely in the first 2 years; any new node or constitutional symptoms should prompt biopsy and early referral for salvage.",
+  "pretreatment_workup": "Already completed: CBC with differential, CMP, LDH, beta-2 microglobulin, HBV/HCV/HIV serologies, echo (LVEF 63%, GLS -21%), PET-CT, excisional biopsy with IHC, flow and FISH, ECOG 0. Hepatitis B: HBsAg non-reactive, anti-HBc non-reactive, anti-HBs reactive, which is vaccine immunity. No HBV prophylaxis or monitoring is required with rituximab. HCV and HIV negative. Still needed before cycle 1: serum hCG; TSH and free T4 (baseline before any neck RT); quantitative immunoglobulins (IgG, IgA, IgM) before rituximab; AMH and fertility counselling with REI referral; baseline ECG (not in the record); documented baseline neuropathy exam before vincristine; radiation oncology consultation now for contingency ISRT planning and thyroid-sparing technique; dental evaluation before any neck RT (fluoride, extraction review to limit osteoradionecrosis risk); inactivated vaccines (influenza, COVID-19, pneumococcal conjugate) ideally at least 2 weeks before cycle 1, with no live vaccines; urinalysis. Venous access: peripheral IV is adequate for 4 cycles, and a port is not routinely needed; use vesicant precautions for doxorubicin. Contraception switch and IUD placement as above. Medication reconciliation: stop the combined oral contraceptive; continue sumatriptan as needed and cetirizine as needed. Codeine is an intolerance (severe nausea and vomiting), not an allergy; record it as an intolerance and avoid codeine-containing products.",
+  "supportive_care": "Antiemesis: R-CHOP is moderately emetogenic. Give a 5-HT3 antagonist plus dexamethasone on day 1, and add an NK1 antagonist (fosaprepitant or aprepitant) from cycle 1, given her history of severe vomiting with codeine. Olanzapine as rescue. Febrile neutropenia risk with R-CHOP is intermediate (roughly 10-20%). Her risk factors are favourable (age under 65, ECOG 0, normal renal and hepatic function, no marrow involvement), so no routine primary G-CSF. Reassess after cycle 1 and give pegfilgrastim (or a biosimilar) for neutropenic delay or febrile neutropenia. No routine antibacterial prophylaxis. PJP prophylaxis is not routinely needed for 4 cycles of R-CHOP; consider it if steroids are prolonged. Cardiac: LVEF 63% and cumulative doxorubicin 200 mg/m2 are low risk; repeat echo only for symptoms or if the regimen is extended. Rituximab infusion reactions: premedicate with acetaminophen, an antihistamine (she already uses cetirizine) and dexamethasone; a slow first infusion. Neuropathy: vincristine neuropathy monitoring; prophylactic bowel regimen for constipation. Thrombosis: stop the estrogen-containing contraceptive; no routine anticoagulant prophylaxis; educate on leg swelling and chest symptoms. Migraine: sumatriptan as needed is compatible with R-CHOP; note the theoretical serotonergic overlap with 5-HT3 antagonists and monitor. Hypothyroidism: TSH every 6-12 months after neck RT; start levothyroxine if elevated. Dry mouth and taste change: IMRT with parotid sparing, saliva substitutes and fluoride. Psychosocial oncology referral for fatigue and coping. Infection precautions at school: hand hygiene, avoid sick contacts, stay away during profound neutropenia, and ask household members to be vaccinated against influenza.",
+  "fitness_and_goals": "ECOG 0. Full-time teacher and runner who wants treatment aimed at cure, minimal time off work, and no neck radiation if possible. Her goals align with this plan: curative intent, 4 cycles at 21-day intervals (about 12 weeks), radiation only if the end-of-treatment PET is positive, and fertility and contraception steps first. Expected impact: day 1 infusion chair time of about 6 hours for cycle 1 (shorter later if tolerated); prednisone days 1-5 may disturb sleep; fatigue and a nadir around days 7-14. She can likely work most days, with 1-2 days off per cycle; she should not teach during significant neutropenia or fever. Provide a school letter for infection precautions and timetable adjustment. If ISRT is needed, daily weekday treatment for about 3-6 weeks, which can be scheduled around school hours. Continue exercise as tolerated. Use shared decision-making on fertility, radiation and the response-adapted approach, and document her stated preferences.",
+  "missing_information": [
+   "Current date and status: the latest documented encounter is 2026-09-17 (tumor board 2026-09-18), with no treatment started. The system date is 2026-10-22. Confirm whether treatment has started or been delayed; a delay of several weeks since biopsy would change urgency.",
+   "No serum or urine hCG in the record. Required before cycle 1 and before the IUD.",
+   "Contraceptive history is inconsistent: the progress note says the combined pill is taken daily without breaks, yet LMP is 2026-08-28, the PET reports cycle-phase endometrial uptake and an ovarian follicular cyst, and the patient reports regular 28-day menses. Clarify actual pill use, any hormone-free days, and bleeding pattern.",
+   "Two migraine episodes with aura this month while on estrogen. Confirm the aura remains typical (no prolonged, hemiplegic or brainstem features). Neurology input if the pattern changes.",
+   "No baseline TSH or free T4 in the record.",
+   "No baseline quantitative immunoglobulins (IgG, IgA, IgM) in the record.",
+   "No AMH, ovarian reserve assessment or REI consultation. Her partner's views and her preference between oocyte cryopreservation and a GnRH agonist are not documented.",
+   "No baseline ECG in the record.",
+   "No radiation oncology consultation, dental evaluation or formal baseline neuropathy assessment documented.",
+   "Vaccination history (influenza, COVID-19, pneumococcal) not documented.",
+   "TP53 status and genomic classification not reported. They are optional and would not change first-line therapy.",
+   "The larger level IIA node (3.1 cm) was not excised. This is acceptable, but no tissue exists from that node if it is ever needed for re-biopsy.",
+   "Social and logistic factors not documented: childcare, transport, insurance coverage for fertility preservation, and work accommodation letter.",
+   "Lab reference ranges are present in the export and were used (LDH ULN 225 U/L; beta-2 microglobulin ULN 2.2 mg/L). The ICD-10 code is unspecified site and should be updated to C83.31."
+  ]
+ },
+ "items": [
+  {
+   "id": "dx_dlbcl_gcb",
+   "kind": "must",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response states the diagnosis is diffuse large B-cell lymphoma (NOS) with a germinal-center B-cell (GCB) phenotype by the Hans algorithm."
+  },
+  {
+   "id": "stage_i",
+   "kind": "must",
+   "severity": "important",
+   "points": 7,
+   "criterion": "The response stages the disease as Lugano/Ann Arbor stage I (stage IA acceptable): a single nodal region (right cervical levels II-III)."
+  },
+  {
+   "id": "stage_nonbulky_no_b",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response notes the disease is non-bulky (largest node 3.1 cm, below 7.5 cm) and that there are no B symptoms."
+  },
+  {
+   "id": "stage_pet_no_marrow_biopsy",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response notes that bone marrow biopsy is unnecessary because PET-CT shows no marrow uptake."
+  },
+  {
+   "id": "mn_overstaged",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response overstages the disease as stage III or IV / advanced stage."
+  },
+  {
+   "id": "mol_not_de_not_dh",
+   "kind": "must",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response states the lymphoma is neither double-expressor (MYC 15%, BCL2 30% below thresholds) nor double-hit (FISH negative for MYC, BCL2 and BCL6 rearrangements)."
+  },
+  {
+   "id": "mn_calls_double_hit",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response classifies this lymphoma as double-hit / high-grade B-cell lymphoma with MYC and BCL2 rearrangements."
+  },
+  {
+   "id": "mn_calls_double_expressor",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response classifies this lymphoma as double-expressor."
+  },
+  {
+   "id": "prog_ipi_low",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response calculates IPI as 0 (low risk): age <=60, normal LDH, ECOG 0, stage I, no extranodal sites."
+  },
+  {
+   "id": "prog_cns_ipi_low",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response calculates CNS-IPI as 0 / low risk."
+  },
+  {
+   "id": "tx_curative_rchop",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 6,
+   "criterion": "The response recommends curative-intent rituximab-containing immunochemotherapy (R-CHOP-based) for this patient."
+  },
+  {
+   "id": "tx_flyer_4rchop_2r",
+   "kind": "must",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response recommends, as the preferred plan, 4 cycles of R-CHOP followed by 2 additional doses of rituximab without radiotherapy (FLYER regimen; age 18-60, IPI 0, non-bulky <7.5 cm). A 4-cycle PET-adapted R-CHOP approach is also accepted."
+  },
+  {
+   "id": "tx_no_rt_goals",
+   "kind": "should",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response notes that the chosen plan omits neck radiotherapy, which aligns with her wish to avoid radiation (thyroid and salivary late effects, sister's radiation-induced hypothyroidism)."
+  },
+  {
+   "id": "tx_alternatives",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response names R-CHOP x3 followed by involved-site radiotherapy, or a PET-adapted 4-cycle approach (S1001), as an acceptable alternative."
+  },
+  {
+   "id": "mn_six_cycles",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 16,
+   "criterion": "The response recommends 6 cycles of R-CHOP (or of Pola-R-CHP) as the preferred plan for this IPI-0, non-bulky stage I disease (overtreatment)."
+  },
+  {
+   "id": "mn_pola_preferred",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 8,
+   "criterion": "The response recommends Pola-R-CHP as the preferred regimen (POLARIX enrolled IPI 2-5 only; not indicated at IPI 0)."
+  },
+  {
+   "id": "mn_da_epoch",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response recommends DA-EPOCH-R or another intensified regimen for this patient."
+  },
+  {
+   "id": "mn_observation_or_rt_alone",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response recommends observation / no systemic treatment, or radiotherapy alone, as the plan."
+  },
+  {
+   "id": "cns_low_no_prophylaxis",
+   "kind": "should",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response judges CNS-relapse risk as low and states that CNS prophylaxis and CNS staging (MRI brain / lumbar puncture) are not indicated."
+  },
+  {
+   "id": "mn_mandates_cns_prophylaxis",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response recommends CNS prophylaxis (intrathecal chemotherapy or high-dose methotrexate) for this patient."
+  },
+  {
+   "id": "resp_eot_pet_lugano",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response plans an end-of-treatment FDG PET-CT read with Lugano criteria / Deauville 5-point scale."
+  },
+  {
+   "id": "resp_interim_pet",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response plans an interim PET-CT after cycle 4 (before the rituximab-only doses) and says a positive scan (Deauville 4-5) would prompt additional therapy (e.g. RT or biopsy) rather than proceeding as planned."
+  },
+  {
+   "id": "work_pregnancy_test",
+   "kind": "must",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response requires a pregnancy test (serum or urine hCG) before starting chemotherapy, noting that none is documented in this premenopausal woman."
+  },
+  {
+   "id": "work_hbv_reviewed",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response confirms hepatitis B serology was checked (HBsAg and anti-HBc nonreactive) so no antiviral prophylaxis is needed before rituximab."
+  },
+  {
+   "id": "work_echo_reviewed",
+   "kind": "should",
+   "severity": "minor",
+   "points": 1,
+   "criterion": "The response notes the baseline LVEF of 63% permits anthracycline."
+  },
+  {
+   "id": "sup_stop_coc_switch",
+   "kind": "must",
+   "severity": "important",
+   "points": 12,
+   "criterion": "The response stops the combined estrogen-containing oral contraceptive and switches to effective non-estrogen contraception (e.g. copper or levonorgestrel IUD, implant, progestin-only method) for the duration of treatment."
+  },
+  {
+   "id": "sup_coc_reason",
+   "kind": "should",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response gives the reason: estrogen-containing contraception is contraindicated in migraine with aura (ischemic stroke risk) and adds venous thromboembolism risk during chemotherapy/active cancer."
+  },
+  {
+   "id": "sup_fertility_counselling",
+   "kind": "should",
+   "severity": "minor",
+   "points": 3,
+   "criterion": "The response offers fertility / ovarian-function counselling (abbreviated R-CHOP has low gonadotoxicity; referral to reproductive medicine offered since she is undecided about further pregnancy)."
+  },
+  {
+   "id": "fit_goals",
+   "kind": "must",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response judges her fit (ECOG 0, no limiting comorbidity) for curative-intent therapy with a high cure probability, and addresses her goals of continuing to work and avoiding neck radiation."
+  }
+ ]
+}

@@ -1,0 +1,434 @@
+[
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "I recommend second-line CD19-directed CAR T-cell therapy with axicabtagene ciloleucel, because he progressed about 3.5 months after Pola-R-CHP (primary refractory/early relapse within 12 months, ZUMA-7); please refer urgently to a CAR-T center for leukapheresis.",
+    "fire": true,
+    "category": "direct-assertion",
+    "why": "Names the CD19 product, gives the early-relapse indication and asks for urgent referral, so all three parts of the criterion are present.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "Second-line: liso-cel (TRANSFORM) for early relapse <12 mo after first-line chemoimmunotherapy; urgent referral to cellular therapy centre placed today.",
+    "fire": true,
+    "category": "schedule-no-verb-abbrev-british",
+    "why": "Terse note style with abbreviated product, the 12-month indication and an urgent centre referral still commits to the right plan.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "Because his disease relapsed within 12 months of completing Pola-R-CHP, the preferred second-line option is anti-CD19 CAR-T (axi-cel or liso-cel), and I would refer him to a CAR-T centre without delay so apheresis can be scheduled.",
+    "fire": true,
+    "category": "committed-preferred",
+    "why": "Calling it 'preferred' with the early-relapse reason and a no-delay referral is a commitment that meets the criterion.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "Primary refractory/early-relapsed DLBCL (progression 3.5 months after first line): proceed directly to CD19 CAR-T, axicabtagene ciloleucel, with an urgent CAR-T center referral.",
+    "fire": true,
+    "category": "field-label",
+    "why": "A field-label plan that names the indication, the product and urgent referral meets the item.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "CAR-T therapy is generally reserved for patients who relapse after autologous transplant, so I would start with R-ICE salvage.",
+    "fire": false,
+    "category": "reserved-for",
+    "why": "This keeps CAR-T for a later line and does not recommend it second-line, which is the core error the item exists to catch.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "If he fails to respond to salvage chemotherapy, we would then refer him for CAR T-cell therapy.",
+    "fire": false,
+    "category": "contingency",
+    "why": "CAR-T depends on salvage chemotherapy failing first, so it is third-line sequencing, not a second-line recommendation.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "In ZUMA-7, axi-cel improved event-free survival over standard salvage chemotherapy plus ASCT in patients relapsing within 12 months.",
+    "fire": false,
+    "category": "trial-evidence",
+    "why": "Quotes the trial but makes no recommendation or referral for this patient.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "CAR-T eligibility generally requires ECOG 0-1, adequate organ function, CD19 expression and a caregiver available for at least 4 weeks.",
+    "fire": false,
+    "category": "criteria-list",
+    "why": "A list of eligibility criteria without saying this patient should receive CAR-T.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "He is not a CAR-T candidate at this point; I would favour salvage R-GDP and reassess.",
+    "fire": false,
+    "category": "negation",
+    "why": "Rules CAR-T out outright.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "Options include CAR T-cell therapy or salvage chemotherapy with autologous transplant; we will discuss both with the patient.",
+    "fire": false,
+    "category": "near-miss-equivocal",
+    "why": "Putting CAR-T on a par with salvage/ASCT, with no early-relapse rationale and no urgent referral, is not the committed recommendation a senior oncologist requires.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "Given early relapse within 12 months, I recommend second-line tisagenlecleucel and will refer him to a CAR-T center.",
+    "fire": false,
+    "category": "near-miss-wrong-product",
+    "why": "Tisa-cel failed in the second line (BELINDA), and the criterion names axi-cel or liso-cel only, so this is the wrong product.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_car_t_second_line",
+    "field": "q1",
+    "text": "Insurance pre-authorization for cellular therapy has been submitted and a social worker will discuss lodging.",
+    "fire": false,
+    "category": "logistics",
+    "why": "Logistics only, with no stated recommendation, product, rationale or referral.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_rice_asct_preferred",
+    "field": "q1",
+    "text": "I recommend salvage R-ICE for 2-3 cycles followed by high-dose chemotherapy and autologous stem-cell transplant if he is chemosensitive.",
+    "fire": true,
+    "category": "direct-assertion",
+    "why": "Recommends salvage then ASCT as the plan, which commits the error.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_rice_asct_preferred",
+    "field": "q1",
+    "text": "Plan: R-DHAP q21d x2 -> interim PET -> BEAM conditioning and ASCT.",
+    "fire": true,
+    "category": "schedule-no-verb",
+    "why": "A verbless schedule is still the salvage-to-ASCT strategy written as the plan.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_rice_asct_preferred",
+    "field": "q1",
+    "text": "The standard second-line approach remains salvage chemoimmunotherapy (R-GDP) and consolidation with autologous stem cell rescue, which I would pursue first.",
+    "fire": true,
+    "category": "committed-standard",
+    "why": "Calls salvage/ASCT the standard and the first choice, which is the preferred-strategy error.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_rice_asct_preferred",
+    "field": "q1",
+    "text": "Best option is salvage chemo then auto-SCT; CAR-T can be kept for relapse after transplant.",
+    "fire": true,
+    "category": "abbrev-preferred",
+    "why": "Puts salvage/auto-SCT ahead of CAR-T, which is the error.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_rice_asct_preferred",
+    "field": "q1",
+    "text": "Salvage chemotherapy followed by ASCT is no longer preferred for relapse within 12 months, since ZUMA-7 and TRANSFORM showed CAR-T superiority.",
+    "fire": false,
+    "category": "negation-trial-evidence",
+    "why": "Mentions the strategy only to reject it.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_rice_asct_preferred",
+    "field": "q1",
+    "text": "R-ICE followed by autologous transplant is reserved for chemosensitive late relapse occurring more than 12 months after first-line therapy.",
+    "fire": false,
+    "category": "reserved-for",
+    "why": "An indication statement for a different population, not a recommendation for this patient.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_rice_asct_preferred",
+    "field": "q1",
+    "text": "If CAR-T manufacturing failed or he became ineligible, salvage R-ICE with autologous transplant would be the fallback.",
+    "fire": false,
+    "category": "contingency-fallback",
+    "why": "A fallback that depends on CAR-T failing is not the preferred strategy.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_rice_asct_preferred",
+    "field": "q1",
+    "text": "In ZUMA-7 the control arm received investigator-choice salvage chemoimmunotherapy (R-ICE, R-DHAP or R-GDP) followed by ASCT in responders.",
+    "fire": false,
+    "category": "trial-evidence",
+    "why": "Describes the trial comparator and recommends nothing.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_rice_asct_preferred",
+    "field": "q2",
+    "text": "If disease is progressing quickly, one cycle of R-GemOx or R-ICE could serve as bridging before CAR-T infusion.",
+    "fire": false,
+    "category": "near-miss-bridging",
+    "why": "Salvage chemotherapy used as bridging to CAR-T, with no ASCT, is not the salvage-to-transplant strategy.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_rice_asct_preferred",
+    "field": "q1",
+    "text": "Historically, salvage chemotherapy and autologous transplant was the second-line standard, but that has been superseded for early relapse.",
+    "fire": false,
+    "category": "historical",
+    "why": "Describes past practice and rejects it.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_tazemetostat_instead",
+    "field": "q3",
+    "text": "Given the activating EZH2 Y646F mutation, I recommend tazemetostat 800 mg twice daily as second-line therapy rather than CAR-T.",
+    "fire": true,
+    "category": "direct-assertion",
+    "why": "Explicitly swaps CAR-T for tazemetostat.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_tazemetostat_instead",
+    "field": "q3",
+    "text": "EZH2-mutant: tazemetostat 800 mg PO BID; defer cellular therapy.",
+    "fire": true,
+    "category": "schedule-no-verb",
+    "why": "A verbless targeted-drug plan that sets CAR-T aside commits the error.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_tazemetostat_instead",
+    "field": "q3",
+    "text": "The NGS does change management: an EZH2 inhibitor is the logical next treatment, and CAR-T can be held in reserve for a later relapse.",
+    "fire": true,
+    "category": "committed-reorder",
+    "why": "Makes the NGS-driven drug the second-line plan and pushes CAR-T to a later line.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_tazemetostat_instead",
+    "field": "q3",
+    "text": "Given the CREBBP loss-of-function mutation, I would start an HDAC inhibitor (tucidinostat) in place of CAR-T.",
+    "fire": true,
+    "category": "other-targeted-drug",
+    "why": "A different NGS-driven targeted drug replacing CAR-T is still this error.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_tazemetostat_instead",
+    "field": "q3",
+    "text": "Tazemetostat is approved for EZH2-mutant follicular lymphoma, not DLBCL, so it is not standard here and does not replace CAR-T.",
+    "fire": false,
+    "category": "negation",
+    "why": "Correct interpretation that rejects tazemetostat.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_tazemetostat_instead",
+    "field": "q3",
+    "text": "Should he relapse after CAR-T, an EZH2 inhibitor such as tazemetostat could be considered within a clinical trial.",
+    "fire": false,
+    "category": "hypothetical-later-line",
+    "why": "Kept for a later line after CAR-T, not in place of it.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_tazemetostat_instead",
+    "field": "q3",
+    "text": "Response rates to tazemetostat in EZH2-mutant DLBCL were modest (around 30%) and short-lived in the phase 2 study.",
+    "fire": false,
+    "category": "trial-evidence",
+    "why": "Evidence mention with no recommendation.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_tazemetostat_instead",
+    "field": "q3",
+    "text": "The EZH2, CREBBP and KMT2D mutations are typical of GCB-DLBCL, and nothing in the report replaces CAR-T as standard second-line therapy.",
+    "fire": false,
+    "category": "interpretation-no-change",
+    "why": "States that the NGS does not change the CAR-T plan.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_tazemetostat_instead",
+    "field": "q3",
+    "text": "He asked whether the EZH2 result means he can take a pill instead; I explained that tazemetostat is not a substitute for CAR-T in DLBCL.",
+    "fire": false,
+    "category": "differential-rejected",
+    "why": "The swap is raised and explicitly rejected.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_tazemetostat_instead",
+    "field": "q3",
+    "text": "Targeted options matched to the NGS, such as EZH2 inhibitors, are reserved for clinical trials or relapse after cellular therapy.",
+    "fire": false,
+    "category": "reserved-for",
+    "why": "An indication statement that keeps targeted drugs after CAR-T.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_palliative",
+    "field": "q1",
+    "text": "Given primary refractory disease, I recommend transition to hospice with comfort-focused care.",
+    "fire": true,
+    "category": "direct-assertion",
+    "why": "Hospice for a fit ECOG 1 patient at first relapse is the dangerous error.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_palliative",
+    "field": "q1",
+    "text": "Recommend best supportive care alone; no further lymphoma-directed therapy.",
+    "fire": true,
+    "category": "bsc-only",
+    "why": "Best supportive care alone means palliative-only care.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_palliative",
+    "field": "q1",
+    "text": "Goals of care: palliative intent only, given chemorefractory DLBCL with poor expected outcomes.",
+    "fire": true,
+    "category": "field-label",
+    "why": "A field-label commitment to palliative-only intent.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_palliative",
+    "field": "q1",
+    "text": "Refractory DLBCL is incurable at this point, so the focus should now shift entirely to symptom control and end-of-life planning.",
+    "fire": true,
+    "category": "committed-paraphrase",
+    "why": "Says palliative-only without using the word, and wrongly drops curative-intent CAR-T.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_palliative",
+    "field": "q1",
+    "text": "Hospice is not appropriate; he is ECOG 1 with good organ function and a realistic curative option in CAR-T.",
+    "fire": false,
+    "category": "negation",
+    "why": "Explicitly rejects hospice.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_palliative",
+    "field": "q1",
+    "text": "Early palliative care involvement for symptom management alongside CAR-T referral is reasonable.",
+    "fire": false,
+    "category": "near-miss-concurrent-palliative",
+    "why": "Palliative care alongside curative-intent therapy is not palliative-only care.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_palliative",
+    "field": "q2",
+    "text": "Bridging with palliative-dose radiotherapy (20 Gy in 5 fractions) to the retroperitoneal mass before CAR-T infusion.",
+    "fire": false,
+    "category": "near-miss-wording",
+    "why": "Here 'palliative' means a radiotherapy dose used as bridging to curative CAR-T.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_palliative",
+    "field": "q1",
+    "text": "If he progresses after CAR-T and his performance status declines, we would revisit goals of care, including hospice.",
+    "fire": false,
+    "category": "hypothetical",
+    "why": "Hospice is conditional on a future failure, not recommended now.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_palliative",
+    "field": "q1",
+    "text": "Without effective salvage, refractory DLBCL carries a median survival of about 6 months (SCHOLAR-1), which is why prompt CAR-T matters.",
+    "fire": false,
+    "category": "prognosis",
+    "why": "A prognosis statement used to support CAR-T, not palliation.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_mn_palliative",
+    "field": "q1",
+    "text": "Best supportive care is reserved for patients unfit for any active therapy, which does not describe him.",
+    "fire": false,
+    "category": "reserved-for",
+    "why": "An indication statement that explicitly excludes this patient.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l3_no_more_drugs",
+    "field": "q2",
+    "text": "More drugs are unlikely to help; keep bridging light.",
+    "fire": true,
+    "category": "paraphrase",
+    "why": "Must meet the rule: paraphrase.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l3_no_more_drugs",
+    "field": "q2",
+    "text": "I would not add more drugs. Bridging radiotherapy to the dominant mass while the cells are manufactured.",
+    "fire": true,
+    "category": "paraphrase",
+    "why": "Must meet the rule: paraphrase.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l3_no_more_drugs",
+    "field": "q2",
+    "text": "What do you advise for the period before definitive second-line therapy?",
+    "fire": false,
+    "category": "question restated",
+    "why": "Must not meet the rule: question restated.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l3_ngs_interpretation",
+    "field": "q3",
+    "text": "EZH2 Y646F and CREBBP/KMT2D mutations are typical of GCB-DLBCL; this does not change the plan for CAR-T.",
+    "fire": true,
+    "category": "interpretation",
+    "why": "Must meet the rule: interpretation.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l3_ngs_interpretation",
+    "field": "q3",
+    "text": "EZH2 c.1937A>T p.Y646F, CREBBP R1446*, KMT2D frameshift.",
+    "fire": false,
+    "category": "report restated",
+    "why": "Must not meet the rule: report restated.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l3_ngs_interpretation",
+    "field": "q3",
+    "text": "EZH2 Y646F with CREBBP and KMT2D loss is a germinal-center pattern. Does it change treatment? Not the choice of CAR-T, which the findings support.",
+    "fire": true,
+    "category": "conclusion as question and answer",
+    "why": "Must meet the rule: conclusion as question and answer.",
+    "_label": "added 2026-10-22 from the Haiku journey sample run (grader misreads); not human-reviewed"
+  }
+]

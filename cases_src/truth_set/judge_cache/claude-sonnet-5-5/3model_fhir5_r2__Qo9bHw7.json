@@ -1,0 +1,147 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL-NOS), de novo, germinal-center B-cell (GCB) subtype",
+  "source": "judge"
+ },
+ "stage_i": {
+  "met": true,
+  "quote": "Ann Arbor stage IA, non-bulky, with no B symptoms. FDG PET-CT shows a single nodal region (contiguous right cervical levels II-III), with the largest node 3.1 cm.",
+  "source": "judge"
+ },
+ "stage_nonbulky_no_b": {
+  "met": true,
+  "quote": "Ann Arbor stage IA, non-bulky, with no B symptoms. FDG PET-CT shows a single nodal region (contiguous right cervical levels II-III), with the largest node 3.1 cm.",
+  "source": "judge"
+ },
+ "stage_pet_no_marrow_biopsy": {
+  "met": true,
+  "quote": "Bone marrow biopsy and lumbar puncture are not indicated because PET shows no marrow or CNS involvement.",
+  "source": "judge"
+ },
+ "mn_overstaged": {
+  "met": false,
+  "quote": "Ann Arbor stage IA, non-bulky, with no B symptoms.",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "BCL2 is positive in about 30% and MYC in about 15% of tumor cells, so this is not a double-expressor lymphoma; Ki-67 is about 55% and EBER ISH is negative. FISH shows no MYC, BCL2, or BCL6 rearrangement, excluding double-hit/triple-hit disease.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "FISH shows no MYC, BCL2, or BCL6 rearrangement, excluding double-hit/triple-hit disease.",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "BCL2 is positive in about 30% and MYC in about 15% of tumor cells, so this is not a double-expressor lymphoma",
+  "source": "judge"
+ },
+ "prog_ipi_low": {
+  "met": true,
+  "quote": "IPI 0 (age <60, stage I, ECOG 0, normal LDH, no extranodal sites), age-adjusted IPI 0, and CNS-IPI 0.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_low": {
+  "met": true,
+  "quote": "CNS-IPI is 0 (age <60, stage I, ECOG 0, normal LDH, no extranodal sites, no renal/adrenal involvement), corresponding to a very low risk of CNS relapse (well under 1%).",
+  "source": "judge"
+ },
+ "tx_curative_rchop": {
+  "met": true,
+  "quote": "Curative-intent R-CHOP-21 for 6 cycles without consolidative radiation.",
+  "source": "judge"
+ },
+ "tx_flyer_4rchop_2r": {
+  "met": false,
+  "quote": "Curative-intent R-CHOP-21 for 6 cycles without consolidative radiation.",
+  "source": "judge"
+ },
+ "tx_no_rt_goals": {
+  "met": true,
+  "quote": "The key reason for choosing chemotherapy alone is that she has favorable limited-stage (IA, non-bulky) GCB DLBCL and strongly wishes to avoid neck radiation because of her sister's radiation-related hypothyroidism",
+  "source": "judge"
+ },
+ "tx_alternatives": {
+  "met": true,
+  "quote": "4 cycles of R-CHOP followed by 30-36 Gy involved-site radiation would be the alternative",
+  "source": "judge"
+ },
+ "mn_six_cycles": {
+  "met": true,
+  "quote": "Curative-intent R-CHOP-21 for 6 cycles without consolidative radiation.",
+  "source": "judge"
+ },
+ "mn_pola_preferred": {
+  "met": false,
+  "quote": "I would not use Pola-R-CHP or other novel regimens, which are not established for stage I disease.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I would not use Pola-R-CHP or other novel regimens, which are not established for stage I disease.",
+  "source": "judge"
+ },
+ "mn_observation_or_rt_alone": {
+  "met": false,
+  "quote": "Curative-intent R-CHOP-21 for 6 cycles without consolidative radiation.",
+  "source": "judge"
+ },
+ "cns_low_no_prophylaxis": {
+  "met": true,
+  "quote": "Low. CNS-IPI is 0 (age <60, stage I, ECOG 0, normal LDH, no extranodal sites, no renal/adrenal involvement), corresponding to a very low risk of CNS relapse (well under 1%). I will not give intrathecal methotrexate or high-dose methotrexate CNS prophylaxis, and I will not perform a routine lumbar puncture or brain MRI",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "I will not give intrathecal methotrexate or high-dose methotrexate CNS prophylaxis",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "I will restage with FDG PET-CT from skull base to mid-thigh 6-8 weeks after cycle 6 and interpret it with the Lugano/Deauville 5-point scale.",
+  "source": "judge"
+ },
+ "resp_interim_pet": {
+  "met": false,
+  "quote": "Interim PET after 2 cycles is not recommended outside a clinical trial.",
+  "source": "judge"
+ },
+ "work_pregnancy_test": {
+  "met": true,
+  "quote": "Before starting R-CHOP I will add: a serum beta-hCG to exclude pregnancy, since she is premenopausal and on an oral contraceptive",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "hepatitis B (HBsAg, anti-HBc, anti-HBs), and hepatitis C serologies; and baseline echocardiogram (LVEF 63%).",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "She is a candidate for full-dose curative R-CHOP.",
+  "source": "judge"
+ },
+ "sup_stop_coc_switch": {
+  "met": true,
+  "quote": "She should stop the combined oral contraceptive and use a progestin-only or non-hormonal method; I will not use routine anticoagulation, but I will maintain mobility and have a low threshold to evaluate VTE.",
+  "source": "judge"
+ },
+ "sup_coc_reason": {
+  "met": true,
+  "quote": "I will also stop her combined oral contraceptive during chemotherapy because migraine with aura plus estrogen increases ischemic stroke risk.",
+  "source": "judge"
+ },
+ "sup_fertility_counselling": {
+  "met": true,
+  "quote": "urgent reproductive-endocrinology referral with AMH/antral follicle count and oocyte or embryo cryopreservation (a 2-4 week delay is acceptable for stage IA non-bulky disease), plus discussion of a GnRH agonist during chemotherapy",
+  "source": "judge"
+ },
+ "fit_goals": {
+  "met": true,
+  "quote": "Very fit: a 45-year-old woman with ECOG 0, weight 64 kg, BSA 1.72 m2, normal CBC/CMP, normal LDH, LVEF 63%, no cardiac or pulmonary disease, never smoker, and working full time. She is a candidate for full-dose curative R-CHOP.",
+  "source": "judge"
+ }
+}

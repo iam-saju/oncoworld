@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__shh28SM",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "non-germinal center (Hans non-GCB) phenotype",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_not_breast_recurrence": {
+   "met": true,
+   "quote": "Carcinoma is excluded: AE1/AE3 and GATA3 are negative in the lesional cells",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Ann Arbor stage IIIB.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_lymphatic": {
+   "met": true,
+   "quote": "Under Lugano the spleen is a lymphoid organ, so this is staged as nodal, not extranodal stage IV.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms are present (fever to 38.4 C, drenching night sweats).",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulk_definition": {
+   "met": true,
+   "quote": "so it is not bulky by NCCN criteria (10 cm or more)",
+   "confidence": "medium",
+   "note": "Notes below 10 cm threshold but does not acknowledge varying bulk definitions."
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "If the splenic nodules were judged extranodal, the stage would be IV",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_del_not_dh": {
+   "met": true,
+   "quote": "MYC and BCL2 double-expressor, with no MYC, BCL2 or BCL6 rearrangement on interphase FISH",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "This is not double-hit lymphoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "I would not use ibrutinib",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_2": {
+   "met": true,
+   "quote": "IPI is 2 (low-intermediate): stage III and elevated LDH",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_2": {
+   "met": true,
+   "quote": "The CNS-IPI points she has are stage III and elevated LDH",
+   "confidence": "medium",
+   "note": "Identifies the two points and intermediate risk but never states the total of 2 explicitly."
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "Routine CNS prophylaxis (intrathecal or high-dose methotrexate) is therefore not indicated",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "Routine CNS prophylaxis (intrathecal or high-dose methotrexate) is therefore not indicated",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_aware_no_full_dox": {
+   "met": true,
+   "quote": "Standard R-CHOP (300 mg/m2 more, about 540 mg/m2 in total) would exceed the usual cumulative ceiling",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_standard_dox_ignores_heart": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardio_onc_referral": {
+   "met": true,
+   "quote": "Cardiology assessment with ECG, high-sensitivity troponin, NT-proBNP, and a repeat biplane echocardiogram with GLS",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardioprotection": {
+   "met": true,
+   "quote": "an ACE inhibitor (or ARB) and carvedilol, targeting BP below 130/80",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_anthracycline_free_curative": {
+   "met": true,
+   "quote": "Anthracycline-free rituximab-based immunochemotherapy with curative intent",
+   "confidence": "medium",
+   "note": "Primary choice Pola-R-CP is non-standard, though R-CEOP is named as the alternative."
+  },
+  "tx_lower_efficacy_ack": {
+   "met": true,
+   "quote": "An anthracycline-free regimen is probably less effective than R-CHOP",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_monitoring": {
+   "met": false,
+   "quote": "repeat echocardiogram with biplane LVEF and GLS at end of treatment and sooner for symptoms",
+   "confidence": "medium",
+   "note": "Echo only at end of treatment; biomarkers only at baseline, no serial on-treatment monitoring."
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "after cycle 6 (end of treatment), with Lugano 2014 Deauville scoring",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "allopurinol with cautious hydration",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": false,
+   "quote": "Primary G-CSF is not routinely needed for Pola-R-CP",
+   "confidence": "medium",
+   "note": "Declines primary G-CSF, reasonable for a less myelotoxic regimen but does not meet the criterion."
+  },
+  "sup_anastrozole": {
+   "met": true,
+   "quote": "Anastrozole: continue to the planned end of 10 years (November 2026).",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg, anti-HBc and anti-HBs all nonreactive, so no HBV reactivation prophylaxis is needed",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_curative_ecog1": {
+   "met": true,
+   "quote": "She is fit for curative-intent immunochemotherapy, but not for anthracyclines.",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_cardiac_workup": {
+   "met": true,
+   "quote": "Cardiology evaluation results: ECG, high-sensitivity troponin, NT-proBNP, biplane LVEF and GLS repeat echo",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__xMoyYoU",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "Immunophenotype is non-germinal-center B-cell-like (non-GCB/ABC-like) by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "non-GCB/ABC-like",
+   "confidence": "medium",
+   "note": "Uses \"ABC-like\" loosely; never states Hans is only a surrogate for GEP-defined ABC."
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Ann Arbor stage IIIB with splenic involvement (IIIS), bulky.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": true,
+   "quote": "because the spleen is a lymphatic organ, this remains stage III rather than IV",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "Bulky disease is present (retroperitoneal mass 11.0 cm, greater than 10 cm). B symptoms are present",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "It is a double-expressor lymphoma by immunohistochemistry (BCL2 about 80%, MYC about 50%, Ki-67 about 85%), but FISH is negative",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "so it is not double-hit",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "IPI 3 (high-intermediate)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": false,
+   "quote": "CNS-IPI 2 (age over 60 and stage III), which is intermediate risk",
+   "confidence": "medium",
+   "note": "Risk category correct but score miscounted as 2 (omits LDH)."
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "I recommend polatuzumab vedotin plus R-CHP (pola-R-CHP) every 21 days for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "exploratory analyses suggest greater benefit in ABC/non-GCB disease",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_residual_bulk": {
+   "met": true,
+   "quote": "if Deauville 4-5 at the bulky site, biopsy and consider involved-site radiation",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "I would not use DA-EPOCH-R",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "There is no frailty and no need for reduced-dose therapy.",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": false,
+   "quote": "monitor HBV DNA every 2-3 months during rituximab and for 6-12 months afterward, and start entecavir or tenofovir if DNA becomes detectable",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": true,
+   "quote": "monitor HBV DNA every 2-3 months during rituximab and for 6-12 months afterward",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_no_hbv_action": {
+   "met": false,
+   "quote": "monitor HBV DNA every 2-3 months during rituximab and for 6-12 months afterward, and start entecavir or tenofovir if DNA becomes detectable",
+   "confidence": "medium",
+   "note": "Chooses pre-emptive monitoring instead of prophylaxis; HBV-directed action exists so not committed."
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "I will not give intrathecal chemotherapy or high-dose methotrexate prophylaxis, and I will not perform a routine baseline lumbar puncture",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT will be obtained 6-8 weeks after cycle 6 and interpreted by Lugano 2014/Deauville criteria.",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "If the 11-cm retroperitoneal site is Deauville 4-5, I will biopsy it to distinguish residual lymphoma from inflammation",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "Start allopurinol 300 mg daily 1-2 days before cycle 1 and continue for at least 7 days, with IV hydration",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim 6 mg SC on day 2 of each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "He is fit for full-dose curative anthracycline-based therapy: age 62, ECOG 1, fully independent, working part-time, LVEF 58%",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "He is fit for full-dose curative anthracycline-based therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "Baseline quantitative HBV DNA is not in the record despite HBsAg-negative/anti-HBc-positive status",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

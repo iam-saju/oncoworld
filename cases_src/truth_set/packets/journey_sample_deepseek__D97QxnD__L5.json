@@ -1,0 +1,79 @@
+{
+ "id": "journey_sample_deepseek__D97QxnD__L5",
+ "model": "deepseek-v4.1-flash-free",
+ "task": "dlbcl_0003_journey_v2_fhir",
+ "layer": "L5",
+ "rubric": "cases_src/dlbcl_0003_journey/L5_rubric.toml",
+ "answer_path": "jobs/journey_sample_deepseek/dlbcl_0003_journey_v2_fhir__D97QxnD/steps/L5-goals-of-care/verifier/final_answer.json",
+ "context": "Journey stage L5 (2027-10-06), same patient later in the disease course.\nINTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-07-07 to 2027-10-06)\n\n- The day +6 episode was grade 3 ICANS with grade 2 CRS. Blood cultures negative; CT head and MRI brain\n  without hemorrhage or lymphoma; EEG with diffuse slowing, no seizures; CSF (after platelet transfusion)\n  without malignant cells or infection. Treated with dexamethasone and anakinra; neurological recovery\n  over 9 days. Discharged day +24.\n- Day +30 PET-CT: partial metabolic response.\n- Day +90 PET-CT 2027-09-29: progression: new liver lesions (largest 3.8 cm), enlarging\n  retroperitoneal disease, new left pleural effusion. Biopsy of a liver lesion: DLBCL, CD20+, CD19-dim.\n\nFDG PET-CT, DAY +90 AFTER CAR T-CELL INFUSION, 2027-09-29\n\nComparison: day +30 PET-CT.\n- New FDG-avid liver lesions, the largest 3.8 cm.\n- Enlarging retroperitoneal disease.\n- New left pleural effusion.\nIMPRESSION: Progressive disease.\n\nSURGICAL PATHOLOGY: CORE BIOPSY, LIVER LESION, 2027-10-01\n\nImmunohistochemistry: CD20 positive. CD19 dim (weak) expression.\nDIAGNOSIS: Diffuse large B-cell lymphoma, relapsed after CAR T-cell therapy.\n\nClinic visit with the patient, his wife and daughter.\nHe spends most of the day in bed or in a recliner, needs help with bathing and dressing, and walks\nonly to the bathroom (ECOG 3). Weight 61 kg. Moderate right upper quadrant pain controlled with\noxycodone 5 mg every 6 hours as needed; mild dyspnea on exertion. Cognition: alert, oriented, follows\nthe conversation, repeats back the information accurately, and asks appropriate questions.\n\nHe states clearly: \"I don't want any more treatment for the lymphoma. I want to be at home with my\nfamily.\" He asks what hospice would involve.\n\nHis wife says she is exhausted from caregiving. The daughter has taken unpaid leave from work. The family\nhas used most of their savings on travel, lodging near the CAR-T center and co-payments, and they are\nbehind on bills.\n\nQuestions: What does his current performance status mean for treatment options? | He declines further anticancer treatment. How do you proceed? | The family is financially drained. How do you address this?",
+ "answer": {
+  "q1": "An ECOG performance status of 3 means he is capable of only limited self-care, is confined to bed or a chair for more than half of his waking hours, and needs help with bathing and dressing. In the context of biopsy-proven DLBCL that has progressed through first-line Pola-R-CHP and CD19 CAR-T, with new liver, retroperitoneal and pleural disease, weight loss to 61 kg, pain and dyspnea, this performance status makes further aggressive anticancer therapy inappropriate. Intensive salvage chemotherapy, a second CAR-T, allogeneic transplant and most clinical trials are not realistic options at ECOG 3 because of high treatment-related morbidity and mortality, poor tolerance, and low likelihood of durable benefit; the CD19-dim relapse also suggests antigen escape and makes further CD19-directed therapy less likely to work. If his decline were partly reversible from pain, infection, steroids or pleural effusion, a short trial of low-intensity, symptom-directed therapy could be considered in a patient who wanted it; however, he has progressive disease and has clearly declined further lymphoma treatment. The appropriate conclusion is that his performance status and disease trajectory support a transition to comfort-focused care and hospice rather than further cytotoxic or cellular therapy. I would explain this honestly, acknowledge that performance status can fluctuate, and revisit if his goals change.",
+  "q2": "I would respect his decision, document it clearly, and proceed with a comfort-focused plan rather than trying to persuade him to continue anticancer therapy. Specifically: hold a family meeting with the patient, wife and daughter; confirm his understanding and his goals (home, family, comfort); complete advance care planning including a health care proxy, code status/DNR-DNI and a POLST if appropriate; and refer to home hospice today. Explain what hospice involves: it is active comfort care, not abandonment; it provides 24/7 nurse access, home visits, medications and equipment for symptom control, personal-care aides, respite for his wife, chaplain/social-work support and bereavement care, and it allows him to remain at home. I would stop disease-directed treatment and deprescribe unnecessary medications while continuing analgesics, bowel regimen, antiemetics, anxiolytics and other comfort medications. For his right upper quadrant pain, I would optimize opioids (a long-acting opioid with short-acting breakthrough dosing), add a bowel regimen, and consider palliative radiation to the painful liver or retroperitoneal disease, or a thoracentesis for symptomatic pleural effusion, if these would improve comfort. I would involve palliative care and social work, provide anticipatory guidance about what dying at home may look like, and give the family a clear plan for after-hours symptoms. I would also reassure him that if he changes his mind, he can revoke hospice and reconsider treatment. The key is to act promptly on his wish, avoid further hospitalization or futile therapy, and support the family through the transition.",
+  "q3": "Financial toxicity should be treated as a clinical problem, not a private family matter. I would involve social work and a financial navigator immediately, screen openly for out-of-pocket costs, insurance gaps and debt, and connect the family to concrete resources. Because he is 68 and likely Medicare-eligible, the Medicare hospice benefit can cover home hospice nursing, medications, equipment, respite care and bereavement support with little or no coinsurance, which will reduce the financial burden of his care. Social work can also help with Medicaid enrollment or spend-down, charity care and hospital financial assistance, manufacturer copay-assistance and patient-assistance programs, and foundation grants for lymphoma; if he has private insurance, we should check copay caps and out-of-network bills. I would connect the wife to respite care, caregiver support and counseling for exhaustion, and the daughter to FMLA/employer caregiver resources and legal aid for unpaid leave or debt problems. I would also discuss disability or Social Security benefits, transportation and lodging assistance, food and utility assistance, and any veteran benefits if applicable. I would explicitly avoid recommending costly hospitalizations or futile treatments that add financial harm without meaningful benefit, and I would document the financial discussion and referrals in the chart. The message to the family should be that we will not let cost determine whether he receives comfort-focused care, and that hospice and community resources exist to help."
+ },
+ "items": [
+  {
+   "id": "l5_ecog3_meaning",
+   "kind": "must",
+   "severity": "important",
+   "points": 15,
+   "criterion": "The response explains that ECOG 3 limits options: most trials and intensive therapies require ECOG 0-2, tolerance is poor, and benefit from further lines (e.g. bispecific antibodies, loncastuximab, polatuzumab-based) is limited; prognosis is likely months."
+  },
+  {
+   "id": "l5_capacity",
+   "kind": "must",
+   "severity": "important",
+   "points": 15,
+   "criterion": "The response confirms decision-making capacity (relevant after recent ICANS; the note documents he understands and repeats back information)."
+  },
+  {
+   "id": "l5_respect_refusal_goc",
+   "kind": "must",
+   "severity": "important",
+   "points": 20,
+   "criterion": "The response respects his informed decision to stop anticancer therapy and holds a goals-of-care conversation (values, what matters most, prognosis), leaving the door open to revisit."
+  },
+  {
+   "id": "l5_hospice_palliative",
+   "kind": "must",
+   "severity": "important",
+   "points": 15,
+   "criterion": "The response refers to palliative care and home hospice and plans symptom control (pain, dyspnea/pleural effusion, e.g. thoracentesis or indwelling pleural catheter), with palliative radiotherapy for painful sites as an option."
+  },
+  {
+   "id": "l5_advance_directive",
+   "kind": "should",
+   "severity": "minor",
+   "points": 10,
+   "criterion": "The response discusses advance care planning: code status (DNR/POLST), healthcare proxy, preferred place of death."
+  },
+  {
+   "id": "l5_financial_social_work",
+   "kind": "must",
+   "severity": "important",
+   "points": 15,
+   "criterion": "The response addresses financial toxicity: social work/financial navigator, the hospice benefit (covers home care, equipment and medications), patient-assistance and foundation grants, and job-protected leave/caregiver benefits for the daughter."
+  },
+  {
+   "id": "l5_caregiver_support",
+   "kind": "should",
+   "severity": "minor",
+   "points": 10,
+   "criterion": "The response addresses caregiver exhaustion (respite care, hospice aides, counselling, bereavement support)."
+  },
+  {
+   "id": "l5_mn_pressure_treatment",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 15,
+   "criterion": "The response pressures him toward further anticancer treatment (e.g. insists on bispecifics/trial) despite his capacitous refusal."
+  },
+  {
+   "id": "l5_mn_abandon",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response discharges him from care / offers no symptom management or follow-up because he declined treatment."
+  }
+ ]
+}

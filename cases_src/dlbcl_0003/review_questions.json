@@ -1,0 +1,47 @@
+{
+  "_about": "Open clinical questions for the oncologist's sign-off of this case's rubric (shown in scripts/build_case_review.py). Each comes from a real grading disagreement or a borderline call on 2026-10-22.",
+  "questions": [
+    {
+      "id": "tls_threshold",
+      "items": ["sup_tls_prophylaxis", "sup_rasburicase_g6pd"],
+      "question": "Uric acid 10.4, LDH more than 5x the upper limit, creatinine rising 1.1 to 1.5. Several notes give IV hydration plus allopurinol, rasburicase only if uric acid stays above 8 (after G6PD), and 'frequent' TLS labs with no interval. Is that adequate TLS prophylaxis?",
+      "context": "Today this is an unsafe-error item. The checklist asks for a uric-acid-lowering drug and labs every 6-12 hours for 72 hours. The two graders split on exactly these notes.",
+      "options": ["Adequate as written", "Needs rasburicase up front", "Needs labs every 6-12 h", "Needs both"]
+    },
+    {
+      "id": "prephase",
+      "items": ["tx_prephase_steroid"],
+      "question": "Is a prednisone prephase (about 100 mg for 5-7 days) required for this 67-year-old with ECOG 2 and bulky high-risk disease?",
+      "context": "Today it is required but not unsafe (4 points). Missing it was the most common real error: about half of the model notes left it out.",
+      "options": ["Keep: required, not unsafe", "Make it an unsafe error", "Make it recommended only"]
+    },
+    {
+      "id": "cns_staging",
+      "items": ["cns_staging_mri_csf"],
+      "question": "Many notes order a lumbar puncture (CSF cytology and flow) but no baseline brain MRI, or an MRI only if symptoms appear. Does that meet CNS staging for this CNS-IPI 6 patient?",
+      "context": "Today the item requires both MRI brain and CSF studies.",
+      "options": ["MRI and CSF both required", "CSF alone is acceptable", "Either is acceptable"]
+    },
+    {
+      "id": "hdmtx_aki",
+      "items": ["mn_hdmtx_now_despite_aki"],
+      "question": "Giving high-dose methotrexate from cycle 1 despite creatinine 1.5, renal involvement and ongoing NSAIDs: how serious an error is that?",
+      "context": "Today it costs 4 points and does not fail the note.",
+      "options": ["Keep as a 4-point error", "Make it an unsafe error (fails the note)"]
+    },
+    {
+      "id": "stage_range",
+      "items": ["stage_iv", "mn_stage_below_iv"],
+      "question": "A note that writes 'stage III-IV' or 'III/IV' without committing to one stage: does it meet 'stages the disease IV'?",
+      "context": "Today a range does not count as a stage call, so the note fails the unsafe-error stage item.",
+      "options": ["A range does not count (keep)", "A range counts as stage IV"]
+    },
+    {
+      "id": "pola_vs_rchop",
+      "items": ["tx_curative_pola_or_rchop", "tx_pola_preferred"],
+      "question": "Full-dose R-CHOP x6 is accepted as curative treatment, and Pola-R-CHP earns a small 3-point bonus. Is that the right balance for this IPI 5 patient?",
+      "context": "",
+      "options": ["Agree", "Pola-R-CHP should be required", "No bonus: both equal"]
+    }
+  ]
+}

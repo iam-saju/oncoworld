@@ -1,0 +1,566 @@
+{
+  "resourceType": "Bundle",
+  "id": "dlbcl-0003-v2-update-04",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "http://oncoworld.example/fhir/sid/bundle",
+    "value": "dlbcl-0003-v2-update-04"
+  },
+  "type": "collection",
+  "timestamp": "2027-10-06T18:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DocumentReference/dlbcl-0003-v2-l5-doc-50",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dlbcl-0003-v2-l5-doc-50",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
+          ]
+        },
+        "status": "current",
+        "docStatus": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34133-9",
+              "display": "Summary of episode note"
+            }
+          ],
+          "text": "INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-07-07 to 2027-10-06)"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+                "code": "clinical-note",
+                "display": "Clinical Note"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "date": "2027-10-06T17:00:00Z",
+        "author": [
+          {
+            "reference": "Practitioner/dlbcl-0003-v2-hematologist"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain; charset=utf-8",
+              "title": "INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-07-07 to 2027-10-06)",
+              "data": "SU5URVJWQUwgSElTVE9SWTogV0hBVCBBQ1RVQUxMWSBIQVBQRU5FRCAoMjAyNy0wNy0wNyB0byAyMDI3LTEwLTA2KQoKLSBUaGUgZGF5ICs2IGVwaXNvZGUgd2FzIGdyYWRlIDMgSUNBTlMgd2l0aCBncmFkZSAyIENSUy4gQmxvb2QgY3VsdHVyZXMgbmVnYXRpdmU7IENUIGhlYWQgYW5kIE1SSSBicmFpbgogIHdpdGhvdXQgaGVtb3JyaGFnZSBvciBseW1waG9tYTsgRUVHIHdpdGggZGlmZnVzZSBzbG93aW5nLCBubyBzZWl6dXJlczsgQ1NGIChhZnRlciBwbGF0ZWxldCB0cmFuc2Z1c2lvbikKICB3aXRob3V0IG1hbGlnbmFudCBjZWxscyBvciBpbmZlY3Rpb24uIFRyZWF0ZWQgd2l0aCBkZXhhbWV0aGFzb25lIGFuZCBhbmFraW5yYTsgbmV1cm9sb2dpY2FsIHJlY292ZXJ5CiAgb3ZlciA5IGRheXMuIERpc2NoYXJnZWQgZGF5ICsyNC4KLSBEYXkgKzMwIFBFVC1DVDogcGFydGlhbCBtZXRhYm9saWMgcmVzcG9uc2UuCi0gRGF5ICs5MCBQRVQtQ1QgMjAyNy0wOS0yOTogcHJvZ3Jlc3Npb246IG5ldyBsaXZlciBsZXNpb25zIChsYXJnZXN0IDMuOCBjbSksIGVubGFyZ2luZwogIHJldHJvcGVyaXRvbmVhbCBkaXNlYXNlLCBuZXcgbGVmdCBwbGV1cmFsIGVmZnVzaW9uLiBCaW9wc3kgb2YgYSBsaXZlciBsZXNpb246IERMQkNMLCBDRDIwKywgQ0QxOS1kaW0u",
+              "creation": "2027-10-06"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-07-07 to 2027-10-06), 2027-10-06 (text attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l5-doc-51",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l5-doc-51",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LP29684-5",
+                "display": "Radiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81554-8",
+              "display": "PET+CT Guidance for localization of tumor of Skull base to mid-thigh-- W 18F-FDG IV"
+            }
+          ],
+          "text": "FDG PET-CT, DAY +90 AFTER CAR T-CELL INFUSION, 2027-09-29"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-09-29",
+        "issued": "2027-09-29T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-imaging"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "FDG PET-CT, DAY +90 AFTER CAR T-CELL INFUSION, 2027-09-29",
+            "data": "RkRHIFBFVC1DVCwgREFZICs5MCBBRlRFUiBDQVIgVC1DRUxMIElORlVTSU9OLCAyMDI3LTA5LTI5CgpDb21wYXJpc29uOiBkYXkgKzMwIFBFVC1DVC4KLSBOZXcgRkRHLWF2aWQgbGl2ZXIgbGVzaW9ucywgdGhlIGxhcmdlc3QgMy44IGNtLgotIEVubGFyZ2luZyByZXRyb3Blcml0b25lYWwgZGlzZWFzZS4KLSBOZXcgbGVmdCBwbGV1cmFsIGVmZnVzaW9uLgpJTVBSRVNTSU9OOiBQcm9ncmVzc2l2ZSBkaXNlYXNlLg==",
+            "creation": "2027-09-29"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>FDG PET-CT, DAY +90 AFTER CAR T-CELL INFUSION, 2027-09-29 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l5-doc-52",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l5-doc-52",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "SP",
+                "display": "Surgical Pathology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60568-3",
+              "display": "Pathology synoptic report"
+            }
+          ],
+          "text": "SURGICAL PATHOLOGY: CORE BIOPSY, LIVER LESION, 2027-10-01"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-10-01",
+        "issued": "2027-10-01T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-pathology-lab"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "SURGICAL PATHOLOGY: CORE BIOPSY, LIVER LESION, 2027-10-01",
+            "data": "U1VSR0lDQUwgUEFUSE9MT0dZOiBDT1JFIEJJT1BTWSwgTElWRVIgTEVTSU9OLCAyMDI3LTEwLTAxCgpJbW11bm9oaXN0b2NoZW1pc3RyeTogQ0QyMCBwb3NpdGl2ZS4gQ0QxOSBkaW0gKHdlYWspIGV4cHJlc3Npb24uCkRJQUdOT1NJUzogRGlmZnVzZSBsYXJnZSBCLWNlbGwgbHltcGhvbWEsIHJlbGFwc2VkIGFmdGVyIENBUiBULWNlbGwgdGhlcmFweS4=",
+            "creation": "2027-10-01"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>SURGICAL PATHOLOGY: CORE BIOPSY, LIVER LESION, 2027-10-01 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DocumentReference/dlbcl-0003-v2-l5-doc-53",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dlbcl-0003-v2-l5-doc-53",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
+          ]
+        },
+        "status": "current",
+        "docStatus": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11506-3",
+              "display": "Progress note"
+            }
+          ],
+          "text": "Hematology-oncology clinic note"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+                "code": "clinical-note",
+                "display": "Clinical Note"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "date": "2027-10-06T17:00:00Z",
+        "author": [
+          {
+            "reference": "Practitioner/dlbcl-0003-v2-hematologist"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain; charset=utf-8",
+              "title": "Hematology-oncology clinic note",
+              "data": "Q2xpbmljIHZpc2l0IHdpdGggdGhlIHBhdGllbnQsIGhpcyB3aWZlIGFuZCBkYXVnaHRlci4KSGUgc3BlbmRzIG1vc3Qgb2YgdGhlIGRheSBpbiBiZWQgb3IgaW4gYSByZWNsaW5lciwgbmVlZHMgaGVscCB3aXRoIGJhdGhpbmcgYW5kIGRyZXNzaW5nLCBhbmQgd2Fsa3MKb25seSB0byB0aGUgYmF0aHJvb20gKEVDT0cgMykuIFdlaWdodCA2MSBrZy4gTW9kZXJhdGUgcmlnaHQgdXBwZXIgcXVhZHJhbnQgcGFpbiBjb250cm9sbGVkIHdpdGgKb3h5Y29kb25lIDUgbWcgZXZlcnkgNiBob3VycyBhcyBuZWVkZWQ7IG1pbGQgZHlzcG5lYSBvbiBleGVydGlvbi4gQ29nbml0aW9uOiBhbGVydCwgb3JpZW50ZWQsIGZvbGxvd3MKdGhlIGNvbnZlcnNhdGlvbiwgcmVwZWF0cyBiYWNrIHRoZSBpbmZvcm1hdGlvbiBhY2N1cmF0ZWx5LCBhbmQgYXNrcyBhcHByb3ByaWF0ZSBxdWVzdGlvbnMuCgpIZSBzdGF0ZXMgY2xlYXJseTogIkkgZG9uJ3Qgd2FudCBhbnkgbW9yZSB0cmVhdG1lbnQgZm9yIHRoZSBseW1waG9tYS4gSSB3YW50IHRvIGJlIGF0IGhvbWUgd2l0aCBteQpmYW1pbHkuIiBIZSBhc2tzIHdoYXQgaG9zcGljZSB3b3VsZCBpbnZvbHZlLgoKSGlzIHdpZmUgc2F5cyBzaGUgaXMgZXhoYXVzdGVkIGZyb20gY2FyZWdpdmluZy4gVGhlIGRhdWdodGVyIGhhcyB0YWtlbiB1bnBhaWQgbGVhdmUgZnJvbSB3b3JrLiBUaGUgZmFtaWx5CmhhcyB1c2VkIG1vc3Qgb2YgdGhlaXIgc2F2aW5ncyBvbiB0cmF2ZWwsIGxvZGdpbmcgbmVhciB0aGUgQ0FSLVQgY2VudGVyIGFuZCBjby1wYXltZW50cywgYW5kIHRoZXkgYXJlCmJlaGluZCBvbiBiaWxscy4=",
+              "creation": "2027-10-06"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hematology-oncology clinic note, 2027-10-06 (text attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l5-ecog",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l5-ecog",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "89247-1",
+              "display": "ECOG Performance Status score"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-10-06",
+        "valueInteger": 3,
+        "performer": [
+          {
+            "reference": "Practitioner/dlbcl-0003-v2-hematologist"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ECOG performance status 3.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l5-weight",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l5-weight",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-10-06",
+        "valueQuantity": {
+          "value": 61,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Body weight 61 kg.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0003-v2-l5-med-1",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0003-v2-l5-med-1",
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Oxycodone 5 mg every 6 hours as needed (right upper quadrant pain)"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Oxycodone 5 mg every 6 hours as needed (right upper quadrant pain)"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication (active): Oxycodone 5 mg every 6 hours as needed (right upper quadrant pain).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0003-v2-l4-med-1",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0003-v2-l4-med-1",
+        "status": "unknown",
+        "medicationCodeableConcept": {
+          "text": "Levetiracetam 500 mg twice daily"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Levetiracetam 500 mg twice daily"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2027-10-06T12:00:00Z"
+        },
+        "note": [
+          {
+            "text": "Inpatient medication from the 2027-07-07 admission; current status not documented."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication (unknown): Levetiracetam 500 mg twice daily.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0003-v2-l4-med-2",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0003-v2-l4-med-2",
+        "status": "unknown",
+        "medicationCodeableConcept": {
+          "text": "Acyclovir 400 mg twice daily"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Acyclovir 400 mg twice daily"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2027-10-06T12:00:00Z"
+        },
+        "note": [
+          {
+            "text": "Inpatient medication from the 2027-07-07 admission; current status not documented."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication (unknown): Acyclovir 400 mg twice daily.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0003-v2-l4-med-3",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0003-v2-l4-med-3",
+        "status": "unknown",
+        "medicationCodeableConcept": {
+          "text": "Fluconazole 400 mg daily"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Fluconazole 400 mg daily"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2027-10-06T12:00:00Z"
+        },
+        "note": [
+          {
+            "text": "Inpatient medication from the 2027-07-07 admission; current status not documented."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication (unknown): Fluconazole 400 mg daily.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0003-v2-l4-med-4",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0003-v2-l4-med-4",
+        "status": "unknown",
+        "medicationCodeableConcept": {
+          "text": "Insulin correction scale"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Insulin correction scale"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2027-10-06T12:00:00Z"
+        },
+        "note": [
+          {
+            "text": "Inpatient medication from the 2027-07-07 admission; current status not documented."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication (unknown): Insulin correction scale.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0003-v2-l4-med-5",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0003-v2-l4-med-5",
+        "status": "unknown",
+        "medicationCodeableConcept": {
+          "text": "Ondansetron as needed"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Ondansetron as needed"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2027-10-06T12:00:00Z"
+        },
+        "note": [
+          {
+            "text": "Inpatient medication from the 2027-07-07 admission; current status not documented."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication (unknown): Ondansetron as needed.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0003-v2-l4-med-6",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0003-v2-l4-med-6",
+        "status": "unknown",
+        "medicationCodeableConcept": {
+          "text": "Pantoprazole"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Pantoprazole"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2027-10-06T12:00:00Z"
+        },
+        "note": [
+          {
+            "text": "Inpatient medication from the 2027-07-07 admission; current status not documented."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication (unknown): Pantoprazole.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Procedure/dlbcl-0003-v2-l5-proc-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "dlbcl-0003-v2-l5-proc-1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "status": "completed",
+        "code": {
+          "text": "Core needle biopsy of liver lesion"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "performedDateTime": "2027-10-01",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure: Core needle biopsy of liver lesion (2027-10-01).</p></div>"
+        }
+      }
+    }
+  ]
+}

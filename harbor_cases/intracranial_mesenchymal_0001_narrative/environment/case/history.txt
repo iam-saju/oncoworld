@@ -1,0 +1,12 @@
+Synthetic case reconstructed from an oncologist-provided handout. Review status: draft, pending specialist sign-off.
+
+Patient: 34-year-old man, performance status 2, no reported comorbidities and no relevant family history.
+
+Initial presentation: one week of persistent headache and vomiting.
+
+Brain and spine MRI: a well-circumscribed, lobulated extra-axial/cortically based mass centered in the left frontal lobe,
+approximately 4.2 x 3.5 x 3.0 cm. The cervical spinal cord has normal caliber. A discrete lobulated 5 mm nodule is
+present along the posterior pial surface of the cord at C6 and demonstrates intense uniform post-contrast enhancement.
+
+Stereotactic biopsy: reported as suggestive of an intracranial mesenchymal tumor with spinal drop metastasis. The final
+histologic and molecular entity is not established in the source material.

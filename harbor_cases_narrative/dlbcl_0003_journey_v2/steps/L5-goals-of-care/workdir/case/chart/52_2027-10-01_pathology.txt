@@ -1,0 +1,4 @@
+SURGICAL PATHOLOGY: CORE BIOPSY, LIVER LESION, 2027-10-01
+
+Immunohistochemistry: CD20 positive. CD19 dim (weak) expression.
+DIAGNOSIS: Diffuse large B-cell lymphoma, relapsed after CAR T-cell therapy.

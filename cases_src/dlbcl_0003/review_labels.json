@@ -1,0 +1,190 @@
+{
+  "_about": "Plain-language labels for the oncologist report (scripts/build_report.py). Written by a senior heme-onc agent from rubric_v2.toml, case.toml and gold.json, then checked item by item against the rubric text by an independent heme-onc agent (2026-10-22). Not human-reviewed. Never shown to the model.",
+  "case_card": {
+    "title": "Stage IV DLBCL with kidney-adrenal involvement and rising creatinine",
+    "patient": "67M with 6 wk epigastric/LUQ pain, drenching night sweats and 8 kg weight loss; ECOG 2, T2DM on metformin, taking ibuprofen 400 mg QID. PET-CT: 9.4 cm retroperitoneal/mesenteric mass plus FDG-avid R kidney, L adrenal and liver lesions; GCB DLBCL (MYC 20%, BCL2 30%, FISH negative), marrow negative, LDH 1,290, uric acid 10.4, creatinine 1.1 -> 1.5.",
+    "tests": [
+      "Kidney, adrenal and liver lesions are extranodal organ disease, so stage IV, IPI 5/5 and CNS-IPI 6/6.",
+      "MYC 20% / BCL2 30% with negative FISH: neither double-expressor nor double-hit, so no intensified regimen such as DA-EPOCH-R.",
+      "ECOG 2 is disease-related in a patient who wants cure: full-dose Pola-R-CHP (or R-CHOP) x6 after a steroid prephase, not mini-CHOP or palliation.",
+      "Uric acid 10.4, LDH >5x ULN and rising creatinine mean high TLS risk: IV hydration, rasburicase after G6PD check, TLS labs every 6-12 hours for the first 72 hours, stop NSAIDs.",
+      "High CNS risk: MRI brain and LP with CSF cytology/flow now; HD-MTX only as an individualized option once renal function recovers and NSAIDs are stopped."
+    ],
+    "correct_plan": "Curative full-dose Pola-R-CHP x6 (R-CHOP acceptable) after a 5-7 day prednisone 100 mg prephase, with admission for TLS prophylaxis (IV fluids, rasburicase after G6PD, TLS labs q6-12h), stopping ibuprofen, pegfilgrastim every cycle and a steroid glucose plan. Baseline MRI brain and LP; HD-MTX prophylaxis individualized and deferred until renal recovery; end-of-treatment PET-CT read by Lugano/Deauville."
+  },
+  "items": [
+    {
+      "id": "dx_dlbcl_gcb",
+      "label": "Diagnoses DLBCL, NOS, germinal-center B-cell (GCB) subtype",
+      "why": "CD10+, BCL6+, MUM1- biopsy defines GCB DLBCL; correct diagnosis anchors regimen choice and prognosis."
+    },
+    {
+      "id": "stage_iv",
+      "label": "Stages the disease as Lugano/Ann Arbor stage IV",
+      "why": "Kidney, adrenal and liver organ involvement make this stage IV; it drives IPI, CNS risk and treatment intensity."
+    },
+    {
+      "id": "stage_extranodal_sites",
+      "label": "Attributes stage IV to kidney, adrenal and liver involvement",
+      "why": "Naming these extranodal organs shows the stage is earned correctly and flags the kidney/adrenal CNS-risk sites."
+    },
+    {
+      "id": "stage_b_symptoms",
+      "label": "Notes B symptoms (night sweats, weight loss or fevers)",
+      "why": "Drenching sweats and ~10% weight loss confirm stage IVB and active, symptomatic disease needing prompt treatment."
+    },
+    {
+      "id": "mn_stage_below_iv",
+      "label": "Stages the disease below IV (stage I, II or III)",
+      "why": "Understaging ignores organ involvement, underestimates IPI and CNS risk, and could lead to undertreatment."
+    },
+    {
+      "id": "mol_not_de_not_dh",
+      "label": "States not double-expressor (MYC 20%, BCL2 30%) nor double-hit (FISH negative)",
+      "why": "Below-threshold IHC and negative FISH mean standard Pola-R-CHP/R-CHOP applies, not an intensified high-grade approach."
+    },
+    {
+      "id": "mn_calls_double_hit",
+      "label": "Calls this double-hit lymphoma with MYC and BCL2 rearrangements",
+      "why": "FISH is negative; mislabelling as double-hit would push toward unnecessary, more toxic intensified chemotherapy."
+    },
+    {
+      "id": "mn_calls_double_expressor",
+      "label": "Calls this lymphoma double-expressor",
+      "why": "MYC 20% and BCL2 30% are below thresholds; the label misstates prognosis and may prompt escalation."
+    },
+    {
+      "id": "prog_ipi_high",
+      "label": "Calculates IPI 5 (or high-risk IPI 4-5)",
+      "why": "Age >60, high LDH, ECOG 2, stage IV and multiple extranodal sites; supports Pola-R-CHP and close monitoring."
+    },
+    {
+      "id": "prog_cns_ipi_high",
+      "label": "Calculates CNS-IPI 6 or high risk, counting kidney/adrenal involvement",
+      "why": "Kidney/adrenal disease plus IPI factors give roughly 10-12% CNS relapse risk, mandating CNS staging and a prophylaxis discussion."
+    },
+    {
+      "id": "tx_curative_pola_or_rchop",
+      "label": "Recommends curative full-dose Pola-R-CHP or R-CHOP for 6 cycles",
+      "why": "Fit-for-cure patient with high-risk disease; six full-dose cycles offer the best chance of cure."
+    },
+    {
+      "id": "tx_pola_preferred",
+      "label": "Names Pola-R-CHP as preferred given IPI >=2 (R-CHOP acceptable)",
+      "why": "He meets POLARIX eligibility; Pola-R-CHP improved progression-free survival over R-CHOP in IPI >=2 disease."
+    },
+    {
+      "id": "tx_prephase_steroid",
+      "label": "Recommends steroid prephase (prednisone ~100 mg, 5-7 days) before cycle 1",
+      "why": "Age >60, ECOG 2 and high tumor burden: prephase lowers first-cycle toxicity and often improves performance status.",
+      "checker_revised": "The why calls the disease 'bulky', but the largest mass is 9.4 cm, which the reference plan says is just under the 10 cm Lugano bulk cut-off. The rubric text says 'high tumor burden', so the why should say that too."
+    },
+    {
+      "id": "mn_non_curative",
+      "label": "Recommends palliative-only treatment, best supportive care or hospice",
+      "why": "Denies a curable lymphoma to a patient whose stated goal is cure and whose ECOG 2 is disease-driven."
+    },
+    {
+      "id": "mn_da_epoch",
+      "label": "Recommends DA-EPOCH-R or another intensified regimen",
+      "why": "Not double-hit or double-expressor; intensified therapy adds toxicity, especially with renal impairment, without proven benefit here."
+    },
+    {
+      "id": "mn_dose_reduced_initial",
+      "label": "Starts with a dose-reduced regimen such as R-mini-CHOP",
+      "why": "At 67 with disease-related ECOG 2, attenuated dosing needlessly compromises the chance of cure."
+    },
+    {
+      "id": "cns_risk_addressed",
+      "label": "Identifies high CNS-relapse risk from kidney/adrenal involvement and CNS-IPI",
+      "why": "Recognising this risk triggers baseline CNS staging and an informed prophylaxis discussion before treatment starts."
+    },
+    {
+      "id": "cns_staging_mri_csf",
+      "label": "Orders contrast MRI brain and LP with CSF cytology and flow",
+      "why": "Occult CNS disease must be excluded now; finding it would change the regimen entirely."
+    },
+    {
+      "id": "cns_prophylaxis_renal",
+      "label": "Discusses CNS prophylaxis (e.g. HD-MTX) as individualized, tied to renal function/NSAIDs",
+      "why": "Benefit is uncertain, and HD-MTX is unsafe with creatinine 1.5, renal involvement and ongoing ibuprofen."
+    },
+    {
+      "id": "mn_hdmtx_now_despite_aki",
+      "label": "Schedules HD-MTX now (e.g. with cycle 1) ignoring rising creatinine/NSAIDs",
+      "why": "Methotrexate with falling eGFR, renal lymphoma and NSAIDs risks severe nephrotoxicity and delayed clearance."
+    },
+    {
+      "id": "resp_eot_pet_lugano",
+      "label": "Plans end-of-treatment PET-CT read by Lugano/Deauville 5-point scale",
+      "why": "Standard way to confirm complete metabolic response and decide whether further therapy is needed."
+    },
+    {
+      "id": "resp_ds45_biopsy",
+      "label": "Biopsies residual Deauville 4-5 uptake if it would change management",
+      "why": "PET-positive residual masses can be false positives; tissue confirmation avoids unnecessary salvage therapy."
+    },
+    {
+      "id": "sup_tls_prophylaxis",
+      "label": "Recognises high TLS risk; orders IV hydration, a urate-lowering drug and TLS labs every 6-12 hours",
+      "why": "Uric acid 10.4, LDH >5x ULN and rising creatinine: cycle 1 could precipitate renal failure or arrhythmia. At this risk TLS labs are checked every 6-12 hours for the first 72 hours; once-daily checks do not meet the requirement.",
+      "parts": [
+        {
+          "rule": "affirm",
+          "i": 0,
+          "label": "States the TLS risk is high (or orders TLS prophylaxis)"
+        },
+        {
+          "rule": "all",
+          "i": 0,
+          "label": "IV hydration"
+        },
+        {
+          "rule": "all",
+          "i": 1,
+          "label": "Rasburicase, allopurinol or febuxostat"
+        },
+        {
+          "rule": "all",
+          "i": 2,
+          "label": "TLS labs every few hours (e.g. every 6-12 h), not daily"
+        }
+      ]
+    },
+    {
+      "id": "sup_rasburicase_g6pd",
+      "label": "Favors rasburicase for hyperuricemia with renal impairment, checking G6PD first",
+      "why": "Rasburicase lowers urate rapidly to protect the kidneys; G6PD deficiency risks hemolysis and methemoglobinemia."
+    },
+    {
+      "id": "sup_gcsf",
+      "label": "Recommends primary G-CSF (e.g. pegfilgrastim) every cycle, given age >=65",
+      "why": "Age >=65 on anthracycline-based therapy carries high febrile neutropenia risk that threatens dose intensity."
+    },
+    {
+      "id": "sup_stop_nsaid",
+      "label": "Stops ibuprofen/NSAIDs and offers alternative analgesia",
+      "why": "NSAIDs worsen rising creatinine before TLS-risk chemotherapy and interact with methotrexate; pain still needs control."
+    },
+    {
+      "id": "sup_steroid_glucose",
+      "label": "Plans for steroid hyperglycemia or adjusts metformin for falling eGFR",
+      "why": "Diabetic on metformin facing high-dose prednisone and AKI: risk of hyperglycemia and metformin accumulation."
+    },
+    {
+      "id": "work_hbv_reviewed",
+      "label": "Confirms HBsAg and anti-HBc nonreactive, so no antiviral prophylaxis needed",
+      "why": "HBV status must be checked before rituximab; here negative serology means no entecavir is required."
+    },
+    {
+      "id": "work_echo_reviewed",
+      "label": "Notes baseline LVEF 60% permits anthracycline",
+      "why": "Normal ejection fraction confirms he can safely receive the doxorubicin in Pola-R-CHP or R-CHOP."
+    },
+    {
+      "id": "fit_ecog_disease_related",
+      "label": "Judges ECOG 2 disease-related, not a reason to de-escalate; honours cure goal",
+      "why": "His decline is from lymphoma and should improve with treatment; he explicitly wants curative therapy."
+    }
+  ]
+}

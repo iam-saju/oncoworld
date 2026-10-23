@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, NOS (left axillary lymph node excisional biopsy 2026-08-25; addendum 2026-09-08 FISH, final diagnosis unchanged). Non-germinal-center B-cell phenotype by Hans algorithm",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "Non-GCB (ABC-like by Hans) DLBCL with double-expressor features",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": true,
+  "quote": "Not a recurrence of her 2016 left breast ER-positive IDC: AE1/AE3 and GATA3 negative in lesional cells, no epithelial morphology, and PET shows no FDG-avid breast lesion.",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor stage III B (Lugano 2014). Nodal disease above the diaphragm (left axillary, mediastinal, left paratracheal) and below it",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": true,
+  "quote": "Splenic involvement by FDG-avid nodules is counted as nodal (S), so there is no extranodal disease: liver, adrenals, kidneys, lungs, bone and marrow are not involved",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms are present (documented fevers to 38.4 C, drenching night sweats; weight loss ~3%, below the 10% threshold).",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": true,
+  "quote": "Largest mass 7.5 cm, below the 10 cm bulky threshold but close to the 7.5 cm cutoff used in some protocols.",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "Some teams would call splenic nodules extranodal and stage IV; that does not change the treatment plan.",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": true,
+  "quote": "Break-apart interphase FISH on 200 nuclei shows no MYC (8q24), BCL2 (18q21) or BCL6 (3q27) rearrangement, so this is not double-hit or triple-hit lymphoma by definition; the MYC and BCL2 positivity is protein expression alone.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "so this is not double-hit or triple-hit lymphoma by definition; the MYC and BCL2 positivity is protein expression alone.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": true,
+  "quote": "Decision: curative-intent DA-EPOCH-R (rituximab 375 mg/m2 day 1; etoposide 50 mg/m2/day, doxorubicin 10 mg/m2/day, vincristine 0.4 mg/m2/day",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": true,
+  "quote": "IPI: classic IPI is 2 (low-intermediate: age <60 = 0, LDH elevated = 1, stage III = 1, ECOG 1 = 0, extranodal sites <=1 = 0).",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": true,
+  "quote": "CNS-IPI about 2 (intermediate-low): LDH elevated = 1 point and stage III = 1 point; age 59, ECOG 1, and no kidney or adrenal involvement score zero.",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "Recommendation: no CNS-directed prophylaxis (intrathecal or high-dose methotrexate) and no routine baseline LP or brain MRI unless neurologic symptoms appear.",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "Recommendation: no CNS-directed prophylaxis (intrathecal or high-dose methotrexate) and no routine baseline LP or brain MRI unless neurologic symptoms appear.",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": true,
+  "quote": "I would not give six cycles of R-CHOP or Pola-R-CHP at any LVEF.",
+  "source": "judge"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "I would not give six cycles of R-CHOP or Pola-R-CHP at any LVEF.",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": true,
+  "quote": "Cardio-oncology and cardiac evaluation (priority, within 1-2 weeks): cardio-oncology referral;",
+  "source": "judge"
+ },
+ "tx_cardioprotection": {
+  "met": true,
+  "quote": "beta-blocker (carvedilol or metoprolol succinate, low dose, titrated) plus a renin-angiotensin blocker (sacubitril-valsartan or an ARB/ACE inhibitor, titrated)",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": false,
+  "quote": "I would give no doxorubicin and move to an anthracycline-free strategy (clinical trial preferred; polatuzumab-bendamustine-rituximab would be off-label and based on limited data)",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": true,
+  "quote": "An anthracycline-free regimen would likely lower the chance of cure, though the evidence is weak.",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": true,
+  "quote": "LVEF and GLS before cycle 1 (baseline, to be repeated after 2-3 weeks of optimized therapy), again after cycle 3, at end of therapy, and at 6 and 12 months. Troponin and NT-proBNP before cycles 1, 3 and 5.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Curable intent.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT after cycle 6, judged by Lugano 2014 (complete metabolic response = Deauville 1-3 with no residual mass at PET-positive sites).",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis: allopurinol (or febuxostat) and hydration from before cycle 1 with urine output and renal function checks; rasburicase only if uric acid rises, and only after G6PD is known.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Pegfilgrastim day 6 each cycle.",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "continue anastrozole to the planned end of the 10-year course in November 2026, unless breast oncology advises otherwise. It has no meaningful interaction with the lymphoma regimen",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis B: HBsAg, HBcAb and HBsAb are negative, so no antiviral prophylaxis is needed; plan post-treatment HBV vaccination given non-immune status.",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": true,
+  "quote": "Fitness: she is fit for curative-intent immunochemotherapy. Age 59, ECOG 1, NYHA class I, normal renal function (estimated creatinine clearance about 84 mL/min with Cockcroft-Gault at 70.5 kg; creatinine 0.8 mg/dL), normal liver tests",
+  "source": "judge"
+ },
+ "miss_cardiac_workup": {
+  "met": true,
+  "quote": "Full cardiac data: formal echo measurements (biplane vs 3D LVEF, LV volumes, 2016 baseline GLS), 12-lead ECG, high-sensitivity troponin, NT-proBNP, cardiac MRI, ischemic evaluation results: none are in the record.",
+  "source": "judge"
+ }
+}

@@ -1,0 +1,247 @@
+{
+ "id": "3model_fhir5_r1__DsggvmK",
+ "model": "minimax-m3.1-flash-free",
+ "task": "dlbcl_0002_splenic_stage_iii_cardiac_v2_fhir",
+ "layer": null,
+ "rubric": "cases_src/dlbcl_0002/rubric_v2.toml",
+ "answer_path": "jobs/3model_fhir5_r1/dlbcl_0002_splenic_stage_iii_car__DsggvmK/verifier/final_answer.json",
+ "context": "Patient: 59F, breast cancer survivor (2016: dose-dense AC, cumulative doxorubicin 240 mg/m2, left breast RT, on anastrozole), presents with left axillary mass, fevers to 38.4 C, drenching night sweats; ECOG 1, LDH 510. Non-GCB DLBCL (MYC 45%, BCL2 70%, FISH negative for rearrangements), PET nodes above and below the diaphragm plus splenic nodules, marrow negative, and new LVEF 45% (62% in 2016) with GLS -14%.\nWhat this case tests: Spleen is a nodal site under Lugano, so stage is III, not IV, and IPI is 2. | Double-expressor by IHC but FISH-negative, so not double-hit; no intensification to DA-EPOCH-R. | Prior doxorubicin 240 mg/m2, left chest RT and LVEF 62% to 45% mean standard full-dose R-CHOP / Pola-R-CHP is not safe as is. | Treatment must stay curative: anthracycline-free (R-CEOP / R-GCVP) or cardio-protected regimen, with cardio-oncology input and cardioprotective drugs. | CNS-IPI 2 with no high-risk sites: no routine CNS prophylaxis.",
+ "answer": {
+  "diagnosis": "Newly diagnosed diffuse large B-cell lymphoma, NOS (WHO-HAEM5 / ICC), non-germinal-center (activated B-cell-like) phenotype, primary to the left axillary node with disseminated nodal and splenic disease. This is a SECOND PRIMARY, not a recurrence or metastasis of her 2016 left breast carcinoma: the 08/25/2026 axillary node shows diffuse sheets of large atypical lymphoid cells with no cohesive nests, glands or single-file epithelial infiltration; cytokeratin AE1/AE3 and GATA3 are negative in lesional cells; CD20 and PAX5 are positive with a kappa-restricted large B-cell population by flow; and the breasts are without FDG activity on PET-CT (mammogram 03/02/2026 BI-RADS 2), so there is no clinical evidence of breast recurrence. Excisional biopsy diagnosis is DLBCL, NOS with a MYC/BCL2 DOUBLE-EXPRESSOR immunophenotype by IHC (MYC 45%, BCL2 70%, Ki-67 80%, CD10-/BCL6+/MUM1+ = non-GCB by Hans). FISH break-apart probes (09/08/2026, 200 nuclei) show NO MYC, BCL2 or BCL6 rearrangement, so this does NOT meet criteria for high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double hit); the correct designation is DLBCL, NOS, double expressor. EBER ISH negative (no EBV-driven disease); CD5, Cyclin D1, CD30 negative; no marrow involvement. Her 2016 doxorubicin/cyclophosphamide is a remote (10-year) exposure and does not make this therapy-related DLBCL, although the possibility is noted.",
+  "stage": "Ann Arbor stage IV (nodal disease both above and below the diaphragm plus splenic parenchymal involvement, stage IVS); Lugano stage IV. Baseline PET-CT (09/04/2026): left axillary nodes (2.2 cm, SUVmax 17.8), mediastinal prevascular/left paratracheal nodes (2.9 cm, SUVmax 15.4), mesenteric conglomerate (7.5 x 5.1 cm, SUVmax 22.3), para-aortic nodes (3.0 cm, SUVmax 16.9), multiple FDG-avid splenic nodules (spleen 12.8 cm, largest 2.1 cm, SUVmax 16.2) = PET-1 Deauville 5. NOT bulky by Lugano/NCCN criteria (no mass >=10 cm), although the 7.5 cm mesenteric conglomerate represents high-volume disease. Bone marrow uninvolved (aspirate and core with CD20/PAX5 stains and flow, 09/08-09/10/2026); no other extranodal parenchymal disease - liver, lungs, bone, marrow and breasts negative on PET, with no pleural/pericardial effusion. Brain not imaged by this study. B symptoms present (fever to 38.4 C, drenching night sweats 2-3x/week, 3.5% weight loss 72.8 -> 70.1 kg). LDH 510 U/L (ULN 225; ratio 2.3). IPI = 2 (LDH elevated + stage IV; age 59 = 0, ECOG 1 = 0, no extranodal sites = 0) -> low-intermediate risk. NCCN-IPI = 2 (LDH ratio 1.5-3 = 1, stage III/IV = 1, age <=60 = 0, extranodal 0-1 site = 0) -> intermediate risk. CNS-IPI = 3 (LDH elevated, ECOG >=1, stage III/IV; age <=60 = 0, <=1 extranodal site = 0, no kidney/adrenal involvement = 0) -> HIGH-risk category for secondary CNS involvement (~10% at 2 years).",
+  "biology": "CD20-positive mature B-cell lymphoma: CD20 diffuse strong, PAX5 positive, CD19 positive, kappa light-chain restricted on flow; CD3, CD5, Cyclin D1, CD30 negative; EBER ISH negative; Ki-67 approximately 80%. Subtype by Hans: CD10 negative, BCL6 positive, MUM1/IRF4 positive (~80%) = NON-GERMINAL-CENTER (activated B-cell-like). Immunohistochemical double-expressor status: MYC 45% (>=40%) and BCL2 70% (>=50%) = MYC/BCL2 double expressor by Hans criteria. FISH (interphase, break-apart, 200 nuclei, block A2): MYC 8q24, BCL2 18q21 and BCL6 3q27 all NOT rearranged. Therefore this is NOT double-hit/High-grade B-cell lymphoma with MYC and BCL2 rearrangements, and BCL6/3q27 rearrangements are excluded as well. Clinical significance: (1) R-CHOP remains standard of care, DA-EPOCH-R is not indicated; (2) double-expressor status independently elevates the risk of CNS relapse and of early relapse, so CNS-IPI-driven prophylaxis is warranted even though FISH is negative; (3) non-GCB/ABC phenotype confers a modestly worse prognosis with R-CHOP than GCB, and no novel subtype-directed therapy (e.g., lenalidomide/idelalisib or CAR-T for FL/DLBCL1L) applies. Prior breast cancer is a separate, ER-positive/HER2-negative (HER2 1+) clone and does not alter DLBCL planning; there is no reason to repeat HER2 or ER testing on the lymphoma tissue. Genetic risk counselling for the contralateral breast is not currently indicated (no BRCA criteria met in 2016), though she remains eligible if a new high-risk family history emerges.",
+  "prognosis": "With R-CHOP x6 I would quote a cure probability of roughly 50-55% and a 5-year overall survival of about 55-65% for her IPI 2 / NCCN-IPI 2 (intermediate risk); population IPI-2 5-year OS is ~50-60% (SEER) and NCCN intermediate-risk DLBCL 5-year OS is in the 60-70% range, with 5-year PFS around 50-55%. Her actual risk is likely somewhat worse than the IPI-2 average because of adverse biology - MYC/BCL2 double expressor (real-world R-CHOP-treated double expressors: ~44% 5-year PFS and ~49% 5-year OS), non-GCB/ABC phenotype, Ki-67 80%, elevated LDH (2.3x ULN), bulky mesenteric disease and splenic involvement. Favorable features: age <60, ECOG 1, no bulky (>=10 cm) disease, no marrow/bone/other extranodal parenchymal disease, no lymphoma-related cytopenias (Hgb 11.4, platelets 178), normal renal and hepatic function, no CNS involvement. A competing-mortality issue is material: newly recognized LVEF 45% with GLS -14% and prior anthracycline plus left chest irradiation means she carries an independent cardiovascular risk that both constrains therapy and shortens life expectancy, and this must be weighed against the lymphoma risk rather than ignored. Her ER-positive breast cancer is 10 years disease-free (BI-RADS 2, no FDG activity) with low recurrence risk but requires continued breast surveillance; the prior chest RT means any future thoracic irradiation should be avoided where possible. If she achieves complete metabolic response, late relapse risk is roughly 2-4% per year, concentrated in the first 24 months. Uncertainty: individual prognostication will change materially with (a) the interim PET response, (b) whether LVEF holds through 6 cycles, and (c) whether LDH normalizes; I will not assert more precision than the current data support.",
+  "first_line_treatment": "Plan: R-CHOP x6 cycles (rituximab 375 mg/m2 day 1; cyclophosphamide 750 mg/m2 day 1; doxorubicin 50 mg/m2 day 1; vincristine 1.4 mg/m2 capped at 2 mg day 1; prednisone 100 mg days 1-5) every 21 days, with primary G-CSF (pegfilgrastim 6 mg SC on day 2 of each cycle) and tumor-lysis prophylaxis (allopurinol plus hydration). Reasons: advanced-stage (III-IV) DLBCL with IPI 2 and non-bulky disease gets 6 cycles of R-CHOP (NCCN category 1). I am NOT giving maintenance rituximab (PRIMA was negative), and there is no role for upfront autologous transplant or CAR-T consolidation in first complete response. I am deliberately NOT using DA-EPOCH-R: FISH shows no MYC/BCL2 rearrangement, so she does not have high-grade B-cell lymphoma with MYC and BCL2 rearrangements, and DA-EPOCH-R (doxorubicin 50 mg/m2 by continuous infusion x8 = 400 mg/m2 plus etoposide, central venous access, mandatory G-CSF) would add an unacceptable anthracycline and etoposide burden in a woman with LVEF 45%, GLS -14%, prior left chest RT and a cumulative prior doxorubicin of 240 mg/m2; her total anthracycline exposure would exceed 640 mg/m2. I am also NOT selecting polatuzumab vedotin-R-CHP (POLARIX): her IPI 2 fits that population, but the benefit there was progression-free, MYC/BCL2-rearranged patients were excluded, and the ~66% incidence of peripheral neuropathy would directly conflict with her stated priority of returning to full-time work as a school librarian who is on her feet all day; R-CHOP keeps the neurotoxicity burden limited to vincristine. CYCLES: 6, not 4 - stage IV with high-volume disease; and no consolidative radiotherapy if she is in complete metabolic response. Cardiac decision, which I want the board to endorse explicitly: because her baseline LVEF (45%) is below the ~50% threshold generally required for anthracycline safety, I will not simply start. I will (1) obtain cardio-oncology review within one week; (2) start an ACE inhibitor plus a beta-blocker with BP driven to <130/80 (she is on amlodipine 5 mg only, with BP 146-148/90); (3) proceed with full-dose R-CHOP only if cardiology concurs, with echocardiogram plus GLS before cycle 4, before cycle 6, and 3 months after the last dose; and (4) pre-specify the fallback: if LVEF falls below 45%, GLS declines >15% relative from -14%, or heart-failure symptoms develop, I will stop doxorubicin and complete therapy as R-CVP rather than dose-reduce the entire regimen. If cardiology judges baseline LVEF 45% unacceptable for any anthracycline, I will treat with R-CVP x8 (curative intent) rather than compromise the chance of cure. She needs no dose reduction on any other basis (BSA 1.79 m2, e GFR 85, ECOG 1). Cycle 1 will start only after: brain MRI, lumbar puncture with CSF cytology/flow, cardiology clearance, and the first intrathecal dose. I have no intention of interrupting therapy for anything short of the cardiac thresholds above or a documented infection.",
+  "cns_risk": "Secondary CNS involvement (SCNS) risk is HIGH. CNS-IPI = 3 (LDH elevated = 1, ECOG >=1 = 1, stage III/IV = 1; age <=60 = 0, extranodal involvement >1 site = 0 since splenic disease is not counted as extranodal disease, no kidney or adrenal involvement = 0), a category with roughly a 10% two-year risk of CNS relapse; her MYC/BCL2 double-expressor phenotype and B symptoms add further risk. Decisions: (1) brain MRI with and without contrast before cycle 1 - PET/CT was skull base to mid-thigh and is insensitive for intracranial disease, so CNS status is currently unassessed and I will not leave it unexamined in a high CNS-IPI patient; (2) lumbar puncture with CSF cytology and flow cytometry before the first intrathecal dose or any high-dose methotrexate - if CSF is positive this is occult CNS lymphoma requiring systemic high-dose methotrexate-based treatment rather than prophylaxis; (3) intrathecal prophylaxis for CSF-negative disease: methotrexate 12 mg with or without cytarabine 50 mg on days 1 and 4 of each cycle (at least 3-4 IT doses over the course of treatment), with systemic high-dose methotrexate as the alternative if IT therapy is not feasible; (4) immediate brain MRI for any headache, seizure, focal deficit, cranial neuropathy or new cognitive change - she is currently neurologically intact with no symptoms, so I am not starting systemic CNS-directed therapy beyond IT; (5) careful vincristine neurotoxicity monitoring and no other neurotoxic additions. Note the contrast with a different scenario: she has no lymphoma involving the breast, so the PCNSL-relapse-in-the-breast surveillance issue that applies to breast-involving DLBCL does not apply here, and her prior left breast RT does not treat the mediastinum or brain.",
+  "response_assessment": "Response will be assessed by PET-CT using Lugano/Deauville criteria. Interim PET-CT after cycle 3 (week 9-10), timed at least 2 weeks after the last pegfilgrastim/filgrastim dose so that G-CSF-induced marrow and splenic uptake is not misread as residual disease: Deauville 1-3 = complete metabolic response (continue R-CHOP unchanged); Deauville 4 with >50% reduction = partial metabolic response (continue therapy, and in bulky disease consider biopsy if there is any doubt); Deauville 5 = positive - I will biopsy the hottest lesion before changing therapy, because post-G-CSF and post-treatment inflammation routinely mimic residual lymphoma; biopsy-proven Deauville 5 means refractory disease, and I will move to salvage chemotherapy (R-DHAP or R-ICE) with autologous stem cell transplant, or CAR-T if she meets early-relapse/chemosensitivity criteria. End-of-treatment PET-CT 6-8 weeks after the last dose (minimum 3 weeks) and after any surgery, before committing to consolidation: Deauville 1-3 = complete metabolic response. Given stage IV disease with a 7.5 cm mesenteric mass, I will NOT add consolidative radiotherapy to a complete metabolic response; if residual FDG-avid disease remains in the mesenteric bed, axilla, mediastinum or spleen, I will deliver involved-site radiotherapy to those sites only, deliberately avoiding the previously irradiated left breast and chest to limit cardiac dose. Bone marrow will not be re-biopsied if the end-of-treatment PET is negative. Laboratory monitoring: CBC with differential, CMP and LDH before every cycle, CBC and LDH at weeks 4 and 8 after the last dose, and LDH normalization as an additional prognostic data point. I will not shorten or stop therapy for a Deauville 1-3 interim scan.",
+  "pretreatment_workup": "Complete: excisional left axillary biopsy with full IHC, flow and FISH addendum (08/25-09/08/2026); FDG PET-CT (09/04/2026); bone marrow aspirate and core biopsy with flow cytometry and CD20/PAX5 stains (09/08-09/10/2026); CBC with differential, CMP, LDH, uric acid and beta-2 microglobulin (09/01/2026); HIV Ag/Ab and hepatitis B/C serologies - HBs Ag, anti-HBc and anti-HBs all nonreactive and HCV Ab nonreactive, so no antiviral prophylaxis is required and rituximab can be given safely; transthoracic echocardiogram with strain (09/09/2026); ECOG 1, BSA 1.79 m2, weight 70.1 kg; and a full review of the 2016 breast cancer record. To complete BEFORE cycle 1: (1) cardiology / cardio-oncology evaluation with a documented decision on anthracycline acceptability, initiation of an ACE inhibitor plus beta-blocker, and baseline ECG; (2) brain MRI with and without contrast; (3) lumbar puncture with CSF cytology and flow cytometry before the first IT dose; (4) confirm the cardiac imaging reference standard for serial comparison (echo with GLS, or MUGA if the echo window is suboptimal); (5) DEXA now rather than in 2027 (T-score -1.8 after 10 years of anastrozole) with a repeat after chemotherapy, continuing calcium/vitamin D and adding a bisphosphonate if the T-score falls to <=-2.5 or FRAX is high; (6) dietitian assessment and counselling for the 3.5% weight loss and fatigue; (7) baseline neuropathy and performance-status documentation, including a structured assessment before vincristine; (8) vaccination review - inactivated influenza, PCV20, recombinant zoster and COVID-19 - with no live vaccines; (9) documented shared decision-making about the cardiac risk versus treatment intensity and her consent to lumbar puncture and intrathecal chemotherapy; (10) chemotherapy order set with BSA-based dosing, vincristine capped at 2 mg, and pre-medications. Deliberately NOT needed: repeat bone marrow sampling (PET and biopsy are negative), additional FISH or cytogenetics (double-hit/3q27 disease excluded), breast re-biopsy (PET and imaging negative, and the node is a lymphoma), colonoscopy or other second-primary screening beyond her scheduled breast surveillance, and pregnancy testing (postmenopausal).",
+  "supportive_care": "G-CSF with every cycle (pegfilgrastim 6 mg SC day 2, or filgrastim daily from day 3) - non-negotiable with an anthracycline and high-volume disease, and it protects the schedule and her ability to keep working; expect 2-4 days of bone pain, treat with acetaminophen and avoid NSAIDs if the tumor burden or uric acid rises. Tumor lysis syndrome prophylaxis: allopurinol 100-200 mg daily from 3 days before cycle 1 and for 7-10 days after each cycle, oral/IV hydration 2-3 L/day, no nephrotoxins, no NSAIDs; rasburicase only if urate becomes elevated or other TLS features develop (uric acid 5.8 mg/d L and e GFR 85 at baseline, so she is not currently at high risk). Antiemetics: ondansetron 8-16 mg IV plus dexamethasone 8-12 mg on day 1, plus olanzapine 5 mg nightly on days 1-4 and aprepitant for moderate-to-high emetogenicity; vincristine-related constipation prophylaxis with polyethylene glycol and senna from day 1, with monitoring for ileus. Rituximab: acetaminophen 650 mg, diphenhydramine 25-50 mg and corticosteroid premedication, standard infusion over 3-6 hours, with a stop-and-treat protocol for infusion reactions and management of late reactions. Infection prophylaxis: valacyclovir 500 mg BID during and for 7 days after each prednisone course (>=10 days per cycle); trimethoprim-sulfamethoxazole DS daily while on prednisone >=20 mg/day (substitute atovaquone if cytopenias appear, since TMP-SMX adds myelosuppression with cyclophosphamide); antifungal prophylaxis is not routinely required and I will use fluconazole only if neutropenia occurs. Cardioprotection: lisinopril (or losartan) plus a beta-blocker (carvedilol or metoprolol) started with cardiology, BP target <130/80 (currently 146-148/90 on amlodipine alone), echocardiogram with GLS before cycle 4, before cycle 6 and 3 months after the last dose, and a cardiology review if LVEF <45%, GLS declines >15% relative from -14%, or symptoms of heart failure develop. Metabolic and endocrine: fingerstick glucose during prednisone (glucose 96 mg/d L, no diabetes), counselling on anastrozole-related arthralgias, continued calcium 600 mg/vitamin D 800 IU BID, and bone health management as above (osteopenia, T -1.8, on 10 years of aromatase inhibitor). Vaccines: inactivated influenza, PCV20, recombinant zoster, COVID-19; no live vaccines. No fertility preservation needed (postmenopausal). Practical safety: she must report temperature >=38.0 C or rigors immediately and must not self-treat a fever with acetaminophen for more than one dose before calling; she should be counselled that her home temperature log has been useful. Supportive measures for function: gentle activity during neutrophil-recovery periods rather than stopping exercise entirely, adequate protein and calories, and a written fatigue plan tied to her work schedule. Coordinated with breast oncology for continued annual mammography and clinical breast examination, and with primary care for the hypertension and osteopenia.",
+  "fitness_and_goals": "Fitness: ECOG 1, fully independent, working full time as a school librarian, 70.1 kg / 165 cm (BMI 21.6, BSA 1.79), 20 minutes from the cancer center with her husband driving her to every visit; no frailty, no diabetes, no coronary disease, no arrhythmia, e GFR 85, albumin 3.8 and normal LFTs, platelets 178 and no neutropenia. She is fit for full-dose R-CHOP; I am not dose-reducing her and I am not substituting a reduced-intensity regimen. Goals, as recorded: she wants treatment aimed at cure and hopes to return to full-time work; she is specifically worried about her heart because her mother had heart failure, and she was not previously told that anything was wrong with her heart; she also asked whether she should keep taking anastrozole. How I will handle the cardiac finding: I will be explicit that it is real and new (LVEF 62% in 2016 to 45% now, GLS -14%, mild global hypokinesis, grade I diastolic dysfunction), that the pattern is most consistent with anthracycline and left chest radiotherapy injury rather than tumor involvement (no FDG uptake in the heart, no pericardial effusion, no coronary disease, no hypertension-related LVH), and that further doxorubicin raises her risk of symptomatic heart failure. To keep this from derailing her cure I have set out in advance both a monitoring schedule and a fallback (drop doxorubicin and finish as R-CVP), and I will involve cardiology in the same week. I will also tell her plainly that her fatigue and stopping her exercise classes are driven by the lymphoma and mild anemia (Hgb 11.4) and are expected to improve with treatment, and that the lack of dyspnea, orthopnea, edema or chest pain with NYHA I and a normal JVP is reassuring. Protecting function is a stated priority, so I have chosen the regimen with the least neurotoxicity (no polatuzumab), will use aggressive antiemetic and G-CSF support to protect work attendance, and will involve the nurse navigator for symptom and fatigue management. I will also set expectations about the ~4-6 weeks of therapy and the reversible nature of the treatment burden. Anastrozole: she is 9 years 10 months into a planned 10-year adjuvant course for ER-positive/HER2-negative breast cancer that is in complete remission (BI-RADS 2, no FDG activity, 10 years disease-free). My decision is to continue anastrozole through chemotherapy and to stop it permanently in November 2026 as originally planned - aromatase inhibitor does not interact with R-CHOP, there is no benefit to extending beyond 10 years or restarting, and she is entering menopause from chemotherapy anyway. I will monitor bone density while she remains on it and continue calcium/vitamin D. Because her breast cancer was treated with anthracycline and left chest RT, I will avoid any further thoracic irradiation where possible and will coordinate lifelong breast and cardiovascular surveillance. I will document the shared decision, provide written materials, and offer a family meeting with her husband if she wishes, since she isclearly the one who has been carrying the anxiety about this diagnosis.",
+  "missing_information": [
+   "Cardiology / cardio-oncology assessment of the new LVEF 45% with GLS -14% (down from LVEF 62% in 2016) and a documented decision on whether full-dose doxorubicin is acceptable; no cardioprotective therapy has been started (she is on amlodipine 5 mg alone) and BP remains 146-148/90.",
+   "Baseline brain MRI with and without contrast: PET-CT was skull base to mid-thigh and cannot assess intracranial disease, and CNS-IPI is 3, so CNS status is currently unassessed.",
+   "Baseline lumbar puncture with CSF cytology and flow cytometry, and confirmation of intrathecal prophylaxis dosing and timing - not yet performed or documented.",
+   "Baseline ECG and a defined serial cardiac imaging plan (no echocardiogram between 2016 and 09/09/2026; only one post-treatment baseline exists).",
+   "Confirmation that the double-expressor designation is final and no further tissue is needed: Hans cut-offs for MYC (45%) and BCL2 (70%) reviewed by hematopathology, no karyotype or methylation studies, and no pathology re-review at a second institution after the 09/08/2026 FISH addendum.",
+   "No biopsy of the mesenteric conglomerate or splenic nodules (only the axillary node was sampled), so disease is confirmed at one site only; the spleen lesions are characterized only by FDG avidity.",
+   "Current DEXA (last 2025: lumbar T-score -1.8) despite 10 years of aromatase inhibitor, and no decision on bone-protective therapy.",
+   "Documented informed consent and shared decision-making about the competing anthracycline/cardiac risk versus treatment intensity, her questions about the heart and anastrozole are logged but not answered in the record, and no consent is documented for lumbar puncture or intrathecal chemotherapy.",
+   "No dietitian or nutrition assessment for 3.5% weight loss and fatigue, no vaccination review, no structured baseline neuropathy assessment (relevant to vincristine), and no documented work-accommodation or return-to-work plan.",
+   "No LDH trend since 09/01/2026 (510 U/L) and no record of toxicities from the 2016 anthracycline course beyond the 2016 echocardiogram; beta-2 microglobulin (2.9 mg/L) is available but is not used to direct therapy.",
+   "No G6PD testing (only needed if rasburicase becomes necessary), no quantitative immunoglobulins, and pregnancy testing is not applicable because she is postmenopausal.",
+   "Lower legs/feet were not imaged by the staging PET-CT and there is no dedicated imaging of the brain, so a small additional area of the body remains unassessed; baseline formal exercise capacity (6-minute walk or VO2) and a full cardiopulmonary history (including whether she has had any unrecognized dyspnea or edema since 2016) are not documented."
+  ]
+ },
+ "items": [
+  {
+   "id": "dx_dlbcl_non_gcb",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response states the diagnosis is diffuse large B-cell lymphoma (NOS) with a non-germinal-center (non-GCB) phenotype by the Hans algorithm."
+  },
+  {
+   "id": "dx_hans_not_abc",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response notes that Hans non-GCB is an immunohistochemical surrogate and is not equivalent to molecular ABC cell-of-origin by gene-expression profiling."
+  },
+  {
+   "id": "dx_not_breast_recurrence",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response states the left axillary node is lymphoma and not recurrent breast carcinoma (cytokeratin AE1/AE3 and GATA3 negative)."
+  },
+  {
+   "id": "stage_iii",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 8,
+   "criterion": "The response stages the disease as Lugano/Ann Arbor stage III (nodes on both sides of the diaphragm with splenic involvement)."
+  },
+  {
+   "id": "stage_spleen_lymphatic",
+   "kind": "should",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response explains that the spleen is lymphatic tissue (a nodal site), so splenic nodules do not make the disease stage IV, and that there is no non-lymphatic extranodal or marrow involvement."
+  },
+  {
+   "id": "stage_b_symptoms",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response notes B symptoms (documented fevers >38 C and drenching night sweats)."
+  },
+  {
+   "id": "stage_bulk_definition",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response notes the 7.5 cm mass is below the 10 cm Lugano bulk threshold, acknowledging that bulk definitions vary (some trials use 7.5 cm)."
+  },
+  {
+   "id": "mn_stage_iv",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response stages this patient as stage IV (e.g. by counting splenic involvement as extranodal disease)."
+  },
+  {
+   "id": "mol_del_not_dh",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response classifies the lymphoma as double-expressor by IHC (MYC 45% >=40%, BCL2 70% >=50%) but NOT double-hit (FISH shows no MYC, BCL2 or BCL6 rearrangement)."
+  },
+  {
+   "id": "mn_calls_double_hit",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response classifies this lymphoma as double-hit / high-grade B-cell lymphoma with MYC and BCL2 rearrangements."
+  },
+  {
+   "id": "mn_da_epoch",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response recommends DA-EPOCH-R (or another intensified regimen) on the basis of double-expressor biology."
+  },
+  {
+   "id": "prog_ipi_2",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response calculates IPI as 2 (low-intermediate risk): elevated LDH and stage III; age 59, ECOG 1 and no extranodal sites (spleen is not counted as extranodal) score zero."
+  },
+  {
+   "id": "prog_cns_ipi_2",
+   "kind": "should",
+   "severity": "important",
+   "points": 3,
+   "criterion": "The response calculates CNS-IPI as 2 (intermediate risk)."
+  },
+  {
+   "id": "cns_no_routine_prophylaxis",
+   "kind": "should",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response states that routine CNS prophylaxis is not indicated (CNS-IPI 2, no kidney/adrenal, testicular or breast involvement)."
+  },
+  {
+   "id": "mn_mandates_cns_prophylaxis",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response mandates CNS prophylaxis (high-dose methotrexate or intrathecal therapy) for this patient."
+  },
+  {
+   "id": "tx_cardiac_aware_no_full_dox",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 10,
+   "criterion": "The response recognizes anthracycline-related cardiac risk (prior doxorubicin 240 mg/m2, left chest radiotherapy, LVEF fall from 62% to 45%, i.e. cancer therapy-related cardiac dysfunction) and does NOT plan standard full-dose doxorubicin (R-CHOP or Pola-R-CHP) without first addressing cardiac function."
+  },
+  {
+   "id": "mn_standard_dox_ignores_heart",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response recommends standard R-CHOP or Pola-R-CHP (full-dose doxorubicin) without conditioning it on the reduced LVEF / prior anthracycline exposure (e.g. without cardio-oncology clearance, a cardioprotective modification, or a non-anthracycline alternative)."
+  },
+  {
+   "id": "tx_cardio_onc_referral",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response requests urgent cardio-oncology (or cardiology) evaluation before starting therapy."
+  },
+  {
+   "id": "tx_cardioprotection",
+   "kind": "must",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response starts or optimizes guideline-directed cardioprotective therapy: an ACE inhibitor/ARB (or ARNI) plus a beta-blocker (e.g. carvedilol), for example replacing amlodipine."
+  },
+  {
+   "id": "tx_anthracycline_free_curative",
+   "kind": "must",
+   "severity": "important",
+   "points": 8,
+   "criterion": "The response recommends a curative-intent anthracycline-free or anthracycline-modified regimen, e.g. R-CEOP (etoposide in place of doxorubicin) or R-GCVP; R-CHOP with liposomal doxorubicin or dexrazoxane is acceptable only if conditioned on cardio-oncology judging it safe."
+  },
+  {
+   "id": "tx_lower_efficacy_ack",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response acknowledges that anthracycline-free regimens likely have lower efficacy than anthracycline-based therapy."
+  },
+  {
+   "id": "tx_cardiac_monitoring",
+   "kind": "should",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response plans serial cardiac monitoring during therapy: repeat LVEF/GLS imaging plus troponin and/or natriuretic peptide (BNP/NT-proBNP)."
+  },
+  {
+   "id": "mn_non_curative",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response recommends palliative-only treatment, best supportive care, or hospice as the plan."
+  },
+  {
+   "id": "resp_eot_pet_lugano",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response plans an end-of-treatment FDG PET-CT read with Lugano criteria / Deauville 5-point scale."
+  },
+  {
+   "id": "sup_tls_allopurinol",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response assesses tumor lysis risk as low-intermediate (normal creatinine and uric acid, LDH ~2x ULN) and gives allopurinol with hydration for cycle 1."
+  },
+  {
+   "id": "sup_gcsf",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response recommends (or reasonably considers) primary G-CSF support with each cycle."
+  },
+  {
+   "id": "sup_anastrozole",
+   "kind": "should",
+   "severity": "minor",
+   "points": 1,
+   "criterion": "The response addresses the ongoing anastrozole: continuing it is acceptable (no meaningful interaction), or holding it in coordination with breast oncology is also acceptable."
+  },
+  {
+   "id": "work_hbv_reviewed",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response confirms hepatitis B serology was checked (HBsAg and anti-HBc nonreactive) before rituximab."
+  },
+  {
+   "id": "fit_curative_ecog1",
+   "kind": "must",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response judges the patient fit for curative-intent therapy (ECOG 1, normal organ function apart from the LVEF) and acknowledges her goal of cure."
+  },
+  {
+   "id": "miss_cardiac_workup",
+   "kind": "should",
+   "severity": "important",
+   "points": 3,
+   "criterion": "The response lists the cause of the LVEF decline / cardio-oncology work-up as missing (e.g. ischemic evaluation given prior left chest radiotherapy, cardiac MRI, baseline troponin and NT-proBNP)."
+  }
+ ]
+}

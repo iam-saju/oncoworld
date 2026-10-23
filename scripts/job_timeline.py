@@ -6,6 +6,9 @@ Merges every time source Harbor and OpenCode leave behind:
   <trial>/result.json          trial start / end, environment_setup, agent_setup, agent_execution, verifier
   <trial>/agent/opencode.txt   per-step (= one LLM API call) start/finish, reasoning, text, tool calls, API errors
   <trial>/agent/opencode/xdg-data/opencode/log/opencode.log   OpenCode's internal log lines
+  multi-step (journey) trials: each step's agent_execution / verifier timings and exceptions from result.json
+  step_results, and that step's own logs under <trial>/steps/<step>/agent/ (Claude's resumed session is cumulative,
+  so only the last step's session log is read)
 
 Writes <job>/timeline.csv, <job>/timeline.md and <job>/timeline_summary.json, and prints the summary.
 
@@ -53,9 +56,33 @@ def trial_events(tdir: Path):
         s, e = iso(r.get("started_at")), iso(r["finished_at"])
         yield e, "trial", "trial_end", (e - s).total_seconds() if s else None, ""
 
+    steps = r.get("step_results") or []
+    if not steps:
+        yield from opencode_events(tdir / "agent")
+        yield from claude_session_events(tdir / "agent")
+        return
+    for st in steps:
+        name = st["step_name"]
+        for phase in ("agent_execution", "verifier"):
+            p = st.get(phase) or {}
+            s, e = iso(p.get("started_at")), iso(p.get("finished_at"))
+            if s:
+                yield s, "phase", f"{name}:{phase}_start", None, ""
+            if e:
+                yield e, "phase", f"{name}:{phase}_end", (e - s).total_seconds() if s else None, ""
+        exc = st.get("exception_info") or {}
+        if exc:
+            when = iso((st.get("agent_execution") or {}).get("finished_at")) or iso(r.get("finished_at"))
+            yield when, "api_error", f"{name}:{exc.get('exception_type')}", None, str(exc.get("exception_message"))[:200]
+        yield from opencode_events(tdir / "steps" / name / "agent")
+    yield from claude_session_events(tdir / "steps" / steps[-1]["step_name"] / "agent")
+
+
+def opencode_events(adir: Path):
+    """OpenCode's JSON event stream and internal log in one agent log directory."""
     step_start = {}  # messageID -> start time of the current step
     n_step = 0
-    txt = tdir / "agent" / "opencode.txt"
+    txt = adir / "opencode.txt"
     if txt.exists():
         for line in txt.read_text().splitlines():
             try:
@@ -88,25 +115,23 @@ def trial_events(tdir: Path):
                 data = err.get("data") or {}
                 yield t, "api_error", str(err.get("name")), None, f"status={data.get('statusCode')} {str(data.get('message'))[:200]}"
 
-    log = tdir / "agent" / "opencode" / "xdg-data" / "opencode" / "log" / "opencode.log"
+    log = adir / "opencode" / "xdg-data" / "opencode" / "log" / "opencode.log"
     if log.exists():
         for line in log.read_text().splitlines():
             m = re.match(r"timestamp=(\S+) level=(\S+) (?:run=\S+ )?(.*)", line)
             if m:
                 yield iso(m.group(1)), "opencode_log", m.group(2), None, m.group(3)[:240]
 
-    yield from claude_session_events(tdir)
 
-
-def claude_session_events(tdir: Path):
-    """Claude Code session logs (<trial>/agent/sessions/projects/*/<id>.jsonl).
+def claude_session_events(adir: Path):
+    """Claude Code session logs (<agent dir>/sessions/projects/*/<id>.jsonl).
 
     One API response is split into several `assistant` entries sharing message.id. A call is timed from the entry
     before it (the prompt or the last tool_result) to its last assistant entry; a tool from its tool_use entry to
     the matching tool_result.
     """
     n_call = 0
-    for sess in sorted((tdir / "agent" / "sessions" / "projects").glob("*/*.jsonl")):
+    for sess in sorted((adir / "sessions" / "projects").glob("*/*.jsonl")):
         entries = []
         for line in sess.read_text().splitlines():
             try:
@@ -119,7 +144,12 @@ def claude_session_events(tdir: Path):
         for e in entries:
             t, msg = iso(e["timestamp"]), e.get("message") or {}
             content = msg.get("content") if isinstance(msg.get("content"), list) else []
-            if e["type"] == "assistant":
+            if e["type"] == "assistant" and e.get("isApiErrorMessage"):
+                # failed request: Claude Code writes a synthetic assistant message carrying the API error text
+                text = " ".join(b.get("text", "") for b in content if b.get("type") == "text")
+                yield t, "api_error", "claude_api_error", (t - prev_t).total_seconds() if prev_t else None, text[:200]
+                prev_t = t
+            elif e["type"] == "assistant":
                 c = calls.setdefault(msg.get("id"), {"start": prev_t, "end": t, "usage": msg.get("usage") or {}})
                 c["end"], c["usage"] = t, msg.get("usage") or c["usage"]
                 for b in content:
@@ -158,7 +188,9 @@ def main():
 
     summary = {"job": job.name, "job_seconds": rows[-1][5] if rows and rows[-1][4] == "job_end" else None, "trials": {}}
     for tdir in sorted(p for p in job.iterdir() if p.is_dir() and (p / "result.json").exists()):
-        model = ((load(tdir / "config.json") or {}).get("agent") or {}).get("model_name") or "?"
+        agent = (((load(tdir / "result.json") or {}).get("config") or {}).get("agent")
+                 or (load(tdir / "config.json") or {}).get("agent") or {})
+        model = agent.get("model_name") or agent.get("name") or "?"
         evs = list(trial_events(tdir))
         for t, kind, name, dur, detail in evs:
             if t:
@@ -168,6 +200,9 @@ def main():
         for t, kind, name, dur, detail in evs:
             if kind == "phase" and name.endswith("_end") and dur is not None:
                 s["phases"][name[:-4]] = round(dur, 2)
+                if ":" in name:   # journey step: also total the phase over all steps
+                    total = name[:-4].split(":", 1)[1]
+                    s["phases"][total] = round(s["phases"].get(total, 0) + dur, 2)
             elif kind == "api_call" and name.endswith("_end"):
                 s["llm_calls"] += 1
                 s["llm_seconds"] += dur or 0

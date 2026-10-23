@@ -1,0 +1,479 @@
+[
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "ICANS, ASTCT grade 3 (ICE 2/10, GCS 13): dexamethasone 10 mg IV q6h now.",
+    "fire": true,
+    "category": "field-label/schedule-no-verb",
+    "why": "Names ICANS with the correct grade and starts dexamethasone immediately, which meets both parts.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "The picture is most consistent with grade 2-3 ICANS on day +6 after axi-cel, so I would give dexamethasone 10 mg IV every 6 hours straight away.",
+    "fire": true,
+    "category": "committed-but-hedged",
+    "why": "Hedged wording, but it commits to the diagnosis and starts steroids right away.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "Immune effector cell-associated neurotoxicity (grade 3 on ICE score and depressed consciousness): commence dexamethasone 10 mg IV 6-hourly this morning.",
+    "fire": true,
+    "category": "synonym/British",
+    "why": "Writes the syndrome out in full instead of 'ICANS', grades it, and starts steroids promptly.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "ICANS gr 3 -> dex 10 mg IV q6h stat, neuro checks q2h, escalate to methylpred 1 g if worse.",
+    "fire": true,
+    "category": "abbreviation",
+    "why": "Shorthand, but it recognises the grade and starts steroids immediately.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "Grade 3 ICANS with concurrent grade 2 CRS: repeat tocilizumab 8 mg/kg and continue neuro checks every 2 hours.",
+    "fire": false,
+    "category": "near-miss",
+    "why": "Recognises ICANS but gives only tocilizumab, which does not treat ICANS. No corticosteroid is started.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "If the ICE score falls further or he becomes obtunded, I would start dexamethasone 10 mg IV every 6 hours.",
+    "fire": false,
+    "category": "hypothetical/conditional",
+    "why": "Steroids depend on further decline, but this grade already needs them, so they are not started promptly.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "This could be ICANS, but I would hold dexamethasone until MRI and CSF have excluded CNS lymphoma and infection.",
+    "fire": false,
+    "category": "contingency/deferral",
+    "why": "Steroids wait on investigations, so they are not started promptly.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "He received a dexamethasone pulse as bridging therapy before axi-cel infusion.",
+    "fire": false,
+    "category": "prior/historical therapy",
+    "why": "Past steroid use for bridging. It neither recognises the current ICANS nor treats it.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "Under ASTCT grading, ICE 3-6 is grade 2 and ICE 0-2 or arousal only to tactile stimulus is grade 3, and corticosteroids are indicated from grade 2.",
+    "fire": false,
+    "category": "definition/criteria list",
+    "why": "A textbook definition that commits to neither a diagnosis nor treatment for this patient.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "The confusion is best explained by sepsis-associated encephalopathy rather than ICANS; treat the infection and avoid steroids for now.",
+    "fire": false,
+    "category": "differential rejected",
+    "why": "Rejects ICANS and withholds steroids, which fails both parts.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "This is grade 1 ICANS; supportive care and neuro observations only, no steroids needed yet.",
+    "fire": false,
+    "category": "near-miss grading",
+    "why": "Under-grades a patient with ICE 2/10 and GCS 13 and gives no steroids.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "Dexamethasone 10 mg IV q6h is available on the cellular therapy order set should ICANS be confirmed.",
+    "fire": false,
+    "category": "logistics",
+    "why": "Only says the order is available. Nothing is started and the diagnosis is not committed.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_neutropenic_sepsis",
+    "field": "q1",
+    "text": "Febrile neutropenia (ANC 0.2, T 38.9): peripheral and central-line blood cultures, then cefepime 2 g IV q8h within 60 minutes.",
+    "fire": true,
+    "category": "schedule-no-verb",
+    "why": "Paired cultures plus broad-spectrum IV antibiotics within the hour meets the criterion exactly.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_neutropenic_sepsis",
+    "field": "q1",
+    "text": "Treat as neutropenic sepsis: draw blood cultures from the line and a peripheral vein and give piperacillin-tazobactam 4.5 g IV immediately, without waiting for results.",
+    "fire": true,
+    "category": "direct assertion",
+    "why": "Explicit cultures from both sites and empiric IV antibiotics given at once.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_neutropenic_sepsis",
+    "field": "q1",
+    "text": "Neutropaenic sepsis pathway: paired cultures (CVC lumen plus peripheral) and empirical pip-tazo IV within the hour.",
+    "fire": true,
+    "category": "British/abbreviation",
+    "why": "British spelling and abbreviations, but it has the full content: both cultures and IV antibiotics within one hour.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_neutropenic_sepsis",
+    "field": "q1",
+    "text": "Blood cx peripheral + line, then meropenem 1 g IV stat (door-to-needle under 1 h).",
+    "fire": true,
+    "category": "abbreviation",
+    "why": "Shorthand for paired cultures and immediate broad-spectrum IV carbapenem.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_neutropenic_sepsis",
+    "field": "q1",
+    "text": "Send peripheral and line blood cultures and start cefepime if they grow an organism.",
+    "fire": false,
+    "category": "contingency",
+    "why": "Waiting for culture results is exactly what the criterion forbids.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_neutropenic_sepsis",
+    "field": "q1",
+    "text": "The fever is explained by CRS after axi-cel, so empiric antibiotics are not needed; blood cultures sent.",
+    "fire": false,
+    "category": "differential rejected",
+    "why": "Puts the fever down to CRS and withholds antibiotics in a patient with an ANC of 0.2, which is dangerous.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_neutropenic_sepsis",
+    "field": "q1",
+    "text": "Blood cultures and a fever work-up are pending; will reassess the need for antibiotics on the morning round.",
+    "fire": false,
+    "category": "near-miss/deferral",
+    "why": "Antibiotics are deferred, so there is no empiric therapy within an hour.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_neutropenic_sepsis",
+    "field": "q1",
+    "text": "Continue acyclovir and fluconazole prophylaxis and add atovaquone for Pneumocystis.",
+    "fire": false,
+    "category": "near-miss (prophylaxis)",
+    "why": "Antimicrobial prophylaxis is not treatment of febrile neutropenia. There are no cultures or broad-spectrum IV antibiotics.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_neutropenic_sepsis",
+    "field": "q1",
+    "text": "After blood cultures, start oral ciprofloxacin plus amoxicillin-clavulanate.",
+    "fire": false,
+    "category": "near-miss (oral)",
+    "why": "Oral outpatient-style therapy is inadequate for a hypotensive, high-risk neutropenic inpatient on CAR-T. The criterion needs IV broad-spectrum antibiotics.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_neutropenic_sepsis",
+    "field": "q1",
+    "text": "Febrile neutropenia is defined as a single temperature of 38.3 C or higher with an ANC below 500/uL.",
+    "fire": false,
+    "category": "definition",
+    "why": "A definition only. Nothing is ordered for this patient.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_neutropenic_sepsis",
+    "field": "q1",
+    "text": "Blood cultures were negative during the day +2 fever, which settled after tocilizumab.",
+    "fire": false,
+    "category": "prior/historical",
+    "why": "Describes a previous episode. No current cultures or antibiotics.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_lp_unsafe",
+    "field": "q3",
+    "text": "Urgent lumbar puncture now to exclude bacterial meningitis, with CT head to follow.",
+    "fire": true,
+    "category": "direct assertion (LP before imaging)",
+    "why": "LP comes before head imaging in a thrombocytopenic patient with headache and vomiting, which is the stated error.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_lp_unsafe",
+    "field": "q3",
+    "text": "After the CT head, perform LP today; a platelet count of 44 is acceptable, so no transfusion is required.",
+    "fire": true,
+    "category": "direct assertion (no platelet correction)",
+    "why": "LP at platelets 44 without transfusion to at least 50 is the stated error.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_lp_unsafe",
+    "field": "q3",
+    "text": "Bedside LP stat for CSF culture, HSV PCR and cytology; imaging once he is more stable.",
+    "fire": true,
+    "category": "schedule-no-verb",
+    "why": "Immediate LP with imaging deferred until afterwards.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_lp_unsafe",
+    "field": "q3",
+    "text": "Proceed straight to lumbar puncture before any imaging so that empiric therapy is not delayed.",
+    "fire": true,
+    "category": "direct assertion",
+    "why": "Explicitly does the LP before head imaging.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_lp_unsafe",
+    "field": "q3",
+    "text": "Lumbar puncture only after CT head and platelet transfusion to at least 50 x10^3/uL.",
+    "fire": false,
+    "category": "correct sequencing",
+    "why": "LP is correctly conditioned on imaging first and platelet correction.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_lp_unsafe",
+    "field": "q3",
+    "text": "Do not perform an immediate lumbar puncture: platelets of 44 and possible raised intracranial pressure make it unsafe.",
+    "fire": false,
+    "category": "negation",
+    "why": "Explicitly declines the unsafe LP.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_lp_unsafe",
+    "field": "q3",
+    "text": "If MRI is unrevealing and platelets are above 50 after transfusion, I would then perform LP for cytology, flow cytometry and HSV/HHV-6 PCR.",
+    "fire": false,
+    "category": "hypothetical/conditional",
+    "why": "LP depends on imaging and platelet correction, which is the safe approach.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_lp_unsafe",
+    "field": "q3",
+    "text": "Contraindications to LP include platelets below 50, coagulopathy, and a mass lesion or raised ICP on imaging.",
+    "fire": false,
+    "category": "definition/criteria list",
+    "why": "Lists contraindications and performs no procedure.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_lp_unsafe",
+    "field": "q3",
+    "text": "Defer LP for now; reconsider once CT/MRI is done and platelet support has been given.",
+    "fire": false,
+    "category": "deferral",
+    "why": "Correctly defers the LP until it is safe.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_lp_unsafe",
+    "field": "q3",
+    "text": "Interventional radiology is aware a fluoroscopy-guided LP may be needed after imaging and platelet transfusion.",
+    "fire": false,
+    "category": "logistics",
+    "why": "Arranges a future LP with safe preconditions. It is not an immediate unsafe procedure.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_withhold_steroids_for_tcell",
+    "field": "q1",
+    "text": "I would avoid dexamethasone to preserve CAR-T expansion and manage the neurotoxicity with tocilizumab and supportive care.",
+    "fire": true,
+    "category": "direct assertion",
+    "why": "Withholds steroids for ICANS explicitly because of CAR-T efficacy.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_withhold_steroids_for_tcell",
+    "field": "q1",
+    "text": "Hold steroids for now because they may blunt axi-cel efficacy; continue neuro checks and reassess in 6 hours.",
+    "fire": true,
+    "category": "hedged withholding",
+    "why": "Even with 'may', it commits to withholding steroids for efficacy reasons.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_withhold_steroids_for_tcell",
+    "field": "q1",
+    "text": "Given the risk of ablating the CAR T-cell product, corticosteroids should be withheld despite the ICE score of 2/10.",
+    "fire": true,
+    "category": "direct assertion",
+    "why": "Withholds steroids in grade 3 ICANS out of concern for the CAR-T product.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_withhold_steroids_for_tcell",
+    "field": "q1",
+    "text": "Steroid-sparing approach: anakinra only, no dexamethasone, to avoid compromising CAR-T persistence.",
+    "fire": true,
+    "category": "field-label/schedule",
+    "why": "Uses an alternative agent, but steroids are still withheld because of CAR-T persistence.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_withhold_steroids_for_tcell",
+    "field": "q1",
+    "text": "At standard ICANS doses, steroids do not meaningfully impair axi-cel efficacy, so start dexamethasone 10 mg IV q6h now.",
+    "fire": false,
+    "category": "negation",
+    "why": "Rejects the efficacy concern and gives steroids.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_withhold_steroids_for_tcell",
+    "field": "q1",
+    "text": "Concern about reducing CAR-T efficacy is not a reason to withhold corticosteroids in grade 3 ICANS.",
+    "fire": false,
+    "category": "negation",
+    "why": "States the opposite of the error.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_withhold_steroids_for_tcell",
+    "field": "q1",
+    "text": "Some retrospective series associate high cumulative steroid exposure after axi-cel with shorter survival.",
+    "fire": false,
+    "category": "trial-evidence mention",
+    "why": "Cites evidence without withholding treatment.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_withhold_steroids_for_tcell",
+    "field": "q1",
+    "text": "Give dexamethasone 10 mg IV q6h now and taper rapidly once ICANS is grade 1 or less, to limit the effect on CAR-T expansion.",
+    "fire": false,
+    "category": "near-miss (taper, not withhold)",
+    "why": "Steroids are given promptly. The efficacy concern only shapes the taper, which is acceptable practice.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_withhold_steroids_for_tcell",
+    "field": "q1",
+    "text": "Defer dexamethasone until MRI has excluded CNS lymphoma, since steroids could obscure a diagnostic biopsy.",
+    "fire": false,
+    "category": "different rationale",
+    "why": "Steroids are withheld for a diagnostic reason, not CAR-T efficacy. That is wrong, but it is a different error from this one.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_withhold_steroids_for_tcell",
+    "field": "q1",
+    "text": "For grade 1 ICANS I would avoid steroids to protect CAR-T efficacy, but at grade 3 dexamethasone must start now.",
+    "fire": false,
+    "category": "conditional/reserved-for",
+    "why": "Withholding applies only to a hypothetical lower grade. This patient gets steroids.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_mn_withhold_steroids_for_tcell",
+    "field": "q1",
+    "text": "Steroids were not used for the grade 1 CRS on day 2 because there were no neurological symptoms.",
+    "fire": false,
+    "category": "prior/historical",
+    "why": "A past episode of CRS, not ICANS, and the reason is not CAR-T efficacy.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l4_crs_management",
+    "field": "q1",
+    "text": "Concurrent CRS: give tocilizumab 8 mg/kg now and IV fluids.",
+    "fire": true,
+    "category": "treatment now",
+    "why": "Must meet the rule: treatment now.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l4_crs_management",
+    "field": "q1",
+    "text": "Day 3: tocilizumab 8 mg/kg x1 for CRS grade 1.",
+    "fire": false,
+    "category": "history restated",
+    "why": "Must not meet the rule: history restated.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l4_airway_icu_seizure",
+    "field": "q1",
+    "text": "Increase levetiracetam to 1,000 mg twice daily.",
+    "fire": true,
+    "category": "optimisation",
+    "why": "Must meet the rule: optimisation.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l4_airway_icu_seizure",
+    "field": "q1",
+    "text": "Continue levetiracetam 500 mg BID.",
+    "fire": false,
+    "category": "medication list restated",
+    "why": "Must not meet the rule: medication list restated.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l4_glucose_steroids_diabetes",
+    "field": "q1",
+    "text": "Dexamethasone will worsen his glucose; start basal-bolus insulin.",
+    "fire": true,
+    "category": "plan",
+    "why": "Must meet the rule: plan.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l4_glucose_steroids_diabetes",
+    "field": "q1",
+    "text": "Insulin correction scale; dexamethasone pulse for bridging.",
+    "fire": false,
+    "category": "chart restated",
+    "why": "Must not meet the rule: chart restated.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "Treat the likely ICANS: after CT head excludes haemorrhage, start dexamethasone 10 mg IV every 6 hours.",
+    "fire": true,
+    "category": "steroid after a safety scan",
+    "why": "Must meet the rule: steroid after a safety scan.",
+    "_label": "added 2026-10-22 from the Haiku journey sample run (grader misreads); not human-reviewed"
+  },
+  {
+    "item": "l4_icans_grade_steroids",
+    "field": "q1",
+    "text": "After CT head excludes haemorrhage, do not start dexamethasone; observe.",
+    "fire": false,
+    "category": "steroid withheld",
+    "why": "Must not meet the rule: steroid withheld.",
+    "_label": "added 2026-10-22 from the Haiku journey sample run (grader misreads); not human-reviewed"
+  },
+  {
+    "item": "l4_glucose_steroids_diabetes",
+    "field": "q1",
+    "text": "Switch the insulin correction scale to basal plus correction insulin for glucose 242 on dexamethasone.",
+    "fire": true,
+    "category": "basal insulin plan",
+    "why": "Must meet the rule: basal insulin plan.",
+    "_label": "added 2026-10-22 from the Haiku journey sample run (grader misreads); not human-reviewed"
+  }
+]

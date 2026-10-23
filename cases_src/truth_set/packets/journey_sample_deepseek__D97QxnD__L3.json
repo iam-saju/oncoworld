@@ -1,0 +1,86 @@
+{
+ "id": "journey_sample_deepseek__D97QxnD__L3",
+ "model": "deepseek-v4.1-flash-free",
+ "task": "dlbcl_0003_journey_v2_fhir",
+ "layer": "L3",
+ "rubric": "cases_src/dlbcl_0003_journey/L3_rubric.toml",
+ "answer_path": "jobs/journey_sample_deepseek/dlbcl_0003_journey_v2_fhir__D97QxnD/steps/L3-second-line/verifier/final_answer.json",
+ "context": "Journey stage L3 (2027-05-12), same patient later in the disease course.\nINTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-02-24 to 2027-05-12)\n\nThe patient chose a short-interval PET-CT instead of a repeat biopsy.\n- PET-CT 2027-04-20: retroperitoneal mass enlarged to 5.8 x 4.4 cm, SUVmax 18.3; two new FDG-avid\n  liver lesions (1.4 and 2.0 cm). Deauville 5.\n- He then agreed to biopsy. CT-guided core biopsy of the retroperitoneal mass 2027-04-28: diffuse large\n  B-cell lymphoma, GCB phenotype, CD20+, CD19+ (IHC and flow cytometry), MYC 20%, BCL2 30%. FISH: no\n  MYC or BCL2 rearrangement.\n- Current status: ECOG 1. Creatinine 1.0 mg/dL, bilirubin 0.6 mg/dL, Hb 12.1 g/dL, ANC 3.4 x10^3/uL,\n  platelets 188 x10^3/uL, LDH 410 U/L (135-225). Echo 2027-05-05: LVEF 58%. No neurological symptoms.\n- He has good family support (wife; daughter lives 20 minutes away) and can travel for appointments.\n- First-line therapy (Pola-R-CHP) finished 2027-01-08.\n\nFDG PET-CT, SHORT-INTERVAL RESTAGING, 2027-04-20\n\nComparison: end-of-treatment PET-CT 2027-02-17.\n- Retroperitoneal mass enlarged to 5.8 x 4.4 cm (previously 3.4 x 2.1 cm); SUVmax 18.3 (previously 6.2).\n- Two new FDG-avid liver lesions, 1.4 cm and 2.0 cm.\nDeauville score: 5.\nIMPRESSION: Enlarging, intensely FDG-avid retroperitoneal mass and new liver lesions, consistent with\nprogressive disease.\n\nSURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RETROPERITONEAL MASS, 2027-04-28\n\nSpecimen: core biopsies of the retroperitoneal mass, adequate for diagnosis.\nImmunohistochemistry: CD20 positive. CD19 positive. MYC 20% of tumor cells. BCL2 30% of tumor cells.\nFlow cytometry: CD19 and CD20 expressed on the abnormal B-cell population.\nFISH: MYC: no rearrangement detected. BCL2: no rearrangement detected.\nDIAGNOSIS: Diffuse large B-cell lymphoma, germinal center B-cell (GCB) phenotype, in a patient with\npreviously treated diffuse large B-cell lymphoma.\n\nTRANSTHORACIC ECHOCARDIOGRAM, 2027-05-05\n\nIndication: relapsed lymphoma, cardiac evaluation before further therapy.\nLeft ventricular ejection fraction 58% (biplane). Normal left ventricular size and wall motion.\nIMPRESSION: Normal left ventricular systolic function.\n\nTUMOR NEXT-GENERATION SEQUENCING (DNA, 523-gene hybrid-capture panel), specimen 2027-04-28\nTumor content estimated 60%.\n\nVariants of clinical or possible significance:\n  EZH2    c.1937A>T  p.Y646F   missense   VAF 34%\n  CREBBP  c.4336C>T  p.R1446*  nonsense   VAF 29%\n  KMT2D   c.11563dup p.Q3855fs frameshift VAF 31%\n  TNFRSF14 deletion (exons 1-3)\nNot detected: TP53, MYD88, CD79B, BCL2 amplification, MYC amplification.\nTumor mutational burden: 6 mutations/Mb. Microsatellite status: stable.\nComment: mutation pattern is typical of germinal-center-derived lymphoma. EZH2 Y646 is an activating\nhotspot mutation. Correlate clinically.\n\nQuestions: Which second-line strategy do you recommend, and why? | He feels well and asks whether adding more drugs now would improve his chances. What do you advise for the period before definitive second-line therapy? | How do you interpret the NGS report, and does it change treatment?",
+ "answer": {
+  "q1": "Second-line strategy: proceed directly to CD19-directed CAR-T cell therapy, using axicabtagene ciloleucel as my choice (lisocabtagene maraleucel is an acceptable alternative if minimizing CRS/neurotoxicity is the priority), rather than conventional salvage chemotherapy followed by autologous transplant. The reason is that this is biopsy-proven DLBCL relapsing only about 3 months after completion of first-line Pola-R-CHP, i.e. early relapse on the primary-refractory spectrum, which is exactly the population in which ZUMA-7 and TRANSFORM showed CAR-T to be superior to salvage chemoimmunotherapy plus ASCT, with higher complete response rates and improved event-free survival (and an overall survival benefit for axicabtagene ciloleucel). He is a CAR-T candidate: age 67, ECOG 1, LVEF 58%, creatinine 1.0 mg/dL, bilirubin 0.6 mg/dL, adequate blood counts, no CNS disease, CD19-positive tumor by immunohistochemistry and flow, and good caregiver support. Prior polatuzumab exposure is not a contraindication, and the CD19 target is retained. I would refer urgently to a CAR-T center, confirm coverage/access, and begin leukapheresis workup now. If CAR-T is unavailable or he becomes ineligible, the fallback is 2-3 cycles of platinum-based salvage (R-ICE or R-DHAP) followed by ASCT if chemosensitive; I would not choose an ASCT-based second-line strategy first in this early-relapse patient.",
+  "q2": "I advise against adding more empiric drugs now. He feels well, but he has active, progressive DLBCL; the intervention most likely to improve his chance of cure is prompt CAR-T, not additional chemotherapy or an off-label targeted agent. Extra cytotoxic or investigational drugs before apheresis can increase toxicity, impair T-cell fitness and collection, and delay definitive therapy. The pre-CAR-T period should be used for infectious screening, baseline cardiac and neurologic assessment, apheresis, insurance authorization, caregiver planning, and close monitoring with repeat LDH and imaging as needed. If disease control is required while CAR-T is manufactured because of the bulky 5.8 cm retroperitoneal mass, new liver lesions, rising LDH, symptoms or organ compromise, I would use bridging therapy only if clinically indicated: dexamethasone, localized radiation to a symptomatic or threatening site, or a single cycle of platinum-based salvage. I would avoid bendamustine- or fludarabine-containing bridging and avoid multiple cycles that could compromise his fitness. I would not start an EZH2 inhibitor off-label now, and I would not add checkpoint inhibitors (MSS, TMB 6 mutations/Mb) or BTK inhibitors (no MYD88 or CD79B mutation), since these have no established role in this setting and could add toxicity. A clinical trial of bridging or a novel second-line approach is reasonable if it does not delay standard CAR-T. If he develops rapid progression or organ compromise, bridging should start immediately.",
+  "q3": "The NGS report shows an activating EZH2 Y646F hotspot mutation (VAF 34%), loss-of-function CREBBP R1446* and KMT2D Q3855fs mutations, and a TNFRSF14 deletion involving exons 1-3. This is a typical germinal-center-derived epigenetic and immune-evasion profile. There is no TP53 mutation, no MYD88 or CD79B mutation, no BCL2 or MYC amplification, tumor mutational burden is low at 6 mutations/Mb, and the tumor is microsatellite stable. The report confirms GCB biology, supports the absence of TP53-high-risk or double-hit disease, and predicts little benefit from BTK inhibitors or checkpoint inhibitors. It does not change the standard second-line decision, which remains CD19 CAR-T. EZH2 Y646 is a potential drug target, but tazemetostat is approved for EZH2-mutant relapsed/refractory follicular lymphoma, not DLBCL; EZH2 inhibitors in DLBCL remain investigational and would be considered only on a clinical trial or in a later line, not instead of or before CAR-T. CREBBP, KMT2D and TNFRSF14 alterations are not currently actionable with approved DLBCL therapy. The relatively favorable mutation profile does not outweigh the adverse clinical factor of early relapse. I would use the report to screen for EZH2-directed or other biomarker-matched trials if CAR-T fails or is unavailable, but it does not justify delaying or altering definitive second-line therapy."
+ },
+ "items": [
+  {
+   "id": "l3_car_t_second_line",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 30,
+   "criterion": "The response recommends second-line CD19-directed CAR T-cell therapy (axicabtagene ciloleucel or lisocabtagene maraleucel) because of primary refractory/early relapse within 12 months of first-line therapy, with urgent referral to a CAR-T center."
+  },
+  {
+   "id": "l3_why_early_relapse",
+   "kind": "must",
+   "severity": "important",
+   "points": 15,
+   "criterion": "The response justifies CAR-T by relapse within 12 months of first-line therapy (ZUMA-7/TRANSFORM superiority over salvage chemotherapy plus autologous transplant)."
+  },
+  {
+   "id": "l3_cd19_confirmed",
+   "kind": "should",
+   "severity": "minor",
+   "points": 5,
+   "criterion": "The response notes CD19 expression is confirmed (relevant for CD19-directed CAR-T)."
+  },
+  {
+   "id": "l3_no_more_drugs",
+   "kind": "must",
+   "severity": "important",
+   "points": 15,
+   "criterion": "The response advises that adding more drugs does not improve outcome; bridging should be the minimum needed to control disease until CAR-T (e.g. steroids, radiotherapy to the bulky site, or a limited regimen)."
+  },
+  {
+   "id": "l3_avoid_bendamustine",
+   "kind": "should",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response avoids bendamustine (or other T-cell-depleting therapy) before leukapheresis because it impairs T-cell collection."
+  },
+  {
+   "id": "l3_ngs_interpretation",
+   "kind": "must",
+   "severity": "important",
+   "points": 15,
+   "criterion": "The response interprets the NGS correctly: EZH2 Y646F, CREBBP and KMT2D mutations are typical GCB-DLBCL alterations; TP53 is wild-type; nothing here replaces CAR-T as standard second-line therapy."
+  },
+  {
+   "id": "l3_tazemetostat_context",
+   "kind": "should",
+   "severity": "minor",
+   "points": 10,
+   "criterion": "The response notes tazemetostat is approved for EZH2-mutant follicular lymphoma, not DLBCL, so it is not standard here (consider only in a clinical trial or later line)."
+  },
+  {
+   "id": "l3_mn_rice_asct_preferred",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 15,
+   "criterion": "The response recommends salvage chemotherapy (R-ICE/R-DHAP/R-GDP) followed by autologous stem-cell transplant as the preferred second-line strategy."
+  },
+  {
+   "id": "l3_mn_tazemetostat_instead",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response recommends tazemetostat (or another NGS-driven targeted drug) in place of CAR-T as the second-line plan."
+  },
+  {
+   "id": "l3_mn_palliative",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response recommends palliative-only care or hospice for this fit patient at first relapse."
+  }
+ ]
+}

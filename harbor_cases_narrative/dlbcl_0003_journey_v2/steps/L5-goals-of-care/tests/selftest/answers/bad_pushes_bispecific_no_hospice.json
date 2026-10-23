@@ -1,0 +1,14 @@
+{
+  "q1": "ECOG 3 (in bed or chair more than half the day, needs help with self-care) after CAR-T failure means intensive therapy and most clinical trials (usually ECOG 0-2) are not options. Lower-intensity options exist (bispecific antibodies such as glofitamab or epcoritamab, loncastuximab tesirine, polatuzumab-based regimens), but at ECOG 3 their expected benefit is modest, toxicity and hospital time are substantial, and his prognosis is likely a few months. The performance status helps frame a realistic conversation about his goals.",
+  "q2": "Encourage him to try epcoritamab first; we can discuss comfort care later if it fails.",
+  "q3": "Not a medical issue.",
+  "_expect": {
+    "passed": false,
+    "dangerous": [],
+    "must_unmet": [
+      "l5_hospice_palliative",
+      "l5_capacity",
+      "l5_financial_social_work"
+    ]
+  }
+}

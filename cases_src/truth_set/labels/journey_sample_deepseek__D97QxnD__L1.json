@@ -1,0 +1,186 @@
+{
+ "id": "journey_sample_deepseek__D97QxnD__L1",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "germinal-center B-cell-like (GCB) immunophenotype by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Stage IVB (Lugano/Ann Arbor) with B symptoms",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "extranodal deposits in the right kidney (3.2 cm, SUVmax 19.6), left adrenal (2.6 cm, SUVmax 17.2) and hepatic segment VI",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "drenching night sweats most nights and 8 kg, about 10%, unintentional weight loss over two months",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "so this is not a double-hit or triple-hit high-grade B-cell lymphoma; the immunophenotype is also not double-expressor",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "IPI 5/5 (age >60, stage III/IV, more than one extranodal site, elevated LDH, ECOG 2)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "High risk: CNS-IPI 6/6",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Curative-intent systemic therapy with Pola-R-CHP for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "Pola-R-CHP is a category 1 NCCN preferred regimen",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": true,
+   "quote": "I will give a short prednisone pre-phase (100 mg daily for 5 days)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "I do not plan pre-emptive dose reduction",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "High risk: CNS-IPI 6/6 (age >60, ECOG >1, elevated LDH, more than one extranodal site, stage III/IV, and renal/adrenal involvement)",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": true,
+   "quote": "I will obtain a baseline contrast-enhanced MRI brain and a lumbar puncture with CSF cytology and flow cytometry before starting therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_prophylaxis_renal": {
+   "met": true,
+   "quote": "the absolute benefit of CNS prophylaxis in the rituximab era is modest and not proven in randomized trials",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "with dose reduction or omission if the eGFR remains about 50 or renal involvement worsens",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Response will be assessed by Lugano 2014 criteria with FDG PET-CT",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "a Deauville 4 residual site should be biopsied because inflammatory uptake can persist",
+   "confidence": "medium",
+   "note": "Biopsy recommended for Deauville 4 residual; DS5 treated as residual disease without explicit biopsy."
+  },
+  "sup_tls_prophylaxis": {
+   "met": false,
+   "quote": "frequent monitoring of uric acid, potassium, phosphate, calcium and creatinine",
+   "confidence": "medium",
+   "note": "IV hydration and allopurinol given, but lab frequency unspecified and not q6-12h."
+  },
+  "sup_rasburicase_g6pd": {
+   "met": false,
+   "quote": "rasburicase if uric acid remains above 8 mg/dL or rises or renal function deteriorates, after G6PD testing",
+   "confidence": "medium",
+   "note": "G6PD checked but rasburicase only conditional; allopurinol is first choice."
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Pegfilgrastim primary prophylaxis with each cycle.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "Stop ibuprofen now because of CKD, renal involvement and thrombocytopenia; use acetaminophen",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "Monitor glucose closely because of steroid-induced hyperglycemia",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg negative, anti-HBc negative, anti-HBs positive indicates prior immunity, so no antiviral prophylaxis is needed",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "the LVEF of 60% and normal global longitudinal strain permit full-dose anthracycline",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "the ECOG 2 is largely attributable to bulky lymphoma and B symptoms rather than irreversible comorbidity",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

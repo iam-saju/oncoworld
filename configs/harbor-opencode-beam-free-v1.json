@@ -14,31 +14,31 @@
       "path": "harbor_cases/dlbcl_0001_fhir"
     },
     {
-      "path": "harbor_cases/dlbcl_0001_narrative"
+      "path": "harbor_cases_narrative/dlbcl_0001_narrative"
     },
     {
       "path": "harbor_cases/dlbcl_0002_splenic_stage_iii_fhir"
     },
     {
-      "path": "harbor_cases/dlbcl_0002_splenic_stage_iii_narrative"
+      "path": "harbor_cases_narrative/dlbcl_0002_splenic_stage_iii_narrative"
     },
     {
       "path": "harbor_cases/dlbcl_0003_renal_adrenal_cns_high_fhir"
     },
     {
-      "path": "harbor_cases/dlbcl_0003_renal_adrenal_cns_high_narrative"
+      "path": "harbor_cases_narrative/dlbcl_0003_renal_adrenal_cns_high_narrative"
     },
     {
       "path": "harbor_cases/dlbcl_0004_double_hit_fhir"
     },
     {
-      "path": "harbor_cases/dlbcl_0004_double_hit_narrative"
+      "path": "harbor_cases_narrative/dlbcl_0004_double_hit_narrative"
     },
     {
       "path": "harbor_cases/dlbcl_0005_limited_stage_gcb_fhir"
     },
     {
-      "path": "harbor_cases/dlbcl_0005_limited_stage_gcb_narrative"
+      "path": "harbor_cases_narrative/dlbcl_0005_limited_stage_gcb_narrative"
     }
   ]
 }

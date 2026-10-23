@@ -1,0 +1,393 @@
+# HIDDEN. OncoWorld v2 rubric for dlbcl_0003. Copied to tests/rubric_v2.toml; never visible to the model.
+# Drafted by engineering from current practice (NCCN B-cell lymphomas, POLARIX, Lugano 2014, CNS-IPI).
+# Every item is PENDING_ONCOLOGIST until signed off in harbor_cases/<task>/review/signoff.md.
+#
+# Graded by the regex rules on each item (grader of record); `text` states the criterion in clinical terms.
+# Items with a `decision` list are decided by the answer's structured "decisions" object when it has the fields
+# (all conditions must hold; for must_not items the decision is the error); otherwise the prose rules decide.
+# All regexes run on the lower-cased answer.
+
+version = "dlbcl_0003.v2.0"
+review_status = "PENDING_ONCOLOGIST"
+passing_score = 0.75
+
+[leak_check]
+# Strings that would give the answer away if they appeared anywhere in the model-visible chart.
+forbidden_in_case = ["stage iv", "ipi", "cns-ipi", "polatuzumab", "pola-r-chp", "r-chop", "prephase",
+                     "rasburicase", "tumor lysis", "tumour lysis", "prophylaxis", "double-expressor",
+                     "double expressor", "double-hit", "double hit", "lugano", "deauville", "methotrexate"]
+
+# ---------------- diagnosis
+[[items]]
+id = "dx_dlbcl_gcb"
+domain = "diagnosis"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response states the diagnosis is diffuse large B-cell lymphoma (NOS) with a germinal-center B-cell (GCB) phenotype."
+all = ["dlbcl|diffuse large b[- ]cell", "\\bgcb\\b|germinal[- ]cent(?:er|re)"]
+
+# ---------------- staging
+[[items]]
+id = "stage_iv"
+domain = "staging"
+kind = "must"
+severity = "dangerous"
+points = 8
+text = "The response stages the disease as Lugano/Ann Arbor stage IV."
+# asserted stage IV, with A/B/E/S suffixes (IVB, IV-B, 4B); not CKD/hypertension stages, not "III-IV" ranges
+affirm = ['(?<!ckd )(?<!kdigo )(?<!kidney disease )\bstage\s*(?:iv|4)(?:-?[abes]{1,2})?\b(?!\s*(?:ckd|chronic kidney|kidney disease|hypertension))']
+# structured: stage field is IV (IV-B tolerated; a range such as III-IV is no stage call)
+decision = [ { field = "stage", in = ["IV"] } ]
+
+[[items]]
+id = "stage_extranodal_sites"
+domain = "staging"
+kind = "should"
+severity = "minor"
+points = 3
+text = "The response attributes stage IV to extranodal organ involvement of the kidney, adrenal gland and liver."
+all = ["kidney|renal", "adrenal", "liver|hepatic"]
+
+[[items]]
+id = "stage_b_symptoms"
+domain = "staging"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes B symptoms (night sweats and/or weight loss >10% or fevers)."
+any = ["b[- ]symptoms", "night sweats"]
+
+[[items]]
+id = "mn_stage_below_iv"
+domain = "staging"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response assigns this patient a stage lower than IV (stage I, II or III)."
+# asserted stage I-III incl. suffixes (IIIB, IIE, III-S); ranges reaching IV ("II-IV", "III or IV") and CKD/BP stages excluded
+affirm = ['(?<!ckd )(?<!kdigo )(?<!kidney disease )\bstage\s*(?:iii|ii|i|[123])(?:-?[abes]{1,2})?\b(?!\s*(?:-|–|to|or|/|and)\s*(?:stage\s*)?(?:iv|4))(?!\s*(?:ckd|chronic kidney|kidney disease|hypertension))']
+# structured: stage field is I, II or III (ranges such as III-IV are not a stage call, as in the prose rule)
+decision = [ { field = "stage", in = ["I", "II", "III"] } ]
+
+# ---------------- molecular classification
+[[items]]
+id = "mol_not_de_not_dh"
+domain = "molecular_classification"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response states the lymphoma is neither double-expressor (MYC 20%, BCL2 30% below thresholds) nor double-hit (FISH negative for MYC, BCL2 and BCL6 rearrangements)."
+check = "denies_double_hit"
+any = ["not\\s+(?:a\\s+)?double[- ]expressor|neither[^.]{0,40}double[- ]expressor|below[^.]{0,60}threshold|does not meet[^.]{0,60}(?:double[- ]expressor|threshold)|not[^.]{0,30}\\bdel\\b"]
+
+[[items]]
+id = "mn_calls_double_hit"
+domain = "molecular_classification"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response classifies this lymphoma as double-hit / high-grade B-cell lymphoma with MYC and BCL2 rearrangements."
+check = "affirms_double_hit"
+# structured: the diagnosis field names double-/triple-hit or HGBL / MYC+BCL2 rearrangement, not negated
+# (the negation must be tied to the double-hit term: "no BCL6 rearrangement" or "not otherwise specified" do not negate it)
+decision = [ { field = "diagnosis", matches = 'double[- ]?hit|triple[- ]?hit|\bhgbl\b(?![- ,]*nos)|high[- ]grade b[- ]cell lymphoma(?![- ,]*nos)|myc[^;,]{0,40}bcl-?2[^;,]{0,40}(?<!un)rearrang', not_matches = '\b(?:not|non|no|without|negative|neither|nor|exclud(?:ed|ing)|absent|lacks?|lacking|rul(?:ed|ing) out|rules out|unrearranged)\b[^;,]{0,30}(?:double|triple|\bdh\b|hgbl|high[- ]grade|myc|bcl-?2\b)|(?:double[- ]?hit|triple[- ]?hit|\bdh\b|hgbl|rearrangements?)[^;,]{0,25}\b(?:negative|exclud(?:ed|ing)|absent|rul(?:ed|ing) out|rules out|not (?:detected|present|seen|identified))' } ]
+
+[[items]]
+id = "mn_calls_double_expressor"
+domain = "molecular_classification"
+kind = "must_not"
+severity = "important"
+points = 5
+text = "The response classifies this lymphoma as double-expressor."
+check = "affirms_double_expressor"
+# plural class statements ("double-expressor lymphomas have inferior outcomes") describe the population, not this patient
+affirm = ['double[-_ ]expressor(?!s\b|[- ](?:lymphomas|dlbcls|tumou?rs|cases|patients)\b)|\bdel\b']
+
+# ---------------- prognosis
+[[items]]
+id = "prog_ipi_high"
+domain = "prognosis"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response calculates IPI as 5 (or explicitly high-risk IPI 4-5): age >60, elevated LDH, ECOG >=2, stage IV, >1 extranodal site."
+any = ["\\bipi\\b[^.]{0,40}\\b5\\b", "\\bipi\\b[^.]{0,30}(?:of|=|:|score)\\s*5", "\\bipi\\b[^.]{0,60}high[- ]risk", "high[- ]risk\\s+ipi"]
+
+[[items]]
+id = "prog_cns_ipi_high"
+domain = "prognosis"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response calculates CNS-IPI as 6 or high risk (4-6), counting kidney/adrenal involvement."
+any = ["cns[- ]ipi[^.]{0,40}\\b6\\b", "cns[- ]ipi[^.]{0,60}high", "high[^.]{0,20}cns[- ]ipi"]
+
+# ---------------- first-line treatment
+[[items]]
+id = "tx_curative_pola_or_rchop"
+domain = "first_line_treatment"
+kind = "must"
+severity = "dangerous"
+points = 8
+text = "The response recommends curative-intent full-dose immunochemotherapy with Pola-R-CHP or R-CHOP for 6 cycles."
+# not an abbreviated course (x4 / 4 cycles), not a dose-attenuated start, not access/authorisation logistics
+recommend = ['(?<!authorization for )(?<!authorisation for )(?<!approval for )(?<!approval of )(?<!availability of )(?<!access to )(?<!attenuated )(?<!dose-reduced )(?<!reduced-dose )(?:pola[- ]?r[- ]?chp|polatuzumab|r[- ]?chop)(?![^.;]{0,15}(?:[x×]\s*[1-4]\b|\b(?:[1-4]|one|two|three|four) cycles\b))(?![^.;]{0,40}\b(?:[1-9]\d\s?%\s*(?:of\s+)?(?:the\s+)?(?:full\s+|standard\s+)?doses?|dose[- ]reduc\w*|reduced[- ]dose|attenuated))(?![^.;]{0,40}\b(?:has been|was|is being|have been) (?:submitted|requested|approved|denied|sent|obtained))']
+# structured: curative intent, regimen is Pola-R-CHP or R-CHOP (not mini/attenuated/intensified/other, not a non-anthracycline
+# polatuzumab regimen, no short course or %-dose written into it), 6 cycles, full dose cycle 1; and the cycle-1 order in
+# orders_now does not contradict that (no %-dose / mini / dose-reduced cycle 1, no 1-5 cycle course, no intensified regimen)
+decision = [
+  { field = "intent", matches = '^\s*curative' },
+  { field = "regimen", matches = 'pola[- ]?r[- ]?chp|r[- ]?pola[- ]?chp|pola\w*\s*\+\s*r[- ]?chp|r[- ]?chp[^;]{0,40}(?:pola|polivy)|(?:polatuzumab|polivy)[^;]{0,80}(?:r[- ]?chp|rituximab|rituxan)|r[- ]?chop(?![a-z])|(?:rituximab|rituxan)[^;]{0,30}\bchop\b|\bchop\b[^;]{0,30}(?:rituximab|rituxan)|(?:rituximab|rituxan)[^;]{0,60}cyclophosphamide[^;]{0,60}(?:doxorubicin|hydroxydaunorubicin|adriamycin)', not_matches = 'mini|epoch|attenuat|(?<!no )(?<!not )(?<!no dose )(?<!without )(?<!without dose )reduc|codox|\bivac\b|hyper[- ]?cvad|acvbp|\bcvp\b|gemcitabine|gemox|oxaliplatin|bendamustine|[- ]br\b|etoposide|\bceop\b|choep|monotherapy|\balone\b|(?<![a-z])[x×]\s*[1-5]\b|(?<!after )(?<!following )(?<![-–])\b(?:[1-5]|one|two|three|four|five) cycles\b|\b(?:at|to)\s+[1-9]\d\s?%|\b[1-9]\d\s?%\s*(?:of\s+)?(?:the\s+)?(?:full\s+|standard\s+|planned\s+|usual\s+)?(?:dos|intensity)' },
+  { any = [ { field = "cycles", equals = 6 }, { field = "cycles", matches = '^\s*6\b(?!\s*(?:-|–|to|or|/)\s*\d)' } ] },
+  { any = [ { field = "cycle1_dose_percent", min = 100 }, { field = "cycle1_dose_percent", matches = '^\s*100(?:\.0+)?\s*%?\s*$' } ] },
+  { field = "orders_now", none_match = '(?:chop|chp|cycle 1|\bc1\b|chemo\w*|regimen)[^;]{0,60}(?:\b(?:at|to)\s+[1-9]\d\s?%|\b[1-9]\d\s?%\s*(?:of\s+)?(?:the\s+)?(?:full\s+|standard\s+|planned\s+|usual\s+)?(?:dos|intensity)|(?<!no )(?<!not )(?<!without )dose[- ]reduc|(?<!no )(?<!without )reduced[- ]dose|(?<!no )(?<!without )attenuat)|mini[- ]?(?:r[- ]?)?ch(?:o)?p|(?:chop|chp)[^;]{0,80}(?:(?<!after )(?<!following )(?<![-–])\b(?:[1-5]|one|two|three|four|five) cycles\b|(?<![a-z])[x×]\s*[1-5]\b)|(?:^|;)(?:(?!\b(?:not|no|avoid|reserve\w*|instead of|rather than|over|versus|vs)\b)[^;])*?(?:epoch|codox|\bivac\b|hyper[- ]?cvad|acvbp)(?![^;,()]{0,30}\b(?:not|reserved)\b)' },
+]
+
+[[items]]
+id = "tx_pola_preferred"
+domain = "first_line_treatment"
+kind = "should"
+severity = "minor"
+points = 3
+text = "The response names Pola-R-CHP as the preferred regimen given IPI >=2 (R-CHOP acceptable alternative)."
+recommend = ["pola[- ]?r[- ]?chp|polatuzumab"]
+
+[[items]]
+id = "tx_prephase_steroid"
+domain = "first_line_treatment"
+kind = "must"
+severity = "important"
+points = 4
+text = "The response recommends a steroid prephase (e.g. prednisone ~100 mg daily for 5-7 days) before cycle 1 given age >60, ECOG 2 and high tumor burden."
+any = ["pre[- ]?phase", "prednisone[^.]{0,60}(?:before|prior to)[^.]{0,30}cycle", "steroid[^.]{0,30}(?:lead[- ]in|pre[- ]treatment)"]
+# structured: a steroid prephase is ordered now (before cycle 1), not just the regimen's own prednisone; a negated prephase
+# ("no prephase needed") and a bare "cycle 1 after the prephase" do not count
+decision = [ { field = "orders_now", matches = '^(?!.*\b(?:no|not|without|omit\w*|skip\w*)\b[^;]{0,20}(?:pre[- ]?phase|steroid|prednis))(?:.*(?:steroid\w* |prednis\w* )pre[- ]?phase|.*pre[- ]?phase (?:steroid|prednis|dexameth)|.*(?:prednis\w*|steroid\w*|dexameth\w*)[^;]{0,80}(?:\b(?:before|prior to|ahead of|lead[- ]in|pre[- ]?treatment|to follow|pre[- ]?cycle|start(?:ing)? (?:today|now|immediately))\b|\b(?:then|followed by)\s+(?:by\s+)?(?:cycle|c1|start|begin|pola|r[- ]?chop|chemo|immunochemo)|days? -\d)|.*(?<!after the )(?<!after )(?<!following the )(?<!following )(?<!completing the )\bpre[- ]?phase\b(?![^;]{0,40}\b(?:after|following)\b))' } ]
+
+[[items]]
+id = "mn_non_curative"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response recommends palliative-only treatment, best supportive care, or hospice as the plan."
+# asserted non-curative intent; affirm so negated / conditional / evidence mentions do not count
+affirm = ['palliative[- ](?:only|intent\w*|care alone|approach|chemo\w*|treatment|therapy)|best supportive care|hospice|comfort[- ](?:focused|measures|care)|\bnon[- ]curative (?:intent|approach|treatment|therapy)|(?:goals? of care|(?:treatment )?intent|aim of (?:treatment|therapy))\s*(?:is|are|:)\s*(?:now\s+|purely\s+|solely\s+)?(?:palliative|comfort|symptom)']
+# structured: the intent field is non-curative (palliative, or observation = no active treatment)
+decision = [ { field = "intent", matches = 'palliat|observ|comfort|hospice|supportive|non[- ]?curative' } ]
+
+[[items]]
+id = "mn_da_epoch"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "important"
+points = 5
+text = "The response recommends DA-EPOCH-R or another intensified regimen for this patient."
+# DA-EPOCH-R or another intensified regimen put forward as the plan; indication ("reserve X for") and rejected options excluded
+recommend = ['(?<!reserve )(?<!reserving )(?:(?:da|dose[- ]adjusted)[- ]?(?:r[- ])?epoch|r[- ]?codox[- ]?m|\br[- ]?ivac\b|hyper[- ]?cvad|\br[- ]?acvbp)(?![^.;]{0,20}\b(?:(?:is|are) (?:reserved |kept |only |best |better |generally |typically )?(?:for|suited to|intended for)|(?:reserved|kept) for)\b)(?![^.;]{0,40}\b(?:rejected|declined|dismissed|not (?:chosen|pursued|favou?red|selected)))']
+# structured: the ordered regimen (regimen field, or a non-negated cycle-1 order in orders_now) is DA-EPOCH-R or another
+# intensified regimen named in the prose rule
+decision = [ { any = [
+  { field = "regimen", matches = 'epoch|codox|\bivac\b|hyper[- ]?cvad|acvbp' },
+  { field = "orders_now", matches = '(?:^|;)(?:(?!\b(?:not|no|avoid|reserve\w*|instead of|rather than|over|versus|vs)\b)[^;])*?(?:epoch|codox|\bivac\b|hyper[- ]?cvad|acvbp)(?![^;,()]{0,30}\b(?:not|reserved)\b)' },
+] } ]
+
+[[items]]
+id = "mn_dose_reduced_initial"
+domain = "first_line_treatment"
+kind = "must_not"
+severity = "important"
+points = 4
+text = "The response recommends a dose-reduced regimen (e.g. R-mini-CHOP) as the initial plan, despite age 67 and disease-related ECOG 2."
+# an attenuated starting regimen asserted as the plan (mini-CHOP, %-of-full doses, dose-reduced/attenuated/reduced-intensity);
+# "is reserved for" indication statements excluded
+affirm = ['(?:mini[- ]?ch(?:o)?p|\b[1-9]\d\s?%\s*(?:of\s+)?(?:the\s+)?(?:full\s+|standard\s+)?(?:[\w-]+\s+){0,2}doses?\b|(?:dose[- ]reduced|reduced[- ]dose|attenuated|reduced[- ]intensity)\s+(?:pola[- ]?)?(?:r[- ]?)?(?:chop|chp|chemo\w*|immunochemo\w*|regimen|approach))(?![^.;]{0,20}\b(?:(?:is|are) (?:reserved |kept |only |best |better |generally |typically )?(?:for|suited to|intended for)|(?:reserved|kept) for)\b)']
+# structured: cycle 1 planned below full dose, or the regimen itself is mini/attenuated/reduced/%-dosed, or the cycle-1
+# order in orders_now is %-dosed / mini / dose-reduced. Needs cycle1_dose_percent: when it is missing the prose rule decides.
+decision = [
+  { any = [
+    { field = "cycle1_dose_percent", max = 99 },
+    { field = "cycle1_dose_percent", matches = '^\s*[1-9]\d?(?:\.\d+)?\s*%?\s*$' },
+    { field = "regimen", matches = 'mini|attenuat|(?<!no )(?<!without )reduced|\b[1-9]\d\s?%' },
+    { field = "orders_now", matches = '(?:chop|chp|cycle 1|\bc1\b|chemo\w*|regimen)[^;]{0,60}(?:\b(?:at|to)\s+[1-9]\d\s?%|\b[1-9]\d\s?%\s*(?:of\s+)?(?:the\s+)?(?:full\s+|standard\s+|planned\s+|usual\s+)?(?:dos|intensity)|(?<!no )(?<!not )(?<!without )dose[- ]reduc|(?<!no )(?<!without )reduced[- ]dose|(?<!no )(?<!without )attenuat)|mini[- ]?(?:r[- ]?)?ch(?:o)?p' },
+  ] },
+  { field = "cycle1_dose_percent", matches = '.' },
+]
+
+# ---------------- CNS
+[[items]]
+id = "cns_risk_addressed"
+domain = "cns_management"
+kind = "must"
+severity = "dangerous"
+points = 4
+text = "The response identifies a high risk of CNS relapse driven by kidney/adrenal involvement and high CNS-IPI."
+all = ["cns|central nervous", "kidney|renal|adrenal"]
+# high CNS-relapse risk asserted (not a criteria list or hypothetical); \bcns\b skips the "cns_risk" field key
+affirm = ['\bhigh\b(?![- ](?:dose|grade))[^.;]{0,30}\b(?:cns|central nervous)\b|\b(?:cns|central nervous)\b[^.;]{0,40}\bhigh\b(?![- ](?:dose|grade))|\bcns[- ]ipi\s*(?:score\s*)?(?:of|=|:|is)?\s*[4-6]\b']
+
+[[items]]
+id = "cns_staging_mri_csf"
+domain = "cns_management"
+kind = "must"
+severity = "important"
+points = 5
+text = "The response recommends baseline CNS evaluation: contrast MRI brain and lumbar puncture with CSF cytology and flow cytometry."
+all = ["\\bmri\\b", "lumbar puncture|\\bcsf\\b|\\blp\\b"]
+# structured: MRI brain and LP/CSF both ordered unconditionally now (a "if neurologic symptoms" order or a negated
+# "not needed" order does not count)
+decision = [
+  { field = "orders_now", matches = '^(?!.*\b(?:if|only if|unless|when)\b[^;]{0,40}(?:symptom|headache|neuro|deficit|sign|clinical))(?!.*\b(?:no|not|defer\w*)\b[^;]{0,20}\bmri?\b)(?!.*\bmri?\b[^;]{0,40}\bnot (?:needed|indicated|required)\b).*(?:\bmri?\b[^;]{0,40}\b(?:brain|head|neuraxis)\b|\b(?:brain|head|neuraxis)\b[^;]{0,20}\bmri?\b)' },
+  { field = "orders_now", matches = '^(?!.*\b(?:if|only if|unless|when)\b[^;]{0,40}(?:symptom|headache|neuro|deficit|sign|clinical))(?!.*\b(?:no|not|defer\w*)\b[^;]{0,20}(?:lumbar|\blp\b|\bcsf\b|spinal tap))(?!.*(?:lumbar puncture|\blp\b|spinal tap)[^;]{0,40}\bnot (?:needed|indicated|required)\b).*(?:lumbar puncture|\bcsf\b|\blp\b|spinal tap)' },
+]
+
+[[items]]
+id = "cns_prophylaxis_renal"
+domain = "cns_management"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response discusses CNS prophylaxis (e.g. high-dose methotrexate) as an individualized option with uncertain benefit and ties its feasibility to renal function / stopping NSAIDs."
+all = ["methotrexate|hd[- ]?mtx|prophyla", "renal|creatinine|egfr|kidney function|clearance"]
+
+[[items]]
+id = "mn_hdmtx_now_despite_aki"
+domain = "cns_management"
+kind = "must_not"
+severity = "important"
+points = 4
+text = "The response schedules high-dose methotrexate immediately (e.g. with cycle 1) without addressing the rising creatinine, renal involvement, or concurrent NSAID use."
+# HD-MTX asserted with cycle 1 / now (affirm: negated, deferred, conditional, evidence mentions excluded),
+# unless deemed unsafe or made contingent on renal recovery / NSAID withdrawal
+affirm = ['(?:\bhd[- ]?mtx\b|\bhigh[- ]dose (?:iv |intravenous |systemic )?(?:methotrexate|mtx))(?=(?:[^.;]|\.(?=\d)){0,60}(?:\bc1(?:d\d+)?\b|\bcycles? (?:1|one)\b|\bfirst cycle\b|\bnow\b|\bimmediately\b|\bup[- ]?front\b|\balongside\b|\bconcurrent\w*))(?![^.;]{0,40}\b(?:contraindicat\w*|unsafe|not (?:safe|feasible|advisable|recommended|indicated)|inadvisable|deferred|delayed|held|withheld|postponed))(?![^.;]{0,80}\b(?:once|after|when|until|provided|as long as)\b[^.;]{0,40}(?:creatinine|renal|egfr|kidney|nsaid|ibuprofen|clearance))']
+# structured: HD-MTX is an unconditional order now / with cycle 1: an orders_now element without a contingency,
+# deferral or negation cue, and without a later-timing cue (after / cycles 2-8 / end of treatment) unless it also says
+# cycle 1 / now; HD-MTX in conditional_orders is not the error
+# (contingency cues count only when tied to renal recovery / NSAIDs, negation and deferral cues only when tied to the drug,
+# so leucovorin-rescue wording such as "until MTX level <0.05" does not cancel the order; mg/m2 doses and bare MTX count)
+decision = [ { field = "orders_now", matches = '^(?!.*\b(?:once|when|until|unless|if|provided|after)\b[^;]{0,40}(?:creatinine|renal|egfr|kidney|nsaid|ibuprofen|clearance|recover))(?!.*\b(?:defer\w*|delay\w*|postpone\w*|not|no|avoid|consider\w*|discuss\w*|hold)\b[^;]{0,25}(?:\bhd[- ]?mtx\b|high[- ]dose|methotrexate|\bmtx\b))(?!.*(?:\bhd[- ]?mtx\b|methotrexate|\bmtx\b)[^;]{0,40}\b(?:deferred|delayed|postponed|held|contraindicated|unsafe|not (?:now|yet|safe|feasible|recommended|indicated)))(?!(?!.*\b(?:cycle 1|cycle one|c1(?:d\d+)?|first cycle|now|immediately|today|up[- ]?front)\b).*\b(?:after|following|post[- ]?treatment|cycles? [2-8]|c[2-8](?:d\d+)?|end of)\b).*(?:\bhd[- ]?mtx\b|high[- ]dose (?:iv |intravenous |systemic )?(?:methotrexate|mtx)|(?:methotrexate|\bmtx\b)[^;]{0,30}(?:\b[1-8](?:\.\d)?\s*g/m|\b[1-8][,.]?\d{3}\s*mg/m))' } ]
+
+# ---------------- response assessment
+[[items]]
+id = "resp_eot_pet_lugano"
+domain = "response_assessment"
+kind = "must"
+severity = "important"
+points = 7
+text = "The response plans an end-of-treatment FDG PET-CT read with Lugano criteria / Deauville 5-point scale."
+all = ["pet", "deauville|lugano", "end[- ]of[- ](?:treatment|therapy)|after (?:completion|completing)|completion of|\\beot\\b|post[- ]treatment|final pet"]
+
+[[items]]
+id = "resp_ds45_biopsy"
+domain = "response_assessment"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response says residual Deauville 4-5 uptake at end of treatment should be biopsied if it would change management."
+any = ["biops[^.]{0,80}(?:residual|deauville|ds\\s*[45]|pet[- ]positive)", "(?:residual|deauville\\s*(?:4|5)|ds\\s*[45]|pet[- ]positive)[^.]{0,80}biops"]
+
+# ---------------- supportive care
+[[items]]
+id = "sup_tls_prophylaxis"
+domain = "supportive_care"
+kind = "must"
+severity = "dangerous"
+points = 7
+text = "The response recognizes high tumor-lysis risk (uric acid 10.4, LDH >5x ULN, rising creatinine) and orders TLS prophylaxis with IV hydration, a uric-acid-lowering agent and frequent TLS labs (every 6-12 hours for the first 72 hours; daily is not frequent enough at this risk)."
+# high TLS risk asserted, plus the three prophylaxis components: IV hydration, a uric-acid-lowering agent, sub-daily TLS labs
+affirm = ['\bhigh\b[^.;]{0,30}(?:tumou?r[- ]lysis|\btls\b)|(?:tumou?r[- ]lysis|\btls\b)[^.;]{0,25}\bhigh\b|(?:tumou?r[- ]lysis|\btls\b)(?: syndrome)? (?:prophylaxis|prevention)']
+all = ['\b(?:iv|intravenous|aggressive|vigorous)\s+(?:hydration|fluids?)|hyperhydration|\d\s*l/m2|normal saline|isotonic (?:fluids?|saline)',
+       'rasburicase|allopurinol|febuxostat',
+       '(?:\blabs?\b|bloods|electrolytes|chemistr\w*|potassium|\bk\b|phosph\w*|urate|uric acid|creatinine|\bbmp\b|panel)[^.;]{0,80}(?:every\s*\d+(?:\s*(?:-|to)\s*\d+)?\s*(?:h\b|hours?|hrs?)|\bq\s?\d+(?:-\d+)?\s?h\b|\d+(?:\s*-\s*\d+)?[- ]hourly)|(?:every\s*\d+(?:\s*(?:-|to)\s*\d+)?\s*(?:h\b|hours?|hrs?)|\bq\s?\d+(?:-\d+)?\s?h\b|\d+(?:\s*-\s*\d+)?[- ]hourly)[^.;]{0,40}(?:\blabs?\b|bloods|electrolytes|chemistr\w*|monitoring)|\b(?:frequent|serial|close)\b[^.;]{0,80}(?:\blabs?\b|bloods|monitoring|electrolytes|chemistr\w*)|(?:\blabs?\b|bloods|electrolytes|potassium|phosph\w*|uric acid|creatinine)[^.;]{0,80}\b(?:frequent(?:ly)?|closely|serially)\b']
+# structured: IV hydration ordered now; a uric-acid-lowering drug ordered now (or rasburicase/allopurinol as the
+# action of a G6PD-gated conditional order); TLS labs every <=12 h for >=72 h (text: every 6-12 h for the first 72 h)
+decision = [
+  { field = "orders_now", matches = '\b(?:iv|i\.v\.|intravenous)\b[^;]{0,40}(?:hydration|fluids?|saline|crystalloid)|(?:hydration|fluids?|saline|crystalloid)[^;]{0,40}\b(?:iv|intravenous)\b|(?:aggressive|vigorous)\s+(?:iv\s+)?(?:hydration|fluids?)|hyper[- ]?hydration|normal saline|0\.9\s*%\s*(?:nacl|sodium chloride|saline)|isotonic|\d\s*(?:-\s*\d\s*)?l/m2' },
+  { any = [
+    { field = "orders_now", matches = '(?<!no )(?<!not )(?<!avoid )(?:rasburicase|allopurinol|febuxostat)' },
+    { field = "conditional_orders", matches = '\bg6pd\b[^:]{0,60}:\s*(?:give |start |administer |then )?(?:rasburicase|allopurinol|febuxostat)' },
+  ] },
+  { field = "lab_monitoring", tests = 'potassium|\bk\b|phosph|uric|urate|creatinine|\btls\b|lysis|electrolyte|\bbmp\b|chem|calcium|\bldh\b|lytes', every_hours_max = 12, duration_hours_min = 72 },
+]
+
+[[items]]
+id = "sup_rasburicase_g6pd"
+domain = "supportive_care"
+kind = "should"
+severity = "important"
+points = 3
+text = "The response favors rasburicase (given hyperuricemia with renal impairment) and checks G6PD before giving it."
+all = ["rasburicase", "g6pd"]
+# structured: G6PD ordered now (or the gate of a conditional order), and rasburicase ordered now or as the action of a
+# G6PD-gated conditional order
+decision = [
+  { any = [ { field = "orders_now", matches = '\bg6pd\b' }, { field = "conditional_orders", matches = '\bg6pd\b[^:]{0,60}:[^;]{0,60}rasburicase' } ] },
+  { any = [
+    { field = "orders_now", matches = '(?<!no )(?<!not )(?<!avoid )rasburicase' },
+    { field = "conditional_orders", matches = '\bg6pd\b[^:]{0,60}:\s*(?:give |start |administer |then )?rasburicase' },
+  ] },
+]
+
+[[items]]
+id = "sup_gcsf"
+domain = "supportive_care"
+kind = "must"
+severity = "important"
+points = 4
+text = "The response recommends primary G-CSF prophylaxis (e.g. pegfilgrastim) with each cycle, given age >=65."
+any = ["g[- ]?csf", "pegfilgrastim", "filgrastim", "growth factor", "colony[- ]stimulating factor"]
+# structured: primary G-CSF ordered with cycle 1 (orders_now) or written into the regimen order
+decision = [ { any = [
+  { field = "orders_now", matches = 'g[- ]?csf|filgrastim|growth factor|colony[- ]stimulating factor|neulasta|onpro|udenyca|fulphila|ziextenzo|nyvepria|fylnetra|stimufend|rolvedon|eflapegrastim|zarxio|nivestym|granix' },
+  { field = "regimen", matches = 'g[- ]?csf|filgrastim|growth factor|colony[- ]stimulating factor|neulasta|onpro|udenyca|fulphila|ziextenzo|nyvepria|fylnetra|stimufend|rolvedon|eflapegrastim|zarxio|nivestym|granix' },
+] } ]
+
+[[items]]
+id = "sup_stop_nsaid"
+domain = "supportive_care"
+kind = "should"
+severity = "important"
+points = 3
+text = "The response stops ibuprofen/NSAIDs (nephrotoxic with rising creatinine; interacts with methotrexate) and offers alternative analgesia."
+any = ["(?:stop|discontinue|hold|avoid|cease)[^.]{0,40}(?:ibuprofen|nsaid)", "(?:ibuprofen|nsaids?)[^.]{0,60}(?:stop|discontinu|hold|avoid)"]
+# structured: stopping ibuprofen/NSAIDs is an unconditional medication change in orders_now
+decision = [ { field = "orders_now", matches = '(?:stop|discontinu\w*|hold|avoid|cease|d/c|no more)[^;]{0,40}(?:ibuprofen|nsaid|advil|motrin)|(?:ibuprofen|nsaids?|advil|motrin)[^;]{0,60}(?:stop|discontinu|hold|avoid|cease|d/c)' } ]
+
+[[items]]
+id = "sup_steroid_glucose"
+domain = "supportive_care"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response anticipates steroid-induced hyperglycemia in this diabetic patient (glucose monitoring / insulin plan) or adjusts metformin for falling eGFR."
+all = ["diabet|glucose|hyperglyc|metformin|insulin", "steroid|prednison|monitor|hold"]
+
+# ---------------- pretreatment workup
+[[items]]
+id = "work_hbv_reviewed"
+domain = "pretreatment_workup"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response confirms hepatitis B serology was checked (HBsAg and anti-HBc nonreactive) so no antiviral prophylaxis is needed before rituximab."
+any = ["hbsag|hepatitis b|anti[- ]hbc|\\bhbv\\b"]
+
+[[items]]
+id = "work_echo_reviewed"
+domain = "pretreatment_workup"
+kind = "should"
+severity = "minor"
+points = 1
+text = "The response notes the baseline LVEF of 60% permits anthracycline."
+any = ["lvef|ejection fraction|echo"]
+
+# ---------------- fitness and goals
+[[items]]
+id = "fit_ecog_disease_related"
+domain = "fitness_and_goals"
+kind = "must"
+severity = "important"
+points = 4
+text = "The response judges ECOG 2 as disease-related and not a reason to de-escalate curative therapy, and acknowledges the patient's goal of cure."
+any = ["disease[- ]related", "due to (?:the |his )?(?:lymphoma|disease|tumou?r)", "lymphoma[- ]related", "expected to improve", "goal[^.]{0,40}cur", "cur\\w*[^.]{0,40}goal"]

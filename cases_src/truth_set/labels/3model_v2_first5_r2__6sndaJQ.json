@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__6sndaJQ",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "Diffuse large B-cell lymphoma, NOS, non-germinal-center B-cell phenotype by Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "gene-expression cell-of-origin",
+   "confidence": "medium",
+   "note": "Lists GEP cell-of-origin as outstanding but never states Hans is only a surrogate for ABC."
+  },
+  "dx_not_breast_recurrence": {
+   "met": true,
+   "quote": "This is not breast carcinoma recurrence: lesional cells are CD20 and PAX5 positive and AE1/AE3 and GATA3 negative",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Lugano / Ann Arbor stage III B.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_lymphatic": {
+   "met": true,
+   "quote": "splenic involvement by multiple FDG-avid nodules is counted as nodal under Lugano",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms are present: fevers to 38.2-38.4 C for about 5 weeks and drenching night sweats",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulk_definition": {
+   "met": true,
+   "quote": "which reaches the 7.5 cm threshold used in many protocols but not the 10 cm threshold",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "If the splenic nodules were judged extranodal the stage would be IV B",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_del_not_dh": {
+   "met": true,
+   "quote": "Not double-hit: interphase FISH on 200 nuclei shows no MYC (8q24), BCL2 (18q21) or BCL6 (3q27) rearrangement",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "This excludes R-CHOP, Pola-R-CHP (the NCCN-preferred, POLARIX-eligible option for IPI 2-5), DA-EPOCH-R",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_2": {
+   "met": true,
+   "quote": "IPI is 2 (stage III and elevated LDH; age 59 and ECOG 1 score 0; no more than one extranodal site)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_2": {
+   "met": false,
+   "quote": "Total 1-2, low-to-intermediate CNS relapse risk.",
+   "confidence": "medium",
+   "note": "Gives CNS-IPI 1-2 and omits the stage III-IV point, so does not commit to 2."
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "No CNS-directed prophylaxis is recommended now.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_aware_no_full_dox": {
+   "met": true,
+   "quote": "Decision: no doxorubicin-containing regimen.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_standard_dox_ignores_heart": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardio_onc_referral": {
+   "met": true,
+   "quote": "Cardiac: start cardio-oncology co-management now.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardioprotection": {
+   "met": true,
+   "quote": "an ACE inhibitor, ARB or ARNI plus an evidence-based beta-blocker",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_anthracycline_free_curative": {
+   "met": true,
+   "quote": "treat with anthracycline-free rituximab-based chemotherapy: R-CEOP-21 for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_lower_efficacy_ack": {
+   "met": true,
+   "quote": "its cure rate is likely lower than the anthracycline-based standard",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_monitoring": {
+   "met": true,
+   "quote": "troponin and NT-proBNP each cycle, with echocardiogram with GLS before cycle 1, after cycle 3 and at the end of treatment",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Response assessed by Lugano 2014 criteria with Deauville scoring.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "Start allopurinol 300 mg daily two days before cycle 1 (febuxostat if intolerant), with hydration and a BMP",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Primary G-CSF prophylaxis (pegfilgrastim or biosimilar, or on-body injector) each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_anastrozole": {
+   "met": true,
+   "quote": "Anastrozole: continue to the planned completion in November 2026.",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg, anti-HBc and anti-HBs are all nonreactive, so no HBV antiviral prophylaxis is needed for rituximab",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_curative_ecog1": {
+   "met": true,
+   "quote": "Fit for curative-intent therapy.",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_cardiac_workup": {
+   "met": true,
+   "quote": "No troponin, NT-proBNP, ECG, cardiac MRI or ischemia evaluation on record",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

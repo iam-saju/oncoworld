@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, NOS, germinal-center B-cell (GCB) type by the Hans algorithm - confirmed on CT-guided core biopsy of the retroperitoneal mass",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IVB, bulky, with negative bone marrow. Stage IV because there is disseminated extranodal organ involvement - right kidney, left adrenal and hepatic segment VI",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "Stage IV because there is disseminated extranodal organ involvement - right kidney, left adrenal and hepatic segment VI - accompanying bulky nodal disease",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms are unequivocal: drenching night sweats most nights and unintentional weight loss of 8.8 kg from a 79 kg baseline (11.1%) over two months",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "this is more than the single extranodal site that would allow a stage IIIE designation, and the management is identical either way",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "shows NO MYC (8q24), BCL2 (18q21) or BCL6 (3q27) rearrangement, so this is NOT double-hit lymphoma and NOT triple-hit lymphoma; the IHC also does not meet double-expressor criteria (which require MYC >=40% and BCL2 >=50%; he is MYC 20%, BCL2 ~30%)",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "so this is NOT double-hit lymphoma and NOT triple-hit lymphoma",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "the IHC also does not meet double-expressor criteria (which require MYC >=40% and BCL2 >=50%; he is MYC 20%, BCL2 ~30%)",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "IPI 5 of 5 (age >60 at 67; LDH 1,120 then 1,290 U/L; stage IV; ECOG 2; >1 extranodal site = 3).",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "CNS-IPI 6 of 6 - age >60 (67), elevated LDH, ECOG >=1 (2), stage III/IV, >1 extranodal site (3 sites), and kidney/adrenal involvement.",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Curative intent. R-CHOP-21 for 6 cycles, started this week (target cycle 1 on 2026-09-21): rituximab 375 mg/m2, cyclophosphamide 750 mg/m2, doxorubicin 50 mg/m2",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": false,
+  "quote": "",
+  "source": "judge"
+ },
+ "tx_prephase_steroid": {
+  "met": false,
+  "quote": "prednisone 100 mg on days 1-5, every 21 days",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Overall this is curative-intent disease in a high-risk patient; I am not recommending a palliative approach",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "it excludes the double-hit/triple-hit group that carries the worst outcomes and would otherwise mandate intensified therapy",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "I will use full doses - at 67 with ECOG 2 he is independent in self-care, ambulatory, BMI 22.9, LVEF 60%, and does not meet criteria for R-mini-CHOP-21",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": true,
+  "quote": "High risk, and I am treating it. CNS-IPI 6 of 6 - age >60 (67), elevated LDH, ECOG >=1 (2), stage III/IV, >1 extranodal site (3 sites), and kidney/adrenal involvement.",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": true,
+  "quote": "brain MRI with diffusion plus CSF cytology and flow are required and are currently missing. Both of those studies must be done before cycle 1",
+  "source": "judge"
+ },
+ "cns_prophylaxis_renal": {
+  "met": false,
+  "quote": "Renal dysfunction is the main constraint on HD-MTX and I have built the cytarabine alternative into the plan.",
+  "source": "judge"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "I will first stop ibuprofen, re-check renal function, and if creatinine does not fall below about 1.3 with eGFR >=60 I will substitute high-dose cytarabine",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End of treatment: PET-CT 8-10 weeks after the last dose (approximately April 2027) to reduce false-positive inflammation from treatment-related inflammation in the retroperitoneum and renal bed.",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": false,
+  "quote": "Deauville 4 = partial metabolic response with biopsy considered if uptake exceeds liver; Deauville 5 = residual disease, which triggers salvage and local therapy.",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": false,
+  "quote": "IV hydration with a urine output goal over 100 mL/h, strict I/O, and potassium, phosphorus, calcium, uric acid, creatinine and LDH at least twice weekly in cycles 1-2 and daily around cycle 1.",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": true,
+  "quote": "I will give rasburicase at cycle 1 if uric acid exceeds 10 mg/dL despite allopurinol or continues to rise (G6PD first).",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "pegfilgrastim 6 mg SC 24-72 h after every cycle (age over 65, ECOG 2, high-risk disease, baseline anemia)",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "Stop ibuprofen 400 mg four times daily immediately - it is the most likely driver of the creatinine rise",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "glucose monitoring several times daily during prednisone days, metformin held when glucose exceeds roughly 200-250 mg/dL with basal insulin as needed",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": false,
+  "quote": "HBsAg negative and anti-HBc negative with a reactive anti-HBs is immunity from vaccination rather than prior infection, so the true reactivation risk is low",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "transthoracic echocardiogram with LVEF 60% by biplane Simpson, GLS -19%, no effusion (2026-09-09)",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": true,
+  "quote": "I will use full doses - at 67 with ECOG 2 he is independent in self-care, ambulatory, BMI 22.9, LVEF 60%, and does not meet criteria for R-mini-CHOP-21",
+  "source": "judge"
+ }
+}

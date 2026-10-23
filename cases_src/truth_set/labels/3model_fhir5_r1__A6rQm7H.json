@@ -1,0 +1,180 @@
+{
+ "id": "3model_fhir5_r1__A6rQm7H",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "germinal-center B-cell-like (GCB) subtype by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_i": {
+   "met": true,
+   "quote": "Stage IA (Ann Arbor), limited-stage, non-bulky.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_nonbulky_no_b": {
+   "met": true,
+   "quote": "She has no B symptoms (no fever, drenching night sweats, or weight loss).",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_pet_no_marrow_biopsy": {
+   "met": true,
+   "quote": "Bone marrow biopsy is not required because PET shows no marrow uptake.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_overstaged": {
+   "met": false,
+   "quote": "even if one counted them as two cervical regions (stage II), this would remain limited-stage, non-bulky disease",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "FISH is negative for MYC, BCL2, and BCL6 rearrangements, so this is not double-hit or triple-hit lymphoma.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "which is below the usual thresholds for double-expressor DLBCL",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_low": {
+   "met": true,
+   "quote": "The age-adjusted IPI is 0 (age <60, stage I, LDH 190 U/L [normal 135-225], ECOG 0, no extranodal sites).",
+   "confidence": "medium",
+   "note": "Reports age-adjusted IPI 0 rather than standard IPI, though all five IPI factors are listed as favorable."
+  },
+  "prog_cns_ipi_low": {
+   "met": true,
+   "quote": "The CNS-IPI is also 0.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_rchop": {
+   "met": true,
+   "quote": "Curative-intent R-CHOP21 for four cycles, without involved-site radiation.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_flyer_4rchop_2r": {
+   "met": false,
+   "quote": "Curative-intent R-CHOP21 for four cycles, without involved-site radiation.",
+   "confidence": "medium",
+   "note": "Cites FLYER and gives 4 R-CHOP without RT but omits the 2 additional rituximab doses."
+  },
+  "tx_no_rt_goals": {
+   "met": true,
+   "quote": "I am deliberately omitting ISRT because she has non-bulky stage I disease and strongly wishes to avoid neck radiation",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_alternatives": {
+   "met": true,
+   "quote": "The main shared decision is four cycles of R-CHOP alone versus three cycles of R-CHOP plus involved-site radiation",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_six_cycles": {
+   "met": false,
+   "quote": "I would not use 6 cycles of R-CHOP, Pola-R-CHP",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_pola_preferred": {
+   "met": false,
+   "quote": "I would not use 6 cycles of R-CHOP, Pola-R-CHP",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "If a reference review unexpectedly showed double-hit lymphoma, I would use a more intensive regimen such as DA-EPOCH-R",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_observation_or_rt_alone": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_low_no_prophylaxis": {
+   "met": true,
+   "quote": "I would not give intrathecal methotrexate or high-dose methotrexate prophylaxis.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "I would not give intrathecal methotrexate or high-dose methotrexate prophylaxis.",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "interpreted by Lugano 2014 criteria using the Deauville 5-point scale",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_interim_pet": {
+   "met": false,
+   "quote": "I would not do an interim PET outside a clinical trial.",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_pregnancy_test": {
+   "met": true,
+   "quote": "Before cycle 1, I still need a serum pregnancy test (she is premenopausal on a combined oral contraceptive)",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "No HBV DNA or antiviral prophylaxis is needed because she is HBsAg/anti-HBc negative and anti-HBs positive.",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "Cumulative doxorubicin will be 200 mg/m2, and baseline LVEF is normal",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_coc_switch": {
+   "met": true,
+   "quote": "Switch to a progestin-only or non-hormonal contraceptive method and document a negative pregnancy test before R-CHOP.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_coc_reason": {
+   "met": true,
+   "quote": "Migraine with aura is a WHO category 4 contraindication to combined hormonal contraception, and active cancer plus chemotherapy further increases venous thromboembolism risk.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_fertility_counselling": {
+   "met": true,
+   "quote": "an urgent fertility-preservation consultation (oocyte/embryo cryopreservation, AMH and antral follicle count) because cyclophosphamide is gonadotoxic",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_goals": {
+   "met": true,
+   "quote": "Her goals are cure, avoiding neck radiation, and continuing to teach with as few absences as possible",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

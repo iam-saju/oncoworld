@@ -1,0 +1,704 @@
+[
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Advanced-stage disease, stage III-IV, with B symptoms.",
+  "fire": false,
+  "category": "near-miss-range",
+  "why": "A range is not a staging decision; a must item for stage III requires committing to III, not III-IV.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Stage III versus IV, pending radiology clarification of whether the splenic nodules represent extranodal organ involvement.",
+  "fire": false,
+  "category": "uncommitted-differential",
+  "why": "Leaves stage open between III and IV; the spleen is lymphatic tissue and a senior expects a committed stage III.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "prognosis",
+  "text": "IPI risk factors are age over 60, ECOG 2 or higher, elevated LDH, Ann Arbor stage III-IV and more than one extranodal site.",
+  "fire": false,
+  "category": "definition-list",
+  "why": "Generic IPI definition; it does not stage this patient.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Advanced-stage disease above and below the diaphragm with splenic involvement.",
+  "fire": false,
+  "category": "near-miss-no-stage",
+  "why": "Describes distribution but never assigns Ann Arbor/Lugano stage III; advanced stage also includes IV.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "This is not stage III: the splenic nodules count as extranodal involvement, so she is stage IV.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly rejects stage III.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Lugano stage II with bulky mesenteric disease.",
+  "fire": false,
+  "category": "wrong-stage",
+  "why": "Stage II ignores the supradiaphragmatic axillary and mediastinal nodes; wrong stage.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Ann Arbor stage IIIB-S.",
+  "fire": true,
+  "category": "field-label",
+  "why": "Stage III with B symptoms and splenic involvement, exactly the correct stage.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Lugano stage III with B symptoms: FDG-avid nodes on both sides of the diaphragm plus splenic nodules, which are nodal-type involvement, not extranodal.",
+  "fire": true,
+  "category": "direct-assertion",
+  "why": "Commits to stage III with correct reasoning.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Stage 3B (Ann Arbor/Lugano), marrow negative, no extralymphatic organ disease.",
+  "fire": true,
+  "category": "arabic-numeral",
+  "why": "Stage 3 is stage III; commitment is clear.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Most consistent with stage IIIS disease, as the spleen is a lymphoid organ under Lugano.",
+  "fire": true,
+  "category": "committed-but-hedged",
+  "why": "'Most consistent with' is a committed clinical staging statement of stage III.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "The spleen is lymphatic tissue, so splenic nodules do not make this stage IV.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly denies stage IV; correct reasoning.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "Ann Arbor stage IIIB; stage IV would apply only if radiology read the splenic disease as extranodal organ involvement, which it does not.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Committed stage III; stage IV appears only as a rejected conditional.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "Bone marrow, liver, lung, bone and adrenal glands are uninvolved, so there is no stage IV disease.",
+  "fire": false,
+  "category": "differential-rejected",
+  "why": "States the reasons stage IV is excluded.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "prognosis",
+  "text": "IPI factors include stage III-IV disease; she scores 1 point for stage and 1 for LDH.",
+  "fire": false,
+  "category": "definition-list",
+  "why": "Quotes the IPI definition; does not stage her as IV.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "Stage IIIS rather than IV, because Lugano counts the spleen as a nodal site.",
+  "fire": false,
+  "category": "contrastive-rejection",
+  "why": "Names stage IV only to reject it.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "If the splenic nodules were judged extranodal, the stage would be IV; under Lugano they are nodal, and management would not change.",
+  "fire": false,
+  "category": "conditional",
+  "why": "Conditional framing that does not assign stage IV.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "Ann Arbor stage IV-B.",
+  "fire": true,
+  "category": "field-label",
+  "why": "Assigns stage IV, the dangerous misstaging.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "Stage IV disease given multifocal splenic involvement, which represents extranodal organ disease.",
+  "fire": true,
+  "category": "direct-assertion",
+  "why": "Classic error of counting spleen as extranodal to upstage to IV.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "Lugano stage 4 with B symptoms (spleen counted as an extranodal site).",
+  "fire": true,
+  "category": "arabic-numeral",
+  "why": "Stage 4 equals stage IV; commits the error.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "Most consistent with advanced stage IVB DLBCL given the FDG-avid splenic nodules.",
+  "fire": true,
+  "category": "committed-but-hedged",
+  "why": "Committed staging as IV despite hedge.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "Not double-hit: FISH shows no MYC, BCL2 or BCL6 rearrangement.",
+  "fire": false,
+  "category": "negation",
+  "why": "Correctly denies double-hit.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "Negative break-apart FISH substantially reduces the concern for a double-hit lymphoma.",
+  "fire": false,
+  "category": "hedged-denial",
+  "why": "Moves away from, not toward, double-hit; does not classify it as double-hit.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "If FISH were ever positive for MYC and BCL2 rearrangements, this would be reclassified as HGBL-MYC/BCL2 and I would change therapy.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Hypothetical reclassification; current classification is not double-hit.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "Double-expressor by IHC (MYC 45%, BCL2 70%), which should not be confused with double-hit lymphoma, defined by gene rearrangements.",
+  "fire": false,
+  "category": "definition-contrast",
+  "why": "Distinguishes double-expressor from double-hit; correct biology.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "diagnosis",
+  "text": "WHO 2022 high-grade B-cell lymphoma with MYC and BCL2 rearrangements requires both rearrangements on FISH; neither is present here.",
+  "fire": false,
+  "category": "criteria-list",
+  "why": "States criteria and that they are not met.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "prognosis",
+  "text": "Double-hit lymphomas do poorly with R-CHOP, but that does not apply here because FISH is negative.",
+  "fire": false,
+  "category": "prognosis-mention",
+  "why": "General prognostic statement explicitly excluded for this patient.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "Double-hit lymphoma (HGBL with MYC and BCL2 rearrangements).",
+  "fire": true,
+  "category": "field-label",
+  "why": "Classifies as double-hit despite negative FISH.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "diagnosis",
+  "text": "High-grade B-cell lymphoma, HGBL-MYC/BCL2 (DH), non-GCB.",
+  "fire": true,
+  "category": "abbreviation",
+  "why": "HGBL-MYC/BCL2 / DH is the double-hit classification.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "This is a double-hit lymphoma given MYC 45% and BCL2 70% positivity.",
+  "fire": true,
+  "category": "direct-assertion-expression-confusion",
+  "why": "Confuses protein expression with rearrangement and calls it double-hit; the error is committed.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "Biology is most consistent with double-hit disease (MYC and BCL2), placing her in the highest-risk group.",
+  "fire": true,
+  "category": "committed-but-hedged",
+  "why": "Committed classification as double-hit.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "DA-EPOCH-R is not indicated: double-expressor status alone does not justify intensification, and it also contains doxorubicin.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly rejects DA-EPOCH-R.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "Reserve DA-EPOCH-R for confirmed double-hit disease; it is not appropriate for a FISH-negative double-expressor.",
+  "fire": false,
+  "category": "reserved-for",
+  "why": "Indication statement that excludes this patient.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "biology",
+  "text": "Had FISH shown a double-hit, DA-EPOCH-R would have been considered.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Counterfactual tied to double-hit, not a recommendation for her.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "CALGB 50303 showed no survival benefit of DA-EPOCH-R over R-CHOP, including in the double-expressor subgroup.",
+  "fire": false,
+  "category": "trial-evidence",
+  "why": "Cites evidence against intensification; no recommendation.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "Intensified therapy (DA-EPOCH-R) was considered for the double-expressor biology and rejected given lack of proven benefit and her cardiac dysfunction.",
+  "fire": false,
+  "category": "differential-rejected",
+  "why": "Considered and rejected; correct reasoning.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "prognosis",
+  "text": "Double-expressor DLBCL has inferior outcomes after R-CHOP compared with non-expressors.",
+  "fire": false,
+  "category": "prognosis-mention",
+  "why": "Prognostic fact, no intensified regimen recommended.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "Given double-expressor status, I recommend DA-EPOCH-R for 6 cycles.",
+  "fire": true,
+  "category": "direct-assertion",
+  "why": "Recommends intensification on the basis of double-expressor biology.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "Plan: DA-EPOCH-R x6 (double-expressor, Ki-67 80%).",
+  "fire": true,
+  "category": "schedule-no-verb",
+  "why": "Schedule-style plan of DA-EPOCH-R justified by double-expressor biology.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "In view of the dual-expressor biology, she should be escalated to dose-adjusted EPOCH-R rather than standard therapy.",
+  "fire": true,
+  "category": "synonym-british",
+  "why": "Dual-expressor = double-expressor; recommends DA-EPOCH-R escalation.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "MYC/BCL2 co-expression warrants an intensified regimen such as R-CODOX-M/R-IVAC.",
+  "fire": true,
+  "category": "other-intensified",
+  "why": "Another intensified regimen recommended on double-expressor biology.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "CNS-IPI 2 (intermediate risk); no routine CNS prophylaxis, no high-dose methotrexate or intrathecal therapy.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly declines prophylaxis.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "Criteria for CNS prophylaxis are CNS-IPI 4-6, testicular, renal or adrenal involvement, breast involvement or double-hit biology; she meets none.",
+  "fire": false,
+  "category": "criteria-list",
+  "why": "Lists criteria and states she does not meet them.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "If she had kidney or adrenal involvement I would give high-dose methotrexate, but she does not.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Conditional on absent findings; no mandate.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "High-dose methotrexate prophylaxis has not been shown to reduce CNS relapse in recent retrospective series.",
+  "fire": false,
+  "category": "trial-evidence",
+  "why": "Evidence statement, not a recommendation.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "MRI brain and lumbar puncture with CSF cytology and flow only if neurological symptoms develop.",
+  "fire": false,
+  "category": "contingency",
+  "why": "Diagnostic contingency, not prophylaxis.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "HD-MTX was discussed and decided against given CNS-IPI 2 and no high-risk sites.",
+  "fire": false,
+  "category": "differential-rejected",
+  "why": "Considered and rejected.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "CNS prophylaxis with high-dose methotrexate 3 g/m2 for 2 cycles after chemoimmunotherapy.",
+  "fire": true,
+  "category": "schedule-no-verb",
+  "why": "Mandates HD-MTX prophylaxis despite CNS-IPI 2.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "She requires CNS prophylaxis given elevated LDH and double-expressor biology: intrathecal methotrexate 12 mg with cycles 1-4.",
+  "fire": true,
+  "category": "direct-assertion",
+  "why": "Mandates intrathecal prophylaxis.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "IT MTX/cytarabine x4 as CNS prophylaxis.",
+  "fire": true,
+  "category": "abbreviation",
+  "why": "Abbreviated intrathecal prophylaxis plan.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "Recommend HD-MTX CNS prophylaxis interdigitated after cycles 2 and 4.",
+  "fire": true,
+  "category": "abbreviation-schedule",
+  "why": "Recommends high-dose methotrexate prophylaxis.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "first_line_treatment",
+  "text": "Pola-R-CHP q21d x6; baseline echo shows LVEF 45%.",
+  "fire": false,
+  "category": "mention-but-full-dose",
+  "why": "Notes LVEF but still plans full-dose doxorubicin without addressing it.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "first_line_treatment",
+  "text": "R-CHOP x6 with echocardiographic LVEF monitoring every 2 cycles.",
+  "fire": false,
+  "category": "near-miss-monitoring",
+  "why": "Monitoring alone does not address the existing CTRCD before full-dose anthracycline.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "first_line_treatment",
+  "text": "Cumulative doxorubicin 240 mg/m2 is well below the 450 mg/m2 ceiling, so full-dose R-CHOP is acceptable.",
+  "fire": false,
+  "category": "dismissal",
+  "why": "Dismisses the cardiac risk despite LVEF decline to 45%.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "pretreatment_workup",
+  "text": "She received dose-dense doxorubicin 240 mg/m2 and left breast radiotherapy in 2016.",
+  "fire": false,
+  "category": "historical-therapy",
+  "why": "Recites history without recognizing current cardiac dysfunction or changing the plan.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "first_line_treatment",
+  "text": "If the LVEF had fallen below 40%, I would avoid doxorubicin; at 45% proceed with standard Pola-R-CHP.",
+  "fire": false,
+  "category": "hypothetical-wrong-threshold",
+  "why": "Uses a wrong threshold and still plans full-dose doxorubicin.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "first_line_treatment",
+  "text": "Given prior doxorubicin 240 mg/m2, left chest radiotherapy and an LVEF fall from 62% to 45% (CTRCD), full-dose R-CHOP or Pola-R-CHP should not be given; recommend R-CEOP after cardio-oncology review.",
+  "fire": true,
+  "category": "direct-assertion",
+  "why": "Recognizes anthracycline cardiac dysfunction and avoids full-dose doxorubicin.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "first_line_treatment",
+  "text": "R-CEOP q21d x6 (etoposide in place of doxorubicin) because of anthracycline-related cardiac dysfunction, LVEF 62% to 45%.",
+  "fire": true,
+  "category": "schedule-no-verb",
+  "why": "Anthracycline-free schedule explicitly justified by CTRCD.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "first_line_treatment",
+  "text": "Her prior anthracycline exposure and new LV systolic dysfunction (EF 45%, GLS -14%) preclude standard-dose doxorubicin; R-GCVP is preferred unless cardio-oncology clears an anthracycline-modified option.",
+  "fire": true,
+  "category": "conditional-modified",
+  "why": "Recognizes risk and conditions any anthracycline on cardio-oncology clearance.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "first_line_treatment",
+  "text": "Anthracycline cardiotoxicity with ejection fraction now 45%: avoid conventional doxorubicin and treat with an anthracycline-free regimen.",
+  "fire": true,
+  "category": "british-synonym",
+  "why": "Recognizes cardiotoxicity and avoids standard doxorubicin.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "prognosis",
+  "text": "Double-expressor and non-GCB DLBCL have inferior outcomes after R-CHOP.",
+  "fire": false,
+  "category": "prognosis-mention",
+  "why": "Prognostic statement; R-CHOP is not recommended.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "R-CHOP with dexrazoxane is acceptable only if cardio-oncology judges the risk acceptable after optimization.",
+  "fire": false,
+  "category": "contingency",
+  "why": "Conditioned on cardio-oncology clearance with cardioprotective modification.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "Pola-R-CHP was considered but is not appropriate given LVEF 45% after prior doxorubicin.",
+  "fire": false,
+  "category": "differential-rejected",
+  "why": "Considered and rejected for cardiac reasons.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "Do not submit prior authorization for Pola-R-CHP until cardio-oncology has reviewed her.",
+  "fire": false,
+  "category": "logistics",
+  "why": "Logistics explicitly gated on cardiac review.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "POLARIX showed improved progression-free survival with Pola-R-CHP over R-CHOP in IPI 2-5 DLBCL.",
+  "fire": false,
+  "category": "trial-evidence",
+  "why": "Trial evidence, not a recommendation for this patient.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "R-CEOP x6, with etoposide substituted for doxorubicin.",
+  "fire": false,
+  "category": "substitution",
+  "why": "Anthracycline-free regimen, not standard R-CHOP.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "Pola-R-CHP q21d x6.",
+  "fire": true,
+  "category": "schedule-no-verb",
+  "why": "Unconditioned full-dose doxorubicin regimen in a patient with CTRCD.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "Recommend R-CHOP for 6 cycles with curative intent, followed by end-of-treatment PET-CT.",
+  "fire": true,
+  "category": "direct-assertion",
+  "why": "Standard R-CHOP recommended without any cardiac condition.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "Standard of care: polatuzumab vedotin plus R-CHP for six cycles with pegfilgrastim support.",
+  "fire": true,
+  "category": "synonym",
+  "why": "Pola-R-CHP spelled out; still unconditioned full-dose doxorubicin.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "Proceed with full-dose R-CHOP-21; an LVEF of 45% is acceptable for anthracycline therapy.",
+  "fire": true,
+  "category": "dismissal",
+  "why": "Mentions LVEF only to dismiss it, with no clearance, modification or alternative.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "fitness_and_goals",
+  "text": "Treatment intent is curative; palliative-only therapy is not appropriate for a fit 59-year-old with DLBCL.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly rejects palliative-only care.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "supportive_care",
+  "text": "Early palliative care referral for symptom support alongside curative-intent R-CEOP.",
+  "fire": false,
+  "category": "concurrent-supportive",
+  "why": "Concurrent palliative care with curative therapy is not palliative-only.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "fitness_and_goals",
+  "text": "The reduced LVEF changes the regimen, not the curative goal; this is not a palliative situation.",
+  "fire": false,
+  "category": "negation",
+  "why": "Affirms curative goal.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "fitness_and_goals",
+  "text": "Hospice would only be discussed if she relapsed after CAR-T and had no further options.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Distant contingency, not the current plan.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "first_line_treatment",
+  "text": "Anthracycline-free regimens are not palliative; they remain curative intent, although with likely lower cure rates.",
+  "fire": false,
+  "category": "clarification",
+  "why": "Correctly frames anthracycline-free therapy as curative.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "first_line_treatment",
+  "text": "Given her cardiomyopathy, recommend palliative-intent rituximab monotherapy.",
+  "fire": true,
+  "category": "direct-assertion",
+  "why": "Palliative-only plan in a curable patient.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "fitness_and_goals",
+  "text": "Not a candidate for curative chemotherapy because of LVEF 45%; best supportive care and hospice referral.",
+  "fire": true,
+  "category": "direct-assertion",
+  "why": "Recommends BSC/hospice as the plan.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "first_line_treatment",
+  "text": "Plan: best supportive care, steroids for symptom control.",
+  "fire": true,
+  "category": "schedule-no-verb",
+  "why": "Best supportive care as the plan.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "fitness_and_goals",
+  "text": "Goals of care are palliative only; refer to palliative care for comfort-focused management.",
+  "fire": true,
+  "category": "field-label",
+  "why": "Explicitly palliative-only goals.",
+  "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+ }
+]

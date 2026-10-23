@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL-NOS), germinal-center B-cell-like (GCB) immunophenotype by the Hans algorithm (CD10 positive, BCL6 positive, MUM1 negative)",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IVB (B symptoms: drenching night sweats and about 8 kg unintentional weight loss)",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "with bulky (9.4 cm) retroperitoneal/mesenteric nodal disease and extranodal disease in the right kidney, left adrenal gland and liver",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms: drenching night sweats and about 8 kg unintentional weight loss",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "Ann Arbor stage IVB (B symptoms: drenching night sweats and about 8 kg unintentional weight loss)",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "FISH shows no MYC, BCL2 or BCL6 rearrangement, so this is not a double-hit/triple-hit high-grade B-cell lymphoma; EBER is negative and MYC/BCL2 expression is below the usual double-expressor thresholds (MYC about 20%, BCL2 about 30%).",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "FISH shows no MYC, BCL2 or BCL6 rearrangement, so this is not a double-hit/triple-hit high-grade B-cell lymphoma",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "MYC/BCL2 expression is below the usual double-expressor thresholds (MYC about 20%, BCL2 about 30%)",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "IPI 5/5 (age >60, stage IV, elevated LDH, ECOG 2, more than one extranodal site), high risk.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "CNS-IPI 6/6 (age >60, elevated LDH, ECOG >1, stage III/IV, more than one extranodal site, renal/adrenal involvement), high risk for CNS relapse.",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Pola-R-CHP x6 (polatuzumab vedotin 1.8 mg/kg, rituximab 375 mg/m2, cyclophosphamide 750 mg/m2, doxorubicin 50 mg/m2, prednisone 100 mg days 1-5) every 21 days with pegfilgrastim",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": false,
+  "quote": "Pola-R-CHP x6 ... because he has high-risk stage IV disease (IPI 5) and a normal LVEF of 60%. If polatuzumab is not accessible, R-CHOP x6 is the accepted standard alternative.",
+  "source": "judge_unquoted"
+ },
+ "tx_prephase_steroid": {
+  "met": false,
+  "quote": "prednisone 100 mg days 1-5) every 21 days",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "I would quote a realistic chance of cure with full-course anthracycline-based immunochemotherapy",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "Do not reduce dose preemptively for ECOG 2; his performance status is largely lymphoma-related and he is an anthracycline candidate.",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": true,
+  "quote": "High: CNS-IPI 6/6 with renal and adrenal involvement, age >60, elevated LDH, ECOG 2, stage IV and more than one extranodal site.",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": false,
+  "quote": "I will perform a lumbar puncture with CSF cytology and flow cytometry before treatment",
+  "source": "judge"
+ },
+ "cns_prophylaxis_renal": {
+  "met": true,
+  "quote": "I will not use high-dose intravenous methotrexate because his CrCl is about 47 mL/min.",
+  "source": "judge"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "I will not use high-dose intravenous methotrexate because his CrCl is about 47 mL/min.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "I will assess response with end-of-treatment FDG PET-CT using Lugano/Deauville criteria about 6-8 weeks after cycle 6, with a diagnostic CT component.",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Deauville 4-5 indicates residual disease, with biopsy if feasible and management as refractory or partial disease.",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": true,
+  "quote": "Tumor lysis prophylaxis is high risk (bulky disease, LDH 1290, urate 10.4, eGFR 50): check G6PD and give rasburicase 0.2 mg/kg if normal, with aggressive IV hydration and every 6-12 hour monitoring of urate, potassium, phosphate, calcium, creatinine and LDH during cycle 1",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": true,
+  "quote": "check G6PD and give rasburicase 0.2 mg/kg if normal",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Give pegfilgrastim 6 mg after each cycle",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "Stop ibuprofen immediately; use acetaminophen and short-acting opioids for pain, and avoid NSAIDs because of CKD, gout and bleeding risk.",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "Monitor glucose closely during prednisone and adjust metformin/insulin; metformin can continue at eGFR 50 but should be held during acute kidney injury or contrast exposure.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis B antiviral prophylaxis is not needed because HBsAg and anti-HBc are negative with anti-HBs positive (immune).",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "baseline echocardiogram (LVEF 60%)",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": true,
+  "quote": "Do not reduce dose preemptively for ECOG 2; his performance status is largely lymphoma-related and he is an anthracycline candidate.",
+  "source": "judge"
+ }
+}

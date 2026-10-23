@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified, germinal-center B-cell type by Hans algorithm (CD10+, MUM1/IRF4 negative), newly diagnosed and untreated.",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IV-B (Lugano 2014 IV-B).",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "Extranodal disease: right renal cortical lesion 3.2 cm (SUVmax 19.6), left adrenal 2.6 cm (SUVmax 17.2), hepatic segment VI 1.8 cm (SUVmax 15.0).",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms present: unintentional weight loss 79 to 70.2 kg (about 11% in about 2 months) and drenching night sweats",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "The liver lesion has not been biopsied. If it were not lymphoma, the stage would be III-B. Treatment is the same either way.",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "Double-expressor status is negative by IHC: MYC 20% (threshold 40%) and BCL2 30% (threshold 50%). FISH is negative for MYC, BCL2 and BCL6 rearrangements, so this is not double-hit or triple-hit lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "FISH is negative for MYC, BCL2 and BCL6 rearrangements, so this is not double-hit or triple-hit lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "Double-expressor status is negative by IHC: MYC 20% (threshold 40%) and BCL2 30% (threshold 50%).",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "IPI 5 (age >60, LDH >ULN, ECOG >=2, stage IV, more than one extranodal site) is high risk; IPI 4 would still be high risk even if ECOG is 1.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "CNS-IPI high: age >60, LDH >ULN, ECOG >=2, stage IV, more than one extranodal site, and kidney and adrenal involvement (all six factors present; high-risk group is 4 or more points).",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Full-dose curative-intent immunochemotherapy: pola-R-CHP (polatuzumab vedotin replaces vincristine in R-CHOP), 21-day cycles, 6 cycles, with CNS prophylaxis and primary G-CSF prophylaxis.",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "pola-R-CHP is a standard first-line option for IPI 2-5 per POLARIX. Fallback if polatuzumab is not approved or covered: R-CHOP-21 x6",
+  "source": "judge"
+ },
+ "tx_prephase_steroid": {
+  "met": false,
+  "quote": "prednisone 100 mg PO days 1-5.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Treatment intent is curative, but this is high-risk disease.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "Not chosen: high-dose methotrexate, because eGFR is about 50 and falling and renal clearance is not reliable enough; dose-adjusted EPOCH-R, because there is no double-hit biology",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "reduced-intensity regimens, because he is fit enough for full dose",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": true,
+  "quote": "High risk of CNS relapse. CNS-IPI high: age >60, LDH >ULN, ECOG >=2, stage IV, more than one extranodal site, and kidney and adrenal involvement (all six factors present; high-risk group is 4 or more points).",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": true,
+  "quote": "Before the first dose: brain MRI with and without gadolinium (a group II agent is acceptable at eGFR 50) and LP with cell count, cytology, flow cytometry, protein and glucose.",
+  "source": "judge"
+ },
+ "cns_prophylaxis_renal": {
+  "met": true,
+  "quote": "Why intrathecal rather than high-dose methotrexate: high-dose methotrexate needs reliable renal clearance; his eGFR is 50 and declining, with recent NSAID exposure and an ACE inhibitor, so the nephrotoxicity risk is too high.",
+  "source": "judge"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "Not chosen: high-dose methotrexate, because eGFR is about 50 and falling and renal clearance is not reliable enough",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT about 4-6 weeks after cycle 6 (about late January to early February 2027), read by Lugano 2014 criteria: complete metabolic response = Deauville 1-3 with no new lesions",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Residual PET-avid retroperitoneal disease at end of treatment: consolidative involved-site radiotherapy (about 30-36 Gy) to the bulky site, and biopsy if the residual uptake is high or new.",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": true,
+  "quote": "Admit for cycle 1 from day -1 to day 3 for IV hydration (target urine output at least 100 mL/m2/h, watching volume given grade I diastolic dysfunction and EF 60%), electrolytes every 8-12 hours, and no potassium supplements.",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": true,
+  "quote": "Send G6PD now. If G6PD is normal, give rasburicase 0.2 mg/kg IV once before chemotherapy (day -1 or day 1).",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "primary pegfilgrastim prophylaxis each cycle (age 65 or older, ECOG 2, renal impairment, diabetes; febrile neutropenia risk above 20%)",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "Stop ibuprofen today and avoid all NSAIDs. Scheduled acetaminophen 650 mg PO every 6 hours (maximum 3 g/day) for pain.",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "Diabetes with steroid-induced hyperglycemia: glucose before meals and at bedtime during prednisone days; basal plus correction insulin or NPH with prednisone; target 140-180 mg/dL",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis B: HBsAg and anti-HBc negative, anti-HBs positive. No HBV prophylaxis and no HBV DNA monitoring needed for rituximab.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "Cardiac: baseline LVEF 60% with GLS -19%; cumulative doxorubicin 300 mg/m2. Repeat echo only if symptoms or for institutional practice.",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": false,
+  "quote": "he is fit enough for full-dose curative-intent immunochemotherapy with G-CSF and CNS prophylaxis; age 67 is not in itself a reason for dose reduction",
+  "source": "judge"
+ }
+}

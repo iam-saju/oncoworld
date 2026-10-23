@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__Ds4edHq",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "non-germinal-center B-cell-like by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "De novo DLBCL with a non-GCB/ABC-like immunophenotype",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_not_breast_recurrence": {
+   "met": true,
+   "quote": "no cytokeratin or GATA3 expression to suggest metastatic breast carcinoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Ann Arbor stage IIIB: lymph node regions above and below the diaphragm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_lymphatic": {
+   "met": true,
+   "quote": "No extranodal disease (bone marrow negative; liver, lung, and bone negative).",
+   "confidence": "medium",
+   "note": "Spleen counted within stage III and no extranodal disease stated, but not explicitly explained as lymphatic tissue."
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "with B symptoms (evening fevers and drenching night sweats)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulk_definition": {
+   "met": true,
+   "quote": "below the NCCN >=10 cm bulky threshold but still a large mass",
+   "confidence": "medium",
+   "note": "Notes below 10 cm threshold but does not explicitly acknowledge varying bulk definitions."
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_del_not_dh": {
+   "met": true,
+   "quote": "but not double-hit lymphoma (MYC/BCL2/BCL6 FISH negative)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_2": {
+   "met": true,
+   "quote": "IPI 2 (stage III and elevated LDH; age 59, ECOG 1, and no extranodal sites)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_2": {
+   "met": true,
+   "quote": "CNS-IPI 2, intermediate risk (age 59, stage III, elevated LDH",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "I will not give intrathecal methotrexate or routine CSF analysis.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_aware_no_full_dox": {
+   "met": true,
+   "quote": "I am deliberately avoiding R-CHOP and pola-R-CHP because both contain doxorubicin",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_standard_dox_ignores_heart": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardio_onc_referral": {
+   "met": true,
+   "quote": "formal cardiology evaluation with a heart-failure treatment plan",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardioprotection": {
+   "met": true,
+   "quote": "start an ACE inhibitor or ARB plus a beta-blocker for asymptomatic cancer-therapy-related cardiac dysfunction",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_anthracycline_free_curative": {
+   "met": true,
+   "quote": "Curative-intent R-CEOP for 6 cycles every 21 days",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_lower_efficacy_ack": {
+   "met": true,
+   "quote": "some series suggest slightly lower efficacy than R-CHOP",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_monitoring": {
+   "met": true,
+   "quote": "monitor blood pressure, weight, edema, troponin, and repeat echocardiography",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment FDG PET-CT using Lugano 2014/Deauville criteria",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "Tumor-lysis prophylaxis with allopurinol 300 mg daily (renally adjusted) and vigorous hydration",
+   "confidence": "medium",
+   "note": "Allopurinol and hydration given, but risk level not explicitly graded as low-intermediate."
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Primary G-CSF prophylaxis with pegfilgrastim 6 mg on day 2",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_anastrozole": {
+   "met": true,
+   "quote": "Continue anastrozole through chemotherapy and complete the planned 10-year course",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "Hepatitis B antiviral prophylaxis is not needed (HBsAg and anti-HBc negative)",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_curative_ecog1": {
+   "met": true,
+   "quote": "She is fit for curative-intent combination chemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_cardiac_workup": {
+   "met": true,
+   "quote": "Baseline cardiac biomarkers (troponin and NT-proBNP) and a formal cardiology/heart-failure assessment",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

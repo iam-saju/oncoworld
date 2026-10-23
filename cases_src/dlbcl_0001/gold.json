@@ -11,5 +11,41 @@
   "fitness_and_goals": "Fit for full-dose curative-intent therapy: ECOG 1, age 62, normal renal and hepatic function, LVEF 58%, and well-controlled comorbidities (hypothyroidism, GERD, hyperlipidemia). His goal is cure and continuing part-time work; full-dose therapy is aligned with that goal. Six 21-day cycles starting late September would finish around January 2027, before his daughter's May wedding. Limit job-site travel during nadirs.",
   "missing_information": [
     "Quantitative HBV DNA level (not yet sent; needed at baseline given reactive anti-HBc)"
-  ]
+  ],
+  "decisions": {
+    "stage": "III",
+    "diagnosis": "DLBCL NOS, non-GCB (Hans), double-expressor, not double-hit",
+    "intent": "curative",
+    "regimen": "Pola-R-CHP (polatuzumab vedotin 1.8 mg/kg, rituximab 375 mg/m2, cyclophosphamide 750 mg/m2, doxorubicin 50 mg/m2 IV day 1; prednisone 100 mg PO days 1-5) every 21 days",
+    "cycles": 6,
+    "cycle1_dose_percent": 100,
+    "radiotherapy": "none planned now; ISRT to the initially bulky retroperitoneal site only if PET-positive at end of treatment",
+    "orders_now": [
+      "Quantitative HBV DNA before cycle 1",
+      "Hepatic function panel (ALT, AST, bilirubin, alkaline phosphatase) before cycle 1",
+      "Entecavir 0.5 mg PO daily, start before the first rituximab dose and continue for at least 12 months after the last rituximab dose",
+      "Monitor ALT and HBV DNA every 1-3 months during therapy and after entecavir stops",
+      "Allopurinol 300 mg PO daily starting 2-3 days before cycle 1",
+      "Oral plus IV hydration around cycle 1",
+      "Pola-R-CHP cycle 1 at full dose",
+      "Pegfilgrastim 6 mg SC on day 2 of each cycle",
+      "Antiemetics per regimen",
+      "Continue levothyroxine, omeprazole and atorvastatin",
+      "Counsel about alopecia and peripheral neuropathy"
+    ],
+    "conditional_orders": [
+      "if baseline HBV DNA detectable: manage as chronic HBV with hepatology input",
+      "if uric acid rises or creatinine climbs after cycle 1: rasburicase",
+      "if new neurologic symptoms: MRI brain and lumbar puncture with CSF cytology and flow cytometry",
+      "if end-of-treatment PET Deauville 4-5: biopsy residual uptake before changing therapy",
+      "if the initially bulky retroperitoneal site alone remains PET-positive at end of treatment: consolidative ISRT"
+    ],
+    "lab_monitoring": [
+      {
+        "tests": "TLS labs: potassium, phosphate, calcium, uric acid, creatinine, LDH",
+        "every_hours": 24,
+        "duration_hours": 72
+      }
+    ]
+  }
 }

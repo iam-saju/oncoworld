@@ -1,0 +1,186 @@
+{
+ "id": "haiku55_v2_first5_r3__bqTwm9K",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "Non-germinal-center B-cell phenotype by Hans algorithm (CD10-, BCL6+, MUM1/IRF4+ in ~70%).",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "Cell-of-origin gene expression profiling would not change the first-line decision and is not needed.",
+   "confidence": "medium",
+   "note": "Mentions GEP COO but never states Hans non-GCB is not equivalent to ABC."
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Lugano 2014 / Ann Arbor stage III, B",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": true,
+   "quote": "Lugano counts the spleen as a nodal site, so splenic involvement does not by itself make stage IV.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "with bulky disease (retroperitoneal mass 11.0 x 8.1 cm, above the 10 cm threshold)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "If the splenic lesions were scored as extranodal, the stage would be IV.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": false,
+   "quote": "CNS-IPI is intermediate, about 2-3 depending on whether splenic involvement counts as an extranodal site.",
+   "confidence": "medium",
+   "note": "Hedges on counting spleen but does not commit to it."
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "Double-expressor by IHC (MYC ~50%, BCL2 ~80%).",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "so this is not high-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangement",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "IPI is 3 (age over 60, LDH above ULN, stage III), which is high-intermediate.",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": true,
+   "quote": "Age over 60, stage III and elevated LDH each score.",
+   "confidence": "medium",
+   "note": "Lists the three scoring factors and intermediate risk but states the score as \"about 2-3\"."
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Pola-R-CHP (polatuzumab vedotin, rituximab, cyclophosphamide, doxorubicin, prednisone) every 21 days for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "R-CHOP-21 is an acceptable fallback if polatuzumab cannot be obtained.",
+   "confidence": "medium",
+   "note": "Pola-R-CHP preferred, but no mention of greater benefit in non-GCB/ABC."
+  },
+  "tx_isrt_residual_bulk": {
+   "met": true,
+   "quote": "Deauville 4-5 at the retroperitoneal site: consolidation RT to about 30-36 Gy.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "DA-EPOCH-R is reserved for confirmed MYC plus BCL2 and/or BCL6 double- or triple-hit disease, which is not present.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "He is fit for full-dose curative therapy.",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": true,
+   "quote": "Start entecavir 0.5 mg daily before C1, continuing at least 12 months after the last rituximab",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": false,
+   "quote": "Quantitative HBV DNA now.",
+   "confidence": "medium",
+   "note": "Baseline HBV DNA and CMP ordered, but no ongoing HBV DNA/ALT monitoring during and after therapy."
+  },
+  "mn_no_hbv_action": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "Decision: no CNS-directed prophylaxis (intrathecal or high-dose methotrexate), and no baseline lumbar puncture or brain MRI unless neurologic symptoms appear.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT 4-6 weeks after C6 (Lugano).",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": false,
+   "quote": "If the residual site is Deauville 4-5 and RT is not possible, biopsy before any change in therapy.",
+   "confidence": "medium",
+   "note": "Biopsy only if RT not possible; otherwise irradiates residual DS4-5 without biopsy."
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "Start allopurinol 300 mg daily now. Hydrate 2-3 L/day around C1",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim or biosimilar on D4 of every cycle as primary prophylaxis",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "cumulative 300 mg/m2 over 6 cycles, well under the 450 mg/m2 limit with LVEF 58%",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "He is fit for full-dose curative therapy.",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "Quantitative HBV DNA is not documented.",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

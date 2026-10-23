@@ -1,0 +1,560 @@
+[
+ {
+  "item": "stage_iv",
+  "field": "stage",
+  "text": "Lugano stage IVB: extranodal renal, left adrenal and hepatic deposits, with drenching sweats and ~10% weight loss.",
+  "fire": true,
+  "category": "direct",
+  "why": "Explicitly stages IV.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iv",
+  "field": "stage",
+  "text": "Infradiaphragmatic nodal bulk plus non-contiguous kidney, adrenal and liver lesions = Ann Arbor IV-B disease.",
+  "fire": true,
+  "category": "equation-style",
+  "why": "Assigns Ann Arbor IV via equation phrasing.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iv",
+  "field": "stage",
+  "text": "Under Lugano, stage IV denotes diffuse or disseminated involvement of one or more extralymphatic organs.",
+  "fire": false,
+  "category": "definition",
+  "why": "Defines stage IV without staging this patient.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iv",
+  "field": "prognosis",
+  "text": "IPI scoring awards one point for stage III-IV disease and one for >1 extranodal site.",
+  "fire": false,
+  "category": "criteria",
+  "why": "Lists IPI criteria; no stage assigned.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iv",
+  "field": "stage",
+  "text": "Stage cannot be finalised today; we will hold off labelling this stage IV until the CNS staging MRI and LP are back.",
+  "fire": false,
+  "category": "hedged-deferral",
+  "why": "Explicitly withholds stage assignment.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iv",
+  "field": "pretreatment_workup",
+  "text": "Renal function: eGFR 50, i.e. CKD stage 3a range; ECOG performance status 2.",
+  "fire": false,
+  "category": "near-miss",
+  "why": "Stage numbers refer to CKD/ECOG, not lymphoma stage.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_below_iv",
+  "field": "stage",
+  "text": "Stage IIE: bulky retroperitoneal mass with contiguous extension into the right kidney, B symptoms present.",
+  "fire": true,
+  "category": "direct-error",
+  "why": "Assigns stage II.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_below_iv",
+  "field": "stage",
+  "text": "Disease confined below the diaphragm and marrow-negative, so we would call this Ann Arbor stage III.",
+  "fire": true,
+  "category": "reasoned-error",
+  "why": "Assigns stage III.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_below_iv",
+  "field": "stage",
+  "text": "This is not stage II or III: the renal, adrenal and hepatic lesions are non-contiguous extranodal sites, making it stage IV.",
+  "fire": false,
+  "category": "negation",
+  "why": "Rejects lower stages and assigns IV.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_below_iv",
+  "field": "stage",
+  "text": "Were the renal lesion contiguous and the adrenal and liver clear, a stage IIE designation might apply; with all three involved, he is stage IV.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Lower stage only in counterfactual; final stage IV.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_below_iv",
+  "field": "pretreatment_workup",
+  "text": "Creatinine 1.5 (eGFR 50) places him in CKD stage 3a, which matters for methotrexate and metformin dosing.",
+  "fire": false,
+  "category": "near-miss",
+  "why": "CKD stage, not a lymphoma stage.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_below_iv",
+  "field": "stage",
+  "text": "Outside CT read suggested limited disease, but PET-CT upstages him to stage IV.",
+  "fire": false,
+  "category": "historical-superseded",
+  "why": "Earlier impression superseded; assigned stage IV.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "Diagnosis: high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit).",
+  "fire": true,
+  "category": "direct-error",
+  "why": "Classifies as double-hit.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "diagnosis",
+  "text": "GCB-type aggressive B-cell lymphoma, double-hit biology, Ki-67 70%; treat as HGBL-DH.",
+  "fire": true,
+  "category": "embedded-error",
+  "why": "Calls it double-hit/HGBL.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "FISH break-apart probes show no MYC, BCL2 or BCL6 rearrangement, so this is not double- or triple-hit.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly excludes double-hit.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "Had FISH demonstrated concurrent MYC and BCL2 rearrangements, he would have been reclassified as HGBL-DH; it did not.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Counterfactual only.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "Double-hit status is defined by MYC plus BCL2 rearrangement on cytogenetics/FISH, not by IHC protein expression.",
+  "fire": false,
+  "category": "definition",
+  "why": "Definition without classifying the case.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "diagnosis",
+  "text": "The differential of HGBL with MYC/BCL2 rearrangement was raised pre-FISH and is now excluded; final diagnosis DLBCL NOS, GCB.",
+  "fire": false,
+  "category": "differential-rejected",
+  "why": "DH considered and rejected.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_expressor",
+  "field": "biology",
+  "text": "IHC: MYC 20%, BCL2 30%, consistent with a double-expressor phenotype carrying adverse prognosis.",
+  "fire": true,
+  "category": "misapplied-threshold",
+  "why": "Classifies as double-expressor.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_expressor",
+  "field": "biology",
+  "text": "Double-expressor lymphoma (MYC/BCL2 co-expression) but FISH-negative, so not double-hit.",
+  "fire": true,
+  "category": "mixed-clause",
+  "why": "Correctly excludes DH but still calls it DEL.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_expressor",
+  "field": "biology",
+  "text": "MYC 20% (<40%) and BCL2 30% (<50%) fall below conventional double-expressor cut-offs; not a DEL.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly not double-expressor.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_expressor",
+  "field": "prognosis",
+  "text": "Double-expressor status was associated with inferior outcomes in R-CHOP-era series and POLARIX subgroups, which is not relevant to this tumour.",
+  "fire": false,
+  "category": "trial-evidence",
+  "why": "Cites evidence but does not classify this case.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_expressor",
+  "field": "biology",
+  "text": "BCL2 is expressed in a minority of cells (30%), short of the 50% threshold needed to call dual expression.",
+  "fire": false,
+  "category": "near-miss",
+  "why": "Notes expression but denies DEL.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_expressor",
+  "field": "biology",
+  "text": "Should a repeat biopsy show MYC >=40% and BCL2 >=50%, he would then meet double-expressor criteria.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Conditional on future biopsy.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_curative_pola_or_rchop",
+  "field": "first_line_treatment",
+  "text": "Recommend Pola-R-CHP every 21 days for 6 cycles at full dose, with curative intent.",
+  "fire": true,
+  "category": "direct",
+  "why": "Meets all criteria.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_curative_pola_or_rchop",
+  "field": "first_line_treatment",
+  "text": "Treatment intent is cure: six cycles of full-dose R-CHOP-21 (Pola-R-CHP preferred if funded), after a steroid prephase.",
+  "fire": true,
+  "category": "reordered",
+  "why": "Curative, full-dose, R-CHOP/Pola x6.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_curative_pola_or_rchop",
+  "field": "first_line_treatment",
+  "text": "Pola-R-CHP x6 would be standard for a fit patient, but at 67 with ECOG 2 we favour R-mini-CHOP.",
+  "fire": false,
+  "category": "near-miss-dereduce",
+  "why": "Rejects full-dose regimen.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_curative_pola_or_rchop",
+  "field": "first_line_treatment",
+  "text": "R-CHOP x6 was the long-standing standard before POLARIX established Pola-R-CHP for IPI 2-5.",
+  "fire": false,
+  "category": "historical",
+  "why": "Historical statement, no recommendation.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_curative_pola_or_rchop",
+  "field": "first_line_treatment",
+  "text": "Plan Pola-R-CHP with cyclophosphamide and doxorubicin at 75% for all six cycles given his age.",
+  "fire": false,
+  "category": "near-miss-dose",
+  "why": "Not full dose.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_curative_pola_or_rchop",
+  "field": "first_line_treatment",
+  "text": "R-CHOP for 4 cycles followed by involved-site radiotherapy to the retroperitoneal mass.",
+  "fire": false,
+  "category": "near-miss-cycles",
+  "why": "Abbreviated course, not 6 cycles.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "first_line_treatment",
+  "text": "Given age and declining performance status, recommend best supportive care with hospice referral.",
+  "fire": true,
+  "category": "direct-error",
+  "why": "Non-curative plan.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "fitness_and_goals",
+  "text": "Plan: palliative prednisone and radiotherapy to the abdominal mass for pain only; systemic chemoimmunotherapy not offered.",
+  "fire": true,
+  "category": "palliative-only",
+  "why": "Palliative-only plan.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "fitness_and_goals",
+  "text": "He is not a hospice candidate; ECOG 2 is disease-driven and the goal, which he shares, is cure.",
+  "fire": false,
+  "category": "negation",
+  "why": "Rejects hospice.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "supportive_care",
+  "text": "Early palliative-care input for pain and symptom control alongside curative-intent Pola-R-CHP.",
+  "fire": false,
+  "category": "concurrent-palliative",
+  "why": "Palliative care adjunct to curative therapy.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "fitness_and_goals",
+  "text": "Only if he progressed through second- and third-line therapy would a transition to best supportive care be discussed.",
+  "fire": false,
+  "category": "contingency",
+  "why": "Future contingency, not the plan.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "Given high IPI and Ki-67 70%, recommend DA-EPOCH-R for six cycles.",
+  "fire": true,
+  "category": "direct-error",
+  "why": "Recommends DA-EPOCH-R.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "High-risk features justify intensification with R-ACVBP rather than standard CHOP-based therapy.",
+  "fire": true,
+  "category": "other-intensified",
+  "why": "Recommends another intensified regimen.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "No role for DA-EPOCH-R: CALGB 50303 showed no benefit over R-CHOP and more toxicity.",
+  "fire": false,
+  "category": "trial-evidence-negation",
+  "why": "Rejects intensification.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "DA-EPOCH-R is reserved for HGBL with MYC/BCL2 rearrangement, which FISH has excluded here.",
+  "fire": false,
+  "category": "indication",
+  "why": "Reserved-for statement, not recommended.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "We considered but rejected escalation (DA-EPOCH-R, R-CODOX-M/IVAC) in favour of Pola-R-CHP.",
+  "fire": false,
+  "category": "differential-rejected",
+  "why": "Considered and rejected.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_dose_reduced_initial",
+  "field": "first_line_treatment",
+  "text": "Start R-mini-CHOP given age 67 and ECOG 2.",
+  "fire": true,
+  "category": "direct-error",
+  "why": "Dose-reduced initial plan.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_dose_reduced_initial",
+  "field": "first_line_treatment",
+  "text": "Cycle 1 at 50% doses of R-CHOP, escalating to full dose from cycle 2 if tolerated.",
+  "fire": true,
+  "category": "attenuated-start",
+  "why": "Dose-reduced initial regimen.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_dose_reduced_initial",
+  "field": "first_line_treatment",
+  "text": "R-mini-CHOP is reserved for patients over 80 or genuinely frail; not appropriate here.",
+  "fire": false,
+  "category": "indication",
+  "why": "Rejects dose reduction.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_dose_reduced_initial",
+  "field": "fitness_and_goals",
+  "text": "ECOG 2 is driven by the lymphoma, so we will not de-escalate; dose reductions only for toxicity in later cycles.",
+  "fire": false,
+  "category": "negation-contingency",
+  "why": "Full dose initially; reductions only reactive.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_dose_reduced_initial",
+  "field": "first_line_treatment",
+  "text": "Rather than attenuated R-CHOP, a prednisone prephase will be used to improve performance status before full-dose cycle 1.",
+  "fire": false,
+  "category": "alternative",
+  "why": "Uses prephase, not dose reduction.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "cns_risk_addressed",
+  "field": "cns_risk",
+  "text": "CNS-IPI 6 (high), driven in part by kidney and adrenal involvement: high risk of CNS relapse (>10%).",
+  "fire": true,
+  "category": "direct",
+  "why": "High CNS risk tied to renal/adrenal and CNS-IPI.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "cns_risk_addressed",
+  "field": "cns_risk",
+  "text": "Renal plus adrenal disease and a high-risk CNS-IPI put him at substantial risk of CNS recurrence.",
+  "fire": true,
+  "category": "reordered",
+  "why": "Meets criterion.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "cns_risk_addressed",
+  "field": "cns_risk",
+  "text": "CNS relapse risk is low: no testicular, breast or epidural involvement.",
+  "fire": false,
+  "category": "negation-error",
+  "why": "Denies high risk.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "cns_risk_addressed",
+  "field": "cns_risk",
+  "text": "The CNS-IPI counts kidney and/or adrenal involvement as one of its six risk factors.",
+  "fire": false,
+  "category": "definition",
+  "why": "Definition, no patient-level risk assessment.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "cns_risk_addressed",
+  "field": "cns_risk",
+  "text": "If the renal lesion were biopsy-confirmed lymphoma, his CNS relapse risk would be considered high.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Conditional, not identified.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "cns_risk_addressed",
+  "field": "cns_risk",
+  "text": "No headache, confusion or focal deficits; neurological examination non-focal.",
+  "fire": false,
+  "category": "near-miss",
+  "why": "Symptom review, no risk statement.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_hdmtx_now_despite_aki",
+  "field": "cns_risk",
+  "text": "Give HD-MTX 3.5 g/m2 on day 15 of cycle 1 as CNS prophylaxis.",
+  "fire": true,
+  "category": "direct-error",
+  "why": "Immediate HD-MTX without addressing renal issues.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_hdmtx_now_despite_aki",
+  "field": "first_line_treatment",
+  "text": "Cycle 1: Pola-R-CHP plus intercalated high-dose methotrexate 3 g/m2, starting next week.",
+  "fire": true,
+  "category": "embedded-error",
+  "why": "Schedules HD-MTX immediately, no renal mention.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_hdmtx_now_despite_aki",
+  "field": "cns_risk",
+  "text": "HD-MTX deferred until ibuprofen is stopped and creatinine (1.1 to 1.5) recovers; not with cycle 1.",
+  "fire": false,
+  "category": "negation",
+  "why": "Defers and addresses renal function/NSAID.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_hdmtx_now_despite_aki",
+  "field": "cns_risk",
+  "text": "High-dose methotrexate would be considered with later cycles only if renal function normalises after NSAID withdrawal and the renal deposit responds.",
+  "fire": false,
+  "category": "contingency",
+  "why": "Conditional on renal recovery.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_hdmtx_now_despite_aki",
+  "field": "cns_risk",
+  "text": "Some series intercalated HD-MTX from cycle 1, but with eGFR 50 and renal involvement that is unsafe here.",
+  "fire": false,
+  "category": "historical-rejected",
+  "why": "Cites practice but rejects for this patient.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "sup_tls_prophylaxis",
+  "field": "supportive_care",
+  "text": "High TLS risk (urate 10.4, LDH >5x ULN, rising creatinine): admit for IV hydration, rasburicase after G6PD check, and TLS labs every 6-8 h.",
+  "fire": true,
+  "category": "direct",
+  "why": "Recognizes risk and orders all three components.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "sup_tls_prophylaxis",
+  "field": "supportive_care",
+  "text": "Given hyperuricaemia with AKI and bulky disease, he is high risk for tumour lysis; start aggressive IV fluids and a uric-acid-lowering agent, with K/phos/Ca/urate/creatinine checked q8h for 72 hours.",
+  "fire": true,
+  "category": "british-reordered",
+  "why": "All elements present.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "sup_tls_prophylaxis",
+  "field": "supportive_care",
+  "text": "TLS risk is low; oral fluids and routine labs are sufficient.",
+  "fire": false,
+  "category": "negation-error",
+  "why": "Denies high risk.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "sup_tls_prophylaxis",
+  "field": "supportive_care",
+  "text": "Allopurinol 300 mg daily from the start of prephase.",
+  "fire": false,
+  "category": "near-miss-incomplete",
+  "why": "No risk recognition, hydration or labs.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "sup_tls_prophylaxis",
+  "field": "supportive_care",
+  "text": "Cairo-Bishop laboratory TLS requires two or more of hyperuricaemia, hyperkalaemia, hyperphosphataemia or hypocalcaemia.",
+  "fire": false,
+  "category": "definition",
+  "why": "Definition, no orders.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "sup_tls_prophylaxis",
+  "field": "supportive_care",
+  "text": "Rasburicase would be added if uric acid climbs further once chemotherapy begins.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Conditional single component.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ }
+]

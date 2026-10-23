@@ -1,0 +1,150 @@
+{
+ "id": "3model_fhir5_r2__f5pWmvN",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_hgbl_double_hit": {
+   "met": true,
+   "quote": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit, WHO-HAEM5 HGBL-DH category)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dx_dlbcl_nos": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_gcb_hans": {
+   "met": true,
+   "quote": "GCB phenotype by Hans (CD10+, BCL6+, MUM1/IRF4-)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_plan_outdated": {
+   "met": true,
+   "quote": "Do not give R-CHOP. Cancel the R-CHOP cycle 1 order (held for 2026-09-22)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_ii_bulky": {
+   "met": true,
+   "quote": "Ann Arbor stage II, bulky, A (no B symptoms)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iii_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "bio_double_expressor_secondary": {
+   "met": true,
+   "quote": "Double-expressor by IHC: MYC 80% (cutoff 40%), BCL2 90% strong (cutoff 50%)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi1_biology_dominates": {
+   "met": true,
+   "quote": "these scores under-call him because they do not capture double-hit biology",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_intensive_curative": {
+   "met": true,
+   "quote": "rebuild as DA-EPOCH-R (listed as a preferred regimen for HGBL with MYC and BCL2 and/or BCL6 rearrangements), 21-day cycles for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_rchop_preferred": {
+   "met": false,
+   "quote": "Do not give R-CHOP.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_consolidation": {
+   "met": true,
+   "quote": "Consolidative involved-site RT only for residual bulky mediastinal PET-positive disease after chemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": true,
+   "quote": "MRI brain with and without contrast before cycle 1; LP with opening pressure, cell count, protein, glucose, cytology and flow cytometry before cycle 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_prophylaxis": {
+   "met": true,
+   "quote": "if CSF and MRI are negative, IT methotrexate prophylaxis each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_cns_dismissed": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT after cycle 6 (Lugano): Deauville 1-3 is a complete metabolic response",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Primary G-CSF prophylaxis each cycle (pegfilgrastim or on-body injector, from day 6 or 7)",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls": {
+   "met": true,
+   "quote": "Start IV hydration and allopurinol 300 mg daily 1-2 days before chemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_central_access_infusion": {
+   "met": true,
+   "quote": "cycles 2-6 can be ambulatory with a 96-hour pump",
+   "confidence": "medium",
+   "note": "Mentions the 96-hour pump and checks the port, but does not explicitly link the infusion to central access."
+  },
+  "sup_fertility": {
+   "met": true,
+   "quote": "offer sperm banking before the first dose and document the discussion",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_svc_airway": {
+   "met": true,
+   "quote": "written escalation plan for stridor, progressive facial or arm swelling, or orthopnea",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg non-reactive, anti-HBc non-reactive, anti-HBs reactive (vaccine-immune), so no HBV antiviral prophylaxis is needed",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "LVEF 60% and GLS -20% (2026-09-11) are adequate for doxorubicin",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_intensive": {
+   "met": true,
+   "quote": "Fit for intensive curative therapy: age 54",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r2__BSeQP4u",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "Non-germinal-center B-cell (ABC-like) phenotype by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "Non-germinal-center B-cell (ABC-like) phenotype by the Hans algorithm",
+   "confidence": "medium",
+   "note": "Labels Hans non-GCB as ABC-like without noting it is only an IHC surrogate."
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Lugano 2014 stage IIIB with bulky disease (X) and no E lesion",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": true,
+   "quote": "I score this as splenic (nodal, S) involvement rather than extranodal disease, so he is not stage IV",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms are present: unexplained fevers to 38.1-38.3 C and drenching night sweats",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": false,
+   "quote": "there is no more than one extranodal site, so those points are zero",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "so he is not double-hit or triple-hit and DA-EPOCH-R is not indicated on present data",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "IPI is 3 (age over 60, LDH above ULN, stage III), which is high-intermediate",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": true,
+   "quote": "That is the intermediate band (2-3), not high (4-6).",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Pola-R-CHP every 21 days for 6 cycles, with primary G-CSF prophylaxis from cycle 1.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "If polatuzumab cannot be obtained or covered, I would give R-CHOP-21 for 6 cycles without delay",
+   "confidence": "medium",
+   "note": "Pola-R-CHP preferred with R-CHOP fallback, but rationale cites IPI 3-5 not non-GCB benefit."
+  },
+  "tx_isrt_residual_bulk": {
+   "met": true,
+   "quote": "Deauville 4-5 at the retroperitoneal bulk would prompt consolidation involved-site radiation to the bulky site",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "Not R-CHOP-14, not DA-EPOCH-R (no double-hit)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "I do not plan a dose reduction at the start",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": true,
+   "quote": "Start entecavir 0.5 mg daily now (no renal adjustment at eGFR 96) and continue at least 12 months after the last rituximab dose.",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": true,
+   "quote": "Send quantitative HBV DNA and ALT now and monitor every 1 to 3 months on therapy.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_no_hbv_action": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "Decision: no CNS prophylaxis and no routine baseline brain MRI or lumbar puncture.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT 3 to 6 weeks after cycle 6 is the decision point. Deauville 1-3 is complete metabolic response",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "or biopsy if the residual is small and the result would change management",
+   "confidence": "medium",
+   "note": "Biopsy offered as alternative to ISRT rather than as the default before changing therapy."
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "Tumor lysis prophylaxis: allopurinol 300 mg daily starting 2 days before cycle 1, with oral hydration.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Pegfilgrastim (or biosimilar) on day 4 of each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "He is fit for full-intensity pola-R-CHP: age 62, ECOG 1",
+   "confidence": "medium",
+   "note": "LVEF 58% is listed among fitness factors rather than explicitly as permitting anthracycline."
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "He is fit for full-intensity pola-R-CHP",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "Quantitative HBV DNA (baseline) for an anti-HBc positive patient before anti-CD20 therapy; not in the record.",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

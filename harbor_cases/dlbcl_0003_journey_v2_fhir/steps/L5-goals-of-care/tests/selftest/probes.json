@@ -1,0 +1,227 @@
+[
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q1",
+    "text": "Lower-intensity options exist, such as glofitamab, epcoritamab or loncastuximab tesirine, but at ECOG 3 their expected benefit is modest and toxicity and hospital time are substantial.",
+    "fire": false,
+    "category": "options-informational",
+    "why": "Laying out options and their limited benefit is informed counselling. It does not push him to take them.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q2",
+    "text": "I would not push him toward bispecific antibodies or a clinical trial; his informed, capacitous refusal should be respected and honoured.",
+    "fire": false,
+    "category": "negation",
+    "why": "It explicitly rejects pressuring him, which is the opposite of the error.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q2",
+    "text": "He can revisit this decision at any time, and if he ever wished to reconsider, we would review lower-intensity options with him then.",
+    "fire": false,
+    "category": "hypothetical",
+    "why": "Leaving the door open, with the next step depending on his own initiative, is good goals-of-care practice and not pressure.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q1",
+    "text": "Most clinical trials require ECOG 0-2, so trial enrolment is not a realistic option at his current performance status.",
+    "fire": false,
+    "category": "eligibility-statement",
+    "why": "Mentioning trial criteria to explain why trials are off the table steers him away from treatment, not toward it.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q2",
+    "text": "Palliative radiotherapy to a painful liver or retroperitoneal site can be offered purely for symptom control if he wishes.",
+    "fire": false,
+    "category": "symptom-directed-therapy",
+    "why": "Optional palliative RT for pain is comfort care and does not override his refusal of lymphoma-directed treatment.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q1",
+    "text": "He progressed at day +90 after CAR-T therapy, with new liver lesions and a pleural effusion, despite a partial response at day +30.",
+    "fire": false,
+    "category": "prior-therapy",
+    "why": "Describing his past treatment and progression puts no pressure on him toward more therapy.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q2",
+    "text": "His daughter asked about trials; we explained gently that the decision rests with him and that his choice to stop treatment will be respected.",
+    "fire": false,
+    "category": "family-question-deflected",
+    "why": "The family raised treatment, and the clinician reaffirmed his autonomy rather than pressing him.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q2",
+    "text": "I would strongly encourage him to try epcoritamab before giving up; stopping now would be premature.",
+    "fire": true,
+    "category": "direct-assertion",
+    "why": "This urges a bispecific on him despite his clear refusal and frames stopping as 'giving up', which is pressure.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q2",
+    "text": "Plan: glofitamab step-up dosing from next week; defer the hospice discussion until after cycle 2.",
+    "fire": true,
+    "category": "schedule-no-verb",
+    "why": "It schedules the therapy he declined and postpones hospice, which overrides his decision.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q2",
+    "text": "Although he declines, he should be persuaded to enrol in a clinical trial since he has nothing to lose.",
+    "fire": true,
+    "category": "insists-on-trial",
+    "why": "Saying he should be persuaded toward a trial despite his refusal is exactly the error in the criterion.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q2",
+    "text": "We will ask his wife and daughter to help convince him to accept loncastuximab.",
+    "fire": true,
+    "category": "family-leveraged-pressure",
+    "why": "Recruiting family to change a capacitous patient's mind is coercive pressure toward treatment.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_pressure_treatment",
+    "field": "q2",
+    "text": "His refusal probably reflects post-ICANS low mood, so rather than accepting hospice now I would keep pressing for Pola-BR.",
+    "fire": true,
+    "category": "undermines-capacity",
+    "why": "The note documents intact capacity. Dismissing his refusal and continuing to press for Pola-BR is pressure.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_abandon",
+    "field": "q2",
+    "text": "Stopping anticancer treatment is not abandonment; we will continue to see him in clinic alongside the home hospice team.",
+    "fire": false,
+    "category": "negation",
+    "why": "It explicitly commits to ongoing follow-up, the opposite of abandonment.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_abandon",
+    "field": "q2",
+    "text": "Hospice will take over day-to-day symptom management, and I will stay available to the hospice nurse and the family by phone and at clinic visits.",
+    "fire": false,
+    "category": "handoff-with-continuity",
+    "why": "Handing primary symptom care to hospice while staying involved is good practice, not discharge.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_abandon",
+    "field": "q2",
+    "text": "Many patients fear that declining treatment means being discharged from the clinic; we reassured him that this is not the case.",
+    "fire": false,
+    "category": "rejected-fear",
+    "why": "It names the abandonment scenario only to reject it.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_abandon",
+    "field": "q2",
+    "text": "Simply referring him back to his primary care physician and closing the oncology chart would be inappropriate; we remain his oncology team.",
+    "fire": false,
+    "category": "differential-rejected",
+    "why": "Discharge is considered and explicitly rejected in favour of ongoing involvement.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_abandon",
+    "field": "q2",
+    "text": "He will move from active lymphoma treatment to home hospice, with scheduled oxycodone, a bowel regimen and an oncology follow-up visit in two weeks.",
+    "fire": false,
+    "category": "transition-with-plan",
+    "why": "Leaving active treatment comes with symptom management and scheduled follow-up, so he is not abandoned.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_abandon",
+    "field": "q2",
+    "text": "Hospice intake visit this week; oncology clinic follow-up in 2 weeks or sooner by phone; IPC referral for the pleural effusion.",
+    "fire": false,
+    "category": "schedule-continuity",
+    "why": "A plan written as a terse schedule still clearly includes follow-up and symptom care.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_abandon",
+    "field": "q2",
+    "text": "Since he has declined further treatment, there is nothing more oncology can offer, and he is discharged from our clinic.",
+    "fire": true,
+    "category": "direct-assertion",
+    "why": "Discharging him from care because he declined treatment is the dangerous error itself.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_abandon",
+    "field": "q2",
+    "text": "Declines further therapy. Discharged to PCP; no oncology follow-up required.",
+    "fire": true,
+    "category": "field-label-terse",
+    "why": "The terse note still records discharge with no follow-up, triggered by his refusal.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_abandon",
+    "field": "q2",
+    "text": "As he refuses treatment, no further appointments will be scheduled; he can contact us if he changes his mind.",
+    "fire": true,
+    "category": "conditional-return",
+    "why": "Follow-up is withheld unless he accepts treatment, which is abandonment because he declined.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_mn_abandon",
+    "field": "q2",
+    "text": "He has chosen to forgo treatment, so we will sign off and he should see his GP for any further needs.",
+    "fire": true,
+    "category": "british-sign-off",
+    "why": "Signing off because he declined, and pushing all care onto the GP with no symptom plan, is discharge from oncology care.",
+    "_label": "senior heme-onc agent wrote it; a second independent heme-onc agent agreed with the label (2026-10-22); not human-reviewed"
+  },
+  {
+    "item": "l5_ecog3_meaning",
+    "field": "q1",
+    "text": "His performance status (ECOG 3) limits options: most regimens would be poorly tolerated.",
+    "fire": true,
+    "category": "meaning",
+    "why": "Must meet the rule: meaning.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l5_ecog3_meaning",
+    "field": "q1",
+    "text": "What does his current performance status mean for treatment options?",
+    "fire": false,
+    "category": "question restated",
+    "why": "Must not meet the rule: question restated.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  },
+  {
+    "item": "l5_ecog3_meaning",
+    "field": "q1",
+    "text": "ECOG 3. Weight 61 kg.",
+    "fire": false,
+    "category": "chart restated",
+    "why": "Must not meet the rule: chart restated.",
+    "_label": "added 2026-10-22 from the FHIR journey review (echo/shortcut and paraphrase checks); not human-reviewed"
+  }
+]

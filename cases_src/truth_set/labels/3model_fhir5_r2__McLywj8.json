@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r2__McLywj8",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "The immunophenotype is non-germinal-center B-cell-like by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "DLBCL-NOS with an activated B-cell-like/non-GCB phenotype",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Ann Arbor/Lugano stage III, bulky, with B symptoms.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": true,
+   "quote": "The spleen is a lymphatic organ in the Lugano system, so splenic involvement remains stage III rather than IV",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "He has bulky stage III disease with B symptoms (fevers, drenching night sweats, and 7-kg weight loss).",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "so this is a double-expressor DLBCL, not a double-hit/high-grade B-cell lymphoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "Standard IPI is 3 (age over 60, stage III, elevated LDH; ECOG 1 and no extranodal sites), which is high-intermediate risk",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": false,
+   "quote": "CNS-IPI 3 (age over 60, stage III, elevated LDH; ECOG 1, no more than one extranodal site, and no kidney/adrenal involvement), which is a high-risk category",
+   "confidence": "medium",
+   "note": "Score of 3 is correct and spleen not counted, but it is mislabelled as high-risk rather than intermediate."
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "I recommend 6 cycles of R-CHOP21 given with curative intent",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": false,
+   "quote": "I am choosing R-CHOP as the default because overall survival is similar",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_residual_bulk": {
+   "met": true,
+   "quote": "if there is PET-positive residual bulky disease, I would biopsy it and consider involved-site radiation or second-line therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": true,
+   "quote": "start entecavir 0.5 mg daily (or tenofovir) for prophylaxis because anti-HBc is positive, continue for at least 12 months after rituximab",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": true,
+   "quote": "continue for at least 12 months after rituximab, and monitor HBV DNA",
+   "confidence": "medium",
+   "note": "Baseline and ongoing HBV DNA ordered; LFT monitoring not explicitly stated."
+  },
+  "mn_no_hbv_action": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": false,
+   "quote": "I will perform a baseline lumbar puncture with CSF cytology and flow cytometry",
+   "confidence": "medium",
+   "note": "Declines routine prophylaxis and MRI, but orders routine baseline LP and calls risk high."
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "end-of-treatment FDG PET-CT from skull base to mid-thigh approximately 6-8 weeks after cycle 6, interpreted by Lugano/Deauville criteria",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Deauville 4-5 indicates residual disease and should prompt biopsy of the residual site if feasible",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "allopurinol 300 mg daily (renal-adjusted) before cycle 1, hydration at 2-3 L/m2/day as tolerated",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Febrile neutropenia: pegfilgrastim 6 mg on day 2 of each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "He is fit for full-dose curative-intent therapy: age 62, ECOG 1, fully independent",
+   "confidence": "medium",
+   "note": "LVEF 58% cited as part of fitness, not explicitly as anthracycline clearance."
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "He is fit for full-dose curative-intent therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "Baseline HBV DNA level and confirmation that HBV antiviral prophylaxis has been started.",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

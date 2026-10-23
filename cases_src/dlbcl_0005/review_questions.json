@@ -1,0 +1,47 @@
+{
+  "_about": "Open clinical questions for the oncologist's sign-off of this case's rubric (shown in scripts/build_case_review.py). Each comes from the structured decision-rule authoring pass on 2026-10-23.",
+  "questions": [
+    {
+      "id": "pola_is_rchop_based",
+      "items": ["tx_curative_rchop"],
+      "question": "Is Pola-R-CHP \"R-CHOP-based\" for this dangerous curative-regimen item? It's currently counted as yes, which keeps a Pola-R-CHP answer from being flagged dangerous for this low-risk, IPI 0 patient.",
+      "context": "",
+      "options": ["Keep: Pola-R-CHP counts as R-CHOP-based", "Pola-R-CHP should not count (it's an escalation, not standard-of-care here)"]
+    },
+    {
+      "id": "da_epoch_double_penalty",
+      "items": ["tx_curative_rchop", "mn_da_epoch"],
+      "question": "With the structured rule, a DA-EPOCH-R or R-CHOEP order now fails the dangerous curative-regimen item AND costs 5 points from the separate over-intensification item. Is that double penalty intended for this IPI 0, low-risk patient, or should it only cost the one item?",
+      "context": "",
+      "options": ["Keep both penalties", "Should only cost the mn_da_epoch points"]
+    },
+    {
+      "id": "six_cycles_exact_or_minimum",
+      "items": ["mn_six_cycles"],
+      "question": "Should this item mean exactly 6 cycles of an R-CHOP-based or Pola-R-CHP regimen, or 6 or more? It's currently encoded as 6 or more.",
+      "context": "",
+      "options": ["6 or more (keep)", "Exactly 6 only"]
+    },
+    {
+      "id": "overstaging_to_ii_dangerous",
+      "items": ["stage_i", "mn_overstaged"],
+      "question": "The over-staging item's text only lists stage III or IV as the error, so overstaging to stage II currently only loses the stage_i points (7), not a dangerous flag. Should overstaging to stage II also be dangerous for this stage I patient?",
+      "context": "",
+      "options": ["Keep: only III/IV is dangerous", "Stage II should also be dangerous"]
+    },
+    {
+      "id": "barrier_contraception_acceptable",
+      "items": ["sup_stop_coc_switch"],
+      "question": "Is condoms/barrier method alone acceptable as \"effective non-estrogen contraception\" during treatment? The existing prose rule accepts it, so the new structured rule does too.",
+      "context": "Barrier methods have a materially higher real-world failure rate than LARC options.",
+      "options": ["Accept barrier methods alone", "Require a more effective non-estrogen method (IUD/implant/progestin-only pill)"]
+    },
+    {
+      "id": "flyer_cycle_counting",
+      "items": ["mn_six_cycles", "tx_flyer_4rchop_2r"],
+      "question": "For the FLYER regimen (4 x R-CHOP + 2 x rituximab-only doses), should the structured \"cycles\" field be recorded as 4 (chemo cycles) or 6 (counting the rituximab-only doses)? Both are currently accepted when the regimen string itself says 4 x R-CHOP, but this should be stated explicitly in the answer-authoring instruction to avoid models guessing.",
+      "context": "",
+      "options": ["cycles = 4 (chemo cycles only)", "cycles = 6 (total doses)", "Accept either, as now"]
+    }
+  ]
+}

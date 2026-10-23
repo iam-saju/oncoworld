@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL, NOS), non-germinal-center B-cell phenotype (non-GCB, ABC-like by Hans algorithm: CD10 negative, BCL6 positive, MUM1/IRF4 positive in about 70% of tumor cells).",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "non-GCB, ABC-like by Hans algorithm",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor stage III-B (Lugano 2014), with splenic involvement (III-S) and bulky disease.",
+  "source": "judge"
+ },
+ "stage_spleen_nodal": {
+  "met": true,
+  "quote": "I am treating the spleen as a nodal (S) site per Lugano. If the splenic lesions were classed as extranodal, this would be stage IV-B.",
+  "source": "judge"
+ },
+ "stage_bulky_b_symptoms": {
+  "met": false,
+  "quote": "bulky (10 cm or more)... B symptoms present: fevers to 38.1-38.5 C (38.3 C on 2026-09-17) and drenching night sweats.",
+  "source": "judge_unquoted"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "If the splenic lesions were classed as extranodal, this would be stage IV-B. The uncertainty does not change first-line treatment.",
+  "source": "judge"
+ },
+ "mn_spleen_extranodal_count": {
+  "met": false,
+  "quote": "IPI 3 (age over 60, stage III, LDH above ULN) is high-intermediate... no more than one extranodal site (0).",
+  "source": "judge"
+ },
+ "mol_de_not_dh": {
+  "met": true,
+  "quote": "Non-GCB DLBCL with a double-expressor phenotype: MYC protein in about 50% of cells (threshold 40% or more) and BCL2 protein in about 80% (threshold 50% or more). Break-apart FISH on 200 nuclei shows no MYC, BCL2 or BCL6 rearrangement, so this is not double-hit or triple-hit lymphoma",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "so this is not double-hit or triple-hit lymphoma and the high-grade B-cell lymphoma category does not apply.",
+  "source": "judge"
+ },
+ "mn_denies_double_expressor": {
+  "met": false,
+  "quote": "Non-GCB DLBCL with a double-expressor phenotype: MYC protein in about 50% of cells (threshold 40% or more) and BCL2 protein in about 80% (threshold 50% or more).",
+  "source": "judge"
+ },
+ "prog_ipi_3": {
+  "met": true,
+  "quote": "IPI 3 (age over 60, stage III, LDH above ULN) is high-intermediate.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_intermediate": {
+  "met": false,
+  "quote": "CNS-IPI 3: age over 60 (1), LDH above ULN (1), stage III-IV (1); ECOG 1 (0); no kidney or adrenal involvement (0); no more than one extranodal site (0). This is the high-risk group",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Pola-R-CHP for 6 cycles of 21 days, with curative intent, starting as soon as the pretreatment workup is complete and HBV prophylaxis is running",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "Reasons: non-GCB and high-IPI disease, where POLARIX showed a PFS benefit for pola-R-CHP over R-CHP; the regimen is FDA-approved for previously untreated large B-cell lymphoma and NCCN-listed",
+  "source": "judge"
+ },
+ "tx_isrt_residual_bulk": {
+  "met": true,
+  "quote": "Consolidative radiotherapy to the retroperitoneal mass only if residual PET-avid disease persists at end of treatment",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Goal is cure; he wants treatment aimed at cure",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "Not choosing DA-EPOCH-R, which is preferred for MYC/BCL2 double-hit or triple-hit disease; none is present here",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "Full doses, no empiric reduction.",
+  "source": "judge"
+ },
+ "hbv_prophylaxis": {
+  "met": true,
+  "quote": "start entecavir 0.5 mg daily now and continue for at least 12 months after the last rituximab dose (or tenofovir alafenamide 25 mg if entecavir is not suitable)",
+  "source": "judge"
+ },
+ "hbv_dna_lft_monitoring": {
+  "met": true,
+  "quote": "Quantitative HBV DNA and LFTs; start entecavir 0.5 mg daily now and continue for at least 12 months after the last rituximab dose (or tenofovir alafenamide 25 mg if entecavir is not suitable); monitor HBV DNA and ALT.",
+  "source": "judge"
+ },
+ "mn_no_hbv_action": {
+  "met": false,
+  "quote": "which is resolved HBV infection with a high risk of reactivation under rituximab, so antiviral prophylaxis is mandatory.",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": false,
+  "quote": "Decision: no routine CNS prophylaxis (no intrathecal or high-dose methotrexate).",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "Decision: no routine CNS prophylaxis (no intrathecal or high-dose methotrexate).",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT 3-6 weeks after cycle 6 is the primary response assessment. Complete metabolic response is Deauville 1-3 (splenic uptake must also resolve)",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": false,
+  "quote": "Residual FDG uptake at end of treatment is not by itself a reason for biopsy unless the mass is growing or new disease appears.",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis prophylaxis: intermediate-to-high risk (11 cm mass, LDH above 3 times ULN, uric acid 7.1). Allopurinol 300 mg daily starting 1-2 days before cycle 1 (febuxostat acceptable), oral hydration 2-3 L per day, BMP, phosphate, uric acid and LDH on days 1-3",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "G-CSF: primary prophylaxis with pegfilgrastim or biosimilar on day 4 (or on-body injector) every cycle, because of anthracycline-cyclophosphamide neutropenic fever risk and his age and disease burden.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "Echocardiogram 2026-09-08 is acceptable (LVEF 58%, GLS -20%); repeat only for symptoms or at end of therapy.",
+  "source": "judge"
+ },
+ "fit_full_dose": {
+  "met": true,
+  "quote": "Fit for full-dose curative therapy without empiric dose reduction: age 62, ECOG 1 and independent in self-care, eGFR 96, normal LFTs, LVEF 58%, low comorbidity burden",
+  "source": "judge"
+ },
+ "miss_hbv_dna": {
+  "met": true,
+  "quote": "Quantitative HBV DNA and current LFTs not in the chart; anti-HBc positive status was not followed by DNA testing.",
+  "source": "judge"
+ }
+}

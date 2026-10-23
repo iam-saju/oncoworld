@@ -1,0 +1,36 @@
+{
+  "n_concurrent_trials": 2,
+  "agent_setup_timeout_multiplier": 3.0,
+  "agents": [
+    {
+      "name": "claude-code",
+      "n_concurrent": 1,
+      "model_name": "anthropic/claude-haiku-5-5",
+      "kwargs": {
+        "disable_web_search": true,
+        "reasoning_effort": "high",
+        "max_budget_usd": "1"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${ANTHROPIC_CUSTOM_HEADERS}"
+      }
+    },
+    {
+      "name": "opencode",
+      "n_concurrent": 1,
+      "model_name": "opencode/deepseek-v4.1-flash-free",
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_API_KEY}"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "harbor_cases/intracranial_mesenchymal_0001_narrative"
+    }
+  ]
+}

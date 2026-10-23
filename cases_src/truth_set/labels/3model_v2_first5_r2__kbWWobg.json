@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__kbWWobg",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "Non-germinal-center (Hans) phenotype: CD10 negative, BCL6 positive",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "Cell-of-origin by gene expression and MYD88, CD79B and TP53 genotyping have not been done.",
+   "confidence": "medium",
+   "note": "Notes GEP COO not done but does not say Hans is only a surrogate for ABC."
+  },
+  "stage_iii": {
+   "met": false,
+   "quote": "Ann Arbor stage IV-B with bulky disease (X).",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": false,
+   "quote": "I score the splenic lesions as extranodal, giving stage IV.",
+   "confidence": "high",
+   "note": "Acknowledges Lugano view but explicitly rejects it."
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "retroperitoneal conglomerate 11.0 x 8.1 cm (bulky, 10 cm or more)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": true,
+   "quote": "I score the splenic lesions as extranodal, giving stage IV.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": true,
+   "quote": "ECOG 1 and one extranodal site score zero",
+   "confidence": "medium",
+   "note": "Counts the spleen as one extranodal site, though it does not change the IPI/CNS-IPI totals."
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "FISH negative for MYC, BCL2 and BCL6 rearrangements, so this is not double-hit or triple-hit lymphoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "IPI 3 (age over 60, stage III-IV, LDH above ULN; ECOG 1 and one extranodal site score zero), which is high-intermediate",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": true,
+   "quote": "CNS-IPI about 3 of 5: age over 60 (1), stage III-IV (1), LDH above ULN (1)",
+   "confidence": "medium",
+   "note": "Score 3 correct but risk band not named and spleen treated as an extranodal site."
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Pola-R-CHP for 6 cycles of 21 days: polatuzumab vedotin 1.8 mg/kg IV day 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "Fallback is R-CHOP-21 x 6 if polatuzumab is unavailable or not covered",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_residual_bulk": {
+   "met": true,
+   "quote": "Residual uptake at Deauville 4-5 in the retroperitoneal mass: consolidative RT to about 30-36 Gy",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "Not DA-EPOCH-R, which is reserved for true double-hit disease",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": true,
+   "quote": "Start entecavir 0.5 mg daily (or tenofovir) now, before the first rituximab dose, and continue for at least 12 months after the last rituximab",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": true,
+   "quote": "Check ALT and HBV DNA every 3 months during treatment and 12 months after.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_no_hbv_action": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "no routine CNS-directed prophylaxis (no intrathecal or high-dose methotrexate) and no baseline lumbar puncture or brain MRI",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET about 3-4 weeks after cycle 6",
+   "confidence": "medium",
+   "note": "EOT PET with Deauville scoring planned, but timing early and Lugano only implied."
+  },
+  "resp_ds45_biopsy": {
+   "met": false,
+   "quote": "consolidative RT to about 30-36 Gy, or biopsy first if the residual mass is growing",
+   "confidence": "medium",
+   "note": "Biopsy only if the mass is growing; default is RT without biopsy."
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "Start allopurinol 300 mg daily now and hydrate; check K, phosphate, creatinine and uric acid at baseline and on days 1-3.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "primary pegfilgrastim (or biosimilar) on day 4 of every cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "echo 2026-09-08 with LVEF 58% and GLS -20% is adequate for doxorubicin",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "Fit for full-dose immunochemotherapy.",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "HBV DNA quantitative level (not done; HBsAg negative, anti-HBc and anti-HBs reactive).",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

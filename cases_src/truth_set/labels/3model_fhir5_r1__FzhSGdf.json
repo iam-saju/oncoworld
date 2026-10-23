@@ -1,0 +1,150 @@
+{
+ "id": "3model_fhir5_r1__FzhSGdf",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_hgbl_double_hit": {
+   "met": true,
+   "quote": "reclassified after FISH as high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit lymphoma; WHO-HAEM5 category)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dx_dlbcl_nos": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_gcb_hans": {
+   "met": true,
+   "quote": "GCB phenotype by Hans algorithm: CD10+, BCL6+, MUM1/IRF4 negative.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_plan_outdated": {
+   "met": true,
+   "quote": "Do not give R-CHOP. The cycle 1 slot planned for 2026-09-22 should be replaced by DA-EPOCH-R",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_ii_bulky": {
+   "met": true,
+   "quote": "Ann Arbor stage II, A (no B symptoms), bulky disease (mediastinal 12.0 cm, at least 10 cm); Lugano stage II bulky.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iii_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "bio_double_expressor_secondary": {
+   "met": true,
+   "quote": "Double expressor by IHC: MYC 80% and BCL2 90% of tumor cells.",
+   "confidence": "medium",
+   "note": "Double-expressor noted alongside double-hit, but its secondary status is implicit rather than stated."
+  },
+  "prog_ipi1_biology_dominates": {
+   "met": true,
+   "quote": "The standard IPI scores low (age 54, ECOG 1, stage II, one factor for LDH) and must not be used to reassure",
+   "confidence": "medium",
+   "note": "IPI given as 'low/one factor' rather than explicitly as 1."
+  },
+  "tx_intensive_curative": {
+   "met": true,
+   "quote": "should be replaced by DA-EPOCH-R every 21 days for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_rchop_preferred": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_consolidation": {
+   "met": true,
+   "quote": "Residual PET-avid mediastinal mass at end of treatment should prompt consolidative involved-site radiation to the mediastinum.",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": true,
+   "quote": "MRI brain with and without contrast before cycle 1 (spine MRI only if neurologic symptoms). Lumbar puncture with opening pressure, CSF cell count, cytology and flow cytometry before cycle 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_prophylaxis": {
+   "met": true,
+   "quote": "with CNS prophylaxis (intrathecal methotrexate with lumbar punctures, per institutional protocol)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_cns_dismissed": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT after cycle 6 by Lugano 2014 criteria.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Infection: pegfilgrastim primary prophylaxis each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls": {
+   "met": true,
+   "quote": "Start allopurinol or febuxostat now. Hydration must be balanced against the mediastinal mass and SVC compression",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_central_access_infusion": {
+   "met": true,
+   "quote": "as 96-hour continuous infusion days 1-4 via port",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_fertility": {
+   "met": true,
+   "quote": "(12) Fertility counselling and sperm banking before cyclophosphamide and anthracycline.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_svc_airway": {
+   "met": true,
+   "quote": "SVC and airway emergency plan for patient and family: sleep head-elevated; call or present for stridor",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "Hepatitis B: HBsAg and anti-HBc negative with anti-HBs positive, indicating vaccine immunity",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "LVEF 60% with normal diastolic function, no heart disease",
+   "confidence": "medium",
+   "note": "LVEF cited as supporting fitness for intensive therapy, not explicitly as permitting anthracycline."
+  },
+  "fit_intensive": {
+   "met": true,
+   "quote": "Fit for intensive therapy: age 54, ECOG 1 (2026-09-08), normal renal function",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "l3_car_t_second_line": {
+  "met": true,
+  "quote": "Refer now for CD19-directed CAR-T cell therapy, with axicabtagene ciloleucel (axi-cel) as the preferred product and liso-cel as an acceptable alternative depending on center access",
+  "source": "judge"
+ },
+ "l3_why_early_relapse": {
+  "met": true,
+  "quote": "In ZUMA-7, axi-cel improved event-free and overall survival compared with standard salvage chemotherapy followed by autologous transplant in transplant-eligible patients with primary refractory or early-relapsed DLBCL",
+  "source": "judge"
+ },
+ "l3_cd19_confirmed": {
+  "met": true,
+  "quote": "CD19 expression confirmed by IHC and flow",
+  "source": "judge"
+ },
+ "l3_no_more_drugs": {
+  "met": true,
+  "quote": "Tell him honestly that adding more drugs now is unlikely to improve his chances and could make CAR-T harder to deliver.",
+  "source": "judge"
+ },
+ "l3_avoid_bendamustine": {
+  "met": true,
+  "quote": "Avoid bendamustine and high-dose dexamethasone-based regimens, both for T-cell reasons and because of his diabetes.",
+  "source": "judge"
+ },
+ "l3_ngs_interpretation": {
+  "met": true,
+  "quote": "The pattern is typical of germinal-center lymphoma with epigenetic-modifier mutations (EZH2 together with CREBBP and KMT2D loss).",
+  "source": "judge"
+ },
+ "l3_tazemetostat_context": {
+  "met": true,
+  "quote": "Tazemetostat is approved for EZH2-mutant follicular lymphoma and for epithelioid sarcoma, not for DLBCL, so using it here would be off-label, and EZH2-inhibitor combinations are being studied in trials.",
+  "source": "judge"
+ },
+ "l3_mn_rice_asct_preferred": {
+  "met": false,
+  "quote": "Salvage followed by autologous transplant is not recommended as the main plan, because primary refractory disease rarely becomes durable remission with that approach.",
+  "source": "judge"
+ },
+ "l3_mn_tazemetostat_instead": {
+  "met": false,
+  "quote": "Trial referral is worthwhile as a backup, but this does not justify off-label therapy now.",
+  "source": "judge"
+ },
+ "l3_mn_palliative": {
+  "met": false,
+  "quote": "Explain that CAR-T is the one route with a realistic chance of cure, and that the bridge is there to get him there.",
+  "source": "judge"
+ }
+}

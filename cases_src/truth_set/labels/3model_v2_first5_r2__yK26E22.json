@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__yK26E22",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "non-germinal-center B-cell phenotype (non-GCB, ABC-like by Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Ann Arbor stage III-B (Lugano 2014), with splenic involvement (III-S) and bulky disease.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": true,
+   "quote": "I am treating the spleen as a nodal (S) site per Lugano.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms present: fevers to 38.1-38.5 C (38.3 C on 2026-09-17) and drenching night sweats.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "If the splenic lesions were classed as extranodal, this would be stage IV-B.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "so this is not double-hit or triple-hit lymphoma and the high-grade B-cell lymphoma category does not apply",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "IPI 3 (age over 60, stage III, LDH above ULN) is high-intermediate.",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": false,
+   "quote": "This is the high-risk group, with CNS relapse risk on the order of 10%",
+   "confidence": "medium",
+   "note": "Score of 3 is correct but it is mislabeled as high-risk rather than intermediate."
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Pola-R-CHP for 6 cycles of 21 days, with curative intent",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "Reasons: non-GCB and high-IPI disease, where POLARIX showed a PFS benefit for pola-R-CHP over R-CHP",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_residual_bulk": {
+   "met": true,
+   "quote": "Consolidative involved-site radiotherapy (about 30-36 Gy) to the retroperitoneal mass only if there is residual PET-avid bulky disease at end of treatment",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "Full doses, no empiric reduction.",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": true,
+   "quote": "start entecavir 0.5 mg daily now and continue for at least 12 months after the last rituximab dose",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": true,
+   "quote": "Quantitative HBV DNA and LFTs; start entecavir",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_no_hbv_action": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "Decision: no routine CNS prophylaxis (no intrathecal or high-dose methotrexate).",
+   "confidence": "medium",
+   "note": "Correctly omits prophylaxis/MRI/LP but calls the risk high rather than intermediate."
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT 3-6 weeks after cycle 6 is the primary response assessment. Complete metabolic response is Deauville 1-3",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": false,
+   "quote": "Residual FDG uptake at end of treatment is not by itself a reason for biopsy unless the mass is growing or new disease appears.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "Allopurinol 300 mg daily starting 1-2 days before cycle 1 (febuxostat acceptable), oral hydration 2-3 L per day",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "G-CSF: primary prophylaxis with pegfilgrastim or biosimilar on day 4",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "Echocardiogram 2026-09-08 is acceptable (LVEF 58%, GLS -20%)",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "Fit for full-dose curative therapy without empiric dose reduction",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "Quantitative HBV DNA and current LFTs not in the chart",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

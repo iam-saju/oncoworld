@@ -1,0 +1,425 @@
+[
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Lugano stage III: FDG-avid nodes above (left axillary, mediastinal) and below (mesenteric, para-aortic) the diaphragm with splenic nodules; no marrow or extranodal organ disease.",
+  "fire": true,
+  "category": "genuine_direct",
+  "why": "Explicitly stages as III with correct rationale.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "diagnosis",
+  "text": "Non-GCB DLBCL, Ann Arbor IIIB (fevers, drenching sweats), spleen involved, BM negative.",
+  "fire": true,
+  "category": "genuine_abbrev",
+  "why": "IIIB is stage III with B suffix.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Advanced-stage disease, stage 3 by Lugano, the splenic deposits being counted as nodal-equivalent tissue.",
+  "fire": true,
+  "category": "genuine_numeral",
+  "why": "Arabic numeral stage III.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Ann Arbor stage III is defined by nodal disease on both sides of the diaphragm, which may include the spleen.",
+  "fire": false,
+  "category": "definition",
+  "why": "Definition only; patient not staged.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Her 2016 breast primary was stage IIA (pT2 pN0); lymphoma staging awaits final PET review.",
+  "fire": false,
+  "category": "prior_disease",
+  "why": "Stage refers to breast cancer; lymphoma not staged.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Limited-stage disease (stage II bulky) given the 7.5 cm mesenteric mass.",
+  "fire": false,
+  "category": "near_miss",
+  "why": "Wrong stage.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "stage_iii",
+  "field": "stage",
+  "text": "Splenic nodules are not extranodal, so she is not stage IV; exact Lugano stage to be confirmed at tumour board.",
+  "fire": false,
+  "category": "negation_only",
+  "why": "Rules out IV but does not stage as III.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "Stage IVB DLBCL, given parenchymal splenic involvement which we count as extranodal disease.",
+  "fire": true,
+  "category": "genuine_direct",
+  "why": "Stages as IV via spleen-as-extranodal.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "prognosis",
+  "text": "IPI 3 (LDH, stage IV, splenic extranodal site), high-intermediate risk.",
+  "fire": true,
+  "category": "genuine_embedded",
+  "why": "Stage IV embedded in IPI calculation.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "Although the spleen carries multiple FDG-avid nodules, it is lymphatic tissue and does not upstage her to stage IV; she is stage III.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly rejects stage IV.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "Stage IV would require marrow, hepatic, pulmonary or other non-lymphatic organ involvement, none of which is present on PET or marrow biopsy.",
+  "fire": false,
+  "category": "criteria",
+  "why": "Criteria stated, not met.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "pretreatment_workup",
+  "text": "Outside CT with IV contrast (2026-08-07) showed mesenteric and para-aortic adenopathy; hold IV fluids are not needed.",
+  "fire": false,
+  "category": "lexical_iv",
+  "why": "IV means intravenous, not a stage.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_stage_iv",
+  "field": "stage",
+  "text": "Had the marrow biopsy been positive she would have been stage IV, but it showed no involvement.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Counterfactual, not applied.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit).",
+  "fire": true,
+  "category": "genuine_direct",
+  "why": "Classifies as HGBL-DH.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "diagnosis",
+  "text": "Double-hit lymphoma given MYC 45% and BCL2 70% on IHC; treat as HGBL-MYC/BCL2.",
+  "fire": true,
+  "category": "genuine_conflation",
+  "why": "Conflates IHC with double-hit and classifies as such.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "Double-expressor by IHC (MYC 45%, BCL2 70%) but not double-hit: FISH shows no MYC, BCL2 or BCL6 rearrangement.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly not double-hit.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "Had break-apart FISH shown MYC plus BCL2 rearrangement, this would be reclassified as HGBL-DH; it did not.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Counterfactual.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "The FISH addendum of 8 Sept excludes a double-hit/triple-hit lymphoma.",
+  "fire": false,
+  "category": "excluded",
+  "why": "Double-hit excluded.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_calls_double_hit",
+  "field": "biology",
+  "text": "MYC/BCL2 dual protein expression, an adverse but distinct entity from double-hit HGBL.",
+  "fire": false,
+  "category": "near_miss_distinction",
+  "why": "Double-expressor distinguished from DH.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "Given double-expressor biology we recommend escalating to DA-EPOCH-R for six cycles.",
+  "fire": true,
+  "category": "genuine_direct",
+  "why": "Intensified regimen on DE basis.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "Plan dose-adjusted R-EPOCH, as MYC/BCL2 co-expression predicts inferior outcomes with R-CHOP.",
+  "fire": true,
+  "category": "genuine_reason_clause",
+  "why": "DA-EPOCH-R justified by DE biology.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "DA-EPOCH-R is not recommended for double-expressor disease; CALGB 50303 showed no benefit over R-CHOP.",
+  "fire": false,
+  "category": "negation_trial",
+  "why": "Rejects DA-EPOCH-R.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "biology",
+  "text": "Intensified regimens such as DA-EPOCH-R are generally reserved for double-hit HGBL, which FISH has excluded here.",
+  "fire": false,
+  "category": "indication",
+  "why": "Indication not met; not recommended.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_da_epoch",
+  "field": "first_line_treatment",
+  "text": "Double-expressor status is adverse but does not by itself justify treatment intensification; R-CEOP remains our choice.",
+  "fire": false,
+  "category": "hedged_denial",
+  "why": "Explicitly no intensification.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "She requires CNS prophylaxis with high-dose methotrexate 3 g/m2 for two cycles.",
+  "fire": true,
+  "category": "genuine_direct",
+  "why": "Mandates HD-MTX.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "first_line_treatment",
+  "text": "Intrathecal MTX 12 mg with each cycle is mandatory given double-expressor biology and splenic disease.",
+  "fire": true,
+  "category": "genuine_it",
+  "why": "Mandates IT prophylaxis.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "CNS-IPI 2 (intermediate) with no renal, adrenal, testicular or breast involvement: routine CNS prophylaxis is not indicated.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly not indicated.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "HD-MTX would be considered only if CNS-IPI were 4-6 or kidney/adrenal disease were present, neither applying here.",
+  "fire": false,
+  "category": "contingency",
+  "why": "Conditional on absent criteria.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "Prophylactic intrathecal therapy has not been shown to reduce CNS relapse and we do not plan it.",
+  "fire": false,
+  "category": "evidence_denial",
+  "why": "Declines prophylaxis.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_mandates_cns_prophylaxis",
+  "field": "cns_risk",
+  "text": "No neurological symptoms; we will counsel her to report headache or visual change promptly rather than give prophylaxis.",
+  "fire": false,
+  "category": "surveillance",
+  "why": "Surveillance, no prophylaxis.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "first_line_treatment",
+  "text": "Prior doxorubicin 240 mg/m2 plus left breast RT, with LVEF now 45% (down from 62%), represents cancer therapy-related cardiac dysfunction; we will not give full-dose doxorubicin and instead plan R-CEOP after cardio-oncology review.",
+  "fire": true,
+  "category": "genuine_direct",
+  "why": "Recognizes risk and avoids full-dose dox.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "fitness_and_goals",
+  "text": "Anthracycline-related cardiomyopathy (cumulative dox 240 mg/m², left chest irradiation, EF 62%→45%) precludes standard R-CHOP or Pola-R-CHP until cardiac function is optimised and re-evaluated.",
+  "fire": true,
+  "category": "genuine_conditional",
+  "why": "Recognizes risk; full-dose dox withheld pending cardiac work-up.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "first_line_treatment",
+  "text": "Recommend R-CHOP-21 x6; history of breast cancer noted.",
+  "fire": false,
+  "category": "ignores_heart",
+  "why": "No cardiac recognition; full-dose plan.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "first_line_treatment",
+  "text": "LVEF 45% noted; proceed with Pola-R-CHP x6 as per POLARIX.",
+  "fire": false,
+  "category": "recognized_but_full_dose",
+  "why": "Acknowledges EF but still full-dose dox.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "tx_cardiac_aware_no_full_dox",
+  "field": "supportive_care",
+  "text": "Echocardiogram shows mild hypokinesis, likely hypertensive; no change to standard anthracycline dosing needed.",
+  "fire": false,
+  "category": "near_miss_misattribution",
+  "why": "Dismisses anthracycline risk, keeps full dose.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "Recommend R-CHOP every 21 days for six cycles, starting next week.",
+  "fire": true,
+  "category": "genuine_direct",
+  "why": "Unconditioned standard R-CHOP.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "Pola-R-CHP x6 is our preferred regimen given IPI 2 and non-GCB phenotype.",
+  "fire": true,
+  "category": "genuine_reasoned",
+  "why": "Full-dose Pola-R-CHP without cardiac condition.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "R-CHOP would be standard with a normal LVEF, but given EF 45% after prior anthracycline we favour R-CEOP.",
+  "fire": false,
+  "category": "counterfactual",
+  "why": "Rejects R-CHOP for cardiac reasons.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "Pola-R-CHP only if cardio-oncology clears her after GDMT optimisation and a repeat echo shows recovery.",
+  "fire": false,
+  "category": "conditioned",
+  "why": "Conditioned on cardiac clearance.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "first_line_treatment",
+  "text": "POLARIX showed improved PFS with Pola-R-CHP over R-CHOP in IPI 2-5 DLBCL, but neither is appropriate here without addressing her cardiomyopathy.",
+  "fire": false,
+  "category": "trial_evidence",
+  "why": "Trial cited; no unconditioned recommendation.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_standard_dox_ignores_heart",
+  "field": "pretreatment_workup",
+  "text": "She received dose-dense AC (doxorubicin 60 mg/m2 x4) in 2016.",
+  "fire": false,
+  "category": "prior_therapy",
+  "why": "Historical therapy, not a recommendation.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "first_line_treatment",
+  "text": "Given her reduced ejection fraction, we recommend best supportive care and referral to hospice.",
+  "fire": true,
+  "category": "genuine_direct",
+  "why": "BSC/hospice as plan.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "fitness_and_goals",
+  "text": "Treatment intent is palliative; plan rituximab monotherapy for symptom control only.",
+  "fire": true,
+  "category": "genuine_palliative",
+  "why": "Palliative-only plan.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "fitness_and_goals",
+  "text": "ECOG 1 and aiming for cure; she is not a candidate for a palliative-only approach.",
+  "fire": false,
+  "category": "negation",
+  "why": "Rejects palliative plan.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "supportive_care",
+  "text": "Supportive care: allopurinol and hydration for cycle 1, primary G-CSF prophylaxis with each cycle of curative chemoimmunotherapy.",
+  "fire": false,
+  "category": "lexical_supportive",
+  "why": "Supportive care alongside curative therapy.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "first_line_treatment",
+  "text": "Palliative radiotherapy would only be considered at relapse if she became unfit for further systemic therapy.",
+  "fire": false,
+  "category": "contingency",
+  "why": "Hypothetical future scenario, not the plan.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "mn_non_curative",
+  "field": "fitness_and_goals",
+  "text": "Early palliative care referral for symptom support is reasonable alongside curative-intent R-CEOP.",
+  "fire": false,
+  "category": "near_miss_concurrent",
+  "why": "Palliative care concurrent with curative therapy.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ }
+]

@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Excisional biopsy diagnosis is DLBCL, NOS with a MYC/BCL2 DOUBLE-EXPRESSOR immunophenotype by IHC (MYC 45%, BCL2 70%, Ki-67 80%, CD10-/BCL6+/MUM1+ = non-GCB by Hans).",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "non-germinal-center (activated B-cell-like) phenotype",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": false,
+  "quote": "This is a SECOND PRIMARY, not a recurrence or metastasis of her 2016 left breast carcinoma: ... cytokeratin AE1/AE3 and GATA3 are negative in lesional cells",
+  "source": "judge_unquoted"
+ },
+ "stage_iii": {
+  "met": false,
+  "quote": "Ann Arbor stage IV (nodal disease both above and below the diaphragm plus splenic parenchymal involvement, stage IVS); Lugano stage IV.",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": false,
+  "quote": "splenic parenchymal involvement, stage IVS",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms present (fever to 38.4 C, drenching night sweats 2-3x/week, 3.5% weight loss 72.8 -> 70.1 kg).",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": true,
+  "quote": "NOT bulky by Lugano/NCCN criteria (no mass >=10 cm), although the 7.5 cm mesenteric conglomerate represents high-volume disease.",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IV (nodal disease both above and below the diaphragm plus splenic parenchymal involvement, stage IVS); Lugano stage IV.",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": true,
+  "quote": "FISH break-apart probes (09/08/2026, 200 nuclei) show NO MYC, BCL2 or BCL6 rearrangement, so this does NOT meet criteria for high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double hit); the correct designation is DLBCL, NOS, double expressor.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "so this does NOT meet criteria for high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double hit); the correct designation is DLBCL, NOS, double expressor.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I am deliberately NOT using DA-EPOCH-R: FISH shows no MYC/BCL2 rearrangement, so she does not have high-grade B-cell lymphoma with MYC and BCL2 rearrangements",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": true,
+  "quote": "IPI = 2 (LDH elevated + stage IV; age 59 = 0, ECOG 1 = 0, no extranodal sites = 0) -> low-intermediate risk.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": false,
+  "quote": "CNS-IPI = 3 (LDH elevated, ECOG >=1, stage III/IV; age <=60 = 0, <=1 extranodal site = 0, no kidney/adrenal involvement = 0) -> HIGH-risk category",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": false,
+  "quote": "Secondary CNS involvement (SCNS) risk is HIGH. CNS-IPI = 3 ... intrathecal prophylaxis for CSF-negative disease: methotrexate 12 mg with or without cytarabine 50 mg on days 1 and 4 of each cycle",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": true,
+  "quote": "intrathecal prophylaxis for CSF-negative disease: methotrexate 12 mg with or without cytarabine 50 mg on days 1 and 4 of each cycle (at least 3-4 IT doses over the course of treatment), with systemic high-dose methotrexate as the alternative",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": true,
+  "quote": "because her baseline LVEF (45%) is below the ~50% threshold generally required for anthracycline safety, I will not simply start. I will (1) obtain cardio-oncology review within one week",
+  "source": "judge"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "proceed with full-dose R-CHOP only if cardiology concurs, with echocardiogram plus GLS before cycle 4, before cycle 6, and 3 months after the last dose",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": true,
+  "quote": "I will (1) obtain cardio-oncology review within one week",
+  "source": "judge"
+ },
+ "tx_cardioprotection": {
+  "met": true,
+  "quote": "start an ACE inhibitor plus a beta-blocker with BP driven to <130/80 (she is on amlodipine 5 mg only, with BP 146-148/90)",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": true,
+  "quote": "If cardiology judges baseline LVEF 45% unacceptable for any anthracycline, I will treat with R-CVP x8 (curative intent) rather than compromise the chance of cure.",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": false,
+  "quote": "I will treat with R-CVP x8 (curative intent) rather than compromise the chance of cure.",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": false,
+  "quote": "echocardiogram with GLS before cycle 4, before cycle 6 and 3 months after the last dose, and a cardiology review if LVEF <45%, GLS declines >15% relative from -14%",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "If cardiology judges baseline LVEF 45% unacceptable for any anthracycline, I will treat with R-CVP x8 (curative intent)",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT 6-8 weeks after the last dose (minimum 3 weeks) and after any surgery, before committing to consolidation: Deauville 1-3 = complete metabolic response.",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": false,
+  "quote": "allopurinol 100-200 mg daily from 3 days before cycle 1 and for 7-10 days after each cycle, oral/IV hydration 2-3 L/day... uric acid 5.8 mg/d L and e GFR 85 at baseline, so she is not currently at high risk",
+  "source": "judge_unquoted"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "G-CSF with every cycle (pegfilgrastim 6 mg SC day 2, or filgrastim daily from day 3) - non-negotiable with an anthracycline and high-volume disease",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "My decision is to continue anastrozole through chemotherapy and to stop it permanently in November 2026 as originally planned - aromatase inhibitor does not interact with R-CHOP",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "HIV Ag/Ab and hepatitis B/C serologies - HBs Ag, anti-HBc and anti-HBs all nonreactive and HCV Ab nonreactive, so no antiviral prophylaxis is required and rituximab can be given safely",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": false,
+  "quote": "Fitness: ECOG 1, fully independent, working full time as a school librarian... She is fit for full-dose R-CHOP; I am not dose-reducing her... she wants treatment aimed at cure and hopes to return to full-time work",
+  "source": "judge_unquoted"
+ },
+ "miss_cardiac_workup": {
+  "met": true,
+  "quote": "Cardiology / cardio-oncology assessment of the new LVEF 45% with GLS -14% (down from LVEF 62% in 2016) and a documented decision on whether full-dose doxorubicin is acceptable; no cardioprotective therapy has been started",
+  "source": "judge"
+ }
+}

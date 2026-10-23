@@ -1,0 +1,52 @@
+{
+ "l3_car_t_second_line": {
+  "met": true,
+  "quote": "proceed directly to CD19-directed CAR-T cell therapy, using axicabtagene ciloleucel as my choice",
+  "source": "judge"
+ },
+ "l3_why_early_relapse": {
+  "met": true,
+  "quote": "relapsing only about 3 months after completion of first-line Pola-R-CHP, i.e. early relapse on the primary-refractory spectrum, which is exactly the population in which ZUMA-7 and TRANSFORM showed CAR-T to be superior",
+  "source": "judge"
+ },
+ "l3_cd19_confirmed": {
+  "met": true,
+  "quote": "CD19-positive tumor by immunohistochemistry and flow, and good caregiver support",
+  "source": "judge"
+ },
+ "l3_no_more_drugs": {
+  "met": true,
+  "quote": "I advise against adding more empiric drugs now.",
+  "source": "judge"
+ },
+ "l3_avoid_bendamustine": {
+  "met": true,
+  "quote": "I would avoid bendamustine- or fludarabine-containing bridging and avoid multiple cycles that could compromise his fitness.",
+  "source": "judge"
+ },
+ "l3_ngs_interpretation": {
+  "met": true,
+  "quote": "This is a typical germinal-center-derived epigenetic and immune-evasion profile. There is no TP53 mutation, no MYD88 or CD79B mutation",
+  "source": "judge"
+ },
+ "l3_tazemetostat_context": {
+  "met": true,
+  "quote": "tazemetostat is approved for EZH2-mutant relapsed/refractory follicular lymphoma, not DLBCL; EZH2 inhibitors in DLBCL remain investigational and would be considered only on a clinical trial or in a later line",
+  "source": "judge"
+ },
+ "l3_mn_rice_asct_preferred": {
+  "met": false,
+  "quote": "I would not choose an ASCT-based second-line strategy first in this early-relapse patient.",
+  "source": "judge"
+ },
+ "l3_mn_tazemetostat_instead": {
+  "met": false,
+  "quote": "not instead of or before CAR-T",
+  "source": "judge"
+ },
+ "l3_mn_palliative": {
+  "met": false,
+  "quote": "",
+  "source": "judge"
+ }
+}

@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__cVvu5CE",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "germinal-center B-cell-like (GCB) immunophenotype by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IV-B.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "with extranodal involvement of the right kidney, left adrenal gland, and hepatic segment VI",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms are present with drenching night sweats and about 10% weight loss.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "This is not double-hit, triple-hit, or double-expressor DLBCL by standard thresholds.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "The IPI is 5 of 5",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "The CNS-IPI is 6 of 6, the highest risk group",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "I will start curative-intent R-CHOP every 21 days for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": false,
+   "quote": "I favor R-CHOP because there is no demonstrated overall survival advantage",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "the highest risk group (age over 60, elevated LDH, stage III/IV, ECOG over 1, more than one extranodal site, and kidney or adrenal involvement)",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": false,
+   "quote": "I will perform a staging lumbar puncture with CSF cytology and flow cytometry",
+   "confidence": "medium",
+   "note": "LP with cytology/flow ordered but no contrast MRI brain."
+  },
+  "cns_prophylaxis_renal": {
+   "met": true,
+   "quote": "I will not use high-dose intravenous methotrexate while renal function is impaired",
+   "confidence": "medium",
+   "note": "Ties HD-MTX to renal function but commits to IT MTX and does not frame benefit as uncertain."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET/CT will be done 6 to 8 weeks after cycle 6. Deauville 1 to 3 will define complete metabolic response",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Deauville 4 or 5 will prompt biopsy",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_prophylaxis": {
+   "met": false,
+   "quote": "Monitor electrolytes, creatinine, uric acid, phosphorus, and calcium",
+   "confidence": "medium",
+   "note": "Hydration and rasburicase ordered but no frequent (q6-12h) TLS lab schedule."
+  },
+  "sup_rasburicase_g6pd": {
+   "met": true,
+   "quote": "check G6PD urgently, and use rasburicase upfront if G6PD is normal",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Give pegfilgrastim with each cycle for febrile neutropenia prophylaxis",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "Stop ibuprofen and all NSAIDs",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "monitor glucose closely because steroids will worsen diabetes",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "No hepatitis B antiviral prophylaxis is needed because HBsAg and anti-HBc are negative",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "LVEF is 60% and he has no cardiac history, so doxorubicin is acceptable",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "his fatigue is largely attributable to bulky lymphoma and B symptoms, so I consider him fit for full-dose anthracycline-based curative therapy",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL-NOS), de novo, germinal-center B-cell-like (GCB) immunophenotype by the Hans algorithm",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Stage IVB (Lugano/Ann Arbor) with B symptoms (drenching night sweats most nights and 8 kg, about 10%, unintentional weight loss over two months).",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "plus extranodal deposits in the right kidney (3.2 cm, SUVmax 19.6), left adrenal (2.6 cm, SUVmax 17.2) and hepatic segment VI (1.8 cm, SUVmax 15.0).",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "with B symptoms (drenching night sweats most nights and 8 kg, about 10%, unintentional weight loss over two months)",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "Stage IVB (Lugano/Ann Arbor) with B symptoms",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "FISH (2026-09-16) shows no MYC, BCL2 or BCL6 rearrangement, so this is not a double-hit or triple-hit high-grade B-cell lymphoma; the immunophenotype is also not double-expressor (MYC 20%, BCL2 30%).",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "so this is not a double-hit or triple-hit high-grade B-cell lymphoma",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "the immunophenotype is also not double-expressor (MYC 20%, BCL2 30%)",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "IPI 5/5 (age >60, stage III/IV, more than one extranodal site, elevated LDH, ECOG 2)",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "CNS-IPI 6/6 (age >60, ECOG >1, elevated LDH, more than one extranodal site, stage III/IV, and renal/adrenal involvement)",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Curative-intent systemic therapy with Pola-R-CHP for 6 cycles: polatuzumab vedotin 1.8 mg/kg IV day 1, rituximab 375 mg/m2 IV day 1, cyclophosphamide 750 mg/m2 IV day 1, doxorubicin 50 mg/m2 IV day 1",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "Pola-R-CHP is a category 1 NCCN preferred regimen and improved progression-free survival versus R-CHOP in POLARIX",
+  "source": "judge"
+ },
+ "tx_prephase_steroid": {
+  "met": true,
+  "quote": "I will give a short prednisone pre-phase (100 mg daily for 5 days) with glucose monitoring before cycle 1 to reduce tumor burden and tumor-lysis risk",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "He is fit for full-dose anthracycline-based curative therapy",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "so this is not a double-hit or triple-hit high-grade B-cell lymphoma; the immunophenotype is also not double-expressor",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "I do not plan pre-emptive dose reduction.",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": true,
+  "quote": "High risk: CNS-IPI 6/6 (age >60, ECOG >1, elevated LDH, more than one extranodal site, stage III/IV, and renal/adrenal involvement).",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": true,
+  "quote": "I will obtain a baseline contrast-enhanced MRI brain and a lumbar puncture with CSF cytology and flow cytometry before starting therapy",
+  "source": "judge"
+ },
+ "cns_prophylaxis_renal": {
+  "met": true,
+  "quote": "the absolute benefit of CNS prophylaxis in the rituximab era is modest and not proven in randomized trials, and his renal impairment creates a real risk of methotrexate nephrotoxicity; I will reassess renal function after one to two cycles",
+  "source": "judge"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "two doses interdigitated between cycles (for example after cycles 2 and 4 or after completion), with dose reduction or omission if the eGFR remains about 50 or renal involvement worsens",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "Definitive assessment is an end-of-treatment PET-CT about 6-8 weeks after cycle 6 and no sooner than 3-4 weeks after the last rituximab. Deauville 1-3 constitutes a complete metabolic response",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Deauville 4-5 at end of treatment is considered residual disease, and a Deauville 4 residual site should be biopsied because inflammatory uptake can persist.",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": false,
+  "quote": "start allopurinol 300 mg daily (renally adjusted) 2-3 days before cycle 1 and continue for 7-10 days after each cycle, with vigorous intravenous hydration (2-3 L/day as tolerated), frequent monitoring of uric acid, potassium, phosphate, calcium and creatinine",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": true,
+  "quote": "Before cycle 1 I still need: G6PD level (required before any rasburicase)",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Pegfilgrastim primary prophylaxis with each cycle.",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "Stop ibuprofen now because of CKD, renal involvement and thrombocytopenia; use acetaminophen and, if needed, short-acting opioids for the abdominal pain.",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "Monitor glucose closely because of steroid-induced hyperglycemia (HbA1c 7.4%, on metformin), adjust diabetes therapy",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "confirm hepatitis B status: HBsAg negative, anti-HBc negative, anti-HBs positive indicates prior immunity, so no antiviral prophylaxis is needed.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "the LVEF of 60% and normal global longitudinal strain permit full-dose anthracycline",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": true,
+  "quote": "the ECOG 2 is largely attributable to bulky lymphoma and B symptoms rather than irreversible comorbidity, and I expect it to improve. I will obtain a brief geriatric assessment to identify frailty, polypharmacy and social vulnerabilities, but I do not plan pre-emptive dose reduction. His explicit goal is cure",
+  "source": "judge"
+ }
+}

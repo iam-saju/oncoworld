@@ -1,0 +1,60 @@
+{
+ "id": "journey_sample_deepseek__D97QxnD__L5",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "l5_ecog3_meaning": {
+   "met": true,
+   "quote": "Intensive salvage chemotherapy, a second CAR-T, allogeneic transplant and most clinical trials are not realistic options at ECOG 3",
+   "confidence": "medium",
+   "note": "Explains limits well but gives no prognosis estimate (months)."
+  },
+  "l5_capacity": {
+   "met": false,
+   "quote": "confirm his understanding and his goals (home, family, comfort)",
+   "confidence": "medium",
+   "note": "Checks understanding but never explicitly assesses/confirms decision-making capacity after ICANS."
+  },
+  "l5_respect_refusal_goc": {
+   "met": true,
+   "quote": "I would respect his decision, document it clearly, and proceed with a comfort-focused plan",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_hospice_palliative": {
+   "met": true,
+   "quote": "consider palliative radiation to the painful liver or retroperitoneal disease, or a thoracentesis for symptomatic pleural effusion",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_advance_directive": {
+   "met": true,
+   "quote": "complete advance care planning including a health care proxy, code status/DNR-DNI and a POLST if appropriate",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_financial_social_work": {
+   "met": true,
+   "quote": "I would involve social work and a financial navigator immediately",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_caregiver_support": {
+   "met": true,
+   "quote": "I would connect the wife to respite care, caregiver support and counseling for exhaustion",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_mn_pressure_treatment": {
+   "met": false,
+   "quote": "rather than trying to persuade him to continue anticancer therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_mn_abandon": {
+   "met": false,
+   "quote": "give the family a clear plan for after-hours symptoms",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

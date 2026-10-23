@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r2__o9diZp8",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "germinal-center B-cell-like (GCB) immunophenotype by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IVB",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "extranodal disease in the right kidney, left adrenal gland and liver",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms: drenching night sweats and about 8 kg unintentional weight loss",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "MYC/BCL2 expression is below the usual double-expressor thresholds",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "IPI 5/5 (age >60, stage IV, elevated LDH, ECOG 2, more than one extranodal site), high risk.",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "CNS-IPI 6/6 (age >60, elevated LDH, ECOG >1, stage III/IV, more than one extranodal site, renal/adrenal involvement)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Pola-R-CHP x6 (polatuzumab vedotin 1.8 mg/kg",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "If polatuzumab is not accessible, R-CHOP x6 is the accepted standard alternative.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "Do not reduce dose preemptively for ECOG 2",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "High: CNS-IPI 6/6 with renal and adrenal involvement",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": false,
+   "quote": "No testicular ultrasound or brain MRI is needed without symptoms.",
+   "confidence": "high",
+   "note": "LP with CSF cytology/flow planned, but brain MRI explicitly declined."
+  },
+  "cns_prophylaxis_renal": {
+   "met": true,
+   "quote": "I will not use high-dose intravenous methotrexate because his CrCl is about 47 mL/min.",
+   "confidence": "medium",
+   "note": "Ties HD-MTX feasibility to renal function and notes debated benefit, but commits to IT MTX rather than framing as individualized option."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "end-of-treatment FDG PET-CT using Lugano/Deauville criteria about 6-8 weeks after cycle 6",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Deauville 4-5 indicates residual disease, with biopsy if feasible",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_prophylaxis": {
+   "met": true,
+   "quote": "aggressive IV hydration and every 6-12 hour monitoring of urate, potassium, phosphate, calcium, creatinine and LDH during cycle 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_rasburicase_g6pd": {
+   "met": true,
+   "quote": "check G6PD and give rasburicase 0.2 mg/kg if normal",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Give pegfilgrastim 6 mg after each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "Stop ibuprofen immediately; use acetaminophen and short-acting opioids for pain",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "Monitor glucose closely during prednisone and adjust metformin/insulin",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "Hepatitis B antiviral prophylaxis is not needed because HBsAg and anti-HBc are negative",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "he is an anthracycline candidate",
+   "confidence": "medium",
+   "note": "LVEF 60% cited as reason for regimen; anthracycline candidacy stated separately."
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "ECOG 2, but the impairment is largely from bulky lymphoma, weight loss and pain",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

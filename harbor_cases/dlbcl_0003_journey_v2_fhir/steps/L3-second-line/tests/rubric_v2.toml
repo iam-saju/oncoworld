@@ -1,0 +1,126 @@
+# HIDDEN. Journey dlbcl_0003, Layer 3 (second line + NGS). DRAFT_NEEDS_ONCOLOGIST.
+version = "dlbcl_0003_journey.L3.v0.1"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+passing_score = 0.75
+
+[[items]]
+id = "l3_car_t_second_line"
+domain = "second_line"
+kind = "must"
+severity = "dangerous"
+points = 30
+text = "The response recommends second-line CD19-directed CAR T-cell therapy (axicabtagene ciloleucel or lisocabtagene maraleucel) because of primary refractory/early relapse within 12 months of first-line therapy, with urgent referral to a CAR-T center."
+# CAR-T (or a second-line CD19 product) put forward as the plan. A "CAR-T center/program" is a place, not the therapy;
+# "CAR-T or salvage/ASCT" is an undecided option list; "CAR-T is reserved/kept for ..." is an indication statement;
+# tisagenlecleucel is not a second-line product. (recommend, not affirm: affirm's hedge list drops plan sentences that
+# also mention eligibility or criteria, e.g. "refer for liso-cel since he is eligible".)
+recommend = [
+  '(?:\bcar[- ]?t\b(?![- ]?(?:cent(?:er|re)|program\w*|team|unit|clinic|service|coordinator|referral|eligib\w*|candidacy|evaluation))|chimeric antigen receptor|\baxicabtagene|\baxi[- ]?cel\b|\blisocabtagene|\bliso[- ]?cel\b)(?![^.;]{0,60}\bor\s+(?:\w+[- ]){0,2}(?:salvage|auto\w*|asct|stem[- ]cell|transplant|high[- ]dose|r[- ]?ice|r[- ]?dhap|r[- ]?gdp|r[- ]?gemox|chemo))(?![^.;]{0,30}\b(?:is|are|be|remains?)\s+(?:\w+\s+){0,2}?(?:reserved|kept|held|saved|(?:used|given|considered|offered) only)\b)',
+]
+
+[[items]]
+id = "l3_why_early_relapse"
+domain = "second_line"
+kind = "must"
+severity = "important"
+points = 15
+text = "The response justifies CAR-T by relapse within 12 months of first-line therapy (ZUMA-7/TRANSFORM superiority over salvage chemotherapy plus autologous transplant)."
+# "transform" as the trial name only (not "transformed lymphoma")
+any = ['\b(?:12|twelve) months', '<\s?12\s?mo', '\bzuma[- ]?7', '\btransform\b', 'early[- ]relaps', 'primary refractory', 'refractory']
+
+[[items]]
+id = "l3_cd19_confirmed"
+domain = "second_line"
+kind = "should"
+severity = "minor"
+points = 5
+text = "The response notes CD19 expression is confirmed (relevant for CD19-directed CAR-T)."
+# CD19 stated as present / confirmed, not merely named ("CD19-directed CAR-T", "CD19 pending", "CD19-negative")
+affirm = ['\bcd19[- ]?(?:\+|pos\w*)|\bcd19\b[^.;]{0,40}\b(?:confirm\w*|express\w*|retain\w*|present|positiv\w*|intact)|\b(?:confirm\w*|express\w*|retain\w*|positiv\w*)\b[^.;]{0,30}\bcd19\b']
+
+[[items]]
+id = "l3_no_more_drugs"
+domain = "bridging"
+kind = "must"
+severity = "important"
+points = 15
+text = "The response advises that adding more drugs does not improve outcome; bridging should be the minimum needed to control disease until CAR-T (e.g. steroids, radiotherapy to the bulky site, or a limited regimen)."
+# the question no longer says 'bridging'; credit needs the bridging period AND the 'no more drugs / keep it minimal' advice
+all = ['bridg|while (?:awaiting|waiting)|until (?:the )?(?:infusion|cells|manufactur|product)|during manufactur', "minim|limited|light|brief|short[- ]course|(?:not|n't|no|unlikely to|won't|nor)\\s+(?:\\w+\\s+){0,2}?(?:improve|benefit|help|add|intensif|escalat)|more toxicit|adds? toxicit|no (?:evidence|benefit|advantage)"]
+
+[[items]]
+id = "l3_avoid_bendamustine"
+domain = "bridging"
+kind = "should"
+severity = "important"
+points = 10
+text = "The response avoids bendamustine (or other T-cell-depleting therapy) before leukapheresis because it impairs T-cell collection."
+# an explicit "avoid / do not give bendamustine (or T-cell-depleting agents)" or bendamustine named as harming collection;
+# "bendamustine-based bridging before apheresis" is not avoidance
+any = ['\b(?:avoid\w*|not (?:use|give|be used|be given)|no|omit\w*|withh[eo]ld\w*|steer clear of|without)\b[^.;]{0,40}\bbendamustine', 'bendamustine[^.;]{0,60}\b(?:should be avoided|avoided|is contraindicated|deplet\w*|impair\w*|compromis\w*|harm\w*|lymphotoxic|t[- ]cell (?:depl\w*|toxic\w*|fitness))', '\bavoid\w*\b[^.;]{0,40}\b(?:t[- ]cell[- ]deplet\w*|lymphotoxic|lymphodepleting|fludarabine)']
+
+[[items]]
+id = "l3_ngs_interpretation"
+domain = "molecular"
+kind = "must"
+severity = "important"
+points = 15
+text = "The response interprets the NGS correctly: EZH2 Y646F, CREBBP and KMT2D mutations are typical GCB-DLBCL alterations; TP53 is wild-type; nothing here replaces CAR-T as standard second-line therapy."
+# naming the genes (any summary of the report) is not interpretation: also require the 'does not change CAR-T' conclusion
+all = ["ezh2", "crebbp|kmt2d|tp53", "\\b(?:does not|doesn't|won't|not|no)\\s+(?:\\w+\\s+){0,2}?(?:change|alter|affect|replace)|car[- ]?t remains|no impact|not actionable|remains? (?:the )?(?:standard|recommend)|change\\w*[^.?]{0,30}\\?\\s*(?:no|not)\\b|support\\w* (?:the )?(?:choice of |decision for |plan for )?(?:cd19[- ])?car[- ]?t"]
+
+[[items]]
+id = "l3_tazemetostat_context"
+domain = "molecular"
+kind = "should"
+severity = "minor"
+points = 10
+text = "The response notes tazemetostat is approved for EZH2-mutant follicular lymphoma, not DLBCL, so it is not standard here (consider only in a clinical trial or later line)."
+# tazemetostat (or an EZH2 inhibitor) placed in context: FL-only approval, not DLBCL / not standard, trial or later line
+all = ['tazemetostat|ezh2[- ]inhibit', 'follicular|\bfl\b|not (?:approved|standard|indicated)|off[- ]label|(?:clinical )?trial|later lines?|third[- ]line|after car[- ]?t']
+
+[[items]]
+id = "l3_mn_rice_asct_preferred"
+domain = "second_line"
+kind = "must_not"
+severity = "important"
+points = 15
+text = "The response recommends salvage chemotherapy (R-ICE/R-DHAP/R-GDP) followed by autologous stem-cell transplant as the preferred second-line strategy."
+# salvage regimen -> autologous transplant as the plan; "X is no longer preferred" / "X is reserved for late relapse"
+# describe superseded practice or an indication, not this patient's plan
+recommend = [
+  '(?:\br[- ]?ice\b|\br[- ]?dhap\b|\br[- ]?gdp\b|\br[- ]?gemox\b|\b(?:r[- ])?(?:ice|dhap|gdp|eshap)\b|salvage (?:chemo\w*|immunochemo\w*|therapy|regimen))[^.;]{0,80}?(?:autologous|\basct\b|\bauto[- ]?(?:sct|hct|transplant\w*|graft\w*)|stem[- ]cell (?:transplant\w*|rescue|support)|\bhdt\b|\bbeam\b|transplant)(?![^.;]{0,30}\b(?:no longer|reserved for|kept for|avoided|discouraged)\b)',
+]
+
+[[items]]
+id = "l3_mn_tazemetostat_instead"
+domain = "molecular"
+kind = "must_not"
+severity = "important"
+points = 10
+text = "The response recommends tazemetostat (or another NGS-driven targeted drug) in place of CAR-T as the second-line plan."
+# an NGS-matched drug (EZH2 / HDAC inhibitor, checkpoint inhibitor) prescribed: governed by a plan verb, written with a
+# dose, or named as the next / preferred treatment. Negated, hypothetical, trial and "reserved for" mentions do not count.
+affirm = [
+  '\b(?:recommend\w*|start\w*|begin\w*|initiat\w*|prescrib\w*|switch\w* (?:\w+ )?to|proceed\w* (?:directly )?(?:with|to)|give|treat\w* (?:\w+ )?with|opt for|offer\w*|move (?:on )?to)\b[^.;:]{0,40}?(?:tazemetostat|valemetostat|ezh2[- ]inhibit\w*|hdac[- ]?inhibit\w*|tucidinostat|chidamide|vorinostat|panobinostat|pembrolizumab|nivolumab|checkpoint[- ]inhibit\w*)',
+  '(?:tazemetostat|valemetostat|tucidinostat|chidamide|vorinostat|panobinostat)[^.;]{0,20}?\b\d+\s*mg\b(?![^.;]{0,60}\b(?:produced|yielded|achieved|showed|demonstrated|induced|resulted|was associated|response rates?)\b)',
+  '(?:tazemetostat|valemetostat|ezh2[- ]inhibit\w*|hdac[- ]?inhibit\w*|tucidinostat|chidamide|vorinostat|panobinostat|checkpoint[- ]inhibit\w*)[^.;]{0,30}?\b(?:is|as|becomes)\s+(?:the\s+|my\s+|our\s+)?(?:\w+\s+){0,2}?(?:next|preferred|recommended|best|second[- ]line)\s+(?:treatment|therapy|option|step|line|choice|agent)',
+]
+
+[[items]]
+id = "l3_mn_palliative"
+domain = "second_line"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response recommends palliative-only care or hospice for this fit patient at first relapse."
+# palliative-only / hospice / comfort care, or goals "shifting" to symptom or comfort care; palliative-intent
+# radiotherapy as bridging and palliative care alongside active therapy are not palliative-only care
+recommend = [
+  '\bpalliative[- ](?:only|care (?:alone|only)|approach (?:alone|only))\b|\bpalliative[- ]intent(?!\s*(?:radio|rt\b|xrt|irradiat|bridg|dose))|\b(?:purely|exclusively|solely) palliative|\bpalliation (?:alone|only)|best supportive care|\bsupportive care (?:alone|only)|\bhospice|\bcomfort[- ](?:care|measures|focused)',
+  '\b(?:focus|goals? of care|priority|emphasis|aim)\b[^.;]{0,30}?\b(?:shift|transition|move|turn|chang|redirect)\w*\b[^.;]{0,20}?\b(?:to|towards?)\s+(?:\w+\s+){0,2}?(?:symptom|comfort|palliat\w*|supportive|end[- ]of[- ]life|quality of life)',
+]
+
+[leak_check]
+# searched in everything the model can see at this layer (base chart + updates so far + instruction); the build fails on a hit
+forbidden_in_case = ["bridging", "axicabtagene", "lisocabtagene", "axi-cel", "liso-cel", "car-t", "car t", "chimeric antigen", "zuma-7", "tazemetostat", "bendamustine", "leukapheresis"]

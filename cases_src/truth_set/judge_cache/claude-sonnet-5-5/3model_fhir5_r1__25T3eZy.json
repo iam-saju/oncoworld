@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Stage IV diffuse large B-cell lymphoma (DLBCL), NOS, biopsy-proven on CT-guided core biopsy of the retroperitoneal mass",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor/Lugano stage IV with B symptoms (IVB), bulky (9.4 cm; marginal at the 10 cm cutoff, bulky by the >=7 cm convention) retroperitoneal/mesenteric nodal disease plus extranodal liver, kidney and adrenal involvement.",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "plus extranodal liver, kidney and adrenal involvement.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms are present (drenching night sweats most nights, 8 kg unintentional weight loss over two months).",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "Ann Arbor/Lugano stage IV with B symptoms (IVB)",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "FISH with break-apart probes is negative for MYC, BCL2 and BCL6, and MYC IHC (20%) and BCL2 IHC (30%) are both below the 40% and 50% thresholds respectively for a double-hit phenotype by IHC.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "so this is definitively NOT double-hit, NOT triple-hit, and NOT high-grade B-cell lymphoma with MYC and/or BCL2 rearrangements",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "MYC IHC (20%) and BCL2 IHC (30%) are both below the 40% and 50% thresholds respectively",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "IPI 5/5 (high risk): age 67 (>60), LDH 1290 U/L (about 5.7x ULN), stage IV, ECOG 2, and more than one extranodal site.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "CNS-IPI 6/6: age >60, LDH elevated (1120-1290 U/L), ECOG 2 (>=1), stage IV, more than one extranodal site, and kidney/adrenal involvement.",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Decision: six cycles of rituximab-based chemoimmunotherapy at full dose, on a 21-day schedule, with mandatory CNS prophylaxis and mandatory tumour lysis prophylaxis. I plan to use Pola-R-CHP",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": false,
+  "quote": "I plan to use Pola-R-CHP (polatuzumab vedotin plus rituximab 375 mg/m2, ...) rather than R-CHOP alone",
+  "source": "judge_unquoted"
+ },
+ "tx_prephase_steroid": {
+  "met": false,
+  "quote": "prednisone 100 mg days 1-5) rather than R-CHOP alone",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "I am treating with curative intent and will tell him plainly that the realistic chance of cure is roughly one half",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I am NOT using DA-EPOCH-R (no double-hit biology, added toxicity for no benefit)",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "I will not reduce the R-CHOP backbone for ECOG 2 or albumin 3.1 g/dL; full-dose treatment is justified",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": true,
+  "quote": "High, and the highest-risk category. CNS-IPI 6/6: age >60, LDH elevated (1120-1290 U/L), ECOG 2 (>=1), stage IV, more than one extranodal site, and kidney/adrenal involvement.",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": false,
+  "quote": "No baseline CSF cytology is indicated in the absence of neurologic symptoms, and if he develops any neurologic symptom I will image and sample the CSF immediately.",
+  "source": "judge"
+ },
+ "cns_prophylaxis_renal": {
+  "met": true,
+  "quote": "I will substitute systemic HD-methotrexate 3 g/m2 on day 15 of cycles 3 and 5 once renal function recovers to eGFR >=60 with hydration, leucovorin rescue and urine alkalinisation",
+  "source": "judge"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "I will substitute systemic HD-methotrexate 3 g/m2 on day 15 of cycles 3 and 5 once renal function recovers to eGFR >=60",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment assessment: PET-CT 6-8 weeks after cycle 6 (ideally 8-12 weeks per Lugano).",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "If residual Deauville 4-5 uptake is present, I will biopsy before declaring persistent disease, because fibrosis versus lymphoma determines whether RT or salvage is indicated",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": true,
+  "quote": "rasburicase 0.2 mg/kg with redosing if uric acid remains elevated, plus allopurinol 100 mg daily renally adjusted, IV isotonic fluids 2.5-3 L/m2/day, q6-8h electrolytes/uric acid/LDH/creatinine for the first 48-72 hours",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": false,
+  "quote": "rasburicase 0.2 mg/kg with redosing if uric acid remains elevated, plus allopurinol 100 mg daily renally adjusted",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "mitigated by mandatory pegfilgrastim 6 mg on day 2 of every cycle",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "Stop ibuprofen 400 mg three to four times daily now: it is the most likely cause of the new renal impairment",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "R-CHOP prednisone 100 mg on days 1-5 will cause steroid hyperglycaemia; refer to endocrinology, check glucose before each cycle, plan per-cycle insulin rather than escalating metformin, and hold metformin if renal function deteriorates",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "HIV, HCV and HBV serologies (HBsAg-, anti-HBc-, anti-HBs+ = immune, so no antiviral prophylaxis is needed despite rituximab)",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "transthoracic echocardiogram (2026-09-09: LVEF 60%, GLS -19%, grade I diastolic dysfunction, no effusion)",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": true,
+  "quote": "ECOG 2 alone is not a reason to reduce doses, to omit CNS prophylaxis, or to refer for less intensive therapy",
+  "source": "judge"
+ }
+}

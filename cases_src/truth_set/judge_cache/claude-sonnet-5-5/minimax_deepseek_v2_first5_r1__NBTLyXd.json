@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Subtype and biology: DLBCL, NOS, non-germinal-center B-cell (activated B-cell-like) type by the Hans algorithm (CD10 negative, BCL6 positive, MUM1/IRF4 positive in ~80% of cells).",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "non-germinal-center B-cell (activated B-cell-like) type by the Hans algorithm",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": true,
+  "quote": "This is a NEW PRIMARY LYMPHOMA, NOT RECURRENT OR METASTATIC BREAST CANCER.",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor/Lugano stage III with splenic involvement and B symptoms (IIISB) - disseminated disease - with the caveat below.",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": false,
+  "quote": "under Lugano the spleen is a lymphoid organ, so the strict stage is III-S (stage III nodes both sides of diaphragm + spleen). If the splenic parenchymal nodules are counted as extranodal organ involvement... the stage is IV-S.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms: present - recurrent evening fevers to 38.4 C (self-documented, no infectious source), drenching night sweats 2-3 nights weekly requiring change of nightclothes",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": true,
+  "quote": "the largest nodal mass is 7.5 cm, so it is NOT bulky by the NCCN >= 10 cm criterion, although the mesenteric conglomerate is large by other conventions",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": true,
+  "quote": "I will document it as stage III-S (B) / IV-S, B symptoms.",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": true,
+  "quote": "Double-expressor by immunohistochemistry (MYC 45%, BCL2 70%) BUT NOT double-hit: interphase FISH on 2026-09-08 shows no MYC (8q24), BCL2 (18q21) or BCL6 (3q27) rearrangement.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "Therefore this is not 'DLBCL/high-grade B-cell lymphoma with MYC and BCL2 rearrangements' and the first-line approach is unchanged.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I am NOT using dose-dense R-CHOP-14, dose-adjusted EPOCH-R, upfront CAR-T or upfront autologous transplant, none of which add benefit in first-line DLBCL without double-hit biology.",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": true,
+  "quote": "IPI is 2 (low-intermediate) and age-adjusted IPI is 2, because she is < 60 with ECOG 1",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": false,
+  "quote": "CNS-IPI = 3 (intermediate risk). Components: age > 60 = 0 (she is 59); LDH elevated = 1; ECOG >= 1 = 1; stage >= III = 1",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "DECISION: no routine intrathecal CNS prophylaxis and no baseline brain MRI at this time",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "If the board prefers maximum caution, the acceptable addition is intrathecal cytarabine during cycles 3-5",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": false,
+  "quote": "My decision is to proceed with FULL-DOSE R-CHOP including doxorubicin, under a hard cardiac safety net, rather than to substitute an anthracycline-free regimen.",
+  "source": "judge"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "DECISION: full-dose R-CHOP-21 for 6 cycles, every 21 days, with pegfilgrastim support",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": false,
+  "quote": "cardiology consultation with structured pre-anthracycline risk assessment: CAD evaluation ... this determines whether full-dose doxorubicin is safe and how the regimen will be modified",
+  "source": "judge_unquoted"
+ },
+ "tx_cardioprotection": {
+  "met": true,
+  "quote": "start lisinopril (or ramipril) plus carvedilol or metoprolol succinate now, and tighten BP to < 130/80",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": false,
+  "quote": "if anthracycline is judged unsafe I will switch to R-CVP (or R-CHOP with doxorubicin omitted), not stop curative therapy",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": true,
+  "quote": "the efficacy loss of omitting anthracycline is large (R-CVP and R-mini-CHOP have materially worse cure rates)",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": true,
+  "quote": "echocardiogram with GLS after cycles 2, 4 and 6, with pre-specified rules - hold and reassess doxorubicin if LVEF falls below 40% or more than 10 points from baseline",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "if anthracycline is judged unsafe I will switch to R-CVP (or R-CHOP with doxorubicin omitted), not stop curative therapy",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": false,
+  "quote": "end-of-treatment PET-CT 6-8 weeks after cycle 6 (after resolution of treatment-related inflammation)... Lugano response criteria with Deauville scoring throughout.",
+  "source": "judge_unquoted"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "allopurinol 300 mg daily (adjust to renal function) starting 2-3 days before cycle 1 and continued through the first 2 cycles; oral/IV hydration 2.5-3 L/day",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "pegfilgrastim 6 mg SC 24-72 hours after each cycle (primary prophylaxis is indicated given stage III/IV disease, high tumor burden and prior cytotoxic therapy)",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "DECISION - continue anastrozole 1 mg daily through R-CHOP and complete the planned 10-year course in November 2026, then stop permanently.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "HIV Ag/Ab, HBsAg, anti-HBc, anti-HBs, HCV Ab all non-reactive",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": true,
+  "quote": "FITNESS: fit for curative-intent combination chemotherapy. ECOG 1; NYHA class I (climbs two flights of stairs without stopping); independent in all activities; still working full-time as a school librarian",
+  "source": "judge"
+ },
+ "miss_cardiac_workup": {
+  "met": true,
+  "quote": "The mechanism of the LVEF decline (anthracycline + left breast RT vs. occult obstructive coronary disease) has not been established: no stress test, coronary CT/angiography, NT-proBNP or troponin, and no MUGA or cardiac MRI.",
+  "source": "judge"
+ }
+}

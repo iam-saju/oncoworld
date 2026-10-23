@@ -1,0 +1,54 @@
+{
+  "_about": "Open clinical questions for the oncologist's sign-off of this case's rubric (shown in scripts/build_case_review.py). Each comes from the structured decision-rule authoring pass on 2026-10-23.",
+  "questions": [
+    {
+      "id": "dexrazoxane_contradiction",
+      "items": ["mn_standard_dox_ignores_heart", "tx_cardiac_aware_no_full_dox", "tx_anthracycline_free_curative"],
+      "question": "The dangerous must_not item accepts R-CHOP plus dexrazoxane with no further conditions. The other two items (\"without first addressing cardiac function\" / \"only if conditioned on cardio-oncology\") do not, so an unconditional R-CHOP + dexrazoxane plan currently fails those two. Should adding dexrazoxane by itself count as \"addressing the heart\", without also needing a cardio-oncology referral first?",
+      "context": "As written, the three items disagree with each other on exactly this plan.",
+      "options": ["Dexrazoxane alone is enough", "Needs cardio-oncology referral too"]
+    },
+    {
+      "id": "dose_reduction_addresses_heart",
+      "items": ["tx_cardiac_aware_no_full_dox", "mn_standard_dox_ignores_heart"],
+      "question": "Does a reduced dose (e.g. 75% in cycle 1, or R-mini-CHOP) count as addressing this patient's cardiac dysfunction? Both items currently say no — only an anthracycline-free regimen, liposomal doxorubicin, dexrazoxane or cardio-oncology conditioning counts.",
+      "context": "This patient has a >10-point LVEF decline to 45% from prior anthracycline exposure.",
+      "options": ["Keep: dose reduction alone is not enough", "Dose reduction alone should count"]
+    },
+    {
+      "id": "da_epoch_r_full_dose",
+      "items": ["tx_cardiac_aware_no_full_dox", "mn_standard_dox_ignores_heart"],
+      "question": "Does DA-EPOCH-R count as \"full-dose doxorubicin\" for the cardiac-awareness item? It's encoded as yes there, while the must_not item names only R-CHOP and Pola-R-CHP (not DA-EPOCH-R).",
+      "context": "DA-EPOCH-R's doxorubicin is dose-adjusted but still anthracycline-based.",
+      "options": ["DA-EPOCH-R counts as full-dose dox", "DA-EPOCH-R should be excluded, like R-CEOP"]
+    },
+    {
+      "id": "acei_bb_as_conditioning",
+      "items": ["mn_standard_dox_ignores_heart"],
+      "question": "The guard currently accepts the word \"cardioprotect\" as evidence of conditioning, but not an ACE inhibitor or beta-blocker order on its own. Should starting those drugs count as addressing the cardiac risk, even without the word \"cardioprotect\" or a cardio-oncology referral?",
+      "context": "",
+      "options": ["Keep: needs cardioprotect/referral wording", "ACEi/BB orders alone should count"]
+    },
+    {
+      "id": "rcvp_anthracycline_free",
+      "items": ["tx_anthracycline_free_curative"],
+      "question": "R-CVP (no etoposide, no doxorubicin) is anthracycline-free but isn't named in this item's text, which lists R-CEOP and R-GCVP. It's currently accepted as anthracycline-free. Is that correct?",
+      "context": "",
+      "options": ["Accept R-CVP as anthracycline-free", "R-CVP should not count (less proven in this setting)"]
+    },
+    {
+      "id": "observation_intent",
+      "items": ["mn_non_curative", "tx_anthracycline_free_curative"],
+      "question": "Intent \"observation\" is not covered by the non-curative must_not item (so it doesn't fail the note as dangerous), but it does fail the anthracycline-free-curative item (since that item requires curative intent). Is that split the right call, or should observation also be a dangerous error here?",
+      "context": "",
+      "options": ["Keep the current split", "Observation should also be dangerous"]
+    },
+    {
+      "id": "plain_cardiology_referral",
+      "items": ["tx_cardio_onc_referral"],
+      "question": "This item's text says \"(or cardiology)\", but the existing prose rule only accepted cardio-oncology by name. The new structured rule accepts a plain cardiology referral too. Is plain cardiology sufficient for this degree of cardiac dysfunction, or should cardio-oncology specifically be required?",
+      "context": "",
+      "options": ["Plain cardiology is sufficient", "Require cardio-oncology specifically"]
+    }
+  ]
+}

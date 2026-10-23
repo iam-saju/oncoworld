@@ -1,0 +1,90 @@
+schema_version = "1.4"
+multi_step_reward_strategy = "mean"
+
+[metadata]
+id = "dlbcl_0003_journey_v2_fhir"
+title = "DLBCL with kidney/adrenal involvement: the patient journey (diagnosis to goals of care) (FHIR)"
+domain = "hematology_oncology"
+subdomain = "lymphoma"
+difficulty = "advanced"
+patient_type = "synthetic"
+task_type = "clinical_reasoning_longitudinal"
+input_format = "fhir_bundle_with_updates"
+oncoworld_version = "v2"
+source = "cases_src/dlbcl_0003_journey"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+case_rule = "a dangerous error in any layer fails the whole case"
+layer_weights = { L1 = 20, L2 = 15, L3 = 20, L4 = 30, L5 = 15 }
+
+[agent]
+timeout_sec = 1800.0
+
+[[steps]]
+name = "L1-diagnosis"
+
+[steps.verifier]
+timeout_sec = 300.0
+
+[steps.verifier.env]
+RESPONSE_FILE = "/app/answers/L1_diagnosis.json"
+ONCOWORLD_JUDGE_API_KEY = "${ONCOWORLD_JUDGE_API_KEY:-}"
+ONCOWORLD_JUDGE_MODEL = "${ONCOWORLD_JUDGE_MODEL:-}"
+ONCOWORLD_JUDGE_BASE_URL = "${ONCOWORLD_JUDGE_BASE_URL:-https://openrouter.ai/api/v1}"
+ONCOWORLD_JUDGE_HEADERS = "${ONCOWORLD_JUDGE_HEADERS:-}"
+ONCOWORLD_GRADER = "${ONCOWORLD_GRADER:-regex}"
+
+[[steps]]
+name = "L2-after-first-line"
+
+[steps.verifier]
+timeout_sec = 300.0
+
+[steps.verifier.env]
+RESPONSE_FILE = "/app/answers/L2_after_first_line.json"
+ONCOWORLD_JUDGE_API_KEY = "${ONCOWORLD_JUDGE_API_KEY:-}"
+ONCOWORLD_JUDGE_MODEL = "${ONCOWORLD_JUDGE_MODEL:-}"
+ONCOWORLD_JUDGE_BASE_URL = "${ONCOWORLD_JUDGE_BASE_URL:-https://openrouter.ai/api/v1}"
+ONCOWORLD_JUDGE_HEADERS = "${ONCOWORLD_JUDGE_HEADERS:-}"
+ONCOWORLD_GRADER = "${ONCOWORLD_GRADER:-regex}"
+
+[[steps]]
+name = "L3-second-line"
+
+[steps.verifier]
+timeout_sec = 300.0
+
+[steps.verifier.env]
+RESPONSE_FILE = "/app/answers/L3_second_line.json"
+ONCOWORLD_JUDGE_API_KEY = "${ONCOWORLD_JUDGE_API_KEY:-}"
+ONCOWORLD_JUDGE_MODEL = "${ONCOWORLD_JUDGE_MODEL:-}"
+ONCOWORLD_JUDGE_BASE_URL = "${ONCOWORLD_JUDGE_BASE_URL:-https://openrouter.ai/api/v1}"
+ONCOWORLD_JUDGE_HEADERS = "${ONCOWORLD_JUDGE_HEADERS:-}"
+ONCOWORLD_GRADER = "${ONCOWORLD_GRADER:-regex}"
+
+[[steps]]
+name = "L4-acute-admission"
+
+[steps.verifier]
+timeout_sec = 300.0
+
+[steps.verifier.env]
+RESPONSE_FILE = "/app/answers/L4_acute_admission.json"
+ONCOWORLD_JUDGE_API_KEY = "${ONCOWORLD_JUDGE_API_KEY:-}"
+ONCOWORLD_JUDGE_MODEL = "${ONCOWORLD_JUDGE_MODEL:-}"
+ONCOWORLD_JUDGE_BASE_URL = "${ONCOWORLD_JUDGE_BASE_URL:-https://openrouter.ai/api/v1}"
+ONCOWORLD_JUDGE_HEADERS = "${ONCOWORLD_JUDGE_HEADERS:-}"
+ONCOWORLD_GRADER = "${ONCOWORLD_GRADER:-regex}"
+
+[[steps]]
+name = "L5-goals-of-care"
+
+[steps.verifier]
+timeout_sec = 300.0
+
+[steps.verifier.env]
+RESPONSE_FILE = "/app/answers/L5_goals_of_care.json"
+ONCOWORLD_JUDGE_API_KEY = "${ONCOWORLD_JUDGE_API_KEY:-}"
+ONCOWORLD_JUDGE_MODEL = "${ONCOWORLD_JUDGE_MODEL:-}"
+ONCOWORLD_JUDGE_BASE_URL = "${ONCOWORLD_JUDGE_BASE_URL:-https://openrouter.ai/api/v1}"
+ONCOWORLD_JUDGE_HEADERS = "${ONCOWORLD_JUDGE_HEADERS:-}"
+ONCOWORLD_GRADER = "${ONCOWORLD_GRADER:-regex}"

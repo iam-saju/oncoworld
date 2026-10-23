@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL, NOS), non-germinal-center B-cell-like (non-GCB/ABC-like) by the Hans algorithm (CD10 negative, BCL6 positive, MUM1/IRF4 positive)",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "non-germinal-center B-cell-like (non-GCB/ABC-like) by the Hans algorithm",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": true,
+  "quote": "Metastatic breast carcinoma is excluded by morphology and by negative cytokeratin AE1/AE3 and GATA3 in the lesional cells.",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor/Lugano stage III S: supradiaphragmatic left axillary and mediastinal (prevascular/left paratracheal) nodal disease, plus infradiaphragmatic mesenteric and para-aortic nodal disease and multiple FDG-avid splenic nodules.",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": true,
+  "quote": "Bone marrow is negative and there is no non-lymphatic extranodal organ involvement (no liver, lung, bone, adrenal, kidney, or CNS disease), so this is stage III rather than IV.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": false,
+  "quote": "",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": true,
+  "quote": "The largest mass is the 7.5 cm mesenteric conglomerate; it does not meet the NCCN >=10 cm definition of bulky disease.",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "so this is stage III rather than IV.",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": true,
+  "quote": "with a double-expressor immunophenotype (MYC about 45%, BCL2 about 70%) but no MYC, BCL2, or BCL6 rearrangement on FISH, so it is not a double-hit/triple-hit high-grade B-cell lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "FISH is negative for MYC (8q24), BCL2 (18q21), and BCL6 (3q27) rearrangements, so this is not double-hit/triple-hit and not a high-grade B-cell lymphoma with MYC/BCL2 rearrangement.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I would not use Pola-R-CHP because it still contains doxorubicin and she has an LVEF of 45%",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": true,
+  "quote": "IPI 2 (stage III and elevated LDH; age 59, ECOG 1, no more than one extranodal site).",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": true,
+  "quote": "CNS-IPI 2 (stage III and elevated LDH; age <60, ECOG 1, no more than one extranodal site, no kidney/adrenal involvement) = intermediate risk",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "I would not give intrathecal methotrexate or high-dose methotrexate and would not perform a diagnostic lumbar puncture.",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "No consolidation radiotherapy and no CNS-directed prophylaxis.",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": false,
+  "quote": "Because she has already received 240 mg/m2 doxorubicin and has an LVEF of 45% with GLS -14%, I would give dexrazoxane cardioprotection with each doxorubicin dose per label and co-manage with cardio-oncology.",
+  "source": "judge"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "If cardio-oncology judges that any further anthracycline is unacceptable, or if LVEF falls further or she develops heart failure, I would switch to R-CEOP x6",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": true,
+  "quote": "Before starting therapy I would add: cardio-oncology consultation with baseline troponin/NT-proBNP and consideration of cardiac MRI if the echo is equivocal",
+  "source": "judge"
+ },
+ "tx_cardioprotection": {
+  "met": true,
+  "quote": "optimize heart-failure therapy (ACE inhibitor/ARB and beta-blocker) and blood pressure",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": true,
+  "quote": "I would switch to R-CEOP x6 (etoposide 100 mg/m2 IV days 1-3 replacing doxorubicin).",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": false,
+  "quote": "the trade-off between the proven R-CHOP backbone and the less cardiotoxic but less well-studied R-CEOP",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": true,
+  "quote": "baseline and serial echocardiograms, troponin/NT-proBNP, guideline-directed heart-failure therapy",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "She is fit for curative-intent full-dose immunochemotherapy",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "The key assessment is end-of-treatment FDG-PET/CT about 6-8 weeks (up to 12 weeks) after cycle 6: Deauville 1-3 = complete metabolic response; Deauville 4-5 = residual uptake requiring biopsy.",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis prophylaxis: allopurinol 300 mg daily (renal function is normal) with hydration and frequent uric acid/electrolyte/creatinine monitoring for at least the first cycle",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Primary G-CSF prophylaxis with pegfilgrastim 6 mg SC on day 2 (or equivalent filgrastim) because of the myelosuppressive regimen and her age/comorbidity",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "Continue anastrozole to complete 10 years in November 2026; there is no clinically significant interaction with R-CHOP.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "HBV antiviral prophylaxis is not needed because HBsAg and anti-HBc are negative, but she is anti-HBs negative and should be vaccinated when appropriate.",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": true,
+  "quote": "She is fit for curative-intent full-dose immunochemotherapy: 59 years old, ECOG 1, independent, working full time, no frailty, normal renal and hepatic function",
+  "source": "judge"
+ },
+ "miss_cardiac_workup": {
+  "met": true,
+  "quote": "Cardio-oncology assessment and baseline cardiac biomarkers (troponin, NT-proBNP), plus consideration of cardiac MRI, given LVEF 45% and GLS -14%.",
+  "source": "judge"
+ }
+}

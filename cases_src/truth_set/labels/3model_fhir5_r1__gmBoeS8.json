@@ -1,0 +1,180 @@
+{
+ "id": "3model_fhir5_r1__gmBoeS8",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "Diffuse large B-cell lymphoma, NOS, germinal-center B-cell-like (Hans: CD10+, BCL6+, MUM1-)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_i": {
+   "met": true,
+   "quote": "Ann Arbor stage IA (Lugano stage I), bulk-free. Single nodal region (right cervical II-III, contiguous).",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_nonbulky_no_b": {
+   "met": true,
+   "quote": "Largest node 3.1 x 2.4 cm on PET (SUVmax 14.2), well below the 7.5 cm bulk threshold.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_pet_no_marrow_biopsy": {
+   "met": true,
+   "quote": "marrow is not involved, so a marrow biopsy is not required",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_overstaged": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "not double-hit (MYC, BCL2 and BCL6 FISH negative) and not double-expressor (MYC IHC 15% and BCL2 IHC 30%, against thresholds of 40% and 50%)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_low": {
+   "met": true,
+   "quote": "Clinical IPI 0 (age 45, LDH 190 U/L against ULN 225, ECOG 0, stage I, no extranodal sites)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_low": {
+   "met": true,
+   "quote": "CNS-IPI 0",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_rchop": {
+   "met": true,
+   "quote": "Curative-intent R-CHOP-21 for 4 cycles, then a response-adapted decision on radiotherapy based on an end-of-treatment PET-CT.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_flyer_4rchop_2r": {
+   "met": true,
+   "quote": "Curative-intent R-CHOP-21 for 4 cycles, then a response-adapted decision on radiotherapy based on an end-of-treatment PET-CT.",
+   "confidence": "medium",
+   "note": "Accepted 4-cycle PET-adapted approach, though not FLYER (no extra rituximab doses)."
+  },
+  "tx_no_rt_goals": {
+   "met": true,
+   "quote": "She asked to avoid neck radiation and fears thyroid, salivary and taste toxicity",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_alternatives": {
+   "met": true,
+   "quote": "Alternatives I would accept: R-CHOP x4 followed by ISRT 30 Gy regardless of PET",
+   "confidence": "medium",
+   "note": "Alternative is R-CHOP x4 + ISRT, not x3 + ISRT; close in spirit."
+  },
+  "mn_six_cycles": {
+   "met": false,
+   "quote": "I would not choose six cycles as the default because of her fertility concerns.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_pola_preferred": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_observation_or_rt_alone": {
+   "met": false,
+   "quote": "RT alone and observation are not standard",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_low_no_prophylaxis": {
+   "met": true,
+   "quote": "CNS prophylaxis (intrathecal or high-dose methotrexate) is not indicated and would add toxicity without a clear benefit.",
+   "confidence": "medium",
+   "note": "Rejects prophylaxis but does not explicitly state MRI/LP staging is unnecessary."
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Score by the Lugano 2014 five-point Deauville scale, comparing with baseline.",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_interim_pet": {
+   "met": true,
+   "quote": "Deauville 4-5 with residual uptake: ISRT as above, with tumor board re-review.",
+   "confidence": "medium",
+   "note": "Scan after cycle 4 is framed as end-of-treatment (no rituximab-only doses), but positive result prompts RT as criterion intends."
+  },
+  "work_pregnancy_test": {
+   "met": true,
+   "quote": "No serum or urine hCG in the record. Required before cycle 1 and before the IUD.",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "No HBV prophylaxis or monitoring is required with rituximab.",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "LVEF 63% and cumulative doxorubicin 200 mg/m2 are low risk",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_coc_switch": {
+   "met": true,
+   "quote": "Switch to a levonorgestrel IUD or copper IUD, placed after a negative pregnancy test and with platelets confirmed adequate.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_coc_reason": {
+   "met": true,
+   "quote": "ethinyl estradiol with migraine with aura is CDC US MEC category 4, and it adds thrombotic risk during lymphoma therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_fertility_counselling": {
+   "met": true,
+   "quote": "Fertility counselling and REI referral before cycle 1; offer oocyte cryopreservation",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_goals": {
+   "met": true,
+   "quote": "Her goals align with this plan: curative intent, 4 cycles at 21-day intervals (about 12 weeks), radiation only if the end-of-treatment PET is positive",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

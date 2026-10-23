@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Newly diagnosed diffuse large B-cell lymphoma, NOS (SNOMED 109969005; ICD-10-CM C83.30)",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "Cell of origin by Hans is non-germinal-center (ABC-like), an adverse prognostic feature.",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": false,
+  "quote": "NOT a recurrence, metastasis or nodal metastasis of her 2016 left breast carcinoma: the tumor is CD20/PAX5 positive ... cytokeratin AE1/AE3 and GATA3 are negative in lesional cells",
+  "source": "judge_unquoted"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor / Lugano stage III with splenic involvement and B symptoms (stage IIIB-S).",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": false,
+  "quote": "spleen counts as an extranodal (S) site.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms present: recurrent unexplained evening fever to 38.4 C and drenching night sweats 2-3 times weekly for ~5 weeks",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": true,
+  "quote": "Largest mass 7.5 cm = high-volume disease but NOT bulky by Lugano criteria (bulky = >=10 cm).",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "Ann Arbor / Lugano stage III with splenic involvement and B symptoms (stage IIIB-S).",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": true,
+  "quote": "FISH on 200 nuclei (2026-09-08) shows NO MYC, BCL2 or BCL6 rearrangement, so this is NOT high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit)",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "this is NOT high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit) and not triple-hit",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I am explicitly NOT choosing DA-EPOCH-R (no MYC/BCL2 rearrangement, so no double-hit indication; Alliance showed no survival advantage over R-CHOP in high-risk non-double-hit DLBCL",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": false,
+  "quote": "IPI = 3 (age <60 = 0, stage III-IV = 1, LDH 510 elevated = 1, ECOG 1 = 1, <=1 extranodal site = 0) = high-intermediate risk.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": false,
+  "quote": "CNS-IPI = 3 (LDH elevated 1, ECOG 1 = 1, stage III-IV = 1; age <60 0, eGFR 85 0, albumin 3.8 0, extranodal sites <=1 0) = intermediate CNS risk.",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": false,
+  "quote": "give CNS prophylaxis with intrathecal methotrexate 12 mg on day 1 of cycles 1, 2 and 3, because intermediate CNS-IPI is compounded here by high tumor burden",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": true,
+  "quote": "give CNS prophylaxis with intrathecal methotrexate 12 mg on day 1 of cycles 1, 2 and 3, because intermediate CNS-IPI is compounded here by high tumor burden (7.5 cm, SUVmax 22)",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": true,
+  "quote": "CARDIAC SAFETY - she has received 240 mg/m2 of doxorubicin in 2016 with left breast tangential radiotherapy, and her LVEF has fallen from 62% (2016) to 45%",
+  "source": "judge"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "I will give R-CHOP x 6 cycles with pegfilgrastim, with (i) doxorubicin dose reduction and/or cardiology-directed modification if cardiology advises",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": true,
+  "quote": "Before cycle 1 I will add a cardiology/cardio-oncology opinion on whether the EF decline is partly reversible",
+  "source": "judge"
+ },
+ "tx_cardioprotection": {
+  "met": false,
+  "quote": "(iii) an ACE inhibitor/ARB added for blood pressure (<130/80) and LV support.",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": true,
+  "quote": "POLATUZUMAB VEDOTIN + R-CHP (no anthracycline) for 6 cycles (21-day cycles)",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": false,
+  "quote": "omitting anthracycline removes the largest modifiable cardiotoxicity risk ... without compromising cure probability in her risk group",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": true,
+  "quote": "repeat echocardiogram with GLS every 2 cycles and after the final cycle.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "She is fit for curative-intensity therapy: ECOG 1, independent in all activities",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT 6-8 weeks after the last cycle (approximately May 2027): Deauville 1-3 = complete metabolic response and observation; Deauville 4-5 = biopsy any residual FDG-avid lesion before escalating",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "uric acid, potassium and creatinine with allopurinol in cycles 1-2 for tumor lysis risk (formally low: urate 5.8, normal renal function, no kidney involvement) and hydration",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "pegfilgrastim 6 mg SC on day 9 of every cycle (mandatory with polatuzumab/R-CHP in POLARIX; also indicated by her age, IPI and prior cytotoxic therapy)",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "Anastrozole: CONTINUE to complete her planned 10-year course in November 2026 - there is no interaction with polatuzumab/R-CHP",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "viral serologies 2026-09-01 - HBsAg, total anti-HBc, anti-HBs, HCV Ab and HIV-1/2 Ag/Ab all non-reactive (so no antiviral prophylaxis is required",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": true,
+  "quote": "She is fit for curative-intensity therapy: ECOG 1, independent in all activities, still working her usual full-time hours as a school librarian",
+  "source": "judge"
+ },
+ "miss_cardiac_workup": {
+  "met": true,
+  "quote": "No cardiology/cardio-oncology consultation or documented surveillance plan; no NT-proBNP or hs-troponin; no MUGA; no baseline strain comparator (2016 study did not perform GLS), so the LVEF fall from 62% to 45% cannot be confidently attributed to anthracycline versus hypertension versus occult cardiomyopathy",
+  "source": "judge"
+ }
+}

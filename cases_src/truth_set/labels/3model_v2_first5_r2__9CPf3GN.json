@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__9CPf3GN",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "Diffuse large B-cell lymphoma, NOS (DLBCL, NOS), germinal-center B-cell-like (GCB) subtype",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IV, B-symptomatic, with three extranodal organs involved.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "Sites: right renal cortex, left adrenal gland, and liver segment VI (3 extranodal sites).",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "drenching night sweats most nights, unintentional weight loss from 79 kg to 70.2 kg (11%",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "Double-expressor status: NEGATIVE. MYC IHC 20% (<30-40%) and BCL2 IHC 30% (<50%)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "Therefore not HGBL with MYC and/or BCL2 rearrangements",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "Double-expressor status: NEGATIVE.",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "IPI = 5 of 5: age >60 (67), LDH elevated (~5x ULN), ECOG PS 2, stage III/IV, more than one extranodal site.",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "CNS-IPI = 6 (highest band): age >60, LDH elevated, stage III/IV, more than one extranodal site, plus kidney and adrenal involvement",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "R-CHOP-21 for 6 cycles (21-day cycles) with primary G-CSF support",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "Therefore R-CHOP-based standard-dose curative therapy is appropriate, intensified high-grade B-cell-lymphoma regimens are not",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "I am giving full CHOP doses despite his age, ECOG 2 and low albumin.",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "HIGH, and I am treating this as a mandatory-prophylaxis patient.",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": false,
+   "quote": "He is neurologically asymptomatic with a non-focal exam, so lumbar puncture is not required now",
+   "confidence": "medium",
+   "note": "Brain MRI ordered but baseline LP/CSF explicitly deferred."
+  },
+  "cns_prophylaxis_renal": {
+   "met": false,
+   "quote": "His eGFR of 50 permits 3 g/m2 provided I use nephrology-supported hydration; I will stop his ibuprofen now",
+   "confidence": "medium",
+   "note": "Ties HD-MTX to renal function/NSAID stop, but frames it as mandatory rather than an individualized option of uncertain benefit."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "His eGFR of 50 permits 3 g/m2 provided I use nephrology-supported hydration; I will stop his ibuprofen now",
+   "confidence": "medium",
+   "note": "HD-MTX scheduled from cycle 1 but renal function and NSAIDs are explicitly addressed."
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Lugano 2014 criteria on the same modality used at baseline (FDG PET-CT), with Deauville scoring",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "A residual avid mass at the primary site will be biopsied before I escalate therapy or add radiotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_prophylaxis": {
+   "met": true,
+   "quote": "monitor potassium, phosphate, calcium, creatinine, uric acid and urine output every 12 hours for the first 2-3 days",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_rasburicase_g6pd": {
+   "met": true,
+   "quote": "rasburicase 3.6 mg IV fixed dose on day 0 or day 1 (after checking G6PD",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Neutropenia: primary G-CSF with every cycle (pegfilgrastim 6 mg on day 2).",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "stop ibuprofen 400 mg three to four times daily",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "prednisone will drive hyperglycemia - home glucose monitoring, proactive insulin",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "hepatitis B surface antigen negative, total core antibody negative",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "Not an anthracycline-sparing or reduced-intensity regimen at this time: LVEF is 60% with GLS -19%",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "I judge him fit for full-dose R-CHOP with G-CSF support",
+   "confidence": "medium",
+   "note": "Commits to full dose and cure goal but does not explicitly call ECOG 2 disease-related."
+  }
+ }
+}

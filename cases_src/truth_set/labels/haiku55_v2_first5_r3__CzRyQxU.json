@@ -1,0 +1,186 @@
+{
+ "id": "haiku55_v2_first5_r3__CzRyQxU",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "germinal-center B-cell-like phenotype by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IV, B symptoms present (IV-B), bulky disease.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "plus non-contiguous extranodal disease in the right kidney",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms: night sweats most nights and about 11% weight loss",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "IHC MYC 20% and BCL2 30% are below the usual double-expressor thresholds",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "IPI is 5 of 5",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "he is in the high-risk group on the CNS-IPI",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Start curative-intent immunochemotherapy with polatuzumab vedotin plus R-CHP (Pola-R-CHP, POLARIX regimen), 6 cycles of 21 days",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "POLARIX showed improved progression-free survival over R-CHOP in IPI 2-5",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "I am not recommending upfront dose reduction",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "High. Right renal and left adrenal involvement are CNS-relapse risk factors on their own.",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": true,
+   "quote": "lumbar puncture with cell count, protein, glucose, cytology and flow cytometry",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_prophylaxis_renal": {
+   "met": true,
+   "quote": "I would reconsider it only if renal function recovers to CrCl of at least 60",
+   "confidence": "medium",
+   "note": "Ties HD-MTX to renal function but commits to IT MTX and does not frame prophylaxis benefit as uncertain."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "I am not using high-dose IV methotrexate",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT 3-6 weeks after cycle 6 (Lugano 2014)",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Deauville 4-5 with residual mass needs biopsy or tumor-board decision",
+   "confidence": "medium",
+   "note": "Biopsy offered alongside tumor-board RT decision rather than as a firm prerequisite."
+  },
+  "sup_tls_prophylaxis": {
+   "met": false,
+   "quote": "Check potassium (5.0 on lisinopril and NSAID) and phosphorus daily during admission",
+   "confidence": "medium",
+   "note": "High risk recognized with hydration and rasburicase, but lab monitoring is daily rather than q6-12h."
+  },
+  "sup_rasburicase_g6pd": {
+   "met": true,
+   "quote": "If G6PD is normal: rasburicase 0.2 mg/kg IV daily",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "primary prophylaxis with pegfilgrastim each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "stop ibuprofen today and avoid all NSAIDs permanently",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "Start basal insulin with correctional insulin on prednisone days",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "surface antibody positive means vaccinated and immune, so no antiviral prophylaxis is needed",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "he is 67, ECOG 2 and self-caring, LVEF is 60%",
+   "confidence": "medium",
+   "note": "LVEF 60% cited as supporting full doses but not explicitly as permitting anthracycline."
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "I judge him fit for curative-intent full-dose R-CHP-based therapy with G-CSF, and I am not recommending upfront dose reduction.",
+   "confidence": "medium",
+   "note": "Does not explicitly call ECOG 2 disease-related and conditions fitness on a pending geriatric assessment."
+  }
+ }
+}

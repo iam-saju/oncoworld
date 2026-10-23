@@ -1,0 +1,62 @@
+{
+ "l4_icans_grade_steroids": {
+  "met": true,
+  "quote": "Treat the likely ICANS: after CT head excludes haemorrhage, start dexamethasone 10 mg IV every 6 hours. Do not wait for MRI or LP to start it.",
+  "source": "judge"
+ },
+ "l4_crs_management": {
+  "met": false,
+  "quote": "Give a 500 mL crystalloid bolus and reassess, avoiding overload given that capillary leak can accompany CRS.",
+  "source": "judge"
+ },
+ "l4_neutropenic_sepsis": {
+  "met": true,
+  "quote": "Take two blood cultures (one peripheral, one from the central line) without delaying antibiotics, then start empirical meropenem within the hour; add vancomycin",
+  "source": "judge"
+ },
+ "l4_airway_icu_seizure": {
+  "met": true,
+  "quote": "Neuro checks with ICE and GCS every hour, strict NPO while vomiting, head of bed 30 degrees, seizure precautions, and a low threshold for airway protection",
+  "source": "judge"
+ },
+ "l4_ddx_cns_relapse": {
+  "met": true,
+  "quote": "CNS lymphoma relapse: his CNS-IPI was high and he has progressive systemic disease, but the 2026 MRI and CSF were negative and acute onset of this kind is uncommon.",
+  "source": "judge"
+ },
+ "l4_ddx_infection_bleed": {
+  "met": true,
+  "quote": "Infection with CNS involvement, which can coexist with ICANS. Neutropenic bacteraemia or meningitis (febrile, ANC 0.2, central line, CRP 214); HSV or VZV encephalitis despite prophylactic acyclovir;",
+  "source": "judge"
+ },
+ "l4_ddx_metabolic_seizure": {
+  "met": true,
+  "quote": "Non-convulsive status epilepticus or subclinical seizures: aphasia and confusion can be the only signs",
+  "source": "judge"
+ },
+ "l4_ct_then_mri": {
+  "met": true,
+  "quote": "STAT non-contrast CT head to exclude haemorrhage, mass effect and oedema",
+  "source": "judge"
+ },
+ "l4_eeg_lp_safe": {
+  "met": true,
+  "quote": "Lumbar puncture once platelets are at least 50 and imaging excludes mass effect: opening pressure, cell count, protein, glucose, Gram stain and culture, fungal culture, cryptococcal antigen, HSV 1 and 2, VZV, HHV-6",
+  "source": "judge"
+ },
+ "l4_glucose_steroids_diabetes": {
+  "met": true,
+  "quote": "switch the insulin correction scale to basal plus correction insulin for glucose 242 on dexamethasone",
+  "source": "judge"
+ },
+ "l4_mn_lp_unsafe": {
+  "met": false,
+  "quote": "Transfuse platelets to at least 50 before any lumbar puncture.",
+  "source": "judge"
+ },
+ "l4_mn_withhold_steroids_for_tcell": {
+  "met": false,
+  "quote": "start dexamethasone 10 mg IV every 6 hours. Do not wait for MRI or LP to start it.",
+  "source": "judge"
+ }
+}

@@ -1,9 +1,0 @@
-INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-05-12 to 2027-07-07)
-
-- Referred to the cellular therapy center. Leukapheresis 2027-05-27. Bridging: dexamethasone pulse and
-  radiotherapy to the retroperitoneal mass (20 Gy in 5 fractions).
-- Lymphodepletion fludarabine/cyclophosphamide 2027-06-28 to 06-30 (fludarabine dose-adjusted).
-- Axicabtagene ciloleucel infused 2027-07-01 (day 0).
-- Day 2: fever 38.6 C, normotensive, no oxygen (CRS grade 1). Day 3: tocilizumab 8 mg/kg x1; fever resolved.
-- Prophylaxis: levetiracetam 500 mg twice daily since day 0, acyclovir, fluconazole. Atovaquone for
-  Pneumocystis prophylaxis is planned (sulfonamide allergy).

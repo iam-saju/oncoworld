@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r1__akTtmyg",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "germinal-center B-cell (GCB) type by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IV, B symptoms present (Lugano stage IV-B)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "extranodal lymphoma in the right kidney (3.2 cm), left adrenal (2.6 cm) and liver segment VI (1.8 cm)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "unintentional weight loss of about 10% (79 to 71 kg over two months, 70.2 kg on 2026-09-17) and drenching night sweats",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "below double-expressor thresholds (MYC >=40% and BCL2 >=50%)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "IPI 5 of 5 (age >60, stage IV, LDH above ULN, ECOG 2, more than one extranodal site): high risk",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "CNS-IPI is 6 of 6",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Start curative first-line immunochemotherapy: pola-R-CHP for six 21-day cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "IPI 5 favors the polatuzumab addition",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "I would not use DA-EPOCH-R or other intensification on this biology",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "Full dose, with no empiric reduction",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "CNS-IPI is 6 of 6 (age >60, stage IV, LDH above ULN, ECOG >=2, more than one extranodal site, kidney and adrenal involvement), so his CNS relapse risk is high",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": true,
+   "quote": "diagnostic LP with cell count, cytology, flow cytometry, protein and glucose",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_prophylaxis_renal": {
+   "met": true,
+   "quote": "I would revisit HD-MTX if renal function recovers to CrCl about 60 mL/min or more and he is clearly fit",
+   "confidence": "medium",
+   "note": "Ties HD-MTX to renal function but commits to IT MTX and does not frame benefit as uncertain."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT about 3 to 4 weeks after cycle 6, scored by Deauville and Lugano 2014",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Deauville 4 to 5 with residual mass: biopsy when it would change management",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_prophylaxis": {
+   "met": true,
+   "quote": "repeat urate, potassium, phosphate, calcium and creatinine every 6 to 8 hours for the first 24 to 48 hours",
+   "confidence": "medium",
+   "note": "Frequent labs and rasburicase, but monitoring window 24-48 h not 72 h and hydration 'oral or IV'."
+  },
+  "sup_rasburicase_g6pd": {
+   "met": true,
+   "quote": "Rasburicase 0.2 mg/kg IV once before cycle 1 if G6PD is normal",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim every cycle, using the on-body injector applied on day 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "Stop ibuprofen now and do not restart any NSAID",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "Steroid hyperglycemia on prednisone days 1 to 5: home glucose checks before meals and at bedtime",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg and anti-HBc nonreactive, anti-HBs reactive (vaccine immunity), so no HBV antiviral prophylaxis is needed",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "He is ECOG 2 but independent in self-care, LVEF is 60%, and there is no organ failure that limits dosing",
+   "confidence": "medium",
+   "note": "LVEF 60% cited as supporting full-dose therapy rather than explicitly anthracycline eligibility."
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "ECOG 2 with self-care is acceptable for full-dose therapy",
+   "confidence": "medium",
+   "note": "Does not explicitly attribute ECOG 2 to disease, though proceeds with full-dose curative therapy and notes goal of cure."
+  }
+ }
+}

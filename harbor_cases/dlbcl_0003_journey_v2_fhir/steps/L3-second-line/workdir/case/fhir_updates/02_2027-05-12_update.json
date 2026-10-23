@@ -1,0 +1,1533 @@
+{
+  "resourceType": "Bundle",
+  "id": "dlbcl-0003-v2-update-02",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "http://oncoworld.example/fhir/sid/bundle",
+    "value": "dlbcl-0003-v2-update-02"
+  },
+  "type": "collection",
+  "timestamp": "2027-05-12T18:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DocumentReference/dlbcl-0003-v2-l3-doc-30",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dlbcl-0003-v2-l3-doc-30",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
+          ]
+        },
+        "status": "current",
+        "docStatus": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34133-9",
+              "display": "Summary of episode note"
+            }
+          ],
+          "text": "INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-02-24 to 2027-05-12)"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+                "code": "clinical-note",
+                "display": "Clinical Note"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "date": "2027-05-12T17:00:00Z",
+        "author": [
+          {
+            "reference": "Practitioner/dlbcl-0003-v2-hematologist"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain; charset=utf-8",
+              "title": "INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-02-24 to 2027-05-12)",
+              "data": "SU5URVJWQUwgSElTVE9SWTogV0hBVCBBQ1RVQUxMWSBIQVBQRU5FRCAoMjAyNy0wMi0yNCB0byAyMDI3LTA1LTEyKQoKVGhlIHBhdGllbnQgY2hvc2UgYSBzaG9ydC1pbnRlcnZhbCBQRVQtQ1QgaW5zdGVhZCBvZiBhIHJlcGVhdCBiaW9wc3kuCi0gUEVULUNUIDIwMjctMDQtMjA6IHJldHJvcGVyaXRvbmVhbCBtYXNzIGVubGFyZ2VkIHRvIDUuOCB4IDQuNCBjbSwgU1VWbWF4IDE4LjM7IHR3byBuZXcgRkRHLWF2aWQKICBsaXZlciBsZXNpb25zICgxLjQgYW5kIDIuMCBjbSkuIERlYXV2aWxsZSA1LgotIEhlIHRoZW4gYWdyZWVkIHRvIGJpb3BzeS4gQ1QtZ3VpZGVkIGNvcmUgYmlvcHN5IG9mIHRoZSByZXRyb3Blcml0b25lYWwgbWFzcyAyMDI3LTA0LTI4OiBkaWZmdXNlIGxhcmdlCiAgQi1jZWxsIGx5bXBob21hLCBHQ0IgcGhlbm90eXBlLCBDRDIwKywgQ0QxOSsgKElIQyBhbmQgZmxvdyBjeXRvbWV0cnkpLCBNWUMgMjAlLCBCQ0wyIDMwJS4gRklTSDogbm8KICBNWUMgb3IgQkNMMiByZWFycmFuZ2VtZW50LgotIEN1cnJlbnQgc3RhdHVzOiBFQ09HIDEuIENyZWF0aW5pbmUgMS4wIG1nL2RMLCBiaWxpcnViaW4gMC42IG1nL2RMLCBIYiAxMi4xIGcvZEwsIEFOQyAzLjQgeDEwXjMvdUwsCiAgcGxhdGVsZXRzIDE4OCB4MTBeMy91TCwgTERIIDQxMCBVL0wgKDEzNS0yMjUpLiBFY2hvIDIwMjctMDUtMDU6IExWRUYgNTglLiBObyBuZXVyb2xvZ2ljYWwgc3ltcHRvbXMuCi0gSGUgaGFzIGdvb2QgZmFtaWx5IHN1cHBvcnQgKHdpZmU7IGRhdWdodGVyIGxpdmVzIDIwIG1pbnV0ZXMgYXdheSkgYW5kIGNhbiB0cmF2ZWwgZm9yIGFwcG9pbnRtZW50cy4KLSBGaXJzdC1saW5lIHRoZXJhcHkgKFBvbGEtUi1DSFApIGZpbmlzaGVkIDIwMjctMDEtMDgu",
+              "creation": "2027-05-12"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-02-24 to 2027-05-12), 2027-05-12 (text attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l3-doc-31",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l3-doc-31",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LP29684-5",
+                "display": "Radiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81554-8",
+              "display": "PET+CT Guidance for localization of tumor of Skull base to mid-thigh-- W 18F-FDG IV"
+            }
+          ],
+          "text": "FDG PET-CT, SHORT-INTERVAL RESTAGING, 2027-04-20"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-04-20",
+        "issued": "2027-04-20T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-imaging"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "FDG PET-CT, SHORT-INTERVAL RESTAGING, 2027-04-20",
+            "data": "RkRHIFBFVC1DVCwgU0hPUlQtSU5URVJWQUwgUkVTVEFHSU5HLCAyMDI3LTA0LTIwCgpDb21wYXJpc29uOiBlbmQtb2YtdHJlYXRtZW50IFBFVC1DVCAyMDI3LTAyLTE3LgotIFJldHJvcGVyaXRvbmVhbCBtYXNzIGVubGFyZ2VkIHRvIDUuOCB4IDQuNCBjbSAocHJldmlvdXNseSAzLjQgeCAyLjEgY20pOyBTVVZtYXggMTguMyAocHJldmlvdXNseSA2LjIpLgotIFR3byBuZXcgRkRHLWF2aWQgbGl2ZXIgbGVzaW9ucywgMS40IGNtIGFuZCAyLjAgY20uCkRlYXV2aWxsZSBzY29yZTogNS4KSU1QUkVTU0lPTjogRW5sYXJnaW5nLCBpbnRlbnNlbHkgRkRHLWF2aWQgcmV0cm9wZXJpdG9uZWFsIG1hc3MgYW5kIG5ldyBsaXZlciBsZXNpb25zLCBjb25zaXN0ZW50IHdpdGgKcHJvZ3Jlc3NpdmUgZGlzZWFzZS4=",
+            "creation": "2027-04-20"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>FDG PET-CT, SHORT-INTERVAL RESTAGING, 2027-04-20 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l3-doc-32",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l3-doc-32",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "SP",
+                "display": "Surgical Pathology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60568-3",
+              "display": "Pathology synoptic report"
+            }
+          ],
+          "text": "SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RETROPERITONEAL MASS, 2027-04-28"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-04-28",
+        "issued": "2027-04-28T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-pathology-lab"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RETROPERITONEAL MASS, 2027-04-28",
+            "data": "U1VSR0lDQUwgUEFUSE9MT0dZOiBDVC1HVUlERUQgQ09SRSBCSU9QU1ksIFJFVFJPUEVSSVRPTkVBTCBNQVNTLCAyMDI3LTA0LTI4CgpTcGVjaW1lbjogY29yZSBiaW9wc2llcyBvZiB0aGUgcmV0cm9wZXJpdG9uZWFsIG1hc3MsIGFkZXF1YXRlIGZvciBkaWFnbm9zaXMuCkltbXVub2hpc3RvY2hlbWlzdHJ5OiBDRDIwIHBvc2l0aXZlLiBDRDE5IHBvc2l0aXZlLiBNWUMgMjAlIG9mIHR1bW9yIGNlbGxzLiBCQ0wyIDMwJSBvZiB0dW1vciBjZWxscy4KRmxvdyBjeXRvbWV0cnk6IENEMTkgYW5kIENEMjAgZXhwcmVzc2VkIG9uIHRoZSBhYm5vcm1hbCBCLWNlbGwgcG9wdWxhdGlvbi4KRklTSDogTVlDOiBubyByZWFycmFuZ2VtZW50IGRldGVjdGVkLiBCQ0wyOiBubyByZWFycmFuZ2VtZW50IGRldGVjdGVkLgpESUFHTk9TSVM6IERpZmZ1c2UgbGFyZ2UgQi1jZWxsIGx5bXBob21hLCBnZXJtaW5hbCBjZW50ZXIgQi1jZWxsIChHQ0IpIHBoZW5vdHlwZSwgaW4gYSBwYXRpZW50IHdpdGgKcHJldmlvdXNseSB0cmVhdGVkIGRpZmZ1c2UgbGFyZ2UgQi1jZWxsIGx5bXBob21hLg==",
+            "creation": "2027-04-28"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RETROPERITONEAL MASS, 2027-04-28 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l3-doc-33",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l3-doc-33",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LP29708-2",
+                "display": "Cardiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "TRANSTHORACIC ECHOCARDIOGRAM, 2027-05-05"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-05-05",
+        "issued": "2027-05-05T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-imaging"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "TRANSTHORACIC ECHOCARDIOGRAM, 2027-05-05",
+            "data": "VFJBTlNUSE9SQUNJQyBFQ0hPQ0FSRElPR1JBTSwgMjAyNy0wNS0wNQoKSW5kaWNhdGlvbjogcmVsYXBzZWQgbHltcGhvbWEsIGNhcmRpYWMgZXZhbHVhdGlvbiBiZWZvcmUgZnVydGhlciB0aGVyYXB5LgpMZWZ0IHZlbnRyaWN1bGFyIGVqZWN0aW9uIGZyYWN0aW9uIDU4JSAoYmlwbGFuZSkuIE5vcm1hbCBsZWZ0IHZlbnRyaWN1bGFyIHNpemUgYW5kIHdhbGwgbW90aW9uLgpJTVBSRVNTSU9OOiBOb3JtYWwgbGVmdCB2ZW50cmljdWxhciBzeXN0b2xpYyBmdW5jdGlvbi4=",
+            "creation": "2027-05-05"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>TRANSTHORACIC ECHOCARDIOGRAM, 2027-05-05 (full report attached).</p></div>"
+        },
+        "result": [
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-lvef"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l3-doc-34",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l3-doc-34",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "GE",
+                "display": "Genetics"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "51969-4",
+              "display": "Genetic analysis report"
+            }
+          ],
+          "text": "TUMOR NEXT-GENERATION SEQUENCING (DNA, 523-gene hybrid-capture panel), specimen 2027-04-28"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-05-08",
+        "issued": "2027-05-08T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-pathology-lab"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "TUMOR NEXT-GENERATION SEQUENCING (DNA, 523-gene hybrid-capture panel), specimen 2027-04-28",
+            "data": "VFVNT1IgTkVYVC1HRU5FUkFUSU9OIFNFUVVFTkNJTkcgKEROQSwgNTIzLWdlbmUgaHlicmlkLWNhcHR1cmUgcGFuZWwpLCBzcGVjaW1lbiAyMDI3LTA0LTI4ClR1bW9yIGNvbnRlbnQgZXN0aW1hdGVkIDYwJS4KClZhcmlhbnRzIG9mIGNsaW5pY2FsIG9yIHBvc3NpYmxlIHNpZ25pZmljYW5jZToKICBFWkgyICAgIGMuMTkzN0E+VCAgcC5ZNjQ2RiAgIG1pc3NlbnNlICAgVkFGIDM0JQogIENSRUJCUCAgYy40MzM2Qz5UICBwLlIxNDQ2KiAgbm9uc2Vuc2UgICBWQUYgMjklCiAgS01UMkQgICBjLjExNTYzZHVwIHAuUTM4NTVmcyBmcmFtZXNoaWZ0IFZBRiAzMSUKICBUTkZSU0YxNCBkZWxldGlvbiAoZXhvbnMgMS0zKQpOb3QgZGV0ZWN0ZWQ6IFRQNTMsIE1ZRDg4LCBDRDc5QiwgQkNMMiBhbXBsaWZpY2F0aW9uLCBNWUMgYW1wbGlmaWNhdGlvbi4KVHVtb3IgbXV0YXRpb25hbCBidXJkZW46IDYgbXV0YXRpb25zL01iLiBNaWNyb3NhdGVsbGl0ZSBzdGF0dXM6IHN0YWJsZS4KQ29tbWVudDogbXV0YXRpb24gcGF0dGVybiBpcyB0eXBpY2FsIG9mIGdlcm1pbmFsLWNlbnRlci1kZXJpdmVkIGx5bXBob21hLiBFWkgyIFk2NDYgaXMgYW4gYWN0aXZhdGluZwpob3RzcG90IG11dGF0aW9uLiBDb3JyZWxhdGUgY2xpbmljYWxseS4=",
+            "creation": "2027-05-08"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>TUMOR NEXT-GENERATION SEQUENCING (DNA, 523-gene hybrid-capture panel), specimen 2027-04-28, 2027-05-08 (full report attached).</p></div>"
+        },
+        "result": [
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-variant-1"
+          },
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-variant-2"
+          },
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-variant-3"
+          },
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-variant-4"
+          },
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-tmb"
+          },
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-msi"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-ecog",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-ecog",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "89247-1",
+              "display": "ECOG Performance Status score"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-05-12",
+        "valueInteger": 1,
+        "performer": [
+          {
+            "reference": "Practitioner/dlbcl-0003-v2-hematologist"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ECOG performance status 1.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-lvef",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-lvef",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "10230-1",
+              "display": "Left ventricular Ejection fraction"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-05-05",
+        "valueQuantity": {
+          "value": 58,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>LVEF 58%.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-lab-1-hb",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-lab-1-hb",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "718-7",
+              "display": "Hemoglobin [Mass/volume] in Blood"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-05-12T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 12.1,
+          "unit": "g/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "g/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 13.5,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            },
+            "high": {
+              "value": 17.5,
+              "unit": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "g/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hemoglobin: 12.1 g/dL (L), 2027-05-12.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-lab-1-anc",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-lab-1-anc",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "751-8",
+              "display": "Neutrophils [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-05-12T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 3.4,
+          "unit": "x10^3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 1.8,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "high": {
+              "value": 7.7,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Absolute neutrophils: 3.4 x10^3/uL, 2027-05-12.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-lab-1-plt",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-lab-1-plt",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "777-3",
+              "display": "Platelets [#/volume] in Blood by Automated count"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-05-12T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 188,
+          "unit": "x10^3/uL",
+          "system": "http://unitsofmeasure.org",
+          "code": "10*3/uL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 150,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            },
+            "high": {
+              "value": 400,
+              "unit": "x10^3/uL",
+              "system": "http://unitsofmeasure.org",
+              "code": "10*3/uL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Platelets: 188 x10^3/uL, 2027-05-12.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-lab-1-creatinine",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-lab-1-creatinine",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Creatinine [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-05-12T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 1.0,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.7,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 1.3,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Creatinine: 1.0 mg/dL, 2027-05-12.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-lab-1-tbili",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-lab-1-tbili",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "1975-2",
+              "display": "Bilirubin.total [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-05-12T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 0.6,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.2,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 1.2,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Bilirubin, total: 0.6 mg/dL, 2027-05-12.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-lab-1-ldh",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-lab-1-ldh",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "14804-9",
+              "display": "Lactate dehydrogenase [Enzymatic activity/volume] in Serum or Plasma by Lactate to pyruvate reaction"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-05-12T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 410,
+          "unit": "U/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "U/L"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 135,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            },
+            "high": {
+              "value": 225,
+              "unit": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "code": "U/L"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>LDH: 410 U/L (H), 2027-05-12.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l3-labpanel-1",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l3-labpanel-1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "LAB",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Complete blood count and chemistry"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-05-12T08:00:00Z",
+        "issued": "2027-05-12T09:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-clinical-lab"
+          }
+        ],
+        "result": [
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-lab-1-hb"
+          },
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-lab-1-anc"
+          },
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-lab-1-plt"
+          },
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-lab-1-creatinine"
+          },
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-lab-1-tbili"
+          },
+          {
+            "reference": "Observation/dlbcl-0003-v2-l3-lab-1-ldh"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Complete blood count and chemistry, 2027-05-12.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-variant-1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-variant-1",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "69548-6",
+              "display": "Genetic variant assessment"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-04-28",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Present"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48018-6",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.genenames.org/geneId",
+                  "code": "HGNC:3527",
+                  "display": "EZH2"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48004-6",
+                  "display": "DNA change (c.HGVS)"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "c.1937A>T"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48019-4",
+                  "display": "DNA change type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "missense"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48005-3",
+                  "display": "Amino acid change (pHGVS)"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "p.Y646F"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "81258-6",
+                  "display": "Sample variant allelic frequency [NFr]"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.34,
+              "unit": "relative frequency",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>EZH2 p.Y646F (missense), VAF 34%.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-variant-2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-variant-2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "69548-6",
+              "display": "Genetic variant assessment"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-04-28",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Present"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48018-6",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.genenames.org/geneId",
+                  "code": "HGNC:2348",
+                  "display": "CREBBP"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48004-6",
+                  "display": "DNA change (c.HGVS)"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "c.4336C>T"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48019-4",
+                  "display": "DNA change type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "nonsense"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48005-3",
+                  "display": "Amino acid change (pHGVS)"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "p.R1446*"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "81258-6",
+                  "display": "Sample variant allelic frequency [NFr]"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.29,
+              "unit": "relative frequency",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>CREBBP p.R1446* (nonsense), VAF 29%.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-variant-3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-variant-3",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "69548-6",
+              "display": "Genetic variant assessment"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-04-28",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Present"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48018-6",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.genenames.org/geneId",
+                  "code": "HGNC:7133",
+                  "display": "KMT2D"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48004-6",
+                  "display": "DNA change (c.HGVS)"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "c.11563dup"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48019-4",
+                  "display": "DNA change type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "frameshift"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48005-3",
+                  "display": "Amino acid change (pHGVS)"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "p.Q3855fs"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "81258-6",
+                  "display": "Sample variant allelic frequency [NFr]"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.31,
+              "unit": "relative frequency",
+              "system": "http://unitsofmeasure.org",
+              "code": "1"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>KMT2D p.Q3855fs (frameshift), VAF 31%.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-variant-4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-variant-4",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "69548-6",
+              "display": "Genetic variant assessment"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-04-28",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Present"
+            }
+          ]
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48018-6",
+                  "display": "Gene studied [ID]"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.genenames.org/geneId",
+                  "code": "HGNC:11912",
+                  "display": "TNFRSF14"
+                }
+              ]
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48019-4",
+                  "display": "DNA change type"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "text": "deletion"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>TNFRSF14 deletion of exons 1-3 (deletion).</p></div>"
+        },
+        "note": [
+          {
+            "text": "TNFRSF14 deletion of exons 1-3"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-tmb",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-tmb",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "94076-7",
+              "display": "Mutations/Megabase [# Ratio] in Tumor"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-04-28",
+        "valueQuantity": {
+          "value": 6,
+          "unit": "mutations/Mb",
+          "system": "http://unitsofmeasure.org",
+          "code": "1/1000000{Base}"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Tumor mutational burden 6 mutations/Mb.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l3-msi",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l3-msi",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81695-9",
+              "display": "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-04-28",
+        "valueCodeableConcept": {
+          "text": "Microsatellite stable"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Microsatellite stable.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Procedure/dlbcl-0003-v2-l3-proc-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "dlbcl-0003-v2-l3-proc-1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "status": "completed",
+        "code": {
+          "text": "FDG PET-CT (short-interval restaging)"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "performedDateTime": "2027-04-20",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure: FDG PET-CT (short-interval restaging) (2027-04-20).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Procedure/dlbcl-0003-v2-l3-proc-2",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "dlbcl-0003-v2-l3-proc-2",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "status": "completed",
+        "code": {
+          "text": "CT-guided core needle biopsy of retroperitoneal mass"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "performedDateTime": "2027-04-28",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure: CT-guided core needle biopsy of retroperitoneal mass (2027-04-28).</p></div>"
+        }
+      }
+    }
+  ]
+}

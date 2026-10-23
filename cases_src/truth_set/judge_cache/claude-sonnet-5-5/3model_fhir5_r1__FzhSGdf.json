@@ -1,0 +1,122 @@
+{
+ "dx_hgbl_double_hit": {
+  "met": true,
+  "quote": "reclassified after FISH as high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit lymphoma; WHO-HAEM5 category)",
+  "source": "judge"
+ },
+ "mn_dx_dlbcl_nos": {
+  "met": false,
+  "quote": "This is double-hit, not triple-hit.",
+  "source": "judge"
+ },
+ "dx_gcb_hans": {
+  "met": true,
+  "quote": "GCB phenotype by Hans algorithm: CD10+, BCL6+, MUM1/IRF4 negative.",
+  "source": "judge"
+ },
+ "tx_plan_outdated": {
+  "met": true,
+  "quote": "the 2026-09-14 plan was built before FISH; both need updating to the amended diagnosis.",
+  "source": "judge"
+ },
+ "stage_ii_bulky": {
+  "met": true,
+  "quote": "Ann Arbor stage II, A (no B symptoms), bulky disease (mediastinal 12.0 cm, at least 10 cm); Lugano stage II bulky. This is provisional.",
+  "source": "judge"
+ },
+ "mn_stage_iii_iv": {
+  "met": false,
+  "quote": "marrow involvement would make it stage IV.",
+  "source": "judge"
+ },
+ "bio_double_expressor_secondary": {
+  "met": true,
+  "quote": "Double expressor by IHC: MYC 80% and BCL2 90% of tumor cells. FISH on block A2: MYC break-apart rearranged in 78% of nuclei with IGH::MYC (t(8;14)); BCL2 break-apart rearranged in 85%",
+  "source": "judge"
+ },
+ "prog_ipi1_biology_dominates": {
+  "met": true,
+  "quote": "The standard IPI scores low (age 54, ECOG 1, stage II, one factor for LDH) and must not be used to reassure: it does not capture double-hit biology.",
+  "source": "judge"
+ },
+ "tx_intensive_curative": {
+  "met": true,
+  "quote": "Do not give R-CHOP. The cycle 1 slot planned for 2026-09-22 should be replaced by DA-EPOCH-R every 21 days for 6 cycles, with CNS prophylaxis",
+  "source": "judge"
+ },
+ "mn_rchop_preferred": {
+  "met": false,
+  "quote": "Do not give R-CHOP.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Goal is cure: he has said he wants the treatment with the best chance of cure",
+  "source": "judge"
+ },
+ "tx_isrt_consolidation": {
+  "met": true,
+  "quote": "Residual PET-avid mediastinal mass at end of treatment should prompt consolidative involved-site radiation to the mediastinum.",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": true,
+  "quote": "Double-hit (MYC and BCL2) status is a recognized high-risk feature for CNS relapse, and its effect is not captured by the CNS-IPI.",
+  "source": "judge"
+ },
+ "cns_prophylaxis": {
+  "met": true,
+  "quote": "replaced by DA-EPOCH-R every 21 days for 6 cycles, with CNS prophylaxis (intrathecal methotrexate with lumbar punctures, per institutional protocol)",
+  "source": "judge"
+ },
+ "mn_cns_dismissed": {
+  "met": false,
+  "quote": "CNS-IPI scores 1 (LDH above normal only; age 54, ECOG 1, stage II, extranodal sites under 2, no kidney or adrenal involvement), which is low risk (under 1%). I would not rely on that score.",
+  "source": "judge"
+ },
+ "resp_pet_lugano": {
+  "met": true,
+  "quote": "Interim PET-CT after cycle 2 with Deauville score: if Deauville 1-3, continue; if Deauville 4-5, do not simply continue, but review with tumor board for a change of therapy or trial, since the outcome is poor. End-of-treatment PET-CT after cycle 6 by Lugano 2014 criteria.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Pegfilgrastim day 6 each cycle.",
+  "source": "judge"
+ },
+ "sup_tls": {
+  "met": true,
+  "quote": "Tumor lysis: high clinical risk (double-hit high-grade lymphoma, bulk 12 cm, Ki-67 95%, LDH elevated, urate 7.9 mg/dL close to the 8 mg/dL threshold). Start allopurinol or febuxostat now.",
+  "source": "judge"
+ },
+ "sup_central_access_infusion": {
+  "met": true,
+  "quote": "as 96-hour continuous infusion days 1-4 via port",
+  "source": "judge"
+ },
+ "sup_fertility": {
+  "met": true,
+  "quote": "(12) Fertility counselling and sperm banking before cyclophosphamide and anthracycline.",
+  "source": "judge"
+ },
+ "sup_svc_airway": {
+  "met": true,
+  "quote": "SVC and airway emergency plan for patient and family: sleep head-elevated; call or present for stridor, worsening facial or neck swelling, orthopnea, syncope or inability to swallow liquids.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis B: HBsAg and anti-HBc negative with anti-HBs positive, indicating vaccine immunity; no antiviral prophylaxis or routine HBV monitoring is needed.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "LVEF 60% with normal diastolic function, no heart disease, no prior cancer or treatment.",
+  "source": "judge"
+ },
+ "fit_intensive": {
+  "met": true,
+  "quote": "Fit for intensive therapy: age 54, ECOG 1 (2026-09-08), normal renal function (creatinine 0.9, eGFR 101), normal liver tests (2026-09-04), LVEF 60% with normal diastolic function",
+  "source": "judge"
+ }
+}

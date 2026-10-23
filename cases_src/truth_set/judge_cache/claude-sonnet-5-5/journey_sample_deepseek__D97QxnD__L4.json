@@ -1,0 +1,62 @@
+{
+ "l4_icans_grade_steroids": {
+  "met": true,
+  "quote": "Third, treat ICANS immediately with dexamethasone 10 mg IV every 6 hours; if there is no improvement within 24 hours",
+  "source": "judge"
+ },
+ "l4_crs_management": {
+  "met": true,
+  "quote": "an isotonic crystalloid bolus of 500-1000 mL for BP 96/58, then norepinephrine to maintain MAP at least 65 mmHg if fluid-refractory",
+  "source": "judge"
+ },
+ "l4_neutropenic_sepsis": {
+  "met": true,
+  "quote": "obtain blood cultures and start broad-spectrum antibiotics within 1 hour (piperacillin-tazobactam or cefepime, adding vancomycin for central-line/MRSA risk)",
+  "source": "judge"
+ },
+ "l4_airway_icu_seizure": {
+  "met": true,
+  "quote": "increase levetiracetam to 750-1000 mg twice daily (renally adjusted), obtain an urgent EEG, and treat clinical seizures with benzodiazepines",
+  "source": "judge"
+ },
+ "l4_ddx_cns_relapse": {
+  "met": true,
+  "quote": "I would also keep CNS lymphoma progression in mind given his high CNS-IPI, though the acute day +6 timing strongly favors ICANS",
+  "source": "judge"
+ },
+ "l4_ddx_infection_bleed": {
+  "met": true,
+  "quote": "CNS infection is a major concern, including HSV encephalitis, VZV, CMV, EBV, HHV-6 (a classic post-CAR-T limbic encephalitis",
+  "source": "judge"
+ },
+ "l4_ddx_metabolic_seizure": {
+  "met": true,
+  "quote": "nonconvulsive status epilepticus, intracerebral hemorrhage, ischemic stroke, cerebral venous sinus thrombosis",
+  "source": "judge"
+ },
+ "l4_ct_then_mri": {
+  "met": true,
+  "quote": "obtain an emergent noncontrast CT head to exclude hemorrhage and edema, followed by MRI brain with contrast and MRV",
+  "source": "judge"
+ },
+ "l4_eeg_lp_safe": {
+  "met": true,
+  "quote": "Lumbar puncture only after imaging and neurosurgical clearance, and after platelets are at least 50,000-100,000/uL and INR is corrected: send cell count, protein, glucose, cytology, flow cytometry, bacterial, fungal and AFB cultures",
+  "source": "judge"
+ },
+ "l4_glucose_steroids_diabetes": {
+  "met": false,
+  "quote": "manage glucose and sodium carefully",
+  "source": "judge"
+ },
+ "l4_mn_lp_unsafe": {
+  "met": false,
+  "quote": "defer lumbar puncture until imaging is reviewed and platelets/coagulation are corrected.",
+  "source": "judge"
+ },
+ "l4_mn_withhold_steroids_for_tcell": {
+  "met": false,
+  "quote": "Do not delay antibiotics or steroids for imaging or lumbar puncture.",
+  "source": "judge"
+ }
+}

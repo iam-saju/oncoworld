@@ -1,0 +1,186 @@
+{
+ "id": "minimax_deepseek_v2_first5_r1__FHhwVr8",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "germinal-center B-cell-like (GCB) immunophenotype by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IVB",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "extranodal involvement of the right kidney (3.2 cm), left adrenal gland (2.6 cm) and liver segment VI (1.8 cm)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "with B symptoms (drenching night sweats, 8 kg/10% weight loss)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "not double-hit/triple-hit and not a double-expressor by IHC",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "IPI 5 of 5 (age >60, stage IV, LDH > ULN, >1 extranodal site, ECOG 2)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "CNS-IPI 6 of 6 (age >60, stage IV, ECOG 2, elevated LDH, >1 extranodal site, and kidney/adrenal involvement)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "every 21 days for 6 cycles, with full-dose doxorubicin (baseline LVEF 60%)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "if polatuzumab is not available or approved, R-CHOP x6 is the appropriate equivalent",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "I would not use DA-EPOCH-R or a reduced-intensity/frailty regimen",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "I would not use DA-EPOCH-R or a reduced-intensity/frailty regimen",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "High: CNS-IPI 6 of 6 (age >60, stage IV, ECOG 2, elevated LDH, >1 extranodal site, and kidney/adrenal involvement)",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": false,
+   "quote": "I will obtain baseline CSF cytology and flow cytometry (and MRI brain only if symptoms develop).",
+   "confidence": "medium",
+   "note": "CSF cytology/flow ordered but baseline brain MRI deferred unless symptomatic."
+  },
+  "cns_prophylaxis_renal": {
+   "met": true,
+   "quote": "if renal function recovers to normal, high-dose systemic methotrexate would be the preferred prophylaxis",
+   "confidence": "medium",
+   "note": "Ties HD-MTX to renal recovery and notes weak evidence, but commits to IT MTX rather than leaving prophylaxis individualized."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "because high-dose intravenous methotrexate is not safe with eGFR 50",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Assess response with PET-CT using Lugano 2014/Deauville criteria about 6-8 weeks after cycle 6",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "If Deauville 4-5, biopsy the residual site",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_prophylaxis": {
+   "met": true,
+   "quote": "admit or closely observe with vigorous IV hydration and frequent potassium, phosphorus, calcium, uric acid and creatinine monitoring",
+   "confidence": "medium",
+   "note": "High-risk TLS plan with hydration and rasburicase, but lab frequency not specified as every 6-12 h."
+  },
+  "sup_rasburicase_g6pd": {
+   "met": true,
+   "quote": "give rasburicase 0.2 mg/kg after confirming G6PD status",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim primary prophylaxis",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "Stop ibuprofen now: it is contributing to the AKI and is unsafe with this renal/TLS risk",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "monitor glucose closely because steroids will worsen his diabetes; hold metformin if renal function worsens",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg negative, anti-HBc negative, anti-HBs reactive, so no HBV antiviral prophylaxis is needed",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "with full-dose doxorubicin (baseline LVEF 60%)",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "his ECOG 2 is largely disease-related, so he should be treated with curative intent",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

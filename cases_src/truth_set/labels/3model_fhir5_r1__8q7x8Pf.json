@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r1__8q7x8Pf",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "Non-germinal-center B-cell phenotype by Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "Non-GCB (ABC-like by Hans) DLBCL",
+   "confidence": "medium",
+   "note": "Equates Hans non-GCB with ABC-like; never states it is only a surrogate for GEP."
+  },
+  "dx_not_breast_recurrence": {
+   "met": true,
+   "quote": "Not a recurrence of her 2016 left breast ER-positive IDC: AE1/AE3 and GATA3 negative in lesional cells",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Ann Arbor stage III B (Lugano 2014)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_lymphatic": {
+   "met": true,
+   "quote": "Splenic involvement by FDG-avid nodules is counted as nodal (S), so there is no extranodal disease",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms are present (documented fevers to 38.4 C, drenching night sweats",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulk_definition": {
+   "met": true,
+   "quote": "Largest mass 7.5 cm, below the 10 cm bulky threshold but close to the 7.5 cm cutoff used in some protocols",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "Some teams would call splenic nodules extranodal and stage IV; that does not change the treatment plan",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_del_not_dh": {
+   "met": true,
+   "quote": "so this is not double-hit or triple-hit lymphoma by definition; the MYC and BCL2 positivity is protein expression alone",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": true,
+   "quote": "DA-EPOCH-R is an NCCN-listed preferred regimen, has randomized data against R-CHOP in untreated DLBCL, and is a reasonable choice for high-risk and double-expressor disease",
+   "confidence": "medium",
+   "note": "DA-EPOCH-R chosen mainly on cardiac rationale, but double-expressor is cited as supporting reason; intensified regimen committed."
+  },
+  "prog_ipi_2": {
+   "met": true,
+   "quote": "IPI: classic IPI is 2 (low-intermediate",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_2": {
+   "met": true,
+   "quote": "CNS-IPI about 2 (intermediate-low)",
+   "confidence": "medium",
+   "note": "Score 2 correct but labelled intermediate-low."
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "Recommendation: no CNS-directed prophylaxis (intrathecal or high-dose methotrexate)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_aware_no_full_dox": {
+   "met": true,
+   "quote": "Gate and fallback: proceed with doxorubicin only if LVEF is at least 40%",
+   "confidence": "medium",
+   "note": "Not R-CHOP, gated on cardio-oncology, but still delivers full cumulative doxorubicin via DA-EPOCH-R."
+  },
+  "mn_standard_dox_ignores_heart": {
+   "met": false,
+   "quote": "I would not give six cycles of R-CHOP or Pola-R-CHP at any LVEF.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardio_onc_referral": {
+   "met": true,
+   "quote": "Start only after cardio-oncology clearance",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardioprotection": {
+   "met": true,
+   "quote": "beta-blocker (carvedilol or metoprolol succinate, low dose, titrated) plus a renin-angiotensin blocker",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_anthracycline_free_curative": {
+   "met": false,
+   "quote": "move to an anthracycline-free strategy (clinical trial preferred; polatuzumab-bendamustine-rituximab would be off-label",
+   "confidence": "medium",
+   "note": "Primary plan is anthracycline-containing DA-EPOCH-R; anthracycline-free only as a conditional fallback."
+  },
+  "tx_lower_efficacy_ack": {
+   "met": true,
+   "quote": "An anthracycline-free regimen would likely lower the chance of cure, though the evidence is weak.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_monitoring": {
+   "met": true,
+   "quote": "Troponin and NT-proBNP before cycles 1, 3 and 5.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT after cycle 6, judged by Lugano 2014",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "allopurinol (or febuxostat) and hydration from before cycle 1 with urine output and renal function checks",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Pegfilgrastim day 6 each cycle.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_anastrozole": {
+   "met": true,
+   "quote": "continue anastrozole to the planned end of the 10-year course in November 2026",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "Hepatitis B: HBsAg, HBcAb and HBsAb are negative, so no antiviral prophylaxis is needed",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_curative_ecog1": {
+   "met": true,
+   "quote": "she is fit for curative-intent immunochemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_cardiac_workup": {
+   "met": true,
+   "quote": "Full cardiac data: formal echo measurements",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

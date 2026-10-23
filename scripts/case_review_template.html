@@ -1,0 +1,272 @@
+<title>__TITLE__</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&family=Atkinson+Hyperlegible+Next:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: a clinical sign-off form. One column, five numbered parts read in order; every decision has the same
+   three-button control and an optional note. */
+:root {
+  --bg: #f4f6f5; --surface: #fcfcfb; --raised: #ffffff; --ink: #111614; --ink-2: #4a5350; --muted: #727b78;
+  --hair: #dde2e0; --accent: #0e6b70; --accent-ink: #ffffff; --accent-bg: #e1efef; --wash: #e9eeec;
+  --crit: #d03b3b; --crit-ink: #a52626; --crit-bg: #fbe5e5; --warn-ink: #7a5300; --warn-bg: #fdf1d6; --good-ink: #006300; --good-bg: #e3f3e3;
+  --font: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "Atkinson Hyperlegible Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1110; --surface: #161a19; --raised: #1b201e; --ink: #edf1ef; --ink-2: #b6bfbb; --muted: #8c9591;
+    --hair: #29302d; --accent: #5cc3c6; --accent-ink: #062627; --accent-bg: #15302f; --wash: #1f2624;
+    --crit: #e05a5a; --crit-ink: #f08a8a; --crit-bg: #331a1a; --warn-ink: #f5c255; --warn-bg: #2d2511; --good-ink: #43c443; --good-bg: #13291a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1110; --surface: #161a19; --raised: #1b201e; --ink: #edf1ef; --ink-2: #b6bfbb; --muted: #8c9591;
+  --hair: #29302d; --accent: #5cc3c6; --accent-ink: #062627; --accent-bg: #15302f; --wash: #1f2624;
+  --crit: #e05a5a; --crit-ink: #f08a8a; --crit-bg: #331a1a; --warn-ink: #f5c255; --warn-bg: #2d2511; --good-ink: #43c443; --good-bg: #13291a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.55 var(--font); margin: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+.wrap { max-width: 900px; margin: 0 auto; padding-block: 24px 80px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 44px; }
+section, section > * { min-width: 0; }
+section { display: grid; gap: 16px; scroll-margin-top: 70px; }
+h1, h2, h3, h4 { margin: 0; line-height: 1.2; text-wrap: balance; }
+h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 800; }
+h2 { font-size: 23px; font-weight: 800; display: flex; gap: 12px; align-items: baseline; }
+h2 .n { font-family: var(--mono); font-size: 15px; color: var(--accent); }
+h3 { font-size: 17px; font-weight: 700; }
+p { margin: 0; max-width: 70ch; }
+ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+.muted { color: var(--muted); } .ink2 { color: var(--ink-2); } .small { font-size: 14.5px; } .tiny { font-size: 13px; }
+.eyebrow { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--hair);
+  margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 10px max(16px, env(safe-area-inset-left, 0px)); }
+.bar-in { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 6px 16px; align-items: center; justify-content: space-between; font-size: 14px; }
+.bar nav { display: flex; flex-wrap: wrap; gap: 4px 14px; } .bar a { color: var(--ink-2); text-decoration: none; } .bar a:hover { color: var(--accent); }
+.progress { display: flex; gap: 8px; align-items: center; } .progress .track { width: 120px; height: 6px; background: var(--wash); border-radius: 99px; overflow: hidden; }
+.progress .fill { height: 100%; background: var(--accent); }
+.card { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 16px; display: grid; gap: 10px; }
+.callout { background: var(--accent-bg); border-radius: 10px; padding: 14px 16px; display: grid; gap: 8px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 12px; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--hair); vertical-align: top; }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.flag { font-family: var(--mono); font-weight: 600; color: var(--crit-ink); }
+details.doc { border: 1px solid var(--hair); border-radius: 8px; background: var(--surface); }
+details.doc > summary { cursor: pointer; padding: 9px 12px; font-size: 14.5px; }
+details.doc pre { margin: 0; padding: 0 12px 12px; white-space: pre-wrap; font: 13.5px/1.5 var(--font); color: var(--ink-2); }
+.plan { display: grid; gap: 10px; }
+.plan .row { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 4px 14px; padding-bottom: 10px; border-bottom: 1px solid var(--hair); font-size: 15px; }
+.plan .row b { font-size: 14px; color: var(--ink-2); }
+@media (max-width: 600px) { .plan .row { grid-template-columns: 1fr; } }
+.area { display: grid; gap: 10px; }
+.area > h3 { padding-bottom: 6px; border-bottom: 2px solid var(--ink); }
+.item { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 14px 16px; display: grid; gap: 8px; }
+.item.unsafe { border-left: 4px solid var(--crit); }
+.item-h { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; justify-content: space-between; }
+.item-h h4 { font-size: 16px; font-weight: 700; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.tag { font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 1px 7px; border-radius: 4px; white-space: nowrap; }
+.t-req { background: var(--wash); color: var(--ink-2); } .t-err { background: var(--warn-bg); color: var(--warn-ink); }
+.t-unsafe { background: var(--crit-bg); color: var(--crit-ink); } .t-pts { font-family: var(--mono); color: var(--muted); font-size: 12.5px; }
+.crit { font-size: 13.5px; color: var(--muted); border-left: 2px solid var(--hair); padding-left: 10px; }
+.rate { font-size: 13px; color: var(--ink-2); }
+.decide { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.decide button { font: inherit; font-size: 14px; color: var(--ink); background: var(--raised); border: 1px solid var(--hair); border-radius: 8px; padding: 5px 12px; cursor: pointer; }
+.decide button:hover { border-color: var(--accent); }
+.decide button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.decide textarea { flex: 1 1 240px; min-height: 36px; font: inherit; font-size: 14px; color: var(--ink); background: var(--raised); border: 1px solid var(--hair); border-radius: 8px; padding: 6px 10px; resize: vertical; }
+blockquote { margin: 0; padding: 8px 12px; border-left: 3px solid var(--accent); background: var(--wash); border-radius: 0 6px 6px 0; font-size: 15px; }
+.store { font-size: 13px; color: var(--muted); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+
+<div class="bar"><div class="bar-in">
+  <nav aria-label="Parts"><a href="#patient">1 Patient</a><a href="#plan">2 Reference plan</a><a href="#checklist">3 Checklist</a><a href="#questions">4 Questions</a><a href="#examples">5 Examples</a></nav>
+  <div class="progress"><span id="done-count">0 decisions</span><span class="track"><span class="fill" id="done-bar" style="width:0%"></span></span></div>
+</div></div>
+
+<main class="wrap">
+  <header id="top" style="display:grid;gap:12px"></header>
+  <section id="patient"></section>
+  <section id="plan"></section>
+  <section id="checklist"></section>
+  <section id="questions"></section>
+  <section id="examples"></section>
+  <section id="finish"></section>
+</main>
+
+<script>
+const D = __DATA__;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const H = h => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content.firstElementChild; };
+
+/* ---- saved verdicts: shared store when published, this browser when opened as a file ---- */
+const R = { mode: "local", mine: { items: {}, questions: {}, examples: {} }, db: null, me: null };
+const LKEY = "oncoworld-case-review:" + D.case;
+try { const v = JSON.parse(localStorage.getItem(LKEY) || "null"); if (v) R.mine = v; } catch (e) {}
+let pending = null, writing = false;
+async function save() {
+  updateProgress();
+  if (R.mode !== "db") { try { localStorage.setItem(LKEY, JSON.stringify(R.mine)); } catch (e) {} setStore(); return; }
+  pending = JSON.parse(JSON.stringify(R.mine)); if (writing) return; writing = true;
+  while (pending) { const body = pending; pending = null;
+    try { await R.db.doc("case_reviews/" + R.me).set({ ...body, case: D.case, rubric_version: D.rubric_version, updated: new Date().toISOString() }); setStore("Saved"); }
+    catch (e) { setStore("Not saved: " + (e && e.message || "error")); } }
+  writing = false;
+}
+function setStore(msg) {
+  const t = R.mode === "db" ? "Your answers are saved to this page as you go." : "Your answers are kept in this browser.";
+  document.querySelectorAll(".store").forEach(n => n.textContent = msg ? `${msg}. ${t}` : t);
+}
+function decide(kind, key, choices) {
+  const cur = R.mine[kind][key] || {};
+  const box = H(`<div class="decide" role="group" aria-label="Your decision"></div>`);
+  for (const [v, label] of choices) {
+    const b = H(`<button type="button" aria-pressed="${cur.v === v}">${esc(label)}</button>`);
+    b.onclick = () => { const r = R.mine[kind][key] || {}; r.v = r.v === v ? undefined : v;
+      if (!r.v && !r.note) delete R.mine[kind][key]; else R.mine[kind][key] = r;
+      box.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b && !!r.v)); save(); };
+    box.append(b);
+  }
+  const ta = H(`<textarea placeholder="Note or suggested change (optional)" aria-label="Note">${esc(cur.note || "")}</textarea>`);
+  let tm; ta.oninput = () => { clearTimeout(tm); tm = setTimeout(() => { const r = R.mine[kind][key] || {}; r.note = ta.value; R.mine[kind][key] = r; save(); }, 600); };
+  box.append(ta);
+  return box;
+}
+const TOTAL = D.items.length + D.questions.length + D.examples.length;
+function updateProgress() {
+  const n = ["items", "questions", "examples"].reduce((a, k) => a + Object.values(R.mine[k]).filter(r => r && r.v).length, 0);
+  $("#done-count").textContent = `${n} of ${TOTAL} decisions`;
+  $("#done-bar").style.width = (100 * n / TOTAL) + "%";
+}
+
+/* ---- header ---- */
+function header() {
+  const unsafe = D.items.filter(i => i.severity === "dangerous").length;
+  $("#top").append(
+    H(`<div class="eyebrow">Oncologist sign-off · ${esc(D.case)} · rubric ${esc(D.rubric_version || "")}</div>`),
+    H(`<h1>${esc(D.card.title || D.case)}</h1>`),
+    H(`<div class="callout"><h3>What we need from you (about 45 minutes)</h3>
+      <ul class="small">
+        <li><b>Parts 1 and 2:</b> read the patient and the reference plan. Nothing to decide yet.</li>
+        <li><b>Part 3:</b> for each of the ${D.items.length} checklist items, choose <i>Agree</i>, <i>Change</i> or <i>Delete</i>. The ${unsafe} items marked
+          <span class="tag t-unsafe">Unsafe error</span> matter most: missing one, or committing one, sets the whole note to 0.</li>
+        <li><b>Part 4:</b> ${D.questions.length} specific clinical questions where the checklist needs your call.</li>
+        <li><b>Part 5:</b> ${D.examples.length} real sentences from AI-written notes where grading was uncertain: did they meet the item?</li>
+      </ul>
+      <p class="tiny ink2">This is a synthetic patient. The checklist decides how AI models are scored; your answers become the standard the grader is held to. Pass mark: ${D.pass_mark} of 100.</p>
+      <p class="store"></p></div>`));
+}
+
+/* ---- 1 patient ---- */
+function patient() {
+  const f = D.facts, s = $("#patient");
+  s.append(H(`<h2><span class="n">1</span>The patient</h2>`));
+  s.append(H(`<p>${esc(D.card.patient || "")}</p>`));
+  s.append(H(`<div class="grid2">
+    <div class="card"><h3>Background</h3><p class="small"><b>${esc(f.who)}</b></p>
+      <div class="small"><b>Problems:</b> ${f.problems.map(esc).join("; ")}</div>
+      <div class="small"><b>Allergies:</b> ${f.allergies.map(esc).join("; ")}</div></div>
+    <div class="card"><h3>Medications</h3><ul class="small">${f.medications.map(m => `<li>${esc(m)}</li>`).join("")}</ul></div></div>`));
+  s.append(H(`<div class="card"><h3>Abnormal results (latest)</h3><div style="overflow-x:auto"><table>
+    <thead><tr><th>Test</th><th>Result</th><th></th><th>Reference</th><th>Date</th></tr></thead>
+    <tbody>${f.abnormal_labs.map(l => `<tr><td>${esc(l.test)}</td><td class="num">${esc(l.value)}</td><td class="flag">${l.flag}</td><td class="num">${esc(l.ref)}</td><td class="num">${esc(l.date)}</td></tr>`).join("")}</tbody></table></div>
+    ${f.pathology.length ? `<div class="small"><b>Pathology:</b> ${f.pathology.map(esc).join(" · ")}</div>` : ""}</div>`));
+  const docs = H(`<div style="display:grid;gap:6px"><h3>Full chart documents</h3></div>`);
+  for (const d of f.documents) docs.append(H(`<details class="doc"><summary>${esc(d.date)} · ${esc(d.title)}</summary><pre>${esc(d.text)}</pre></details>`));
+  s.append(docs);
+  if ((D.card.tests || []).length) s.append(H(`<div class="card"><h3>What this case is designed to test</h3><ul class="small">${D.card.tests.map(t => `<li>${esc(t)}</li>`).join("")}</ul></div>`));
+}
+
+/* ---- 2 reference plan ---- */
+function plan() {
+  const s = $("#plan");
+  s.append(H(`<h2><span class="n">2</span>The reference plan</h2>`));
+  s.append(H(`<p class="small ink2">The answer key models are compared against. If anything here is wrong, say so in the matching checklist item in part 3.</p>`));
+  if (D.card.correct_plan) s.append(H(`<div class="callout"><b>In one paragraph</b><p class="small">${esc(D.card.correct_plan)}</p></div>`));
+  const p = H(`<div class="plan"></div>`);
+  for (const r of D.plan) p.append(H(`<div class="row"><b>${esc(r.field)}</b><div>${Array.isArray(r.text) ? "<ul>" + r.text.map(x => `<li>${esc(x)}</li>`).join("") + "</ul>" : esc(r.text)}</div></div>`));
+  s.append(p);
+}
+
+/* ---- 3 checklist by clinical area ---- */
+function checklist() {
+  const s = $("#checklist");
+  s.append(H(`<h2><span class="n">3</span>The checklist, by clinical area</h2>`));
+  s.append(H(`<p class="small ink2">Each item is one thing a good note must do (<i>required</i> or <i>recommended</i>) or must not do (<i>error</i>).
+    "Real notes" shows how many of the AI-written notes we have for this case met it.</p>`));
+  for (const dom of D.domains) {
+    const its = D.items.filter(i => i.domain === dom.key); if (!its.length) continue;
+    const a = H(`<div class="area"><h3>${esc(dom.label)}</h3></div>`);
+    for (const i of its) {
+      const kind = i.kind === "must" ? "Required" : i.kind === "should" ? "Recommended" : "Error";
+      const unsafe = i.severity === "dangerous";
+      const pts = i.kind === "must_not" ? (unsafe ? "fails the note" : `−${i.points} pts`) : `${i.points} pts`;
+      const rate = i.n ? (i.kind === "must_not" ? `Real notes: committed in ${i.met} of ${i.n}` : `Real notes: met in ${i.met} of ${i.n}`) : "";
+      const el = H(`<div class="item${unsafe ? " unsafe" : ""}" id="item-${i.id}">
+        <div class="item-h"><h4>${esc(i.label)}</h4><div class="tags"><span class="tag ${i.kind === "must_not" ? "t-err" : "t-req"}">${kind}</span>
+          ${unsafe ? `<span class="tag t-unsafe">Unsafe error</span>` : ""}<span class="t-pts">${pts}</span></div></div>
+        ${i.why ? `<p class="small">${esc(i.why)}</p>` : ""}
+        <div class="crit">Exact checklist wording: ${esc(i.criterion)}</div>
+        ${rate ? `<div class="rate">${rate}</div>` : ""}</div>`);
+      el.append(decide("items", i.id, [["agree", "Agree"], ["change", "Change"], ["delete", "Delete"]]));
+      a.append(el);
+    }
+    s.append(a);
+  }
+}
+
+/* ---- 4 open questions ---- */
+function questions() {
+  const s = $("#questions");
+  s.append(H(`<h2><span class="n">4</span>Questions that need your call</h2>`));
+  D.questions.forEach((q, n) => {
+    const el = H(`<div class="item"><h4>${n + 1}. ${esc(q.question)}</h4>${q.context ? `<p class="small ink2">${esc(q.context)}</p>` : ""}
+      <div class="tiny muted">Affects: ${q.items.map(id => `<a href="#item-${id}">${esc((D.items.find(i => i.id === id) || {}).label || id)}</a>`).join(" · ")}</div></div>`);
+    el.append(decide("questions", q.id, q.options.map(o => [o, o])));
+    s.append(el);
+  });
+}
+
+/* ---- 5 borderline real examples ---- */
+function examples() {
+  const s = $("#examples");
+  s.append(H(`<h2><span class="n">5</span>Real sentences: did they meet the item?</h2>`));
+  s.append(H(`<p class="small ink2">Each sentence is copied from an AI model's note for this patient. Our graders were unsure or disagreed. Your answer settles it and becomes a test the grader must pass from now on.</p>`));
+  for (const e of D.examples) {
+    const yes = e.kind === "must_not" ? "Error committed" : "Met";
+    const no = e.kind === "must_not" ? "No error" : "Not met";
+    const el = H(`<div class="item${e.severity === "dangerous" ? " unsafe" : ""}">
+      <div class="item-h"><h4>${esc(e.label)}</h4><div class="tags">${e.severity === "dangerous" ? `<span class="tag t-unsafe">Unsafe error item</span>` : ""}<span class="t-pts">${esc(e.model)}</span></div></div>
+      <blockquote>“${esc(e.quote)}”</blockquote>
+      ${e.ai_note ? `<p class="tiny muted">Why it is borderline: ${esc(e.ai_note)}</p>` : ""}</div>`);
+    el.append(decide("examples", e.key, [["met", yes], ["not-met", no], ["unsure", "Unsure"]]));
+    s.append(el);
+  }
+}
+
+function finish() {
+  $("#finish").append(H(`<div class="callout"><h3>Done?</h3><p class="small">Your answers save as you go, so you can stop and come back. When you finish, tell the team.
+    Every "Change" or "Delete" with a note becomes a rubric edit, every answer in part 5 becomes a permanent test for the grader, and the rubric is marked as signed off.</p><p class="store"></p></div>`));
+}
+
+header(); patient(); plan(); checklist(); questions(); examples(); finish(); updateProgress(); setStore();
+(async () => {
+  if (!window.claude || typeof window.claude.use !== "function") return;
+  const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+  if (!db || !user) return;
+  const id = await user.id(); if (!id) return;
+  R.db = db; R.me = id; R.mode = "db";
+  try { const snap = await db.doc("case_reviews/" + id).get(); if (snap.exists) { const d = snap.data();
+    R.mine = { items: d.items || {}, questions: d.questions || {}, examples: d.examples || {} };
+    ["#checklist", "#questions", "#examples"].forEach(x => $(x).innerHTML = ""); checklist(); questions(); examples(); } } catch (e) {}
+  updateProgress(); setStore();
+})();
+</script>

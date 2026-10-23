@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL, NOS), non-germinal-center B-cell (non-GCB) phenotype by the Hans algorithm, with double-expressor biology",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "Non-GCB/activated B-cell-like immunophenotype (CD10 negative, BCL6 positive, MUM1 positive)",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor stage IIIB, bulky: left cervical, right paratracheal, subcarinal, and confluent retroperitoneal/para-aortic nodal disease above and below the diaphragm, with splenic involvement (IIIS)",
+  "source": "judge"
+ },
+ "stage_spleen_nodal": {
+  "met": true,
+  "quote": "nodal disease above and below the diaphragm, with splenic involvement (IIIS)",
+  "source": "judge"
+ },
+ "stage_bulky_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms present (fever, drenching night sweats); largest mass 11.0 cm (bulky).",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "Ann Arbor stage IIIB, bulky: ... with splenic involvement (IIIS); ... Bone marrow, liver, lung, kidneys, adrenal glands, bones, testes, and CNS are uninvolved.",
+  "source": "judge"
+ },
+ "mn_spleen_extranodal_count": {
+  "met": false,
+  "quote": "IPI 3 (age >60, stage III, elevated LDH), NCCN-IPI 4 (high-intermediate), CNS-IPI 2 (intermediate CNS risk).",
+  "source": "judge"
+ },
+ "mol_de_not_dh": {
+  "met": false,
+  "quote": "double-expressor biology (MYC positive in ~50% and BCL2 positive in ~80% of tumor cells by immunohistochemistry), ... and no MYC, BCL2, or BCL6 rearrangement by FISH; EBER negative. This is DLBCL, NOS, not double-hit or triple-hit",
+  "source": "judge_unquoted"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "This is DLBCL, NOS, not double-hit or triple-hit high-grade B-cell lymphoma.",
+  "source": "judge"
+ },
+ "mn_denies_double_expressor": {
+  "met": false,
+  "quote": "BCL2 and MYC co-expression (double-expressor), very high Ki-67, and no MYC/BCL2/BCL6 rearrangement.",
+  "source": "judge"
+ },
+ "prog_ipi_3": {
+  "met": true,
+  "quote": "IPI 3 (age >60, stage III, elevated LDH), NCCN-IPI 4 (high-intermediate)",
+  "source": "judge"
+ },
+ "prog_cns_ipi_intermediate": {
+  "met": false,
+  "quote": "CNS-IPI 2 (age >60 and elevated LDH) places him at intermediate risk, approximately 3-6% at 2 years.",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Curative-intent Pola-R-CHP: polatuzumab vedotin 1.8 mg/kg, rituximab 375 mg/m2, cyclophosphamide 750 mg/m2, and doxorubicin 50 mg/m2 intravenously on day 1, with prednisone 100 mg orally on days 1-5, repeated every 21 days for 6 cycles.",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": false,
+  "quote": "This is supported by POLARIX for fit patients with stage II-IV DLBCL and IPI 2-5. ... If polatuzumab is not available or not covered, R-CHOP every 21 days for 6 cycles is the standard alternative",
+  "source": "judge_unquoted"
+ },
+ "tx_isrt_residual_bulk": {
+  "met": false,
+  "quote": "Deauville 4 is equivocal; I will repeat PET in 6-12 weeks or biopsy. Deauville 5 or biopsy-proven residual disease is refractory/progressive disease; I will proceed to second-line platinum-based salvage",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "he is a candidate for full-dose curative-intent anthracycline therapy. His goals are cure",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I would not use DA-EPOCH-R routinely because CALGB 50303 did not show superiority over R-CHOP and it adds toxicity; reserve it for double-hit disease or a clinical trial.",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "he is a candidate for full-dose curative-intent anthracycline therapy.",
+  "source": "judge"
+ },
+ "hbv_prophylaxis": {
+  "met": true,
+  "quote": "Hepatitis B: start entecavir 0.5 mg daily after baseline HBV DNA and continue for 12 months after the last rituximab dose, with periodic HBV DNA monitoring.",
+  "source": "judge"
+ },
+ "hbv_dna_lft_monitoring": {
+  "met": false,
+  "quote": "Before cycle 1: check HBV DNA because anti-HBc is positive with HBsAg negative",
+  "source": "judge"
+ },
+ "mn_no_hbv_action": {
+  "met": false,
+  "quote": "Hepatitis B: start entecavir 0.5 mg daily after baseline HBV DNA and continue for 12 months after the last rituximab dose",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "CNS-IPI 2 (age >60 and elevated LDH) places him at intermediate risk, approximately 3-6% at 2 years. There is no high-risk sanctuary-site involvement",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "I will not give routine intrathecal methotrexate or high-dose methotrexate prophylaxis.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment FDG PET-CT approximately 6-8 weeks after cycle 6, interpreted by Lugano 2014/Deauville 5-point criteria.",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": false,
+  "quote": "Deauville 4 is equivocal; I will repeat PET in 6-12 weeks or biopsy. Deauville 5 or biopsy-proven residual disease is refractory/progressive disease; I will proceed to second-line platinum-based salvage",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis syndrome: high risk because of the 11 cm bulky mass, LDH >3x ULN, and uric acid 7.1 mg/dL. Check G6PD, start allopurinol 300 mg daily before chemotherapy, give aggressive intravenous hydration",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Give pegfilgrastim 6 mg subcutaneously on day 2 as primary febrile-neutropenia prophylaxis.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "with normal LVEF and organ function; he is a candidate for full-dose curative-intent anthracycline therapy.",
+  "source": "judge"
+ },
+ "fit_full_dose": {
+  "met": true,
+  "quote": "He is a fit 62-year-old with ECOG performance status 1, independent in all activities, working part-time from home, with normal LVEF and organ function; he is a candidate for full-dose curative-intent anthracycline therapy.",
+  "source": "judge"
+ },
+ "miss_hbv_dna": {
+  "met": true,
+  "quote": "Hepatitis B virus DNA level (anti-HBc positive, HBsAg negative) to finalize entecavir prophylaxis and monitoring.",
+  "source": "judge"
+ }
+}

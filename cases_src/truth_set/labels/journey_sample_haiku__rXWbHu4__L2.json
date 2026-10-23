@@ -1,0 +1,54 @@
+{
+ "id": "journey_sample_haiku__rXWbHu4__L2",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "l2_pmr": {
+   "met": true,
+   "quote": "Partial metabolic response (PMR) by Lugano 2014, which NCCN would call a partial response. This is not a complete metabolic response.",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_repeat_biopsy": {
+   "met": true,
+   "quote": "New image-guided core biopsy targeted at the highest-uptake portion of the residual, fused with the PET-CT",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_respect_refusal": {
+   "met": true,
+   "quote": "Respect the informed refusal. Document the discussion",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_short_interval_pet_or_rt": {
+   "met": true,
+   "quote": "I recommend consolidative radiotherapy: 30 Gy in 15 fractions to the residual retroperitoneal mass",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_no_cns_action": {
+   "met": true,
+   "quote": "No CNS-directed treatment is needed now.",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_car_t_awareness": {
+   "met": true,
+   "quote": "Refer to CAR-T evaluation (axi-cel is approved for primary refractory DLBCL within 12 months of first-line therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_mn_declares_cure": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_mn_salvage_without_histology": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

@@ -14,5 +14,51 @@
     "Whether sperm banking has been offered and the patient's fertility wishes",
     "G6PD status in case rasburicase is needed",
     "Clinical trial availability for MYC/BCL2-rearranged lymphoma"
-  ]
+  ],
+  "decisions": {
+    "stage": "II",
+    "diagnosis": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit), GCB",
+    "intent": "curative",
+    "regimen": "DA-EPOCH-R",
+    "cycles": 6,
+    "cycle1_dose_percent": 100,
+    "radiotherapy": "Consolidative ISRT to the bulky mediastinal site decided at multidisciplinary review after end-of-treatment PET",
+    "orders_now": [
+      "Cancel the 2026-09-14 R-CHOP x6 order (cycle 1 booked 2026-09-22)",
+      "DA-EPOCH-R cycle 1 at dose level 1 (full dose) via the left chest port, start within about 1 week",
+      "Contrast-enhanced MRI brain before cycle 1",
+      "Lumbar puncture with CSF cytology and flow cytometry before cycle 1",
+      "CNS prophylaxis: intrathecal methotrexate per DA-EPOCH-R protocol",
+      "Allopurinol 300 mg PO daily starting 2-3 days before cycle 1",
+      "Oral/IV hydration starting before cycle 1",
+      "G6PD level",
+      "Filgrastim from day 6 until neutrophil recovery every cycle (or pegfilgrastim on day 6)",
+      "Sperm banking referral before cycle 1",
+      "Confirm port function",
+      "PJP prophylaxis per institutional DA-EPOCH-R practice",
+      "Antiemetics and bowel regimen with vincristine",
+      "Update EHR problem list to HGBL with MYC and BCL2 rearrangements",
+      "Screen for a clinical trial for MYC/BCL2-rearranged lymphoma",
+      "Continue CPAP and albuterol as needed"
+    ],
+    "conditional_orders": [
+      "if uric acid keeps rising or creatinine increases (G6PD normal): rasburicase",
+      "if MRI or CSF shows CNS involvement: change to a CNS-directed regimen",
+      "if interim PET-CT shows progression: re-biopsy and change therapy",
+      "if end-of-treatment PET shows residual Deauville 4-5 mediastinal uptake: biopsy if it would change management, or ISRT after multidisciplinary review",
+      "if worsening facial swelling, dyspnea, stridor or dysphagia: urgent evaluation for SVC syndrome / airway compromise"
+    ],
+    "lab_monitoring": [
+      {
+        "tests": "TLS labs: potassium, phosphate, calcium, uric acid, creatinine, LDH",
+        "every_hours": 12,
+        "duration_hours": 72
+      },
+      {
+        "tests": "CBC with differential twice weekly for DA-EPOCH-R dose adjustment",
+        "every_hours": 84,
+        "duration_hours": null
+      }
+    ]
+  }
 }

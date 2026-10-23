@@ -1,0 +1,200 @@
+{
+ "id": "3model_fhir5_r1__DMmnrAb",
+ "model": "deepseek-v4.1-flash-free",
+ "task": "dlbcl_0004_double_hit_addendum_v2_fhir",
+ "layer": null,
+ "rubric": "cases_src/dlbcl_0004/rubric_v2.toml",
+ "answer_path": "jobs/3model_fhir5_r1/dlbcl_0004_double_hit_addendum_v__DMmnrAb/verifier/final_answer.json",
+ "context": "Patient: 54M, ECOG 1, with a rapidly enlarging right cervical mass, dysphagia and morning facial fullness; 12.0 cm anterior mediastinal mass with about 50% SVC narrowing, all disease above the diaphragm, LDH 740 rising to 812, uric acid 7.6 to 7.9, LVEF 60%. Node biopsy was signed out as DLBCL NOS (GCB, MYC 80%/BCL2 90% by IHC, Ki-67 95%), but the 9/19 FISH addendum shows MYC and BCL2 rearrangements after R-CHOP x6 had already been planned to start 9/22.\nWhat this case tests: The late FISH addendum changes the diagnosis to double-hit lymphoma (HGBL with MYC and BCL2 rearrangements), not DLBCL NOS. | The R-CHOP plan was written before FISH and must be replaced with intensive therapy such as DA-EPOCH-R x6 or a clinical trial. | Disease is stage II bulky (12 cm mediastinal mass, above the diaphragm only), not stage III or IV. | IPI and CNS-IPI are only 1, but double-hit biology drives the risk, so brain MRI, lumbar puncture and CNS prophylaxis are still needed. | Bulky mass, high LDH and rising uric acid need TLS prophylaxis; DA-EPOCH-R needs G-CSF every cycle and its 96-hour infusion goes through the new port.",
+ "answer": {
+  "diagnosis": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (HGBL-DH, 'double-hit' lymphoma), not DLBCL NOS. Excisional biopsy of the right cervical level III lymph node showed a diffuse aggressive B-cell lymphoma with a germinal-center phenotype (CD20+, PAX5+, CD10+, BCL6+, MUM1-, CD5-, cyclin D1-, TdT-, EBER-), BCL2 expression about 90%, MYC expression about 80%, and Ki-67 about 95%. FISH confirmed MYC rearrangement with IGH::MYC t(8;14) and BCL2 rearrangement with IGH::BCL2 t(14;18), with no BCL6 rearrangement. The 2026-09-19 pathology addendum supersedes the initial diagnosis of DLBCL, NOS.",
+  "stage": "Ann Arbor stage IIA, bulky: right cervical levels II-IV nodal disease plus a 12.0 cm anterior mediastinal mass, all above the diaphragm, with no B symptoms and no FDG-avid disease below the diaphragm, no extranodal organ involvement, and no osseous or marrow uptake on PET/CT. The mediastinal mass is bulky (>10 cm). Staging is not complete until CSF and bone marrow are assessed; if either is involved, the stage becomes IV.",
+  "biology": "GCB-type aggressive B-cell lymphoma driven by dual MYC and BCL2 rearrangements, t(8;14) and t(14;18), with high MYC and BCL2 protein expression and very high proliferation (Ki-67 95%). This double-hit biology is associated with resistance to R-CHOP and a substantially increased risk of CNS relapse. EBER is negative and BCL6 is not rearranged. No TP53 mutation or gene-expression data are available.",
+  "prognosis": "IPI 1 (low), age-adjusted IPI 1 (low-intermediate), and CNS-IPI 1 (low). However, the double-hit histology dominates prognosis and confers high-risk, aggressive behavior. Historical outcomes with R-CHOP were poor, whereas intensive first-line therapy such as DA-EPOCH-R offers the best chance of durable remission. I would describe the disease as potentially curable but high-risk, with a meaningful relapse risk; I would not quote a precise cure probability until CSF and marrow staging and the response to therapy are known.",
+  "first_line_treatment": "I am cancelling the planned R-CHOP and starting curative-intent DA-EPOCH-R (dose-adjusted etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin, plus rituximab) for 6 cycles at 21-day intervals, with G-CSF and dose adjustment based on nadir ANC and platelets. R-CHOP is inadequate for HGBL-DH; DA-EPOCH-R is the NCCN-preferred standard regimen for this histology, with a clinical trial preferred if one is available. Cycle 1 should start as soon as CSF and marrow staging and tumor-lysis precautions are addressed; I would not delay treatment for the full 6-cycle plan. If he cannot tolerate intensive therapy, I would use a dose-modified intensive regimen rather than R-CHOP, but he is currently fit.",
+  "cns_risk": "The CNS-IPI is 1 (low: elevated LDH only; age <60, ECOG 1, stage II, no more than one extranodal site, and no kidney or adrenal involvement), but double-hit histology is an independent high-risk feature and the CNS-IPI underestimates CNS risk in HGBL-DH. I will perform a lumbar puncture with CSF cytology and flow cytometry before cycle 1. If the CSF is negative, I will give CNS prophylaxis with intrathecal methotrexate 12 mg for 4 doses starting with cycle 2, with attention to thrombocytopenia and neurotoxicity. If the CSF is positive, I will treat CNS disease with a high-dose methotrexate-based approach rather than intrathecal therapy alone. The benefit of prophylaxis in this setting is not proven, so this remains a judgment call.",
+  "response_assessment": "Baseline PET/CT is available. I will reassess with PET/CT after cycle 2 for interim response and prognosis, and again 6-8 weeks after cycle 6 using Lugano/Deauville criteria. Deauville 1-3 at end of treatment is complete metabolic response; Deauville 4-5 is non-response or persistent disease and should be biopsy-confirmed if feasible. I will not change therapy solely on an interim Deauville 4 outside a trial, but unequivocal progression or a positive interim scan would prompt early salvage. If end-of-treatment disease persists, I would use platinum-based salvage such as R-ICE or R-DHAP and consolidate with autologous HCT if chemosensitive; relapsed or refractory disease would be considered for CAR-T therapy.",
+  "pretreatment_workup": "Completed: excisional biopsy with IHC and FISH, contrast CT of the neck and chest, FDG PET/CT, baseline echocardiogram (LVEF 60%), CBC with differential, comprehensive metabolic panel, LDH, uric acid, beta-2 microglobulin, hepatitis B/C and HIV serologies, and port placement. Before cycle 1 I will complete: lumbar puncture with CSF cytology and flow cytometry; bone marrow aspirate and biopsy (PET-negative marrow does not fully exclude involvement, and HGBL often involves marrow); G6PD testing before any rasburicase; fertility counseling and sperm banking; review of the amended pathology by hematopathology; and formal documentation of Ann Arbor stage, IPI, and CNS-IPI. Hepatitis B: HBsAg negative, anti-HBc negative, anti-HBs positive (immune), so no antiviral prophylaxis is needed. HCV and HIV are negative. I will also confirm dental evaluation and update inactivated vaccinations before rituximab if feasible.",
+  "supportive_care": "He is at high risk for tumor lysis because of bulky disease, LDH more than 3 times the upper limit of normal, and uric acid 7.9. Start allopurinol 300 mg daily and aggressive hydration now, check G6PD, and give rasburicase 0.2 mg/kg before cycle 1 if G6PD is normal, with frequent potassium, calcium, phosphorus, creatinine, and uric acid monitoring around cycle 1. DA-EPOCH-R requires pegfilgrastim 6 mg on day 6, or filgrastim, with nadir-based dose adjustment. Give NK1/5-HT3/dexamethasone antiemetics, a bowel regimen for vincristine, and monitor for neuropathy. Continue CPAP for OSA and omeprazole for GERD. No routine PJP or antibacterial prophylaxis unless he has prolonged steroids or neutropenia; no live vaccines during rituximab; update influenza, COVID, and pneumococcal vaccines. HBV reactivation risk is low given anti-HBc negativity. Monitor for SVC syndrome and airway compromise, with head-of-bed elevation and urgent evaluation for stridor or worsening facial swelling, and monitor for anthracycline cardiotoxicity (cumulative doxorubicin about 240 mg/m2; repeat echocardiogram if symptoms). Offer sperm banking before cycle 1 and provide psychosocial and financial support.",
+  "fitness_and_goals": "He is fit for intensive curative therapy: age 54, ECOG 1, working, LVEF 60%, normal renal and hepatic function, controlled OSA, mild asthma, and GERD, BMI 30.2, no prior cancer therapy, and good social support with a wife at home and a residence 20 minutes from the cancer center. He explicitly wants the treatment with the best chance of cure and hopes to keep working part-time; the 96-hour infusion and frequent visits of DA-EPOCH-R are feasible with his support and proximity. I will maintain dose intensity with G-CSF and nadir-based adjustment rather than elective dose reduction. If his performance status declines or toxicity becomes prohibitive, I would modify the regimen and revisit goals; at present, the goal is cure.",
+  "missing_information": [
+   "CSF cytology and flow cytometry by lumbar puncture have not been performed; CNS staging is incomplete.",
+   "Bone marrow aspirate and biopsy have not been documented; Ann Arbor stage may change to IV if involved.",
+   "G6PD status is unknown, which is needed before rasburicase.",
+   "Fertility preservation and sperm banking have not been documented.",
+   "No formal Ann Arbor stage, IPI, or CNS-IPI is documented in the chart; these were calculated here from available data.",
+   "No TP53 mutation or gene-expression/cell-of-origin data are available; these are not required for the immediate decision but may inform prognosis.",
+   "No baseline dental evaluation is documented before anthracycline-based chemotherapy."
+  ]
+ },
+ "items": [
+  {
+   "id": "dx_hgbl_double_hit",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 10,
+   "criterion": "The response revises the diagnosis to high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit; WHO-HAEM5 DLBCL/HGBL-MYC/BCL2 also accepted) based on the 2026-09-19 FISH addendum, rather than keeping the original DLBCL NOS sign-out."
+  },
+  {
+   "id": "mn_dx_dlbcl_nos",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response keeps the final diagnosis as DLBCL NOS (or otherwise denies that this is double-hit / HGBL with MYC and BCL2 rearrangements)."
+  },
+  {
+   "id": "dx_gcb_hans",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response notes a germinal-center B-cell (GCB) phenotype by the Hans algorithm (CD10+, BCL6+, MUM1-)."
+  },
+  {
+   "id": "tx_plan_outdated",
+   "kind": "must",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response recognizes that the 2026-09-14 plan (R-CHOP x6 starting 2026-09-22) was made before the FISH addendum, is outdated, and must be cancelled/changed."
+  },
+  {
+   "id": "stage_ii_bulky",
+   "kind": "must",
+   "severity": "important",
+   "points": 8,
+   "criterion": "The response stages the disease as Lugano stage II bulky: right cervical and mediastinal nodes above the diaphragm only, 12.0 cm mediastinal mass, no extranodal disease."
+  },
+  {
+   "id": "mn_stage_iii_iv",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response assigns stage III or stage IV."
+  },
+  {
+   "id": "bio_double_expressor_secondary",
+   "kind": "should",
+   "severity": "minor",
+   "points": 3,
+   "criterion": "The response notes the lymphoma is also double-expressor by IHC (MYC 80%, BCL2 90%) but that the FISH-defined double-hit status is the key classification."
+  },
+  {
+   "id": "prog_ipi1_biology_dominates",
+   "kind": "should",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response calculates IPI 1 (only LDH above normal; age 54, ECOG 1, stage II, no extranodal sites) and states that double-hit biology, not the IPI, dominates the risk."
+  },
+  {
+   "id": "tx_intensive_curative",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 12,
+   "criterion": "The response recommends curative-intent intensive therapy appropriate for double-hit lymphoma: DA-EPOCH-R x6 (preferred) or a clinical trial; R-hyper-CVAD/MA or R-CODOX-M/R-IVAC are acceptable alternatives."
+  },
+  {
+   "id": "mn_rchop_preferred",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response recommends R-CHOP alone (including proceeding with the 2026-09-14 plan) as the preferred/initial regimen."
+  },
+  {
+   "id": "mn_non_curative",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response recommends palliative-only treatment, best supportive care, or hospice as the plan."
+  },
+  {
+   "id": "tx_isrt_consolidation",
+   "kind": "should",
+   "severity": "minor",
+   "points": 3,
+   "criterion": "The response considers consolidative involved-site radiotherapy (ISRT) to the bulky mediastinal site, e.g. for residual PET-positive disease or per multidisciplinary review."
+  },
+  {
+   "id": "cns_staging_mri_csf",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response treats double-hit biology as high CNS risk irrespective of the CNS-IPI and recommends baseline contrast MRI brain and lumbar puncture with CSF cytology and flow cytometry."
+  },
+  {
+   "id": "cns_prophylaxis",
+   "kind": "should",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response recommends (or says it should be considered) CNS prophylaxis, e.g. intrathecal methotrexate commonly given with DA-EPOCH-R, or high-dose methotrexate."
+  },
+  {
+   "id": "mn_cns_dismissed",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response dismisses CNS risk as low (e.g. on the basis of a low CNS-IPI) and states that CNS evaluation or CNS prophylaxis is not needed."
+  },
+  {
+   "id": "resp_pet_lugano",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response plans an end-of-treatment FDG PET-CT read with Lugano criteria / Deauville 5-point scale (interim PET after cycles 2-4 is commonly used with DA-EPOCH-R)."
+  },
+  {
+   "id": "sup_gcsf",
+   "kind": "must",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response states G-CSF support is mandatory with DA-EPOCH-R (filgrastim or pegfilgrastim each cycle)."
+  },
+  {
+   "id": "sup_tls",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response recognizes tumor lysis risk (12 cm mass, LDH ~3.6x ULN, uric acid 7.6-7.9) and orders a uric-acid-lowering agent (allopurinol, or rasburicase if uric acid high/rising), hydration and TLS laboratory monitoring."
+  },
+  {
+   "id": "sup_central_access_infusion",
+   "kind": "should",
+   "severity": "minor",
+   "points": 3,
+   "criterion": "The response notes DA-EPOCH-R is a 96-hour continuous infusion requiring central venous access (the port placed 2026-09-18 can be used)."
+  },
+  {
+   "id": "sup_fertility",
+   "kind": "should",
+   "severity": "minor",
+   "points": 3,
+   "criterion": "The response offers sperm banking / fertility preservation before chemotherapy."
+  },
+  {
+   "id": "sup_svc_airway",
+   "kind": "should",
+   "severity": "minor",
+   "points": 3,
+   "criterion": "The response addresses the mediastinal mass with SVC narrowing: monitoring for SVC syndrome / airway compromise and patient education."
+  },
+  {
+   "id": "work_hbv_reviewed",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response confirms hepatitis B serology was checked (HBsAg and anti-HBc nonreactive) before rituximab."
+  },
+  {
+   "id": "work_echo_reviewed",
+   "kind": "should",
+   "severity": "minor",
+   "points": 1,
+   "criterion": "The response notes the baseline LVEF of 60% permits anthracycline."
+  },
+  {
+   "id": "fit_intensive",
+   "kind": "must",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response judges the patient fit for intensive curative therapy (age 54, ECOG 1, LVEF 60%, normal organ function) in line with his goal of cure."
+  }
+ ]
+}

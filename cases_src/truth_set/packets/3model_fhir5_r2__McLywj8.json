@@ -1,0 +1,245 @@
+{
+ "id": "3model_fhir5_r2__McLywj8",
+ "model": "deepseek-v4.1-flash-free",
+ "task": "dlbcl_0001_bulky_stage_iii_hbv_v2_fhir",
+ "layer": null,
+ "rubric": "cases_src/dlbcl_0001/rubric_v2.toml",
+ "answer_path": "jobs/3model_fhir5_r2/dlbcl_0001_bulky_stage_iii_hbv_v__McLywj8/verifier/final_answer.json",
+ "context": "Patient: 62M, ECOG 1, with 3 months of enlarging left neck nodes, fevers, drenching night sweats and 7 kg weight loss; PET-CT shows cervical, mediastinal and an 11 cm retroperitoneal mass, plus splenomegaly with FDG-avid splenic lesions; marrow negative, LDH 735 (about 3x ULN), LVEF 58%. Node biopsy: DLBCL NOS, non-GCB by Hans, MYC 50% / BCL2 80% by IHC with FISH negative for MYC, BCL2 and BCL6 rearrangements; HBsAg nonreactive, anti-HBc reactive, anti-HBs reactive.\nWhat this case tests: Spleen involvement is nodal (lymphatic) under Lugano, so the stage is III, not IV, and the spleen does not score as extranodal in IPI or CNS-IPI. | MYC/BCL2 protein co-expression without rearrangement is double-expressor, not double-hit, and does not justify DA-EPOCH-R. | HBsAg-negative but anti-HBc-positive serology is resolved hepatitis B: rituximab needs entecavir or tenofovir prophylaxis started before the first dose. | CNS-IPI 3 is intermediate risk with no high-risk sites or neurologic symptoms, so routine CNS prophylaxis, MRI brain and lumbar puncture are not indicated. | A fit 62-year-old with ECOG 1 who wants cure gets full-dose curative therapy, not dose-reduced or palliative treatment.",
+ "answer": {
+  "diagnosis": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL-NOS), diagnosed by excisional left cervical lymph node biopsy on 2026-09-09. The immunophenotype is non-germinal-center B-cell-like by the Hans algorithm (CD10 negative, BCL6 positive, MUM1/IRF4 positive in about 70%), with BCL2 positive in about 80%, MYC positive in about 50%, Ki-67 about 85%, and EBER negative. FISH shows no MYC, BCL2, or BCL6 rearrangement, so this is a double-expressor DLBCL, not a double-hit/high-grade B-cell lymphoma. There is no morphologic or immunophenotypic evidence of transformation from an indolent lymphoma. He has bulky stage III disease with B symptoms (fevers, drenching night sweats, and 7-kg weight loss).",
+  "stage": "Ann Arbor/Lugano stage III, bulky, with B symptoms. Sites of disease: left cervical levels III-IV nodes (largest 3.1 cm), right paratracheal (2.6 cm) and subcarinal (2.2 cm) nodes, a confluent left para-aortic/aortocaval retroperitoneal nodal mass 11.0 cm, and multiple FDG-avid splenic lesions in a 14.2-cm spleen. Bone marrow, liver, lungs, bone, testes, and gastrointestinal tract are uninvolved. The spleen is a lymphatic organ in the Lugano system, so splenic involvement remains stage III rather than IV; the retroperitoneal mass qualifies as bulky (at least 10 cm).",
+  "biology": "DLBCL-NOS with an activated B-cell-like/non-GCB phenotype and double expression of BCL2 and MYC by immunohistochemistry. Because FISH is negative for MYC, BCL2, and BCL6 rearrangements, this does not meet criteria for high-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements (double-hit/triple-hit), and double expression alone does not justify DA-EPOCH-R or other intensified first-line therapy. The very high Ki-67 (85%), high LDH (735 U/L), bulky disease, and non-GCB/double-expressor phenotype indicate aggressive biology and a higher relapse risk. EBER negativity argues against an EBV-driven lymphoma.",
+  "prognosis": "Potentially curable but high-risk. Standard IPI is 3 (age over 60, stage III, elevated LDH; ECOG 1 and no extranodal sites), which is high-intermediate risk; with R-CHOP the expected 5-year overall survival is approximately 55-65%, with somewhat lower progression-free survival. The NCCN-IPI is low-intermediate to high-intermediate depending on the exact LDH upper limit of normal (the LDH is near 3 times the ULN); the ULN is not provided. Bulky disease, high LDH, high Ki-67, and double expression add adverse risk. Complete metabolic response on end-of-treatment PET is the strongest favorable prognostic factor. Primary refractory disease or relapse within 12 months has a poor prognosis and would be an indication for CAR-T cell therapy.",
+  "first_line_treatment": "I recommend 6 cycles of R-CHOP21 given with curative intent: rituximab 375 mg/m2, cyclophosphamide 750 mg/m2, doxorubicin 50 mg/m2, vincristine 1.4 mg/m2 (capped at 2 mg), and prednisone 100 mg daily for 5 days, repeated every 21 days, with pegfilgrastim support. I would not use DA-EPOCH-R because the FISH-negative double-expressor phenotype is not double-hit/high-grade B-cell lymphoma. Pola-R-CHP is an NCCN category 1 alternative with a progression-free-survival advantage in advanced-stage DLBCL, but I am choosing R-CHOP as the default because overall survival is similar, it avoids polatuzumab-related neuropathy, and it best supports his goal of continuing part-time work; I would revisit pola-R-CHP only if access is secure and after a shared discussion of the small PFS gain. I do not plan consolidative radiation if the end-of-treatment PET is Deauville 1-3; if there is PET-positive residual bulky disease, I would biopsy it and consider involved-site radiation or second-line therapy. No autologous transplant in first remission.",
+  "cns_risk": "CNS-IPI 3 (age over 60, stage III, elevated LDH; ECOG 1, no more than one extranodal site, and no kidney/adrenal involvement), which is a high-risk category, but he has none of the highest-risk CNS sites (testis, kidney/adrenal, paraspinal, bone marrow, breast) and no neurologic symptoms. I will perform a baseline lumbar puncture with CSF cytology and flow cytometry; if negative, I will not give routine intrathecal methotrexate prophylaxis because the absolute benefit is uncertain and the risk of neurotoxicity is real. If CSF is positive, I will treat CNS disease with intrathecal and/or high-dose intravenous methotrexate. I will maintain a low threshold for brain MRI and repeat CSF analysis if headache, cranial neuropathy, confusion, or focal deficits develop, and I would reconsider prophylaxis if review reveals a high-risk extranodal site.",
+  "response_assessment": "Response will be assessed with an end-of-treatment FDG PET-CT from skull base to mid-thigh approximately 6-8 weeks after cycle 6, interpreted by Lugano/Deauville criteria. I will not routinely obtain an interim PET after 2 cycles outside a clinical trial; if one is obtained, I will not change therapy on the basis of PET alone unless progression is biopsy-proven. Deauville 1-3 (with any residual mass) is complete metabolic response; Deauville 4-5 indicates residual disease and should prompt biopsy of the residual site if feasible, followed by involved-site radiation or second-line therapy. A PET-negative residual bulky mass is not an indication for radiation. I will monitor CBC, CMP, LDH, weight, fevers, and neuropathy before each cycle. After a complete response, surveillance will be history/exam and labs every 3-6 months for 2 years, then less often, with imaging only for symptoms. If relapsed or refractory, I would use second-line platinum-based chemoimmunotherapy followed by CAR-T if relapse occurs within 12 months, or high-dose therapy/autologous transplant if relapse is later.",
+  "pretreatment_workup": "Already completed and adequate: history and physical with B symptoms and ECOG status; CBC with differential; CMP; LDH; uric acid; beta-2 microglobulin; hepatitis B, hepatitis C, and HIV serologies; FDG PET-CT; echocardiogram (LVEF 58%); excisional left cervical lymph node biopsy with IHC, EBER, and FISH; and bone marrow aspirate/biopsy (negative). Before cycle 1 I still need: baseline HBV DNA and initiation of HBV antiviral prophylaxis (HBsAg-negative but anti-HBc-positive and anti-HBs-positive); baseline lumbar puncture with CSF cytology/flow cytometry for CNS staging given CNS-IPI 3; confirmation of the LDH ULN and precise NCCN-IPI; documentation of baseline peripheral neuropathy and cardiac risk factors; vaccination review (influenza, COVID-19, pneumococcal, recombinant zoster) with avoidance of live vaccines; dental evaluation; nutrition, physical therapy, and social work assessment; and a formal tumor lysis risk assessment. I do not need pulmonary function tests (no bleomycin), a repeat bone marrow, or routine brain MRI in the absence of neurologic symptoms. I would obtain expert hematopathology review only if there is diagnostic uncertainty; the current IHC/FISH is sufficient.",
+  "supportive_care": "Tumor lysis prophylaxis: allopurinol 300 mg daily (renal-adjusted) before cycle 1, hydration at 2-3 L/m2/day as tolerated, and frequent monitoring of urate, potassium, phosphate, calcium, and creatinine; because the bulky mass and LDH near 3 times ULN put him at high risk, I would check G6PD and use rasburicase if urate is 8 mg/dL or higher, rising rapidly, or renal function declines. HBV: start entecavir 0.5 mg daily (or tenofovir) for prophylaxis because anti-HBc is positive, continue for at least 12 months after rituximab, and monitor HBV DNA. Febrile neutropenia: pegfilgrastim 6 mg on day 2 of each cycle; teach him that a temperature of 38.3 C once, or 38.0 C for one hour, is an emergency and that he must not mask it with acetaminophen but should go to the emergency department for cultures and IV antibiotics. Antiemetics: 5-HT3 antagonist plus dexamethasone, with olanzapine or an NK1 antagonist if needed, plus a bowel regimen for vincristine- and antiemetic-related constipation. Cardiac: cumulative doxorubicin will be 300 mg/m2; continue atorvastatin, monitor for heart failure, and repeat echocardiography if symptoms develop. Neurologic: monitor vincristine-related neuropathy and reduce or omit vincristine for severe pain or motor weakness. Continue levothyroxine and omeprazole and monitor TSH and glucose. Vaccinate with inactivated vaccines and avoid live vaccines during and shortly after chemotherapy; recombinant zoster vaccine is acceptable. Pneumocystis prophylaxis is not routinely needed with R-CHOP because the steroid course is short. VTE prophylaxis only if hospitalized or otherwise high risk. Premedicate and monitor closely for the first rituximab infusion. Encourage oral care, nutrition, exercise, and psychosocial support; discuss expected alopecia and precautions for travel during the nadir (days 7-14).",
+  "fitness_and_goals": "He is fit for full-dose curative-intent therapy: age 62, ECOG 1, fully independent, working part-time from home, no cardiac, pulmonary, renal, or hepatic disease, LVEF 58%, eGFR 96, and only mild anemia of inflammation (Hb 10.8 g/dL) with normal platelets and white count. His goals are cure, continued part-time work, and being well for his daughter's wedding in May 2027. Six cycles of R-CHOP over about 18 weeks should finish in early 2027 if treatment starts promptly, leaving time for recovery before the wedding. Alopecia is expected; he can continue occasional job-site travel with hand hygiene and masking, but should avoid travel during the neutrophil nadir. I would not reduce dose intensity at the outset. If he develops severe toxicity or becomes frail, I would consider dose modification or R-mini-CHOP. Document a health care proxy and discuss the possibility of hospitalization, serious infection, tumor lysis, neuropathy, cardiotoxicity, secondary malignancy, and HBV reactivation. Provide financial and insurance counseling for growth factors, antivirals, and any polatuzumab option.",
+  "missing_information": [
+   "Baseline HBV DNA level and confirmation that HBV antiviral prophylaxis has been started.",
+   "CSF cytology and flow cytometry results (and whether a baseline lumbar puncture has been performed).",
+   "Exact LDH upper limit of normal/reference range, needed to calculate the NCCN-IPI precisely.",
+   "Outside CT and PET images/reports for direct review (only the outside CT report is summarized).",
+   "Vaccination history (influenza, COVID-19, pneumococcal, zoster) and primary care cancer screening status.",
+   "Dental evaluation status before anthracycline/rituximab therapy.",
+   "Insurance coverage and patient preference regarding R-CHOP versus pola-R-CHP.",
+   "Advance care planning/health care proxy documentation.",
+   "Formal baseline peripheral neuropathy assessment (currently reported as no symptoms).",
+   "Whether an expert hematopathology second opinion is desired; current IHC/FISH appears adequate."
+  ]
+ },
+ "items": [
+  {
+   "id": "dx_dlbcl_non_gcb",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response states the diagnosis is diffuse large B-cell lymphoma (NOS) with a non-germinal-center (non-GCB) phenotype by the Hans algorithm."
+  },
+  {
+   "id": "dx_hans_not_abc",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response notes that Hans non-GCB is an immunohistochemical surrogate and is not the same as the molecular activated B-cell (ABC) subtype defined by gene-expression profiling."
+  },
+  {
+   "id": "stage_iii",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 8,
+   "criterion": "The response stages the disease as Lugano/Ann Arbor stage III."
+  },
+  {
+   "id": "stage_spleen_nodal",
+   "kind": "should",
+   "severity": "important",
+   "points": 3,
+   "criterion": "The response bases stage III on nodal disease above and below the diaphragm plus splenic involvement, treating the spleen as lymphatic (nodal) tissue rather than an extranodal site."
+  },
+  {
+   "id": "stage_bulky_b_symptoms",
+   "kind": "should",
+   "severity": "minor",
+   "points": 3,
+   "criterion": "The response notes bulky disease (11 cm retroperitoneal mass, >=10 cm) and B symptoms (fevers, night sweats)."
+  },
+  {
+   "id": "mn_stage_iv",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response assigns stage IV (for example by counting the spleen as an extranodal organ)."
+  },
+  {
+   "id": "mn_spleen_extranodal_count",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 3,
+   "criterion": "The response counts the spleen as an extranodal site when scoring IPI or CNS-IPI."
+  },
+  {
+   "id": "mol_de_not_dh",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response classifies the lymphoma as double-expressor (MYC 50% >=40%, BCL2 80% >=50% by IHC) but NOT double-hit (FISH negative for MYC, BCL2 and BCL6 rearrangements)."
+  },
+  {
+   "id": "mn_calls_double_hit",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response classifies this lymphoma as double-hit / high-grade B-cell lymphoma with MYC and BCL2 rearrangements."
+  },
+  {
+   "id": "mn_denies_double_expressor",
+   "kind": "must_not",
+   "severity": "minor",
+   "points": 3,
+   "criterion": "The response states the lymphoma is NOT double-expressor despite MYC 50% and BCL2 80% by IHC."
+  },
+  {
+   "id": "prog_ipi_3",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response calculates IPI as 3 (high-intermediate risk): age >60, elevated LDH, stage III; ECOG 1 and zero extranodal sites do not score."
+  },
+  {
+   "id": "prog_cns_ipi_intermediate",
+   "kind": "must",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response calculates CNS-IPI as 3 (intermediate risk), without counting the spleen as an extranodal site."
+  },
+  {
+   "id": "tx_curative_pola_or_rchop",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 8,
+   "criterion": "The response recommends curative-intent full-dose immunochemotherapy with Pola-R-CHP or R-CHOP for 6 cycles."
+  },
+  {
+   "id": "tx_pola_preferred",
+   "kind": "should",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response names Pola-R-CHP as the preferred regimen given IPI >=2 (noting the POLARIX benefit appeared greatest in non-GCB/ABC disease), with R-CHOP an acceptable alternative."
+  },
+  {
+   "id": "tx_isrt_residual_bulk",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response considers ISRT to the initially bulky site if it remains PET-positive (residual Deauville 4-5) at the end of systemic therapy."
+  },
+  {
+   "id": "mn_non_curative",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response recommends palliative-only treatment, best supportive care, or hospice as the plan."
+  },
+  {
+   "id": "mn_da_epoch",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response recommends DA-EPOCH-R or another intensified regimen on the basis of double-expressor status alone."
+  },
+  {
+   "id": "mn_dose_reduced_initial",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response recommends a dose-reduced regimen (e.g. R-mini-CHOP) for this fit 62-year-old with ECOG 1."
+  },
+  {
+   "id": "hbv_prophylaxis",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 12,
+   "criterion": "The response recognizes resolved/occult hepatitis B (HBsAg negative, anti-HBc positive) with a high risk of HBV reactivation on anti-CD20 therapy, and starts antiviral prophylaxis (entecavir or tenofovir) before the first rituximab dose, continued for at least 12 months after the last dose."
+  },
+  {
+   "id": "hbv_dna_lft_monitoring",
+   "kind": "should",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response orders a baseline quantitative HBV DNA and liver function tests and monitors them (ALT, HBV DNA) during and after therapy."
+  },
+  {
+   "id": "mn_no_hbv_action",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response states that no HBV-directed action or antiviral prophylaxis is needed (e.g. because HBsAg is negative)."
+  },
+  {
+   "id": "cns_no_routine_prophylaxis",
+   "kind": "should",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response judges CNS relapse risk as intermediate and states that routine CNS prophylaxis and routine MRI brain / lumbar puncture are not indicated without neurologic symptoms or high-risk sites."
+  },
+  {
+   "id": "mn_mandates_cns_prophylaxis",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response mandates CNS prophylaxis (high-dose methotrexate or intrathecal chemotherapy) for this intermediate-risk patient."
+  },
+  {
+   "id": "resp_eot_pet_lugano",
+   "kind": "must",
+   "severity": "important",
+   "points": 7,
+   "criterion": "The response plans an end-of-treatment FDG PET-CT read with Lugano criteria / Deauville 5-point scale."
+  },
+  {
+   "id": "resp_ds45_biopsy",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response says residual Deauville 4-5 uptake at end of treatment should be biopsied before changing therapy when it would change management."
+  },
+  {
+   "id": "sup_tls_allopurinol",
+   "kind": "should",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response recognizes at least intermediate tumor-lysis risk (11 cm mass, LDH ~3x ULN) and orders allopurinol plus hydration (with TLS lab monitoring)."
+  },
+  {
+   "id": "sup_gcsf",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response considers primary G-CSF prophylaxis (e.g. pegfilgrastim) as reasonable with this regimen."
+  },
+  {
+   "id": "work_echo_reviewed",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response notes the baseline LVEF of 58% permits anthracycline."
+  },
+  {
+   "id": "fit_full_dose",
+   "kind": "must",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response judges the patient fit for full-dose curative-intent therapy (ECOG 1, normal organ function, controlled comorbidities) in line with his goal of cure."
+  },
+  {
+   "id": "miss_hbv_dna",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response lists the quantitative HBV DNA level as missing information still needed."
+  }
+ ]
+}

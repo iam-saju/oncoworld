@@ -1,0 +1,180 @@
+{
+ "id": "3model_fhir5_r2__u7az9EG",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "Diffuse large B-cell lymphoma, NOS, germinal-center B-cell-like (Hans algorithm)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_i": {
+   "met": true,
+   "quote": "Ann Arbor / Lugano Stage IA (A: no B symptoms; no E).",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_nonbulky_no_b": {
+   "met": true,
+   "quote": "Largest node 3.1 cm, so not bulky by either the 7.5 cm or the 10 cm threshold.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_pet_no_marrow_biopsy": {
+   "met": true,
+   "quote": "Bone marrow biopsy is not needed: PET-CT showed no marrow uptake",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_overstaged": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "Not double-expressor: MYC IHC 15% (threshold 40%) and BCL2 IHC 30% (threshold 50%).",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_low": {
+   "met": true,
+   "quote": "IPI 0 (age 45, LDH 190 U/L with ULN 225, ECOG 0, stage I).",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_low": {
+   "met": true,
+   "quote": "CNS-IPI 0.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_rchop": {
+   "met": true,
+   "quote": "Decision: R-CHOP-21 for 6 cycles at full dose",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_flyer_4rchop_2r": {
+   "met": false,
+   "quote": "Decision: R-CHOP-21 for 6 cycles at full dose, with no involved-site radiotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_no_rt_goals": {
+   "met": true,
+   "quote": "she has explicitly declined neck radiation, and her sister's hypothyroidism after neck RT makes that concern real",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_alternatives": {
+   "met": true,
+   "quote": "Fallback if she prefers fewer cycles: R-CHOP-21 x 4 followed by thyroid-sparing IMRT 20-30 Gy to the involved neck",
+   "confidence": "medium",
+   "note": "Alternative is 4 cycles plus RT rather than the named 3+RT or PET-adapted 4-cycle approach."
+  },
+  "mn_six_cycles": {
+   "met": true,
+   "quote": "Decision: R-CHOP-21 for 6 cycles at full dose, with no involved-site radiotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_pola_preferred": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_observation_or_rt_alone": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_low_no_prophylaxis": {
+   "met": true,
+   "quote": "No CNS prophylaxis: no intrathecal methotrexate and no high-dose methotrexate.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment FDG-PET-CT about 3-5 weeks after cycle 6, scored on the Deauville 5-point scale (Lugano 2014).",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_interim_pet": {
+   "met": false,
+   "quote": "Interim PET is not required for this plan",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_pregnancy_test": {
+   "met": true,
+   "quote": "Serum hCG before cycle 1 (none documented)",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg and anti-HBc negative with anti-HBs positive means no antiviral prophylaxis",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "Echo (LVEF 63%, GLS -21%) is adequate for anthracycline.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_coc_switch": {
+   "met": true,
+   "quote": "Bridge today with a progestin-only method (norethindrone pill, acceptable with aura) plus condoms, then place an LNG-IUD before cycle 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_coc_reason": {
+   "met": true,
+   "quote": "Estrogen-containing contraception is contraindicated with migraine with aura (CDC US MEC category 4, ischemic stroke risk)",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_fertility_counselling": {
+   "met": true,
+   "quote": "Fertility: refer to reproductive endocrinology before cycle 1.",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_goals": {
+   "met": true,
+   "quote": "Fit for full-intensity curative therapy: ECOG 0, normal renal, hepatic, marrow and cardiac function",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

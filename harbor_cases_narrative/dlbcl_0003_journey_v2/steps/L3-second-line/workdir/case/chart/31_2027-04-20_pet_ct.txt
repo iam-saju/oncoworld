@@ -1,0 +1,8 @@
+FDG PET-CT, SHORT-INTERVAL RESTAGING, 2027-04-20
+
+Comparison: end-of-treatment PET-CT 2027-02-17.
+- Retroperitoneal mass enlarged to 5.8 x 4.4 cm (previously 3.4 x 2.1 cm); SUVmax 18.3 (previously 6.2).
+- Two new FDG-avid liver lesions, 1.4 cm and 2.0 cm.
+Deauville score: 5.
+IMPRESSION: Enlarging, intensely FDG-avid retroperitoneal mass and new liver lesions, consistent with
+progressive disease.

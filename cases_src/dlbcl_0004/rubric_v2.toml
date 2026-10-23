@@ -6,7 +6,7 @@
 # The case twist: the chart contains a 2026-09-14 R-CHOP plan written for "DLBCL NOS" before the 2026-09-19 FISH
 # addendum (MYC and BCL2 rearranged). The model must re-classify the lymphoma itself and replace the plan.
 #
-# Regex fallback fields are a coarse safety net for runs without a judge; the judge reads `text`.
+# Graded by the regex rules on each item (grader of record); `text` states the criterion in clinical terms.
 # All regexes run on the lower-cased answer, which grader_v2 re-serialises as JSON with indent=1, so every
 # top-level key sits on its own line (` "diagnosis": "..."`). Items anchored on that line say so.
 # Literal (single-quoted) TOML strings are used so backslashes are not doubled.
@@ -37,6 +37,13 @@ text = "The response revises the diagnosis to high-grade B-cell lymphoma with MY
 # that quotes the FISH result in `biology` but keeps "DLBCL NOS" as the diagnosis does not get credit.
 affirm = ['double[- ]hit|\bhgbl\b|myc and bcl2[- ]rearrang|rearrangements? (?:of|in) (?:both )?myc and bcl2|myc/bcl2[- ]rearrang']
 any = ['"diagnosis": "(?:(?!\bnot\b|\bno\b|\bnon\b|rather than|instead of|exclud|ruled out)[^\n])*?(?:double[- ]hit|\bhgbl\b|myc and bcl2[- ]rearrang|rearrangements? (?:of|in) (?:both )?myc and bcl2|myc/bcl2[- ]rearrang)']
+# Structured: decisions.diagnosis names the double-hit entity, does not negate it, and does not keep an affirmed NOS
+# label ("DLBCL NOS with MYC/BCL2 rearrangements" fails; "HGBL-DH, revised from DLBCL NOS" passes).
+# Red-team 2026-10-22: also accepts ICC "HGBCL-DH-BCL2", "DH lymphoma", "MYC and BCL2 translocations/fusions",
+# t(8;14)+t(14;18) and MYC::/::BCL2 fusion names (both partners required), and "NOS -> HGBL" as a revision.
+decision = [
+  { field = "diagnosis", matches = 'double[- ]hit|\bhgbl\b|\bhgbcl\b|\bdhl\b|\bdh\b(?=[- ](?:lymphoma|hgb?c?l|bcl2))|high[- ]grade b[- ]cell lymphoma[^;]{0,25}myc[^;]{0,20}bcl2|myc[^;]{0,20}bcl2[- ]?(?:re)?arrang|myc[^;]{0,25}bcl2[^;]{0,15}(?:translocat|fusion)|rearrangements? (?:of|in) (?:both )?myc and bcl2|t\(8;14\)[^;]{0,30}t\(14;18\)|t\(14;18\)[^;]{0,30}t\(8;14\)|(?:myc::|::myc)[^;]{0,40}(?:bcl2::|::bcl2)|(?:bcl2::|::bcl2)[^;]{0,40}(?:myc::|::myc)', not_matches = '(?:\bnot\b(?! otherwise)|\bno\b|\bnon\b|rather than|instead of|exclud\w*|ruled out|negative for|without)[^;,()]{0,25}(?:double[- ]hit|\bhgbl\b|\bhgbcl\b|\bdhl\b|\bdh\b|\bmyc\b)|^(?!.*(?:\bnot\b(?! otherwise)|rather than|instead of|supersed|revis|previous|former|original|initial|no longer|\bfrom\b|replac|upgrad|reclassif|-+>|→|=>|\bnos,? to\b)).*(?:\bnos\b|not otherwise specified)' },
+]
 
 [[items]]
 id = "mn_dx_dlbcl_nos"
@@ -48,8 +55,14 @@ text = "The response keeps the final diagnosis as DLBCL NOS (or otherwise denies
 # Fires when the diagnosis line says NOS and never names the double-hit entity, or when the answer explicitly denies
 # double-hit status. Deliberately NOT the shared denies_double_hit check: that check also fires on "BCL6 rearrangement
 # not detected", which a correct answer will say (see selftest good_paraphrase_bcl6_negative.json).
-any = ['"diagnosis": (?![^\n]*(?:double[- ]hit|\bhgbl\b|myc and bcl2[- ]rearrang|rearrangements? (?:of|in) (?:both )?myc and bcl2|myc/bcl2[- ]rearrang))[^\n]*(?:\bnos\b|not otherwise specified)',
+# The diagnosis-line pattern skips counterfactual / hypothetical lines ("had FISH been negative ... would have remained NOS").
+any = ['"diagnosis": (?![^\n]*(?:double[- ]hit|\bhgbl\b|myc and bcl2[- ]rearrang|rearrangements? (?:of|in) (?:both )?myc and bcl2|myc/bcl2[- ]rearrang|\bhad (?:\w+ ){0,3}(?:been|shown|demonstrated|revealed)\b|\bwould have (?:remained|been|stayed)\b|\bif\b|\bunless\b|\bwere (?:it|the|fish)\b))[^\n]*(?:\bnos\b|not otherwise specified)',
        'not (?:a |consistent with (?:a )?)?double[- ]hit|double[- ]hit[^.\n]{0,30}(?:excluded|ruled out|not (?:present|confirmed|met|established))|(?:does not|do not) meet[^.\n]{0,40}double[- ]hit']
+# Structured (error committed): decisions.diagnosis affirms NOS, negates the double-hit entity, or names DLBCL without
+# the entity. A different wrong label (e.g. "high-grade B-cell lymphoma" alone) is left to dx_hgbl_double_hit.
+decision = [
+  { any = [ { field = "diagnosis", matches = '^(?!.*(?:\bnot\b(?! otherwise)|rather than|instead of|supersed|revis|previous|former|original|initial|no longer|\bfrom\b|replac|upgrad|reclassif|-+>|→|=>|\bnos,? to\b)).*(?:\bnos\b|not otherwise specified)' }, { field = "diagnosis", matches = '(?:\bnot\b(?! otherwise)|\bno\b|\bnon\b|rather than|instead of|exclud\w*|ruled out|negative for|without)[^;,()]{0,25}(?:double[- ]hit|\bhgbl\b|\bhgbcl\b|\bdhl\b|\bdh\b|\bmyc\b)' }, { field = "diagnosis", matches = '\bdlbcl\b|diffuse large', not_matches = 'double[- ]hit|\bhgbl\b|\bhgbcl\b|\bdhl\b|\bdh\b(?=[- ](?:lymphoma|hgb?c?l|bcl2))|high[- ]grade b[- ]cell lymphoma[^;]{0,25}myc[^;]{0,20}bcl2|myc[^;]{0,20}bcl2[- ]?(?:re)?arrang|myc[^;]{0,25}bcl2[^;]{0,15}(?:translocat|fusion)|rearrangements? (?:of|in) (?:both )?myc and bcl2|t\(8;14\)[^;]{0,30}t\(14;18\)|t\(14;18\)[^;]{0,30}t\(8;14\)|(?:myc::|::myc)[^;]{0,40}(?:bcl2::|::bcl2)|(?:bcl2::|::bcl2)[^;]{0,40}(?:myc::|::myc)' } ] },
+]
 
 [[items]]
 id = "dx_gcb_hans"
@@ -79,7 +92,7 @@ kind = "must"
 severity = "important"
 points = 8
 text = "The response stages the disease as Lugano stage II bulky: right cervical and mediastinal nodes above the diaphragm only, 12.0 cm mediastinal mass, no extranodal disease."
-all = ['\bstage\s*(?:ii|2)(?:a|b|x|e)?\b', 'bulk']
+all = ['\bstage\s*(?:ii|2|two)(?:a|b|x|e)?\b', 'bulk']
 
 [[items]]
 id = "mn_stage_iii_iv"
@@ -88,7 +101,14 @@ kind = "must_not"
 severity = "dangerous"
 points = 0
 text = "The response assigns stage III or stage IV."
-affirm = ['\bstage\s*(?:iii|iv|3|4)\b']
+# Suffixes (IIIA, IIIBS, IV-B, 4B) allowed; ranges like III-IV still fire (the item covers either stage). A stage that
+# describes a trial/study population later in the same sentence is evidence, not this patient's stage.
+affirm = ['\bstage\s*(?:iii|iv|3|4|three|four)(?:[abesx]{1,3}|-[abesx]{1,3})?\b(?![^.;\n]*\b(?:trials?|stud(?:y|ies)|enrolled|cohorts?)\b)']
+# Structured (error committed): decisions.stage is III or IV (suffixes tolerated). A range such as "III-IV" is no
+# stage call in the structured field (grader convention), so it does not fire here; it fails stage_ii_bulky instead.
+decision = [
+  { field = "stage", in = ["III", "IV"] },
+]
 
 # ---------------- molecular classification
 [[items]]
@@ -118,7 +138,20 @@ kind = "must"
 severity = "dangerous"
 points = 12
 text = "The response recommends curative-intent intensive therapy appropriate for double-hit lymphoma: DA-EPOCH-R x6 (preferred) or a clinical trial; R-hyper-CVAD/MA or R-CODOX-M/R-IVAC are acceptable alternatives."
-recommend = ['epoch|hyper[- ]?cvad|codox|clinical trial']
+# The regimen must not be followed in its sentence by a rejection ("was considered but not felt necessary"), a
+# salvage-only indication ("reserved for / for disease that progresses / for relapsed"), or an undecided comparison
+# ("X versus Y ... before deciding").
+recommend = ['(?:epoch|hyper[- ]?cvad|codox|clinical trial)(?![^.;\n]*\bconsidered\b[^.;\n]{0,10}\bbut\b)(?![^.;\n]{0,40}\b(?:not (?:\w+ ){0,3}(?:necessary|needed|required|indicated|warranted|justified|appropriate|suitable|the best choice|preferred|chosen|used|given)|unnecessary|rejected|not appropriate|set aside|ruled out|evaluated and (?:not used|forgone))\b)(?![^.;\n]{0,30}\b(?:(?:is|are|be) reserved for|for (?:\w+ )?(?:that|who|which) (?:progress|relapse|recur|fail)\w*|for (?:relapsed|refractory|progressive|progressing|recurrent)\b|(?:at|on|upon) (?:relapse|progression)))(?![^.;\n]*\b(?:versus|vs)\b)(?![^.;\n]*\b(?:before deciding|undecided|(?:yet )?to be (?:decided|determined)|decision pending)\b)']
+# Structured: curative intent; the ordered regimen is DA-EPOCH-R, R-hyper-CVAD/MA, R-CODOX-M/R-IVAC or a clinical
+# trial and contains no R-CHOP; and when the regimen is DA-EPOCH-R the number of cycles is 6 (text: "x6").
+# Red-team 2026-10-22: a missing/null intent, regimen or cycles counts as not met (no silent fallback to the weaker
+# prose rule); "6 cycles"/"six" and "curative-intent" accepted; spelled-out EPOCH drugs accepted; a "trial" regimen
+# that says no trial is available / none / observation / pending screening is not therapy.
+decision = [
+  { field = "intent", matches = '^\s*curative(?:[- ]intent)?\s*$', absent_is_false = true },
+  { field = "regimen", matches = 'epoch|hyper[- ]?c[- ]?vad|codox|etoposide[^;]{0,60}doxorubicin|doxorubicin[^;]{0,60}etoposide|^(?!\s*(?:no\b|pending|await\w*|defer\w*))(?!.*(?:\bno (?:\w+ ){0,2}trials?\b|trials? (?:(?:is |are )?not |un)available|trial of observation)).*(?:\btrials?\b|\bnct\d)', not_matches = '(?<![a-z])r[- ]?(?:mini[- ]?)?chop\b|\bchop[- ]r\b|rituximab[- ,]+(?:plus |with |and |\+ ?)?chop\b|^\s*(?:none|n/a|observ\w*)\b', absent_is_false = true },
+  { not = { all = [ { field = "regimen", matches = 'epoch', absent_is_false = true }, { not = { field = "cycles", matches = '^\s*(?:6|six)(?:\.0)?(?:\s*cycles?)?\s*$', absent_is_false = true } } ] } },
+]
 
 [[items]]
 id = "mn_rchop_preferred"
@@ -129,7 +162,13 @@ points = 6
 text = "The response recommends R-CHOP alone (including proceeding with the 2026-09-14 plan) as the preferred/initial regimen."
 # Sentence-scoped: the term only matches sentences that do not discuss cancelling, replacing or rejecting R-CHOP,
 # so gold sentences like "R-CHOP alone is not preferred" or "the R-CHOP plan is outdated" do not fire.
-recommend = ['^(?!.*(?:cancel|outdated|out of date|supersed|obsolete|no longer|inadequate|insufficient|suboptimal|inferior|replac|instead|rather than|in place of|\bover\b|versus|\bvs\b|abandon|withdraw|on hold|revis|chang|switch|escalat|pre[- ]?fish|before (?:the )?fish|addendum|09-14|9/14|september 14|\bnot\b[^.]{0,25}(?:prefer|recommend|adequate|appropriate|sufficient|standard|enough|indicated))).*\br[- ]?chop\b']
+recommend = ['^(?!.*(?:cancel|outdated|out of date|supersed|obsolete|no longer|inadequate|insufficient|suboptimal|inferior|replac|instead|rather than|in place of|\bover\b|versus|\bvs\b|abandon|withdraw|on hold|revis|chang|switch|escalat|pre[- ]?fish|before (?:the )?fish|addendum|09-14|9/14|september 14|\bnot\b[^.]{0,25}(?:prefer|recommend|adequate|appropriate|sufficient|standard|enough|indicated))).*(?:\br[- ]?chop\b|\bchop[- ]r\b|rituximab[- ,]+(?:plus |with |and |\+ ?)?chop\b)']
+# Structured (error committed): the ordered regimen is R-CHOP (or R-mini-CHOP) without any intensive regimen/trial,
+# or (red-team 2026-10-22) orders_now still contains an R-CHOP order that is not cancelled/replaced/conditional
+# ("R-CHOP cycle 1 on 2026-09-22 as planned" = proceeding with the 2026-09-14 plan).
+decision = [
+  { any = [ { field = "regimen", matches = '(?<![a-z])r[- ]?(?:mini[- ]?)?chop\b|\bchop[- ]r\b|rituximab[- ,]+(?:plus |with |and |\+ ?)?chop\b', not_matches = 'epoch|hyper[- ]?c[- ]?vad|codox|\btrials?\b|\bnct\d' }, { field = "orders_now", matches = '^(?!.*(?:cancel|stop|discontinu|replac|instead|withdraw|supersed|outdated|obsolete|no longer|hold|abandon|rescind|switch|chang|escalat|convert|upgrad|rather than|in place of|versus|\bvs\b|\bover\b|\bnot\b|\bno\b|\bif\b|unless|in case)).*(?:(?<![a-z])r[- ]?(?:mini[- ]?)?chop\b|\bchop[- ]r\b|rituximab[- ,]+(?:plus |with |and |\+ ?)?chop\b)' }, { field = "orders_now", matches = '^(?!.*(?:cancel|stop|discontinu|replac|instead|withdraw|supersed|outdated|obsolete|no longer|hold|abandon|rescind|switch|chang|escalat|convert|upgrad|rather than|in place of|versus|\bvs\b|\bover\b|\bnot\b|\bno\b|\bif\b|unless|in case)).*(?:09-14|9/14|september 14)[^.\n]{0,60}(?:as (?:originally )?(?:planned|scheduled|booked))|(?:as (?:originally )?(?:planned|scheduled|booked))[^.\n]{0,60}(?:09-14|9/14|september 14)' } ] },
+]
 
 [[items]]
 id = "mn_non_curative"
@@ -138,7 +177,15 @@ kind = "must_not"
 severity = "dangerous"
 points = 0
 text = "The response recommends palliative-only treatment, best supportive care, or hospice as the plan."
-recommend = ['palliative[- ](?:only|intent|care alone)|best supportive care|hospice']
+# affirm (not recommend): non-curative plans are often written without plan verbs ("Goals of care: comfort-focused;
+# refer to hospice"). Hospice must be named as a referral/transition, not merely mentioned; palliative therapy only
+# counts when it is the whole plan ("palliative RT alone"), not symptom relief alongside curative therapy.
+affirm = ['palliative[- ](?:only|intent|care alone)|palliative\s+(?:[\w-]+\s+){0,6}?(?:alone|only)\b|best supportive care|(?:supportive|comfort) care (?:alone|only)|comfort[- ](?:focused|measures)|(?:refer\w*|transition\w*|enrol\w*|admi\w*|discharg\w*)(?: \w+){0,2} (?:to|in|into) hospice|hospice (?:referral|care|enrol\w*|admission)']
+# Structured (error committed): palliative intent, a best-supportive-care/hospice "regimen", or observation with no
+# systemic regimen (no anticancer therapy = best supportive care).
+decision = [
+  { any = [ { field = "intent", in = ["palliative"] }, { field = "regimen", matches = 'best supportive|supportive care only|hospice|comfort' }, { all = [ { field = "intent", in = ["observation"] }, { field = "regimen", matches = '^\s*(?:none|no\b|n/a)' } ] } ] },
+]
 
 [[items]]
 id = "tx_isrt_consolidation"
@@ -158,6 +205,16 @@ severity = "important"
 points = 6
 text = "The response treats double-hit biology as high CNS risk irrespective of the CNS-IPI and recommends baseline contrast MRI brain and lumbar puncture with CSF cytology and flow cytometry."
 all = ['\bmri\b', 'lumbar puncture|\bcsf\b|\blp\b']
+# Structured: both baseline CNS staging tests are UNCONDITIONAL orders (decisions.orders_now); an MRI or LP only
+# "if neurological symptoms" (conditional_orders) does not count.
+# Red-team 2026-10-22: an order entry counts only when the clause holding the term (split at ; and ,) has no negation,
+# deferral or condition before it ("Do not ...", "Skip ...", "Consider ...") or after it ("... not needed", "... deferred",
+# "... only if ...", "... if ..."), and the entry does not start with if/unless. "G-CSF" is not a CSF (LP) order.
+# A missing/null orders_now counts as not met.
+decision = [
+  { field = "orders_now", matches = '^(?=.*\b(?:brain|head|cns|cranial|neuraxis)\b)(?!\W*(?:only )?(?:if|unless|in case|should)\b)(?:.*?[;,]|.*?\.\s)?(?:(?!\b(?:no|not|avoid\w*|omit\w*|skip\w*|declin\w*|defer\w*|postpon\w*|hold|withh[oe]ld\w*|cancel\w*|stop\w*|discontinu\w*|consider\w*|if|unless|in case|only|refus\w*|without|instead of|rather than)\b)[^;,])*?\b(?:mri|magnetic resonance)\b(?![^;,(]*\b(?:not|no longer|unnecessary|deferr\w*|postpon\w*|declin\w*|held|on hold|cancell?ed|omitted|skipped|withheld|avoided|only (?:when|after|for|in)|if|unless|in case|as needed|prn|refused)\b)', absent_is_false = true },
+  { field = "orders_now", matches = '^(?!\W*(?:only )?(?:if|unless|in case|should)\b)(?:.*?[;,]|.*?\.\s)?(?:(?!\b(?:no|not|avoid\w*|omit\w*|skip\w*|declin\w*|defer\w*|postpon\w*|hold|withh[oe]ld\w*|cancel\w*|stop\w*|discontinu\w*|consider\w*|if|unless|in case|only|refus\w*|without|instead of|rather than)\b)[^;,])*?(?:lumbar puncture|\blp\b|(?<!g-)(?<!g )(?<!gm-)\bcsf\b|cerebrospinal|spinal tap)(?![^;,(]*\b(?:not|no longer|unnecessary|deferr\w*|postpon\w*|declin\w*|held|on hold|cancell?ed|omitted|skipped|withheld|avoided|only (?:when|after|for|in)|if|unless|in case|as needed|prn|refused)\b)', absent_is_false = true },
+]
 
 [[items]]
 id = "cns_prophylaxis"
@@ -198,6 +255,11 @@ severity = "important"
 points = 5
 text = "The response states G-CSF support is mandatory with DA-EPOCH-R (filgrastim or pegfilgrastim each cycle)."
 any = ['g[- ]?csf', 'pegfilgrastim', 'filgrastim', 'growth factor']
+# Structured: G-CSF is an unconditional order with cycle 1 (not only "if neutropenic" in conditional_orders).
+# Red-team 2026-10-22: clause-scoped negation/condition exclusion as in cns_staging_mri_csf; missing orders_now = not met.
+decision = [
+  { field = "orders_now", matches = '^(?!\W*(?:only )?(?:if|unless|in case|should)\b)(?:.*?[;,]|.*?\.\s)?(?:(?!\b(?:no|not|avoid\w*|omit\w*|skip\w*|declin\w*|defer\w*|postpon\w*|hold|withh[oe]ld\w*|cancel\w*|stop\w*|discontinu\w*|consider\w*|if|unless|in case|only|refus\w*|without|instead of|rather than)\b)[^;,])*?(?:g[- ]?csf|filgrastim|growth factor|neupogen|neulasta|zarxio|nivestym|udenyca|fulphila|ziextenzo|nyvepria|granix|eflapegrastim|rolvedon)(?![^;,(]*\b(?:not|no longer|unnecessary|deferr\w*|postpon\w*|declin\w*|held|on hold|cancell?ed|omitted|skipped|withheld|avoided|only (?:when|after|for|in)|if|unless|in case|as needed|prn|refused)\b)', absent_is_false = true },
+]
 
 [[items]]
 id = "sup_tls"
@@ -207,6 +269,19 @@ severity = "important"
 points = 6
 text = "The response recognizes tumor lysis risk (12 cm mass, LDH ~3.6x ULN, uric acid 7.6-7.9) and orders a uric-acid-lowering agent (allopurinol, or rasburicase if uric acid high/rising), hydration and TLS laboratory monitoring."
 all = ['tumou?r lysis|\btls\b', 'allopurinol|rasburicase|febuxostat']
+# Structured: a uric-acid-lowering agent and hydration are UNCONDITIONAL orders (rasburicase only "if uric acid rises"
+# with no allopurinol does not count), and TLS labs are scheduled at least every 24 h. The text gives no interval;
+# 24 h is the outer bound of the gold answer (every 12-24 h for the first 72 h) - see oncologist question in report.
+# Red-team 2026-10-22: clause-scoped negation/condition exclusion as in cns_staging_mri_csf; a G6PD lab order is not a
+# uric-acid-lowering agent; CSF / saline flush / fluid restriction are not hydration; "chemotherapy" and "phosphatase"
+# are not TLS labs; lab_monitoring must be a list of {tests, every_hours, ...} objects (the second lab condition
+# rejects a plain string or a bare object, which the grader would otherwise pass); missing fields = not met.
+decision = [
+  { field = "orders_now", matches = '^(?!\W*(?:only )?(?:if|unless|in case|should)\b)(?:.*?[;,]|.*?\.\s)?(?:(?!\b(?:no|not|avoid\w*|omit\w*|skip\w*|declin\w*|defer\w*|postpon\w*|hold|withh[oe]ld\w*|cancel\w*|stop\w*|discontinu\w*|consider\w*|if|unless|in case|only|refus\w*|without|instead of|rather than|g6pd)\b)[^;,])*?(?:allopurinol|rasburicase|febuxostat|zyloprim|elitek|uloric)(?![^;,(]*\b(?:not|no longer|unnecessary|deferr\w*|postpon\w*|declin\w*|held|on hold|cancell?ed|omitted|skipped|withheld|avoided|only (?:when|after|for|in)|if|unless|in case|as needed|prn|refused)\b)', absent_is_false = true },
+  { field = "orders_now", matches = '^(?!\W*(?:only )?(?:if|unless|in case|should)\b)(?:.*?[;,]|.*?\.\s)?(?:(?!\b(?:no|not|avoid\w*|omit\w*|skip\w*|declin\w*|defer\w*|postpon\w*|hold|withh[oe]ld\w*|cancel\w*|stop\w*|discontinu\w*|consider\w*|if|unless|in case|only|refus\w*|without|instead of|rather than|restrict\w*|cerebrospinal|spinal|flush\w*)\b)[^;,])*?(?:hydrat\w*|\bfluids?\b|saline|lactated ringer|\bns\b|\bivf\b|\bnacl\b|sodium chloride|\bd5)(?![^;,(]*\b(?:not|no longer|unnecessary|deferr\w*|postpon\w*|declin\w*|held|on hold|cancell?ed|omitted|skipped|withheld|avoided|only (?:when|after|for|in)|if|unless|in case|as needed|prn|refused|restrict\w*|flush\w*|lock)\b)', absent_is_false = true },
+  { field = "lab_monitoring", tests = '\btls\b|tumou?r lysis|uric|urate|potassium|\bk\b|\bphos(?:phate|phou?rou?s)?\b|electrolyte|\blytes\b|\bbmp\b|\bcmp\b|\bchem(?:istr(?:y|ies))?\b|\bchem[- ]?(?:7|8|10|14)\b', every_hours_max = 24, absent_is_false = true },
+  { field = "lab_monitoring", matches = '^\{"', absent_is_false = true },
+]
 
 [[items]]
 id = "sup_central_access_infusion"

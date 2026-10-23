@@ -1,0 +1,40 @@
+{
+  "_about": "Open clinical questions for the oncologist's sign-off of this case's rubric (shown in scripts/build_case_review.py). Each comes from the structured decision-rule authoring pass on 2026-10-23.",
+  "questions": [
+    {
+      "id": "tls_lab_interval_and_duration",
+      "items": ["sup_tls"],
+      "question": "This item's text gives no lab interval. The structured rule requires at least every 24 hours, the outer edge of the gold's \"every 12-24 h for the first 72 h\", so every 48 hours fails. Is 24 hours the right outer limit for this intermediate TLS risk? Should a minimum duration (e.g. 48-72 h) also be required?",
+      "context": "",
+      "options": ["24 h is the right limit", "Should require 12 h or tighter", "Also require a minimum duration"]
+    },
+    {
+      "id": "da_epoch_cycles_dangerous",
+      "items": ["tx_intensive_curative"],
+      "question": "Should DA-EPOCH-R given for fewer than 6 cycles fail this dangerous item, as encoded from the item text's \"x6\"? (R-hyper-CVAD/MA and CODOX-M/IVAC are not checked for a specific cycle count.)",
+      "context": "",
+      "options": ["Keep: DA-EPOCH-R must be x6", "A shorter course should not be dangerous"]
+    },
+    {
+      "id": "observation_as_bsc",
+      "items": ["mn_non_curative"],
+      "question": "The structured rule counts intent \"observation\" with regimen \"none\" as the same dangerous error as best supportive care. Is that right for this double-hit lymphoma patient?",
+      "context": "",
+      "options": ["Keep: observation + no regimen counts", "Observation alone should not count"]
+    },
+    {
+      "id": "cns_staging_wording_leniency",
+      "items": ["cns_staging_mri_csf"],
+      "question": "The item's text says \"contrast MRI brain\" and \"LP with CSF cytology and flow\". The structured rule only requires a brain MRI plus an LP/CSF order, without checking for the words contrast, cytology or flow. Is that lenient enough, or should those specific terms be required?",
+      "context": "",
+      "options": ["Current leniency is fine", "Require \"contrast\"", "Require cytology and flow explicitly"]
+    },
+    {
+      "id": "wrong_non_dlbcl_diagnosis",
+      "items": ["mn_dx_dlbcl_nos"],
+      "question": "A wrong diagnosis that isn't DLBCL at all (e.g. just \"high-grade B-cell lymphoma\" with nothing more) does not currently fire this must_not item - it only fails the separate double-hit item. Should any diagnosis that fails to name the double-hit lymphoma also count as \"otherwise denies double-hit\" here?",
+      "context": "",
+      "options": ["Keep: only an explicit DLBCL/NOS call fires this item", "Any diagnosis missing double-hit should also fire it"]
+    }
+  ]
+}

@@ -147,7 +147,7 @@ def load_case(cid):
 
 
 def v1_task_dirs(cid):
-    return sorted(p for p in (ROOT / "harbor_cases").glob(f"{cid}_*") if "_v2" not in p.name and p.name.endswith("_narrative"))
+    return sorted(p for p in (ROOT / "harbor_cases_narrative").glob(f"{cid}_*") if "_v2" not in p.name and p.name.endswith("_narrative"))
 
 
 def oracle_rows(job):
@@ -327,7 +327,7 @@ def final_report(cases):
                         f"{v1['reward']:.2f}" if v1 else "-", E(", ".join(v1["dangerous"]) or "none (fails on points)") if v1 else "-"])
         n_answers += len(c["selftests"]) + 1
         n_ok += 1 + sum(t["passed"] == t["expected_pass"] for t in c["selftests"])
-    n_suites = len(list((ROOT / "harbor_cases").glob("*_v2_*/tests/selftest"))) + len(list((ROOT / "harbor_cases").glob("*_journey_v2/steps/*/tests/selftest")))
+    n_suites = len(list(ROOT.glob("harbor_cases*/*_v2_*/tests/selftest"))) + len(list((ROOT / "harbor_cases_narrative").glob("*_journey_v2/steps/*/tests/selftest")))
     o1, o2 = oracle_rows("v1_oracle_reweighted_2026-10-19"), oracle_rows("v2_oracle_all_2026-10-19")
 
     st = [P("OncoWorld · Harbor oncology evaluation harness", "subtitle"), P("Phase 2 final analysis: clinically realistic cases", "title"),

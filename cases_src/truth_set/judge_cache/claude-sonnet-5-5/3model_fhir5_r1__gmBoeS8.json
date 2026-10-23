@@ -1,0 +1,147 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, NOS, germinal-center B-cell-like (Hans: CD10+, BCL6+, MUM1-), newly diagnosed, presenting as right cervical (levels II-III) nodal disease.",
+  "source": "judge"
+ },
+ "stage_i": {
+  "met": true,
+  "quote": "Ann Arbor stage IA (Lugano stage I), bulk-free. Single nodal region (right cervical II-III, contiguous).",
+  "source": "judge"
+ },
+ "stage_nonbulky_no_b": {
+  "met": true,
+  "quote": "No B symptoms (denies fever, night sweats and weight loss; weight stable at 64 kg).",
+  "source": "judge"
+ },
+ "stage_pet_no_marrow_biopsy": {
+  "met": true,
+  "quote": "FDG PET-CT 2026-09-03 (skull base to mid-thigh) shows no other avid disease, Waldeyer ring is physiologic, and marrow is not involved, so a marrow biopsy is not required.",
+  "source": "judge"
+ },
+ "mn_overstaged": {
+  "met": false,
+  "quote": "Ann Arbor stage IA (Lugano stage I), bulk-free.",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "GCB-type DLBCL, not double-hit (MYC, BCL2 and BCL6 FISH negative) and not double-expressor (MYC IHC 15% and BCL2 IHC 30%, against thresholds of 40% and 50%).",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "GCB-type DLBCL, not double-hit (MYC, BCL2 and BCL6 FISH negative)",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "and not double-expressor (MYC IHC 15% and BCL2 IHC 30%, against thresholds of 40% and 50%)",
+  "source": "judge"
+ },
+ "prog_ipi_low": {
+  "met": true,
+  "quote": "Clinical IPI 0 (age 45, LDH 190 U/L against ULN 225, ECOG 0, stage I, no extranodal sites).",
+  "source": "judge"
+ },
+ "prog_cns_ipi_low": {
+  "met": true,
+  "quote": "Low. CNS-IPI 0: age 45 (under 60), stage I, ECOG 0, normal LDH, no kidney or adrenal involvement, no marrow involvement, and no extranodal sites.",
+  "source": "judge"
+ },
+ "tx_curative_rchop": {
+  "met": true,
+  "quote": "Curative-intent R-CHOP-21 for 4 cycles, then a response-adapted decision on radiotherapy based on an end-of-treatment PET-CT.",
+  "source": "judge"
+ },
+ "tx_flyer_4rchop_2r": {
+  "met": false,
+  "quote": "Curative-intent R-CHOP-21 for 4 cycles, then a response-adapted decision on radiotherapy based on an end-of-treatment PET-CT. No rituximab maintenance.",
+  "source": "judge"
+ },
+ "tx_no_rt_goals": {
+  "met": true,
+  "quote": "She asked to avoid neck radiation and fears thyroid, salivary and taste toxicity; PET-guided omission of ISRT after a negative response is supported by randomized data (IELSG37) and by practice",
+  "source": "judge"
+ },
+ "tx_alternatives": {
+  "met": false,
+  "quote": "Alternatives I would accept: R-CHOP x4 followed by ISRT 30 Gy regardless of PET, which is the more established default; or R-CHOP x6 without RT.",
+  "source": "judge"
+ },
+ "mn_six_cycles": {
+  "met": false,
+  "quote": "I would not choose six cycles as the default because of her fertility concerns.",
+  "source": "judge"
+ },
+ "mn_pola_preferred": {
+  "met": false,
+  "quote": "",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "A double-hit result or a discordant finding on re-review of the biopsy (for example, high-grade B-cell lymphoma) leads to a DA-EPOCH-R-based regimen.",
+  "source": "judge"
+ },
+ "mn_observation_or_rt_alone": {
+  "met": false,
+  "quote": "Stage IA, bulk-free, IPI 0 is a curative setting for R-CHOP; RT alone and observation are not standard.",
+  "source": "judge"
+ },
+ "cns_low_no_prophylaxis": {
+  "met": false,
+  "quote": "Low. CNS-IPI 0: age 45 (under 60), stage I, ECOG 0, normal LDH... CNS prophylaxis (intrathecal or high-dose methotrexate) is not indicated and would add toxicity without a clear benefit.",
+  "source": "judge_unquoted"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "CNS prophylaxis (intrathecal or high-dose methotrexate) is not indicated and would add toxicity without a clear benefit.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT 3-5 weeks after the last cycle (cycle 4), before any RT planning; CT is not needed separately.",
+  "source": "judge"
+ },
+ "resp_interim_pet": {
+  "met": false,
+  "quote": "An interim PET after cycle 2 is not required for decisions; if one is done and shows strongly progressive uptake, re-review the biopsy and consider re-biopsy before escalating.",
+  "source": "judge"
+ },
+ "work_pregnancy_test": {
+  "met": true,
+  "quote": "No serum or urine hCG in the record. Required before cycle 1 and before the IUD.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis B: HBsAg non-reactive, anti-HBc non-reactive, anti-HBs reactive, which is vaccine immunity. No HBV prophylaxis or monitoring is required with rituximab.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "Cardiac: LVEF 63% and cumulative doxorubicin 200 mg/m2 are low risk; repeat echo only for symptoms or if the regimen is extended.",
+  "source": "judge"
+ },
+ "sup_stop_coc_switch": {
+  "met": true,
+  "quote": "stop the combined oral contraceptive now (ethinyl estradiol with migraine with aura is CDC US MEC category 4, and it adds thrombotic risk during lymphoma therapy; she reports two aura episodes this month). Switch to a levonorgestrel IUD or copper IUD",
+  "source": "judge"
+ },
+ "sup_coc_reason": {
+  "met": true,
+  "quote": "ethinyl estradiol with migraine with aura is CDC US MEC category 4, and it adds thrombotic risk during lymphoma therapy",
+  "source": "judge"
+ },
+ "sup_fertility_counselling": {
+  "met": true,
+  "quote": "Fertility counselling and REI referral before cycle 1; offer oocyte cryopreservation, which needs about 2-3 weeks of stimulation. If she declines or the timeline is too tight, offer a GnRH agonist",
+  "source": "judge"
+ },
+ "fit_goals": {
+  "met": true,
+  "quote": "ECOG 0. Full-time teacher and runner who wants treatment aimed at cure, minimal time off work, and no neck radiation if possible. Her goals align with this plan: curative intent, 4 cycles at 21-day intervals",
+  "source": "judge"
+ }
+}

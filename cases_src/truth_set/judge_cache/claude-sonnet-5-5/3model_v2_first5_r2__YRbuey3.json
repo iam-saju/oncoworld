@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "DLBCL, NOS, non-germinal-center (activated B-cell) type by the Hans algorithm (CD10 negative, BCL6 positive, MUM1/IRF4 positive in about 80 percent of cells).",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "DLBCL, NOS, non-germinal-center (activated B-cell) type by the Hans algorithm",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": false,
+  "quote": "This is a second malignancy, NOT recurrent or metastatic breast cancer: ... cytokeratin AE1/AE3 and GATA3 are negative in lesional cells",
+  "source": "judge_unquoted"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Lugano (2014) stage IIIBS, with the S suffix for splenic involvement.",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": true,
+  "quote": "Lugano designates splenic involvement with the S suffix rather than as an extranodal organ, so this is IIIBS rather than IVS",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "evening fevers to 38.4 C, drenching night sweats 2 to 3 times weekly and 3 percent weight loss give B symptoms (B).",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": true,
+  "quote": "Largest mass is 7.5 cm (below the 10 cm bulky threshold, above the 7 cm threshold used in several DLBCL trials)",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "this is IIIBS rather than IVS; either coding carries identical management and prognosis here, and I would re-stage to IV only if GI wall, liver, lung or marrow involvement emerges.",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": false,
+  "quote": "Under the WHO-HAEM5 convention (MYC at least 50 percent AND BCL2 at least 50 percent) she is NOT a double expressor; under the older MYC-at-least-40-percent convention she would be labelled a double expressor.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "Interphase FISH on 200 nuclei: no MYC, BCL2 or BCL6 rearrangement, so this is not double-hit or triple-hit lymphoma and not high-grade B-cell lymphoma with MYC and BCL2 rearrangements.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "DA-EPOCH-R is not the answer to the cardiac problem because EPOCH contains doxorubicin.",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": true,
+  "quote": "International prognostic index (IPI) 2 (age 59 gives 0, stage III gives 1, ECOG 1 gives 0, LDH 510 (2.3x ULN) gives 1, one extranodal site (spleen) gives 0), which is low-intermediate risk",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": true,
+  "quote": "CNS-IPI is 2 (intermediate).",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": false,
+  "quote": "Reasons for prophylaxis rather than observation: CNS-IPI 2 sits in the intermediate band (NCCN: consider CNS prophylaxis at 2 to 3 points)",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": true,
+  "quote": "give intrathecal methotrexate 12.5 mg (with intrathecal cytarabine if I judge the bulk of disease to warrant it) with cycles 2, 3, 4 and 6",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": true,
+  "quote": "do NOT give R-CHOP. Her 2026-09-09 echocardiogram shows LVEF 45 percent with global hypokinesis and global longitudinal strain -14 percent, down from LVEF 62 percent in 2016",
+  "source": "judge"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "would make R-CHOP x 6 (or R-CHOP-14) my preferred regimen, because that is the most effective standard therapy and I would only expose her to an anthracycline if her heart had demonstrably recovered",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": true,
+  "quote": "cardiology/cardio-oncology review with baseline ECG, BNP and repeat echocardiogram in about 3 months after blood-pressure optimization",
+  "source": "judge"
+ },
+ "tx_cardioprotection": {
+  "met": true,
+  "quote": "adding an ACE inhibitor or ARB plus a beta-blocker in consultation with cardiology for LVEF 45 percent and GLS -14 percent",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": true,
+  "quote": "start curative-intent combination immunochemotherapy WITHOUT an anthracycline - R-CVP for 6 cycles on a 21-day cycle with primary G-CSF support",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": true,
+  "quote": "it is less effective per cycle than R-CHOP and I accept that loss to protect her cardiac function and overall survival.",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": true,
+  "quote": "repeat echocardiography at 3 months, mid-treatment and end of therapy",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "She is fit for curative-intent combination chemotherapy",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT 6 to 8 weeks after the last dose of chemotherapy and at least 4 to 6 weeks after the last rituximab dose: Deauville 1 to 3 equals complete response and completes therapy with observation",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "she is at meaningful risk given the 7.5 cm mesenteric conglomerate, LDH 510 and splenic involvement, so allopurinol 300 mg daily from 3 days before cycle 1 through at least cycle 1",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "pegfilgrastim 6 mg subcutaneously on day 8 of every cycle as primary neutropenia prophylaxis",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "continue anastrozole 1 mg daily through November 2026 to complete the planned 10 years - there is no interaction with R-CVP",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "HIV-1/2, HBsAg, total anti-HBc, anti-HBs and HCV all non-reactive (so no antiviral or HCV treatment needed, and no need for hepatitis B DNA monitoring)",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": true,
+  "quote": "She is fit for curative-intent combination chemotherapy: ECOG 1, 59 years old, working full-time as a school librarian, independent in all activities",
+  "source": "judge"
+ },
+ "miss_cardiac_workup": {
+  "met": true,
+  "quote": "No cardiology/cardio-oncology consultation is documented despite LVEF 45 percent, GLS -14 percent, prior doxorubicin 240 mg/m2, left breast radiotherapy and a family history of heart failure; no baseline ECG or BNP is recorded.",
+  "source": "judge"
+ }
+}

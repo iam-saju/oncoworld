@@ -1,0 +1,70 @@
+{
+  "diagnosis": "Diffuse large B-cell lymphoma, NOS, germinal-center B-cell (GCB) phenotype by the Hans algorithm (CD10+, BCL6+, MUM1-). EBER negative; CD5 negative.",
+  "stage": "Lugano (Ann Arbor) stage IV with B symptoms (drenching night sweats, ~10% weight loss): extranodal organ involvement of the right kidney, left adrenal gland and liver in addition to retroperitoneal/mesenteric nodal disease. Bone marrow negative, which does not change stage IV. Largest mass 9.4 cm, just below the 10 cm bulk definition used in Lugano.",
+  "biology": "Not double-expressor: MYC 20% and BCL2 30% by IHC are below the 40%/50% thresholds. Not double-hit: FISH shows no MYC, BCL2 or BCL6 rearrangement, so this is not high-grade B-cell lymphoma with MYC and BCL2 rearrangements. Ki-67 ~70%.",
+  "prognosis": "IPI 5 of 5, high risk: age >60, LDH elevated (1,290 U/L, >5x ULN), ECOG 2, stage IV, and more than one extranodal site (kidney, adrenal, liver). CNS-IPI 6 of 6 (adds kidney/adrenal involvement), high risk of CNS relapse (~10-12% at 2 years).",
+  "first_line_treatment": "Curative-intent immunochemotherapy. Recommend Pola-R-CHP for 6 cycles as preferred (IPI >=2, age 18-80, ECOG 2 were POLARIX-eligible); R-CHOP for 6 cycles is an acceptable alternative. Start promptly given rising LDH and creatinine. Give a steroid prephase of prednisone 100 mg daily for 5-7 days before cycle 1 because of age >60, ECOG 2 and high tumor burden; it lowers first-cycle toxicity and often improves performance status. Full doses are appropriate: ECOG 2 is disease-related, so a dose-reduced regimen is not indicated. DA-EPOCH-R is not indicated.",
+  "cns_risk": "High CNS-relapse risk because of kidney/adrenal involvement and CNS-IPI 6. Before or with cycle 1: contrast MRI brain and lumbar puncture with CSF cytology and flow cytometry to exclude occult CNS disease. CNS prophylaxis with high-dose methotrexate is an individualized option; recent data question its benefit, which should be discussed with the patient. If chosen, defer it until renal function recovers and NSAIDs are stopped (creatinine 1.5, eGFR 50 with renal involvement makes HD-MTX unsafe now), then give 2 cycles at >=3 g/m2 intercalated or after immunochemotherapy. Intrathecal therapy alone is not adequate prophylaxis for parenchymal relapse.",
+  "response_assessment": "FDG PET-CT at the end of treatment (6-8 weeks after the last cycle), read with Lugano 2014 criteria and the Deauville 5-point scale; Deauville 1-3 is a complete metabolic response. An interim PET-CT after cycles 2-4 is optional and should not change therapy unless it shows progression. Biopsy residual Deauville 4-5 uptake if it would change management.",
+  "pretreatment_workup": "Hepatitis B serology done: HBsAg and anti-HBc nonreactive (anti-HBs reactive from vaccination), so no antiviral prophylaxis is needed before rituximab. HCV and HIV nonreactive. Echo LVEF 60%, so anthracycline is permitted. Outstanding: contrast MRI brain, lumbar puncture with CSF cytology/flow, G6PD level before rasburicase, and urinalysis/urine protein to assess the creatinine rise.",
+  "supportive_care": "High tumor lysis syndrome risk (uric acid 10.4, LDH >5x ULN, creatinine rising 1.1 -> 1.5, potassium 5.0, phosphate 4.6). TLS prophylaxis: admit for cycle 1 (or the prephase), with aggressive IV hydration, rasburicase rather than allopurinol given hyperuricemia with renal impairment (check G6PD first), and TLS labs (K, phosphate, calcium, uric acid, creatinine, LDH) every 6-12 hours for 72 hours. Stop ibuprofen and all NSAIDs now (nephrotoxic with rising creatinine; they interact with methotrexate); use acetaminophen plus an opioid for pain. Hold lisinopril during hydration/TLS risk. Primary G-CSF prophylaxis (pegfilgrastim) with every cycle, since age >=65 (an on-body injector avoids an extra 45-minute trip). Prednisone will cause hyperglycemia in this diabetic patient: monitor glucose, use an insulin correction plan, and hold metformin during the AKI and IV hydration. Antiemetics per regimen. PJP prophylaxis is not routinely needed; note the sulfonamide allergy if it is ever considered.",
+  "fitness_and_goals": "ECOG 2 is disease-related (pain, B symptoms, tumor burden) and expected to improve with the prephase and treatment, so it is not a reason to de-escalate curative therapy; there are no significant cardiac or other comorbidities limiting full-dose therapy. The patient's goal is cure, and full-dose therapy is aligned with it. Six 21-day cycles starting late September would finish around the mid-December wedding; discuss timing so the nadir avoids the event. Arrange transport support for the 45-minute drive.",
+  "missing_information": [
+    "Contrast MRI brain and CSF cytology/flow cytometry (CNS staging not yet done)",
+    "G6PD status before rasburicase",
+    "Urinalysis and urine protein to assess the cause of the creatinine rise (renal involvement vs NSAID/ACE inhibitor effect)",
+    "Patient's view on CNS prophylaxis after an informed discussion of uncertain benefit"
+  ],
+  "decisions": {
+    "stage": "Stage IVB",
+    "diagnosis": "DLBCL, NOS, GCB type; not double-expressor, not double-hit",
+    "intent": "curative intent",
+    "regimen": "polatuzumab vedotin + R-CHP q21 days",
+    "cycles": 6,
+    "cycle1_dose_percent": 100,
+    "radiotherapy": "none",
+    "orders_now": [
+      "Steroid pre-phase: prednisone 100 mg daily for 5-7 days",
+      "Hyperhydration 3 L/m2/day",
+      "G6PD level (sent stat)",
+      "Hold ibuprofen; avoid all NSAIDs",
+      "MRI head with and without contrast",
+      "LP with CSF flow cytometry and cytology",
+      "Neulasta Onpro on day 2 of each cycle",
+      "Pola-R-CHP C1D1 with prednisone 100 mg days 1-5",
+      "Urinalysis",
+      "Pneumococcal vaccination before rituximab"
+    ],
+    "conditional_orders": [
+      "if G6PD normal: give rasburicase 0.2 mg/kg IV daily for up to 5 days",
+      "if G6PD deficient: allopurinol 100 mg daily, renally dosed",
+      "if renal function recovers and NSAIDs have been stopped: HD-MTX 3.5 g/m2 x2 after immunochemotherapy"
+    ],
+    "lab_monitoring": [
+      {
+        "tests": "TLS panel (BMP, phosphorus, uric acid, LDH)",
+        "every_hours": 12,
+        "duration_hours": 72
+      }
+    ]
+  },
+  "_expect": {
+    "passed": true,
+    "dangerous": [],
+    "must_met": [
+      "stage_iv",
+      "tx_curative_pola_or_rchop",
+      "tx_prephase_steroid",
+      "cns_staging_mri_csf",
+      "sup_tls_prophylaxis",
+      "sup_rasburicase_g6pd",
+      "sup_gcsf",
+      "sup_stop_nsaid"
+    ],
+    "must_unmet": [
+      "mn_hdmtx_now_despite_aki",
+      "mn_dose_reduced_initial"
+    ],
+    "_label": "Polatuzumab spelled out, 'Stage IVB', urate lowering only as G6PD-gated conditional orders, labs q12h x72h, regimen prednisone in C1D1 element"
+  }
+}

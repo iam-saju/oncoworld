@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL-NOS), diagnosed by excisional left cervical lymph node biopsy on 2026-09-09. The immunophenotype is non-germinal-center B-cell-like by the Hans algorithm",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "DLBCL-NOS with an activated B-cell-like/non-GCB phenotype and double expression of BCL2 and MYC by immunohistochemistry.",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor/Lugano stage III, bulky, with B symptoms.",
+  "source": "judge"
+ },
+ "stage_spleen_nodal": {
+  "met": true,
+  "quote": "The spleen is a lymphatic organ in the Lugano system, so splenic involvement remains stage III rather than IV",
+  "source": "judge"
+ },
+ "stage_bulky_b_symptoms": {
+  "met": true,
+  "quote": "He has bulky stage III disease with B symptoms (fevers, drenching night sweats, and 7-kg weight loss).",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "splenic involvement remains stage III rather than IV",
+  "source": "judge"
+ },
+ "mn_spleen_extranodal_count": {
+  "met": false,
+  "quote": "Standard IPI is 3 (age over 60, stage III, elevated LDH; ECOG 1 and no extranodal sites)",
+  "source": "judge"
+ },
+ "mol_de_not_dh": {
+  "met": true,
+  "quote": "FISH shows no MYC, BCL2, or BCL6 rearrangement, so this is a double-expressor DLBCL, not a double-hit/high-grade B-cell lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "this does not meet criteria for high-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements (double-hit/triple-hit)",
+  "source": "judge"
+ },
+ "mn_denies_double_expressor": {
+  "met": false,
+  "quote": "double expression of BCL2 and MYC by immunohistochemistry",
+  "source": "judge"
+ },
+ "prog_ipi_3": {
+  "met": true,
+  "quote": "Standard IPI is 3 (age over 60, stage III, elevated LDH; ECOG 1 and no extranodal sites), which is high-intermediate risk",
+  "source": "judge"
+ },
+ "prog_cns_ipi_intermediate": {
+  "met": false,
+  "quote": "CNS-IPI 3 (age over 60, stage III, elevated LDH; ECOG 1, no more than one extranodal site, and no kidney/adrenal involvement), which is a high-risk category",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "I recommend 6 cycles of R-CHOP21 given with curative intent: rituximab 375 mg/m2, cyclophosphamide 750 mg/m2, doxorubicin 50 mg/m2, vincristine 1.4 mg/m2 (capped at 2 mg)",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": false,
+  "quote": "Pola-R-CHP is an NCCN category 1 alternative with a progression-free-survival advantage in advanced-stage DLBCL, but I am choosing R-CHOP as the default",
+  "source": "judge"
+ },
+ "tx_isrt_residual_bulk": {
+  "met": true,
+  "quote": "if there is PET-positive residual bulky disease, I would biopsy it and consider involved-site radiation or second-line therapy.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "I recommend 6 cycles of R-CHOP21 given with curative intent",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I would not use DA-EPOCH-R because the FISH-negative double-expressor phenotype is not double-hit/high-grade B-cell lymphoma.",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "I would not reduce dose intensity at the outset. If he develops severe toxicity or becomes frail, I would consider dose modification or R-mini-CHOP.",
+  "source": "judge"
+ },
+ "hbv_prophylaxis": {
+  "met": true,
+  "quote": "HBV: start entecavir 0.5 mg daily (or tenofovir) for prophylaxis because anti-HBc is positive, continue for at least 12 months after rituximab, and monitor HBV DNA.",
+  "source": "judge"
+ },
+ "hbv_dna_lft_monitoring": {
+  "met": true,
+  "quote": "Before cycle 1 I still need: baseline HBV DNA and initiation of HBV antiviral prophylaxis",
+  "source": "judge"
+ },
+ "mn_no_hbv_action": {
+  "met": false,
+  "quote": "HBV: start entecavir 0.5 mg daily (or tenofovir) for prophylaxis because anti-HBc is positive",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": false,
+  "quote": "which is a high-risk category, but he has none of the highest-risk CNS sites (testis, kidney/adrenal, paraspinal, bone marrow, breast) and no neurologic symptoms. I will perform a baseline lumbar puncture with CSF cytology and flow cytometry",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "if negative, I will not give routine intrathecal methotrexate prophylaxis because the absolute benefit is uncertain and the risk of neurotoxicity is real.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "Response will be assessed with an end-of-treatment FDG PET-CT from skull base to mid-thigh approximately 6-8 weeks after cycle 6, interpreted by Lugano/Deauville criteria.",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Deauville 4-5 indicates residual disease and should prompt biopsy of the residual site if feasible, followed by involved-site radiation or second-line therapy.",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis prophylaxis: allopurinol 300 mg daily (renal-adjusted) before cycle 1, hydration at 2-3 L/m2/day as tolerated, and frequent monitoring of urate, potassium, phosphate, calcium, and creatinine",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Febrile neutropenia: pegfilgrastim 6 mg on day 2 of each cycle",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "echocardiogram (LVEF 58%)",
+  "source": "judge"
+ },
+ "fit_full_dose": {
+  "met": true,
+  "quote": "He is fit for full-dose curative-intent therapy: age 62, ECOG 1, fully independent, working part-time from home, no cardiac, pulmonary, renal, or hepatic disease, LVEF 58%, eGFR 96",
+  "source": "judge"
+ },
+ "miss_hbv_dna": {
+  "met": true,
+  "quote": "Baseline HBV DNA level and confirmation that HBV antiviral prophylaxis has been started.",
+  "source": "judge"
+ }
+}

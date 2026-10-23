@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (WHO 2022 / ICC: DLBCL, NOS), non-germinal center (Hans non-GCB) phenotype",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "Non-GCB phenotype: CD10 negative, BCL6 positive, MUM1/IRF4 positive in about 80% of cells.",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": true,
+  "quote": "Carcinoma is excluded: AE1/AE3 and GATA3 are negative in the lesional cells and there is no epithelial morphology. The 2016 ER-positive left breast cancer is not recurrent",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor stage IIIB. Nodal disease is present above and below the diaphragm (left axillary, mediastinal, mesenteric, para-aortic), and the spleen has multiple FDG-avid nodules.",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": true,
+  "quote": "Under Lugano the spleen is a lymphoid organ, so this is staged as nodal, not extranodal stage IV.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms are present (fever to 38.4 C, drenching night sweats).",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": false,
+  "quote": "The largest mass is 7.5 cm (mesenteric), so it is not bulky by NCCN criteria (10 cm or more).",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "Under Lugano the spleen is a lymphoid organ, so this is staged as nodal, not extranodal stage IV. If the splenic nodules were judged extranodal, the stage would be IV; management would not change.",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": true,
+  "quote": "MYC and BCL2 double-expressor, with no MYC, BCL2 or BCL6 rearrangement on interphase FISH. This is not double-hit lymphoma and not high-grade B-cell lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "This is not double-hit lymphoma and not high-grade B-cell lymphoma.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I would not use ibrutinib (atrial fibrillation, hypertension, and it is designed around an anthracycline backbone), DA-EPOCH-R (contains doxorubicin), or R-GemOx (weaker).",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": true,
+  "quote": "IPI is 2 (low-intermediate): stage III and elevated LDH, with age 59, ECOG 1, albumin normal and no more than one extranodal site.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": false,
+  "quote": "CNS relapse risk is intermediate by my estimate. The CNS-IPI points she has are stage III and elevated LDH; age, performance status, and kidney and adrenal involvement do not contribute. Verify the exact point total",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "Routine CNS prophylaxis (intrathecal or high-dose methotrexate) is therefore not indicated, and no proven benefit outweighs its toxicity in this setting.",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "Routine CNS prophylaxis (intrathecal or high-dose methotrexate) is therefore not indicated",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": false,
+  "quote": "she has already received 240 mg/m2 doxorubicin, her LVEF has fallen from 62% to 45% with abnormal GLS (-14%), and she has had left chest wall radiotherapy. Standard R-CHOP (300 mg/m2 more... ) would exceed",
+  "source": "judge_unquoted"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "Pola-R-CHP also contains doxorubicin and is excluded for the same reason.",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": true,
+  "quote": "Still needed before cycle 1: (1) Cardiology assessment with ECG, high-sensitivity troponin, NT-proBNP, and a repeat biplane echocardiogram with GLS",
+  "source": "judge"
+ },
+ "tx_cardioprotection": {
+  "met": true,
+  "quote": "Cardiac, start now and do not wait for chemotherapy: an ACE inhibitor (or ARB) and carvedilol, targeting BP below 130/80. Amlodipine can be stopped or replaced once BP is controlled.",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": true,
+  "quote": "Anthracycline-free rituximab-based immunochemotherapy with curative intent: polatuzumab vedotin + rituximab + cyclophosphamide + prednisone (Pola-R-CP), every 21 days for 6 cycles.",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": true,
+  "quote": "An anthracycline-free regimen is probably less effective than R-CHOP, so the cure probability is lower than that",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": false,
+  "quote": "Cardiac response: repeat echocardiogram with biplane LVEF and GLS at end of treatment and sooner for symptoms; cardiology to set the surveillance schedule.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "She is fit for curative-intent immunochemotherapy, but not for anthracyclines.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "Repeat PET-CT with the same scanner and SUV method after cycle 2 (interim) and after cycle 6 (end of treatment), with Lugano 2014 Deauville scoring.",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "TLS prophylaxis: risk is at least intermediate given LDH 2.3 times ULN and a 7.5 cm mass; allopurinol with cautious hydration; check uric acid, potassium, phosphate and creatinine at 24, 48 and 72 hours.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": false,
+  "quote": "Primary G-CSF is not routinely needed for Pola-R-CP; reassess if neutropenia or infection occurs.",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "Anastrozole: continue to the planned end of 10 years (November 2026). It has no meaningful interaction with Pola-R-CP and remains indicated for her ER-positive breast cancer.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "HBsAg, anti-HBc and anti-HBs all nonreactive, so no HBV reactivation prophylaxis is needed, but she is not immune and should be vaccinated after treatment.",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": true,
+  "quote": "ECOG 1, age 59, independent in daily activities, NYHA class I, normal renal and hepatic function. She is fit for curative-intent immunochemotherapy, but not for anthracyclines.",
+  "source": "judge"
+ },
+ "miss_cardiac_workup": {
+  "met": true,
+  "quote": "Cardiology evaluation results: ECG, high-sensitivity troponin, NT-proBNP, biplane LVEF and GLS repeat echo, cardiac MRI if available, and ischemia assessment (prior left chest radiotherapy and hypertension).",
+  "source": "judge"
+ }
+}

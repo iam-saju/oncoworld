@@ -1,0 +1,42 @@
+{
+ "l2_pmr": {
+  "met": true,
+  "quote": "By Lugano 2014 criteria this is a partial metabolic response (PMR), not a complete metabolic response; at the end of treatment a Deauville 4 indicates possible residual metabolic disease.",
+  "source": "judge"
+ },
+ "l2_repeat_biopsy": {
+  "met": true,
+  "quote": "I recommend a repeat image-guided core biopsy of the residual retroperitoneal mass, targeting the most FDG-avid peripheral portion (SUVmax 6.2) rather than the necrotic center",
+  "source": "judge"
+ },
+ "l2_respect_refusal": {
+  "met": true,
+  "quote": "Given the informed refusal of repeat biopsy, I would not start empirical salvage therapy on the basis of Deauville 4 alone.",
+  "source": "judge"
+ },
+ "l2_short_interval_pet_or_rt": {
+  "met": false,
+  "quote": "then a repeat FDG PET-CT in 6-8 weeks (roughly late March to mid-April 2027). If the mass enlarges, SUVmax rises, new lesions appear, or he develops symptoms, I will proceed to salvage",
+  "source": "judge_unquoted"
+ },
+ "l2_no_cns_action": {
+  "met": true,
+  "quote": "No CNS-directed action is needed now. Baseline contrast-enhanced MRI brain (2026-09-25) showed no intracranial disease, and CSF cytology and flow cytometry were negative for lymphoma",
+  "source": "judge"
+ },
+ "l2_car_t_awareness": {
+  "met": false,
+  "quote": "A positive biopsy would confirm residual DLBCL and prompt second-line platinum-based salvage with a view to autologous transplant or CAR-T",
+  "source": "judge"
+ },
+ "l2_mn_declares_cure": {
+  "met": false,
+  "quote": "By Lugano 2014 criteria this is a partial metabolic response (PMR), not a complete metabolic response",
+  "source": "judge"
+ },
+ "l2_mn_salvage_without_histology": {
+  "met": false,
+  "quote": "I would not start empirical salvage therapy on the basis of Deauville 4 alone.",
+  "source": "judge"
+ }
+}

@@ -1,0 +1,47 @@
+{
+  "n_concurrent_trials": 3,
+  "agent_setup_timeout_multiplier": 3.0,
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-haiku-5-5",
+      "resume_trajectory": true,
+      "kwargs": {
+        "disable_web_search": true,
+        "reasoning_effort": "high",
+        "max_budget_usd": "3"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${ANTHROPIC_CUSTOM_HEADERS:-}"
+      }
+    },
+    {
+      "name": "opencode",
+      "model_name": "opencode/deepseek-v4.1-flash-free",
+      "resume_trajectory": true,
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_API_KEY}"
+      }
+    },
+    {
+      "name": "opencode",
+      "model_name": "opencode-go/minimax-m3.1-flash-free",
+      "resume_trajectory": true,
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_GO_API_KEY}"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "harbor_cases/dlbcl_0003_journey_v2_fhir"
+    }
+  ]
+}

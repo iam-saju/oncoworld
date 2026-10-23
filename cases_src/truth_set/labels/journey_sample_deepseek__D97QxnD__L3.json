@@ -1,0 +1,66 @@
+{
+ "id": "journey_sample_deepseek__D97QxnD__L3",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "l3_car_t_second_line": {
+   "met": true,
+   "quote": "proceed directly to CD19-directed CAR-T cell therapy, using axicabtagene ciloleucel as my choice",
+   "confidence": "high",
+   "note": ""
+  },
+  "l3_why_early_relapse": {
+   "met": true,
+   "quote": "which is exactly the population in which ZUMA-7 and TRANSFORM showed CAR-T to be superior to salvage chemoimmunotherapy plus ASCT",
+   "confidence": "high",
+   "note": ""
+  },
+  "l3_cd19_confirmed": {
+   "met": true,
+   "quote": "CD19-positive tumor by immunohistochemistry and flow",
+   "confidence": "high",
+   "note": ""
+  },
+  "l3_no_more_drugs": {
+   "met": true,
+   "quote": "I advise against adding more empiric drugs now.",
+   "confidence": "high",
+   "note": ""
+  },
+  "l3_avoid_bendamustine": {
+   "met": true,
+   "quote": "I would avoid bendamustine- or fludarabine-containing bridging",
+   "confidence": "high",
+   "note": ""
+  },
+  "l3_ngs_interpretation": {
+   "met": true,
+   "quote": "It does not change the standard second-line decision, which remains CD19 CAR-T.",
+   "confidence": "high",
+   "note": ""
+  },
+  "l3_tazemetostat_context": {
+   "met": true,
+   "quote": "tazemetostat is approved for EZH2-mutant relapsed/refractory follicular lymphoma, not DLBCL",
+   "confidence": "high",
+   "note": ""
+  },
+  "l3_mn_rice_asct_preferred": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "l3_mn_tazemetostat_instead": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "l3_mn_palliative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

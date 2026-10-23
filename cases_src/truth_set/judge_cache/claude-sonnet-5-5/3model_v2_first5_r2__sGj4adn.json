@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma (DLBCL), not otherwise specified (NOS), non-germinal-center B-cell-like (non-GCB) by the Hans algorithm, with a double-expressor immunophenotype",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "TP53 mutation and gene-expression cell-of-origin status (prognostic only; not required for standard first-line treatment).",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": true,
+  "quote": "The left axillary biopsy shows no evidence of metastatic breast carcinoma (cytokeratin AE1/AE3 and GATA3 negative in the lesional cells).",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "stage III (Ann Arbor/Lugano IIIS)",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": true,
+  "quote": "There is no extralymphatic organ involvement (liver, lung, bone, adrenal, and kidney are negative), the bone marrow biopsy is negative, and there are no CNS symptoms. The spleen is a lymphatic organ, so splenic involvement is stage III (IIIS), not stage IV.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "splenic involvement, and B symptoms (fevers and night sweats)",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": false,
+  "quote": "mesenteric conglomerate 7.5 cm",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "The spleen is a lymphatic organ, so splenic involvement is stage III (IIIS), not stage IV.",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": true,
+  "quote": "double-expressor by immunohistochemistry (MYC 45%, BCL2 70%) with high proliferation (Ki-67 80%) and focal necrosis. Interphase FISH is negative for MYC, BCL2, and BCL6 rearrangements, so this is not a double-hit or triple-hit high-grade B-cell lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "Interphase FISH is negative for MYC, BCL2, and BCL6 rearrangements, so this is not a double-hit or triple-hit high-grade B-cell lymphoma.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "The double-expressor phenotype is associated with inferior outcomes after R-CHOP, but there is no established standard targeted escalation outside a clinical trial.",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": true,
+  "quote": "IPI 2 (low-intermediate); age-adjusted IPI 2; NCCN-IPI 3 (low-intermediate); CNS-IPI 2 (intermediate).",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": true,
+  "quote": "CNS-IPI 2 (intermediate risk; points for stage III and elevated LDH; age under 60, ECOG 1, no more than one extranodal site, and no kidney or adrenal involvement).",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "CNS relapse risk is intermediate (CNS-IPI 2) with no high-risk extranodal site, so I do not recommend routine CNS prophylaxis.",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "I do not recommend intrathecal methotrexate or high-dose IV methotrexate prophylaxis.",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": true,
+  "quote": "The decision is driven by the baseline LVEF 45% with reduced global longitudinal strain, prior cumulative doxorubicin 240 mg/m2, prior left breast radiotherapy, and hypertension; additional anthracycline would carry a high risk",
+  "source": "judge"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "I am not using R-CHOP or pola-R-CHP because both contain doxorubicin. If cardio-oncology confirms that the cardiac risk is acceptable ... I would use R-CHOP with dexrazoxane",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": true,
+  "quote": "Before cycle 1: formal cardio-oncology consultation and confirmation of LVEF/GLS (repeat echocardiogram or cardiac MRI if there is uncertainty)",
+  "source": "judge"
+ },
+ "tx_cardioprotection": {
+  "met": true,
+  "quote": "start an ACE inhibitor or ARB and a beta-blocker for LVEF 45% if not contraindicated, optimize blood pressure",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": true,
+  "quote": "Curative-intent anthracycline-free immunochemotherapy: R-CEOP every 21 days for 6 cycles",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": false,
+  "quote": "with the double-expressor phenotype and the need for an anthracycline-free regimen adding uncertainty.",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": false,
+  "quote": "I will also repeat echocardiography with GLS at the end of therapy because of the baseline LVEF 45%.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Curative-intent anthracycline-free immunochemotherapy: R-CEOP every 21 days for 6 cycles",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "Response will be assessed with a whole-body FDG PET-CT about 6-8 weeks after cycle 6, interpreted by Lugano/Deauville criteria (Deauville 1-3 = complete metabolic response; Deauville 4-5 = residual disease",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis syndrome: allopurinol 300 mg daily (adjust for renal function) with vigorous hydration starting before cycle 1 and close monitoring of uric acid, creatinine, potassium, phosphorus, and calcium",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Growth factor: pegfilgrastim 6 mg SC on day 2 (or filgrastim) with each cycle.",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "Continue anastrozole 1 mg daily without interruption; it is not myelosuppressive and has no clinically significant interaction with R-CEOP, and stopping it would increase breast cancer recurrence risk.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "no HBV antiviral prophylaxis is needed because HBsAg and anti-HBc are negative; anti-HBs is negative, so arrange hepatitis B vaccination",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": true,
+  "quote": "ECOG 1, age 59, independent, working full-time, with good social support from her husband; she is fit for full-dose curative-intent immunochemotherapy. The main limitation is cardiac reserve, not performance status or frailty. Her stated goal is cure",
+  "source": "judge"
+ },
+ "miss_cardiac_workup": {
+  "met": false,
+  "quote": "Formal cardio-oncology assessment, including a repeat echocardiogram with GLS (or cardiac MRI if there is uncertainty), to confirm LVEF 45% and to advise on anthracycline avoidance versus dexrazoxane use.",
+  "source": "judge"
+ }
+}

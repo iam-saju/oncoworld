@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__9k7vKDJ",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "non-germinal-center B-cell (non-GCB) phenotype by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Lugano stage III with splenic involvement (IIIS)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": true,
+   "quote": "the spleen is a lymphatic organ, so splenic involvement is annotated 'S' and does not make this stage IV",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "The 11 cm retroperitoneal mass meets the >=10 cm definition of bulky disease",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": false,
+   "quote": "extranodal sites >1 = 0 (spleen is a lymphatic organ, not an extranodal site)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "FISH is negative for MYC, BCL2 and BCL6 rearrangements, so this is NOT double-hit/triple-hit disease",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": false,
+   "quote": "International Prognostic Index 2 (low-intermediate risk)",
+   "confidence": "high",
+   "note": "Lists three scoring factors but miscounts total as IPI 2."
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": true,
+   "quote": "CNS-IPI = 3 points: age >60 (1), LDH above ULN (1), stage III (1)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Six cycles of polatuzumab vedotin + R-CHP (pola-R-CHP) every 21 days",
+   "confidence": "medium",
+   "note": "Curative pola-R-CHP x6, though polatuzumab is misdosed at 1.45 mg/kg."
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "NCCN lists pola-R-CHP as a preferred regimen for previously untreated DLBCL with IPI 2-5",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_residual_bulk": {
+   "met": false,
+   "quote": "",
+   "confidence": "medium",
+   "note": "EOT Deauville 4-5 leads to biopsy and salvage; ISRT to residual bulk not considered."
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "I would not substitute DA-R-EPOCH-R (no MYC/BCL2 rearrangement)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "no dose reductions are planned",
+   "confidence": "medium",
+   "note": "Polatuzumab 1.45 mg/kg is an unintended underdose, but no dose-reduced regimen is recommended."
+  },
+  "hbv_prophylaxis": {
+   "met": false,
+   "quote": "resolved HBV infection, no antiviral prophylaxis required",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": true,
+   "quote": "hepatitis B DNA quantitation and continued HBsAg/anti-HBc/anti-HBs monitoring",
+   "confidence": "medium",
+   "note": "Orders HBV DNA and monitoring but ALT monitoring is implicit only (CMP each cycle)."
+  },
+  "mn_no_hbv_action": {
+   "met": true,
+   "quote": "resolved HBV infection, no antiviral prophylaxis required",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": false,
+   "quote": "CNS prophylaxis is indicated and a brain MRI is required before treatment",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": true,
+   "quote": "give intrathecal cytarabine plus methotrexate (with dexamethasone) with each of the 6 systemic cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Deauville 1-3 is complete metabolic response (Lugano CR)",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Deauville 4-5 (partial metabolic response) requires biopsy of the residual FDG-avid site",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "allopurinol 300 mg daily starting 2 days before cycle 1 and continuing through cycle 1, oral/IV hydration",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim 6 mg SC on day 2 of every cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "his baseline echocardiogram is normal (LVEF 58%, GLS -20%), so full-dose doxorubicin is appropriate",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "He is fit enough for full-dose curative therapy.",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "No quantitative HBV DNA and no repeat HBsAg/anti-HBc/anti-HBs after 2026-09-03",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

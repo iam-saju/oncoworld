@@ -10,7 +10,7 @@ Usage:
   export GEMINI_API_KEY=...
   python3 scripts/run_direct_gemini.py                                   # all tasks in the v2 config
   python3 scripts/run_direct_gemini.py --model gemini-3.6-flash \
-      --task harbor_cases/dlbcl_0001_bulky_stage_iii_hbv_v2_narrative     # one task (repeatable)
+      --task harbor_cases/dlbcl_0001_bulky_stage_iii_hbv_v2_fhir     # one task (repeatable)
 
 Output: jobs/direct_<model>_<timestamp>/<task>/{prompt.txt,response.json,final_answer.json,reward.json,review.json}
 """

@@ -1,0 +1,186 @@
+{
+ "id": "minimax_deepseek_v2_first5_r1__pCWktNM",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "germinal-center B-cell (GCB) type by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IVB, bulky, with negative bone marrow.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "disseminated extranodal organ involvement - right kidney, left adrenal and hepatic segment VI",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms are unequivocal: drenching night sweats most nights",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "Ann Arbor stage IVB, bulky, with negative bone marrow.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "the IHC also does not meet double-expressor criteria",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "this is NOT double-hit lymphoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "He is not a double-expressor by IHC thresholds.",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "IPI 5 of 5",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "CNS-IPI 6 of 6 - age >60 (67), elevated LDH, ECOG >=1 (2), stage III/IV, >1 extranodal site (3 sites), and kidney/adrenal involvement",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Curative intent. R-CHOP-21 for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "I am not recommending a palliative approach",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "does not meet criteria for R-mini-CHOP-21",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "Kidney and adrenal are each high-risk extranodal organs for leptomeningeal relapse",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": true,
+   "quote": "Brain MRI and CSF cytology/flow must be obtained before cycle 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_prophylaxis_renal": {
+   "met": false,
+   "quote": "systemic HD-MTX-based prophylaxis is indicated rather than optional",
+   "confidence": "medium",
+   "note": "Ties HD-MTX to renal recovery but presents it as mandatory, not an individualized option of uncertain benefit."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "I will first stop ibuprofen, re-check renal function, and if creatinine does not fall below about 1.3",
+   "confidence": "medium",
+   "note": "Schedules HD-MTX from cycle 1 but explicitly conditions it on renal recovery and NSAID cessation."
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End of treatment: PET-CT 8-10 weeks after the last dose",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Deauville 4 = partial metabolic response with biopsy considered if uptake exceeds liver",
+   "confidence": "medium",
+   "note": "Biopsy considered for DS4 but DS5 at EOT goes straight to salvage."
+  },
+  "sup_tls_prophylaxis": {
+   "met": false,
+   "quote": "at least twice weekly in cycles 1-2 and daily around cycle 1",
+   "confidence": "medium",
+   "note": "Hydration and allopurinol given, but TLS labs daily at most, not every 6-12 hours."
+  },
+  "sup_rasburicase_g6pd": {
+   "met": true,
+   "quote": "I will give rasburicase at cycle 1 if uric acid exceeds 10 mg/dL despite allopurinol or continues to rise (G6PD first)",
+   "confidence": "medium",
+   "note": "Rasburicase conditional rather than favored upfront."
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim 6 mg SC 24-72 h after every cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "Stop ibuprofen 400 mg four times daily immediately",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "glucose monitoring several times daily during prednisone days",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": false,
+   "quote": "I will quantify HBV DNA now and, if undetectable, still give entecavir 0.5 mg daily",
+   "confidence": "medium",
+   "note": "Reviews negative serology correctly but still prescribes entecavir rather than concluding none is needed."
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "preserved LVEF 60% with no known cardiac disease",
+   "confidence": "medium",
+   "note": "LVEF noted as preserved; permission for anthracycline implicit."
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "he is fit for full-dose R-CHOP-21 with G-CSF support",
+   "confidence": "medium",
+   "note": "Does not explicitly attribute ECOG 2 to disease, though full dose and cure goal are clear."
+  }
+ }
+}

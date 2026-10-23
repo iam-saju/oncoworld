@@ -1,0 +1,150 @@
+{
+ "id": "3model_fhir5_r2__Gk4cp4d",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_hgbl_double_hit": {
+   "met": true,
+   "quote": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (HGBL-DH; formerly 'double-hit' lymphoma)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dx_dlbcl_nos": {
+   "met": false,
+   "quote": "The initial diagnosis of DLBCL, NOS was amended after FISH showed",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_gcb_hans": {
+   "met": true,
+   "quote": "GCB phenotype by the Hans algorithm: CD20+, PAX5+, CD10+, BCL6+, MUM1- (<10%)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_plan_outdated": {
+   "met": true,
+   "quote": "Do not give the planned R-CHOP. Change to DA-EPOCH-R",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_ii_bulky": {
+   "met": true,
+   "quote": "Ann Arbor stage IIA, bulky: right cervical levels II-IV and anterior mediastinal nodal disease, all above the diaphragm",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iii_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "bio_double_expressor_secondary": {
+   "met": false,
+   "quote": "The bulky mediastinal mass, high LDH, Ki-67 ~95%, and MYC/BCL2 co-expression further increase risk.",
+   "confidence": "medium",
+   "note": "Mentions MYC/BCL2 co-expression as a risk factor but never names double-expressor status relative to the FISH-defined classification."
+  },
+  "prog_ipi1_biology_dominates": {
+   "met": true,
+   "quote": "IPI 1 (low) and CNS-IPI 1 (low), but both scores understate the risk conferred by double-hit biology.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_intensive_curative": {
+   "met": true,
+   "quote": "Change to DA-EPOCH-R (dose-adjusted etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin plus rituximab) for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_rchop_preferred": {
+   "met": false,
+   "quote": "Do not give the planned R-CHOP.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_consolidation": {
+   "met": true,
+   "quote": "reserve radiation for a residual PET-positive bulky mass",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": false,
+   "quote": "I would not routinely obtain brain MRI",
+   "confidence": "medium",
+   "note": "Orders LP with CSF cytology/flow but explicitly declines baseline brain MRI."
+  },
+  "cns_prophylaxis": {
+   "met": true,
+   "quote": "give intrathecal methotrexate 12 mg for 4 doses starting with cycle 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_cns_dismissed": {
+   "met": false,
+   "quote": "However, double-hit histology is an independent high-risk feature",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_pet_lugano": {
+   "met": true,
+   "quote": "then end-of-treatment PET/CT about 6-8 weeks after cycle 6",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Give G-CSF with DA-EPOCH-R per the dose-adjustment schedule",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls": {
+   "met": true,
+   "quote": "Start intravenous hydration and allopurinol 300 mg daily now (adjusted for renal function), check G6PD, and monitor urate, potassium, phosphate, calcium, creatinine, and LDH",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_central_access_infusion": {
+   "met": false,
+   "quote": "DA-EPOCH-R is given as a 96-hour continuous infusion",
+   "confidence": "medium",
+   "note": "Notes the 96-hour infusion but never states central venous access/the port is needed."
+  },
+  "sup_fertility": {
+   "met": true,
+   "quote": "fertility counseling with sperm banking",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_svc_airway": {
+   "met": true,
+   "quote": "monitor for stridor, dyspnea, or worsening facial swelling",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "No hepatitis B antiviral prophylaxis is needed because HBsAg and anti-HBc are negative and anti-HBs is positive",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "Fit for intensive therapy: 54 years old, ECOG 1, working, no organ dysfunction, LVEF 60%",
+   "confidence": "medium",
+   "note": "LVEF 60% cited as supporting fitness and anthracycline monitoring, not an explicit statement that it permits anthracycline."
+  },
+  "fit_intensive": {
+   "met": true,
+   "quote": "The goal is curative-intent treatment, and the patient has explicitly asked for the regimen with the best chance of cure",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

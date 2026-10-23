@@ -1,0 +1,167 @@
+{
+  "_about": "Plain-language labels for the oncologist report (scripts/build_report.py). Written by a senior heme-onc agent from rubric_v2.toml, case.toml and gold.json, then checked item by item against the rubric text by an independent heme-onc agent (2026-10-22). Not human-reviewed. Never shown to the model.",
+  "case_card": {
+    "title": "Stage III DLBCL with prior anthracycline and reduced LVEF",
+    "patient": "59F, breast cancer survivor (2016: dose-dense AC, cumulative doxorubicin 240 mg/m2, left breast RT, on anastrozole), presents with left axillary mass, fevers to 38.4 C, drenching night sweats; ECOG 1, LDH 510. Non-GCB DLBCL (MYC 45%, BCL2 70%, FISH negative for rearrangements), PET nodes above and below the diaphragm plus splenic nodules, marrow negative, and new LVEF 45% (62% in 2016) with GLS -14%.",
+    "tests": [
+      "Spleen is a nodal site under Lugano, so stage is III, not IV, and IPI is 2.",
+      "Double-expressor by IHC but FISH-negative, so not double-hit; no intensification to DA-EPOCH-R.",
+      "Prior doxorubicin 240 mg/m2, left chest RT and LVEF 62% to 45% mean standard full-dose R-CHOP / Pola-R-CHP is not safe as is.",
+      "Treatment must stay curative: anthracycline-free (R-CEOP / R-GCVP) or cardio-protected regimen, with cardio-oncology input and cardioprotective drugs.",
+      "CNS-IPI 2 with no high-risk sites: no routine CNS prophylaxis."
+    ],
+    "correct_plan": "Curative-intent R-CEOP x6 (R-GCVP as alternative) after urgent cardio-oncology review, with ACE inhibitor/ARB plus carvedilol replacing amlodipine and serial echo, troponin and NT-proBNP; R-CHOP with liposomal doxorubicin or dexrazoxane only if cardio-oncology judges it safe. No CNS prophylaxis, allopurinol and G-CSF support, and end-of-treatment PET-CT read with Deauville."
+  },
+  "items": [
+    {
+      "id": "dx_dlbcl_non_gcb",
+      "label": "Diagnoses DLBCL, NOS, non-GCB phenotype by Hans algorithm",
+      "why": "Correct histology and cell-of-origin subtype frame prognosis and every downstream treatment decision."
+    },
+    {
+      "id": "dx_hans_not_abc",
+      "label": "Notes Hans non-GCB is not molecular ABC by gene expression",
+      "why": "Avoids overstating cell-of-origin; IHC surrogate may misclassify, which matters if ABC-targeted options are considered."
+    },
+    {
+      "id": "dx_not_breast_recurrence",
+      "label": "States axillary node is lymphoma, not breast cancer (keratin/GATA3 negative)",
+      "why": "In a breast cancer survivor, excluding recurrence confirms one disease to treat, not two."
+    },
+    {
+      "id": "stage_iii",
+      "label": "Stages the disease as Lugano/Ann Arbor stage III",
+      "why": "Nodes on both sides of the diaphragm plus the spleen is stage III (the spleen counts as nodal tissue); the stage on record guides treatment and counselling."
+    },
+    {
+      "id": "stage_spleen_lymphatic",
+      "label": "Explains spleen is nodal tissue, so splenic nodules are not stage IV",
+      "why": "Counting the spleen as an extranodal organ would wrongly upstage her to IV; marrow and other organs are uninvolved."
+    },
+    {
+      "id": "stage_b_symptoms",
+      "label": "Notes B symptoms: fevers above 38 C and drenching night sweats",
+      "why": "Documented fevers to 38.4 C and sweats define stage IIIB and reflect disease activity."
+    },
+    {
+      "id": "stage_bulk_definition",
+      "label": "Notes 7.5 cm mass is below 10 cm Lugano bulk threshold",
+      "why": "Bulk status affects risk and radiotherapy discussion; definitions vary, some trials use 7.5 cm."
+    },
+    {
+      "id": "mn_stage_iv",
+      "label": "Stages the disease as stage IV",
+      "why": "Counting splenic nodules as extranodal overstages her. The IPI is unchanged (stage III and IV score the same), but the recorded stage and the counselling are wrong."
+    },
+    {
+      "id": "mol_del_not_dh",
+      "label": "Calls it double-expressor (MYC 45%, BCL2 70%) but not double-hit",
+      "why": "FISH shows no MYC, BCL2 or BCL6 rearrangement, so standard-intensity curative therapy applies."
+    },
+    {
+      "id": "mn_calls_double_hit",
+      "label": "Classifies the lymphoma as double-hit with MYC and BCL2 rearrangements",
+      "why": "FISH is negative; mislabelling as high-grade double-hit could drive unwarranted intensive, doxorubicin-containing therapy."
+    },
+    {
+      "id": "mn_da_epoch",
+      "label": "Recommends DA-EPOCH-R or intensified regimen for double-expressor biology",
+      "why": "Double-expressor status alone does not justify intensification, and DA-EPOCH-R adds doxorubicin to a damaged heart."
+    },
+    {
+      "id": "prog_ipi_2",
+      "label": "Calculates IPI as 2 (low-intermediate risk)",
+      "why": "Only elevated LDH and advanced stage (III-IV) score; age 59, ECOG 1 and no extranodal sites score zero."
+    },
+    {
+      "id": "prog_cns_ipi_2",
+      "label": "Calculates CNS-IPI as 2 (intermediate risk)",
+      "why": "Intermediate CNS risk underpins the decision not to give routine CNS prophylaxis."
+    },
+    {
+      "id": "cns_no_routine_prophylaxis",
+      "label": "States routine CNS prophylaxis is not indicated",
+      "why": "CNS-IPI 2 with no kidney, adrenal, testicular or breast involvement; avoids unnecessary toxicity."
+    },
+    {
+      "id": "mn_mandates_cns_prophylaxis",
+      "label": "Mandates CNS prophylaxis with high-dose methotrexate or intrathecal therapy",
+      "why": "Not indicated at CNS-IPI 2 without high-risk sites; adds toxicity without proven benefit here."
+    },
+    {
+      "id": "tx_cardiac_aware_no_full_dox",
+      "label": "Recognises anthracycline cardiac risk; avoids standard full-dose doxorubicin without addressing heart",
+      "why": "Prior doxorubicin 240 mg/m2, left chest RT and LVEF 62% to 45% mean further full-dose doxorubicin risks heart failure."
+    },
+    {
+      "id": "mn_standard_dox_ignores_heart",
+      "label": "Recommends standard R-CHOP or Pola-R-CHP ignoring reduced LVEF",
+      "why": "Unconditioned full-dose doxorubicin in established cardiac dysfunction risks irreversible heart failure."
+    },
+    {
+      "id": "tx_cardio_onc_referral",
+      "label": "Requests urgent cardio-oncology or cardiology evaluation before therapy",
+      "why": "LVEF decline needs specialist assessment to choose a safe regimen and start cardioprotection before cycle 1."
+    },
+    {
+      "id": "tx_cardioprotection",
+      "label": "Starts ACE inhibitor/ARB plus beta-blocker, e.g. replacing amlodipine",
+      "why": "Guideline cardioprotection treats her cardiac dysfunction and controls her blood pressure during chemotherapy."
+    },
+    {
+      "id": "tx_anthracycline_free_curative",
+      "label": "Recommends curative anthracycline-free or modified regimen, e.g. R-CEOP or R-GCVP",
+      "why": "Keeps cure as the goal while sparing the heart; liposomal doxorubicin or dexrazoxane only with cardio-oncology clearance."
+    },
+    {
+      "id": "tx_lower_efficacy_ack",
+      "label": "Acknowledges anthracycline-free regimens likely have lower efficacy",
+      "why": "She wants cure; the trade-off between cardiac safety and cure rate must be discussed honestly."
+    },
+    {
+      "id": "tx_cardiac_monitoring",
+      "label": "Plans serial LVEF/GLS imaging plus troponin and/or BNP monitoring",
+      "why": "Detects further cardiac injury early during therapy in a patient with existing dysfunction."
+    },
+    {
+      "id": "mn_non_curative",
+      "label": "Recommends palliative-only treatment, best supportive care or hospice",
+      "why": "She is fit with curable disease; abandoning cure is wrong because the heart changes the regimen, not the goal."
+    },
+    {
+      "id": "resp_eot_pet_lugano",
+      "label": "Plans end-of-treatment PET-CT read with Lugano/Deauville criteria",
+      "why": "Standard way to confirm complete metabolic response and decide on further management."
+    },
+    {
+      "id": "sup_tls_allopurinol",
+      "label": "Assesses low-intermediate tumor lysis risk; gives allopurinol and hydration cycle 1",
+      "why": "LDH about twice normal with a 7.5 cm mass; simple prevention avoids renal injury."
+    },
+    {
+      "id": "sup_gcsf",
+      "label": "Recommends or considers primary G-CSF support with each cycle",
+      "why": "Reduces febrile neutropenia and dose delays, preserving curative dose intensity."
+    },
+    {
+      "id": "sup_anastrozole",
+      "label": "Addresses ongoing anastrozole: continue, or hold with breast oncology",
+      "why": "She asked directly; no meaningful interaction, but coordination with breast oncology is needed."
+    },
+    {
+      "id": "work_hbv_reviewed",
+      "label": "Confirms hepatitis B serology (HBsAg, anti-HBc) negative before rituximab",
+      "why": "Excludes rituximab-related hepatitis B reactivation risk before starting therapy."
+    },
+    {
+      "id": "fit_curative_ecog1",
+      "label": "Judges her fit for curative therapy (ECOG 1); acknowledges goal of cure",
+      "why": "Normal organ function apart from LVEF; her stated goal is cure and returning to work."
+    },
+    {
+      "id": "miss_cardiac_workup",
+      "label": "Lists cause of LVEF decline / cardio-oncology work-up as missing",
+      "why": "Prior left chest RT raises coronary risk; ischemic evaluation, cardiac MRI, troponin and NT-proBNP define the cause."
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r1__WNjH4HP",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "non-germinal-center B-cell-like (non-GCB/ABC) by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "non-germinal-center B-cell-like (non-GCB/ABC) by the Hans algorithm",
+   "confidence": "medium",
+   "note": "Equates Hans non-GCB with ABC; only indirectly notes a GEP ABC signature would refine prognosis."
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "standard Lugano staging makes this stage IIIB (IIIS), not stage IV",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": true,
+   "quote": "The spleen is a lymphatic organ, so standard Lugano staging makes this stage IIIB (IIIS), not stage IV.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "a confluent 11.0 cm retroperitoneal nodal mass below the diaphragm",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "double expressor by IHC",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "IPI 3 (age >60, stage III, elevated LDH), high-intermediate risk.",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": true,
+   "quote": "CNS-IPI 3 (age >60, stage III/IV, elevated LDH), intermediate CNS risk.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "I recommend six cycles of Pola-R-CHP",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "This is an NCCN-preferred first-line regimen for advanced-stage DLBCL with IPI \u22652",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_residual_bulk": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": true,
+   "quote": "start entecavir 0.5 mg daily (or tenofovir) before rituximab and continue for at least 6-12 months after the last rituximab dose",
+   "confidence": "medium",
+   "note": "Duration stated as 6-12 months rather than at least 12 months."
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": true,
+   "quote": "with HBV DNA and liver tests monitored",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_no_hbv_action": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "I would not give routine intrathecal methotrexate or high-dose systemic methotrexate CNS prophylaxis",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "interpreted with Lugano 2014 criteria and the Deauville 5-point scale",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Deauville 4-5 requires biopsy of any residual FDG-avid site if feasible",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "give allopurinol 300 mg daily, hydration 2-3 L/day, and frequent potassium, phosphorus, calcium, creatinine, and uric acid checks",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Give pegfilgrastim 6 mg SC on day 2 as primary febrile-neutropenia prophylaxis.",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "cumulative doxorubicin will be 300 mg/m2, below the usual threshold, with a normal baseline LVEF",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "He is fit for full-dose anthracycline-based immunochemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "Quantitative HBV DNA (HBsAg-negative/anti-HBc-positive; needed before anti-CD20 therapy",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

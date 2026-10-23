@@ -1,0 +1,186 @@
+{
+ "id": "haiku55_v2_first5_r3__YviHVsE",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "Non-germinal-center (ABC-like) phenotype by Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": true,
+   "quote": "Cell of origin is by IHC only; gene expression profiling (for example Lymph2Cx) was not done",
+   "confidence": "medium",
+   "note": "Implies the IHC/GEP distinction without stating non-equivalence explicitly."
+  },
+  "dx_not_breast_recurrence": {
+   "met": true,
+   "quote": "This is a new lymphoma and not a recurrence of the 2016 ER-positive breast carcinoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Ann Arbor stage IIIB (Lugano 2014).",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_lymphatic": {
+   "met": true,
+   "quote": "Spleen with focal nodules is nodal-type involvement, so stage III",
+   "confidence": "medium",
+   "note": "Correct reasoning but hedged that radiology should confirm."
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms are present: fever of 38.0 C or higher on several days",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulk_definition": {
+   "met": false,
+   "quote": "Bulky disease: mesenteric conglomerate 7.5 x 5.1 cm (SUVmax 22.3).",
+   "confidence": "medium",
+   "note": "Calls 7.5 cm bulky without noting the 10 cm Lugano threshold."
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "stage IV would apply only if radiology read the splenic disease as extranodal organ involvement",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_del_not_dh": {
+   "met": true,
+   "quote": "Double-expressor by IHC: MYC 45% (cutoff 40%) and BCL2 70% (cutoff 50%).",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "(no double-hit or triple-hit)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "does not by itself change the standard regimen or justify DA-EPOCH-R",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_2": {
+   "met": false,
+   "quote": "IPI is lower (about 2-3)",
+   "confidence": "medium",
+   "note": "Gives a 2-3 range rather than committing to IPI 2."
+  },
+  "prog_cns_ipi_2": {
+   "met": true,
+   "quote": "CNS-IPI intermediate by my estimate (verify with the calculator). Elevated LDH and stage III contribute.",
+   "confidence": "medium",
+   "note": "Intermediate risk with correct factors but no explicit total."
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "no lumbar puncture and no CNS prophylaxis (high-dose methotrexate or intrathecal) now",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "no lumbar puncture and no CNS prophylaxis (high-dose methotrexate or intrathecal) now",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_aware_no_full_dox": {
+   "met": true,
+   "quote": "I would not give full-dose R-CHOP or Pola-R-CHP in this setting.",
+   "confidence": "medium",
+   "note": "Still gives 200 mg/m2 doxorubicin (lifetime ~440) but gated on cardio-oncology and LVEF recheck."
+  },
+  "mn_standard_dox_ignores_heart": {
+   "met": false,
+   "quote": "I would not give full-dose R-CHOP or Pola-R-CHP in this setting.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardio_onc_referral": {
+   "met": true,
+   "quote": "Cardio-oncology consult now.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardioprotection": {
+   "met": true,
+   "quote": "an ARNI or ACE inhibitor/ARB, an evidence-based beta-blocker (carvedilol or metoprolol succinate)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_anthracycline_free_curative": {
+   "met": true,
+   "quote": "Cycles 5-6 are anthracycline-free",
+   "confidence": "medium",
+   "note": "Anthracycline-capped regimen conditioned on cardio-oncology agreement, with anthracycline-free fallback; total exposure still high."
+  },
+  "tx_lower_efficacy_ack": {
+   "met": true,
+   "quote": "use an anthracycline-free regimen (R-CVP-based, with polatuzumab if the team agrees) or refer to a clinical trial, accepting a lower expected cure rate",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_monitoring": {
+   "met": true,
+   "quote": "troponin and NT-proBNP with each cycle, ECG, and echocardiogram with GLS before cycle 1, after cycle 4",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT about 3-4 weeks after cycle 6, scored by Deauville per Lugano 2014.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "Tumor lysis: intermediate risk (LDH about 2x ULN, bulk 7.5 cm); allopurinol or febuxostat, and modest hydration",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim or biosimilar each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_anastrozole": {
+   "met": true,
+   "quote": "Anastrozole: continue to the planned completion in November 2026",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg and anti-HBc negative, so no antiviral prophylaxis is needed",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_curative_ecog1": {
+   "met": true,
+   "quote": "She is fit for curative-intent immunochemotherapy by age, ECOG 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_cardiac_workup": {
+   "met": true,
+   "quote": "ECG, high-sensitivity troponin, NT-proBNP, ischemia evaluation and cardiac MRI: none documented.",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

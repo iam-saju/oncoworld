@@ -1,0 +1,228 @@
+# HIDDEN. OncoWorld-style rubric for intracranial_mesenchymal_0001.
+# Drafted from the oncologist-provided teaching handout and the accompanying treatment-plan discussion.
+# Review status: DRAFT_NEEDS_ONCOLOGIST. Do not treat scores as clinical performance until signed off.
+#
+# The case is deliberately short-horizon. "Intracranial mesenchymal tumor" is not a specific diagnosis, so the
+# correct immediate plan is diagnostic confirmation, staging, symptom control and multidisciplinary review.
+# No chemotherapy, targeted therapy or definitive radiotherapy should be started until the entity, grade,
+# extent and resectability are established. The later handout stages (NGS, HSV encephalitis, goals of care)
+# are not part of this task.
+#
+# Graded by the shared grader (graders/oncoworld_grader/grader_v2.py). All regexes run on the lower-cased
+# answer, which grader_v2 re-serialises as JSON with indent=1.
+
+version = "intracranial_mesenchymal_0001.v2.0"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+passing_score = 0.75
+
+[leak_check]
+# Terms that would give the diagnosis away if they appeared in the model-visible chart.
+forbidden_in_case = ["solitary fibrous", "sft", "hemangiopericytoma", "stat6", "nab2", "sarcoma", "ewing",
+                     "rhabdomyosarcoma", "maximum safe resection", "gross-total", "adjuvant radiotherapy",
+                     "surveillance mri", "category 1"]
+
+# ---------------- diagnosis
+[[items]]
+id = "dx_nonspecific_entity"
+domain = "diagnosis"
+kind = "must"
+severity = "dangerous"
+points = 10
+text = "The response states that 'intracranial mesenchymal tumor' is not a specific diagnosis and that the entity and grade must be established before a treatment can be selected."
+# broadened 2026-10-23 red-team: the literal two-word phrase "intracranial mesenchymal" false-failed a clinically
+# correct answer that paraphrased it ("a mesenchymal neoplasm of the central nervous system", "a mesenchymal
+# tumor involving the brain") while still correctly asserting the entity/grade were unestablished -- that false
+# "not met" on a dangerous must item forced reward to 0. Now also accepts "mesenchymal" paired with a generic
+# tumor noun, or with a brain/CNS reference within the same clause, in either order.
+all = ['(?:intracranial mesenchymal|mesenchymal (?:tumor|neoplasm|lesion|mass|origin|process)|mesenchymal[^.!?\n]{0,40}(?:intracranial|brain|cerebral|\bcns\b|central nervous system)|(?:intracranial|brain|cerebral|\bcns\b|central nervous system)[^.!?\n]{0,40}mesenchymal)',
+       '(?:not (?:a )?(?:sufficiently )?specific|non[- ]specific|provisional|not established|not definitive|unknown entity|does not establish[^.\n]{0,60}(?:entity|diagnos|subtype)|no definitive[^.\n]{0,40}(?:subtype|diagnos|entity))',
+       '(?:grade|entity)']
+
+[[items]]
+id = "dx_differential_entity"
+domain = "diagnosis"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response names the relevant differential, including solitary fibrous tumor/hemangiopericytoma and a sarcoma such as Ewing sarcoma or rhabdomyosarcoma."
+all = ['(?:solitary fibrous|\bsft\b|hemangiopericytoma|\bhpc\b)',
+       '(?:sarcoma|ewing|rhabdomyosarcoma)']
+
+# ---------------- pathology and molecular confirmation
+[[items]]
+id = "path_expert_review"
+domain = "pathology"
+kind = "must"
+severity = "important"
+points = 8
+text = "The response requires expert neuropathology review with expanded immunohistochemistry and broad molecular/sequencing testing, including fusion detection."
+all = ['(?:expert )?(?:neuropathology|pathology review)',
+       '(?:immunohistochemistry|\bihc\b|sequenc|molecular|ngs|fusion)']
+[[items]]
+id = "path_stat6_if_sft"
+domain = "pathology"
+kind = "should"
+severity = "important"
+points = 5
+text = "If solitary fibrous tumor is in the differential, the response asks for STAT6 and/or NAB2-STAT6 confirmation."
+any = ['stat6', 'nab2[- ]stat6']
+
+[[items]]
+id = "mol_not_sufficient_alone"
+domain = "molecular"
+kind = "must"
+severity = "important"  # downgraded from dangerous 2026-10-23 per oncologist review (see review_questions.json: mol_alone_severity)
+points = 8
+text = "The response states that a molecular result alone is not sufficient to establish the entity or to select targeted therapy; it must be interpreted with the histology and confirmed."
+all = ['(?:molecular|sequenc|ngs|genomic|fgfr|stat6|nab2)',
+       '(?:not (?:sufficient|enough)|alone|by itself|does not (?:establish|exclude|confirm)|adjunct|integrated|confirm(?:ation)? (?:is )?(?:required|needed)|validate)']
+
+[[items]]
+id = "mn_unsupported_regimen"
+domain = "treatment"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response starts or recommends a specific chemotherapy, targeted therapy or other disease-directed regimen for the unspecified tumor."
+recommend = ['(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)']
+# except patterns strip a whole sentence before `recommend` is checked. Two fixes here (2026-10-23 red-team):
+# (1) the old 'no[^.!?\n]{0,80}...' pattern had no \b on "no", so it matched the "no" *inside* "cannot", "known",
+#     "ignore" etc: "given the known imaging pattern, start temozolomide this week" was wrongly exempted. Fixed
+#     with \bno\b and by excluding ';'/':' from the gap so an unrelated clause spliced on with a semicolon can no
+#     longer bridge into the regimen mention ("no further imaging needed; begin temozolomide now" no longer exempts).
+# (2) added deferral synonyms ("should wait until pathology...", "awaiting expert review before...") that are
+#     clinically identical to "defer/delay" but were not recognised, false-failing a correct deferral as the
+#     dangerous error. Each is guarded by a lookbehind so the double-negative escape ("we cannot wait and will
+#     start temozolomide now", "there is no time to wait for pathology; begin temozolomide today") is NOT exempted.
+except = ['\bno\b[^.!?;:\n]{0,80}(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)',
+          '(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)[^.!?;:\n]{0,100}(?:defer\w*|not appropriate|not justified|not indicated|not recommended|not the default|withhold\w*|hold\b)',
+          '(?:defer\w*|delay\w*|hold\b|withhold\w*|avoid\w*|do not start|not start)[^.!?;:\n]{0,100}(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)',
+          '(?<!cannot )(?<!can.t )(?<!wont )(?<!won.t )(?<!will not )(?<!should not )(?<!shouldnt )(?<!shouldn.t )(?<!no longer )(?<!not )wait(?:ing)?\s+(?:until|for|on|to)\b[^.!?;:\n]{0,100}(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)',
+          '(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)[^.!?;:\n]{0,100}(?<!cannot )(?<!can.t )(?<!wont )(?<!won.t )(?<!will not )(?<!should not )(?<!shouldnt )(?<!shouldn.t )(?<!no longer )(?<!not )(?:should |will |can |would |is to |are to )?wait(?:ing)?\s+(?:until|for|on)\b',
+          '(?<!not )await(?:ing)?\b[^.!?;:\n]{0,100}(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)',
+          '(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)[^.!?;:\n]{0,100}(?<!not )await(?:ing)?\b']
+
+[[items]]
+id = "mn_palliative_only"
+domain = "treatment"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response recommends palliative-only care, best supportive care or hospice as the plan before diagnostic confirmation."
+# the second alternative (added 2026-10-23 red-team) closes a confirmed gap: "focus on comfort and quality of
+# life, no further workup" did not match any of the original phrases (none of "palliative-only", "best supportive
+# care", "comfort-focused", hospice referral). The boundary is NOT "comfort"/"quality of life" wording alone --
+# that also appears in legitimate goals-of-care discussion alongside active workup (e.g. "discuss quality of
+# life while neurosurgery assesses resectability") and must not fire. It fires only when a comfort/palliative/
+# QOL phrase is paired, in the same clause, with an explicit renunciation of further workup/treatment (no
+# further/without further/forgo/decline/stop/discontinue/hold/withhold + workup/testing/evaluation/diagnosis/
+# treatment/therapy/intervention/biopsy/staging). Genuine denials ("we will not pursue a comfort-focused plan
+# without completing further workup") are unaffected: affirms() still reads the leading "not"/"inappropriate"
+# ahead of "comfort" as a negation of the whole clause.
+affirm = ['palliative[- ](?:only|intent|care alone)|best supportive care|comfort[- ](?:focused|measures)|(?:refer\w*|transition\w*|enrol\w*)(?: \w+){0,2} (?:to|in|into) hospice',
+          '(?:comfort|palliative|quality of life)(?=[^.!?\n]{0,80}(?:no further|without (?:any |further )?|forgo\w*|declin\w*|stop\w*|discontinu\w*|hold\w*|withhold\w*)[^.!?\n]{0,40}(?:workup|work-?up|testing|evaluation|investigation|diagnos\w*|treatment|therapy|intervention|biopsy|staging))']
+
+# ---------------- staging
+[[items]]
+id = "stage_neuraxis"
+domain = "staging"
+kind = "must"
+severity = "important"
+points = 8
+text = "The response treats the enhancing C6 nodule as suspected spinal drop/leptomeningeal dissemination and stages the whole neuraxis, not just the brain."
+all = ['(?:spinal|spine|neuraxis|leptomeningeal|drop metastasis|\bc6\b)',
+       '(?:mri|imaging|staging|dissemination)']
+
+[[items]]
+id = "stage_systemic"
+domain = "staging"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response recommends systemic staging for extracranial disease (CT chest/abdomen/pelvis or PET-CT) when clinically appropriate."
+all = ['(?:systemic staging|extracranial|ct (?:chest|abdomen)|pet[- ]?ct)',
+       '(?:staging|disease|metastas)']
+
+# ---------------- immediate management
+[[items]]
+id = "tx_defer_definitive"
+domain = "treatment"
+kind = "must"
+severity = "dangerous"
+points = 10
+text = "The response defers definitive disease-directed treatment until the diagnosis, grade, extent and resectability are established."
+all = ['(?:do not start|defer|delay|hold|withhold|not start)',
+       '(?:until|pending|before)',
+       '(?:diagnos|pathology|grade|molecular|resectab|staging)']
+
+[[items]]
+id = "tx_surgery_assessment"
+domain = "treatment"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response refers to neurosurgery and assesses maximal safe resection, with gross-total resection as the goal when feasible."
+all = ['(?:resect|surgery|surgical|neurosurg)',
+       '(?:maximal safe|gross[- ]total|\bgtr\b|feasib|consider|assess)']
+
+[[items]]
+id = "tx_adjuvant_rt_after_diagnosis"
+domain = "treatment"
+kind = "should"
+severity = "important"
+points = 5
+text = "Once the entity and grade are established, the response considers postoperative focal radiotherapy for a high-grade solitary fibrous tumor or after subtotal resection."
+all = ['(?:radiotherap|radiation therapy|\brt\b)',
+       '(?:postoperative|post[- ]?op|adjuvant|focal|surgical bed|residual)']
+
+[[items]]
+id = "tx_no_routine_adjuvant_chemo"
+domain = "treatment"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response states that routine adjuvant chemotherapy is not the default after complete resection of localized solitary fibrous tumor, and that systemic therapy is reserved for unresectable, metastatic or recurrent disease."
+# \b added to "no" 2026-10-23 red-team: the bare form matched the "no" inside "know"/"cannot"/"ignore" etc, e.g.
+# "I know chemotherapy toxicity profiles well... surgical resection is planned" wrongly satisfied this item.
+all = ['(?:\bno\b[^.\n]{0,40}(?:routine )?(?:adjuvant )?chemotherapy|(?:routine )?(?:adjuvant )?chemotherapy[^.\n]{0,30}(?:is )?not (?:the )?(?:default|indicated|recommended|required))',
+       '(?:complete resection|localized|resect|unresectable|metastatic|recurrent)']
+
+[[items]]
+id = "tx_evidence_caveat"
+domain = "treatment"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes that the evidence for solitary fibrous tumor/hemangiopericytoma is largely retrospective and should not be presented as a universal Category 1 regimen."
+all = ['(?:retrospective|non[- ]randomi[sz]ed|no randomi[sz]ed|limited evidence)',
+       '(?:sft|solitary fibrous|hemangiopericytoma)']
+
+[[items]]
+id = "tx_surveillance"
+domain = "surveillance"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response arranges long-term serial contrast-enhanced MRI surveillance, with extracranial surveillance as clinically appropriate."
+all = ['(?:surveillance|follow[- ]up|serial)',
+       '(?:mri|imaging)']
+
+# ---------------- supportive care and multidisciplinary review
+[[items]]
+id = "sup_symptoms"
+domain = "supportive_care"
+kind = "must"
+severity = "important"
+points = 5
+text = "The response provides symptom control for headache and vomiting and assesses for raised intracranial pressure and seizures."
+all = ['(?:symptom control|symptomatic|supportive care|palliative (?:symptom|care))',
+       '(?:headache|vomiting|intracranial pressure|seizure)']
+
+[[items]]
+id = "work_mdt"
+domain = "multidisciplinary"
+kind = "must"
+severity = "important"
+points = 4
+text = "The response refers the patient to a multidisciplinary neuro-oncology/tumor-board review."
+any = ['multidisciplinary|tumor board|\bmdt\b|neuro[- ]oncology']

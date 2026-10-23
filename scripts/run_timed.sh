@@ -3,7 +3,8 @@
 # Usage: scripts/run_timed.sh <config.json> <job-name>
 set -uo pipefail
 cfg="${1:?config path}"; name="${2:?job name}"
-# API keys (OPENCODE_API_KEY, ANTHROPIC_API_KEY, ...) come from the config's env block; Harbor exits if one is missing.
+# API keys (OPENCODE_GO_API_KEY for opencode-go/* models, ANTHROPIC_API_KEY, ...) come from the config's env block. Harbor does not check agent
+# variables up front: export them before running, or the agent fails when its trial starts.
 mkdir -p jobs
 log="jobs/$name.console.log"  # outside the job dir so Harbor does not treat it as a resume
 
@@ -19,6 +20,8 @@ rc=${PIPESTATUS[0]}
 echo "[run_timed] end $(python3 -c "import datetime;print(datetime.datetime.now(datetime.timezone.utc).isoformat())") exit=$rc" | tee -a "$log"
 if [ -f "jobs/$name/result.json" ]; then
   python3 scripts/job_timeline.py "jobs/$name"
+  python3 scripts/build_report.py "jobs/$name" --out "reports/$name.html"   # oncologist-readable results report
+  python3 scripts/summarize_job.py "jobs/$name"                             # per case; journeys per layer
 else
   echo "[run_timed] no jobs/$name/result.json, skipping timeline"
 fi

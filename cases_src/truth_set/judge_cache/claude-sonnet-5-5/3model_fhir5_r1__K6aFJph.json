@@ -1,0 +1,122 @@
+{
+ "dx_hgbl_double_hit": {
+  "met": false,
+  "quote": "Newly diagnosed high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit lymphoma)... The 09/12/2026 diagnosis of 'DLBCL, NOS' is superseded by the 09/19/2026 FISH addendum",
+  "source": "judge_unquoted"
+ },
+ "mn_dx_dlbcl_nos": {
+  "met": false,
+  "quote": "DLBCL NOS should not be used.",
+  "source": "judge"
+ },
+ "dx_gcb_hans": {
+  "met": true,
+  "quote": "CD10+ and BCL6+ with MUM1/IRF4- (germinal-center B-cell-like by Hans)",
+  "source": "judge"
+ },
+ "tx_plan_outdated": {
+  "met": true,
+  "quote": "The 09/14 plan of R-CHOP x6 alone is therefore NOT adequate and is superseded by the plan below.",
+  "source": "judge"
+ },
+ "stage_ii_bulky": {
+  "met": true,
+  "quote": "Ann Arbor stage IIA with bulky disease (stage II-X). Two nodal regions above the diaphragm: right cervical levels II-IV (imaging 3.8-3.9 cm, conglomerate 5 cm on exam) and anterior mediastinum (12.0 x 8.6 x 9.8 cm).",
+  "source": "judge"
+ },
+ "mn_stage_iii_iv": {
+  "met": false,
+  "quote": "No infradiaphragmatic, splenic, or extranodal disease on FDG PET-CT 09/10 (no marrow, osseous, or visceral uptake; spleen 10.5 cm without focal uptake), so no 'E' and no stage III/IV.",
+  "source": "judge"
+ },
+ "bio_double_expressor_secondary": {
+  "met": true,
+  "quote": "The IHC is also a concordant double-expressor profile (MYC 80% >=40%, BCL2 90% >=50%, Ki-67 ~95%), but the classification is driven by the genetics, not the IHC.",
+  "source": "judge"
+ },
+ "prog_ipi1_biology_dominates": {
+  "met": false,
+  "quote": "Standard IPI = 1 (LDH elevated; age 54, stage II, ECOG 1, no extranodal sites)... None of these capture double-hit biology, bulky mediastinal disease, or the very high tumor burden (SUVmax 27.8), so I am treating him as high-risk.",
+  "source": "judge_unquoted"
+ },
+ "tx_intensive_curative": {
+  "met": false,
+  "quote": "DA-EPOCH-R x6 with intrathecal therapy is my documented fallback if high-dose methotrexate/serum level monitoring is not logistically or financially feasible; it is not my first choice",
+  "source": "judge"
+ },
+ "mn_rchop_preferred": {
+  "met": true,
+  "quote": "(1) INDUCTION: R-CHOP-21 for 6 cycles (rituximab 375 mg/m2 d1, cyclophosphamide 750 mg/m2 d1, doxorubicin 50 mg/m2 d1",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "he will receive intensified curative-intent therapy with CNS-directed treatment built into the regimen from cycle 1.",
+  "source": "judge"
+ },
+ "tx_isrt_consolidation": {
+  "met": true,
+  "quote": "if there is residual FDG-avid disease (Deauville 4-5) after chemotherapy, I will obtain repeat imaging and consider a biopsy of the hot area and involved-site radiotherapy to the mediastinum and right cervical bed",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": false,
+  "quote": "I do NOT recommend routine brain MRI in this asymptomatic patient with no testicular, breast, or marrow disease and a CNS-IPI of 2",
+  "source": "judge"
+ },
+ "cns_prophylaxis": {
+  "met": true,
+  "quote": "CNS prophylaxis is indicated and is part of my regimen - intrathecal methotrexate/cytarabine on days 1 and 4 of cycle 1 and day 1 of each subsequent cycle, plus systemic high-dose methotrexate",
+  "source": "judge"
+ },
+ "mn_cns_dismissed": {
+  "met": false,
+  "quote": "I do NOT recommend routine brain MRI in this asymptomatic patient with no testicular, breast, or marrow disease and a CNS-IPI of 2",
+  "source": "judge"
+ },
+ "resp_pet_lugano": {
+  "met": true,
+  "quote": "Standard Lugano 2014 / Deauville framework using the SAME scanner and same reconstruction protocol as the 09/10 baseline",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "primary G-CSF with every cycle (pegfilgrastim 6 mg on day 2, or day 3-4 per institutional protocol) given age, bulk, and high proliferative index",
+  "source": "judge"
+ },
+ "sup_tls": {
+  "met": false,
+  "quote": "high risk given 12 cm bulk, SUVmax 27.8, and LDH 3.6x ULN... allopurinol 300-600 mg daily... rasburicase if uric acid rises despite allopurinol... check uric acid, creatinine, potassium, calcium, phosphate and LDH every 6-12 hours",
+  "source": "judge_unquoted"
+ },
+ "sup_central_access_infusion": {
+  "met": false,
+  "quote": "6 days of continuous infusion per cycle is more burdensome for a patient who works.",
+  "source": "judge"
+ },
+ "sup_fertility": {
+  "met": true,
+  "quote": "expedited sperm cryopreservation before or immediately prior to the first dose (must not delay cycle 1 past 09/24) - this was not arranged and needs to be done now.",
+  "source": "judge"
+ },
+ "sup_svc_airway": {
+  "met": false,
+  "quote": "measures are head-of-bed elevation, avoidance of constrictive clothing/loops and of Valsalva/straining... strict return precautions for worsening facial/upper-extremity swelling, headache, visual change, stridor, noisy breathing, dyspnea at rest",
+  "source": "judge_unquoted"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "viral serologies (HBsAg neg, HBcAb neg, HBsAb pos = immunized with negligible reactivation risk and no antiviral prophylaxis needed, HCV Ab neg, HIV 1/2 Ag/Ab neg)",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "transthoracic echocardiogram with LVEF 60% and GLS -20% (09/11, a valid pre-anthracycline baseline)",
+  "source": "judge"
+ },
+ "fit_intensive": {
+  "met": true,
+  "quote": "Fitness supports full-dose intensified therapy: he is a candidate for high-dose methotrexate consolidation and for autologous transplant if needed.",
+  "source": "judge"
+ }
+}

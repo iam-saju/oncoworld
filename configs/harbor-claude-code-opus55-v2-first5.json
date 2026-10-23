@@ -11,15 +11,26 @@
         "max_budget_usd": "3"
       },
       "env": {
-        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}"
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${ANTHROPIC_CUSTOM_HEADERS}"
       }
     }
   ],
   "tasks": [
-    { "path": "harbor_cases/dlbcl_0001_bulky_stage_iii_hbv_v2_narrative" },
-    { "path": "harbor_cases/dlbcl_0001_bulky_stage_iii_hbv_v2_fhir" },
-    { "path": "harbor_cases/dlbcl_0002_splenic_stage_iii_cardiac_v2_narrative" },
-    { "path": "harbor_cases/dlbcl_0002_splenic_stage_iii_cardiac_v2_fhir" },
-    { "path": "harbor_cases/dlbcl_0003_renal_adrenal_cns_high_v2_narrative" }
+    {
+      "path": "harbor_cases/dlbcl_0001_bulky_stage_iii_hbv_v2_fhir"
+    },
+    {
+      "path": "harbor_cases/dlbcl_0002_splenic_stage_iii_cardiac_v2_fhir"
+    },
+    {
+      "path": "harbor_cases/dlbcl_0003_renal_adrenal_cns_high_v2_fhir"
+    },
+    {
+      "path": "harbor_cases/dlbcl_0004_double_hit_addendum_v2_fhir"
+    },
+    {
+      "path": "harbor_cases/dlbcl_0005_limited_stage_flyer_v2_fhir"
+    }
   ]
 }

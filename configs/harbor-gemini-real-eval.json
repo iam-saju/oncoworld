@@ -11,7 +11,7 @@
   ],
   "tasks": [
     {
-      "path": "harbor_cases/dlbcl_0001_narrative"
+      "path": "harbor_cases_narrative/dlbcl_0001_narrative"
     },
     {
       "path": "harbor_cases/dlbcl_0001_fhir"

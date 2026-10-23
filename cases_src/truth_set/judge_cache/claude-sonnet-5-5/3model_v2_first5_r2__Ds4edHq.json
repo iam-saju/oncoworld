@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, NOS, non-germinal-center B-cell-like by the Hans algorithm, double-expressor by immunohistochemistry",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "De novo DLBCL with a non-GCB/ABC-like immunophenotype (CD10 negative, BCL6 positive, MUM1 positive)",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": true,
+  "quote": "no cytokeratin or GATA3 expression to suggest metastatic breast carcinoma",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor stage IIIB: lymph node regions above and below the diaphragm (left axillary/mediastinal and mesenteric/para-aortic) plus splenic involvement, with B symptoms",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": true,
+  "quote": "Ann Arbor stage IIIB: lymph node regions above and below the diaphragm (left axillary/mediastinal and mesenteric/para-aortic) plus splenic involvement, with B symptoms",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "with B symptoms (evening fevers and drenching night sweats)",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": true,
+  "quote": "The largest mass is a 7.5 cm mesenteric conglomerate, below the NCCN >=10 cm bulky threshold but still a large mass that increases tumor-lysis risk.",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "Ann Arbor stage IIIB: lymph node regions above and below the diaphragm",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": true,
+  "quote": "double-expressor biology (MYC >=40% and BCL2 >=50% by IHC) but not double-hit lymphoma (MYC/BCL2/BCL6 FISH negative)",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "but not double-hit lymphoma (MYC/BCL2/BCL6 FISH negative)",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "there is no validated first-line targeted escalation; the cardiac contraindication to anthracycline is the dominant treatment constraint.",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": true,
+  "quote": "IPI 2 (stage III and elevated LDH; age 59, ECOG 1, and no extranodal sites), which is low-intermediate by the standard IPI",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": true,
+  "quote": "CNS-IPI 2, intermediate risk (age 59, stage III, elevated LDH; ECOG 1, no more than one extranodal site, and no kidney or adrenal involvement)",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "I will not give intrathecal methotrexate or routine CSF analysis.",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "I will not give intrathecal methotrexate or routine CSF analysis.",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": true,
+  "quote": "I am deliberately avoiding R-CHOP and pola-R-CHP because both contain doxorubicin, and she has prior cumulative doxorubicin 240 mg/m2, left breast radiotherapy, hypertension, and an asymptomatic LVEF of 45%",
+  "source": "judge"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "I am deliberately avoiding R-CHOP and pola-R-CHP because both contain doxorubicin",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": true,
+  "quote": "Before starting therapy I still need baseline ECG/QTc, cardiac troponin and NT-proBNP, formal cardiology evaluation with a heart-failure treatment plan",
+  "source": "judge"
+ },
+ "tx_cardioprotection": {
+  "met": true,
+  "quote": "Obtain cardiology co-management and start an ACE inhibitor or ARB plus a beta-blocker for asymptomatic cancer-therapy-related cardiac dysfunction.",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": true,
+  "quote": "Curative-intent R-CEOP for 6 cycles every 21 days: rituximab 375 mg/m2 IV day 1, cyclophosphamide 750 mg/m2 IV day 1, etoposide 100 mg/m2 IV days 1-3",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": true,
+  "quote": "I will explicitly discuss that anthracycline-free therapy is chosen for cardiac safety and that some series suggest slightly lower efficacy than R-CHOP, especially with double-expressor biology",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": true,
+  "quote": "monitor blood pressure, weight, edema, troponin, and repeat echocardiography; avoid further anthracycline.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Curative-intent R-CEOP for 6 cycles every 21 days",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment FDG PET-CT using Lugano 2014/Deauville criteria at approximately 6-8 weeks after cycle 6, interpreted against the baseline PET",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor-lysis prophylaxis with allopurinol 300 mg daily (renally adjusted) and vigorous hydration, with baseline and post-cycle potassium, phosphorus, calcium, uric acid, and creatinine",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Primary G-CSF prophylaxis with pegfilgrastim 6 mg on day 2 (or filgrastim) because of etoposide-related febrile neutropenia risk.",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "Continue anastrozole through chemotherapy and complete the planned 10-year course in November 2026.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis B antiviral prophylaxis is not needed (HBsAg and anti-HBc negative); she is nonimmune, so plan HBV vaccination.",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": true,
+  "quote": "She is fit for curative-intent combination chemotherapy: age 59, ECOG 1, independent, working full-time, NYHA class I, normal renal and hepatic function, and strong social support.",
+  "source": "judge"
+ },
+ "miss_cardiac_workup": {
+  "met": true,
+  "quote": "Baseline cardiac biomarkers (troponin and NT-proBNP) and a formal cardiology/heart-failure assessment, including the exact plan and timeline for ACE inhibitor or ARB and beta-blocker initiation and repeat echocardiography.",
+  "source": "judge"
+ }
+}

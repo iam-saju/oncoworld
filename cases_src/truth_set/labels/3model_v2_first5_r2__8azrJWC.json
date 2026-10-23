@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__8azrJWC",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "non-germinal-center B-cell (non-GCB) phenotype by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "Non-GCB/activated B-cell-like immunophenotype (CD10 negative, BCL6 positive, MUM1 positive)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Ann Arbor stage IIIB, bulky",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": true,
+   "quote": "above and below the diaphragm, with splenic involvement (IIIS)",
+   "confidence": "medium",
+   "note": "Spleen treated as stage III (IIIS) implicitly; no explicit statement that spleen is lymphatic."
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms present (fever, drenching night sweats); largest mass 11.0 cm (bulky)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "This is DLBCL, NOS, not double-hit or triple-hit high-grade B-cell lymphoma.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "IPI 3 (age >60, stage III, elevated LDH)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": false,
+   "quote": "CNS-IPI 2 (intermediate CNS risk)",
+   "confidence": "medium",
+   "note": "Correct intermediate category but miscalculated score as 2 (omits stage III point) rather than 3."
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Curative-intent Pola-R-CHP: polatuzumab vedotin 1.8 mg/kg, rituximab 375 mg/m2",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "If polatuzumab is not available or not covered, R-CHOP every 21 days for 6 cycles is the standard alternative",
+   "confidence": "medium",
+   "note": "Pola-R-CHP preferred with R-CHOP alternative, but no mention of greater benefit in non-GCB disease."
+  },
+  "tx_isrt_residual_bulk": {
+   "met": false,
+   "quote": "I would not give consolidative radiation upfront in the absence of residual disease.",
+   "confidence": "medium",
+   "note": "Implies RT possible with residual disease but never plans ISRT for PET-positive residual bulk; Deauville 5 goes to salvage."
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "I would not use DA-EPOCH-R routinely",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": true,
+   "quote": "start entecavir 0.5 mg daily after baseline HBV DNA and continue for 12 months after the last rituximab dose",
+   "confidence": "medium",
+   "note": "Timing before first rituximab is implied (pre-cycle-1 workup) rather than stated explicitly."
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": true,
+   "quote": "start entecavir 0.5 mg daily after baseline HBV DNA and continue for 12 months after the last rituximab dose, with periodic HBV DNA monitoring",
+   "confidence": "medium",
+   "note": "Baseline and serial HBV DNA ordered; ALT/LFT monitoring not explicitly stated."
+  },
+  "mn_no_hbv_action": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "I will not give routine intrathecal methotrexate or high-dose methotrexate prophylaxis.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment FDG PET-CT approximately 6-8 weeks after cycle 6, interpreted by Lugano 2014/Deauville 5-point criteria.",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": false,
+   "quote": "Deauville 4 is equivocal; I will repeat PET in 6-12 weeks or biopsy. Deauville 5 or biopsy-proven residual disease is refractory/progressive disease",
+   "confidence": "medium",
+   "note": "Biopsy offered for DS4 but DS5 alone triggers salvage without biopsy."
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "start allopurinol 300 mg daily before chemotherapy, give aggressive intravenous hydration",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Give pegfilgrastim 6 mg subcutaneously on day 2 as primary febrile-neutropenia prophylaxis.",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "with normal LVEF and organ function; he is a candidate for full-dose curative-intent anthracycline therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "he is a candidate for full-dose curative-intent anthracycline therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "Hepatitis B virus DNA level (anti-HBc positive, HBsAg negative) to finalize entecavir prophylaxis and monitoring.",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

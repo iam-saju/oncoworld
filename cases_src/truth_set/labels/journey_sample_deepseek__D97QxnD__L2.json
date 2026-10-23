@@ -1,0 +1,54 @@
+{
+ "id": "journey_sample_deepseek__D97QxnD__L2",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "l2_pmr": {
+   "met": true,
+   "quote": "By Lugano 2014 criteria this is a partial metabolic response (PMR), not a complete metabolic response",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_repeat_biopsy": {
+   "met": true,
+   "quote": "I recommend a repeat image-guided core biopsy of the residual retroperitoneal mass, targeting the most FDG-avid peripheral portion",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_respect_refusal": {
+   "met": true,
+   "quote": "This shared decision balances the risk of overtreating a possibly cured patient against the risk of missing residual aggressive lymphoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_short_interval_pet_or_rt": {
+   "met": true,
+   "quote": "then a repeat FDG PET-CT in 6-8 weeks (roughly late March to mid-April 2027)",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_no_cns_action": {
+   "met": true,
+   "quote": "Routine surveillance lumbar puncture or MRI in an asymptomatic patient with a negative baseline CNS evaluation is not indicated.",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_car_t_awareness": {
+   "met": true,
+   "quote": "A positive biopsy would confirm residual DLBCL and prompt second-line platinum-based salvage with a view to autologous transplant or CAR-T",
+   "confidence": "medium",
+   "note": "Mentions CAR-T candidacy but leads with platinum salvage/ASCT and no early cellular-therapy referral."
+  },
+  "l2_mn_declares_cure": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "l2_mn_salvage_without_histology": {
+   "met": false,
+   "quote": "I would not start empirical salvage therapy on the basis of Deauville 4 alone.",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

@@ -1,0 +1,61 @@
+{
+  "_about": "Open clinical questions for the oncologist's sign-off of this case's rubric (shown in scripts/build_case_review.py). Each comes from the structured decision-rule authoring pass on 2026-10-23.",
+  "questions": [
+    {
+      "id": "dose_reduced_cycle1_dangerous",
+      "items": ["tx_curative_pola_or_rchop", "mn_dose_reduced_initial"],
+      "question": "The curative-regimen item says \"full-dose\", so a cycle 1 dose below 100% now also fails that dangerous item, on top of the existing 4-point deduction from the dose-reduction item. Under the old prose rule, a reduced cycle 1 only cost the 4 points. Is a dose-reduced cycle 1 meant to be dangerous for this fit 62-year-old?",
+      "context": "This only changes behavior for structured answers; prose-only answers are unaffected.",
+      "options": ["Keep: dangerous (fails the note)", "Keep as a 4-point error only, not dangerous"]
+    },
+    {
+      "id": "cycles_exactly_6",
+      "items": ["tx_curative_pola_or_rchop"],
+      "question": "The curative-regimen item requires exactly 6 cycles. If a model writes Pola-R-CHP x6 plus 2 extra rituximab doses as \"cycles: 8\", should that still count as meeting the item?",
+      "context": "",
+      "options": ["Require exactly 6", "Accept 6-8 (rituximab-only doses counted as cycles)"]
+    },
+    {
+      "id": "lamivudine_hbv",
+      "items": ["hbv_prophylaxis", "mn_no_hbv_action"],
+      "question": "The HBV prophylaxis item names entecavir or tenofovir by name, so a lamivudine order now fails this dangerous item. The old prose rule accepted any \"antiviral\". Should lamivudine count as adequate prophylaxis here?",
+      "context": "Lamivudine has a higher resistance rate than entecavir/tenofovir for long courses, which is why it was named explicitly, but it is still a real antiviral some clinicians would order.",
+      "options": ["Keep: only entecavir/tenofovir count", "Accept lamivudine too"]
+    },
+    {
+      "id": "hbv_omission_triggers_error",
+      "items": ["mn_no_hbv_action"],
+      "question": "This item's text says the response \"states\" antiviral prophylaxis is not needed. In structured mode, simply leaving HBV prophylaxis out of the orders (not just explicitly stating it's unnecessary) now also counts as committing the error. Under the old prose rule, a silent omission did not trigger it. Is that the right call?",
+      "context": "This also affects monitor-only and treat-if-detectable plans, which are now treated the same as an explicit refusal.",
+      "options": ["Keep: omission also counts", "Only an explicit statement should count"]
+    },
+    {
+      "id": "observation_is_non_curative",
+      "items": ["mn_non_curative"],
+      "question": "This item lists palliative, best-supportive-care and hospice as the error. The structured rule also treats intent \"observation\" as the same error. Is that intended for this curable, high-risk patient?",
+      "context": "",
+      "options": ["Keep: observation counts", "Observation should not count"]
+    },
+    {
+      "id": "pola_preferred_vs_ordered",
+      "items": ["tx_pola_preferred"],
+      "question": "The structured rule now decides this bonus item by the regimen actually ordered. A note that calls Pola-R-CHP preferred in its reasoning but orders R-CHOP (e.g. \"not on formulary\") loses the 4-point bonus. Is that the right call, or should stating a preference be enough?",
+      "context": "",
+      "options": ["Decide by what was ordered", "Credit a stated preference even if not ordered"]
+    },
+    {
+      "id": "rchop14_is_intensified",
+      "items": ["mn_da_epoch"],
+      "question": "The structured rule treats R-CHOP-14 or another dose-dense schedule as an intensified regimen (the same error as switching to DA-EPOCH-R), matching the existing prose rule. Should R-CHOP-14 really count as the same error as an unwarranted regimen escalation?",
+      "context": "",
+      "options": ["Keep: R-CHOP-14/dose-dense counts", "R-CHOP-14 should not count"]
+    },
+    {
+      "id": "tls_lab_interval",
+      "items": ["sup_tls_allopurinol"],
+      "question": "This item's text sets no maximum lab interval, so any scheduled TLS lab entry currently passes — a plan of labs every 48 hours is not caught. Should intermediate TLS risk require a maximum interval, e.g. every 12 hours?",
+      "context": "The gold answer itself specifies labs every 24 hours for 72 hours.",
+      "options": ["No max interval needed", "Require 12 h or tighter", "Require 24 h or tighter"]
+    }
+  ]
+}

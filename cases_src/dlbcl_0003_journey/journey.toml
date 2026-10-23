@@ -1,5 +1,7 @@
 # OncoWorld v2 longitudinal journey: patient dlbcl_0003 (Robert Sample) followed through five layers.
-# Built by scripts/build_journey_v2.py into ONE Harbor multi-step task (harbor_cases/dlbcl_0003_journey_v2).
+# Built by scripts/build_journey_v2.py into ONE Harbor multi-step task in two renderings:
+#   harbor_cases/dlbcl_0003_journey_v2_fhir          the benchmark (FHIR: base bundle + one FHIR update bundle per later visit)
+#   harbor_cases_narrative/dlbcl_0003_journey_v2     diagnostic control (narrative chart files)
 #
 # Rules (from docs/oncologist-longitudinal-case-form.pdf):
 #  - the model sees one layer at a time, never a future layer (each layer's files arrive via steps/<L>/workdir);
@@ -7,13 +9,21 @@
 #  - each "if..." is a stated fact, so there is one answer;
 #  - each layer is scored on its own; a dangerous error in any layer fails the whole case.
 # Layer 1 reuses cases_src/dlbcl_0003 (chart, rubric, gold). Layers 2-5 are DRAFTS: review_status DRAFT_NEEDS_ONCOLOGIST.
-# MODEL-VISIBLE: [[layers]].questions and [[layers.documents]]. HIDDEN: Lx_rubric.toml, Lx_gold.json.
+# MODEL-VISIBLE: [[layers]].questions, [[layers.documents]] and [layers.fhir]. HIDDEN: Lx_rubric.toml, Lx_gold.json.
+#
+# Documents: name = NN_YYYY-MM-DD_label.txt (NN orders them inside the layer; the interval history is always first).
+#   kind = interval_history | progress_note | admission_note | pet_ct_report | mri_report | csf_report | echo_report
+#          | pathology_report | ngs_report
+# [layers.fhir] holds the same facts as structured FHIR resources (labs with reference ranges, vitals, ECOG, weight,
+# medications, administrations, procedures, genomic variants). Every value here must already be stated in that
+# layer's documents: the structured data makes the record realistic, it never adds a clinical fact the notes lack.
 
 [meta]
 journey_id = "dlbcl_0003_journey"
 base_case = "dlbcl_0003"
 title = "DLBCL with kidney/adrenal involvement: the patient journey (diagnosis to goals of care)"
 review_status = "DRAFT_NEEDS_ONCOLOGIST"
+difficulty = "advanced"
 consistency_notes = """
 - CNS-IPI 6 at diagnosis (Layer 1) must stay in the Layer 4 differential (CNS relapse) even though baseline CSF was negative.
 - Type 2 diabetes (Layer 1) matters for steroid dosing/glucose in Layer 4.
@@ -29,6 +39,7 @@ date = "2026-09-17"
 answer_file = "/app/answers/L1_diagnosis.json"
 source = "dlbcl_0003"          # chart, rubric and gold come from the single-case v2 source
 
+# ------------------------------------------------------------------------------------------------ Layer 2
 [[layers]]
 id = "L2"
 step = "L2-after-first-line"
@@ -45,6 +56,7 @@ questions = [
 
 [[layers.documents]]
 name = "20_2027-02-24_interval_history.txt"
+kind = "interval_history"
 text = """
 INTERVAL HISTORY: WHAT ACTUALLY HAPPENED SINCE TUMOR BOARD (2026-09-18 to 2027-02-24)
 
@@ -57,13 +69,38 @@ Tumor board 2026-09-18 recommended prednisone prephase, then Pola-R-CHP x6 with 
 - CNS prophylaxis with high-dose methotrexate was discussed; after counselling on uncertain benefit the
   patient declined it.
 - Creatinine 1.0 mg/dL by cycle 2 and stable since. Insulin correction scale during steroid days.
-- Cycles 2-6 outpatient. Cycle 5 delayed one week (grade 2 neuropathy resolved to grade 1; he attended
-  his granddaughter's wedding on 2026-12-13). Cycle 6 given 2027-01-08.
+- Cycles 2-6 outpatient, on schedule. Grade 2 neuropathy after cycle 4: polatuzumab reduced to 1.4 mg/kg
+  for cycles 5-6; neuropathy improved to grade 1. He attended his granddaughter's wedding on 2026-12-13.
+  Cycle 6 given 2027-01-08.
 - Now ECOG 1. Weight 74 kg. No B symptoms. Mild residual tingling in the toes.
 """
 
 [[layers.documents]]
-name = "21_2027-02-17_pet_ct.txt"
+name = "21_2026-09-25_mri_brain.txt"
+kind = "mri_report"
+text = """
+MRI BRAIN WITH AND WITHOUT GADOLINIUM, 2026-09-25
+
+Indication: diffuse large B-cell lymphoma with renal and adrenal involvement; evaluation for CNS disease.
+Findings: No intracranial mass. No abnormal parenchymal, dural or leptomeningeal enhancement. No hemorrhage.
+No hydrocephalus.
+IMPRESSION: No intracranial lesion. No imaging evidence of CNS lymphoma.
+"""
+
+[[layers.documents]]
+name = "22_2026-09-25_csf.txt"
+kind = "csf_report"
+text = """
+CEREBROSPINAL FLUID, LUMBAR PUNCTURE, 2026-09-25
+
+Cytology: negative for malignant cells.
+Flow cytometry: no abnormal B-cell population detected.
+DIAGNOSIS: Cerebrospinal fluid negative for lymphoma.
+"""
+
+[[layers.documents]]
+name = "23_2027-02-17_pet_ct.txt"
+kind = "pet_ct_report"
 text = """
 FDG PET-CT, END OF TREATMENT (6 weeks after cycle 6), 2027-02-17
 
@@ -76,7 +113,8 @@ Deauville score: 4 (residual retroperitoneal mass, uptake moderately above liver
 """
 
 [[layers.documents]]
-name = "22_2027-02-22_pathology.txt"
+name = "24_2027-02-22_pathology.txt"
+kind = "pathology_report"
 text = """
 SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RESIDUAL RETROPERITONEAL MASS, 2027-02-22
 Two 18-gauge cores, total 0.6 cm. Predominantly necrosis and dense fibrosis with scattered histiocytes.
@@ -86,7 +124,8 @@ of residual lymphoma. Tissue insufficient for flow cytometry or molecular studie
 """
 
 [[layers.documents]]
-name = "23_2027-02-24_progress_note.txt"
+name = "25_2027-02-24_progress_note.txt"
+kind = "progress_note"
 text = """
 Results visit with the patient, his wife and daughter. Explained the biopsy was not diagnostic.
 The patient says he "has had enough needles" and, with his family's agreement, declines a repeat biopsy
@@ -94,6 +133,66 @@ at this time. He feels well and asks what his options are. Neuro exam normal; no
 neurological symptoms.
 """
 
+[layers.fhir]
+ecog = { date = "2027-02-24", value = 1 }
+weight = { date = "2027-02-24", kg = 74 }
+
+[[layers.fhir.labs]]
+panel = "Renal function"
+date = "2027-02-24"
+time = "08:00"
+items = [{ key = "creatinine", value = 1.0 }]
+
+# `id` re-issues a MedicationStatement the record already holds (base bundle ids dlbcl-0003-v2-med-1..5) with its new status
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-med-5"
+text = "Ibuprofen 400 mg tablet, 1 tablet by mouth three to four times daily as needed for abdominal pain"
+status = "stopped"
+end = "2026-09-19"
+note = "Stopped before chemotherapy (2026-09-19)."
+
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-med-1"
+text = "Metformin 1000 mg tablet, 1 tablet by mouth twice daily"
+status = "on-hold"
+start = "2026-09-19"
+note = "Held from the steroid prephase (2026-09-19)."
+
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-med-2"
+text = "Lisinopril 20 mg tablet, 1 tablet by mouth daily"
+status = "on-hold"
+start = "2026-09-19"
+note = "Held from the steroid prephase (2026-09-19)."
+
+[[layers.fhir.administrations]]
+text = "Prednisone 100 mg by mouth daily (prephase)"
+start = "2026-09-19"
+end = "2026-09-23"
+
+[[layers.fhir.administrations]]
+text = "Rasburicase IV (cycle 1, tumor lysis prophylaxis; G6PD normal)"
+start = "2026-09-24"
+
+[[layers.fhir.administrations]]
+text = "Pola-R-CHP (polatuzumab vedotin, rituximab, cyclophosphamide, doxorubicin, prednisone) with pegfilgrastim, 6 cycles"
+start = "2026-09-24"
+end = "2027-01-08"
+note = "Cycle 1 inpatient; cycles 2-6 outpatient on schedule; polatuzumab reduced to 1.4 mg/kg for cycles 5-6 (grade 2 neuropathy)."
+
+[[layers.fhir.procedures]]
+text = "Lumbar puncture (CSF cytology and flow cytometry)"
+date = "2026-09-25"
+
+[[layers.fhir.procedures]]
+text = "CT-guided core needle biopsy of residual retroperitoneal mass"
+date = "2027-02-22"
+
+[[layers.fhir.conditions]]
+text = "Chemotherapy-induced peripheral neuropathy, grade 1 (residual tingling in the toes)"
+note = "Grade 2 after cycle 4 (polatuzumab dose reduced), improved to grade 1."
+
+# ------------------------------------------------------------------------------------------------ Layer 3
 [[layers]]
 id = "L3"
 step = "L3-second-line"
@@ -103,12 +202,13 @@ answer_file = "/app/answers/L3_second_line.json"
 heading = "Second-line therapy and a molecular report"
 questions = [
   "Which second-line strategy do you recommend, and why?",
-  "He feels well and asks whether adding more drugs now would improve his chances. What do you advise (including any bridging therapy)?",
+  "He feels well and asks whether adding more drugs now would improve his chances. What do you advise for the period before definitive second-line therapy?",
   "How do you interpret the NGS report, and does it change treatment?",
 ]
 
 [[layers.documents]]
 name = "30_2027-05-12_interval_history.txt"
+kind = "interval_history"
 text = """
 INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-02-24 to 2027-05-12)
 
@@ -120,13 +220,52 @@ The patient chose a short-interval PET-CT instead of a repeat biopsy.
   MYC or BCL2 rearrangement.
 - Current status: ECOG 1. Creatinine 1.0 mg/dL, bilirubin 0.6 mg/dL, Hb 12.1 g/dL, ANC 3.4 x10^3/uL,
   platelets 188 x10^3/uL, LDH 410 U/L (135-225). Echo 2027-05-05: LVEF 58%. No neurological symptoms.
-- He has good family support (wife, daughter within 20 minutes) and is willing to stay near a treatment
-  center for several weeks.
-- First-line therapy (Pola-R-CHP) finished 2027-01-08; progression documented about 3.5 months later.
+- He has good family support (wife; daughter lives 20 minutes away) and can travel for appointments.
+- First-line therapy (Pola-R-CHP) finished 2027-01-08.
 """
 
 [[layers.documents]]
-name = "31_2027-05-08_ngs_report.txt"
+name = "31_2027-04-20_pet_ct.txt"
+kind = "pet_ct_report"
+text = """
+FDG PET-CT, SHORT-INTERVAL RESTAGING, 2027-04-20
+
+Comparison: end-of-treatment PET-CT 2027-02-17.
+- Retroperitoneal mass enlarged to 5.8 x 4.4 cm (previously 3.4 x 2.1 cm); SUVmax 18.3 (previously 6.2).
+- Two new FDG-avid liver lesions, 1.4 cm and 2.0 cm.
+Deauville score: 5.
+IMPRESSION: Enlarging, intensely FDG-avid retroperitoneal mass and new liver lesions, consistent with
+progressive disease.
+"""
+
+[[layers.documents]]
+name = "32_2027-04-28_pathology.txt"
+kind = "pathology_report"
+text = """
+SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RETROPERITONEAL MASS, 2027-04-28
+
+Specimen: core biopsies of the retroperitoneal mass, adequate for diagnosis.
+Immunohistochemistry: CD20 positive. CD19 positive. MYC 20% of tumor cells. BCL2 30% of tumor cells.
+Flow cytometry: CD19 and CD20 expressed on the abnormal B-cell population.
+FISH: MYC: no rearrangement detected. BCL2: no rearrangement detected.
+DIAGNOSIS: Diffuse large B-cell lymphoma, germinal center B-cell (GCB) phenotype, in a patient with
+previously treated diffuse large B-cell lymphoma.
+"""
+
+[[layers.documents]]
+name = "33_2027-05-05_echo.txt"
+kind = "echo_report"
+text = """
+TRANSTHORACIC ECHOCARDIOGRAM, 2027-05-05
+
+Indication: relapsed lymphoma, cardiac evaluation before further therapy.
+Left ventricular ejection fraction 58% (biplane). Normal left ventricular size and wall motion.
+IMPRESSION: Normal left ventricular systolic function.
+"""
+
+[[layers.documents]]
+name = "34_2027-05-08_ngs_report.txt"
+kind = "ngs_report"
 text = """
 TUMOR NEXT-GENERATION SEQUENCING (DNA, 523-gene hybrid-capture panel), specimen 2027-04-28
 Tumor content estimated 60%.
@@ -142,13 +281,72 @@ Comment: mutation pattern is typical of germinal-center-derived lymphoma. EZH2 Y
 hotspot mutation. Correlate clinically.
 """
 
+[layers.fhir]
+ecog = { date = "2027-05-12", value = 1 }
+lvef = { date = "2027-05-05", value = 58 }
+tmb = 6
+msi = "stable"
+genomics_date = "2027-04-28"   # NGS specimen date
+
+[[layers.fhir.labs]]
+panel = "Complete blood count and chemistry"
+date = "2027-05-12"
+time = "08:00"
+items = [
+  { key = "hb", value = 12.1 },
+  { key = "anc", value = 3.4 },
+  { key = "plt", value = 188 },
+  { key = "creatinine", value = 1.0 },
+  { key = "tbili", value = 0.6 },
+  { key = "ldh", value = 410 },
+]
+
+[[layers.fhir.variants]]
+gene = "EZH2"
+hgnc = "HGNC:3527"
+dna = "c.1937A>T"
+protein = "p.Y646F"
+type = "missense"
+vaf = 34
+
+[[layers.fhir.variants]]
+gene = "CREBBP"
+hgnc = "HGNC:2348"
+dna = "c.4336C>T"
+protein = "p.R1446*"
+type = "nonsense"
+vaf = 29
+
+[[layers.fhir.variants]]
+gene = "KMT2D"
+hgnc = "HGNC:7133"
+dna = "c.11563dup"
+protein = "p.Q3855fs"
+type = "frameshift"
+vaf = 31
+
+[[layers.fhir.variants]]
+gene = "TNFRSF14"
+hgnc = "HGNC:11912"
+dna = "deletion of exons 1-3"
+type = "deletion"
+
+[[layers.fhir.procedures]]
+text = "FDG PET-CT (short-interval restaging)"
+date = "2027-04-20"
+
+[[layers.fhir.procedures]]
+text = "CT-guided core needle biopsy of retroperitoneal mass"
+date = "2027-04-28"
+
+# ------------------------------------------------------------------------------------------------ Layer 4
 [[layers]]
 id = "L4"
 step = "L4-acute-admission"
 weight = 30
 date = "2027-07-07"
 answer_file = "/app/answers/L4_acute_admission.json"
-heading = "Acute admission"
+heading = "Acute deterioration (day +6, inpatient)"
 questions = [
   "What do you consider first (immediate priorities)?",
   "What are your differential diagnoses?",
@@ -157,12 +355,13 @@ questions = [
 
 [[layers.documents]]
 name = "40_2027-07-07_interval_history.txt"
+kind = "interval_history"
 text = """
 INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-05-12 to 2027-07-07)
 
 - Referred to the cellular therapy center. Leukapheresis 2027-05-27. Bridging: dexamethasone pulse and
   radiotherapy to the retroperitoneal mass (20 Gy in 5 fractions).
-- Lymphodepletion fludarabine/cyclophosphamide 2027-06-28 to 06-30 (fludarabine dose-adjusted).
+- Lymphodepletion fludarabine/cyclophosphamide 2027-06-26 to 06-28.
 - Axicabtagene ciloleucel infused 2027-07-01 (day 0).
 - Day 2: fever 38.6 C, normotensive, no oxygen (CRS grade 1). Day 3: tocilizumab 8 mg/kg x1; fever resolved.
 - Prophylaxis: levetiracetam 500 mg twice daily since day 0, acyclovir, fluconazole. Atovaquone for
@@ -171,15 +370,18 @@ INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-05-12 to 2027-07-07)
 
 [[layers.documents]]
 name = "41_2027-07-07_admission_note.txt"
+kind = "admission_note"
+time = "06:40"
 text = """
-ADMISSION / RAPID RESPONSE NOTE, DAY +6 (2027-07-07, 06:40), cellular therapy unit
+RAPID RESPONSE NOTE, DAY +6 (2027-07-07, 06:40), cellular therapy unit
 
 Overnight the nurse noted new confusion. This morning he reports a severe headache and has vomited twice.
 His wife says he could not find words for objects last night and his handwriting "looks strange".
 
 Vitals: T 38.9 C, HR 112, BP 96/58 (baseline 124/76), RR 22, SpO2 95% on room air.
-Neuro: GCS 13 (E3 V4 M6). Oriented to person only. ICE score 5/10 (cannot name 3 objects, cannot write a
-standard sentence, cannot count backwards from 100 by 10). No focal limb weakness. Pupils equal and
+Neuro: GCS 13 (E3 V4 M6). Oriented to person only. ICE score 2/10 (not oriented to year, month, city or
+hospital; names 1 of 3 objects; follows commands; cannot write a standard sentence; cannot count backwards
+from 100 by 10). No focal limb weakness. Pupils equal and
 reactive. No neck stiffness. No witnessed seizure activity. Mild tremor of both hands.
 Chest clear. Abdomen soft. Central line site clean.
 
@@ -192,16 +394,123 @@ Labs 05:30:
   CRP 214 mg/L (<5), ferritin 4,820 ng/mL (30-400)
   INR 1.3, fibrinogen 210 mg/dL (200-400)
   Lactate 2.6 mmol/L (0.5-2.0)
-Blood cultures: not yet drawn this episode.
 """
 
+[layers.fhir]
+export_time = "07:00"
+gcs = { date = "2027-07-07", time = "06:40", value = 13 }
+vitals = { date = "2027-07-07", time = "06:40", temp_c = 38.9, hr = 112, sbp = 96, dbp = 58, rr = 22, spo2 = 95 }
+organizations = [{ id = "cellular-therapy-center", name = "Synthetic Cellular Therapy Center" }]
+
+[[layers.fhir.labs]]
+panel = "Complete blood count, chemistry, inflammatory markers and coagulation"
+date = "2027-07-07"
+time = "05:30"
+items = [
+  { key = "wbc", value = 0.4 },
+  { key = "anc", value = 0.2 },
+  { key = "hb", value = 8.6 },
+  { key = "plt", value = 44 },
+  { key = "na", value = 131 },
+  { key = "k", value = 3.6 },
+  { key = "creatinine", value = 1.2 },
+  { key = "glucose", value = 242 },
+  { key = "crp", value = 214 },
+  { key = "ferritin", value = 4820 },
+  { key = "inr", value = 1.3 },
+  { key = "fibrinogen", value = 210 },
+  { key = "lactate", value = 2.6 },
+]
+
+[[layers.fhir.procedures]]
+text = "Leukapheresis (T-cell collection)"
+date = "2027-05-27"
+performer = "cellular-therapy-center"
+
+[[layers.fhir.procedures]]
+text = "Bridging radiotherapy to the retroperitoneal mass, 20 Gy in 5 fractions"
+when = "Before lymphodepletion"
+
+[[layers.fhir.administrations]]
+text = "Dexamethasone pulse (bridging)"
+when = "Before lymphodepletion"
+
+[[layers.fhir.administrations]]
+text = "Fludarabine and cyclophosphamide, lymphodepletion"
+start = "2027-06-26"
+end = "2027-06-28"
+
+[[layers.fhir.administrations]]
+text = "Axicabtagene ciloleucel IV infusion (day 0)"
+start = "2027-07-01"
+performer = "cellular-therapy-center"
+
+[[layers.fhir.administrations]]
+text = "Tocilizumab 8 mg/kg IV x1 (day 3, fever with CRS grade 1)"
+start = "2027-07-04"
+
+[[layers.fhir.medications]]
+text = "Levetiracetam 500 mg twice daily"
+status = "active"
+start = "2027-07-01"
+
+[[layers.fhir.medications]]
+text = "Acyclovir 400 mg twice daily"
+status = "active"
+
+[[layers.fhir.medications]]
+text = "Fluconazole 400 mg daily"
+status = "active"
+
+[[layers.fhir.medications]]
+text = "Insulin correction scale"
+status = "active"
+
+[[layers.fhir.medications]]
+text = "Ondansetron as needed"
+status = "active"
+
+[[layers.fhir.medications]]
+text = "Pantoprazole"
+status = "active"
+
+# home medications that are not on the 2027-07-07 inpatient list (keep these after the inpatient ones: their order sets the l4-med ids)
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-med-1"
+text = "Metformin 1000 mg tablet, 1 tablet by mouth twice daily"
+status = "unknown"
+note = "Not on the inpatient medication list 2027-07-07."
+
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-med-2"
+text = "Lisinopril 20 mg tablet, 1 tablet by mouth daily"
+status = "unknown"
+note = "Not on the inpatient medication list 2027-07-07."
+
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-med-3"
+text = "Atorvastatin 40 mg tablet, 1 tablet by mouth nightly"
+status = "unknown"
+note = "Not on the inpatient medication list 2027-07-07."
+
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-med-4"
+text = "Tamsulosin 0.4 mg capsule, 1 capsule by mouth nightly"
+status = "unknown"
+note = "Not on the inpatient medication list 2027-07-07."
+
+[[layers.fhir.requests]]
+text = "Atovaquone (Pneumocystis prophylaxis; sulfonamide allergy)"
+note = "Planned."
+
+# ------------------------------------------------------------------------------------------------ Layer 5
 [[layers]]
 id = "L5"
 step = "L5-goals-of-care"
 weight = 15
 date = "2027-10-06"
 answer_file = "/app/answers/L5_goals_of_care.json"
-heading = "Recovery and goals of care"
+heading = "Clinic visit after day +90 restaging"
 questions = [
   "What does his current performance status mean for treatment options?",
   "He declines further anticancer treatment. How do you proceed?",
@@ -210,6 +519,7 @@ questions = [
 
 [[layers.documents]]
 name = "50_2027-10-06_interval_history.txt"
+kind = "interval_history"
 text = """
 INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-07-07 to 2027-10-06)
 
@@ -223,7 +533,31 @@ INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-07-07 to 2027-10-06)
 """
 
 [[layers.documents]]
-name = "51_2027-10-06_clinic_note.txt"
+name = "51_2027-09-29_pet_ct.txt"
+kind = "pet_ct_report"
+text = """
+FDG PET-CT, DAY +90 AFTER CAR T-CELL INFUSION, 2027-09-29
+
+Comparison: day +30 PET-CT.
+- New FDG-avid liver lesions, the largest 3.8 cm.
+- Enlarging retroperitoneal disease.
+- New left pleural effusion.
+IMPRESSION: Progressive disease.
+"""
+
+[[layers.documents]]
+name = "52_2027-10-01_pathology.txt"
+kind = "pathology_report"
+text = """
+SURGICAL PATHOLOGY: CORE BIOPSY, LIVER LESION, 2027-10-01
+
+Immunohistochemistry: CD20 positive. CD19 dim (weak) expression.
+DIAGNOSIS: Diffuse large B-cell lymphoma, relapsed after CAR T-cell therapy.
+"""
+
+[[layers.documents]]
+name = "53_2027-10-06_clinic_note.txt"
+kind = "progress_note"
 text = """
 Clinic visit with the patient, his wife and daughter.
 He spends most of the day in bed or in a recliner, needs help with bathing and dressing, and walks
@@ -238,3 +572,51 @@ His wife says she is exhausted from caregiving. The daughter has taken unpaid le
 has used most of their savings on travel, lodging near the CAR-T center and co-payments, and they are
 behind on bills.
 """
+
+[layers.fhir]
+ecog = { date = "2027-10-06", value = 3 }
+weight = { date = "2027-10-06", kg = 61 }
+
+[[layers.fhir.medications]]
+text = "Oxycodone 5 mg every 6 hours as needed (right upper quadrant pain)"
+status = "active"
+
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-l4-med-1"
+text = "Levetiracetam 500 mg twice daily"
+status = "unknown"
+note = "Inpatient medication from the 2027-07-07 admission; current status not documented."
+
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-l4-med-2"
+text = "Acyclovir 400 mg twice daily"
+status = "unknown"
+note = "Inpatient medication from the 2027-07-07 admission; current status not documented."
+
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-l4-med-3"
+text = "Fluconazole 400 mg daily"
+status = "unknown"
+note = "Inpatient medication from the 2027-07-07 admission; current status not documented."
+
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-l4-med-4"
+text = "Insulin correction scale"
+status = "unknown"
+note = "Inpatient medication from the 2027-07-07 admission; current status not documented."
+
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-l4-med-5"
+text = "Ondansetron as needed"
+status = "unknown"
+note = "Inpatient medication from the 2027-07-07 admission; current status not documented."
+
+[[layers.fhir.medications]]
+id = "dlbcl-0003-v2-l4-med-6"
+text = "Pantoprazole"
+status = "unknown"
+note = "Inpatient medication from the 2027-07-07 admission; current status not documented."
+
+[[layers.fhir.procedures]]
+text = "Core needle biopsy of liver lesion"
+date = "2027-10-01"

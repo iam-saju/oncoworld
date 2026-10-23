@@ -1,0 +1,102 @@
+# HIDDEN. Journey dlbcl_0003, Layer 2 (after first-line). DRAFT_NEEDS_ONCOLOGIST.
+version = "dlbcl_0003_journey.L2.v0.1"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+passing_score = 0.75
+
+[[items]]
+id = "l2_pmr"
+domain = "response_interpretation"
+kind = "must"
+severity = "important"
+points = 20
+text = "The response classifies end-of-treatment Deauville 4 with reduced uptake as a partial metabolic response (not complete metabolic response) per Lugano, noting it may be residual lymphoma or post-treatment inflammation/necrosis."
+any = ["partial metabolic", "\\bpmr\\b", "partial response"]
+
+[[items]]
+id = "l2_repeat_biopsy"
+domain = "tissue"
+kind = "must"
+severity = "important"
+points = 20
+text = "The response recommends an adequate repeat biopsy (e.g. PET/CT-guided core targeting the most FDG-avid area, or surgical/laparoscopic) because histologic confirmation is needed before second-line therapy."
+# a sentence that reports the refusal ('declines a repeat biopsy', from the question and the note) is not a recommendation
+any = ['(?:^|[.;\n"])(?:(?!declin|refus|decided against|does not want|doesn.t want|not want)[^.;\n"])*?\b(?:repeat[^.;]{0,30}biops|re-?biops|(?:another|second|new|further)[^.;]{0,20}biops)']
+
+[[items]]
+id = "l2_respect_refusal"
+domain = "shared_decision"
+kind = "must"
+severity = "important"
+points = 15
+text = "The response respects the informed refusal of repeat biopsy, explains its implications, and documents a shared decision."
+any = ["respect", "informed (?:refusal|decision|choice)", "shared decision", "patient'?s (?:choice|wishes|decision|preference)"]
+
+[[items]]
+id = "l2_short_interval_pet_or_rt"
+domain = "shared_decision"
+kind = "must"
+severity = "important"
+points = 20
+text = "Without a repeat biopsy, the response proposes a reasonable path: short-interval repeat PET-CT (about 6-12 weeks) with biopsy if progression, and/or consolidative involved-site radiotherapy to the single residual site."
+any = ["(?:repeat|short[- ]interval|interval)[^.]{0,30}pet", "pet[^.]{0,30}(?:in|after)\\s*(?:6|8|10|12|six|eight)", "isrt", "involved[- ]site radiotherapy", "radiotherapy to the residual", "consolidat\\w* (?:radiation|radiotherapy)"]
+
+[[items]]
+id = "l2_no_cns_action"
+domain = "cns"
+kind = "should"
+severity = "minor"
+points = 10
+text = "The response states no routine CNS-directed action (no repeat LP/MRI or prophylaxis) is needed now while he is neurologically well, with prompt evaluation if symptoms develop."
+any = ["no (?:routine |further |additional )?(?:cns|lp|lumbar|mri|imaging|intrathecal)", "not (?:needed|indicated|required)[^.]{0,40}(?:cns|lumbar|mri)", "(?:cns|lumbar|mri)[^.]{0,60}not (?:needed|indicated|required)", "unless[^.]{0,40}symptom"]
+
+[[items]]
+id = "l2_car_t_awareness"
+domain = "planning"
+kind = "should"
+severity = "minor"
+points = 15
+text = "The response anticipates that biopsy-proven refractory/early-relapsed disease would make him a candidate for second-line CAR T-cell therapy and suggests early referral/discussion with a cellular-therapy center."
+any = ["car[- ]?t", "cellular therap"]
+
+[[items]]
+id = "l2_mn_declares_cure"
+domain = "response_interpretation"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response calls this a complete (metabolic) response / cure and moves to routine surveillance with no further evaluation of the residual uptake."
+# "resolution or Deauville 1 to 3 means complete metabolic response: observe" defines a future result; it does not call this scan a CMR
+except = ['(?:deauville|\bds)\s*(?:score\s*)?(?:of\s*)?[1-3]\s*(?:to|-|–|or)\s*[1-3]', '\bmeans?\s+(?:a\s+)?complete (?:metabolic |radiologic )?(?:response|remission)']
+# overall CMR / CR / remission / cure call; a CMR confined to named sites ("CMR in the liver lesions") is site-level,
+# "..., but I would not call it that" is a rejected differential, and "the goal is / aiming for CMR" is a goal, not a call
+affirm = [
+  '(?<!aim for )(?<!aiming for )(?<!aim of )(?<!goal of )(?<!goal is )(?<!goal is a )(?<!goal remains )(?<!goal remains a )(?<!achieve )(?<!achieve a )(?<!achieving )(?<!achieving a )(?<!toward )(?<!towards )(?<!attain )(?<!attain a )(?<!chance of )(?<!chance of a )\bcomplete (?:metabolic |radiologic |clinical )?(?:response|remission)\b(?!\s+(?:in|at|of|within|for)\s+(?!all\b|every\b|both\b|the residual\b)(?:the\s+|his\s+|her\s+)?(?:[\w/-]+,?\s+){0,5}?(?:lesions?|sites?|nod(?:e|es|al)|liver|hepatic|kidneys?|renal|adrenals?|spleen|splenic|marrow|bones?|extranodal)\b)(?![^.;]*\bbut (?:i|we) (?:would|will|do|did|can|could)(?:n.t| not)\b)',
+  '(?<!aim for )(?<!aiming for )(?<!aim of )(?<!goal of )(?<!goal is )(?<!goal is a )(?<!goal remains )(?<!goal remains a )(?<!achieve )(?<!achieve a )(?<!achieving )(?<!achieving a )(?<!toward )(?<!towards )(?<!attain )(?<!attain a )(?<!chance of )(?<!chance of a )\bcmr\b(?!\s+(?:in|at|of|within|for)\s+(?!all\b|every\b|both\b|the residual\b)(?:the\s+|his\s+|her\s+)?(?:[\w/-]+,?\s+){0,5}?(?:lesions?|sites?|nod(?:e|es|al)|liver|hepatic|kidneys?|renal|adrenals?|spleen|splenic|marrow|bones?|extranodal)\b)(?![^.;]*\bbut (?:i|we) (?:would|will|do|did|can|could)(?:n.t| not)\b)',
+  '\b(?:is|are|was|been|now|considered|deemed)\s+(?:\w+\s+)?cured\b(?![^.;]*\bbut (?:i|we) (?:would|will|do|did|can|could)(?:n.t| not)\b)',
+  '\bin (?:complete |full |continuous )?remission\b(?![^.;]*\bbut (?:i|we) (?:would|will|do|did|can|could)(?:n.t| not)\b)',
+]
+
+[[items]]
+id = "l2_mn_salvage_without_histology"
+domain = "planning"
+kind = "must_not"
+severity = "important"
+points = 10
+text = "The response starts salvage chemotherapy or CAR T-cell therapy now, on PET findings alone, without histologic confirmation or documented progression."
+# "Refer to CAR-T evaluation (...), with salvage chemotherapy and transplant if chemosensitive" is a referral and a
+# tissue-conditional algorithm, not salvage started now
+except = ['^\W*(?:\(\d+\)\s*)?refer\w*\b[^.;]{0,60}\b(?:evaluation|assessment|consult\w*|opinion|discussion)', '\bif (?:chemo-?sensitive|the (?:repeat )?biopsy|biopsy|tissue|histology|(?:it is |this is )?(?:confirmed|proven))\b']
+# salvage therapy put forward as the plan now: salvage chemo regimens, transplant, CAR T products, bispecifics.
+# negated ("do not start salvage"), conditional ("if biopsy confirms ... candidate for CAR T"), indication ("reserved
+# for biopsy-proven") and trial-evidence mentions do not count; salvage radiotherapy is not salvage systemic therapy
+recommend = [
+  '\bsalvage\b(?!\s+(?:radio|radiation|rt\b|isrt|surgery))',
+  '\br[- ]?(?:ice|dhap|dhax|dhaox|gdp|gemox|esh?ap|mini[- ]?bea?m)\b|\bgemox\b|\bgdp\b',
+  '(?<!discuss )(?<!discussion of )(?<!about )\bcar[- ]?t\b(?![- ]?(?:cell )?(?:cent(?:er|re)|program\w*|team|unit|clinic|service|coordinator|referral|eligib\w*|candidacy|evaluation|consult\w*|assessment))|\bchimeric antigen receptor|axicabtagene|\baxi[- ]?cel\b|lisocabtagene|\bliso[- ]?cel\b|tisagenlecleucel|\btisa[- ]?cel\b',
+  '\bautologous (?:stem[- ]cell )?transplant|\basct\b|\bauto[- ]?(?:hct|sct)\b|high[- ]dose chemotherapy',
+  '\bpola[- ]?br\b|polatuzumab[^.;]{0,30}bendamustine|tafasitamab|loncastuximab|glofitamab|epcoritamab',
+]
+
+[leak_check]
+# searched in everything the model can see at this layer (base chart + updates so far + instruction); the build fails on a hit
+forbidden_in_case = ["partial metabolic", "metabolic response", "car-t", "car t", "chimeric antigen", "involved-site", "isrt"]

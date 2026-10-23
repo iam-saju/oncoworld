@@ -1,0 +1,150 @@
+{
+ "id": "3model_fhir5_r1__K6aFJph",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_hgbl_double_hit": {
+   "met": true,
+   "quote": "Newly diagnosed high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit lymphoma)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dx_dlbcl_nos": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_gcb_hans": {
+   "met": true,
+   "quote": "CD10+ and BCL6+ with MUM1/IRF4- (germinal-center B-cell-like by Hans)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_plan_outdated": {
+   "met": true,
+   "quote": "The 09/14 plan of R-CHOP x6 alone is therefore NOT adequate and is superseded by the plan below.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_ii_bulky": {
+   "met": true,
+   "quote": "Ann Arbor stage IIA with bulky disease (stage II-X).",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iii_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "bio_double_expressor_secondary": {
+   "met": true,
+   "quote": "but the classification is driven by the genetics, not the IHC",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi1_biology_dominates": {
+   "met": true,
+   "quote": "The conventional indices look deceptively favorable and the biology overrides them. Standard IPI = 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_intensive_curative": {
+   "met": false,
+   "quote": "INDUCTION: R-CHOP-21 for 6 cycles",
+   "confidence": "medium",
+   "note": "Chooses R-CHOP x6 plus HD-MTX/R-MPV consolidation, with DA-EPOCH-R only as fallback; not an accepted intensive regimen."
+  },
+  "mn_rchop_preferred": {
+   "met": false,
+   "quote": "CONSOLIDATION (the change from the 09/14 plan): after 6 cycles",
+   "confidence": "medium",
+   "note": "R-CHOP is the induction, but augmented with IT and HD-MTX consolidation, so not R-CHOP alone."
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_consolidation": {
+   "met": true,
+   "quote": "consider a biopsy of the hot area and involved-site radiotherapy to the mediastinum and right cervical bed",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": false,
+   "quote": "I do NOT recommend routine brain MRI in this asymptomatic patient",
+   "confidence": "high",
+   "note": "Plans LP with CSF cytology/flow but explicitly declines baseline brain MRI."
+  },
+  "cns_prophylaxis": {
+   "met": true,
+   "quote": "CNS prophylaxis is indicated and is part of my regimen",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_cns_dismissed": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_pet_lugano": {
+   "met": true,
+   "quote": "Deauville 1-3 = complete metabolic response (Lugano CR)",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "primary G-CSF with every cycle (pegfilgrastim 6 mg on day 2",
+   "confidence": "medium",
+   "note": "G-CSF every cycle given, but regimen is R-CHOP not DA-EPOCH-R."
+  },
+  "sup_tls": {
+   "met": true,
+   "quote": "allopurinol 300-600 mg daily from 2 days before through 3 days after each R-CHOP dose, rasburicase if uric acid rises",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_central_access_infusion": {
+   "met": false,
+   "quote": "the port (placed 09/18, left IJ, tip at cavoatrial junction) should continue to be used for all infusions",
+   "confidence": "medium",
+   "note": "Port use noted but not tied to a 96-hour DA-EPOCH-R infusion since that regimen is not chosen."
+  },
+  "sup_fertility": {
+   "met": true,
+   "quote": "expedited sperm cryopreservation before or immediately prior to the first dose",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_svc_airway": {
+   "met": true,
+   "quote": "strict return precautions for worsening facial/upper-extremity swelling, headache, visual change, stridor",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg neg, HBcAb neg, HBsAb pos = immunized with negligible reactivation risk",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "LVEF 60% and GLS -20% (09/11, a valid pre-anthracycline baseline)",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_intensive": {
+   "met": true,
+   "quote": "Fitness supports full-dose intensified therapy",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

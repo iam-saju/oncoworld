@@ -1,0 +1,53 @@
+{
+  "diagnosis": "Diffuse large B-cell lymphoma, NOS, germinal-center B-cell (GCB) phenotype by the Hans algorithm (CD10+, BCL6+, MUM1-). EBER negative; CD5 negative; no low-grade (follicular) component.",
+  "stage": "Lugano (Ann Arbor) stage IA: a single nodal region (right cervical levels II-III, contiguous), with no B symptoms (denies fevers, night sweats and weight loss). Non-bulky: largest node 3.1 cm, well below the 7.5 cm threshold used in limited-stage trials. No extranodal, splenic or marrow disease on PET-CT.",
+  "biology": "Neither double-expressor nor double-hit. MYC 15% and BCL2 30% by IHC are below the 40%/50% thresholds. FISH shows no MYC, BCL2 or BCL6 rearrangement, so this is not high-grade B-cell lymphoma with MYC and BCL2 rearrangements. Ki-67 ~55%.",
+  "prognosis": "IPI 0 of 5, low risk: age 45 (<=60), LDH normal (190 U/L), ECOG 0, stage I, no extranodal sites. CNS-IPI 0, low risk. FLYER-eligible.",
+  "first_line_treatment": "Curative-intent immunochemotherapy. Recommend R-CHOP for 4 cycles followed by 2 additional doses of rituximab, without radiotherapy (FLYER regimen).",
+  "cns_risk": "Low CNS-relapse risk: CNS-IPI 0 and no high-risk extranodal sites. CNS prophylaxis is not indicated.",
+  "response_assessment": "Interim PET-CT after 4 cycles of R-CHOP, before the two rituximab doses. End-of-treatment FDG PET-CT 6-8 weeks after the last dose, read with Lugano 2014 criteria and the Deauville 5-point scale.",
+  "pretreatment_workup": "She is on a combined pill. Hepatitis B serology done: HBsAg and anti-HBc nonreactive. HCV and HIV nonreactive. Echo LVEF 63%, so anthracycline is permitted. Organ function and blood counts normal.",
+  "supportive_care": "Stop the combined oral contraceptive now and switch to a levonorgestrel IUD today: estrogen-containing contraception is contraindicated in migraine with aura, and adds venous thromboembolism risk on top of active lymphoma and chemotherapy. Fertility counselling offered. Tumor lysis risk is low. Antiemetics per regimen; avoid codeine.",
+  "fitness_and_goals": "Fit: ECOG 0 with no limiting comorbidity, so curative-intent therapy is appropriate.",
+  "missing_information": [
+    "Confirmation that the pregnancy test was actually completed before cycle 1"
+  ],
+  "decisions": {
+    "stage": "I",
+    "diagnosis": "DLBCL NOS, GCB type (Hans); not double-expressor, not double-hit",
+    "intent": "curative",
+    "regimen": "R-CHOP-21 x 4 cycles, then rituximab 375 mg/m2 x 2 doses (FLYER)",
+    "cycles": 4,
+    "cycle1_dose_percent": 100,
+    "radiotherapy": "none",
+    "orders_now": [
+      "Pregnancy test deferred until after cycle 1 if clinically indicated",
+      "Stop combined oral contraceptive now",
+      "Gynecology referral to place a levonorgestrel IUD today",
+      "R-CHOP-21 x 4: rituximab, cyclophosphamide, doxorubicin, vincristine on day 1; prednisone days 1-5; every 21 days",
+      "Rituximab 375 mg/m2 IV every 21 days x 2 doses after cycle 4",
+      "Antiemetics per regimen; avoid codeine"
+    ],
+    "conditional_orders": [
+      "if interim PET-CT after cycle 4 is Deauville 4-5: biopsy or consolidative ISRT instead of proceeding as planned"
+    ],
+    "lab_monitoring": [
+      {
+        "tests": "CBC with differential, CMP, LDH, uric acid",
+        "every_hours": 504,
+        "duration_hours": null
+      }
+    ]
+  },
+  "_expect": {
+    "passed": true,
+    "dangerous": [],
+    "must_unmet": [
+      "work_pregnancy_test"
+    ],
+    "must_met": [
+      "sup_stop_coc_switch"
+    ],
+    "_label": "red-team: pregnancy test explicitly deferred until after cycle 1 in orders_now, never ordered now; structured must not override the prose absence with a false met"
+  }
+}

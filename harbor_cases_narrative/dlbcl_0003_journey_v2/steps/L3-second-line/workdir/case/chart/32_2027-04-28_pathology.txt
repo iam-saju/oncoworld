@@ -1,0 +1,8 @@
+SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RETROPERITONEAL MASS, 2027-04-28
+
+Specimen: core biopsies of the retroperitoneal mass, adequate for diagnosis.
+Immunohistochemistry: CD20 positive. CD19 positive. MYC 20% of tumor cells. BCL2 30% of tumor cells.
+Flow cytometry: CD19 and CD20 expressed on the abnormal B-cell population.
+FISH: MYC: no rearrangement detected. BCL2: no rearrangement detected.
+DIAGNOSIS: Diffuse large B-cell lymphoma, germinal center B-cell (GCB) phenotype, in a patient with
+previously treated diffuse large B-cell lymphoma.

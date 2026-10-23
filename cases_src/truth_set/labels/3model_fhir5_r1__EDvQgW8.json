@@ -1,0 +1,180 @@
+{
+ "id": "3model_fhir5_r1__EDvQgW8",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "germinal-center B-cell-like (GCB) subtype by both the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_i": {
+   "met": true,
+   "quote": "Ann Arbor/Lugano stage IA. FDG PET-CT 2026-09-03 shows a single contiguous right cervical nodal region",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_nonbulky_no_b": {
+   "met": true,
+   "quote": "Disease is non-bulky (largest node 3.1 cm; bulky = >=10 cm)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_pet_no_marrow_biopsy": {
+   "met": true,
+   "quote": "NCCN does not require marrow biopsy when PET shows no marrow involvement",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_overstaged": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "it is NOT a double-expressor by the Hans definition, since MYC immunostaining is 15% (above 10%) but BCL2 is 30% (below the 50% threshold)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_low": {
+   "met": true,
+   "quote": "IPI 0 of 5: age 45 (>=0, <=60), stage I (0), ECOG 0 (0), LDH normal (0), no extranodal sites (0)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_low": {
+   "met": true,
+   "quote": "Low. CNS-IPI 0 of 6",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_rchop": {
+   "met": true,
+   "quote": "Decision: 4 cycles of R-CHOP 21 with primary G-CSF support and NO radiotherapy.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_flyer_4rchop_2r": {
+   "met": true,
+   "quote": "Decision: 4 cycles of R-CHOP 21 with primary G-CSF support and NO radiotherapy.",
+   "confidence": "medium",
+   "note": "4 R-CHOP without RT and with PET-directed action, but omits the 2 extra rituximab doses of FLYER."
+  },
+  "tx_no_rt_goals": {
+   "met": true,
+   "quote": "Omitting radiation is the option that best matches her explicit wish to avoid neck irradiation",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_alternatives": {
+   "met": true,
+   "quote": "my alternative is 3 cycles R-CHOP plus 3 cycles R with ISRT 30 Gy to the right cervical field",
+   "confidence": "medium",
+   "note": "Alternative is a garbled 3 R-CHOP + 3 R + ISRT rather than the standard R-CHOP x3 + ISRT."
+  },
+  "mn_six_cycles": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_pola_preferred": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "no DA-R-EPOCH-R (no double-hit)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_observation_or_rt_alone": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_low_no_prophylaxis": {
+   "met": true,
+   "quote": "Decision: no CNS prophylaxis, meaning no intrathecal methotrexate and no high-dose systemic methotrexate, and no routine brain MRI or CSF sampling.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Deauville/Lugano criteria on FDG PET-CT.",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_interim_pet": {
+   "met": true,
+   "quote": "Deauville 4-5 means image-guided core or excisional biopsy of the most FDG-avid lesion BEFORE changing therapy",
+   "confidence": "medium",
+   "note": "Interim PET is after cycle 2, not after cycle 4; the post-cycle-4 end-of-treatment PET does trigger biopsy/RT."
+  },
+  "work_pregnancy_test": {
+   "met": true,
+   "quote": "Remaining before cycle 1: (1) a negative pregnancy test",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "so she is immune to HBV and needs neither antiviral prophylaxis nor HBV DNA monitoring",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "cumulative doxorubicin 200 mg/m2 (4 cycles x 50 mg/m2) with low risk given LVEF 63%",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_coc_switch": {
+   "met": true,
+   "quote": "stop the combined oral contraceptive now (also contraindicated by migraine with aura); use a progestin-only or non-hormonal method",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_coc_reason": {
+   "met": true,
+   "quote": "estrogen-containing contraception is contraindicated in migraine with aura (ischemic stroke risk) and it increases thromboembolic risk during chemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_fertility_counselling": {
+   "met": true,
+   "quote": "oncofertility referral with an AMH for oocyte or embryo cryopreservation",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_goals": {
+   "met": true,
+   "quote": "She is fully fit for full-dose R-CHOP; no dose reduction or comorbidity-driven modification is indicated.",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

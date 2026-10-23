@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL, NOS)",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "Immunophenotype is non-germinal-center B-cell-like (non-GCB/ABC-like) by the Hans algorithm",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor stage IIIB with splenic involvement (IIIS), bulky.",
+  "source": "judge"
+ },
+ "stage_spleen_nodal": {
+  "met": true,
+  "quote": "with multiple FDG-avid splenic lesions; because the spleen is a lymphatic organ, this remains stage III rather than IV.",
+  "source": "judge"
+ },
+ "stage_bulky_b_symptoms": {
+  "met": true,
+  "quote": "Bulky disease is present (retroperitoneal mass 11.0 cm, greater than 10 cm). B symptoms are present (fever to 38.5 C, drenching night sweats)",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "because the spleen is a lymphatic organ, this remains stage III rather than IV.",
+  "source": "judge"
+ },
+ "mn_spleen_extranodal_count": {
+  "met": false,
+  "quote": "IPI 3 (high-intermediate) and NCCN-IPI 4 (high) reflect age over 60, stage III, and LDH 735 U/L",
+  "source": "judge"
+ },
+ "mol_de_not_dh": {
+  "met": true,
+  "quote": "It is a double-expressor lymphoma by immunohistochemistry (BCL2 about 80%, MYC about 50%, Ki-67 about 85%), but FISH is negative for MYC, BCL2, and BCL6 rearrangements, so it is not double-hit",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "FISH shows no MYC, BCL2, or BCL6 rearrangement, excluding double-hit lymphoma; the morphology is DLBCL, NOS rather than high-grade B-cell lymphoma.",
+  "source": "judge"
+ },
+ "mn_denies_double_expressor": {
+  "met": false,
+  "quote": "It is a double-expressor lymphoma by immunohistochemistry (BCL2 about 80%, MYC about 50%, Ki-67 about 85%)",
+  "source": "judge"
+ },
+ "prog_ipi_3": {
+  "met": true,
+  "quote": "IPI 3 (high-intermediate) and NCCN-IPI 4 (high) reflect age over 60, stage III, and LDH 735 U/L, which is 3.3 times the upper limit of normal",
+  "source": "judge"
+ },
+ "prog_cns_ipi_intermediate": {
+  "met": false,
+  "quote": "CNS-IPI 2 (age over 60 and stage III), which is intermediate risk (approximately 4% 2-year CNS relapse).",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Curative intent. I recommend polatuzumab vedotin plus R-CHP (pola-R-CHP) every 21 days for 6 cycles: polatuzumab vedotin 1.8 mg/kg IV day 1 (replacing vincristine), rituximab 375 mg/m2 IV day 1, cyclophosphamide 750 mg/m2",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "This is a preferred NCCN category 1 option for advanced DLBCL with IPI at least 2, and in POLARIX it improved 2-year progression-free survival versus R-CHOP",
+  "source": "judge"
+ },
+ "tx_isrt_residual_bulk": {
+  "met": true,
+  "quote": "if Deauville 4-5 at the bulky site, biopsy and consider involved-site radiation.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Cure remains the goal, and I would not treat this as palliative.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I would not use DA-EPOCH-R: FISH is negative for MYC/BCL2/BCL6 rearrangements, so this is not double-hit lymphoma",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "He is fit for full-dose curative anthracycline-based therapy: age 62, ECOG 1, fully independent, working part-time, LVEF 58%",
+  "source": "judge"
+ },
+ "hbv_prophylaxis": {
+  "met": false,
+  "quote": "monitor HBV DNA every 2-3 months during rituximab and for 6-12 months afterward, and start entecavir or tenofovir if DNA becomes detectable.",
+  "source": "judge"
+ },
+ "hbv_dna_lft_monitoring": {
+  "met": true,
+  "quote": "Before cycle 1 I still need: quantitative HBV DNA (he is anti-HBc positive)",
+  "source": "judge"
+ },
+ "mn_no_hbv_action": {
+  "met": false,
+  "quote": "Hepatitis B: because anti-HBc is positive but HBsAg is negative and anti-HBs is positive, monitor HBV DNA every 2-3 months during rituximab",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "I will not give intrathecal chemotherapy or high-dose methotrexate prophylaxis, and I will not perform a routine baseline lumbar puncture with CSF flow cytometry.",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "I will not give intrathecal chemotherapy or high-dose methotrexate prophylaxis",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT will be obtained 6-8 weeks after cycle 6 and interpreted by Lugano 2014/Deauville criteria.",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "If the 11-cm retroperitoneal site is Deauville 4-5, I will biopsy it to distinguish residual lymphoma from inflammation before declaring treatment failure, then use involved-site radiation if residual disease is confirmed; if biopsy is negative, observe.",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis syndrome: he is high risk because of the 11-cm mass, LDH greater than 3 times the upper limit of normal, and Ki-67 85%. Start allopurinol 300 mg daily 1-2 days before cycle 1",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Febrile neutropenia prophylaxis: pegfilgrastim 6 mg SC on day 2 of each cycle, given age over 60 and the high-risk regimen.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "He is fit for full-dose curative anthracycline-based therapy: age 62, ECOG 1, fully independent, working part-time, LVEF 58%",
+  "source": "judge"
+ },
+ "fit_full_dose": {
+  "met": true,
+  "quote": "He is fit for full-dose curative anthracycline-based therapy: age 62, ECOG 1, fully independent, working part-time, LVEF 58%, eGFR 96 mL/min/1.73 m2, normal liver enzymes",
+  "source": "judge"
+ },
+ "miss_hbv_dna": {
+  "met": true,
+  "quote": "Baseline quantitative HBV DNA is not in the record despite HBsAg-negative/anti-HBc-positive status; this is needed before rituximab and will determine whether antiviral prophylaxis is started.",
+  "source": "judge"
+ }
+}

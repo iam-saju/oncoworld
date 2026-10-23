@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL, NOS), germinal-center B-cell-like phenotype by the Hans algorithm (CD10+, BCL6+, MUM1/IRF4 negative).",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IV, B symptoms present (IV-B), bulky disease. Basis is FDG PET-CT 2026-09-05 (Lugano 2014).",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "plus non-contiguous extranodal disease in the right kidney (3.2 cm, SUVmax 19.6), left adrenal (2.6 cm, SUVmax 17.2) and liver segment VI (1.8 cm, SUVmax 15.0). Liver involvement by itself makes this stage IV.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms: night sweats most nights and about 11% weight loss (79 to 70.2 kg over roughly 2 months).",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "Ann Arbor stage IV, B symptoms present (IV-B), bulky disease.",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "FISH shows no MYC, BCL2 or BCL6 rearrangement, so this is not double-hit or triple-hit lymphoma. IHC MYC 20% and BCL2 30% are below the usual double-expressor thresholds (MYC 40%, BCL2 50%).",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "FISH shows no MYC, BCL2 or BCL6 rearrangement, so this is not double-hit or triple-hit lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "IHC MYC 20% and BCL2 30% are below the usual double-expressor thresholds (MYC 40%, BCL2 50%).",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "IPI is 5 of 5 (age over 60, ECOG 2, LDH above ULN, stage IV, more than one extranodal site: liver, kidney, adrenal), which is the high-risk group.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "Combined with age over 60, stage IV, elevated LDH and an IPI of 5, he is in the high-risk group on the CNS-IPI (recheck the score with the published calculator).",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Start curative-intent immunochemotherapy with polatuzumab vedotin plus R-CHP (Pola-R-CHP, POLARIX regimen), 6 cycles of 21 days",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "he is high-risk by IPI, and POLARIX showed improved progression-free survival over R-CHOP in IPI 2-5.",
+  "source": "judge"
+ },
+ "tx_prephase_steroid": {
+  "met": false,
+  "quote": "prednisone 100 mg PO days 1-5.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Start curative-intent immunochemotherapy with polatuzumab vedotin plus R-CHP",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I am not recommending DA-EPOCH-R (no double-hit biology, more time and toxicity)",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "Full doses, not empiric reduction: he is 67, ECOG 2 and self-caring",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": true,
+  "quote": "High. Right renal and left adrenal involvement are CNS-relapse risk factors on their own. Combined with age over 60, stage IV, elevated LDH and an IPI of 5, he is in the high-risk group on the CNS-IPI",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": true,
+  "quote": "Before the first dose: MRI brain and spine with contrast (macrocyclic group II agent is acceptable at eGFR about 50), and lumbar puncture with cell count, protein, glucose, cytology and flow cytometry.",
+  "source": "judge"
+ },
+ "cns_prophylaxis_renal": {
+  "met": true,
+  "quote": "I am not using high-dose IV methotrexate: CrCl is about 47 and falling with NSAID exposure. I would reconsider it only if renal function recovers to CrCl of at least 60 and the tumor board prefers it.",
+  "source": "judge"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "I am not using high-dose IV methotrexate: CrCl is about 47 and falling with NSAID exposure.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT 3-6 weeks after cycle 6 (Lugano 2014): Deauville 1-3 is complete metabolic response; Deauville 4-5 with residual mass needs biopsy or tumor-board decision",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Deauville 4-5 with residual mass needs biopsy or tumor-board decision on consolidative radiotherapy to the original bulky site.",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": false,
+  "quote": "Hydration: isotonic IV fluid starting 24-48 hours before cycle 1 and continuing for 48-72 hours, about 2-3 L/m2/day, targeting urine output of at least 100 mL/h",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": true,
+  "quote": "If G6PD is normal: rasburicase 0.2 mg/kg IV daily (up to 5 days, per institutional protocol) starting before cycle 1, because uric acid is already elevated at baseline.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "G-CSF: primary prophylaxis with pegfilgrastim each cycle (day 4 or on-body injector), because age over 65, ECOG 2 and CKD place him at high febrile-neutropenia risk.",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "Renal: stop NSAID, hold ACE inhibitor, hydrate, and see nephrology if creatinine rises 0.3 mg/dL or more",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "Prednisone 100 mg x 5 days per cycle will raise glucose substantially. Start basal insulin with correctional insulin on prednisone days, involve a diabetes educator, and resume metformin at 500 mg twice daily only when eGFR is at least 45",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "hepatitis B surface antigen negative, core antibody negative, surface antibody positive means vaccinated and immune, so no antiviral prophylaxis is needed.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "Favorable features are GCB phenotype, no MYC/BCL2/BCL6 rearrangement, normal bilirubin and marrow, and normal LVEF (60%).",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": true,
+  "quote": "I judge him fit for curative-intent full-dose R-CHP-based therapy with G-CSF, and I am not recommending upfront dose reduction.",
+  "source": "judge"
+ }
+}

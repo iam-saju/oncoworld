@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Newly diagnosed diffuse large B-cell lymphoma, not otherwise specified (DLBCL-NOS; ICD-10-CM C83.30, SNOMED CT 109969005), non-germinal-center B-cell (non-GCB) phenotype by the Hans algorithm.",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "non-GCB (CD10 negative, BCL6 positive, MUM1 positive in ~70% of cells, Hans algorithm)",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Lugano stage III with splenic involvement (IIIS), PET-CT staged (2026-09-05), equivalent to Ann Arbor III2-S; bulky; B symptoms present.",
+  "source": "judge"
+ },
+ "stage_spleen_nodal": {
+  "met": true,
+  "quote": "the spleen is a lymphatic organ, so splenic involvement is annotated 'S' and does not make this stage IV",
+  "source": "judge"
+ },
+ "stage_bulky_b_symptoms": {
+  "met": true,
+  "quote": "The 11 cm retroperitoneal mass meets the >=10 cm definition of bulky disease.",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "the spleen is a lymphatic organ, so splenic involvement is annotated 'S' and does not make this stage IV",
+  "source": "judge"
+ },
+ "mn_spleen_extranodal_count": {
+  "met": false,
+  "quote": "extranodal sites >1 = 0 (spleen is a lymphatic organ, not an extranodal site) - total 2.",
+  "source": "judge"
+ },
+ "mol_de_not_dh": {
+  "met": false,
+  "quote": "IHC double expressor - MYC protein in ~50% of tumor cells (>=40%) and BCL2 protein in ~80% (>=50%); ... FISH is negative for MYC, BCL2 and BCL6 rearrangements, so this is NOT double-hit/triple-hit disease",
+  "source": "judge_unquoted"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "FISH is negative for MYC, BCL2 and BCL6 rearrangements, so this is NOT double-hit/triple-hit disease",
+  "source": "judge"
+ },
+ "mn_denies_double_expressor": {
+  "met": false,
+  "quote": "Two adverse biologic features: (1) IHC double expressor - MYC protein in ~50% of tumor cells (>=40%) and BCL2 protein in ~80% (>=50%)",
+  "source": "judge"
+ },
+ "prog_ipi_3": {
+  "met": false,
+  "quote": "International Prognostic Index 2 (low-intermediate risk) and NCCN-IPI approximately 3 (high-intermediate risk)",
+  "source": "judge"
+ },
+ "prog_cns_ipi_intermediate": {
+  "met": true,
+  "quote": "CNS-IPI = 3 points: age >60 (1), LDH above ULN (1), stage III (1); no points for ECOG >=2, >1 extranodal site, or kidney/adrenal involvement",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Six cycles of polatuzumab vedotin + R-CHP (pola-R-CHP) every 21 days, started as soon as possible after the tumor board",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "he is advanced stage (III) with IPI 2, which is exactly the POLO population in which NCCN lists pola-R-CHP as a preferred regimen for previously untreated DLBCL with IPI 2-5",
+  "source": "judge"
+ },
+ "tx_isrt_residual_bulk": {
+  "met": false,
+  "quote": "Deauville 4-5 (partial metabolic response) requires biopsy of the residual FDG-avid site to distinguish residual lymphoma from scar/inflammation, and a positive biopsy triggers salvage chemoimmunotherapy and transplant or CAR-T as above",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "He is fit enough for full-dose curative therapy.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I would not substitute DA-R-EPOCH-R (no MYC/BCL2 rearrangement)",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "Therefore I do not see an indication for dose reduction, for a less intensive regimen, or for a geriatric- oncology pathway",
+  "source": "judge"
+ },
+ "hbv_prophylaxis": {
+  "met": false,
+  "quote": "resolved HBV infection, no antiviral prophylaxis required, but anti-HBc reactive therapy warrants monitoring",
+  "source": "judge"
+ },
+ "hbv_dna_lft_monitoring": {
+  "met": false,
+  "quote": "hepatitis B DNA quantitation and continued HBsAg/anti-HBc/anti-HBs monitoring (resolved HBV infection, no antiviral prophylaxis required, but anti-HCV therapy warrants monitoring)",
+  "source": "judge_unquoted"
+ },
+ "mn_no_hbv_action": {
+  "met": true,
+  "quote": "resolved HBV infection, no antiviral prophylaxis required, but anti-CD20 therapy warrants monitoring",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": false,
+  "quote": "Intermediate CNS relapse risk; CNS prophylaxis is indicated and a brain MRI is required before treatment.",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": true,
+  "quote": "give intrathecal cytarabine plus methotrexate (with dexamethasone) with each of the 6 systemic cycles, or per institutional protocol on cycle days 1 and 4",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT 4-6 weeks after cycle 6 (~February-March 2027): Deauville 1-3 is complete metabolic response (Lugano CR)",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Deauville 4-5 (partial metabolic response) requires biopsy of the residual FDG-avid site to distinguish residual lymphoma from scar/inflammation, and a positive biopsy triggers salvage chemoimmunotherapy",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis prophylaxis given bulky disease with rising LDH and uric acid at the upper limit of normal: allopurinol 300 mg daily starting 2 days before cycle 1 and continuing through cycle 1, oral/IV hydration aiming for urine output >2 mL/kg/h, and twice-weekly monitoring of uric acid, potassium, phosphate, calcium and creatinine",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Growth factor support is mandatory: pegfilgrastim 6 mg SC on day 2 of every cycle (age >60, bulky disease, and the polatuzumab/R-CHP backbone all confer high neutropenia risk).",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "his baseline echocardiogram is normal (LVEF 58%, GLS -20%), so full-dose doxorubicin is appropriate",
+  "source": "judge"
+ },
+ "fit_full_dose": {
+  "met": true,
+  "quote": "He is fit enough for full-dose curative therapy.",
+  "source": "judge"
+ },
+ "miss_hbv_dna": {
+  "met": true,
+  "quote": "No quantitative HBV DNA and no repeat HBsAg/anti-HBc/anti-HBs after 2026-09-03 (anti-HBc reactive with anti-HBs reactive suggests resolved infection); monitoring plan for anti-CD20 therapy is not documented.",
+  "source": "judge"
+ }
+}

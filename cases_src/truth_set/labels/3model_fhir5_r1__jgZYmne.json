@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r1__jgZYmne",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL, NOS), germinal-center B-cell-like (GCB) immunophenotype by the Hans algorithm.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IVB. There is a large (9.4 cm) conglomerate",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "with three extranodal sites: right kidney, left adrenal gland, and liver segment VI",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms are present: drenching night sweats and greater than 10% unintentional weight loss",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "so it is not high-grade B-cell lymphoma with double-hit/triple-hit biology; it is also not a double-expressor",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "Standard IPI is 5/5 (age >60, stage III/IV, more than one extranodal site, ECOG performance status 2, elevated LDH)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "CNS-IPI is also 6/6 (age >60, ECOG >1, stage III/IV, more than one extranodal site, kidney/adrenal involvement, elevated LDH)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "I recommend curative-intent Pola-R-CHP for 6 cycles every 21 days",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "If polatuzumab is not accessible or not approved, R-CHOP for 6 cycles is the appropriate alternative standard.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "I would not default to reduced-intensity R-miniCHOP.",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "High risk: CNS-IPI 6/6, including kidney and adrenal involvement",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": false,
+   "quote": "MRI brain is indicated if there are neurologic symptoms or if CSF is positive",
+   "confidence": "medium",
+   "note": "LP with cytology/flow is planned but baseline MRI brain is made conditional, not routine."
+  },
+  "cns_prophylaxis_renal": {
+   "met": true,
+   "quote": "because intravenous high-dose methotrexate is relatively unattractive with an eGFR of about 50 mL/min and ECOG 2",
+   "confidence": "medium",
+   "note": "Commits to IT MTX rather than presenting prophylaxis as individualized, but does tie HD-MTX to renal function and acknowledges uncertain benefit."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Restage with FDG PET-CT from skull base to mid-thigh about 6-8 weeks after cycle 6, interpreted using Lugano 2014/Deauville criteria.",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Deauville 4-5 requires correlation with CT; if a residual mass is present and accessible, biopsy",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_prophylaxis": {
+   "met": false,
+   "quote": "monitor potassium, phosphate, calcium, uric acid, and creatinine frequently",
+   "confidence": "medium",
+   "note": "Hydration and allopurinol ordered, but lab frequency is only 'frequently' without the q6-12h specification required."
+  },
+  "sup_rasburicase_g6pd": {
+   "met": false,
+   "quote": "check G6PD before considering rasburicase 0.2 mg/kg for cycle 1 if hyperuricemia persists",
+   "confidence": "medium",
+   "note": "G6PD checked but rasburicase only conditional/second-line after allopurinol rather than favored."
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Use primary G-CSF prophylaxis with pegfilgrastim 6 mg on day 2 because of age >65",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "Stop ibuprofen and avoid all NSAIDs because of renal dysfunction, bleeding risk, and fever masking; use acetaminophen",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "monitor glucose closely because prednisone will worsen his HbA1c of 7.4%",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "hepatitis B serologies (HBsAg negative, anti-HBc negative, anti-HBs positive, indicating immunity and no need for antiviral prophylaxis)",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "He has no absolute contraindication to full-dose anthracycline-based therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "his performance status is probably worsened by the lymphoma and B symptoms",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

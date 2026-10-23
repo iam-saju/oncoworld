@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, NOS (DLBCL, NOS), germinal-center B-cell-like (GCB) subtype by the Hans algorithm, primary/de novo presentation, previously untreated.",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IV, B-symptomatic, with three extranodal organs involved.",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "Sites: right renal cortex, left adrenal gland, and liver segment VI (3 extranodal sites).",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "drenching night sweats most nights, unintentional weight loss from 79 kg to 70.2 kg (11%, 8.8 kg over about 2 months), low-grade fever to 37.9 C",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "Ann Arbor stage IV, B-symptomatic, with three extranodal organs involved.",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "this is NOT high-grade B-cell lymphoma with MYC and/or BCL2 rearrangements, and it does NOT meet the immunohistochemical double-expressor definition (MYC 20% is below the 30-40% threshold; BCL2 30% is below the >=50% threshold",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "this is NOT high-grade B-cell lymphoma with MYC and/or BCL2 rearrangements",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "Double-expressor status: NEGATIVE. MYC IHC 20% (<30-40%) and BCL2 IHC 30% (<50%)",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "IPI = 5 of 5: age >60 (67), LDH elevated (~5x ULN), ECOG PS 2, stage III/IV, more than one extranodal site.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "CNS-IPI = 6: age >60, elevated LDH, stage III/IV, more than one extranodal site, and kidney/adrenal involvement (weighted as 2 points).",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "R-CHOP-21 for 6 cycles (21-day cycles) with primary G-CSF support, CNS prophylaxis and tumor-lysis prophylaxis.",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": false,
+  "quote": "R-CHOP-21 for 6 cycles (21-day cycles) with primary G-CSF support",
+  "source": "judge"
+ },
+ "tx_prephase_steroid": {
+  "met": false,
+  "quote": "prednisone 100 mg PO days 1-5.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "he wants treatment aimed at cure, not palliation.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "Therefore R-CHOP-based standard-dose curative therapy is appropriate, intensified high-grade B-cell-lymphoma regimens are not",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "I am giving full CHOP doses despite his age, ECOG 2 and low albumin.",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": true,
+  "quote": "CNS-IPI = 6 (highest band): age >60, LDH elevated, stage III/IV, more than one extranodal site, plus kidney and adrenal involvement (weighted 2 points). Supporting features: IPI 5/5",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": false,
+  "quote": "I will obtain a baseline brain MRI with contrast before treatment to document the absence of occult CNS disease",
+  "source": "judge"
+ },
+ "cns_prophylaxis_renal": {
+  "met": false,
+  "quote": "His eGFR of 50 permits 3 g/m2 provided I use nephrology-supported hydration; I will stop his ibuprofen now (it is both a renal insult and a counter-indication to methotrexate)",
+  "source": "judge"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "systemic high-dose methotrexate, 3 g/m2 IV every 2 weeks for the first 3 cycles (or on day 15 of cycles 1-3)",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT 8-12 weeks after the last cycle (timing chosen so that treatment-related inflammation has resolved, to reduce false positives): a complete metabolic response requires Deauville 1-3 with no new lesion",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "A residual avid mass at the primary site will be biopsied before I escalate therapy or add radiotherapy, since fibrosis, inflammation and post-treatment change can remain FDG-avid.",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": true,
+  "quote": "rasburicase 3.6 mg IV fixed dose on day 0 or day 1 (after checking G6PD, and repeat dosing only for rising uric acid); IV hydration 2.5-3 L/m2/day",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": true,
+  "quote": "rasburicase 3.6 mg IV fixed dose on day 0 or day 1 (after checking G6PD, and repeat dosing only for rising uric acid)",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Pegfilgrastim 6 mg SC on day 2 of each cycle",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "stop ibuprofen 400 mg three to four times daily (nephrotoxicity with rising creatinine, bleeding risk with prednisone and anticipated thrombocytopenia, and it is a contraindication to methotrexate",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "prednisone will drive hyperglycemia - home glucose monitoring, proactive insulin (or metformin adjustment) rather than waiting for symptomatic hyperglycemia",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "hepatitis B surface antigen negative, total core antibody negative, surface antibody reactive (immune from vaccination - no antiviral prophylaxis and no HBV DNA monitoring required)",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "baseline echo is adequate for doxorubicin (LVEF 60%, GLS -19% at the lower limit of normal)",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": true,
+  "quote": "I would rather give full-dose therapy with careful monitoring than pre-emptively reduce him to R-mini-CHOP, because under-dosing is the clearest preventable cause of failure in high-risk DLBCL.",
+  "source": "judge"
+ }
+}

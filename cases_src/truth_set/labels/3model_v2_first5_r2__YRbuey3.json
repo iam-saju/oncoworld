@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__YRbuey3",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "DLBCL, NOS, non-germinal-center (activated B-cell) type by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "non-germinal-center (activated B-cell) type by the Hans algorithm",
+   "confidence": "high",
+   "note": "Equates Hans non-GCB with ABC rather than distinguishing them."
+  },
+  "dx_not_breast_recurrence": {
+   "met": true,
+   "quote": "This is a second malignancy, NOT recurrent or metastatic breast cancer",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Lugano (2014) stage IIIBS, with the S suffix for splenic involvement.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_lymphatic": {
+   "met": true,
+   "quote": "Lugano designates splenic involvement with the S suffix rather than as an extranodal organ, so this is IIIBS rather than IVS",
+   "confidence": "medium",
+   "note": "Elsewhere calls spleen \"the only extranodal organ\", slightly contradictory."
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "evening fevers to 38.4 C, drenching night sweats 2 to 3 times weekly",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulk_definition": {
+   "met": true,
+   "quote": "Largest mass is 7.5 cm (below the 10 cm bulky threshold, above the 7 cm threshold used in several DLBCL trials)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_del_not_dh": {
+   "met": false,
+   "quote": "Under the WHO-HAEM5 convention (MYC at least 50 percent AND BCL2 at least 50 percent) she is NOT a double expressor",
+   "confidence": "medium",
+   "note": "Calls it borderline/not DE under WHO-HAEM5 while acknowledging the 40% convention; not DH is correct."
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "so this is not double-hit or triple-hit lymphoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "DA-EPOCH-R is not the answer to the cardiac problem because EPOCH contains doxorubicin",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_2": {
+   "met": true,
+   "quote": "International prognostic index (IPI) 2",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_2": {
+   "met": true,
+   "quote": "intermediate CNS relapse risk, CNS-IPI 2 of 6",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": true,
+   "quote": "give intrathecal methotrexate 12.5 mg (with intrathecal cytarabine if I judge the bulk of disease to warrant it) with cycles 2, 3, 4 and 6",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_aware_no_full_dox": {
+   "met": true,
+   "quote": "Reason 1, and the key decision at this board: do NOT give R-CHOP.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_standard_dox_ignores_heart": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardio_onc_referral": {
+   "met": true,
+   "quote": "cardiology/cardio-oncology review with baseline ECG, BNP and repeat echocardiogram",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardioprotection": {
+   "met": true,
+   "quote": "adding an ACE inhibitor or ARB plus a beta-blocker in consultation with cardiology",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_anthracycline_free_curative": {
+   "met": true,
+   "quote": "start curative-intent combination immunochemotherapy WITHOUT an anthracycline - R-CVP for 6 cycles",
+   "confidence": "medium",
+   "note": "R-CVP is anthracycline-free and curative-intent but weaker than the preferred R-CEOP/R-GCVP options."
+  },
+  "tx_lower_efficacy_ack": {
+   "met": true,
+   "quote": "it is less effective per cycle than R-CHOP and I accept that loss",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_monitoring": {
+   "met": true,
+   "quote": "repeat echocardiography at 3 months, mid-treatment and end of therapy",
+   "confidence": "medium",
+   "note": "Serial echo planned; BNP only at baseline, no serial troponin/NP."
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT 6 to 8 weeks after the last dose of chemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "allopurinol 300 mg daily from 3 days before cycle 1 through at least cycle 1, continued if uric acid rises, oral/IV hydration",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim 6 mg subcutaneously on day 8 of every cycle as primary neutropenia prophylaxis",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_anastrozole": {
+   "met": true,
+   "quote": "continue anastrozole 1 mg daily through November 2026 to complete the planned 10 years",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HIV-1/2, HBsAg, total anti-HBc, anti-HBs and HCV all non-reactive",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_curative_ecog1": {
+   "met": true,
+   "quote": "She is fit for curative-intent combination chemotherapy: ECOG 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_cardiac_workup": {
+   "met": true,
+   "quote": "No cardiology/cardio-oncology consultation is documented despite LVEF 45 percent",
+   "confidence": "medium",
+   "note": "Lists cardio-onc consult/ECG/BNP but not ischemic evaluation, cardiac MRI or troponin."
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+  "n_concurrent_trials": 1,
+  "agent_setup_timeout_multiplier": 3.0,
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "opencode/deepseek-v4.1-flash-free",
+      "resume_trajectory": true,
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_API_KEY}"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "harbor_cases/dlbcl_0003_journey_v2_fhir"
+    }
+  ]
+}

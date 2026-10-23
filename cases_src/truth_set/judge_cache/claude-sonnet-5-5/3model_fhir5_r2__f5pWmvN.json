@@ -1,0 +1,122 @@
+{
+ "dx_hgbl_double_hit": {
+  "met": true,
+  "quote": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit, WHO-HAEM5 HGBL-DH category), germinal-center B-cell type, with diffuse large B-cell morphology.",
+  "source": "judge"
+ },
+ "mn_dx_dlbcl_nos": {
+  "met": false,
+  "quote": "the 2026-09-12 report read DLBCL NOS and was amended 2026-09-19 after FISH",
+  "source": "judge"
+ },
+ "dx_gcb_hans": {
+  "met": true,
+  "quote": "GCB phenotype by Hans (CD10+, BCL6+, MUM1/IRF4-).",
+  "source": "judge"
+ },
+ "tx_plan_outdated": {
+  "met": true,
+  "quote": "Do not give R-CHOP. Cancel the R-CHOP cycle 1 order (held for 2026-09-22) and rebuild as DA-EPOCH-R",
+  "source": "judge"
+ },
+ "stage_ii_bulky": {
+  "met": true,
+  "quote": "Ann Arbor stage II, bulky, A (no B symptoms). Two nodal regions on the same side of the diaphragm: right cervical levels II-IV (largest 3.9 cm on PET) and anterior mediastinum (12.0 x 8.6 x 9.8 cm",
+  "source": "judge"
+ },
+ "mn_stage_iii_iv": {
+  "met": false,
+  "quote": "Stage would change to IV only if marrow is involved.",
+  "source": "judge"
+ },
+ "bio_double_expressor_secondary": {
+  "met": true,
+  "quote": "Double-expressor by IHC: MYC 80% (cutoff 40%), BCL2 90% strong (cutoff 50%).",
+  "source": "judge"
+ },
+ "prog_ipi1_biology_dominates": {
+  "met": true,
+  "quote": "IPI is 1 (LDH only; age 54, ECOG 1, stage II, fewer than 2 extranodal sites) and R-IPI is good, but these scores under-call him because they do not capture double-hit biology, which drives early relapse across IPI strata.",
+  "source": "judge"
+ },
+ "tx_intensive_curative": {
+  "met": true,
+  "quote": "Do not give R-CHOP. Cancel the R-CHOP cycle 1 order (held for 2026-09-22) and rebuild as DA-EPOCH-R (listed as a preferred regimen for HGBL with MYC and BCL2 and/or BCL6 rearrangements), 21-day cycles for 6 cycles",
+  "source": "judge"
+ },
+ "mn_rchop_preferred": {
+  "met": false,
+  "quote": "Do not give R-CHOP. Cancel the R-CHOP cycle 1 order (held for 2026-09-22)",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Fit for intensive curative therapy: age 54; ECOG 1 at the 9/8 visit",
+  "source": "judge"
+ },
+ "tx_isrt_consolidation": {
+  "met": true,
+  "quote": "Consolidative involved-site RT only for residual bulky mediastinal PET-positive disease after chemotherapy.",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": true,
+  "quote": "CNS-IPI was not designed for double-hit disease, and MYC plus BCL2 rearrangement with raised LDH and bulky disease place him in the group where CNS prophylaxis is reasonable",
+  "source": "judge"
+ },
+ "cns_prophylaxis": {
+  "met": true,
+  "quote": "CNS prophylaxis: IT methotrexate 12 mg on day 1 of each cycle if CSF is negative (see cns_risk).",
+  "source": "judge"
+ },
+ "mn_cns_dismissed": {
+  "met": false,
+  "quote": "Treat as elevated risk for CNS relapse. Formal CNS-IPI is low: 1 point (LDH above ULN)",
+  "source": "judge"
+ },
+ "resp_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT after cycle 6 (Lugano): Deauville 1-3 is a complete metabolic response; residual mediastinal uptake at 4-5 warrants consolidative involved-site RT or observation per tumor board.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Primary G-CSF prophylaxis each cycle (pegfilgrastim or on-body injector, from day 6 or 7).",
+  "source": "judge"
+ },
+ "sup_tls": {
+  "met": true,
+  "quote": "TLS: high risk (bulk, LDH 3.3 to 3.6 times ULN, uric acid 7.9 and rising). Start IV hydration and allopurinol 300 mg daily 1-2 days before chemotherapy; if G6PD is normal and uric acid stays above about 8 mg/dL or rises, give single-dose rasburicase on day 1 instead.",
+  "source": "judge"
+ },
+ "sup_central_access_infusion": {
+  "met": true,
+  "quote": "cycles 2-6 can be ambulatory with a 96-hour pump.",
+  "source": "judge"
+ },
+ "sup_fertility": {
+  "met": true,
+  "quote": "Fertility: offer sperm banking before the first dose and document the discussion.",
+  "source": "judge"
+ },
+ "sup_svc_airway": {
+  "met": true,
+  "quote": "written escalation plan for stridor, progressive facial or arm swelling, or orthopnea (urgent dexamethasone and urgent radiation oncology review for low-dose palliative RT before chemotherapy).",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis: HBsAg non-reactive, anti-HBc non-reactive, anti-HBs reactive (vaccine-immune), so no HBV antiviral prophylaxis is needed",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "LVEF 60% and GLS -20% (2026-09-11) are adequate for doxorubicin; baseline ECG; no repeat echo unless symptoms.",
+  "source": "judge"
+ },
+ "fit_intensive": {
+  "met": true,
+  "quote": "Fit for intensive curative therapy: age 54; ECOG 1 at the 9/8 visit (tires by mid-afternoon, working half-days by 9/14); eGFR 101, bilirubin 0.6, AST and ALT normal (9/4); LVEF 60%",
+  "source": "judge"
+ }
+}

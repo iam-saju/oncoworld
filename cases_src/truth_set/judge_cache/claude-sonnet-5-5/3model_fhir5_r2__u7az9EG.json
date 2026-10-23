@@ -1,0 +1,147 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, NOS, germinal-center B-cell-like (Hans algorithm), primary right cervical nodal disease (levels II-III).",
+  "source": "judge"
+ },
+ "stage_i": {
+  "met": true,
+  "quote": "Ann Arbor / Lugano Stage IA (A: no B symptoms; no E). Disease is confined to one nodal region on one side of the diaphragm (right cervical levels II-III, contiguous on PET-CT).",
+  "source": "judge"
+ },
+ "stage_nonbulky_no_b": {
+  "met": true,
+  "quote": "Largest node 3.1 cm, so not bulky by either the 7.5 cm or the 10 cm threshold.",
+  "source": "judge"
+ },
+ "stage_pet_no_marrow_biopsy": {
+  "met": true,
+  "quote": "Bone marrow biopsy is not needed: PET-CT showed no marrow uptake and marrow status would not change management.",
+  "source": "judge"
+ },
+ "mn_overstaged": {
+  "met": false,
+  "quote": "Ann Arbor / Lugano Stage IA (A: no B symptoms; no E).",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "FISH on the 2026-09-04 biopsy (200 nuclei, addendum 2026-09-15) is negative for MYC (8q24), BCL2 (18q21) and BCL6 (3q27) rearrangements, so this is not double-hit or triple-hit lymphoma. Not double-expressor: MYC IHC 15% (threshold 40%) and BCL2 IHC 30% (threshold 50%).",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "so this is not double-hit or triple-hit lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "Not double-expressor: MYC IHC 15% (threshold 40%) and BCL2 IHC 30% (threshold 50%).",
+  "source": "judge"
+ },
+ "prog_ipi_low": {
+  "met": true,
+  "quote": "Favorable. IPI 0 (age 45, LDH 190 U/L with ULN 225, ECOG 0, stage I).",
+  "source": "judge"
+ },
+ "prog_cns_ipi_low": {
+  "met": true,
+  "quote": "CNS-IPI 0: age 60 or younger, normal LDH, ECOG 0-1, stage I, no kidney or adrenal involvement, no more than one extranodal site, no marrow involvement.",
+  "source": "judge"
+ },
+ "tx_curative_rchop": {
+  "met": true,
+  "quote": "Decision: R-CHOP-21 for 6 cycles at full dose, with no involved-site radiotherapy if the end-of-treatment PET-CT is Deauville 1-3.",
+  "source": "judge"
+ },
+ "tx_flyer_4rchop_2r": {
+  "met": false,
+  "quote": "Decision: R-CHOP-21 for 6 cycles at full dose, with no involved-site radiotherapy",
+  "source": "judge"
+ },
+ "tx_no_rt_goals": {
+  "met": true,
+  "quote": "she has explicitly declined neck radiation, and her sister's hypothyroidism after neck RT makes that concern real",
+  "source": "judge"
+ },
+ "tx_alternatives": {
+  "met": true,
+  "quote": "Fallback if she prefers fewer cycles: R-CHOP-21 x 4 followed by thyroid-sparing IMRT 20-30 Gy to the involved neck, which is also guideline-concordant.",
+  "source": "judge"
+ },
+ "mn_six_cycles": {
+  "met": true,
+  "quote": "Decision: R-CHOP-21 for 6 cycles at full dose, with no involved-site radiotherapy",
+  "source": "judge"
+ },
+ "mn_pola_preferred": {
+  "met": false,
+  "quote": "",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "The biology does not call for a dose-adjusted or intensified regimen (no DA-EPOCH-R)",
+  "source": "judge"
+ },
+ "mn_observation_or_rt_alone": {
+  "met": false,
+  "quote": "Decision: R-CHOP-21 for 6 cycles at full dose",
+  "source": "judge"
+ },
+ "cns_low_no_prophylaxis": {
+  "met": false,
+  "quote": "Low. CNS-IPI 0: age 60 or younger, normal LDH, ECOG 0-1, stage I, no kidney or adrenal involvement... No CNS prophylaxis: no intrathecal methotrexate and no high-dose methotrexate.",
+  "source": "judge_unquoted"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "No CNS prophylaxis: no intrathecal methotrexate and no high-dose methotrexate.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment FDG-PET-CT about 3-5 weeks after cycle 6, scored on the Deauville 5-point scale (Lugano 2014). Deauville 1-3 is complete metabolic response: no RT, move to surveillance.",
+  "source": "judge"
+ },
+ "resp_interim_pet": {
+  "met": false,
+  "quote": "Interim PET is not required for this plan, and an interim PET will not be used to shorten therapy.",
+  "source": "judge"
+ },
+ "work_pregnancy_test": {
+  "met": true,
+  "quote": "(1) Serum hCG before cycle 1 (none documented); repeat before any RT and whenever there is doubt.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis: HBsAg and anti-HBc negative with anti-HBs positive means no antiviral prophylaxis and no HBV DNA monitoring.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "Echo (LVEF 63%, GLS -21%) is adequate for anthracycline.",
+  "source": "judge"
+ },
+ "sup_stop_coc_switch": {
+  "met": false,
+  "quote": "Stop the combined oral contraceptive now. ... Bridge today with a progestin-only method (norethindrone pill, acceptable with aura) plus condoms, then place an LNG-IUD before cycle 1",
+  "source": "judge_unquoted"
+ },
+ "sup_coc_reason": {
+  "met": true,
+  "quote": "Estrogen-containing contraception is contraindicated with migraine with aura (CDC US MEC category 4, ischemic stroke risk); she had aura episodes this month. Estrogen also adds VTE risk with lymphoma and chemotherapy.",
+  "source": "judge"
+ },
+ "sup_fertility_counselling": {
+  "met": false,
+  "quote": "refer to reproductive endocrinology before cycle 1. Check AMH and antral follicle count... Counsel that cyclophosphamide-based therapy at age 45 carries a substantial risk of premature ovarian insufficiency.",
+  "source": "judge_unquoted"
+ },
+ "fit_goals": {
+  "met": true,
+  "quote": "Fit for full-intensity curative therapy: ECOG 0, normal renal, hepatic, marrow and cardiac function, and no significant comorbidity.",
+  "source": "judge"
+ }
+}

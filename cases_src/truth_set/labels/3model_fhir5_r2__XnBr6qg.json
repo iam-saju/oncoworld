@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r2__XnBr6qg",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "Diffuse large B-cell lymphoma, not otherwise specified, germinal-center B-cell type by Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IV B, bulky disease.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "Kidney, adrenal and liver are extralymphatic organ sites, so stage IV applies regardless of nodal extent.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "so B symptoms are present by the sweats and weight-loss criteria",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "BCL2 IHC 30% and MYC IHC 20%, below double-expressor thresholds.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "International Prognostic Index is 5 of 5 (age over 60, ECOG 2, LDH above ULN, stage IV, more than one extranodal site)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "CNS-IPI is high risk (age over 60, stage IV, elevated LDH, more than one extranodal site, and both renal and adrenal involvement)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Preferred regimen: pola-R-CHP (POLARIX backbone) every 21 days for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "Preferred regimen: pola-R-CHP (POLARIX backbone) every 21 days for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "The renal and adrenal involvement is the most specific CNS-risk feature in this case.",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": true,
+   "quote": "Management: pre-treatment MRI brain with and without gadolinium.",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_prophylaxis_renal": {
+   "met": true,
+   "quote": "Do not use high-dose methotrexate: CrCl about 47 mL/min is below the range where it is safe",
+   "confidence": "medium",
+   "note": "Ties HD-MTX to renal function but commits to IT MTX and does not frame prophylaxis benefit as uncertain."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Use Lugano 2014 criteria with FDG-PET-CT as primary.",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "should be discussed for biopsy or consolidation radiotherapy to the bulky site",
+   "confidence": "medium",
+   "note": "Biopsy offered as one option alongside consolidation RT rather than as the default."
+  },
+  "sup_tls_prophylaxis": {
+   "met": false,
+   "quote": "Check BMP, phosphate, calcium, uric acid and LDH daily for 72 hours after C1",
+   "confidence": "medium",
+   "note": "TLS risk recognized with allopurinol, rasburicase and hydration, but labs only daily (criterion says daily is insufficient) and hydration oral or IV."
+  },
+  "sup_rasburicase_g6pd": {
+   "met": true,
+   "quote": "If G6PD is normal, give rasburicase on the first day of C1 before rituximab",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Primary G-CSF: pegfilgrastim 6 mg SC on day 4 or on-body injector on day 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "Stop ibuprofen now and counsel no OTC NSAIDs. Analgesia: scheduled acetaminophen up to 3 g/day",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "Hyperglycemia from prednisone: glucose monitoring during steroid days, and a basal or correction insulin plan",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg nonreactive, anti-HBc nonreactive, anti-HBs reactive, consistent with vaccine immunity; no antiviral prophylaxis indicated",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "TTE 2026-09-09 shows LVEF 60%, GLS -19%, grade I diastolic dysfunction, normal valves; adequate for doxorubicin.",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "ECOG 2 alone is not a reason to reduce intensity; use full doses with primary G-CSF prophylaxis",
+   "confidence": "medium",
+   "note": "Does not explicitly attribute ECOG 2 to disease, though refuses to de-escalate and acknowledges goal of cure."
+  }
+ }
+}

@@ -1,0 +1,165 @@
+{
+ "_about": "Plain-language labels for the oncologist report (scripts/build_report.py). Written by a senior heme-onc agent from rubric_v2.toml, case.toml and gold.json, then checked item by item against the rubric text by an independent heme-onc agent (2026-10-22). Not human-reviewed. Never shown to the model.",
+ "case_card": {
+  "title": "Stage IA GCB DLBCL in a woman with migraine with aura on estrogen pill",
+  "patient": "45F teacher, ECOG 0, with a painless right neck node; no B symptoms, normal LDH; PET-CT shows FDG-avid right cervical level II-III nodes only (largest 3.1 cm), no extranodal or marrow uptake. Excisional biopsy: DLBCL NOS, GCB by Hans, MYC 15%, BCL2 30%, FISH negative for MYC/BCL2/BCL6; premenopausal on a combined ethinyl estradiol pill despite migraine with aura, no pregnancy test on file, and wants to avoid neck radiation.",
+  "tests": [
+   "A single contiguous neck region with no B symptoms and a 3.1 cm node is non-bulky stage IA, not advanced disease.",
+   "MYC 15% / BCL2 30% and negative FISH mean neither double-expressor nor double-hit, so no intensified regimen.",
+   "IPI 0, age under 60, non-bulky: 4 R-CHOP + 2 rituximab without radiotherapy (FLYER) is preferred; 6 cycles or Pola-R-CHP is overtreatment.",
+   "The combined estrogen pill must be stopped (migraine with aura = stroke risk, plus chemo-related VTE) and replaced with non-estrogen contraception.",
+   "No pregnancy test is documented in this premenopausal woman, so one is required before cycle 1."
+  ],
+  "correct_plan": "Curative R-CHOP x4 followed by 2 doses of rituximab without radiotherapy, with interim PET after cycle 4 and end-of-treatment PET (Deauville/Lugano); no CNS prophylaxis. Before cycle 1: pregnancy test, stop the combined pill and switch to an IUD or other non-estrogen method, and offer fertility counselling."
+ },
+ "items": [
+  {
+   "id": "dx_dlbcl_gcb",
+   "label": "Diagnoses DLBCL NOS, germinal-center (GCB) type by Hans",
+   "why": "Confirms the lymphoma subtype the treatment plan rests on; GCB type with no high-risk features supports standard therapy."
+  },
+  {
+   "id": "stage_i",
+   "label": "Stages as Lugano stage I (IA acceptable), single cervical region",
+   "why": "Disease is limited to right neck levels II-III; correct stage is what makes shortened therapy possible."
+  },
+  {
+   "id": "stage_nonbulky_no_b",
+   "label": "Notes non-bulky disease (3.1 cm, <7.5 cm) and no B symptoms",
+   "why": "Non-bulky disease (<7.5 cm) is a FLYER eligibility criterion; absent B symptoms confirm stage IA rather than IB.",
+   "checker_revised": "The why says absent B symptoms are required for FLYER. That is wrong: FLYER eligibility was age 18-60, IPI 0 and no bulk (<7.5 cm). B symptoms are not an IPI factor and were not an exclusion criterion."
+  },
+  {
+   "id": "stage_pet_no_marrow_biopsy",
+   "label": "Omits bone marrow biopsy because PET shows no marrow uptake",
+   "why": "Spares her an invasive procedure; per Lugano, PET-CT without marrow uptake makes routine marrow biopsy unnecessary in DLBCL.",
+   "checker_revised": "The why overstates PET: it does not fully exclude low-volume or discordant marrow involvement. Lugano says only that routine marrow biopsy is unnecessary when PET shows no marrow uptake."
+  },
+  {
+   "id": "mn_overstaged",
+   "label": "Stages the disease as stage III/IV or advanced stage",
+   "why": "Overstaging would push her toward 6 cycles of chemotherapy she does not need, adding toxicity."
+  },
+  {
+   "id": "mol_not_de_not_dh",
+   "label": "States neither double-expressor (MYC 15%, BCL2 30%) nor double-hit (FISH negative)",
+   "why": "IHC is below thresholds and FISH is negative, so standard R-CHOP rather than intensified therapy is appropriate."
+  },
+  {
+   "id": "mn_calls_double_hit",
+   "label": "Calls it double-hit / high-grade lymphoma with MYC and BCL2 rearrangements",
+   "why": "FISH is negative; this label would lead to intensive regimens such as DA-EPOCH-R with major unnecessary toxicity."
+  },
+  {
+   "id": "mn_calls_double_expressor",
+   "label": "Calls the lymphoma double-expressor",
+   "why": "MYC 15% and BCL2 30% are below thresholds; the label wrongly implies higher risk and may change treatment."
+  },
+  {
+   "id": "prog_ipi_low",
+   "label": "Calculates IPI 0 (low risk) from age, LDH, ECOG, stage, extranodal",
+   "why": "IPI 0 is a core eligibility criterion for abbreviated 4-cycle therapy and predicts high cure rates."
+  },
+  {
+   "id": "prog_cns_ipi_low",
+   "label": "Calculates CNS-IPI as 0 / low risk",
+   "why": "Low CNS-IPI justifies omitting CNS staging and prophylaxis in this patient."
+  },
+  {
+   "id": "tx_curative_rchop",
+   "label": "Recommends curative-intent rituximab-containing, R-CHOP-based immunochemotherapy",
+   "why": "She has highly curable localized DLBCL; anything less than curative immunochemotherapy risks losing that cure."
+  },
+  {
+   "id": "tx_flyer_4rchop_2r",
+   "label": "Prefers 4 R-CHOP plus 2 rituximab without radiotherapy (FLYER); 4-cycle PET-adapted accepted",
+   "why": "Age under 60, IPI 0 and non-bulky disease: 4 cycles cure as well as 6 with less toxicity."
+  },
+  {
+   "id": "tx_no_rt_goals",
+   "label": "Notes plan omits neck radiotherapy, matching her wish to avoid it",
+   "why": "She fears thyroid and salivary late effects after her sister's radiation-induced hypothyroidism; the plan respects that."
+  },
+  {
+   "id": "tx_alternatives",
+   "label": "Names R-CHOP x3 plus ISRT or PET-adapted 4-cycle (S1001) alternative",
+   "why": "Gives her evidence-based options for shared decision-making, though the ISRT option conflicts with her wish to avoid neck radiation.",
+   "checker_revised": "The why calls the options 'equally effective', but no trial has compared R-CHOP x3 plus ISRT, S1001 and FLYER head to head, so that claim is not supported. It also leaves out that the radiotherapy alternative goes against her stated goal of avoiding neck radiation."
+  },
+  {
+   "id": "mn_six_cycles",
+   "label": "Recommends 6 cycles of R-CHOP or Pola-R-CHP as preferred plan",
+   "why": "Overtreatment for IPI-0 non-bulky stage I disease: more cardiotoxicity, neuropathy, infections and time off work, no cure gain."
+  },
+  {
+   "id": "mn_pola_preferred",
+   "label": "Recommends Pola-R-CHP as the preferred regimen",
+   "why": "POLARIX enrolled only IPI 2-5; no evidence of benefit at IPI 0, with added neuropathy and cost."
+  },
+  {
+   "id": "mn_da_epoch",
+   "label": "Recommends DA-EPOCH-R or another intensified regimen",
+   "why": "No high-risk biology or stage; intensification adds inpatient infusions and toxicity without benefit."
+  },
+  {
+   "id": "mn_observation_or_rt_alone",
+   "label": "Recommends observation, no systemic treatment, or radiotherapy alone",
+   "why": "Untreated or RT-only DLBCL forfeits a roughly 95% chance of cure and risks systemic relapse."
+  },
+  {
+   "id": "cns_low_no_prophylaxis",
+   "label": "Judges CNS risk low; no CNS prophylaxis, MRI brain or LP needed",
+   "why": "CNS-IPI 0 and no high-risk sites; avoids needless invasive tests and toxic prophylaxis."
+  },
+  {
+   "id": "mn_mandates_cns_prophylaxis",
+   "label": "Recommends intrathecal or high-dose methotrexate CNS prophylaxis",
+   "why": "Not indicated at CNS-IPI 0; exposes her to neurotoxicity, renal toxicity and treatment delays for no benefit."
+  },
+  {
+   "id": "resp_eot_pet_lugano",
+   "label": "Plans end-of-treatment PET-CT read by Lugano/Deauville criteria",
+   "why": "Confirms complete metabolic response, which decides whether she needs further therapy or can go to follow-up."
+  },
+  {
+   "id": "resp_interim_pet",
+   "label": "Plans interim PET after cycle 4; Deauville 4-5 prompts RT or biopsy",
+   "why": "The plan omits radiotherapy, so a positive interim scan must trigger additional treatment rather than proceeding."
+  },
+  {
+   "id": "work_pregnancy_test",
+   "label": "Requires a pregnancy test (hCG) before chemotherapy; none documented",
+   "why": "Premenopausal woman with no documented test; R-CHOP during unrecognised pregnancy can cause fetal harm."
+  },
+  {
+   "id": "work_hbv_reviewed",
+   "label": "Confirms HBsAg and anti-HBc nonreactive; no antiviral prophylaxis needed",
+   "why": "Hepatitis B serology must be checked before rituximab; here it is negative, so no entecavir needed."
+  },
+  {
+   "id": "work_echo_reviewed",
+   "label": "Notes baseline LVEF 63% permits anthracycline",
+   "why": "Normal heart function confirms doxorubicin in R-CHOP is safe to give."
+  },
+  {
+   "id": "sup_stop_coc_switch",
+   "label": "Stops combined estrogen pill; switches to non-estrogen contraception (IUD, implant, progestin-only)",
+   "why": "Estrogen is unsafe for her, yet she still needs reliable contraception throughout chemotherapy."
+  },
+  {
+   "id": "sup_coc_reason",
+   "label": "Explains estrogen contraindicated in migraine with aura; adds VTE risk",
+   "why": "Migraine with aura raises ischemic stroke risk on estrogen; active lymphoma and chemotherapy add clot risk."
+  },
+  {
+   "id": "sup_fertility_counselling",
+   "label": "Offers fertility counselling and reproductive medicine referral",
+   "why": "She is undecided about another pregnancy; abbreviated R-CHOP has low gonadotoxicity but she deserves informed choice."
+  },
+  {
+   "id": "fit_goals",
+   "label": "Judges her fit (ECOG 0) for curative therapy; addresses work and no-neck-radiation goals",
+   "why": "High cure chance; plan should let her keep teaching and avoid neck radiation as she requested."
+  }
+ ]
+}

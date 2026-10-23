@@ -1,0 +1,73 @@
+{
+ "id": "journey_sample_haiku__rXWbHu4__L2",
+ "model": "claude-haiku-5-5",
+ "task": "dlbcl_0003_journey_v2_fhir",
+ "layer": "L2",
+ "rubric": "cases_src/dlbcl_0003_journey/L2_rubric.toml",
+ "answer_path": "jobs/journey_sample_haiku/dlbcl_0003_journey_v2_fhir__rXWbHu4/steps/L2-after-first-line/verifier/final_answer.json",
+ "context": "Journey stage L2 (2027-02-24), same patient later in the disease course.\nINTERVAL HISTORY: WHAT ACTUALLY HAPPENED SINCE TUMOR BOARD (2026-09-18 to 2027-02-24)\n\nTumor board 2026-09-18 recommended prednisone prephase, then Pola-R-CHP x6 with pegfilgrastim.\n- 2026-09-19 to 09-23: prednisone 100 mg daily. Ibuprofen stopped. Lisinopril and metformin held.\n- 2026-09-24: cycle 1 given as an inpatient with IV hydration and rasburicase (G6PD normal). Laboratory\n  TLS on day 2 (uric acid 8.9, phosphate 5.2, potassium 5.4) resolved with fluids; no dialysis.\n- 2026-09-25: MRI brain with contrast: no intracranial lesion. Lumbar puncture: CSF cytology and flow\n  cytometry negative for lymphoma.\n- CNS prophylaxis with high-dose methotrexate was discussed; after counselling on uncertain benefit the\n  patient declined it.\n- Creatinine 1.0 mg/dL by cycle 2 and stable since. Insulin correction scale during steroid days.\n- Cycles 2-6 outpatient, on schedule. Grade 2 neuropathy after cycle 4: polatuzumab reduced to 1.4 mg/kg\n  for cycles 5-6; neuropathy improved to grade 1. He attended his granddaughter's wedding on 2026-12-13.\n  Cycle 6 given 2027-01-08.\n- Now ECOG 1. Weight 74 kg. No B symptoms. Mild residual tingling in the toes.\n\nMRI BRAIN WITH AND WITHOUT GADOLINIUM, 2026-09-25\n\nIndication: diffuse large B-cell lymphoma with renal and adrenal involvement; evaluation for CNS disease.\nFindings: No intracranial mass. No abnormal parenchymal, dural or leptomeningeal enhancement. No hemorrhage.\nNo hydrocephalus.\nIMPRESSION: No intracranial lesion. No imaging evidence of CNS lymphoma.\n\nCEREBROSPINAL FLUID, LUMBAR PUNCTURE, 2026-09-25\n\nCytology: negative for malignant cells.\nFlow cytometry: no abnormal B-cell population detected.\nDIAGNOSIS: Cerebrospinal fluid negative for lymphoma.\n\nFDG PET-CT, END OF TREATMENT (6 weeks after cycle 6), 2027-02-17\n\nComparison: baseline PET-CT 2026-09-05.\nMediastinal blood pool SUVmax 1.9; liver SUVmax 2.8.\n- Retroperitoneal mass decreased from 9.4 x 6.8 cm to 3.4 x 2.1 cm; residual SUVmax 6.2 (baseline 24.1).\n- Right renal, left adrenal and hepatic lesions: resolved, no residual uptake.\n- No new FDG-avid lesions. No marrow uptake.\nDeauville score: 4 (residual retroperitoneal mass, uptake moderately above liver).\n\nSURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RESIDUAL RETROPERITONEAL MASS, 2027-02-22\nTwo 18-gauge cores, total 0.6 cm. Predominantly necrosis and dense fibrosis with scattered histiocytes.\nRare large atypical cells, CD20-positive on immunostain, too few to characterize.\nDIAGNOSIS: Necrosis and fibrosis; rare atypical CD20+ cells. Insufficient for a definitive diagnosis\nof residual lymphoma. Tissue insufficient for flow cytometry or molecular studies.\n\nResults visit with the patient, his wife and daughter. Explained the biopsy was not diagnostic.\nThe patient says he \"has had enough needles\" and, with his family's agreement, declines a repeat biopsy\nat this time. He feels well and asks what his options are. Neuro exam normal; no headache or\nneurological symptoms.\n\nQuestions: What is the response category at the end of first-line treatment, and what does it mean? | The biopsy of the residual mass was inadequate for diagnosis. What do you recommend next? | The patient and his family decline a repeat biopsy. How do you proceed? | Baseline CSF studies were negative. Is any CNS-directed action needed now?",
+ "answer": {
+  "q1": "Partial metabolic response (PMR) by Lugano 2014, which NCCN would call a partial response. This is not a complete metabolic response. Basis: end-of-treatment FDG-PET-CT 2027-02-17, six weeks after cycle 6, compared with the baseline PET of 2026-09-05. The retroperitoneal residual mass is 3.4 x 2.1 cm, down from 9.4 x 6.8 cm (sum of products down about 89%). Residual SUVmax is 6.2, down from 24.1 (about 74%). The reader scored Deauville 4 against liver SUVmax 2.8, a ratio of about 2.2, which sits at the 4/5 boundary. Either score is PMR here, because uptake has fallen from baseline and a residual mass remains. The renal, left adrenal and hepatic lesions have resolved, with no new lesions and no marrow uptake. What it means: first-line treatment produced a large response and cleared all extranodal disease. But metabolically active tissue remains in the site that was bulky at diagnosis, and viable lymphoma cannot be excluded. The residual biopsy showed only necrosis and fibrosis, which is expected after treatment and does not establish remission. Published series of PET-positive end-of-treatment DLBCL report substantially higher relapse rates than PET-negative series, with wide variation; I would quote the institutional figures to him. A PMR does not by itself call for salvage chemotherapy, transplant or maintenance rituximab, since there is no established survival benefit for any of these in this setting. The decision depends on whether the residual is viable lymphoma (q2 and q3). LDH was not in this update and should be drawn now: a normal value would be reassuring, and an elevated value would strengthen concern for viable lymphoma. Renal function has recovered (creatinine 1.0 mg/dL) and ECOG is now 1.",
+  "q2": "Repeat biopsy, redesigned to answer the question. The 2027-02-22 CT-guided sample (two 18-gauge cores, 0.6 cm total, necrosis and fibrosis, rare CD20-positive cells too few to characterize, no tissue for flow or molecular studies) cannot show whether the 3.4 cm PET-avid residual contains viable lymphoma. Sampling was probably not directed at the most FDG-avid focus. Plan: (1) Ask pathology to re-review the 2027-02-22 block, cutting deeper levels and staining for CD20, CD79a, PAX5, CD19, CD3, CD30, CD10, MUM1 and Ki-67. CD19 and CD79a are less affected by rituximab than CD20, and roughly seven weeks have passed since the last dose. This needs no needle. (2) New image-guided core biopsy targeted at the highest-uptake portion of the residual, fused with the PET-CT, using 16-gauge or larger coaxial cores, four to six cores, with on-site adequacy assessment. Send one fresh core for flow cytometry. Check platelets and coagulation first; no antiplatelet or anticoagulant is documented and ibuprofen was stopped in September. (3) If image-guided sampling is again non-diagnostic, offer surgical excisional biopsy (laparoscopic or open) of the most avid area as the definitive option. Interpretation: viable DLBCL means primary refractory disease, not complete remission. Refer to CAR-T evaluation (axi-cel is approved for primary refractory DLBCL within 12 months of first-line therapy, and he is 67 with ECOG 1, so he is worth referring), with salvage chemotherapy and autologous transplant if chemosensitive, and trial enrolment. Polatuzumab-bendamustine-rituximab is an option if transplant and CAR-T are not appropriate. No viable lymphoma on an adequate sample means the PMR is a benign residual; observe with PET surveillance and give no radiotherapy or further systemic therapy. A non-diagnostic repeat biopsy moves to the pathway in q3. Uncertainty: a fibrotic residual can contain small viable foci that any single sample misses, so a negative biopsy lowers but does not remove the probability of residual lymphoma.",
+  "q3": "Respect the informed refusal. Document the discussion: the risk of undetected residual lymphoma, that without tissue we cannot confirm remission, that the choice of further treatment depends on tissue, and that the offer to biopsy stays open. Confirm his capacity and the family's understanding. Do not give further systemic chemotherapy, transplant or maintenance on the basis of an unconfirmed residual, because the toxicity cost is high and the benefit unknown. Of the non-invasive options, I recommend consolidative radiotherapy: 30 Gy in 15 fractions to the residual retroperitoneal mass with a margin, IMRT planning to limit bowel, kidney and ureteric dose, referred to radiation oncology. Reasons: NCCN supports consolidative radiotherapy for residual bulky disease after chemoimmunotherapy, although the evidence is largely observational. Radiotherapy does not require tissue and treats the most likely site of viable lymphoma, and 30 Gy is a modest dose for a 3.4 cm target. Caveats: radiotherapy has not been shown to prolong survival in this scenario; late bowel and ureteric toxicity are possible; and if the residual is only fibrosis, radiotherapy adds toxicity without benefit. Travel is a real burden (45 minutes each way for 15 daily fractions), so arrange treatment at a closer centre if possible. If he also declines radiotherapy, the alternative is PET-CT surveillance about three months after end of treatment (around May 2027). Resolution or Deauville 1 to 3 means complete metabolic response: observe. Persistent or rising uptake, or a growing mass, means re-offer the redesigned biopsy from q2 and decide treatment on the result. Rising LDH, new symptoms or clinical progression means immediate work-up and biopsy. Clinical review and LDH every three months for two years. Other items today: with creatinine 1.0 mg/dL, restart lisinopril after checking blood pressure and restart metformin; stop correction insulin once glucose is controlled off steroids. Grade 1 neuropathy: monitor, no further polatuzumab. Weight 74 kg is up about 4 kg; check for edema. Inactivated vaccines should wait about six months after the last rituximab (around July 2027) for a good response; this is not urgent.",
+  "q4": "No CNS-directed treatment is needed now. Reasons: MRI brain with and without gadolinium on 2026-09-25 shows no intracranial mass, no parenchymal, dural or leptomeningeal enhancement, and no hydrocephalus. CSF cytology and flow cytometry are negative. The LP was done the day after cycle 1 chemotherapy, and CSF cytology after systemic therapy is less sensitive, but a normal MRI supports the result. He has no neurological symptoms and today's neurological exam is normal. Timing: CNS prophylaxis is given during active therapy. He completed six cycles (last dose 2027-01-08), so there is no remaining treatment window, and he declined high-dose methotrexate. Starting intrathecal methotrexate now would add toxicity without benefit. Residual risk: his CNS-IPI remains high, so CNS relapse is still possible, and the residual-disease question in q1 to q3 is the main concern. Surveillance: no routine MRI or LP in an asymptomatic patient. Check neurological symptoms at every visit. Headache, confusion, visual change, seizure, cranial nerve or focal finding, or back or radicular pain triggers urgent MRI brain and spine with contrast and LP with cytology and flow. If lymphoma recurs later, repeat CNS staging before choosing salvage therapy, and include CNS-directed therapy such as high-dose methotrexate or intrathecal treatment, depending on fitness and renal function. Uncertainty: CNS relapse risk after completion of therapy is not zero, and a single negative CSF sample has limited sensitivity. These do not justify empiric prophylaxis now."
+ },
+ "items": [
+  {
+   "id": "l2_pmr",
+   "kind": "must",
+   "severity": "important",
+   "points": 20,
+   "criterion": "The response classifies end-of-treatment Deauville 4 with reduced uptake as a partial metabolic response (not complete metabolic response) per Lugano, noting it may be residual lymphoma or post-treatment inflammation/necrosis."
+  },
+  {
+   "id": "l2_repeat_biopsy",
+   "kind": "must",
+   "severity": "important",
+   "points": 20,
+   "criterion": "The response recommends an adequate repeat biopsy (e.g. PET/CT-guided core targeting the most FDG-avid area, or surgical/laparoscopic) because histologic confirmation is needed before second-line therapy."
+  },
+  {
+   "id": "l2_respect_refusal",
+   "kind": "must",
+   "severity": "important",
+   "points": 15,
+   "criterion": "The response respects the informed refusal of repeat biopsy, explains its implications, and documents a shared decision."
+  },
+  {
+   "id": "l2_short_interval_pet_or_rt",
+   "kind": "must",
+   "severity": "important",
+   "points": 20,
+   "criterion": "Without a repeat biopsy, the response proposes a reasonable path: short-interval repeat PET-CT (about 6-12 weeks) with biopsy if progression, and/or consolidative involved-site radiotherapy to the single residual site."
+  },
+  {
+   "id": "l2_no_cns_action",
+   "kind": "should",
+   "severity": "minor",
+   "points": 10,
+   "criterion": "The response states no routine CNS-directed action (no repeat LP/MRI or prophylaxis) is needed now while he is neurologically well, with prompt evaluation if symptoms develop."
+  },
+  {
+   "id": "l2_car_t_awareness",
+   "kind": "should",
+   "severity": "minor",
+   "points": 15,
+   "criterion": "The response anticipates that biopsy-proven refractory/early-relapsed disease would make him a candidate for second-line CAR T-cell therapy and suggests early referral/discussion with a cellular-therapy center."
+  },
+  {
+   "id": "l2_mn_declares_cure",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response calls this a complete (metabolic) response / cure and moves to routine surveillance with no further evaluation of the residual uptake."
+  },
+  {
+   "id": "l2_mn_salvage_without_histology",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response starts salvage chemotherapy or CAR T-cell therapy now, on PET findings alone, without histologic confirmation or documented progression."
+  }
+ ]
+}

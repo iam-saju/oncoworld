@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (WHO-HAEM5 / ICC DLBCL NOS)",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "Non-germinal-center B-cell (ABC-like) phenotype by the Hans algorithm: CD10 negative, BCL6 positive, MUM1 positive.",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor stage III-B; Lugano 2014 stage IIIB with bulky disease (X) and no E lesion.",
+  "source": "judge"
+ },
+ "stage_spleen_nodal": {
+  "met": false,
+  "quote": "Nodal disease is both above and below the diaphragm: ... I score this as splenic (nodal, S) involvement rather than extranodal disease, so he is not stage IV.",
+  "source": "judge_unquoted"
+ },
+ "stage_bulky_b_symptoms": {
+  "met": false,
+  "quote": "a left para-aortic/aortocaval retroperitoneal mass 11.0 x 8.1 cm (bulky, at least 10 cm; 10.8 cm on outside CT 2026-08-18)... B symptoms are present: unexplained fevers to 38.1-38.3 C and drenching night sweats.",
+  "source": "judge_unquoted"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "I score this as splenic (nodal, S) involvement rather than extranodal disease, so he is not stage IV.",
+  "source": "judge"
+ },
+ "mn_spleen_extranodal_count": {
+  "met": false,
+  "quote": "CNS-IPI is 3: age over 60 (1), stage III-IV (1), LDH above ULN (1). ... there is no more than one extranodal site, so those points are zero.",
+  "source": "judge"
+ },
+ "mol_de_not_dh": {
+  "met": true,
+  "quote": "Double-expressor by IHC: MYC in 50 percent of tumor cells (threshold 40 percent) and BCL2 in 80 percent (threshold 50 percent). Break-apart FISH on 200 nuclei shows no MYC, BCL2 or BCL6 rearrangement, so he is not double-hit or triple-hit",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "Break-apart FISH on 200 nuclei shows no MYC, BCL2 or BCL6 rearrangement, so he is not double-hit or triple-hit and DA-EPOCH-R is not indicated on present data.",
+  "source": "judge"
+ },
+ "mn_denies_double_expressor": {
+  "met": false,
+  "quote": "Double-expressor by IHC: MYC in 50 percent of tumor cells (threshold 40 percent) and BCL2 in 80 percent (threshold 50 percent).",
+  "source": "judge"
+ },
+ "prog_ipi_3": {
+  "met": true,
+  "quote": "IPI is 3 (age over 60, LDH above ULN, stage III), which is high-intermediate.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_intermediate": {
+  "met": true,
+  "quote": "CNS-IPI is 3: age over 60 (1), stage III-IV (1), LDH above ULN (1). ECOG is 0-1, there is no kidney or adrenal involvement, and there is no more than one extranodal site",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Pola-R-CHP every 21 days for 6 cycles, with primary G-CSF prophylaxis from cycle 1.",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "IPI 3 with bulky disease and high LDH is the population that benefited in POLARIX; he is fit",
+  "source": "judge"
+ },
+ "tx_isrt_residual_bulk": {
+  "met": true,
+  "quote": "Deauville 4-5 at the retroperitoneal bulk would prompt consolidation involved-site radiation to the bulky site (about 30 Gy, dose per radiation oncology)",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Curable intent.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "Not R-CHOP-14, not DA-EPOCH-R (no double-hit), and no upfront autologous transplant (reserved for relapse).",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "I do not plan a dose reduction at the start; I will reassess before cycle 2 on counts, infections and neuropathy.",
+  "source": "judge"
+ },
+ "hbv_prophylaxis": {
+  "met": true,
+  "quote": "the pattern is resolved infection (HBsAg negative, anti-HBc positive, anti-HBs positive), and anti-CD20 therapy carries a high reactivation risk. Start entecavir 0.5 mg daily now (no renal adjustment at eGFR 96) and continue at least 12 months after the last rituximab dose.",
+  "source": "judge"
+ },
+ "hbv_dna_lft_monitoring": {
+  "met": true,
+  "quote": "Send quantitative HBV DNA and ALT now and monitor every 1 to 3 months on therapy.",
+  "source": "judge"
+ },
+ "mn_no_hbv_action": {
+  "met": false,
+  "quote": "Start entecavir 0.5 mg daily now (no renal adjustment at eGFR 96) and continue at least 12 months after the last rituximab dose.",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "That is the intermediate band (2-3), not high (4-6).",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "Decision: no CNS prophylaxis and no routine baseline brain MRI or lumbar puncture.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT 3 to 6 weeks after cycle 6 is the decision point. Deauville 1-3 is complete metabolic response and needs no radiation.",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Deauville 4-5 at the retroperitoneal bulk would prompt consolidation involved-site radiation to the bulky site (about 30 Gy, dose per radiation oncology), or biopsy if the residual is small and the result would change management.",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis prophylaxis: allopurinol 300 mg daily starting 2 days before cycle 1, with oral hydration. Check uric acid, potassium, phosphate and creatinine daily for the first 3 days of cycle 1.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Pola-R-CHP every 21 days for 6 cycles, with primary G-CSF prophylaxis from cycle 1.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "LVEF 58 percent with GLS -20 percent, no lung disease, no diabetes.",
+  "source": "judge"
+ },
+ "fit_full_dose": {
+  "met": true,
+  "quote": "He is fit for full-intensity pola-R-CHP: age 62, ECOG 1 (independent in all activities, working reduced hours from home, no longer hiking), Charlson comorbidity index 0",
+  "source": "judge"
+ },
+ "miss_hbv_dna": {
+  "met": true,
+  "quote": "Quantitative HBV DNA (baseline) for an anti-HBc positive patient before anti-CD20 therapy; not in the record.",
+  "source": "judge"
+ }
+}

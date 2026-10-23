@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r1__snoXXKp",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "Non-germinal-center B-cell phenotype by Hans algorithm (CD10 negative, BCL6 positive, MUM1/IRF4 positive in about 70%)",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": true,
+   "quote": "Gene-expression cell-of-origin and LymphGen genetic subtype (MYD88, CD79B, etc.) are not available",
+   "confidence": "medium",
+   "note": "Implies IHC is a surrogate ('activated B-cell-like by IHC'; GEP not available) without stating it explicitly."
+  },
+  "stage_iii": {
+   "met": false,
+   "quote": "I am counting the multifocal splenic lesions as stage IV, as the PET read does",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": false,
+   "quote": "I am counting the multifocal splenic lesions as stage IV, as the PET read does",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "retroperitoneal mass 11.0 x 8.1 cm, SUVmax 22.4, bulky at 10 cm or more",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IV-B with bulky disease (provisional, see note)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "Non-GCB (activated B-cell-like by IHC) DLBCL with a double-expressor phenotype",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "so this is not double-hit or triple-hit lymphoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "IPI is 3 (age 62: 1; LDH above ULN: 1; stage IV: 1; ECOG 1: 0; extranodal sites: 0), which is high-intermediate",
+   "confidence": "medium",
+   "note": "Total IPI 3 is correct but the stage point is attributed to stage IV rather than III."
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": false,
+   "quote": "Score 3 falls in the high-risk tier (3 to 6) of the original CNS-IPI",
+   "confidence": "medium",
+   "note": "Score of 3 computed correctly without the spleen, but misclassified as high rather than intermediate risk."
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "6 cycles every 21 days on the POLARIX schedule",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "Fallback if polatuzumab is not accessible: standard R-CHOP-21 x6",
+   "confidence": "medium",
+   "note": "Pola-R-CHP preferred with R-CHOP fallback, but rationale cites IPI rather than the non-GCB benefit."
+  },
+  "tx_isrt_residual_bulk": {
+   "met": true,
+   "quote": "If end-of-treatment PET shows Deauville 4 or 5 at the retroperitoneal site, refer to radiation oncology for consolidative involved-site RT",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "I do not recommend DA-EPOCH-R, since there is no double-hit",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": true,
+   "quote": "Start entecavir 0.5 mg PO daily now, before the first rituximab dose, and continue for at least 12 months after the last rituximab dose",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": true,
+   "quote": "Monitor HBV DNA and ALT every 1 to 3 months during and after therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_no_hbv_action": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": false,
+   "quote": "Decision: offer CNS prophylaxis with intrathecal methotrexate 12 mg",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": true,
+   "quote": "Decision: offer CNS prophylaxis with intrathecal methotrexate 12 mg",
+   "confidence": "medium",
+   "note": "Phrased as 'offer', but IT MTX plus MRI/LP is the committed plan for an intermediate-risk patient."
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Use Lugano 2014 criteria with the 5-point Deauville PET scale",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "biopsy first if the uptake is equivocal",
+   "confidence": "medium",
+   "note": "Biopsy only when uptake is equivocal; otherwise goes straight to RT for Deauville 4-5."
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "Start allopurinol 300 mg PO daily 1 to 2 days before C1, with oral or IV hydration as tolerated",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Primary G-CSF: pegfilgrastim 6 mg SC on day 4 of each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "he is fit for full-dose therapy (ECOG 1, eGFR 96, bilirubin 0.6, LVEF 58%, albumin 3.7)",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "He is fit for full-dose curative therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "Quantitative HBV DNA and anti-HBs titer",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

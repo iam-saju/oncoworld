@@ -3,13 +3,30 @@
 # SWOG S1001; POLARIX eligibility; Lugano 2014; CDC/WHO medical eligibility criteria for contraceptive use).
 # Every item is PENDING_ONCOLOGIST until signed off in harbor_cases/<task>/review/signoff.md.
 #
-# Regex fallback fields are a coarse safety net for runs without a judge; the judge reads `text`.
+# Graded by the regex rules on each item (grader of record); `text` states the criterion in clinical terms.
 # All regexes run on the lower-cased answer.
 #
 # Weighting note: the two "real-world" items (pregnancy test, stopping the estrogen-containing pill) together with
 # the reason item carry 26 points, so an otherwise perfect answer that misses all three scores 0.74 and fails
 # without being flagged dangerous. The 6-cycle overtreatment deduction (16) is sized so that a 6-cycle preferred plan
 # that is otherwise perfect also fails, even if it still names the alternatives (100 - 10 FLYER - 16 = 74).
+#
+# Structured decisions: items with a `decision` list are decided by the answer's "decisions" object when it carries
+# the fields each condition needs (grader_v2.eval_decision); otherwise the prose rules decide exactly as before.
+# Shared fragments used below (kept identical across items):
+#   R-CHOP-based regimen  r[- ]?(?:mini[- ]?)?cho?p|rituximab[^;]{0,60}\b(?:chop|chp|cyclophosphamide)\b|\b(?:chop|chp)\b[^;]{0,80}rituximab
+#   FLY4 (4 R-CHOP + 2 R) the regimen string itself spells out 4 x R-CHOP followed (then/+/plus/and) by 2 rituximab-only
+#                         doses ("R-CHOP x4 then rituximab x2", "4 cycles of R-CHOP followed by 2 doses of rituximab");
+#                         the bare word "flyer" is not evidence, and "then R-CHOP x2" is not rituximab-only
+#   six-cycle wording     "6 cycles", "x6", "six courses", "then R-CHOP": decides when cycles is missing or not a number
+#   withheld / deferred   omitted, withheld, deferred, postponed, "until", "at progression", "no CHOP": not an order
+#   rejected option       "Pola-R-CHP not indicated", "no DA-EPOCH-R", "rather than Pola": a note, not the regimen
+#   no unconditional RT   starts with none/no/not/omitted, or the RT entry itself starts with its condition
+#                         ("ISRT only if Deauville 4-5", "PET-adapted: ISRT 36 Gy if ...", "reserved for ...");
+#                         a condition attached only to a boost ("ISRT 30 Gy, boost if Deauville 4") is not conditional RT
+# Dangerous must_not items (mn_overstaged, mn_calls_double_hit) deliberately carry no decision: a structured value
+# overrides the prose verdict, so an unparseable or contradicting decisions field ("4", "Advanced", "DLBCL, GCB")
+# would erase a dangerous error the prose shows. Restore them once the grader takes structured OR prose for must_not.
 
 version = "dlbcl_0005.v2.0"
 review_status = "PENDING_ONCOLOGIST"
@@ -43,6 +60,7 @@ severity = "important"
 points = 7
 text = "The response stages the disease as Lugano/Ann Arbor stage I (stage IA acceptable): a single nodal region (right cervical levels II-III)."
 any = ["\\bstage\\s*(?:i|1)a?\\b(?!\\s*(?:-|/|to|or)\\s*(?:ii|iv|2|4)\\b)"]
+decision = [{ field = "stage", in = ["I"] }]
 
 [[items]]
 id = "stage_nonbulky_no_b"
@@ -70,7 +88,9 @@ kind = "must_not"
 severity = "dangerous"
 points = 0
 text = "The response overstages the disease as stage III or IV / advanced stage."
-affirm = ["\\bstage\\s*(?:iii|iv|[34])\\b|advanced[- ]stage"]
+# suffixes (IIIA, IV-B, 3S) count; definitions ("stage III means ...") and population statements
+# ("standard for advanced-stage disease", "in stage IV patients") do not assert this patient's stage
+affirm = ['(?<!\bfor )(?<!\bin )(?:\bstage\s*(?:iii|iv|[34])(?:[- ]?[abesx]{1,2})?\b|advanced[- ]stage)(?!\s+(?:means|denotes|refers|implies|indicates|is defined|requires|would|applies|describes)\b)']
 
 # ---------------- molecular classification
 [[items]]
@@ -91,6 +111,11 @@ severity = "dangerous"
 points = 0
 text = "The response classifies this lymphoma as double-hit / high-grade B-cell lymphoma with MYC and BCL2 rearrangements."
 check = "affirms_double_hit"
+# also required: the term is not the object of a test ("FISH sent to evaluate for double-hit status")
+affirm = ['(?<!evaluate for )(?<!evaluation for )(?<!evaluating for )(?<!assess for )(?<!assessing for )(?<!test for )(?<!testing for )(?<!screen for )(?<!screening for )(?<!look for )(?<!to exclude )(?<!rule out )(?:double[-_ ]hit|triple[-_ ]hit|hgbl[- ]?(?:dh|th)\b|hgbl[- ]?myc/bcl2|myc and bcl2 rearrangements|myc/bcl2[- ]rearranged|\(dh\)|\bdh\b(?= lymphoma| biology| disease|\s*\())(?!\s+(?:status|testing|work-?up|evaluation|assessment|fish|panel|probes?)\b(?!\s*[:=-]?\s*(?:positive|present|confirmed|yes)\b))']
+# no structured decision (see header): prose decides. For a must_not = structured OR prose grader, the decision would be
+# diagnosis matches 'double[- ]hit|triple[- ]hit|\b(?:dhl|thl)\b|\bhgb?c?l[- ]?(?:dh|th|myc)|high[- ]grade b[- ]cell lymphoma
+# with myc|myc[^,;]{0,20}bcl-?2[^,;]{0,20}rearrang|myc/bcl-?2[- ]rearrang' with a negation guard limited to that target
 
 [[items]]
 id = "mn_calls_double_expressor"
@@ -100,6 +125,9 @@ severity = "important"
 points = 5
 text = "The response classifies this lymphoma as double-expressor."
 check = "affirms_double_expressor"
+# also required: not "short of double-expressor thresholds", not a test request, and not a generic prognostic
+# statement about the entity ("double-expressor DLBCL has inferior outcomes") unless tied to this patient
+affirm = ['(?:(?<=her )|(?<=his )|(?<=this )|(?<=its ))(?:double[-_ ]expressor|\bdel\b)|(?<!short of )(?<!short of the )(?<!shy of )(?<!evaluate for )(?<!assess for )(?<!test for )(?:double[-_ ]expressor|\bdel\b)(?!\s+(?:status|testing)\b(?!\s*[:=-]?\s*(?:positive|present|confirmed|yes)\b))(?!(?:[- ](?:dlbcl|lymphomas?|disease|cases|tumou?rs|phenotype|biology))?\s+(?:has|have|carries|carry|confers?|portends?|predicts?|is associated|are associated)\s+(?:with\s+)?(?:an?\s+)?(?:inferior|worse|poorer|poor|adverse|higher|lower|shorter|increased)\b)']
 
 # ---------------- prognosis
 [[items]]
@@ -128,7 +156,11 @@ kind = "must"
 severity = "dangerous"
 points = 6
 text = "The response recommends curative-intent rituximab-containing immunochemotherapy (R-CHOP-based) for this patient."
-all = ["r[- ]?chop", "curative|\\bcure"]
+all = ["r[- ]?chop|rituximab[- ]?chop|rituximab[^.;]{0,20}\\bchop\\b|\\bchop\\b[^.;]{0,20}rituximab", "curative|\\bcure"]
+# structured: intent curative and an R-CHOP-based regimen on the order (Pola-R-CHP counted as R-CHOP-based; see review note),
+# not written as withheld or deferred ("rituximab weekly (CHOP omitted)", "R-CHOP deferred until progression")
+decision = [{ field = 'intent', matches = '^\s*curative' },
+            { field = 'regimen', matches = 'r[- ]?(?:mini[- ]?)?cho?p|rituximab[^;]{0,60}\b(?:chop|chp|cyclophosphamide)\b|\b(?:chop|chp)\b[^;]{0,80}rituximab', not_matches = '\b(?:omit|withh|defer|postpon)\w*|\buntil\b|at (?:progression|relapse)|(?:\bno|\bnot|without)\s+(?:r[- ]?)?cho?p|\bchop\b[^;]{0,10}(?:omitted|withheld|deferred|not given)' }]
 
 [[items]]
 id = "tx_flyer_4rchop_2r"
@@ -139,6 +171,15 @@ points = 10
 text = "The response recommends, as the preferred plan, 4 cycles of R-CHOP followed by 2 additional doses of rituximab without radiotherapy (FLYER regimen; age 18-60, IPI 0, non-bulky <7.5 cm). A 4-cycle PET-adapted R-CHOP approach is also accepted."
 all = ["r[- ]?chop",
        "flyer|(?:\\b4|four)\\s*(?:cycles?\\s*(?:of\\s*)?|x\\s*|×\\s*)?r[- ]?chop|r[- ]?chop\\s*(?:x|×|for)\\s*(?:4|four)\\b|r[- ]?chop[^.]{0,20}\\b(?:4|four) cycles"]
+# structured: R-CHOP (not Pola-R-CHP unless it is named only as a rejected option; not a 6-cycle order; not withheld or
+# deferred), 4 cycles (cycles = 6 accepted only when the regimen string spells out FLY4, i.e. 4 R-CHOP + 2 R counted
+# together; a missing cycles field counts as not met), and no unconditional radiotherapy (PET-adapted RT is
+# conditional, so the S1001 approach passes)
+decision = [{ field = 'regimen', matches = 'r[- ]?chop|rituximab[^;]{0,60}\bchop\b|\bchop\b[^;]{0,80}rituximab', not_matches = '(?:\b6|six)\s*(?:cycles?\s*(?:of\s*)?|x\s*|×\s*)?(?:r[- ]?chop|pola)|(?:r[- ]?chop|r[- ]?chp)(?:[- ]?(?:14|21))?\s*(?:x|×|for)\s*(?:6|six)\b|\b(?:omit|withh|defer|postpon)\w*|\buntil\b|at (?:progression|relapse)|(?:\bno|\bnot|without)\s+(?:r[- ]?)?cho?p|\bchop\b[^;]{0,10}(?:omitted|withheld|deferred|not given)' },
+            { not = { field = 'regimen', matches = 'pola|polivy', not_matches = '(?:pola|polivy)[^;(),]{0,25}\b(?:not (?:indicated|recommended|chosen|selected|needed|required)|reserved|rejected|declined)\b|(?:\bno|\bnot|without|rather than|instead of|vs\.?|versus|over)\s+(?:pola|polivy)' } },
+            { any = [{ field = 'regimen', matches = '(?:r[- ]?chop|rituximab[^;]{0,40}\bchop\b)[^;]{0,30}?(?<!\d)(?:4|four)\b[^;]{0,40}?(?:then|followed by|\+|plus|and)\s*(?:(?:rituximab|\br\b)(?![- ]?cho)[^;]{0,25}?(?<![\d/m])(?:2|two)\b|(?<![\d/m])(?:2|two)\s*(?:x\s*|×\s*)?(?:(?:additional|more|further)\s+)?(?:(?:doses?|cycles?|courses?)\s+(?:of\s+)?)?(?:rituximab|\br\b)(?![- ]?cho))|(?<!\d)(?:4|four)\s*(?:cycles?\s*(?:of\s*)?|x\s*|×\s*)?r[- ]?chop[^;]{0,40}?(?:then|followed by|\+|plus|and)\s*(?:(?:rituximab|\br\b)(?![- ]?cho)[^;]{0,25}?(?<![\d/m])(?:2|two)\b|(?<![\d/m])(?:2|two)\s*(?:x\s*|×\s*)?(?:(?:additional|more|further)\s+)?(?:(?:doses?|cycles?|courses?)\s+(?:of\s+)?)?(?:rituximab|\br\b)(?![- ]?cho))' }, { field = 'regimen', not_matches = '(?:\b6|six)\s*(?:(?:cycles?|courses?)\b|x\s*r|×)|(?:x|×|for)\s*(?:6|six)\b|\b(?:then|plus|\+)\s*r[- ]?chop' }] },
+            { any = [{ field = 'cycles', equals = 4, absent_is_false = true }, { all = [{ field = 'cycles', equals = 6, absent_is_false = true }, { field = 'regimen', matches = '(?:r[- ]?chop|rituximab[^;]{0,40}\bchop\b)[^;]{0,30}?(?<!\d)(?:4|four)\b[^;]{0,40}?(?:then|followed by|\+|plus|and)\s*(?:(?:rituximab|\br\b)(?![- ]?cho)[^;]{0,25}?(?<![\d/m])(?:2|two)\b|(?<![\d/m])(?:2|two)\s*(?:x\s*|×\s*)?(?:(?:additional|more|further)\s+)?(?:(?:doses?|cycles?|courses?)\s+(?:of\s+)?)?(?:rituximab|\br\b)(?![- ]?cho))|(?<!\d)(?:4|four)\s*(?:cycles?\s*(?:of\s*)?|x\s*|×\s*)?r[- ]?chop[^;]{0,40}?(?:then|followed by|\+|plus|and)\s*(?:(?:rituximab|\br\b)(?![- ]?cho)[^;]{0,25}?(?<![\d/m])(?:2|two)\b|(?<![\d/m])(?:2|two)\s*(?:x\s*|×\s*)?(?:(?:additional|more|further)\s+)?(?:(?:doses?|cycles?|courses?)\s+(?:of\s+)?)?(?:rituximab|\br\b)(?![- ]?cho))' }] }] },
+            { field = 'radiotherapy', matches = '^\s*(?:none|no\b|not\b|n/?a\b|nil\b|omit)|^\s*(?:conditional|(?:pet|response)[- ](?:adapted|guided|directed))?[:;,]?\s*(?:consolidat\w*\s+)?(?:isrt|rt|radiotherapy|radiation|involved[- ]site (?:radiotherapy|rt))?\s*(?:\d+(?:\.\d+)?\s*gy\s*)?(?:only\s+)?(?:if|unless|when|reserved for)\b|^\s*(?:pet|response)[- ](?:adapted|guided|directed)\b' }]
 
 [[items]]
 id = "tx_no_rt_goals"
@@ -168,7 +209,14 @@ kind = "must_not"
 severity = "important"
 points = 16
 text = "The response recommends 6 cycles of R-CHOP (or of Pola-R-CHP) as the preferred plan for this IPI-0, non-bulky stage I disease (overtreatment)."
-recommend = ["\\b(?:6|six)\\s*(?:cycles?\\s*(?:of\\s*)?|x\\s*|×\\s*)?(?:r[- ]?chop|pola)|(?:r[- ]?chop|pola[- ]?r[- ]?chp)\\s*(?:x|×|for)\\s*(?:6|six)\\b"]
+# "cycles" or "courses"; R-CHOP-21 / "every 21 days" between regimen and count; a comparator arm
+# ("non-inferior to 6 cycles of R-CHOP", "versus six cycles") is evidence, not the plan
+recommend = ['(?<!\bas )(?<!\bthan )(?<!inferior to )(?<!superior to )(?<!equivalent to )(?<!similar to )(?<!compared with )(?<!compared to )(?<!versus )(?<!vs )(?<!vs\. )(?:\b(?:6|six)\s*(?:(?:cycles?|courses?)\s*(?:of\s*)?|x\s*|×\s*)?(?:r[- ]?chop|pola)|(?:r[- ]?chop|pola[- ]?r[- ]?chp)(?:[- ]?(?:14|21))?(?:\s+(?:every|q)\s*(?:14|21)\s*(?:days|d))?\s*(?:x|×|for)\s*(?:6|six)\b)']
+# structured: an R-CHOP-based or Pola-R-CHP order with cycles >= 6 (or "6 cycles" as text, or six-cycle wording in the
+# regimen when cycles is missing), unless the regimen string spells out FLY4 (4 R-CHOP + 2 R) and no six-cycle R-CHOP order
+decision = [{ field = 'regimen', matches = 'r[- ]?(?:mini[- ]?)?cho?p|rituximab[^;]{0,60}\b(?:chop|chp|cyclophosphamide)\b|\b(?:chop|chp)\b[^;]{0,80}rituximab|pola|polivy' },
+            { any = [{ field = 'regimen', not_matches = '(?:r[- ]?chop|rituximab[^;]{0,40}\bchop\b)[^;]{0,30}?(?<!\d)(?:4|four)\b[^;]{0,40}?(?:then|followed by|\+|plus|and)\s*(?:(?:rituximab|\br\b)(?![- ]?cho)[^;]{0,25}?(?<![\d/m])(?:2|two)\b|(?<![\d/m])(?:2|two)\s*(?:x\s*|×\s*)?(?:(?:additional|more|further)\s+)?(?:(?:doses?|cycles?|courses?)\s+(?:of\s+)?)?(?:rituximab|\br\b)(?![- ]?cho))|(?<!\d)(?:4|four)\s*(?:cycles?\s*(?:of\s*)?|x\s*|×\s*)?r[- ]?chop[^;]{0,40}?(?:then|followed by|\+|plus|and)\s*(?:(?:rituximab|\br\b)(?![- ]?cho)[^;]{0,25}?(?<![\d/m])(?:2|two)\b|(?<![\d/m])(?:2|two)\s*(?:x\s*|×\s*)?(?:(?:additional|more|further)\s+)?(?:(?:doses?|cycles?|courses?)\s+(?:of\s+)?)?(?:rituximab|\br\b)(?![- ]?cho))' }, { field = 'regimen', matches = '(?:\b6|six)\s*(?:cycles?\s*(?:of\s*)?|x\s*|×\s*)?(?:r[- ]?chop|pola)|(?:r[- ]?chop|r[- ]?chp)(?:[- ]?(?:14|21))?\s*(?:x|×|for)\s*(?:6|six)\b' }] },
+            { any = [{ field = 'cycles', min = 6 }, { field = 'cycles', matches = '^\s*(?:[6-9]|1\d|six|seven|eight)\b' }, { field = 'regimen', matches = '(?:\b6|six)\s*(?:(?:cycles?|courses?)\b|x\s*r|×)|(?:x|×|for)\s*(?:6|six)\b|\b(?:then|plus|\+)\s*r[- ]?chop' }] }]
 
 [[items]]
 id = "mn_pola_preferred"
@@ -177,7 +225,9 @@ kind = "must_not"
 severity = "important"
 points = 8
 text = "The response recommends Pola-R-CHP as the preferred regimen (POLARIX enrolled IPI 2-5 only; not indicated at IPI 0)."
-recommend = ["pola[- ]?r[- ]?chp|polatuzumab"]
+# indication ("is reserved for higher-risk disease") and rejected-option statements are not the plan
+recommend = ['(?:pola[- ]?r[- ]?chp|polatuzumab)(?![^.;]{0,50}\b(?:is|are|be|remains?)\s+(?:reserved|kept|limited|restricted)\b)(?![^.;]{0,50}\b(?:rejected|dismissed|decided against|not chosen|not selected)\b)']
+decision = [{ field = 'regimen', matches = 'pola|polivy', not_matches = '(?:pola|polivy)[^;(),]{0,25}\b(?:not (?:indicated|recommended|chosen|selected|needed|required)|reserved|rejected|declined)\b|(?:\bno|\bnot|without|rather than|instead of|vs\.?|versus|over)\s+(?:pola|polivy)' }]
 
 [[items]]
 id = "mn_da_epoch"
@@ -186,7 +236,10 @@ kind = "must_not"
 severity = "important"
 points = 5
 text = "The response recommends DA-EPOCH-R or another intensified regimen for this patient."
-check = "recommends_da_epoch"
+# DA-EPOCH-R or another intensified regimen (R-CHOEP, R-hyper-CVAD, R-CODOX-M/IVAC, R-ACVBP); not when reserved
+# for another entity or listed as considered-and-rejected
+recommend = ['(?<!reserve )(?<!reserved )(?<!reserving )(?:(?:da|dose[- ]adjusted)[- ]?(?:r[- ]?)?epoch|\br[- ]?choep|(?:\br[- ]?)?\bhyper[- ]?cvad|(?:\br[- ]?)?\bcodox|(?:\br[- ]?)?\bacvbp)(?![^.;]{0,50}\b(?:is|are|be|remains?)\s+(?:reserved|kept|limited|restricted)\b)(?![^.;]{0,50}\b(?:rejected|dismissed|decided against|not chosen|not selected)\b)']
+decision = [{ field = 'regimen', matches = 'epoch|choep|hyper[- ]?cvad|codox|acvbp|\bivac\b', not_matches = '(?:epoch|choep|hyper[- ]?cvad|codox|acvbp|ivac)[^;(),]{0,25}\b(?:not (?:indicated|recommended|chosen|selected|needed|required)|reserved|rejected|declined)\b|(?:\bno|\bnot|without|rather than|instead of|vs\.?|versus|over)\s+(?:(?:da|dose[- ]adjusted)[- ]?)?(?:r[- ]?)?(?:epoch|choep|hyper|codox|acvbp)' }]
 
 [[items]]
 id = "mn_observation_or_rt_alone"
@@ -195,7 +248,11 @@ kind = "must_not"
 severity = "dangerous"
 points = 0
 text = "The response recommends observation / no systemic treatment, or radiotherapy alone, as the plan."
-recommend = ["observation|watch(?:ful)?[- ](?:and[- ])?wait|(?:radiation|radiotherapy|isrt|\\brt\\b)(?: therapy)? alone|surveillance alone|no systemic (?:therapy|treatment)"]
+# "RT alone" / "ISRT only" (not "only if/for/after"), holding off systemic therapy; not "RT alone is inadequate"
+recommend = ['observation|watch(?:ful)?[- ](?:and[- ])?wait|(?:radiation|radiotherapy|isrt|\brt\b)(?: therapy)? (?:alone|only\b(?!\s+(?:if|for|when|after|in|as|to)\b))(?!\s+(?:is|are|was|would be|remains)\s+(?:inadequate|insufficient|inferior|suboptimal|not)\b)|surveillance alone|no systemic (?:therapy|treatment)|hold(?:ing)? off (?:on )?(?:systemic|chemo)']
+# structured: intent = observation, or no systemic regimen ordered (regimen "none"; covers radiotherapy alone)
+decision = [{ field = "regimen", not_matches = '(?!)' },
+            { any = [{ field = "intent", in = ["observation"] }, { field = "regimen", matches = '^\s*(?:none|no\b|n/?a\b|nil\b|observation|watch|surveillance|radiotherapy|isrt|\brt\b)' }] }]
 
 # ---------------- CNS
 [[items]]
@@ -215,7 +272,9 @@ kind = "must_not"
 severity = "important"
 points = 4
 text = "The response recommends CNS prophylaxis (intrathecal chemotherapy or high-dose methotrexate) for this patient."
-recommend = ["(?:cns|intrathecal|methotrexate|hd[- ]?mtx)[^.]{0,30}prophyla\\w*|intrathecal|hd[- ]?mtx|high[- ]dose methotrexate"]
+recommend = ["(?:cns|intrathecal|methotrexate|hd[- ]?mtx)[^.]{0,30}prophyla\\w*|intrathecal|hd[- ]?mtx|high[- ]dose methotrexate|\\bi\\.?t\\.?\\s+(?:mtx|methotrexate|cytarabine|ara-?c)\\b"]
+# no structured decision: orders_now covers only orders before/with cycle 1, so prophylaxis planned later can never
+# appear there, and a structured "not met" would override the per-sentence prose rule, which is the stronger detector
 
 # ---------------- response assessment
 [[items]]
@@ -245,6 +304,9 @@ severity = "important"
 points = 10
 text = "The response requires a pregnancy test (serum or urine hCG) before starting chemotherapy, noting that none is documented in this premenopausal woman."
 any = ["pregnan\\w*\\s*test", "\\bhcg\\b", "beta[- ]?hcg"]
+# structured: the pregnancy test is an unconditional order now / before cycle 1 (not only "if" something, not "not
+# needed", "waived" or "declined"); with a decisions block, a missing orders_now counts as not met
+decision = [{ field = 'orders_now', matches = '^(?!\s*(?:no|not|omit|defer|skip|if)\b)(?!.*\b(?:not (?:needed|required|indicated|necessary)|unnecessary|waive\w*|declin\w*|only if|if (?:her |the )?(?:period|menses|lmp)|if (?:late|missed|sexually|symptom)|defer\w*|postpon\w*|\bpending\b|\blater\b|after (?:cycle|c\s*\d|chemo\w*|treatment|therapy|completion)))(?=.*(?:pregnan\w*\s*(?:test|screen)|hcg|\bupt\b|urine preg))', absent_is_false = true }]
 
 [[items]]
 id = "work_hbv_reviewed"
@@ -274,6 +336,11 @@ points = 12
 text = "The response stops the combined estrogen-containing oral contraceptive and switches to effective non-estrogen contraception (e.g. copper or levonorgestrel IUD, implant, progestin-only method) for the duration of treatment."
 all = ["(?:stop|discontinu\\w*|switch\\w*|cease|change|replac\\w*)[^.]{0,80}(?:oral contracepti\\w*|\\bocp\\b|\\bcoc\\b|combined (?:hormonal|pill)|estrogen|ethinyl|the pill)|(?:oral contracepti\\w*|\\bocp\\b|\\bcoc\\b|estrogen|ethinyl|combined pill)[^.]{0,80}(?:stop|discontinu|switch|contraindicat)",
        "\\biud\\b|intrauterine|progestin[- ]only|progestogen[- ]only|non[- ]?estrogen|estrogen[- ]free|copper|implant|etonogestrel|depot|condom|barrier"]
+# structured: orders_now both stops the estrogen-containing pill (not "continue", "do not stop", "not contraindicated",
+# or "stop after chemotherapy") and starts/arranges a non-estrogen method (not "no IUD", not deferred until after
+# treatment, not condoms only for STI protection); with a decisions block, a missing orders_now counts as not met
+decision = [{ field = 'orders_now', matches = '^(?!.*(?:\b(?:continu(?:e|ed|es|ing)|keep\w*|remain\w* on|stay\w* on)\b[^;.]{0,30}(?:pill|oral contracepti|\bocp\b|\bcoc\b|combined (?:hormonal|oral|pill|contracepti)|(?<!non)(?<!non[- ])estrogen(?![- ]free)|estradiol|ethinyl|the pill|contraceptive pill|birth control|\bchc\b)|(?:oral contracepti|\bocp\b|\bcoc\b|combined (?:hormonal|oral|pill|contracepti)|(?<!non)(?<!non[- ])estrogen(?![- ]free)|estradiol|ethinyl|the pill|contraceptive pill|birth control|\bchc\b)[^;.]{0,30}\b(?:can|may|should|to) (?:be )?(?:continu|kept|keep)|(?:oral contracepti|\bocp\b|\bcoc\b|combined (?:hormonal|oral|pill|contracepti)|(?<!non)(?<!non[- ])estrogen(?![- ]free)|estradiol|ethinyl|the pill|contraceptive pill|birth control|\bchc\b)\s*[:,-]?\s*continue\b|\b(?:do not|don.t|no need to|not|never)\s+(?:\w+\s+)?(?:stop|discontinu|cease|switch|change)|not contraindicated|no contraindication|(?:stop|discontinu\w*|switch\w*|cease)\b[^;.]{0,40}\b(?:after|once|following|at the end of)\s+(?:chemo\w*|treatment|therapy|completion|the last|remission)|\b(?:sometime|eventually|at some point)\b|\bpending\b|\bif (?:she )?(?:develops|has|gets)\b))(?=.*(?:(?:stop|discontinu|cease|hold|d/c\b|switch|chang|replac)[^\n]*(?:oral contracepti|\bocp\b|\bcoc\b|combined (?:hormonal|oral|pill|contracepti)|estrogen|estradiol|ethinyl|the pill|contraceptive pill|birth control|\bchc\b)|(?:oral contracepti|\bocp\b|\bcoc\b|combined (?:hormonal|oral|pill|contracepti)|estrogen|estradiol|ethinyl|the pill|contraceptive pill|birth control|\bchc\b|combined pill)[^\n]*(?:stop|discontinu|cease|contraindicat)))', absent_is_false = true },
+            { field = 'orders_now', matches = '^(?!.*(?:\b(?:no|not|without)\s+(?:\w+\s+)?(?:iud|ius|implant|intrauterine|condoms?)\b|(?:iud|ius|implant|condoms?)[^;.]{0,20}\bnot (?:needed|required|necessary|indicated)|(?:after|once|following|at the end of)\s+(?:chemo\w*|treatment|therapy|completion)[^;.]{0,40}(?:switch|iud|ius|implant|progestin|start|plac|insert)|(?:switch\w*|start\w*|plac\w*|insert\w*)\b[^;.]{0,50}\b(?:after|once|following)\s+(?:chemo\w*|treatment|therapy|completion)|for (?:sti|std)s?\b|\b(?:sometime|eventually|at some point)\b|\bpending\b|\bif (?:she )?(?:develops|has|gets)\b))(?=.*(?:\biud\b|\bius\b|lng[- ]?ius|intrauterine|progestin[- ]only|progestogen[- ]only|\bpop\b|norethindrone|drospirenone|desogestrel|non[- ]?estrogen|estrogen[- ]free|copper|implant|etonogestrel|nexplanon|depo|medroxyprogesterone|mirena|kyleena|liletta|skyla|jaydess|paragard|condom|barrier))', absent_is_false = true }]
 
 [[items]]
 id = "sup_coc_reason"

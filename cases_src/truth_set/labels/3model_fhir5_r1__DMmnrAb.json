@@ -1,0 +1,150 @@
+{
+ "id": "3model_fhir5_r1__DMmnrAb",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_hgbl_double_hit": {
+   "met": true,
+   "quote": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (HGBL-DH, 'double-hit' lymphoma), not DLBCL NOS.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dx_dlbcl_nos": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_gcb_hans": {
+   "met": true,
+   "quote": "germinal-center phenotype (CD20+, PAX5+, CD10+, BCL6+, MUM1-",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_plan_outdated": {
+   "met": true,
+   "quote": "I am cancelling the planned R-CHOP and starting curative-intent DA-EPOCH-R",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_ii_bulky": {
+   "met": true,
+   "quote": "Ann Arbor stage IIA, bulky: right cervical levels II-IV nodal disease plus a 12.0 cm anterior mediastinal mass, all above the diaphragm",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iii_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "bio_double_expressor_secondary": {
+   "met": false,
+   "quote": "with high MYC and BCL2 protein expression and very high proliferation (Ki-67 95%)",
+   "confidence": "medium",
+   "note": "Notes high MYC/BCL2 protein but never names double-expressor status or contrasts it with FISH."
+  },
+  "prog_ipi1_biology_dominates": {
+   "met": true,
+   "quote": "IPI 1 (low), age-adjusted IPI 1 (low-intermediate), and CNS-IPI 1 (low). However, the double-hit histology dominates prognosis",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_intensive_curative": {
+   "met": true,
+   "quote": "starting curative-intent DA-EPOCH-R (dose-adjusted etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin, plus rituximab) for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_rchop_preferred": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_consolidation": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": false,
+   "quote": "I will perform a lumbar puncture with CSF cytology and flow cytometry before cycle 1.",
+   "confidence": "medium",
+   "note": "LP/CSF ordered and DH treated as high risk, but no baseline brain MRI recommended."
+  },
+  "cns_prophylaxis": {
+   "met": true,
+   "quote": "I will give CNS prophylaxis with intrathecal methotrexate 12 mg for 4 doses starting with cycle 2",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_cns_dismissed": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_pet_lugano": {
+   "met": true,
+   "quote": "again 6-8 weeks after cycle 6 using Lugano/Deauville criteria",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "DA-EPOCH-R requires pegfilgrastim 6 mg on day 6, or filgrastim, with nadir-based dose adjustment.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls": {
+   "met": true,
+   "quote": "Start allopurinol 300 mg daily and aggressive hydration now, check G6PD, and give rasburicase 0.2 mg/kg before cycle 1 if G6PD is normal",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_central_access_infusion": {
+   "met": false,
+   "quote": "the 96-hour infusion and frequent visits of DA-EPOCH-R are feasible with his support and proximity",
+   "confidence": "medium",
+   "note": "Mentions 96-hour infusion and port placement separately but never links infusion to central access."
+  },
+  "sup_fertility": {
+   "met": true,
+   "quote": "Offer sperm banking before cycle 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_svc_airway": {
+   "met": true,
+   "quote": "Monitor for SVC syndrome and airway compromise, with head-of-bed elevation and urgent evaluation for stridor or worsening facial swelling",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "Hepatitis B: HBsAg negative, anti-HBc negative, anti-HBs positive (immune), so no antiviral prophylaxis is needed.",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "He is fit for intensive curative therapy: age 54, ECOG 1, working, LVEF 60%",
+   "confidence": "medium",
+   "note": "LVEF cited as part of fitness rather than explicitly as anthracycline clearance."
+  },
+  "fit_intensive": {
+   "met": true,
+   "quote": "He is fit for intensive curative therapy: age 54, ECOG 1, working, LVEF 60%, normal renal and hepatic function",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

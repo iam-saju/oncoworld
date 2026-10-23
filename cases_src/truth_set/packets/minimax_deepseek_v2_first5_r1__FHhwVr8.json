@@ -1,0 +1,247 @@
+{
+ "id": "minimax_deepseek_v2_first5_r1__FHhwVr8",
+ "model": "deepseek-v4.1-flash-free",
+ "task": "dlbcl_0003_renal_adrenal_cns_high_v2_narrative",
+ "layer": null,
+ "rubric": "cases_src/dlbcl_0003/rubric_v2.toml",
+ "answer_path": "jobs/minimax_deepseek_v2_first5_r1/dlbcl_0003_renal_adrenal_cns_hig__FHhwVr8 (rebuilt from agent logs)",
+ "context": "Patient: 67M with 6 wk epigastric/LUQ pain, drenching night sweats and 8 kg weight loss; ECOG 2, T2DM on metformin, taking ibuprofen 400 mg QID. PET-CT: 9.4 cm retroperitoneal/mesenteric mass plus FDG-avid R kidney, L adrenal and liver lesions; GCB DLBCL (MYC 20%, BCL2 30%, FISH negative), marrow negative, LDH 1,290, uric acid 10.4, creatinine 1.1 -> 1.5.\nWhat this case tests: Kidney, adrenal and liver lesions are extranodal organ disease, so stage IV, IPI 5/5 and CNS-IPI 6/6. | MYC 20% / BCL2 30% with negative FISH: neither double-expressor nor double-hit, so no intensified regimen such as DA-EPOCH-R. | ECOG 2 is disease-related in a patient who wants cure: full-dose Pola-R-CHP (or R-CHOP) x6 after a steroid prephase, not mini-CHOP or palliation. | Uric acid 10.4, LDH >5x ULN and rising creatinine mean high TLS risk: IV hydration, rasburicase after G6PD check, TLS labs every 6-12 hours for the first 72 hours, stop NSAIDs. | High CNS risk: MRI brain and LP with CSF cytology/flow now; HD-MTX only as an individualized option once renal function recovers and NSAIDs are stopped.",
+ "answer": {
+  "diagnosis": "Diffuse large B-cell lymphoma (DLBCL), not otherwise specified (NOS), germinal-center B-cell-like (GCB) immunophenotype by the Hans algorithm (CD10 diffuse positive, BCL6 positive, MUM1/IRF4 negative; BCL2 ~30%, MYC ~20%, Ki-67 ~70%; EBER negative), with no MYC, BCL2 or BCL6 rearrangement on FISH (not double-hit/triple-hit and not a double-expressor by IHC). Diagnosed on CT-guided core biopsy of the retroperitoneal mass; bone marrow morphology, immunohistochemistry and flow cytometry are negative for lymphoma.",
+  "stage": "Ann Arbor stage IVB: large (9.4 cm) FDG-avid retroperitoneal/mesenteric conglomerate nodal mass plus extranodal involvement of the right kidney (3.2 cm), left adrenal gland (2.6 cm) and liver segment VI (1.8 cm), with B symptoms (drenching night sweats, 8 kg/10% weight loss). No supradiaphragmatic, bone marrow, testicular or documented CNS involvement. IPI 5 of 5 (age >60, stage IV, LDH > ULN, >1 extranodal site, ECOG 2); CNS-IPI 6 of 6.",
+  "biology": "GCB DLBCL with high proliferation (Ki-67 ~70%) but favorable molecular features: no MYC/BCL2/BCL6 rearrangement and no double-expressor phenotype (MYC 20%, BCL2 30%), EBER negative. This argues against high-grade B-cell lymphoma with double-hit/triple-hit biology. The main biologic uncertainty is that the right renal, left adrenal and liver lesions were not biopsied; their intense, concordant FDG avidity makes lymphoma most likely, but a synchronous renal cell carcinoma (with adrenal/liver metastases) has not been excluded histologically.",
+  "prognosis": "Potentially curable, but high risk. IPI 5 predicts roughly 30% 5-year PFS/OS with R-CHOP-type therapy, with improvement expected from Pola-R-CHP; GCB subtype and absence of double-hit features are favorable. CNS-IPI 6 predicts a high risk of CNS relapse (on the order of 10-15% at 2 years), particularly given renal and adrenal involvement. The markedly elevated LDH (1,290 U/L), large tumor burden, B symptoms, declining renal function (eGFR 50) and high tumor-lysis risk make the next few weeks precarious; response to first-line therapy will be the dominant determinant of outcome.",
+  "first_line_treatment": "Start curative-intent systemic therapy promptly, within days, after tumor-lysis precautions. My regimen is Pola-R-CHP (polatuzumab vedotin plus rituximab, cyclophosphamide, doxorubicin, prednisone) every 21 days for 6 cycles, with full-dose doxorubicin (baseline LVEF 60%) and pegfilgrastim primary prophylaxis. This is a category 1 NCCN regimen for advanced-stage DLBCL with IPI >=2 and offers a PFS advantage over R-CHOP; if polatuzumab is not available or approved, R-CHOP x6 is the appropriate equivalent. I would not use DA-EPOCH-R or a reduced-intensity/frailty regimen: there is no double-hit disease and his ECOG 2 is largely disease-related, so he should be treated with curative intent. I would not add consolidative radiation up front; reserve involved-site radiation for residual PET-positive or bulky residual disease after chemotherapy.",
+  "cns_risk": "High: CNS-IPI 6 of 6 (age >60, stage IV, ECOG 2, elevated LDH, >1 extranodal site, and kidney/adrenal involvement), although he has no neurological symptoms. I will obtain baseline CSF cytology and flow cytometry (and MRI brain only if symptoms develop). If the CSF is negative, I will give CNS prophylaxis with intrathecal methotrexate (4 doses during the first cycles) because high-dose intravenous methotrexate is not safe with eGFR 50. I recognize that the evidence for intrathecal prophylaxis is weak and that it mainly addresses leptomeningeal rather than parenchymal relapse; if renal function recovers to normal, high-dose systemic methotrexate would be the preferred prophylaxis. A positive CSF or new neurological findings would change the plan to CNS-directed therapy.",
+  "response_assessment": "Baseline PET-CT is complete. Do not change treatment based on an interim PET outside a trial. Assess response with PET-CT using Lugano 2014/Deauville criteria about 6-8 weeks after cycle 6 (no later than 12 weeks), together with repeat CT, LDH, CBC and renal function. Deauville 1-3 is a complete metabolic response. Because the baseline mass is large, a residual non-FDG-avid mass may be fibrosis. If Deauville 4-5, biopsy the residual site (including the renal/adrenal/liver lesions to exclude a second malignancy) and either give involved-site radiation for limited residual disease or proceed to second-line salvage therapy and CAR-T if truly refractory. Progressive disease at any point or a rising LDH would prompt restaging and a change of therapy.",
+  "pretreatment_workup": "Already completed and adequate: CBC with differential, CMP, LDH, uric acid, beta-2 microglobulin, HIV, HBV (HBsAg negative, anti-HBc negative, anti-HBs reactive, so no HBV antiviral prophylaxis is needed), HCV, PET-CT, echocardiogram (LVEF 60%), bone marrow aspirate/biopsy (negative), and MYC/BCL2/BCL6 FISH. Before cycle 1 I still need: G6PD level (mandatory before rasburicase), repeat electrolytes/creatinine/uric acid and urinalysis, baseline CSF as above, dental evaluation, and documentation of baseline neuropathy and cardiac risk. I will give inactivated influenza, COVID-19 and pneumococcal vaccines before rituximab if not current (live vaccines are contraindicated), and will not delay lymphoma treatment for them. I would not routinely biopsy the renal/adrenal/liver lesions before starting therapy, but I will reassess them on the end-of-treatment PET.",
+  "supportive_care": "Tumor lysis is the immediate danger: large tumor burden, LDH 1,290, uric acid 10.4, renal involvement and eGFR 50 place him at high risk. For cycle 1, admit or closely observe with vigorous IV hydration and frequent potassium, phosphorus, calcium, uric acid and creatinine monitoring; give rasburicase 0.2 mg/kg after confirming G6PD status (use allopurinol with hydration if G6PD deficient), then allopurinol. Stop ibuprofen now: it is contributing to the AKI and is unsafe with this renal/TLS risk; use acetaminophen (with a daily maximum) and short-acting opioids for the abdominal pain. Give pegfilgrastim, 5-HT3-based antiemetics plus dexamethasone (consider olanzapine), and monitor glucose closely because steroids will worsen his diabetes; hold metformin if renal function worsens. Reserve PJP prophylaxis for prolonged/high-dose steroids (sulfa allergy: use atovaquone or pentamidine). Use VTE prophylaxis if hospitalized, encourage mobility, and involve nephrology if creatinine rises. Provide nutrition/social-work support, coordinate local labs/telehealth for the 45-minute commute, avoid live vaccines, and counsel on infection precautions and gout prophylaxis.",
+  "fitness_and_goals": "ECOG 2, age 67, with T2DM, hypertension, gout and CKD, but he is independent in self-care, has normal LVEF and is highly motivated; his fatigue is largely disease-related. He is fit for full-dose anthracycline-based curative therapy, and he explicitly wants cure. His personal goal is attending his granddaughter's wedding in mid-December, so I will schedule the 21-day cycles to keep the expected nadir away from that week and use growth factor support, while explaining that treatment should not be delayed given the bulky, high-LDH disease and declining renal function. If he becomes truly frail or develops significant organ dysfunction, I would reassess and consider a reduced-intensity approach, but that is not the current plan. Early advance-care-planning discussions and involvement of his wife and daughter are appropriate.",
+  "missing_information": [
+   "G6PD status, needed before rasburicase",
+   "Baseline CSF cytology/flow cytometry results",
+   "Histologic confirmation of the renal, adrenal and liver lesions (presumed lymphoma vs synchronous renal cell carcinoma)",
+   "Cause of the declining renal function (NSAID nephrotoxicity vs tumor infiltration/TLS) and urinalysis",
+   "Availability and insurance approval of polatuzumab vedotin",
+   "Baseline dental evaluation and varicella-zoster IgG",
+   "Prior vaccination history and quantitative immunoglobulins",
+   "Formal frailty/geriatric assessment and baseline neuropathy assessment",
+   "Patient's preference regarding intrathecal CNS prophylaxis and tolerance of extra procedures",
+   "Prior imaging for the 4 mm right upper lobe pulmonary nodule",
+   "Advance care planning and health-care proxy documentation",
+   "Whether the patient can reliably travel for 6 cycles and who will monitor glucose and renal function locally"
+  ]
+ },
+ "items": [
+  {
+   "id": "dx_dlbcl_gcb",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response states the diagnosis is diffuse large B-cell lymphoma (NOS) with a germinal-center B-cell (GCB) phenotype."
+  },
+  {
+   "id": "stage_iv",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 8,
+   "criterion": "The response stages the disease as Lugano/Ann Arbor stage IV."
+  },
+  {
+   "id": "stage_extranodal_sites",
+   "kind": "should",
+   "severity": "minor",
+   "points": 3,
+   "criterion": "The response attributes stage IV to extranodal organ involvement of the kidney, adrenal gland and liver."
+  },
+  {
+   "id": "stage_b_symptoms",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response notes B symptoms (night sweats and/or weight loss >10% or fevers)."
+  },
+  {
+   "id": "mn_stage_below_iv",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response assigns this patient a stage lower than IV (stage I, II or III)."
+  },
+  {
+   "id": "mol_not_de_not_dh",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response states the lymphoma is neither double-expressor (MYC 20%, BCL2 30% below thresholds) nor double-hit (FISH negative for MYC, BCL2 and BCL6 rearrangements)."
+  },
+  {
+   "id": "mn_calls_double_hit",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response classifies this lymphoma as double-hit / high-grade B-cell lymphoma with MYC and BCL2 rearrangements."
+  },
+  {
+   "id": "mn_calls_double_expressor",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response classifies this lymphoma as double-expressor."
+  },
+  {
+   "id": "prog_ipi_high",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response calculates IPI as 5 (or explicitly high-risk IPI 4-5): age >60, elevated LDH, ECOG >=2, stage IV, >1 extranodal site."
+  },
+  {
+   "id": "prog_cns_ipi_high",
+   "kind": "must",
+   "severity": "important",
+   "points": 6,
+   "criterion": "The response calculates CNS-IPI as 6 or high risk (4-6), counting kidney/adrenal involvement."
+  },
+  {
+   "id": "tx_curative_pola_or_rchop",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 8,
+   "criterion": "The response recommends curative-intent full-dose immunochemotherapy with Pola-R-CHP or R-CHOP for 6 cycles."
+  },
+  {
+   "id": "tx_pola_preferred",
+   "kind": "should",
+   "severity": "minor",
+   "points": 3,
+   "criterion": "The response names Pola-R-CHP as the preferred regimen given IPI >=2 (R-CHOP acceptable alternative)."
+  },
+  {
+   "id": "tx_prephase_steroid",
+   "kind": "must",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response recommends a steroid prephase (e.g. prednisone ~100 mg daily for 5-7 days) before cycle 1 given age >60, ECOG 2 and high tumor burden."
+  },
+  {
+   "id": "mn_non_curative",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response recommends palliative-only treatment, best supportive care, or hospice as the plan."
+  },
+  {
+   "id": "mn_da_epoch",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response recommends DA-EPOCH-R or another intensified regimen for this patient."
+  },
+  {
+   "id": "mn_dose_reduced_initial",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response recommends a dose-reduced regimen (e.g. R-mini-CHOP) as the initial plan, despite age 67 and disease-related ECOG 2."
+  },
+  {
+   "id": "cns_risk_addressed",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 4,
+   "criterion": "The response identifies a high risk of CNS relapse driven by kidney/adrenal involvement and high CNS-IPI."
+  },
+  {
+   "id": "cns_staging_mri_csf",
+   "kind": "must",
+   "severity": "important",
+   "points": 5,
+   "criterion": "The response recommends baseline CNS evaluation: contrast MRI brain and lumbar puncture with CSF cytology and flow cytometry."
+  },
+  {
+   "id": "cns_prophylaxis_renal",
+   "kind": "should",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response discusses CNS prophylaxis (e.g. high-dose methotrexate) as an individualized option with uncertain benefit and ties its feasibility to renal function / stopping NSAIDs."
+  },
+  {
+   "id": "mn_hdmtx_now_despite_aki",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response schedules high-dose methotrexate immediately (e.g. with cycle 1) without addressing the rising creatinine, renal involvement, or concurrent NSAID use."
+  },
+  {
+   "id": "resp_eot_pet_lugano",
+   "kind": "must",
+   "severity": "important",
+   "points": 7,
+   "criterion": "The response plans an end-of-treatment FDG PET-CT read with Lugano criteria / Deauville 5-point scale."
+  },
+  {
+   "id": "resp_ds45_biopsy",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response says residual Deauville 4-5 uptake at end of treatment should be biopsied if it would change management."
+  },
+  {
+   "id": "sup_tls_prophylaxis",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 7,
+   "criterion": "The response recognizes high tumor-lysis risk (uric acid 10.4, LDH >5x ULN, rising creatinine) and orders TLS prophylaxis with IV hydration, a uric-acid-lowering agent and frequent TLS labs (every 6-12 hours for the first 72 hours; daily is not frequent enough at this risk)."
+  },
+  {
+   "id": "sup_rasburicase_g6pd",
+   "kind": "should",
+   "severity": "important",
+   "points": 3,
+   "criterion": "The response favors rasburicase (given hyperuricemia with renal impairment) and checks G6PD before giving it."
+  },
+  {
+   "id": "sup_gcsf",
+   "kind": "must",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response recommends primary G-CSF prophylaxis (e.g. pegfilgrastim) with each cycle, given age >=65."
+  },
+  {
+   "id": "sup_stop_nsaid",
+   "kind": "should",
+   "severity": "important",
+   "points": 3,
+   "criterion": "The response stops ibuprofen/NSAIDs (nephrotoxic with rising creatinine; interacts with methotrexate) and offers alternative analgesia."
+  },
+  {
+   "id": "sup_steroid_glucose",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response anticipates steroid-induced hyperglycemia in this diabetic patient (glucose monitoring / insulin plan) or adjusts metformin for falling eGFR."
+  },
+  {
+   "id": "work_hbv_reviewed",
+   "kind": "should",
+   "severity": "minor",
+   "points": 2,
+   "criterion": "The response confirms hepatitis B serology was checked (HBsAg and anti-HBc nonreactive) so no antiviral prophylaxis is needed before rituximab."
+  },
+  {
+   "id": "work_echo_reviewed",
+   "kind": "should",
+   "severity": "minor",
+   "points": 1,
+   "criterion": "The response notes the baseline LVEF of 60% permits anthracycline."
+  },
+  {
+   "id": "fit_ecog_disease_related",
+   "kind": "must",
+   "severity": "important",
+   "points": 4,
+   "criterion": "The response judges ECOG 2 as disease-related and not a reason to de-escalate curative therapy, and acknowledges the patient's goal of cure."
+  }
+ ]
+}

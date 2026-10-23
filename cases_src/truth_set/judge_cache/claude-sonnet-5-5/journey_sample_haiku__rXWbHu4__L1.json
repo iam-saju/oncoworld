@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified, germinal-center B-cell type by Hans algorithm (CD20+, CD10+, BCL6+, MUM1/IRF4 negative), newly diagnosed and untreated.",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IV, Lugano stage IV B, with bulky disease.",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "plus FDG-avid right renal (3.2 cm), left adrenal (2.6 cm) and hepatic segment VI (1.8 cm) lesions. The liver lesion is separate from the nodal mass, so the disease is stage IV",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms are present: drenching night sweats most nights and unintentional weight loss of about 11% (79 kg to 70.2 kg over about 2 months).",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "Ann Arbor stage IV, Lugano stage IV B, with bulky disease.",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "MYC IHC 20% (below the 40% double-expressor threshold) and BCL2 IHC 30% (below the 50% threshold), so not double-expressor by standard cut-offs; FISH is negative for MYC, BCL2 and BCL6 rearrangements, so there is no double-hit biology.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "MYC, BCL2 and BCL6 rearrangements are not detected, so this is not high-grade B-cell lymphoma (double/triple-hit).",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "so not double-expressor by standard cut-offs",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "International Prognostic Index 5 of 5: age over 60 (1), ECOG 2 (1), stage IV (1), LDH above ULN (1; 1120 U/L on 2026-09-03 and 1290 U/L on 2026-09-16",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "CNS-IPI points I count: age over 60 (1), Ann Arbor stage III/IV (1), LDH above ULN (1), and renal and/or adrenal involvement (1). Four points places him in the high-risk group",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Start curative-intent immunochemotherapy now. Target cycle 1 day 1 within about 7 days of tumor board",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "NCCN lists pola-R-CHP as a preferred first-line regimen for DLBCL, it improved PFS over R-CHOP",
+  "source": "judge"
+ },
+ "tx_prephase_steroid": {
+  "met": false,
+  "quote": "prednisone days 1 to 5 each cycle will raise glucose",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Goals-of-care: curative intent, with honest discussion that cure is likely but not certain; ... Early palliative and supportive care referral for symptom management, not comfort-only care.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "Not indicated now: DA-EPOCH-R (no double-hit biology) and upfront autologous transplant.",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "Dose full (no upfront reduction) for ECOG 2 and eGFR 50",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": true,
+  "quote": "High. CNS-IPI points I count: age over 60 (1), Ann Arbor stage III/IV (1), LDH above ULN (1), and renal and/or adrenal involvement (1). Four points places him in the high-risk group",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": true,
+  "quote": "before cycle 1, brain MRI with and without gadolinium (a group II agent is acceptable at eGFR 50) and lumbar puncture with CSF cytology and flow cytometry, after coagulation studies.",
+  "source": "judge"
+ },
+ "cns_prophylaxis_renal": {
+  "met": true,
+  "quote": "intrathecal methotrexate prophylaxis with the cycles per institutional protocol (commonly 4 to 6 doses). The evidence is observational, but it is the usual approach for high-risk patients. (c) Avoid high-dose methotrexate: eGFR 50, age, and the hydration needs of tumor lysis.",
+  "source": "judge"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "Avoid high-dose methotrexate: eGFR 50, age, and the hydration needs of tumor lysis.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT about 3 to 4 weeks after cycle 6. Complete metabolic response (Deauville 1 to 3, no new lesions) means observation.",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Residual Deauville 4 to 5 at end of treatment: biopsy if clinically suspicious, and consider consolidative radiotherapy to the bulky retroperitoneal site.",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": false,
+  "quote": "Recheck electrolytes and urate every 6 to 12 hours for the first 48 hours.",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": true,
+  "quote": "If G6PD is normal, give rasburicase 0.2 mg/kg IV daily per protocol because urate is already elevated.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Give primary G-CSF support (pegfilgrastim or on-body injector) for age, ECOG 2, comorbidity and the anthracycline.",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "NSAIDs: stop ibuprofen and all NSAIDs, including OTC products; he is taking 1600 mg/day with lisinopril, rising creatinine and low platelets.",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "prednisone days 1 to 5 each cycle will raise glucose; arrange basal or NPH insulin with the prednisone schedule and glucose checks through the diabetes team.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis: HBsAg and anti-HBc nonreactive, anti-HBs reactive; no antiviral prophylaxis needed.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "Echocardiogram 2026-09-09: LVEF 60%, GLS -19%, grade I diastolic dysfunction. This is acceptable for an anthracycline; repeat only with symptoms.",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": false,
+  "quote": "Assessment: fit for curative full-dose pola-R-CHP with supportive care; not a candidate for intensified or high-dose consolidation at this point.",
+  "source": "judge"
+ }
+}

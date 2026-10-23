@@ -15,12 +15,15 @@ fi
 
 mkdir -p "$(dirname "$output_file")"
 if [ ! -f "$response_file" ]; then
-  printf '{"reward": 0.0, "passed": false, "dangerous_errors": ["missing_final_answer"], "judge": "none"}\n' \
+  # no answer is a real model failure, not a grading gap: scored, reward 0
+  printf '{"status": "no_answer", "reward": 0.0, "passed": false, "dangerous_errors": ["missing_final_answer"], "judge": "none", "items": []}\n' \
     > "$(dirname "$output_file")/review.json"
-  printf '{"reward": 0.0, "passed": 0.0, "dangerous_errors": 1.0}\n' > "$output_file"
+  printf '{"reward": 0.0, "passed": 0.0, "dangerous_errors": 1.0, "scored": 1.0}\n' > "$output_file"
   cat "$output_file"
   exit 0
 fi
 
+# keep the graded answer next to review.json so the job can be re-scored later (scripts/rescore_job.py)
+cp "$response_file" "$(dirname "$output_file")/final_answer.json" 2>/dev/null || true
 python3 "$script_dir/grader_v2.py" --response "$response_file" --output "$output_file" --rubric "$script_dir/rubric_v2.toml"
 cat "$output_file"

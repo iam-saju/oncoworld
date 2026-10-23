@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r1__25T3eZy",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "DLBCL, NOS with a germinal-center B-cell-like (GCB/non-GCB) phenotype by the Hans algorithm (CD10+, BCL6+, MUM1/IRF4 <10%)",
+   "confidence": "medium",
+   "note": "Hans result clearly GCB but phrased oddly as 'GCB/non-GCB'; later text confirms GCB."
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor/Lugano stage IV with B symptoms (IVB)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "bulky (9.4 cm; marginal at the 10 cm cutoff, bulky by the >=7 cm convention) retroperitoneal/mesenteric nodal disease plus extranodal liver, kidney and adrenal involvement",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms are present (drenching night sweats most nights, 8 kg unintentional weight loss over two months)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "MYC IHC (20%) and BCL2 IHC (30%) are both below the 40% and 50% thresholds respectively for a double-hit phenotype by IHC",
+   "confidence": "medium",
+   "note": "Correct thresholds and no-DH conclusion, but mislabels double-expressor as 'double-hit phenotype by IHC'."
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "there is NO double-hit/triple-hit disease",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "IPI 5/5 (high risk): age 67 (>60), LDH 1290 U/L (about 5.7x ULN), stage IV, ECOG 2, and more than one extranodal site",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "CNS-IPI 6/6: age >60, LDH elevated (1120-1290 U/L), ECOG 2 (>=1), stage IV, more than one extranodal site, and kidney/adrenal involvement",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "six cycles of rituximab-based chemoimmunotherapy at full dose, on a 21-day schedule",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "I plan to use Pola-R-CHP",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "I am NOT using DA-EPOCH-R (no double-hit biology, added toxicity for no benefit)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "I will not reduce the R-CHOP backbone for ECOG 2 or albumin 3.1 g/dL",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "CNS-IPI 6/6: age >60, LDH elevated (1120-1290 U/L), ECOG 2 (>=1), stage IV, more than one extranodal site, and kidney/adrenal involvement",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": false,
+   "quote": "No baseline CSF cytology is indicated in the absence of neurologic symptoms",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_prophylaxis_renal": {
+   "met": true,
+   "quote": "substitute systemic HD-methotrexate 3 g/m2 on day 15 of cycles 3 and 5 once renal function recovers to eGFR >=60",
+   "confidence": "medium",
+   "note": "Ties HD-MTX to renal recovery but frames prophylaxis as mandatory rather than an individualized option of uncertain benefit."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment assessment: PET-CT 6-8 weeks after cycle 6",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "If residual Deauville 4-5 uptake is present, I will biopsy before declaring persistent disease",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_prophylaxis": {
+   "met": true,
+   "quote": "rasburicase 0.2 mg/kg with redosing if uric acid remains elevated, plus allopurinol 100 mg daily renally adjusted, IV isotonic fluids 2.5-3 L/m2/day, q6-8h electrolytes/uric acid/LDH/creatinine for the first 48-72 hours",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_rasburicase_g6pd": {
+   "met": false,
+   "quote": "rasburicase 0.2 mg/kg with redosing if uric acid remains elevated",
+   "confidence": "medium",
+   "note": "Rasburicase is favored but no G6PD check is ordered; criterion requires both."
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "mandatory pegfilgrastim 6 mg on day 2 of every cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "Substitute acetaminophen up to 3 g/day with LFT monitoring",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "plan per-cycle insulin rather than escalating metformin, and hold metformin if renal function deteriorates",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg-, anti-HBc-, anti-HBs+ = immune, so no antiviral prophylaxis is needed despite rituximab",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "transthoracic echocardiogram (2026-09-09: LVEF 60%, GLS -19%, grade I diastolic dysfunction, no effusion)",
+   "confidence": "medium",
+   "note": "LVEF 60% reviewed and full-dose anthracycline planned, but not explicitly stated as permitting anthracycline."
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "ECOG 2 alone is not a reason to reduce doses, to omit CNS prophylaxis, or to refer for less intensive therapy",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

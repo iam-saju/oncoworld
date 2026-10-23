@@ -1,0 +1,29 @@
+id = "intracranial_mesenchymal_0001_fhir"
+title = "Intracranial mesenchymal tumor with spinal drop metastasis: initial tumor-board plan (FHIR)"
+domain = "neuro_oncology"
+subdomain = "intracranial_mesenchymal_tumor"
+difficulty = "advanced"
+patient_type = "synthetic"
+task_type = "clinical_reasoning_short_horizon"
+source = "Onco MysticA PDF supplied by user"
+source_case = "harbor_cases/intracranial_mesenchymal_0001_narrative"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+input_format = "fhir_bundle"
+
+[evaluation]
+rubric_file = "tests/rubric_v2.toml"
+gold_file = "solution/gold_answer.md"
+verifier = "tests/test.sh"
+expected_output = "/app/final_answer.json"
+passing_score = 0.75
+
+[verifier]
+timeout_sec = 300.0
+
+[verifier.env]
+# Optional LLM judge, used only when ONCOWORLD_GRADER=judge; the regex rules are the grader of record.
+ONCOWORLD_JUDGE_API_KEY = "${ONCOWORLD_JUDGE_API_KEY:-}"
+ONCOWORLD_JUDGE_MODEL = "${ONCOWORLD_JUDGE_MODEL:-}"
+ONCOWORLD_JUDGE_BASE_URL = "${ONCOWORLD_JUDGE_BASE_URL:-https://openrouter.ai/api/v1}"
+ONCOWORLD_JUDGE_HEADERS = "${ONCOWORLD_JUDGE_HEADERS:-}"
+ONCOWORLD_GRADER = "${ONCOWORLD_GRADER:-regex}"

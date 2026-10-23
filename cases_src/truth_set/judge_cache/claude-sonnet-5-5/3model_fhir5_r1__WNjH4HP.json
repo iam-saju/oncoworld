@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma (DLBCL), not otherwise specified (NOS), non-germinal-center B-cell-like (non-GCB/ABC) by the Hans algorithm",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "non-GCB/ABC phenotype (CD10 negative, BCL6 positive, MUM1/IRF4 positive in ~70%, CD5 negative)",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor/Lugano stage IIIB, bulky, with splenic involvement (IIIS)",
+  "source": "judge"
+ },
+ "stage_spleen_nodal": {
+  "met": true,
+  "quote": "The spleen is a lymphatic organ, so standard Lugano staging makes this stage IIIB (IIIS), not stage IV.",
+  "source": "judge"
+ },
+ "stage_bulky_b_symptoms": {
+  "met": true,
+  "quote": "a confluent 11.0 cm retroperitoneal nodal mass below the diaphragm, multiple FDG-avid splenic lesions, and no extralymphatic organ involvement",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "standard Lugano staging makes this stage IIIB (IIIS), not stage IV.",
+  "source": "judge"
+ },
+ "mn_spleen_extranodal_count": {
+  "met": false,
+  "quote": "IPI 3 (age >60, stage III, elevated LDH), high-intermediate risk.",
+  "source": "judge"
+ },
+ "mol_de_not_dh": {
+  "met": true,
+  "quote": "with a double-expressor immunophenotype (MYC ~50%, BCL2 ~80%), high proliferation (Ki-67 ~85%), EBER-negative, and no MYC, BCL2, or BCL6 rearrangement by FISH (not double-hit or triple-hit)",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "Interphase FISH shows no MYC (8q24), BCL2 (18q21), or BCL6 (3q27) rearrangement, so this is not double-hit/triple-hit lymphoma and should not be managed as such.",
+  "source": "judge"
+ },
+ "mn_denies_double_expressor": {
+  "met": false,
+  "quote": "BCL2 positive in ~80% and MYC positive in ~50% of cells (double expressor by IHC)",
+  "source": "judge"
+ },
+ "prog_ipi_3": {
+  "met": true,
+  "quote": "IPI 3 (age >60, stage III, elevated LDH), high-intermediate risk.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_intermediate": {
+  "met": true,
+  "quote": "CNS-IPI 3 (age >60, stage III/IV, elevated LDH; ECOG 1, no more than one extranodal site, and no kidney/adrenal involvement) places him at intermediate risk",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "I recommend six cycles of Pola-R-CHP: polatuzumab vedotin 1.8 mg/kg IV day 1, rituximab 375 mg/m2 day 1, cyclophosphamide 750 mg/m2 day 1, doxorubicin 50 mg/m2 day 1, and prednisone 100 mg daily on days 1-5, every 21 days, with curative intent.",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "This is an NCCN-preferred first-line regimen for advanced-stage DLBCL with IPI ≥2 and is appropriate for his stage IIIB, IPI 3, fit status, and non-GCB/double-expressor biology. If polatuzumab is not accessible or insurance does not approve it, R-CHOP x6 is the standard alternative.",
+  "source": "judge"
+ },
+ "tx_isrt_residual_bulk": {
+  "met": false,
+  "quote": "I would not add lenalidomide or ibrutinib, consolidative radiation, maintenance rituximab, or up-front autologous transplant outside a clinical trial.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Potentially curable with immunochemotherapy.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I would not use DA-EPOCH-R: there is no double-hit rearrangement, and CALGB 50303 showed no benefit over R-CHOP with greater toxicity.",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "He is fit for full-dose anthracycline-based immunochemotherapy: age 62, ECOG 1, independent in all activities of daily living",
+  "source": "judge"
+ },
+ "hbv_prophylaxis": {
+  "met": false,
+  "quote": "start entecavir 0.5 mg daily (or tenofovir) before rituximab and continue for at least 6-12 months after the last rituximab dose, with HBV DNA and liver tests monitored",
+  "source": "judge"
+ },
+ "hbv_dna_lft_monitoring": {
+  "met": true,
+  "quote": "Before cycle 1 I still need: quantitative HBV DNA (HBsAg negative but anti-HBc positive)",
+  "source": "judge"
+ },
+ "mn_no_hbv_action": {
+  "met": false,
+  "quote": "because HBsAg is negative but anti-HBc is positive (resolved HBV), start entecavir 0.5 mg daily (or tenofovir) before rituximab",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "places him at intermediate risk, approximately 4% at 2 years. He has no high-risk CNS site (testis, breast, kidney/adrenal, uterus, paranasal sinus, epidural), no neurological symptoms, and no double-hit rearrangement. I would not give routine intrathecal methotrexate",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "I would not give routine intrathecal methotrexate or high-dose systemic methotrexate CNS prophylaxis; the benefit is unproven in this risk group and toxicity is real.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment FDG PET-CT (skull base to mid-thigh) 6-12 weeks after cycle 6, interpreted with Lugano 2014 criteria and the Deauville 5-point scale",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Deauville 4-5 requires biopsy of any residual FDG-avid site if feasible, and a negative biopsy would be managed as complete response.",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis: intermediate-high risk with an 11 cm mass and LDH 735; give allopurinol 300 mg daily, hydration 2-3 L/day, and frequent potassium, phosphorus, calcium, creatinine, and uric acid checks",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Give pegfilgrastim 6 mg SC on day 2 as primary febrile-neutropenia prophylaxis.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "cumulative doxorubicin will be 300 mg/m2, below the usual threshold, with a normal baseline LVEF; monitor for heart-failure symptoms.",
+  "source": "judge"
+ },
+ "fit_full_dose": {
+  "met": true,
+  "quote": "He is fit for full-dose anthracycline-based immunochemotherapy: age 62, ECOG 1, independent in all activities of daily living, working part-time from home, no cardiac, pulmonary, renal, or hepatic comorbidity, LVEF 58%, eGFR 96, and normal bilirubin.",
+  "source": "judge"
+ },
+ "miss_hbv_dna": {
+  "met": true,
+  "quote": "Quantitative HBV DNA (HBsAg-negative/anti-HBc-positive; needed before anti-CD20 therapy to distinguish resolved from occult HBV and to guide entecavir prophylaxis and monitoring).",
+  "source": "judge"
+ }
+}

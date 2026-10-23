@@ -1,0 +1,29 @@
+id = "dlbcl_0002_splenic_stage_iii_cardiac_v2_narrative"
+title = "Nodal and splenic DLBCL after prior anthracycline for breast cancer, reduced LVEF: tumor-board plan (narrative)"
+domain = "hematology_oncology"
+subdomain = "lymphoma"
+difficulty = "advanced"
+patient_type = "synthetic"
+task_type = "clinical_reasoning"
+oncoworld_version = "v2"
+source_case = "cases_src/dlbcl_0002"
+review_status = "PENDING_ONCOLOGIST"
+input_format = "narrative_chart"
+
+[evaluation]
+rubric_file = "tests/rubric_v2.toml"
+gold_file = "solution/gold_answer.md"
+verifier = "tests/test.sh"
+expected_output = "/app/final_answer.json"
+passing_score = 0.75
+
+[verifier]
+timeout_sec = 300.0
+
+[verifier.env]
+# Optional LLM judge, used only when ONCOWORLD_GRADER=judge; the regex rules are the grader of record.
+ONCOWORLD_JUDGE_API_KEY = "${ONCOWORLD_JUDGE_API_KEY:-}"
+ONCOWORLD_JUDGE_MODEL = "${ONCOWORLD_JUDGE_MODEL:-}"
+ONCOWORLD_JUDGE_BASE_URL = "${ONCOWORLD_JUDGE_BASE_URL:-https://openrouter.ai/api/v1}"
+ONCOWORLD_JUDGE_HEADERS = "${ONCOWORLD_JUDGE_HEADERS:-}"
+ONCOWORLD_GRADER = "${ONCOWORLD_GRADER:-regex}"

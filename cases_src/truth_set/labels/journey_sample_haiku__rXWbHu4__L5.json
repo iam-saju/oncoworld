@@ -1,0 +1,60 @@
+{
+ "id": "journey_sample_haiku__rXWbHu4__L5",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "l5_ecog3_meaning": {
+   "met": true,
+   "quote": "the bispecific antibodies (glofitamab, epcoritamab) and most trials require ECOG 0 to 2",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_capacity": {
+   "met": true,
+   "quote": "Capacity is intact: he is alert, follows and repeats the conversation accurately, and asks appropriate questions",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_respect_refusal_goc": {
+   "met": true,
+   "quote": "Respect his informed refusal and change the plan to comfort-focused care, while keeping the door open.",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_hospice_palliative": {
+   "met": true,
+   "quote": "Thoracentesis or an indwelling pleural catheter for dyspnea from the effusion",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_advance_directive": {
+   "met": true,
+   "quote": "Code status: discuss DNR and DNI, complete a MOLST or POLST form, and name a health-care proxy",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_financial_social_work": {
+   "met": true,
+   "quote": "Refer urgently to oncology social work and a financial counselor at the cancer center.",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_caregiver_support": {
+   "met": true,
+   "quote": "arrange respite care so his wife is not the only caregiver",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_mn_pressure_treatment": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "l5_mn_abandon": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

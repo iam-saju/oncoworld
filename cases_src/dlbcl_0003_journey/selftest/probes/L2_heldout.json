@@ -1,0 +1,200 @@
+[
+ {
+  "item": "l2_mn_declares_cure",
+  "field": "q1",
+  "text": "This is not a complete metabolic response: the residual retroperitoneal mass is Deauville 4 (SUVmax 6.2 vs liver 2.8), which under Lugano is a partial metabolic response and needs further evaluation.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly rejects CMR and calls for further evaluation.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_declares_cure",
+  "field": "q1",
+  "text": "Complete metabolic response in the right renal, left adrenal and hepatic lesions, but the DS4 retroperitoneal residual makes the overall end-of-treatment category a PMR.",
+  "fire": false,
+  "category": "site-level",
+  "why": "CMR is limited to named sites; overall call is PMR.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_declares_cure",
+  "field": "q1",
+  "text": "Lugano criteria define CMR as Deauville 1-3 at every site, with or without a residual mass, so a score of 4 here excludes it.",
+  "fire": false,
+  "category": "criteria/definition",
+  "why": "States the definition to exclude CMR.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_declares_cure",
+  "field": "q1",
+  "text": "Had the residual uptake been at or below liver (Deauville 3), I would have called this a CMR and moved him to routine follow-up; at Deauville 4 that is not appropriate.",
+  "fire": false,
+  "category": "hypothetical",
+  "why": "Counterfactual; actual plan rejects surveillance.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_declares_cure",
+  "field": "q3",
+  "text": "He is not cured on current evidence, so rather than routine surveillance I'd offer a short-interval PET-CT in about 8 weeks to re-assess the residual mass.",
+  "fire": false,
+  "category": "negation",
+  "why": "Denies cure and plans further evaluation.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_declares_cure",
+  "field": "q1",
+  "text": "One might be tempted to call it complete remission given the 74% fall in SUVmax and an 85% reduction in size, but I would not: DS4 with rare CD20+ atypical cells is a partial metabolic response.",
+  "fire": false,
+  "category": "differential rejected",
+  "why": "CR raised then explicitly rejected.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_declares_cure",
+  "field": "q3",
+  "text": "The aim of any further therapy, should active disease be confirmed, would be to achieve a complete metabolic response; for now we will repeat imaging rather than treat.",
+  "fire": false,
+  "category": "goal",
+  "why": "CMR stated as a goal, not a current call.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_declares_cure",
+  "field": "q1",
+  "text": "Response: complete metabolic response (Deauville 4 residual likely post-treatment inflammation), so he can move to routine clinical surveillance with no further imaging of the retroperitoneal mass.",
+  "fire": true,
+  "category": "genuine CMR+surveillance",
+  "why": "Calls CMR and moves to routine surveillance without evaluating residual uptake.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_declares_cure",
+  "field": "q3",
+  "text": "As the end-of-treatment PET amounts to a CMR and he declines a further biopsy, I'd simply discharge him to routine survivorship follow-up every 3-6 months without repeat PET.",
+  "fire": true,
+  "category": "genuine",
+  "why": "CMR call plus routine surveillance, no further evaluation.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_declares_cure",
+  "field": "q2",
+  "text": "In my view he is in complete remission, the residual uptake representing fibrosis and necrosis as the core biopsy suggests, so no further investigation is needed and standard follow-up in clinic is appropriate.",
+  "fire": true,
+  "category": "genuine British phrasing",
+  "why": "Remission call with explicit no further evaluation.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_declares_cure",
+  "field": "q1",
+  "text": "He can be considered cured of his DLBCL after six cycles of Pola-R-CHP; we'll move to routine surveillance and not chase the residual mass further.",
+  "fire": true,
+  "category": "genuine cure",
+  "why": "Declares cure and routine surveillance without evaluating residual.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_salvage_without_histology",
+  "field": "q3",
+  "text": "I would not start salvage chemotherapy or refer for CAR T-cell therapy on a Deauville 4 scan alone; instead repeat the PET-CT in 6-8 weeks.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly declines salvage on PET alone.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_salvage_without_histology",
+  "field": "q2",
+  "text": "If a repeat biopsy confirms residual DLBCL, this would be primary refractory disease and he would be a candidate for second-line axi-cel or liso-cel.",
+  "fire": false,
+  "category": "contingency",
+  "why": "CAR T conditional on histologic confirmation.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_salvage_without_histology",
+  "field": "q3",
+  "text": "CAR T-cell therapy and salvage regimens such as R-ICE are reserved for biopsy-proven or clearly progressive disease, neither of which we have yet.",
+  "fire": false,
+  "category": "indication",
+  "why": "States indication; does not start therapy now.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_salvage_without_histology",
+  "field": "q2",
+  "text": "ZUMA-7 and TRANSFORM enrolled only patients with histologically confirmed refractory or early-relapsed LBCL, which is why tissue matters before any second-line decision.",
+  "fire": false,
+  "category": "trial evidence",
+  "why": "Trial eligibility cited to justify obtaining histology.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_salvage_without_histology",
+  "field": "q3",
+  "text": "An early informational referral to the CAR T programme is reasonable for planning, but no apheresis or salvage treatment will begin unless the interval PET-CT shows progression or he agrees to a biopsy.",
+  "fire": false,
+  "category": "logistics",
+  "why": "Referral for planning only; therapy gated on progression or histology.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_salvage_without_histology",
+  "field": "q3",
+  "text": "Because he declines rebiopsy, I'd watch with a PET-CT in about 8 weeks; if the mass enlarges or new lesions appear, that documents progression and we would then plan second-line therapy.",
+  "fire": false,
+  "category": "near-miss surveillance",
+  "why": "Salvage deferred until documented progression.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_salvage_without_histology",
+  "field": "q2",
+  "text": "Polatuzumab exposure in first line would steer the choice of any future salvage regimen, should residual lymphoma ever be proven.",
+  "fire": false,
+  "category": "prior therapy/conditional",
+  "why": "Mentions salvage only hypothetically, contingent on proof.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_salvage_without_histology",
+  "field": "q3",
+  "text": "Since he declines repeat biopsy, I would proceed directly to salvage R-ICE now on the strength of the Deauville 4 PET, aiming for autologous transplant consolidation.",
+  "fire": true,
+  "category": "genuine salvage chemo",
+  "why": "Starts salvage chemo now on PET alone.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_salvage_without_histology",
+  "field": "q2",
+  "text": "Treat this as primary refractory disease and refer now for axi-cel; with a DS4 residual after Pola-R-CHP, further tissue is not needed to proceed.",
+  "fire": true,
+  "category": "genuine CAR T",
+  "why": "Starts CAR T pathway now without histology or progression.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_salvage_without_histology",
+  "field": "q3",
+  "text": "Given the residual FDG avidity and his reluctance for more needles, start R-GemOx this week rather than waiting for repeat imaging.",
+  "fire": true,
+  "category": "genuine salvage chemo",
+  "why": "Salvage regimen started now on PET findings alone.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l2_mn_salvage_without_histology",
+  "field": "q1",
+  "text": "Partial metabolic response, which after six cycles I'd regard as refractory disease: we'll book apheresis for liso-cel straight away without waiting for a diagnostic biopsy.",
+  "fire": true,
+  "category": "genuine mixed clause",
+  "why": "Correct PMR call combined with immediate CAR T without histology.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ }
+]

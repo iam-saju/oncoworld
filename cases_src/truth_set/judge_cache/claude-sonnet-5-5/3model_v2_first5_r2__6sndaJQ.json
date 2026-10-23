@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, NOS, non-germinal-center B-cell phenotype by Hans algorithm (CD10 negative, BCL6 positive, MUM1/IRF4 positive)",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "Still outstanding and not needed for first-line decisions: karyotype (tissue was sent for cytogenetics, result not in the export), CD45 stain, gene-expression cell-of-origin, and MYD88 L265P / CD79B status",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": true,
+  "quote": "This is not breast carcinoma recurrence: lesional cells are CD20 and PAX5 positive and AE1/AE3 and GATA3 negative, with no morphologic carcinoma.",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Lugano / Ann Arbor stage III B. Nodal disease is above and below the diaphragm (left axillary, mediastinal, mesenteric, para-aortic), and splenic involvement by multiple FDG-avid nodules is counted as nodal under Lugano.",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": true,
+  "quote": "splenic involvement by multiple FDG-avid nodules is counted as nodal under Lugano.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms are present: fevers to 38.2-38.4 C for about 5 weeks and drenching night sweats",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": true,
+  "quote": "mesenteric conglomerate 7.5 x 5.1 cm (SUVmax 22.3), which reaches the 7.5 cm threshold used in many protocols but not the 10 cm threshold.",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "If the splenic nodules were judged extranodal the stage would be IV B, but that would not change the regimen or the IPI.",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": true,
+  "quote": "Non-GCB (Hans) DLBCL with double-expressor IHC status (MYC IHC 45% at or above the 40% threshold; BCL2 IHC 70% at or above the 50% threshold). Not double-hit: interphase FISH on 200 nuclei shows no MYC (8q24), BCL2 (18q21) or BCL6 (3q27) rearrangement",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "Not double-hit: interphase FISH on 200 nuclei shows no MYC (8q24), BCL2 (18q21) or BCL6 (3q27) rearrangement, so no double-hit or triple-hit designation",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "This excludes R-CHOP, Pola-R-CHP (the NCCN-preferred, POLARIX-eligible option for IPI 2-5), DA-EPOCH-R, and R-CHOP with lenalidomide or ibrutinib.",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": true,
+  "quote": "IPI is 2 (stage III and elevated LDH; age 59 and ECOG 1 score 0; no more than one extranodal site), which is low-intermediate by IPI and NCCN-IPI.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": false,
+  "quote": "Total 1-2, low-to-intermediate CNS relapse risk.",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "No CNS-directed prophylaxis is recommended now.",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "I follow NCCN in not recommending intrathecal or high-dose methotrexate prophylaxis. I would revisit this if pathology later shows a double-hit rearrangement",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": false,
+  "quote": "Decision: no doxorubicin-containing regimen. ... LVEF is 45% (biplane), down from 62% in 2016, with GLS -14%, which places her at high risk of anthracycline cardiotoxicity",
+  "source": "judge_unquoted"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "Decision: no doxorubicin-containing regimen. This excludes R-CHOP, Pola-R-CHP",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": true,
+  "quote": "Cardiac: start cardio-oncology co-management now.",
+  "source": "judge"
+ },
+ "tx_cardioprotection": {
+  "met": true,
+  "quote": "I recommend guideline-directed therapy: an ACE inhibitor, ARB or ARNI plus an evidence-based beta-blocker, with an SGLT2 inhibitor if cardiology agrees.",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": true,
+  "quote": "treat with anthracycline-free rituximab-based chemotherapy: R-CEOP-21 for 6 cycles",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": true,
+  "quote": "I will tell her plainly that its cure rate is likely lower than the anthracycline-based standard, and that this trade-off is accepted",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": true,
+  "quote": "Cardiac monitoring: troponin and NT-proBNP each cycle, with echocardiogram with GLS before cycle 1, after cycle 3 and at the end of treatment",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Fit for curative-intent therapy.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": false,
+  "quote": "Response assessed by Lugano 2014 criteria with Deauville scoring. Interim PET after cycle 2: Deauville 1-3 means continue; ... End-of-treatment PET-CT about 4-6 weeks after cycle 6: complete metabolic response means surveillance",
+  "source": "judge_unquoted"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis: intermediate risk (bulk 7.5 cm, LDH elevated, Ki-67 80%), with uric acid 5.8 mg/dL on 2026-09-01. Start allopurinol 300 mg daily two days before cycle 1 (febuxostat if intolerant), with hydration and a BMP",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Primary G-CSF prophylaxis (pegfilgrastim or biosimilar, or on-body injector) each cycle",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "Anastrozole: continue to the planned completion in November 2026. It does not treat lymphoma, does not interact meaningfully with the regimen, and stopping it abruptly gains nothing; I will inform the breast team.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "HBsAg, anti-HBc and anti-HBs are all nonreactive, so no HBV antiviral prophylaxis is needed for rituximab",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": true,
+  "quote": "Fit for curative-intent therapy. She is 59, ECOG 1, NYHA class I, independent, with normal marrow and organ function",
+  "source": "judge"
+ },
+ "miss_cardiac_workup": {
+  "met": true,
+  "quote": "No troponin, NT-proBNP, ECG, cardiac MRI or ischemia evaluation on record; left breast radiotherapy dose to the heart and cardiac fields not recorded.",
+  "source": "judge"
+ }
+}

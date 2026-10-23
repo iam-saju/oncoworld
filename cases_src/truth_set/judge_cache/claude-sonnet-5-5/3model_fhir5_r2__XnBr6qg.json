@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified, germinal-center B-cell type by Hans algorithm (CD20+, CD10+, BCL6+, MUM1/IRF4-, CD3-, CD5-, CD30-, cyclin D1-, EBER-negative).",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IV B, bulky disease.",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "Kidney, adrenal and liver are extralymphatic organ sites, so stage IV applies regardless of nodal extent.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms: drenching night sweats most nights and unintentional weight loss of 8 kg of 79 kg (about 10%) over two months.",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "Kidney, adrenal and liver are extralymphatic organ sites, so stage IV applies regardless of nodal extent.",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "BCL2 IHC 30% and MYC IHC 20%, below double-expressor thresholds. FISH on 200 nuclei is negative for MYC (8q24), BCL2 (18q21) and BCL6 (3q27) rearrangements, so this is not double-hit or triple-hit lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "FISH on 200 nuclei is negative for MYC (8q24), BCL2 (18q21) and BCL6 (3q27) rearrangements, so this is not double-hit or triple-hit lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "BCL2 IHC 30% and MYC IHC 20%, below double-expressor thresholds.",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "International Prognostic Index is 5 of 5 (age over 60, ECOG 2, LDH above ULN, stage IV, more than one extranodal site), which is high risk.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "CNS-IPI is high risk (age over 60, stage IV, elevated LDH, more than one extranodal site, and both renal and adrenal involvement).",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": false,
+  "quote": "Start curative-intent first-line immunochemotherapy as soon as the pre-treatment items below are addressed... Preferred regimen: pola-R-CHP (POLARIX backbone) every 21 days for 6 cycles",
+  "source": "judge_unquoted"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "Preferred regimen: pola-R-CHP (POLARIX backbone) every 21 days for 6 cycles",
+  "source": "judge"
+ },
+ "tx_prephase_steroid": {
+  "met": false,
+  "quote": "prednisone 100 mg PO days 1 to 5",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "He is treatment-eligible for curative intent... they are not a reason to offer palliative-only care now.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "The NCCN high-grade B-cell (DH/TH) pathway, including DA-EPOCH-R escalation, does not apply.",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "ECOG 2 alone is not a reason to reduce intensity; use full doses with primary G-CSF prophylaxis and dose-reduce only for toxicity.",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": false,
+  "quote": "CNS risk: High. Factors present: age over 60, Ann Arbor stage IV, LDH above ULN, more than one extranodal site, and both renal (right cortical lesion) and adrenal (left) involvement.",
+  "source": "judge_unquoted"
+ },
+ "cns_staging_mri_csf": {
+  "met": false,
+  "quote": "pre-treatment MRI brain with and without gadolinium. ... Diagnostic LP with opening pressure, cell count and differential, protein, glucose, CSF cytology and CSF flow cytometry, performed before the first intrathecal dose.",
+  "source": "judge_unquoted"
+ },
+ "cns_prophylaxis_renal": {
+  "met": true,
+  "quote": "Do not use high-dose methotrexate: CrCl about 47 mL/min is below the range where it is safe, and it would add nephrotoxic stress. Reconsider HD-MTX only if renal function recovers to CrCl of 60 mL/min or more and nephrology agrees.",
+  "source": "judge"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "Do not use high-dose methotrexate: CrCl about 47 mL/min is below the range where it is safe, and it would add nephrotoxic stress.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": false,
+  "quote": "Use Lugano 2014 criteria with FDG-PET-CT as primary. ... End-of-treatment PET-CT about 3 to 6 weeks after cycle 6. Deauville 1 to 3 is a complete metabolic response.",
+  "source": "judge_unquoted"
+ },
+ "resp_ds45_biopsy": {
+  "met": false,
+  "quote": "Residual PET-avid mass of 2 cm or more at end of treatment, given the bulky retroperitoneal disease, should be discussed for biopsy or consolidation radiotherapy to the bulky site",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": false,
+  "quote": "Hydrate with oral or IV fluids (about 2 to 3 L/day as tolerated, guided by volume status); no bicarbonate. Check BMP, phosphate, calcium, uric acid and LDH daily for 72 hours after C1, then per protocol.",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": true,
+  "quote": "If G6PD is normal, give rasburicase on the first day of C1 before rituximab (dose per protocol), with uric acid checked before and after.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Primary G-CSF: pegfilgrastim 6 mg SC on day 4 or on-body injector on day 1 (fewer visits, better for a 45-minute trip). Indications: age over 65, ECOG 2, renal impairment",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "Stop ibuprofen now and counsel no OTC NSAIDs. Analgesia: scheduled acetaminophen up to 3 g/day plus low-dose oxycodone for breakthrough",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "Hyperglycemia from prednisone: glucose monitoring during steroid days, and a basal or correction insulin plan with diabetes team input.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis B: HBsAg nonreactive, anti-HBc nonreactive, anti-HBs reactive, consistent with vaccine immunity; no antiviral prophylaxis indicated and no HBV DNA needed unless HBcAb becomes positive.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "TTE 2026-09-09 shows LVEF 60%, GLS -19%, grade I diastolic dysfunction, normal valves; adequate for doxorubicin.",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": true,
+  "quote": "ECOG 2 alone is not a reason to reduce intensity; use full doses with primary G-CSF prophylaxis and dose-reduce only for toxicity.",
+  "source": "judge"
+ }
+}

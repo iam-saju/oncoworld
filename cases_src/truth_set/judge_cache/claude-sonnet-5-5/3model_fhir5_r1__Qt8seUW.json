@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma (DLBCL), not otherwise specified (NOS), non-germinal-center B-cell phenotype by the Hans algorithm (CD10 negative, BCL6 positive, MUM1 positive)",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "Availability and eligibility for clinical trials or molecular profiling (e.g., TP53, MYD88, CD79B), which could inform prognosis but is not required for standard therapy.",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": true,
+  "quote": "the axillary biopsy shows lymphoma with negative cytokeratin and GATA3, excluding breast cancer recurrence.",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Lugano/Ann Arbor stage IIIB: lymph node involvement above and below the diaphragm (left axillary, mediastinal, mesenteric, para-aortic) with splenic involvement",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": false,
+  "quote": "No non-lymphatic extranodal organ involvement.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms (documented fever to 38.4 C and drenching night sweats; weight loss about 3%, below the 10% B-symptom threshold)",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": true,
+  "quote": "Largest mass is a 7.5 cm mesenteric conglomerate, not bulky by the conventional >=10 cm criterion.",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "Lugano/Ann Arbor stage IIIB: lymph node involvement above and below the diaphragm",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": true,
+  "quote": "with a double-expressor immunophenotype (MYC about 45%, BCL2 about 70%) but no MYC, BCL2 or BCL6 rearrangement by FISH (not double-hit/triple-hit)",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "FISH is negative for MYC, BCL2 and BCL6 rearrangements, so this is not a double-hit or triple-hit lymphoma",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "The phenotype predicts a somewhat inferior PFS/OS than generic DLBCL but does not change standard first-line therapy outside a clinical trial.",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": true,
+  "quote": "IPI 2 (stage III and elevated LDH) = low-intermediate risk; age-adjusted IPI 2 = high-intermediate",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": true,
+  "quote": "CNS-IPI 2 (stage III and elevated LDH; age 59, ECOG 1, no more than one extranodal site, no kidney/adrenal involvement) = intermediate risk, approximately 4-5% at 2 years.",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "I will not give intrathecal chemotherapy or high-dose methotrexate prophylaxis and will not perform a routine lumbar puncture.",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "I will not give intrathecal chemotherapy or high-dose methotrexate prophylaxis and will not perform a routine lumbar puncture.",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": true,
+  "quote": "six R-CHOP cycles will add 300 mg/m2, bringing cumulative doxorubicin to about 540 mg/m2. POLARIX enrolled patients with adequate cardiac function",
+  "source": "judge"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "Curative-intent R-CHOP x6 every 21 days: rituximab 375 mg/m2 IV day 1, cyclophosphamide 750 mg/m2 IV day 1, doxorubicin 50 mg/m2 IV day 1 with dexrazoxane 500 mg/m2",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": true,
+  "quote": "Before cycle 1 I still want: cardiology consultation with ECG, troponin and BNP/NT-proBNP, and consideration of cardiac MRI to define the cardiomyopathy",
+  "source": "judge"
+ },
+ "tx_cardioprotection": {
+  "met": true,
+  "quote": "Continue amlodipine, add an ACE inhibitor/ARB and a beta-blocker for LVEF 45%/hypertension per cardiology, and avoid fluid overload.",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": true,
+  "quote": "if symptomatic heart failure or LVEF <40% develops, I will switch to a non-anthracycline regimen (e.g., R-CEOP) rather than simply dose-reduce.",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": false,
+  "quote": "",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": false,
+  "quote": "Repeat echocardiogram at the end of therapy and as directed by cardio-oncology.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Her stated goal is cure and return to work, so I will treat with curative intent rather than palliate or watch-and-wait.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "end-of-treatment FDG PET/CT 6-8 weeks after cycle 6, interpreted by Lugano 2014/Deauville 5-point criteria.",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis prophylaxis with allopurinol 300 mg daily (renal function is normal) plus IV hydration, with monitoring of potassium, calcium, phosphate, uric acid and creatinine before and 24-48 hours after the first cycles",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Primary febrile neutropenia prophylaxis with pegfilgrastim 6 mg SC day 2.",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "Stop anastrozole now, since she is at the planned end of a 10-year course (November 2026) and continuation through cytotoxic therapy adds no benefit.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Already completed: staging FDG PET/CT, bone marrow aspirate/biopsy, FISH, IHC, echocardiogram, CBC/CMP/LDH/urate/beta-2 microglobulin, HIV/HBV/HCV serologies, and ECOG status.",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": true,
+  "quote": "ECOG 1, age 59, working full-time and independent, with normal renal, hepatic and marrow function; she is fit for curative full-dose immunochemotherapy.",
+  "source": "judge"
+ },
+ "miss_cardiac_workup": {
+  "met": true,
+  "quote": "Cardiology consultation with baseline ECG, troponin and BNP/NT-proBNP, plus consideration of cardiac MRI to define whether LVEF 45% is anthracycline/radiation-related and to guide heart-failure therapy.",
+  "source": "judge"
+ }
+}

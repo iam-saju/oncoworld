@@ -1,0 +1,830 @@
+{
+  "resourceType": "Bundle",
+  "id": "dlbcl-0003-v2-update-01",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "http://oncoworld.example/fhir/sid/bundle",
+    "value": "dlbcl-0003-v2-update-01"
+  },
+  "type": "collection",
+  "timestamp": "2027-02-24T18:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DocumentReference/dlbcl-0003-v2-l2-doc-20",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dlbcl-0003-v2-l2-doc-20",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
+          ]
+        },
+        "status": "current",
+        "docStatus": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34133-9",
+              "display": "Summary of episode note"
+            }
+          ],
+          "text": "INTERVAL HISTORY: WHAT ACTUALLY HAPPENED SINCE TUMOR BOARD (2026-09-18 to 2027-02-24)"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+                "code": "clinical-note",
+                "display": "Clinical Note"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "date": "2027-02-24T17:00:00Z",
+        "author": [
+          {
+            "reference": "Practitioner/dlbcl-0003-v2-hematologist"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain; charset=utf-8",
+              "title": "INTERVAL HISTORY: WHAT ACTUALLY HAPPENED SINCE TUMOR BOARD (2026-09-18 to 2027-02-24)",
+              "data": "SU5URVJWQUwgSElTVE9SWTogV0hBVCBBQ1RVQUxMWSBIQVBQRU5FRCBTSU5DRSBUVU1PUiBCT0FSRCAoMjAyNi0wOS0xOCB0byAyMDI3LTAyLTI0KQoKVHVtb3IgYm9hcmQgMjAyNi0wOS0xOCByZWNvbW1lbmRlZCBwcmVkbmlzb25lIHByZXBoYXNlLCB0aGVuIFBvbGEtUi1DSFAgeDYgd2l0aCBwZWdmaWxncmFzdGltLgotIDIwMjYtMDktMTkgdG8gMDktMjM6IHByZWRuaXNvbmUgMTAwIG1nIGRhaWx5LiBJYnVwcm9mZW4gc3RvcHBlZC4gTGlzaW5vcHJpbCBhbmQgbWV0Zm9ybWluIGhlbGQuCi0gMjAyNi0wOS0yNDogY3ljbGUgMSBnaXZlbiBhcyBhbiBpbnBhdGllbnQgd2l0aCBJViBoeWRyYXRpb24gYW5kIHJhc2J1cmljYXNlIChHNlBEIG5vcm1hbCkuIExhYm9yYXRvcnkKICBUTFMgb24gZGF5IDIgKHVyaWMgYWNpZCA4LjksIHBob3NwaGF0ZSA1LjIsIHBvdGFzc2l1bSA1LjQpIHJlc29sdmVkIHdpdGggZmx1aWRzOyBubyBkaWFseXNpcy4KLSAyMDI2LTA5LTI1OiBNUkkgYnJhaW4gd2l0aCBjb250cmFzdDogbm8gaW50cmFjcmFuaWFsIGxlc2lvbi4gTHVtYmFyIHB1bmN0dXJlOiBDU0YgY3l0b2xvZ3kgYW5kIGZsb3cKICBjeXRvbWV0cnkgbmVnYXRpdmUgZm9yIGx5bXBob21hLgotIENOUyBwcm9waHlsYXhpcyB3aXRoIGhpZ2gtZG9zZSBtZXRob3RyZXhhdGUgd2FzIGRpc2N1c3NlZDsgYWZ0ZXIgY291bnNlbGxpbmcgb24gdW5jZXJ0YWluIGJlbmVmaXQgdGhlCiAgcGF0aWVudCBkZWNsaW5lZCBpdC4KLSBDcmVhdGluaW5lIDEuMCBtZy9kTCBieSBjeWNsZSAyIGFuZCBzdGFibGUgc2luY2UuIEluc3VsaW4gY29ycmVjdGlvbiBzY2FsZSBkdXJpbmcgc3Rlcm9pZCBkYXlzLgotIEN5Y2xlcyAyLTYgb3V0cGF0aWVudCwgb24gc2NoZWR1bGUuIEdyYWRlIDIgbmV1cm9wYXRoeSBhZnRlciBjeWNsZSA0OiBwb2xhdHV6dW1hYiByZWR1Y2VkIHRvIDEuNCBtZy9rZwogIGZvciBjeWNsZXMgNS02OyBuZXVyb3BhdGh5IGltcHJvdmVkIHRvIGdyYWRlIDEuIEhlIGF0dGVuZGVkIGhpcyBncmFuZGRhdWdodGVyJ3Mgd2VkZGluZyBvbiAyMDI2LTEyLTEzLgogIEN5Y2xlIDYgZ2l2ZW4gMjAyNy0wMS0wOC4KLSBOb3cgRUNPRyAxLiBXZWlnaHQgNzQga2cuIE5vIEIgc3ltcHRvbXMuIE1pbGQgcmVzaWR1YWwgdGluZ2xpbmcgaW4gdGhlIHRvZXMu",
+              "creation": "2027-02-24"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>INTERVAL HISTORY: WHAT ACTUALLY HAPPENED SINCE TUMOR BOARD (2026-09-18 to 2027-02-24), 2027-02-24 (text attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l2-doc-21",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l2-doc-21",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LP29684-5",
+                "display": "Radiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "MRI BRAIN WITH AND WITHOUT GADOLINIUM, 2026-09-25"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-25",
+        "issued": "2026-09-25T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-imaging"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "MRI BRAIN WITH AND WITHOUT GADOLINIUM, 2026-09-25",
+            "data": "TVJJIEJSQUlOIFdJVEggQU5EIFdJVEhPVVQgR0FET0xJTklVTSwgMjAyNi0wOS0yNQoKSW5kaWNhdGlvbjogZGlmZnVzZSBsYXJnZSBCLWNlbGwgbHltcGhvbWEgd2l0aCByZW5hbCBhbmQgYWRyZW5hbCBpbnZvbHZlbWVudDsgZXZhbHVhdGlvbiBmb3IgQ05TIGRpc2Vhc2UuCkZpbmRpbmdzOiBObyBpbnRyYWNyYW5pYWwgbWFzcy4gTm8gYWJub3JtYWwgcGFyZW5jaHltYWwsIGR1cmFsIG9yIGxlcHRvbWVuaW5nZWFsIGVuaGFuY2VtZW50LiBObyBoZW1vcnJoYWdlLgpObyBoeWRyb2NlcGhhbHVzLgpJTVBSRVNTSU9OOiBObyBpbnRyYWNyYW5pYWwgbGVzaW9uLiBObyBpbWFnaW5nIGV2aWRlbmNlIG9mIENOUyBseW1waG9tYS4=",
+            "creation": "2026-09-25"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>MRI BRAIN WITH AND WITHOUT GADOLINIUM, 2026-09-25 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l2-doc-22",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l2-doc-22",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "CP",
+                "display": "Cytopathology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "CEREBROSPINAL FLUID, LUMBAR PUNCTURE, 2026-09-25"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-25",
+        "issued": "2026-09-25T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-pathology-lab"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "CEREBROSPINAL FLUID, LUMBAR PUNCTURE, 2026-09-25",
+            "data": "Q0VSRUJST1NQSU5BTCBGTFVJRCwgTFVNQkFSIFBVTkNUVVJFLCAyMDI2LTA5LTI1CgpDeXRvbG9neTogbmVnYXRpdmUgZm9yIG1hbGlnbmFudCBjZWxscy4KRmxvdyBjeXRvbWV0cnk6IG5vIGFibm9ybWFsIEItY2VsbCBwb3B1bGF0aW9uIGRldGVjdGVkLgpESUFHTk9TSVM6IENlcmVicm9zcGluYWwgZmx1aWQgbmVnYXRpdmUgZm9yIGx5bXBob21hLg==",
+            "creation": "2026-09-25"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>CEREBROSPINAL FLUID, LUMBAR PUNCTURE, 2026-09-25 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l2-doc-23",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l2-doc-23",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LP29684-5",
+                "display": "Radiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81554-8",
+              "display": "PET+CT Guidance for localization of tumor of Skull base to mid-thigh-- W 18F-FDG IV"
+            }
+          ],
+          "text": "FDG PET-CT, END OF TREATMENT (6 weeks after cycle 6), 2027-02-17"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-02-17",
+        "issued": "2027-02-17T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-imaging"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "FDG PET-CT, END OF TREATMENT (6 weeks after cycle 6), 2027-02-17",
+            "data": "RkRHIFBFVC1DVCwgRU5EIE9GIFRSRUFUTUVOVCAoNiB3ZWVrcyBhZnRlciBjeWNsZSA2KSwgMjAyNy0wMi0xNwoKQ29tcGFyaXNvbjogYmFzZWxpbmUgUEVULUNUIDIwMjYtMDktMDUuCk1lZGlhc3RpbmFsIGJsb29kIHBvb2wgU1VWbWF4IDEuOTsgbGl2ZXIgU1VWbWF4IDIuOC4KLSBSZXRyb3Blcml0b25lYWwgbWFzcyBkZWNyZWFzZWQgZnJvbSA5LjQgeCA2LjggY20gdG8gMy40IHggMi4xIGNtOyByZXNpZHVhbCBTVVZtYXggNi4yIChiYXNlbGluZSAyNC4xKS4KLSBSaWdodCByZW5hbCwgbGVmdCBhZHJlbmFsIGFuZCBoZXBhdGljIGxlc2lvbnM6IHJlc29sdmVkLCBubyByZXNpZHVhbCB1cHRha2UuCi0gTm8gbmV3IEZERy1hdmlkIGxlc2lvbnMuIE5vIG1hcnJvdyB1cHRha2UuCkRlYXV2aWxsZSBzY29yZTogNCAocmVzaWR1YWwgcmV0cm9wZXJpdG9uZWFsIG1hc3MsIHVwdGFrZSBtb2RlcmF0ZWx5IGFib3ZlIGxpdmVyKS4=",
+            "creation": "2027-02-17"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>FDG PET-CT, END OF TREATMENT (6 weeks after cycle 6), 2027-02-17 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l2-doc-24",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l2-doc-24",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "SP",
+                "display": "Surgical Pathology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60568-3",
+              "display": "Pathology synoptic report"
+            }
+          ],
+          "text": "SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RESIDUAL RETROPERITONEAL MASS, 2027-02-22"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-02-22",
+        "issued": "2027-02-22T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-pathology-lab"
+          }
+        ],
+        "presentedForm": [
+          {
+            "contentType": "text/plain; charset=utf-8",
+            "title": "SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RESIDUAL RETROPERITONEAL MASS, 2027-02-22",
+            "data": "U1VSR0lDQUwgUEFUSE9MT0dZOiBDVC1HVUlERUQgQ09SRSBCSU9QU1ksIFJFU0lEVUFMIFJFVFJPUEVSSVRPTkVBTCBNQVNTLCAyMDI3LTAyLTIyClR3byAxOC1nYXVnZSBjb3JlcywgdG90YWwgMC42IGNtLiBQcmVkb21pbmFudGx5IG5lY3Jvc2lzIGFuZCBkZW5zZSBmaWJyb3NpcyB3aXRoIHNjYXR0ZXJlZCBoaXN0aW9jeXRlcy4KUmFyZSBsYXJnZSBhdHlwaWNhbCBjZWxscywgQ0QyMC1wb3NpdGl2ZSBvbiBpbW11bm9zdGFpbiwgdG9vIGZldyB0byBjaGFyYWN0ZXJpemUuCkRJQUdOT1NJUzogTmVjcm9zaXMgYW5kIGZpYnJvc2lzOyByYXJlIGF0eXBpY2FsIENEMjArIGNlbGxzLiBJbnN1ZmZpY2llbnQgZm9yIGEgZGVmaW5pdGl2ZSBkaWFnbm9zaXMKb2YgcmVzaWR1YWwgbHltcGhvbWEuIFRpc3N1ZSBpbnN1ZmZpY2llbnQgZm9yIGZsb3cgY3l0b21ldHJ5IG9yIG1vbGVjdWxhciBzdHVkaWVzLg==",
+            "creation": "2027-02-22"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RESIDUAL RETROPERITONEAL MASS, 2027-02-22 (full report attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DocumentReference/dlbcl-0003-v2-l2-doc-25",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dlbcl-0003-v2-l2-doc-25",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference"
+          ]
+        },
+        "status": "current",
+        "docStatus": "final",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "11506-3",
+              "display": "Progress note"
+            }
+          ],
+          "text": "Hematology-oncology clinic note"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+                "code": "clinical-note",
+                "display": "Clinical Note"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "date": "2027-02-24T17:00:00Z",
+        "author": [
+          {
+            "reference": "Practitioner/dlbcl-0003-v2-hematologist"
+          }
+        ],
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain; charset=utf-8",
+              "title": "Hematology-oncology clinic note",
+              "data": "UmVzdWx0cyB2aXNpdCB3aXRoIHRoZSBwYXRpZW50LCBoaXMgd2lmZSBhbmQgZGF1Z2h0ZXIuIEV4cGxhaW5lZCB0aGUgYmlvcHN5IHdhcyBub3QgZGlhZ25vc3RpYy4KVGhlIHBhdGllbnQgc2F5cyBoZSAiaGFzIGhhZCBlbm91Z2ggbmVlZGxlcyIgYW5kLCB3aXRoIGhpcyBmYW1pbHkncyBhZ3JlZW1lbnQsIGRlY2xpbmVzIGEgcmVwZWF0IGJpb3BzeQphdCB0aGlzIHRpbWUuIEhlIGZlZWxzIHdlbGwgYW5kIGFza3Mgd2hhdCBoaXMgb3B0aW9ucyBhcmUuIE5ldXJvIGV4YW0gbm9ybWFsOyBubyBoZWFkYWNoZSBvcgpuZXVyb2xvZ2ljYWwgc3ltcHRvbXMu",
+              "creation": "2027-02-24"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Hematology-oncology clinic note, 2027-02-24 (text attached).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l2-ecog",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l2-ecog",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "89247-1",
+              "display": "ECOG Performance Status score"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-02-24",
+        "valueInteger": 1,
+        "performer": [
+          {
+            "reference": "Practitioner/dlbcl-0003-v2-hematologist"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ECOG performance status 1.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l2-weight",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l2-weight",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-02-24",
+        "valueQuantity": {
+          "value": 74,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Body weight 74 kg.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/dlbcl-0003-v2-l2-lab-1-creatinine",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dlbcl-0003-v2-l2-lab-1-creatinine",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Creatinine [Mass/volume] in Serum or Plasma"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-02-24T08:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-clinical-lab"
+          }
+        ],
+        "valueQuantity": {
+          "value": 1.0,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 0.7,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "high": {
+              "value": 1.3,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Creatinine: 1.0 mg/dL, 2027-02-24.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/dlbcl-0003-v2-l2-labpanel-1",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "dlbcl-0003-v2-l2-labpanel-1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "LAB",
+                "display": "Laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Renal function"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2027-02-24T08:00:00Z",
+        "issued": "2027-02-24T09:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/dlbcl-0003-v2-clinical-lab"
+          }
+        ],
+        "result": [
+          {
+            "reference": "Observation/dlbcl-0003-v2-l2-lab-1-creatinine"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Renal function, 2027-02-24.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0003-v2-med-5",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0003-v2-med-5",
+        "status": "stopped",
+        "medicationCodeableConcept": {
+          "text": "Ibuprofen 400 mg tablet, 1 tablet by mouth three to four times daily as needed for abdominal pain"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Ibuprofen 400 mg tablet, 1 tablet by mouth three to four times daily as needed for abdominal pain"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2027-02-24T12:00:00Z"
+        },
+        "effectivePeriod": {
+          "end": "2026-09-19"
+        },
+        "note": [
+          {
+            "text": "Stopped before chemotherapy (2026-09-19)."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication (stopped): Ibuprofen 400 mg tablet, 1 tablet by mouth three to four times daily as needed for abdominal pain.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0003-v2-med-1",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0003-v2-med-1",
+        "status": "on-hold",
+        "medicationCodeableConcept": {
+          "text": "Metformin 1000 mg tablet, 1 tablet by mouth twice daily"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Metformin 1000 mg tablet, 1 tablet by mouth twice daily"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2027-02-24T12:00:00Z"
+        },
+        "effectivePeriod": {
+          "start": "2026-09-19"
+        },
+        "note": [
+          {
+            "text": "Held from the steroid prephase (2026-09-19)."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication (on-hold): Metformin 1000 mg tablet, 1 tablet by mouth twice daily.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationStatement/dlbcl-0003-v2-med-2",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "dlbcl-0003-v2-med-2",
+        "status": "on-hold",
+        "medicationCodeableConcept": {
+          "text": "Lisinopril 20 mg tablet, 1 tablet by mouth daily"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "dosage": [
+          {
+            "text": "Lisinopril 20 mg tablet, 1 tablet by mouth daily"
+          }
+        ],
+        "meta": {
+          "lastUpdated": "2027-02-24T12:00:00Z"
+        },
+        "effectivePeriod": {
+          "start": "2026-09-19"
+        },
+        "note": [
+          {
+            "text": "Held from the steroid prephase (2026-09-19)."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Medication (on-hold): Lisinopril 20 mg tablet, 1 tablet by mouth daily.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationAdministration/dlbcl-0003-v2-l2-admin-1",
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "dlbcl-0003-v2-l2-admin-1",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Prednisone 100 mg by mouth daily (prephase)"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectivePeriod": {
+          "start": "2026-09-19",
+          "end": "2026-09-23"
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Given: Prednisone 100 mg by mouth daily (prephase) (2026-09-19 to 2026-09-23).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationAdministration/dlbcl-0003-v2-l2-admin-2",
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "dlbcl-0003-v2-l2-admin-2",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Rasburicase IV (cycle 1, tumor lysis prophylaxis; G6PD normal)"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectiveDateTime": "2026-09-24",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Given: Rasburicase IV (cycle 1, tumor lysis prophylaxis; G6PD normal) (2026-09-24).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/MedicationAdministration/dlbcl-0003-v2-l2-admin-3",
+      "resource": {
+        "resourceType": "MedicationAdministration",
+        "id": "dlbcl-0003-v2-l2-admin-3",
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "text": "Pola-R-CHP (polatuzumab vedotin, rituximab, cyclophosphamide, doxorubicin, prednisone) with pegfilgrastim, 6 cycles"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "effectivePeriod": {
+          "start": "2026-09-24",
+          "end": "2027-01-08"
+        },
+        "note": [
+          {
+            "text": "Cycle 1 inpatient; cycles 2-6 outpatient on schedule; polatuzumab reduced to 1.4 mg/kg for cycles 5-6 (grade 2 neuropathy)."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Given: Pola-R-CHP (polatuzumab vedotin, rituximab, cyclophosphamide, doxorubicin, prednisone) with pegfilgrastim, 6 cycles (2026-09-24 to 2027-01-08).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Procedure/dlbcl-0003-v2-l2-proc-1",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "dlbcl-0003-v2-l2-proc-1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "status": "completed",
+        "code": {
+          "text": "Lumbar puncture (CSF cytology and flow cytometry)"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "performedDateTime": "2026-09-25",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure: Lumbar puncture (CSF cytology and flow cytometry) (2026-09-25).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Procedure/dlbcl-0003-v2-l2-proc-2",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "dlbcl-0003-v2-l2-proc-2",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure"
+          ]
+        },
+        "status": "completed",
+        "code": {
+          "text": "CT-guided core needle biopsy of residual retroperitoneal mass"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "performedDateTime": "2027-02-22",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Procedure: CT-guided core needle biopsy of residual retroperitoneal mass (2027-02-22).</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Condition/dlbcl-0003-v2-l2-condition-1",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "dlbcl-0003-v2-l2-condition-1",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns"
+          ]
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item",
+                "display": "Problem List Item"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "text": "Chemotherapy-induced peripheral neuropathy, grade 1 (residual tingling in the toes)"
+        },
+        "subject": {
+          "reference": "Patient/dlbcl-0003-v2-patient"
+        },
+        "note": [
+          {
+            "text": "Grade 2 after cycle 4 (polatuzumab dose reduced), improved to grade 1."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Problem: Chemotherapy-induced peripheral neuropathy, grade 1 (residual tingling in the toes).</p></div>"
+        }
+      }
+    }
+  ]
+}

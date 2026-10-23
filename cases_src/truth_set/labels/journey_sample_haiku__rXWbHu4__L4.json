@@ -1,0 +1,78 @@
+{
+ "id": "journey_sample_haiku__rXWbHu4__L4",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "l4_icans_grade_steroids": {
+   "met": true,
+   "quote": "after CT head excludes haemorrhage, start dexamethasone 10 mg IV every 6 hours",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_crs_management": {
+   "met": true,
+   "quote": "Tocilizumab is not an ICANS treatment (poor CNS penetration) and should be used only if CRS progresses to grade 2 or above",
+   "confidence": "medium",
+   "note": "Gives fluid bolus and notes tocilizumab does not treat ICANS, but frames hypotension mainly as sepsis and defers repeat tocilizumab."
+  },
+  "l4_neutropenic_sepsis": {
+   "met": true,
+   "quote": "Take two blood cultures (one peripheral, one from the central line) without delaying antibiotics, then start empirical meropenem within the hour",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_airway_icu_seizure": {
+   "met": true,
+   "quote": "Neuro checks with ICE and GCS every hour, strict NPO while vomiting, head of bed 30 degrees, seizure precautions",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_ddx_cns_relapse": {
+   "met": true,
+   "quote": "CNS lymphoma relapse: his CNS-IPI was high and he has progressive systemic disease",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_ddx_infection_bleed": {
+   "met": true,
+   "quote": "Intracranial haemorrhage: platelets 44 and INR 1.3 with headache and vomiting.",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_ddx_metabolic_seizure": {
+   "met": true,
+   "quote": "Non-convulsive status epilepticus or subclinical seizures: aphasia and confusion can be the only signs",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_ct_then_mri": {
+   "met": true,
+   "quote": "Within 24 hours: MRI brain with and without gadolinium, with DWI, FLAIR and SWI",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_eeg_lp_safe": {
+   "met": true,
+   "quote": "Lumbar puncture once platelets are at least 50 and imaging excludes mass effect",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_glucose_steroids_diabetes": {
+   "met": true,
+   "quote": "switch the insulin correction scale to basal plus correction insulin for glucose 242 on dexamethasone",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_mn_lp_unsafe": {
+   "met": false,
+   "quote": "Transfuse platelets to at least 50 before any lumbar puncture.",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_mn_withhold_steroids_for_tcell": {
+   "met": false,
+   "quote": "Do not wait for MRI or LP to start it.",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

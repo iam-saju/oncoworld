@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma (DLBCL), not otherwise specified (NOS), germinal-center B-cell-like (GCB) immunophenotype by the Hans algorithm",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IVB: large (9.4 cm) FDG-avid retroperitoneal/mesenteric conglomerate nodal mass plus extranodal involvement of the right kidney (3.2 cm), left adrenal gland (2.6 cm) and liver segment VI (1.8 cm)",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "plus extranodal involvement of the right kidney (3.2 cm), left adrenal gland (2.6 cm) and liver segment VI (1.8 cm)",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "with B symptoms (drenching night sweats, 8 kg/10% weight loss)",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "Ann Arbor stage IVB",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "with no MYC, BCL2 or BCL6 rearrangement on FISH (not double-hit/triple-hit and not a double-expressor by IHC)",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "This argues against high-grade B-cell lymphoma with double-hit/triple-hit biology.",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "no MYC/BCL2/BCL6 rearrangement and no double-expressor phenotype (MYC 20%, BCL2 30%)",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "IPI 5 of 5 (age >60, stage IV, LDH > ULN, >1 extranodal site, ECOG 2)",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "High: CNS-IPI 6 of 6 (age >60, stage IV, ECOG 2, elevated LDH, >1 extranodal site, and kidney/adrenal involvement)",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "My regimen is Pola-R-CHP (polatuzumab vedotin plus rituximab, cyclophosphamide, doxorubicin, prednisone) every 21 days for 6 cycles, with full-dose doxorubicin",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "This is a category 1 NCCN regimen for advanced-stage DLBCL with IPI >=2 and offers a PFS advantage over R-CHOP; if polatuzumab is not available or approved, R-CHOP x6 is the appropriate equivalent.",
+  "source": "judge"
+ },
+ "tx_prephase_steroid": {
+  "met": false,
+  "quote": "",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Start curative-intent systemic therapy promptly, within days, after tumor-lysis precautions.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I would not use DA-EPOCH-R or a reduced-intensity/frailty regimen: there is no double-hit disease",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "He is fit for full-dose anthracycline-based curative therapy, and he explicitly wants cure.",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": true,
+  "quote": "High: CNS-IPI 6 of 6 (age >60, stage IV, ECOG 2, elevated LDH, >1 extranodal site, and kidney/adrenal involvement), although he has no neurological symptoms.",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": false,
+  "quote": "I will obtain baseline CSF cytology and flow cytometry (and MRI brain only if symptoms develop).",
+  "source": "judge"
+ },
+ "cns_prophylaxis_renal": {
+  "met": false,
+  "quote": "high-dose intravenous methotrexate is not safe with eGFR 50. I recognize that the evidence for intrathecal prophylaxis is weak... if renal function recovers to normal, high-dose systemic methotrexate would be the preferred prophylaxis.",
+  "source": "judge_unquoted"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "high-dose intravenous methotrexate is not safe with eGFR 50",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "Assess response with PET-CT using Lugano 2014/Deauville criteria about 6-8 weeks after cycle 6 (no later than 12 weeks)",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "If Deauville 4-5, biopsy the residual site (including the renal/adrenal/liver lesions to exclude a second malignancy) and either give involved-site radiation for limited residual disease or proceed to second-line salvage",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": false,
+  "quote": "admit or closely observe with vigorous IV hydration and frequent potassium, phosphorus, calcium, uric acid and creatinine monitoring; give rasburicase 0.2 mg/kg after confirming G6PD status",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": true,
+  "quote": "give rasburicase 0.2 mg/kg after confirming G6PD status (use allopurinol with hydration if G6PD deficient)",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "with full-dose doxorubicin (baseline LVEF 60%) and pegfilgrastim primary prophylaxis",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "Stop ibuprofen now: it is contributing to the AKI and is unsafe with this renal/TLS risk; use acetaminophen (with a daily maximum) and short-acting opioids for the abdominal pain.",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "monitor glucose closely because steroids will worsen his diabetes; hold metformin if renal function worsens.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "HBV (HBsAg negative, anti-HBc negative, anti-HBs reactive, so no HBV antiviral prophylaxis is needed)",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "with full-dose doxorubicin (baseline LVEF 60%)",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": true,
+  "quote": "his fatigue is largely disease-related. He is fit for full-dose anthracycline-based curative therapy, and he explicitly wants cure.",
+  "source": "judge"
+ }
+}

@@ -1,0 +1,122 @@
+{
+ "dx_hgbl_double_hit": {
+  "met": true,
+  "quote": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (HGBL-DH, 'double-hit' lymphoma), not DLBCL NOS.",
+  "source": "judge"
+ },
+ "mn_dx_dlbcl_nos": {
+  "met": false,
+  "quote": "The 2026-09-19 pathology addendum supersedes the initial diagnosis of DLBCL, NOS.",
+  "source": "judge"
+ },
+ "dx_gcb_hans": {
+  "met": true,
+  "quote": "diffuse aggressive B-cell lymphoma with a germinal-center phenotype (CD20+, PAX5+, CD10+, BCL6+, MUM1-, CD5-, cyclin D1-, TdT-, EBER-)",
+  "source": "judge"
+ },
+ "tx_plan_outdated": {
+  "met": true,
+  "quote": "I am cancelling the planned R-CHOP and starting curative-intent DA-EPOCH-R",
+  "source": "judge"
+ },
+ "stage_ii_bulky": {
+  "met": true,
+  "quote": "Ann Arbor stage IIA, bulky: right cervical levels II-IV nodal disease plus a 12.0 cm anterior mediastinal mass, all above the diaphragm, with no B symptoms and no FDG-avid disease below the diaphragm, no extranodal organ involvement",
+  "source": "judge"
+ },
+ "mn_stage_iii_iv": {
+  "met": false,
+  "quote": "Staging is not complete until CSF and bone marrow are assessed; if either is involved, the stage becomes IV.",
+  "source": "judge"
+ },
+ "bio_double_expressor_secondary": {
+  "met": true,
+  "quote": "GCB-type aggressive B-cell lymphoma driven by dual MYC and BCL2 rearrangements, t(8;14) and t(14;18), with high MYC and BCL2 protein expression and very high proliferation (Ki-67 95%).",
+  "source": "judge"
+ },
+ "prog_ipi1_biology_dominates": {
+  "met": true,
+  "quote": "IPI 1 (low), age-adjusted IPI 1 (low-intermediate), and CNS-IPI 1 (low). However, the double-hit histology dominates prognosis and confers high-risk, aggressive behavior.",
+  "source": "judge"
+ },
+ "tx_intensive_curative": {
+  "met": true,
+  "quote": "I am cancelling the planned R-CHOP and starting curative-intent DA-EPOCH-R (dose-adjusted etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin, plus rituximab) for 6 cycles at 21-day intervals",
+  "source": "judge"
+ },
+ "mn_rchop_preferred": {
+  "met": false,
+  "quote": "I am cancelling the planned R-CHOP and starting curative-intent DA-EPOCH-R",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "He is fit for intensive curative therapy: age 54, ECOG 1, working, LVEF 60%",
+  "source": "judge"
+ },
+ "tx_isrt_consolidation": {
+  "met": false,
+  "quote": "",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": false,
+  "quote": "double-hit histology is an independent high-risk feature and the CNS-IPI underestimates CNS risk in HGBL-DH. I will perform a lumbar puncture with CSF cytology and flow cytometry before cycle 1.",
+  "source": "judge"
+ },
+ "cns_prophylaxis": {
+  "met": true,
+  "quote": "If the CSF is negative, I will give CNS prophylaxis with intrathecal methotrexate 12 mg for 4 doses starting with cycle 2",
+  "source": "judge"
+ },
+ "mn_cns_dismissed": {
+  "met": false,
+  "quote": "double-hit histology is an independent high-risk feature and the CNS-IPI underestimates CNS risk in HGBL-DH.",
+  "source": "judge"
+ },
+ "resp_pet_lugano": {
+  "met": true,
+  "quote": "I will reassess with PET/CT after cycle 2 for interim response and prognosis, and again 6-8 weeks after cycle 6 using Lugano/Deauville criteria.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "DA-EPOCH-R requires pegfilgrastim 6 mg on day 6, or filgrastim, with nadir-based dose adjustment.",
+  "source": "judge"
+ },
+ "sup_tls": {
+  "met": true,
+  "quote": "He is at high risk for tumor lysis because of bulky disease, LDH more than 3 times the upper limit of normal, and uric acid 7.9. Start allopurinol 300 mg daily and aggressive hydration now",
+  "source": "judge"
+ },
+ "sup_central_access_infusion": {
+  "met": false,
+  "quote": "the 96-hour infusion and frequent visits of DA-EPOCH-R are feasible with his support and proximity.",
+  "source": "judge"
+ },
+ "sup_fertility": {
+  "met": true,
+  "quote": "Offer sperm banking before cycle 1 and provide psychosocial and financial support.",
+  "source": "judge"
+ },
+ "sup_svc_airway": {
+  "met": true,
+  "quote": "Monitor for SVC syndrome and airway compromise, with head-of-bed elevation and urgent evaluation for stridor or worsening facial swelling",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis B: HBsAg negative, anti-HBc negative, anti-HBs positive (immune), so no antiviral prophylaxis is needed.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "He is fit for intensive curative therapy: age 54, ECOG 1, working, LVEF 60%, normal renal and hepatic function",
+  "source": "judge"
+ },
+ "fit_intensive": {
+  "met": true,
+  "quote": "He is fit for intensive curative therapy: age 54, ECOG 1, working, LVEF 60%, normal renal and hepatic function",
+  "source": "judge"
+ }
+}

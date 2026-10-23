@@ -47,7 +47,7 @@
   ],
   "tasks": [
     {
-      "path": "harbor_cases/dlbcl_0003_journey_v2"
+      "path": "harbor_cases_narrative/dlbcl_0003_journey_v2"
     }
   ]
 }

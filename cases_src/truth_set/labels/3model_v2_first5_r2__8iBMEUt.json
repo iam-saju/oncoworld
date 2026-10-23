@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__8iBMEUt",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "non-germinal-center B-cell-like (activated B-cell-like) type by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "non-germinal-center B-cell-like (activated B-cell-like) type by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": false,
+   "quote": "Ann Arbor Stage IV (Stage IVS) with bulky disease.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": false,
+   "quote": "splenic involvement by lymphoma is treated as extranodal disease, hence stage IV with the 'S' suffix",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "Bulky disease is present (retroperitoneal mass >10 cm)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor Stage IV (Stage IVS) with bulky disease.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": true,
+   "quote": "He scores 0 for >1 extranodal site (spleen is the only extranodal site)",
+   "confidence": "medium",
+   "note": "Spleen labelled extranodal in IPI/CNS-IPI scoring, though it did not change the point total."
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "this is a double-expressor phenotype without rearrangements",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "This is therefore NOT double-hit lymphoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "IPI = 3 (age >60 = 1, LDH elevated = 1, stage III/IV = 1; ECOG <2 and only one extranodal site = 0)",
+   "confidence": "medium",
+   "note": "Correct total but derived from stage IV and spleen counted as one extranodal site."
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": false,
+   "quote": "High risk. CNS-IPI = 5 (high-risk category is >=4)",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Curative-intent R-CHOP-21 x 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": false,
+   "quote": "and over pola-R-CHP because the evidence advantage in stage III/IV without double-hit biology is modest",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_residual_bulk": {
+   "met": true,
+   "quote": "or consider involved-site radiotherapy to an isolated residual focus",
+   "confidence": "medium",
+   "note": "ISRT only mentioned as an option after positive biopsy of residual disease."
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "I am not using DA-EPOCH-R because FISH shows no MYC/BCL2 rearrangements",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "I would not use R-mini-CHOP or a reduced-dose regimen",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": true,
+   "quote": "I will start nucleos(t)ide analogue prophylaxis (entecavir or tenofovir) around rituximab and continue for at least 12 months after the last dose",
+   "confidence": "medium",
+   "note": "Timing stated as 'around' rituximab rather than explicitly before the first dose."
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": true,
+   "quote": "with HBV DNA monitoring every 1-3 months during treatment",
+   "confidence": "medium",
+   "note": "Baseline HBV DNA and monitoring present; ALT monitoring only implicit via CMP."
+  },
+  "mn_no_hbv_action": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": false,
+   "quote": "Concurrent CNS prophylaxis, which I consider mandatory rather than optional in this patient",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": true,
+   "quote": "Concurrent CNS prophylaxis, which I consider mandatory rather than optional in this patient",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment FDG-PET-CT 6-8 weeks after cycle 6",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "I will biopsy any residual FDG-avid mass",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "Tumor lysis syndrome prophylaxis is mandatory given the 11 cm mass",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim 6 mg subcutaneously on day 3 of every cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "LVEF 58% and GLS -20% (no pre-existing cardiac disease, so doxorubicin is permitted",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "He is fit for full-dose curative-intent chemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "Hepatitis B DNA quantitation and hepatology input",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

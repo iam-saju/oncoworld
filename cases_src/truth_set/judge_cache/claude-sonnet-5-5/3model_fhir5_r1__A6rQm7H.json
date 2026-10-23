@@ -1,0 +1,147 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL, NOS), germinal-center B-cell-like (GCB) subtype by the Hans algorithm, involving the right cervical lymph nodes at levels II and III.",
+  "source": "judge"
+ },
+ "stage_i": {
+  "met": true,
+  "quote": "Stage IA (Ann Arbor), limited-stage, non-bulky. FDG PET-CT (2026-09-03) shows a cluster of FDG-avid right cervical nodes at levels II and III, contiguous within a single nodal region",
+  "source": "judge"
+ },
+ "stage_nonbulky_no_b": {
+  "met": true,
+  "quote": "She has no B symptoms (no fever, drenching night sweats, or weight loss).",
+  "source": "judge"
+ },
+ "stage_pet_no_marrow_biopsy": {
+  "met": true,
+  "quote": "Bone marrow biopsy is not required because PET shows no marrow uptake.",
+  "source": "judge"
+ },
+ "mn_overstaged": {
+  "met": false,
+  "quote": "Stage IA (Ann Arbor), limited-stage, non-bulky.",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "BCL2 is positive in about 30% and MYC in about 15% of cells, which is below the usual thresholds for double-expressor DLBCL (BCL2 >=40% and MYC >=40%). FISH is negative for MYC, BCL2, and BCL6 rearrangements, so this is not double-hit or triple-hit lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "FISH is negative for MYC, BCL2, and BCL6 rearrangements, so this is not double-hit or triple-hit lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "which is below the usual thresholds for double-expressor DLBCL (BCL2 >=40% and MYC >=40%)",
+  "source": "judge"
+ },
+ "prog_ipi_low": {
+  "met": true,
+  "quote": "The age-adjusted IPI is 0 (age <60, stage I, LDH 190 U/L [normal 135-225], ECOG 0, no extranodal sites).",
+  "source": "judge"
+ },
+ "prog_cns_ipi_low": {
+  "met": true,
+  "quote": "Her CNS-IPI is 0 (age <=60, ECOG 0, normal LDH, no more than one extranodal site, and no kidney/adrenal involvement), which corresponds to a very low risk of CNS relapse",
+  "source": "judge"
+ },
+ "tx_curative_rchop": {
+  "met": true,
+  "quote": "Curative-intent R-CHOP21 for four cycles, without involved-site radiation.",
+  "source": "judge"
+ },
+ "tx_flyer_4rchop_2r": {
+  "met": false,
+  "quote": "Curative-intent R-CHOP21 for four cycles, without involved-site radiation. ... repeat every 21 days for 4 cycles.",
+  "source": "judge"
+ },
+ "tx_no_rt_goals": {
+  "met": true,
+  "quote": "I am deliberately omitting ISRT because she has non-bulky stage I disease and strongly wishes to avoid neck radiation given her sister's radiation-related hypothyroidism and her concerns about dry mouth and taste",
+  "source": "judge"
+ },
+ "tx_alternatives": {
+  "met": true,
+  "quote": "The main shared decision is four cycles of R-CHOP alone versus three cycles of R-CHOP plus involved-site radiation",
+  "source": "judge"
+ },
+ "mn_six_cycles": {
+  "met": false,
+  "quote": "I would not use 6 cycles of R-CHOP, Pola-R-CHP, or chemotherapy alone with fewer than 4 cycles.",
+  "source": "judge"
+ },
+ "mn_pola_preferred": {
+  "met": false,
+  "quote": "I would not use 6 cycles of R-CHOP, Pola-R-CHP, or chemotherapy alone with fewer than 4 cycles.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "If a reference review unexpectedly showed double-hit lymphoma, I would use a more intensive regimen such as DA-EPOCH-R rather than R-CHOP.",
+  "source": "judge"
+ },
+ "mn_observation_or_rt_alone": {
+  "met": false,
+  "quote": "Curative-intent R-CHOP21 for four cycles, without involved-site radiation.",
+  "source": "judge"
+ },
+ "cns_low_no_prophylaxis": {
+  "met": true,
+  "quote": "Low risk; no CNS prophylaxis indicated. Her CNS-IPI is 0 (age <=60, ECOG 0, normal LDH, no more than one extranodal site, and no kidney/adrenal involvement)",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "I would not give intrathecal methotrexate or high-dose methotrexate prophylaxis.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment FDG PET-CT, ideally 6-8 weeks after cycle 4 and not sooner than about 3 weeks after the last chemotherapy, interpreted by Lugano 2014 criteria using the Deauville 5-point scale.",
+  "source": "judge"
+ },
+ "resp_interim_pet": {
+  "met": false,
+  "quote": "I would not do an interim PET outside a clinical trial.",
+  "source": "judge"
+ },
+ "work_pregnancy_test": {
+  "met": true,
+  "quote": "Before cycle 1, I still need a serum pregnancy test (she is premenopausal on a combined oral contraceptive)",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "hepatitis B panel (HBsAg negative, anti-HBc negative, anti-HBs reactive, consistent with vaccine immunity)",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "baseline transthoracic echocardiogram with LVEF 63% and normal strain",
+  "source": "judge"
+ },
+ "sup_stop_coc_switch": {
+  "met": true,
+  "quote": "Stop the combined ethinyl estradiol/levonorgestrel oral contraceptive now. Migraine with aura is a WHO category 4 contraindication to combined hormonal contraception",
+  "source": "judge"
+ },
+ "sup_coc_reason": {
+  "met": true,
+  "quote": "Migraine with aura is a WHO category 4 contraindication to combined hormonal contraception, and active cancer plus chemotherapy further increases venous thromboembolism risk.",
+  "source": "judge"
+ },
+ "sup_fertility_counselling": {
+  "met": true,
+  "quote": "She is undecided about another pregnancy, so fertility preservation should be arranged urgently before cyclophosphamide exposure.",
+  "source": "judge"
+ },
+ "fit_goals": {
+  "met": true,
+  "quote": "She is fully fit for full-dose, curative-intent therapy: age 45, ECOG 0, normal organ function, LVEF 63%, no cardiac or other major comorbidity, and she works full time as a third-grade teacher.",
+  "source": "judge"
+ }
+}

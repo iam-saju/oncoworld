@@ -1,0 +1,47 @@
+{
+ "l5_ecog3_meaning": {
+  "met": true,
+  "quote": "Intensive salvage chemotherapy, a second CAR-T, allogeneic transplant and most clinical trials are not realistic options at ECOG 3 because of high treatment-related morbidity and mortality, poor tolerance, and low likelihood of durable benefit",
+  "source": "judge"
+ },
+ "l5_capacity": {
+  "met": false,
+  "quote": "confirm his understanding and his goals (home, family, comfort)",
+  "source": "judge"
+ },
+ "l5_respect_refusal_goc": {
+  "met": true,
+  "quote": "I would respect his decision, document it clearly, and proceed with a comfort-focused plan rather than trying to persuade him to continue anticancer therapy.",
+  "source": "judge"
+ },
+ "l5_hospice_palliative": {
+  "met": true,
+  "quote": "refer to home hospice today.",
+  "source": "judge"
+ },
+ "l5_advance_directive": {
+  "met": true,
+  "quote": "complete advance care planning including a health care proxy, code status/DNR-DNI and a POLST if appropriate",
+  "source": "judge"
+ },
+ "l5_financial_social_work": {
+  "met": true,
+  "quote": "I would involve social work and a financial navigator immediately, screen openly for out-of-pocket costs, insurance gaps and debt, and connect the family to concrete resources.",
+  "source": "judge"
+ },
+ "l5_caregiver_support": {
+  "met": true,
+  "quote": "I would connect the wife to respite care, caregiver support and counseling for exhaustion, and the daughter to FMLA/employer caregiver resources",
+  "source": "judge"
+ },
+ "l5_mn_pressure_treatment": {
+  "met": false,
+  "quote": "I would respect his decision, document it clearly, and proceed with a comfort-focused plan rather than trying to persuade him to continue anticancer therapy.",
+  "source": "judge"
+ },
+ "l5_mn_abandon": {
+  "met": false,
+  "quote": "it is active comfort care, not abandonment",
+  "source": "judge"
+ }
+}

@@ -1,0 +1,150 @@
+# HIDDEN. Journey dlbcl_0003, Layer 4 (acute admission day +6 after axi-cel). DRAFT_NEEDS_ONCOLOGIST.
+version = "dlbcl_0003_journey.L4.v0.1"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+passing_score = 0.75
+
+[[items]]
+id = "l4_icans_grade_steroids"
+domain = "priorities"
+kind = "must"
+severity = "dangerous"
+points = 15
+text = "The response recognizes ICANS (ASTCT grade 3: ICE 2/10, GCS 13) and starts corticosteroids (e.g. dexamethasone 10 mg IV every 6 hours) promptly."
+any = ['\bicans\b', 'immune[- ]effector', 'neurotox']
+# steroid actually started: a dosed order, a start verb, or a schedule/stat; not held, negated, hypothetical,
+# or followed in the same clause by a condition ("if worse", "once MRI ...", "should ICANS be confirmed")
+affirm = [
+  '(?<!hold )(?<!holding )(?<!started on )(?<!received )(?<!was on )\b(?:dexamethasone|dex|methylprednisolone|methylpred|solu-?medrol)\s+\d+(?:\.\d+)?\s?(?:mg|g|grams?)\b(?![^.;,]*\b(?:if|unless|once|until|in case|should \w+ be|bridging|before (?:the )?(?:axi|car|infusion|lymphodeplet))\w*)',
+  '\b(?:start|give|commence|begin|initiate|administer|add)(?:s|ing)?\s+(?:\w+\s+){0,2}?(?:dexamethasone|dex\b|methylpred\w*|solu-?medrol|(?:cortico)?steroids?)(?![^.;,]*\b(?:if|unless|once|until|in case|should \w+ be|bridging|before (?:the )?(?:axi|car|infusion|lymphodeplet))\w*)',
+  '(?<!hold )(?<!holding )(?<!started on )(?<!received )(?<!was on )\b(?:dexamethasone|dex|methylpred\w*)\b[^.;,]{0,25}?\b(?:q\s?\d+\s?h|every \d+ hours|\d+[- ]hourly|stat|now|immediately|straight away)\b(?![^.;,]*\b(?:if|unless|once|until|in case|should \w+ be|bridging|before (?:the )?(?:axi|car|infusion|lymphodeplet))\w*)',
+]
+
+[[items]]
+id = "l4_crs_management"
+domain = "priorities"
+kind = "must"
+severity = "important"
+points = 10
+text = "The response recognizes concurrent CRS (fever with relative hypotension vs baseline, tachycardia, lactate 2.6; grade 1-2 at presentation) and treats it: IV fluid bolus, repeat tocilizumab (dose not exhausted) if hypotension persists, and escalation if refractory; it notes tocilizumab alone does not treat ICANS."
+# restating the day-3 'CRS grade 1 ... tocilizumab' history is not treatment: the tocilizumab/fluid must be given now
+all = ['\bcrs\b|cytokine release', '\b(?:give|giving|repeat\w*|administer\w*|start\w*|another|second|further|re-?dos\w*)\b[^.;]{0,30}(?:tocilizumab|fluid)|\biv fluids?\b|fluid (?:bolus|resuscitat)|\bbolus\b|vasopress']
+
+[[items]]
+id = "l4_neutropenic_sepsis"
+domain = "priorities"
+kind = "must"
+severity = "dangerous"
+points = 15
+text = "The response treats possible neutropenic sepsis: blood cultures (peripheral and line) and empiric broad-spectrum IV antibiotics (e.g. cefepime or piperacillin-tazobactam) within one hour, without waiting for results."
+all = ['cultures?\b|\bcx\b']
+# empiric IV broad-spectrum cover actually given: an anti-pseudomonal agent or qualified "antibiotics";
+# not oral, not negated/deferred, not made conditional on results in the same clause
+affirm = [
+  '(?<!oral )\b(?:cefepime|ceftazidime|piperacillin|pip[- /]?tazo\w*|tazocin|zosyn|meropenem|imipenem|carbapenems?)\b(?![^.;,]*\b(?:if|unless|once|until|in case|pending|not|unnecessary|unwarranted)\b)',
+  '\b(?:empiric\w*|broad[- ]spectrum|iv|intravenous)\s+(?:[\w-]+\s+){0,2}?(?:antibiotics?|antimicrobials?|antibacterials?)\b(?![^.;,]*\b(?:if|unless|once|until|in case|pending|not|unnecessary|unwarranted)\b)',
+]
+
+[[items]]
+id = "l4_airway_icu_seizure"
+domain = "priorities"
+kind = "should"
+severity = "important"
+points = 10
+text = "The response addresses airway protection/ICU-level monitoring, frequent neuro checks (ICE/GCS), aspiration and seizure precautions, and continuation/optimization of levetiracetam."
+# 'levetiracetam' alone is on the medication list; credit needs an increase/optimisation
+any = ['\bicu\b', 'intensive care', 'airway', 'seizure precaution', '(?:increas|escalat|uptitrat|optimi|rais)\w*[^.;]{0,30}levetiracetam|levetiracetam[^.;]{0,40}(?:750|1,?000|1500|increas|escalat|uptitrat)']
+
+[[items]]
+id = "l4_ddx_cns_relapse"
+domain = "differential"
+kind = "must"
+severity = "important"
+points = 10
+text = "The differential includes CNS relapse of lymphoma, given his high CNS-IPI with kidney/adrenal involvement at diagnosis."
+any = ["cns (?:relapse|involvement|progression|lymphoma|disease)", "(?:relapse|progression|recurrence)[^.]{0,30}(?:cns|brain|central nervous|leptomening)", "secondary cns"]
+
+[[items]]
+id = "l4_ddx_infection_bleed"
+domain = "differential"
+kind = "must"
+severity = "important"
+points = 10
+text = "The differential includes CNS infection (bacterial meningitis; HSV/HHV-6 encephalitis) and intracranial hemorrhage (platelets 44)."
+all = ["mening|encephalitis|hhv[- ]?6|hsv", "hemorrhage|haemorrhage|bleed"]
+
+[[items]]
+id = "l4_ddx_metabolic_seizure"
+domain = "differential"
+kind = "should"
+severity = "minor"
+points = 5
+text = "The differential includes non-convulsive seizures/status and metabolic causes (hyponatremia, hyperglycemia, sepsis-associated encephalopathy, drugs)."
+any = ["non[- ]?convulsive", "hyponat", "hyperglyc", "metabolic"]
+
+[[items]]
+id = "l4_ct_then_mri"
+domain = "investigation"
+kind = "must"
+severity = "important"
+points = 10
+text = "The response orders urgent non-contrast CT head (hemorrhage), then MRI brain with contrast."
+all = ["\\bct\\b", "\\bmri\\b"]
+
+[[items]]
+id = "l4_eeg_lp_safe"
+domain = "investigation"
+kind = "should"
+severity = "important"
+points = 10
+text = "The response orders an EEG, and a lumbar puncture only once safe (after imaging; platelets transfused to >=50) with CSF cell count, cultures, HSV/HHV-6 PCR, cytology and flow cytometry."
+all = ["\\beeg\\b", "lumbar|\\blp\\b|\\bcsf\\b"]
+
+[[items]]
+id = "l4_glucose_steroids_diabetes"
+domain = "investigation"
+kind = "should"
+severity = "minor"
+points = 5
+text = "The response anticipates worsening hyperglycemia from dexamethasone in this diabetic patient (glucose 242) and plans insulin adjustment."
+# the chart already says 'insulin correction scale' and 'dexamethasone pulse': credit needs the steroid -> glucose -> insulin plan
+all = ['glucose|hyperglyc|insulin', '(?:diabet|steroid|dexamethasone)[^.;]{0,80}(?:worsen|rais|increas|hyperglyc|basal|escalat|adjust|insulin)|basal[- ]bolus|\bbasal\b[^.;]{0,40}\binsulin|\binsulin\b[^.;]{0,40}\bbasal\b|(?:adjust|escalat|intensif|increas|uptitrat|switch)\w* (?:the |his )?insulin']
+
+[[items]]
+id = "l4_mn_lp_unsafe"
+domain = "investigation"
+kind = "must_not"
+severity = "important"
+points = 10
+text = "The response performs a lumbar puncture immediately, before head imaging or without correcting platelets of 44."
+# fires on: an urgent/stat LP not sequenced after imaging or transfusion in the same clause; LP before imaging;
+# LP with imaging left to follow; a sub-50 platelet count called acceptable, or LP done at such a count
+affirm = [
+  '^(?![^;]*\b(?:after|once|following|until|when|if|unless|transfus\w*)\b)[^;]*?(?:\b(?:urgent|immediate|emergent|emergency|stat|straight to|directly to)\s+(?:lumbar puncture|lp\b)|(?:lumbar puncture|\blp)\s+(?:now|stat|immediately|right away|straight away|first)\b)',
+  '(?:lumbar puncture|\blp\b)[^.;]{0,30}?\bbefore (?:any |the |a )?(?:head |brain )?(?:imaging|ct|mri|scan|neuroimaging)\b(?![^.;]*\b(?:contraindicated|unsafe|dangerous|risks?|should not|must not)\b)',
+  '(?:lumbar puncture|\blp\b)[^.;]{0,80}?\b(?:with|then|followed by)\s+(?:a\s+)?(?:ct|mri|imaging|neuroimaging)(?:\s+(?:head|brain))?\s+(?:to follow|afterwards|later)\b',
+  '\bplatelets?(?: count)?(?: of)?\s+(?:[1-4]\d)\s*(?:k|x\s?10\S*|/\S+)?\s+(?:is|are)\s+(?:acceptable|adequate|sufficient|safe|fine|ok(?:ay)?)\b',
+  '(?:lumbar puncture|\blp\b)[^.;]{0,30}?\b(?:at|with)\s+(?:a\s+)?platelets?(?:\s+count)?(?:\s+of)?\s+(?:[1-4]\d)\b(?![^.;]*\btransfus)',
+]
+
+[[items]]
+id = "l4_mn_withhold_steroids_for_tcell"
+domain = "priorities"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response withholds corticosteroids for ICANS out of concern that they will harm CAR-T efficacy."
+# withholding is itself a negation, so these are raw sentence-bounded patterns: a withhold verb + steroid and a
+# CAR-T-efficacy rationale in the same sentence, with no earlier "not/never" (e.g. "is not a reason to withhold")
+# and no if/unless/grade-1 framing (withholding reserved for a hypothetical lower grade)
+any = [
+  # withhold steroid ... because of CAR-T efficacy
+  '(?:^|[.;!?"]\s*)(?:(?!\bnot\b|n\x27t\b|\bnever\b|\bno (?:reason|justification|basis|indication)\b|\brather than\b|\bif\b|\bunless\b|\bgrade (?:1|i)\b)[^.;"])*?\b(?:avoid\w*|withh[eo]ld\w*|hold(?:ing)?|defer\w*|omit\w*|no|not (?:give|start|use)\w*|refrain\w* from)\s+(?:[\w-]+\s+){0,2}?(?:cortico)?(?:steroids?|dexamethasone|dex\b|methylpred\w*)(?:(?!\bnot\b|n\x27t\b|\bnever\b)[^.;"]){0,100}?(?:(?:car[- ]?t|axi[- ]?cel|cellular therapy|t[- ]cells?)\w*[^.;"]{0,25}?\b(?:expansion|efficacy|persistence|function|activity|proliferation|product|response)|\b(?:blunt|impair|compromis|ablat|harm|reduc|dampen|abrogat|kill|lyse|undermin|jeopardi[sz])\w*[^.;"]{0,30}?\b(?:car[- ]?t|axi[- ]?cel|t[- ]cells?|cellular therapy))',
+  # CAR-T efficacy rationale ... then withhold (active or passive) steroid
+  '(?:^|[.;!?"]\s*)(?:(?!\bnot\b|n\x27t\b|\bnever\b|\bno (?:reason|justification|basis|indication)\b|\brather than\b|\bif\b|\bunless\b|\bgrade (?:1|i)\b)[^.;"])*?(?:(?:car[- ]?t|axi[- ]?cel|cellular therapy|t[- ]cells?)\w*[^.;"]{0,25}?\b(?:expansion|efficacy|persistence|function|activity|proliferation|product|response)|\b(?:blunt|impair|compromis|ablat|harm|reduc|dampen|abrogat|kill|lyse|undermin|jeopardi[sz])\w*[^.;"]{0,30}?\b(?:car[- ]?t|axi[- ]?cel|t[- ]cells?|cellular therapy))(?:(?!\bnot\b|n\x27t\b|\bnever\b)[^.;"]){0,80}?(?:\b(?:avoid\w*|withh[eo]ld\w*|hold(?:ing)?|defer\w*|omit\w*|no|refrain\w* from)\s+(?:[\w-]+\s+){0,2}?(?:cortico)?(?:steroids?|dexamethasone|dex\b|methylpred\w*)|(?:cortico)?(?:steroids?|dexamethasone|methylpred\w*)\s+(?:(?:are|is|should|will|must|would)\s+)?(?:be\s+|being\s+|remain\s+)?(?:withheld|held|avoided|deferred|omitted))',
+  # steroid passively withheld ... because of CAR-T efficacy
+  '(?:^|[.;!?"]\s*)(?:(?!\bnot\b|n\x27t\b|\bnever\b|\bno (?:reason|justification|basis|indication)\b|\brather than\b|\bif\b|\bunless\b|\bgrade (?:1|i)\b)[^.;"])*?\b(?:cortico)?(?:steroids?|dexamethasone|methylpred\w*)\s+(?:(?:are|is|should|will|must|would)\s+)?(?:be\s+|being\s+|remain\s+)?(?:withheld|held|avoided|deferred|omitted)(?:(?!\bnot\b|n\x27t\b|\bnever\b)[^.;"]){0,100}?(?:(?:car[- ]?t|axi[- ]?cel|cellular therapy|t[- ]cells?)\w*[^.;"]{0,25}?\b(?:expansion|efficacy|persistence|function|activity|proliferation|product|response)|\b(?:blunt|impair|compromis|ablat|harm|reduc|dampen|abrogat|kill|lyse|undermin|jeopardi[sz])\w*[^.;"]{0,30}?\b(?:car[- ]?t|axi[- ]?cel|t[- ]cells?|cellular therapy))',
+]
+
+[leak_check]
+# searched in everything the model can see at this layer (base chart + updates so far + instruction); the build fails on a hit
+forbidden_in_case = ["blood cultures", "icans", "immune effector cell", "neurotoxicity syndrome", "cefepime", "piperacillin", "meropenem", "anakinra"]

@@ -1,0 +1,42 @@
+{
+ "l2_pmr": {
+  "met": true,
+  "quote": "Partial metabolic response (PMR) by Lugano 2014, which NCCN would call a partial response. This is not a complete metabolic response.",
+  "source": "judge"
+ },
+ "l2_repeat_biopsy": {
+  "met": true,
+  "quote": "Repeat biopsy, redesigned to answer the question.",
+  "source": "judge"
+ },
+ "l2_respect_refusal": {
+  "met": true,
+  "quote": "Respect the informed refusal. Document the discussion: the risk of undetected residual lymphoma, that without tissue we cannot confirm remission, that the choice of further treatment depends on tissue, and that the offer to biopsy stays open.",
+  "source": "judge"
+ },
+ "l2_short_interval_pet_or_rt": {
+  "met": true,
+  "quote": "I recommend consolidative radiotherapy: 30 Gy in 15 fractions to the residual retroperitoneal mass with a margin, IMRT planning to limit bowel, kidney and ureteric dose, referred to radiation oncology.",
+  "source": "judge"
+ },
+ "l2_no_cns_action": {
+  "met": true,
+  "quote": "No CNS-directed treatment is needed now. Reasons: MRI brain with and without gadolinium on 2026-09-25 shows no intracranial mass",
+  "source": "judge"
+ },
+ "l2_car_t_awareness": {
+  "met": true,
+  "quote": "Interpretation: viable DLBCL means primary refractory disease, not complete remission. Refer to CAR-T evaluation (axi-cel is approved for primary refractory DLBCL within 12 months of first-line therapy, and he is 67 with ECOG 1, so he is worth referring)",
+  "source": "judge"
+ },
+ "l2_mn_declares_cure": {
+  "met": false,
+  "quote": "This is not a complete metabolic response.",
+  "source": "judge"
+ },
+ "l2_mn_salvage_without_histology": {
+  "met": false,
+  "quote": "Do not give further systemic chemotherapy, transplant or maintenance on the basis of an unconfirmed residual, because the toxicity cost is high and the benefit unknown.",
+  "source": "judge"
+ }
+}

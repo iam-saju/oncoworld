@@ -1,0 +1,73 @@
+{
+ "id": "journey_sample_deepseek__D97QxnD__L2",
+ "model": "deepseek-v4.1-flash-free",
+ "task": "dlbcl_0003_journey_v2_fhir",
+ "layer": "L2",
+ "rubric": "cases_src/dlbcl_0003_journey/L2_rubric.toml",
+ "answer_path": "jobs/journey_sample_deepseek/dlbcl_0003_journey_v2_fhir__D97QxnD/steps/L2-after-first-line/verifier/final_answer.json",
+ "context": "Journey stage L2 (2027-02-24), same patient later in the disease course.\nINTERVAL HISTORY: WHAT ACTUALLY HAPPENED SINCE TUMOR BOARD (2026-09-18 to 2027-02-24)\n\nTumor board 2026-09-18 recommended prednisone prephase, then Pola-R-CHP x6 with pegfilgrastim.\n- 2026-09-19 to 09-23: prednisone 100 mg daily. Ibuprofen stopped. Lisinopril and metformin held.\n- 2026-09-24: cycle 1 given as an inpatient with IV hydration and rasburicase (G6PD normal). Laboratory\n  TLS on day 2 (uric acid 8.9, phosphate 5.2, potassium 5.4) resolved with fluids; no dialysis.\n- 2026-09-25: MRI brain with contrast: no intracranial lesion. Lumbar puncture: CSF cytology and flow\n  cytometry negative for lymphoma.\n- CNS prophylaxis with high-dose methotrexate was discussed; after counselling on uncertain benefit the\n  patient declined it.\n- Creatinine 1.0 mg/dL by cycle 2 and stable since. Insulin correction scale during steroid days.\n- Cycles 2-6 outpatient, on schedule. Grade 2 neuropathy after cycle 4: polatuzumab reduced to 1.4 mg/kg\n  for cycles 5-6; neuropathy improved to grade 1. He attended his granddaughter's wedding on 2026-12-13.\n  Cycle 6 given 2027-01-08.\n- Now ECOG 1. Weight 74 kg. No B symptoms. Mild residual tingling in the toes.\n\nMRI BRAIN WITH AND WITHOUT GADOLINIUM, 2026-09-25\n\nIndication: diffuse large B-cell lymphoma with renal and adrenal involvement; evaluation for CNS disease.\nFindings: No intracranial mass. No abnormal parenchymal, dural or leptomeningeal enhancement. No hemorrhage.\nNo hydrocephalus.\nIMPRESSION: No intracranial lesion. No imaging evidence of CNS lymphoma.\n\nCEREBROSPINAL FLUID, LUMBAR PUNCTURE, 2026-09-25\n\nCytology: negative for malignant cells.\nFlow cytometry: no abnormal B-cell population detected.\nDIAGNOSIS: Cerebrospinal fluid negative for lymphoma.\n\nFDG PET-CT, END OF TREATMENT (6 weeks after cycle 6), 2027-02-17\n\nComparison: baseline PET-CT 2026-09-05.\nMediastinal blood pool SUVmax 1.9; liver SUVmax 2.8.\n- Retroperitoneal mass decreased from 9.4 x 6.8 cm to 3.4 x 2.1 cm; residual SUVmax 6.2 (baseline 24.1).\n- Right renal, left adrenal and hepatic lesions: resolved, no residual uptake.\n- No new FDG-avid lesions. No marrow uptake.\nDeauville score: 4 (residual retroperitoneal mass, uptake moderately above liver).\n\nSURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RESIDUAL RETROPERITONEAL MASS, 2027-02-22\nTwo 18-gauge cores, total 0.6 cm. Predominantly necrosis and dense fibrosis with scattered histiocytes.\nRare large atypical cells, CD20-positive on immunostain, too few to characterize.\nDIAGNOSIS: Necrosis and fibrosis; rare atypical CD20+ cells. Insufficient for a definitive diagnosis\nof residual lymphoma. Tissue insufficient for flow cytometry or molecular studies.\n\nResults visit with the patient, his wife and daughter. Explained the biopsy was not diagnostic.\nThe patient says he \"has had enough needles\" and, with his family's agreement, declines a repeat biopsy\nat this time. He feels well and asks what his options are. Neuro exam normal; no headache or\nneurological symptoms.\n\nQuestions: What is the response category at the end of first-line treatment, and what does it mean? | The biopsy of the residual mass was inadequate for diagnosis. What do you recommend next? | The patient and his family decline a repeat biopsy. How do you proceed? | Baseline CSF studies were negative. Is any CNS-directed action needed now?",
+ "answer": {
+  "q1": "The end-of-treatment FDG PET-CT (2027-02-17, 6 weeks after cycle 6) shows a Deauville score of 4: the residual retroperitoneal mass is 3.4 x 2.1 cm with SUVmax 6.2, moderately above liver (SUVmax 2.8), while the right renal, left adrenal and hepatic lesions have resolved and there are no new FDG-avid lesions. By Lugano 2014 criteria this is a partial metabolic response (PMR), not a complete metabolic response; at the end of treatment a Deauville 4 indicates possible residual metabolic disease. It is not, however, proof of viable lymphoma: the mass has decreased by roughly 90% in bidimensional product, all extranodal disease has disappeared, and Deauville 4 in a residual mass has a substantial false-positive rate from inflammation, necrosis and fibrosis. The inadequate biopsy showing necrosis and fibrosis with only rare CD20-positive cells is compatible with either a fibrotic residual or a small amount of residual disease, so the response is best characterized as incomplete/indeterminate and requires further evaluation rather than an immediate assumption of treatment failure. LDH is not reported in this update; repeat LDH and CBC would be useful but would not substitute for tissue or serial imaging.",
+  "q2": "I recommend a repeat image-guided core biopsy of the residual retroperitoneal mass, targeting the most FDG-avid peripheral portion (SUVmax 6.2) rather than the necrotic center, with a larger-bore needle (preferably 14-gauge) and at least 3-4 cores; if percutaneous access is unfavorable or the tissue remains inadequate, proceed to laparoscopic or open excisional biopsy. Send the tissue for morphology, CD20/CD3/CD10/BCL6/MUM1/MYC/BCL2/Ki-67 immunohistochemistry, flow cytometry, and FISH for MYC, BCL2 and BCL6, with clonality studies if needed. The first sample was only 0.6 cm of predominantly necrotic tissue, which explains the non-diagnostic result. I would review the PET images with radiology to choose the target and obtain repeat LDH. A positive biopsy would confirm residual DLBCL and prompt second-line platinum-based salvage with a view to autologous transplant or CAR-T; a negative biopsy would support observation. If a repeat core biopsy is not technically feasible, surgical excision is the preferred alternative. Circulating tumor DNA could be a useful adjunct, but a negative ctDNA result would not replace adequate tissue in this setting.",
+  "q3": "Given the informed refusal of repeat biopsy, I would not start empirical salvage therapy on the basis of Deauville 4 alone. Deauville 4 in a residual mass is often inflammatory or fibrotic, the biopsy did not establish viable lymphoma, and salvage chemotherapy with transplant or CAR-T carries substantial morbidity. I will follow a close-observation strategy: clinical assessment, CBC and LDH now, then a repeat FDG PET-CT in 6-8 weeks (roughly late March to mid-April 2027). If the residual mass regresses or remains stable without new FDG-avid lesions, I will continue observation with clinical review and imaging every 3-4 months initially. If the mass enlarges, SUVmax rises, new lesions appear, or he develops symptoms, I will proceed to salvage (R-ICE or R-DHAP) and evaluate for autologous transplant or CAR-T. If repeat PET remains Deauville 4 and stable but the family still declines tissue confirmation, I would continue observation rather than treat blindly, while documenting the residual risk. I would not irradiate an unproven residual now, but involved-site radiation to the single residual mass could be considered later if there is localized progression and he remains unwilling to undergo systemic salvage. ctDNA, if available, may help but will not be used alone to trigger salvage. This shared decision balances the risk of overtreating a possibly cured patient against the risk of missing residual aggressive lymphoma; his good performance status, resolved B symptoms, normalized creatinine and marked metabolic response support observation.",
+  "q4": "No CNS-directed action is needed now. Baseline contrast-enhanced MRI brain (2026-09-25) showed no intracranial disease, and CSF cytology and flow cytometry were negative for lymphoma; he has no headache, cranial neuropathy, focal deficit or other neurological symptoms. He declined high-dose methotrexate prophylaxis during first-line therapy, and I would not initiate CNS-directed therapy now in the absence of documented CNS disease, because the benefit of prophylaxis is uncertain and he has already made an informed choice to decline it. Routine surveillance lumbar puncture or MRI in an asymptomatic patient with a negative baseline CNS evaluation is not indicated. I will continue clinical surveillance and instruct him to report new neurological symptoms promptly; if symptoms develop, I will obtain urgent MRI brain and spine plus CSF cytology/flow. If residual DLBCL is later confirmed and he proceeds to salvage therapy, I will revisit CNS risk and prophylaxis at that time. His high CNS-IPI warrants vigilance, not intervention now."
+ },
+ "items": [
+  {
+   "id": "l2_pmr",
+   "kind": "must",
+   "severity": "important",
+   "points": 20,
+   "criterion": "The response classifies end-of-treatment Deauville 4 with reduced uptake as a partial metabolic response (not complete metabolic response) per Lugano, noting it may be residual lymphoma or post-treatment inflammation/necrosis."
+  },
+  {
+   "id": "l2_repeat_biopsy",
+   "kind": "must",
+   "severity": "important",
+   "points": 20,
+   "criterion": "The response recommends an adequate repeat biopsy (e.g. PET/CT-guided core targeting the most FDG-avid area, or surgical/laparoscopic) because histologic confirmation is needed before second-line therapy."
+  },
+  {
+   "id": "l2_respect_refusal",
+   "kind": "must",
+   "severity": "important",
+   "points": 15,
+   "criterion": "The response respects the informed refusal of repeat biopsy, explains its implications, and documents a shared decision."
+  },
+  {
+   "id": "l2_short_interval_pet_or_rt",
+   "kind": "must",
+   "severity": "important",
+   "points": 20,
+   "criterion": "Without a repeat biopsy, the response proposes a reasonable path: short-interval repeat PET-CT (about 6-12 weeks) with biopsy if progression, and/or consolidative involved-site radiotherapy to the single residual site."
+  },
+  {
+   "id": "l2_no_cns_action",
+   "kind": "should",
+   "severity": "minor",
+   "points": 10,
+   "criterion": "The response states no routine CNS-directed action (no repeat LP/MRI or prophylaxis) is needed now while he is neurologically well, with prompt evaluation if symptoms develop."
+  },
+  {
+   "id": "l2_car_t_awareness",
+   "kind": "should",
+   "severity": "minor",
+   "points": 15,
+   "criterion": "The response anticipates that biopsy-proven refractory/early-relapsed disease would make him a candidate for second-line CAR T-cell therapy and suggests early referral/discussion with a cellular-therapy center."
+  },
+  {
+   "id": "l2_mn_declares_cure",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response calls this a complete (metabolic) response / cure and moves to routine surveillance with no further evaluation of the residual uptake."
+  },
+  {
+   "id": "l2_mn_salvage_without_histology",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response starts salvage chemotherapy or CAR T-cell therapy now, on PET findings alone, without histologic confirmation or documented progression."
+  }
+ ]
+}

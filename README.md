@@ -4,7 +4,8 @@ Harbor-based evaluation harness for oncology clinical reasoning tasks (DLBCL and
 
 ## Layout
 
-- `harbor_cases/` — benchmark task definitions (instructions, FHIR bundles, graders, solutions, scoring)
+- `harbor_cases/` — benchmark task definitions, FHIR only — the only tasks that are run (instructions, FHIR bundles, graders, solutions, scoring)
+- `harbor_cases_narrative/` — the same patients rendered as narrative charts (plus the longitudinal journey); not run by default, kept as a diagnostic control to tell FHIR-reading failures from clinical-reasoning failures
   - v1 (frozen, tag `v1-frozen`): `dlbcl_000X_*_{narrative,fhir}`, `breast_0001_fhir`
   - v2 (generated, do not hand-edit): `dlbcl_000X_*_v2_{narrative,fhir}` and the multi-step `dlbcl_0003_journey_v2`
 - `cases_src/` — v2 single source per patient (model-visible `case.toml`; hidden gold, rubric, self-tests)

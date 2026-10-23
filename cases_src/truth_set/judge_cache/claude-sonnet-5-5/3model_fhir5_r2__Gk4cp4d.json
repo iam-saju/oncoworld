@@ -1,0 +1,122 @@
+{
+ "dx_hgbl_double_hit": {
+  "met": true,
+  "quote": "High-grade B-cell lymphoma with MYC and BCL2 rearrangements (HGBL-DH; formerly 'double-hit' lymphoma), GCB immunophenotype",
+  "source": "judge"
+ },
+ "mn_dx_dlbcl_nos": {
+  "met": false,
+  "quote": "The initial diagnosis of DLBCL, NOS was amended after FISH showed an IGH::MYC t(8;14) rearrangement in 78% of nuclei and an IGH::BCL2 t(14;18) rearrangement in 85%",
+  "source": "judge"
+ },
+ "dx_gcb_hans": {
+  "met": true,
+  "quote": "GCB phenotype by the Hans algorithm: CD20+, PAX5+, CD10+, BCL6+, MUM1- (<10%)",
+  "source": "judge"
+ },
+ "tx_plan_outdated": {
+  "met": true,
+  "quote": "Do not give the planned R-CHOP. Change to DA-EPOCH-R (dose-adjusted etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin plus rituximab) for 6 cycles, starting now",
+  "source": "judge"
+ },
+ "stage_ii_bulky": {
+  "met": true,
+  "quote": "Ann Arbor stage IIA, bulky: right cervical levels II-IV and anterior mediastinal nodal disease, all above the diaphragm, with a 12.0 cm mediastinal mass (bulky, >10 cm)",
+  "source": "judge"
+ },
+ "mn_stage_iii_iv": {
+  "met": false,
+  "quote": "Ann Arbor stage IIA, bulky: right cervical levels II-IV and anterior mediastinal nodal disease, all above the diaphragm",
+  "source": "judge"
+ },
+ "bio_double_expressor_secondary": {
+  "met": false,
+  "quote": "BCL2+ in 90% of tumor cells, MYC+ in 80%, Ki-67 approximately 95%... The bulky mediastinal mass, high LDH, Ki-67 ~95%, and MYC/BCL2 co-expression further increase risk.",
+  "source": "judge_unquoted"
+ },
+ "prog_ipi1_biology_dominates": {
+  "met": true,
+  "quote": "IPI 1 (low) and CNS-IPI 1 (low), but both scores understate the risk conferred by double-hit biology.",
+  "source": "judge"
+ },
+ "tx_intensive_curative": {
+  "met": true,
+  "quote": "Do not give the planned R-CHOP. Change to DA-EPOCH-R (dose-adjusted etoposide, prednisone, vincristine, cyclophosphamide, doxorubicin plus rituximab) for 6 cycles, starting now",
+  "source": "judge"
+ },
+ "mn_rchop_preferred": {
+  "met": false,
+  "quote": "Do not give the planned R-CHOP.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "The goal is curative-intent treatment, and the patient has explicitly asked for the regimen with the best chance of cure",
+  "source": "judge"
+ },
+ "tx_isrt_consolidation": {
+  "met": true,
+  "quote": "I would not plan consolidative radiation or routine first-remission autologous transplant; reserve radiation for a residual PET-positive bulky mass",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": false,
+  "quote": "I would not routinely obtain brain MRI, testicular ultrasound, or pulmonary function tests because the history, examination, and PET/CT are negative in those domains.",
+  "source": "judge"
+ },
+ "cns_prophylaxis": {
+  "met": true,
+  "quote": "give intrathecal methotrexate 12 mg for 4 doses starting with cycle 1, because DA-EPOCH-R does not include high-dose systemic methotrexate.",
+  "source": "judge"
+ },
+ "mn_cns_dismissed": {
+  "met": false,
+  "quote": "double-hit histology is an independent high-risk feature, and reported CNS relapse rates in HGBL-DH are higher",
+  "source": "judge"
+ },
+ "resp_pet_lugano": {
+  "met": true,
+  "quote": "Interim PET/CT after 2 cycles of DA-EPOCH-R (Lugano 2014 criteria, Deauville 5-point scale) to identify early chemorefractory disease, then end-of-treatment PET/CT about 6-8 weeks after cycle 6.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Give G-CSF with DA-EPOCH-R per the dose-adjustment schedule",
+  "source": "judge"
+ },
+ "sup_tls": {
+  "met": true,
+  "quote": "Start intravenous hydration and allopurinol 300 mg daily now (adjusted for renal function), check G6PD, and monitor urate, potassium, phosphate, calcium, creatinine, and LDH 6-8 hours after the first dose and then daily",
+  "source": "judge"
+ },
+ "sup_central_access_infusion": {
+  "met": false,
+  "quote": "DA-EPOCH-R is given as a 96-hour continuous infusion with rituximab on day 1, cyclophosphamide on day 5, and G-CSF support",
+  "source": "judge"
+ },
+ "sup_fertility": {
+  "met": true,
+  "quote": "fertility counseling with sperm banking",
+  "source": "judge"
+ },
+ "sup_svc_airway": {
+  "met": true,
+  "quote": "monitor for stridor, dyspnea, or worsening facial swelling, and treat urgent airway or SVC compromise with radiation or a vascular stent",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "No hepatitis B antiviral prophylaxis is needed because HBsAg and anti-HBc are negative and anti-HBs is positive, but monitor liver tests.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "Monitor cardiac function (baseline LVEF 60%; cumulative doxorubicin will be about 240 mg/m2)",
+  "source": "judge"
+ },
+ "fit_intensive": {
+  "met": true,
+  "quote": "Fit for intensive therapy: 54 years old, ECOG 1, working, no organ dysfunction, LVEF 60%, eGFR 101 mL/min/1.73 m2, normal liver function, and no prior anthracycline or chest radiation.",
+  "source": "judge"
+ }
+}

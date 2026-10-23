@@ -14,6 +14,38 @@
     "Agreed non-estrogen contraception plan for treatment and the following 12 months",
     "Patient's fertility preference after counselling (reproductive medicine referral if wanted)"
   ],
+  "decisions": {
+    "stage": "I",
+    "diagnosis": "DLBCL NOS, GCB type (Hans); not double-expressor, not double-hit",
+    "intent": "curative",
+    "regimen": "R-CHOP-21 x 4 cycles, then rituximab 375 mg/m2 x 2 doses (FLYER)",
+    "cycles": 4,
+    "cycle1_dose_percent": 100,
+    "radiotherapy": "none (consolidative ISRT only if interim PET Deauville 4-5)",
+    "orders_now": [
+      "Serum or urine hCG pregnancy test before cycle 1",
+      "Stop combined oral contraceptive (ethinyl estradiol/levonorgestrel) now",
+      "Gynecology referral to place a levonorgestrel or copper IUD (alternatives: etonogestrel implant or progestin-only pill); condoms until it is in place",
+      "Reproductive medicine referral for fertility counselling before cycle 1, offered without delaying treatment",
+      "R-CHOP-21 x 4: rituximab 375 mg/m2 IV, cyclophosphamide 750 mg/m2 IV, doxorubicin 50 mg/m2 IV, vincristine 1.4 mg/m2 IV (max 2 mg) on day 1; prednisone 100 mg PO days 1-5; every 21 days",
+      "Rituximab 375 mg/m2 IV every 21 days x 2 doses after cycle 4",
+      "Oral hydration with cycle 1 (low tumor lysis risk; allopurinol optional)",
+      "Antiemetics per regimen; avoid codeine (intolerance)",
+      "Rituximab infusion-reaction premedication (acetaminophen, diphenhydramine)"
+    ],
+    "conditional_orders": [
+      "if interim PET-CT after cycle 4 is Deauville 4-5: biopsy or consolidative ISRT instead of proceeding as planned",
+      "if febrile neutropenia or a treatment delay after cycle 1: add G-CSF to subsequent cycles",
+      "if pregnancy test positive: hold chemotherapy and discuss with obstetrics before starting"
+    ],
+    "lab_monitoring": [
+      {
+        "tests": "CBC with differential, CMP, LDH, uric acid",
+        "every_hours": 504,
+        "duration_hours": null
+      }
+    ]
+  },
   "_expect": {
     "passed": true,
     "dangerous": [],

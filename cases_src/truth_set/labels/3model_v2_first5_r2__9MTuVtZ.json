@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__9MTuVtZ",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "Cell of origin by Hans is non-germinal-center (ABC-like), an adverse prognostic feature.",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "Cell of origin by Hans is non-germinal-center (ABC-like)",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_not_breast_recurrence": {
+   "met": true,
+   "quote": "NOT a recurrence, metastasis or nodal metastasis of her 2016 left breast carcinoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Ann Arbor / Lugano stage III with splenic involvement and B symptoms (stage IIIB-S).",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_lymphatic": {
+   "met": false,
+   "quote": "spleen counts as an extranodal (S) site",
+   "confidence": "medium",
+   "note": "Reaches stage III but explicitly calls the spleen extranodal rather than lymphatic tissue."
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms present: recurrent unexplained evening fever to 38.4 C and drenching night sweats",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulk_definition": {
+   "met": true,
+   "quote": "Largest mass 7.5 cm = high-volume disease but NOT bulky by Lugano criteria (bulky = >=10 cm).",
+   "confidence": "medium",
+   "note": "Notes the 10 cm threshold but does not acknowledge that bulk definitions vary."
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_del_not_dh": {
+   "met": true,
+   "quote": "so this is NOT high-grade B-cell lymphoma with MYC and BCL2 rearrangements (double-hit) and not triple-hit",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "I am explicitly NOT choosing DA-EPOCH-R (no MYC/BCL2 rearrangement, so no double-hit indication",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_2": {
+   "met": false,
+   "quote": "IPI = 3 (age <60 = 0, stage III-IV = 1, LDH 510 elevated = 1, ECOG 1 = 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_2": {
+   "met": false,
+   "quote": "CNS-IPI = 3 (LDH elevated 1, ECOG 1 = 1, stage III-IV = 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": true,
+   "quote": "give CNS prophylaxis with intrathecal methotrexate 12 mg on day 1 of cycles 1, 2 and 3",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_aware_no_full_dox": {
+   "met": true,
+   "quote": "omitting anthracycline removes the largest modifiable cardiotoxicity risk",
+   "confidence": "medium",
+   "note": "Primary plan is mislabeled \"Pola-R-CHP (no anthracycline)\" and fallback R-CHOP allows standard dose if cardiology deems EF decline reversible."
+  },
+  "mn_standard_dox_ignores_heart": {
+   "met": false,
+   "quote": "",
+   "confidence": "medium",
+   "note": "Regimen name is Pola-R-CHP but dosing omits doxorubicin and the fallback R-CHOP is conditioned on cardiology."
+  },
+  "tx_cardio_onc_referral": {
+   "met": true,
+   "quote": "Before cycle 1 I will add a cardiology/cardio-oncology opinion",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardioprotection": {
+   "met": false,
+   "quote": "an ACE inhibitor/ARB added for blood pressure (<130/80) and LV support",
+   "confidence": "medium",
+   "note": "ACEi/ARB only in the fallback branch/as a plan item; no beta-blocker."
+  },
+  "tx_anthracycline_free_curative": {
+   "met": true,
+   "quote": "POLATUZUMAB VEDOTIN + R-CHP (no anthracycline) for 6 cycles",
+   "confidence": "medium",
+   "note": "Dosed regimen is effectively anthracycline-free pola-R-CVP but is confusingly mislabeled as Pola-R-CHP."
+  },
+  "tx_lower_efficacy_ack": {
+   "met": false,
+   "quote": "without compromising cure probability in her risk group",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_monitoring": {
+   "met": true,
+   "quote": "repeat echocardiogram with GLS every 2 cycles and after the final cycle",
+   "confidence": "medium",
+   "note": "Serial echo/GLS planned but troponin/NT-proBNP only at baseline."
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT 6-8 weeks after the last cycle (approximately May 2027): Deauville 1-3 = complete metabolic response",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "allopurinol in cycles 1-2 for tumor lysis risk (formally low: urate 5.8, normal renal function, no kidney involvement) and hydration",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim 6 mg SC on day 9 of every cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_anastrozole": {
+   "met": true,
+   "quote": "Anastrozole: CONTINUE to complete her planned 10-year course in November 2026",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg, total anti-HBc, anti-HBs, HCV Ab and HIV-1/2 Ag/Ab all non-reactive",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_curative_ecog1": {
+   "met": true,
+   "quote": "She is fit for curative-intensity therapy: ECOG 1",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_cardiac_workup": {
+   "met": true,
+   "quote": "No cardiology/cardio-oncology consultation or documented surveillance plan; no NT-proBNP or hs-troponin",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

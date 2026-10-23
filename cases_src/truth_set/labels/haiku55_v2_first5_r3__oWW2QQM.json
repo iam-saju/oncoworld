@@ -1,0 +1,186 @@
+{
+ "id": "haiku55_v2_first5_r3__oWW2QQM",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "non-germinal-center B-cell-like by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "non-GCB (ABC-like by IHC) biology",
+   "confidence": "low",
+   "note": "Says \"ABC-like by IHC\" and that GEP would refine, but never states Hans is not equivalent to molecular ABC."
+  },
+  "stage_iii": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "Bulky disease (retroperitoneal mass 10 cm or more).",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": true,
+   "quote": "so I stage IV rather than III-S",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": true,
+   "quote": "a single extranodal organ (spleen) score 0",
+   "confidence": "low",
+   "note": "Labels spleen as extranodal in IPI scoring though it does not change the score."
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "Double-expressor DLBCL by IHC (MYC in 50% of tumor cells, above the 40% cut-off; BCL2 in 80%, above the 50% cut-off), but NOT double-hit or triple-hit.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "IPI is 3 (age over 60, LDH elevated, stage IV), which is high-intermediate",
+   "confidence": "medium",
+   "note": "Total and category correct but derived from wrong stage IV."
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": true,
+   "quote": "CNS-IPI is 3, intermediate (2-3)",
+   "confidence": "medium",
+   "note": "Correct score though it calls the spleen an extranodal site (only one, so scores 0)."
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Pola-R-CHP for 6 cycles, 21-day cycles.",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "it is a preferred NCCN first-line regimen as I know the guideline",
+   "confidence": "medium",
+   "note": "Pola-R-CHP preferred, but no mention of greater benefit in non-GCB disease."
+  },
+  "tx_isrt_residual_bulk": {
+   "met": true,
+   "quote": "if confirmed residual disease, involved-site radiation (around 30 Gy) to the bulk",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "No dose reduction is planned.",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": true,
+   "quote": "start entecavir 0.5 mg daily (or tenofovir alafenamide 25 mg daily) before the first rituximab dose, continued at least 12 months after the last rituximab",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": true,
+   "quote": "HBV prophylaxis as above, with LFTs and HBV DNA every 1-3 months during therapy.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_no_hbv_action": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "Decision: no prophylactic intrathecal or high-dose methotrexate now.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Deauville 1-3: complete metabolic response, no radiation, surveillance.",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Deauville 4-5 with residual retroperitoneal uptake: biopsy if feasible",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "oral hydration, allopurinol (or febuxostat) starting before C1 for uric acid 7.1 mg/dL",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Primary G-CSF prophylaxis each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "He is fit for full dose: age 62, ECOG 1, LVEF 58% with GLS -20%",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "Fit for full-intensity curative therapy: age 62, ECOG 1, LVEF 58%",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "HBV DNA (quantitative) not on file",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

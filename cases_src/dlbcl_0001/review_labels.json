@@ -1,0 +1,172 @@
+{
+ "_about": "Plain-language labels for the oncologist report (scripts/build_report.py). Written by a senior heme-onc agent from rubric_v2.toml, case.toml and gold.json, then checked item by item against the rubric text by an independent heme-onc agent (2026-10-22). Not human-reviewed. Never shown to the model.",
+ "case_card": {
+  "title": "Bulky stage III non-GCB DLBCL with resolved hepatitis B",
+  "patient": "62M, ECOG 1, with 3 months of enlarging left neck nodes, fevers, drenching night sweats and 7 kg weight loss; PET-CT shows cervical, mediastinal and an 11 cm retroperitoneal mass, plus splenomegaly with FDG-avid splenic lesions; marrow negative, LDH 735 (about 3x ULN), LVEF 58%. Node biopsy: DLBCL NOS, non-GCB by Hans, MYC 50% / BCL2 80% by IHC with FISH negative for MYC, BCL2 and BCL6 rearrangements; HBsAg nonreactive, anti-HBc reactive, anti-HBs reactive.",
+  "tests": [
+   "Spleen involvement is nodal (lymphatic) under Lugano, so the stage is III, not IV, and the spleen does not score as extranodal in IPI or CNS-IPI.",
+   "MYC/BCL2 protein co-expression without rearrangement is double-expressor, not double-hit, and does not justify DA-EPOCH-R.",
+   "HBsAg-negative but anti-HBc-positive serology is resolved hepatitis B: rituximab needs entecavir or tenofovir prophylaxis started before the first dose.",
+   "CNS-IPI 3 is intermediate risk with no high-risk sites or neurologic symptoms, so routine CNS prophylaxis, MRI brain and lumbar puncture are not indicated.",
+   "A fit 62-year-old with ECOG 1 who wants cure gets full-dose curative therapy, not dose-reduced or palliative treatment."
+  ],
+  "correct_plan": "Six cycles of full-dose Pola-R-CHP (R-CHOP acceptable) with curative intent, with entecavir started before the first rituximab dose and continued at least 12 months after the last, baseline HBV DNA and liver tests, TLS prophylaxis with allopurinol and hydration, and pegfilgrastim considered. No routine CNS prophylaxis; end-of-treatment PET-CT read with Deauville, biopsying residual Deauville 4-5 uptake before changing therapy and considering ISRT to a residual PET-positive bulky site."
+ },
+ "items": [
+  {
+   "id": "dx_dlbcl_non_gcb",
+   "label": "Diagnoses DLBCL NOS, non-GCB phenotype by Hans algorithm",
+   "why": "Correct diagnosis and cell-of-origin subtype underpin regimen choice; non-GCB favours Pola-R-CHP for this patient."
+  },
+  {
+   "id": "dx_hans_not_abc",
+   "label": "Notes Hans non-GCB is not the same as molecular ABC subtype",
+   "why": "IHC is only a surrogate; ABC subtype needs gene-expression profiling, so claims about ABC biology must be qualified."
+  },
+  {
+   "id": "stage_iii",
+   "label": "Stages the disease as Lugano/Ann Arbor stage III",
+   "why": "Sets disease extent for prognosis and planning; the spleen is nodal, so he is stage III, not IV.",
+   "checker_revised": "The old why said a staging error 'miscounts risk', which is wrong. IPI and CNS-IPI give the same single point for stage III and stage IV, so overstaging here does not change either score."
+  },
+  {
+   "id": "stage_spleen_nodal",
+   "label": "Bases stage III on nodes both sides of diaphragm plus spleen as nodal",
+   "why": "Spleen is lymphatic tissue under Lugano; treating it as extranodal wrongly upstages him to stage IV."
+  },
+  {
+   "id": "stage_bulky_b_symptoms",
+   "label": "Notes bulky disease (11 cm retroperitoneal mass) and B symptoms",
+   "why": "Bulk and B symptoms affect TLS risk, radiotherapy consideration for residual bulk, and prognosis."
+  },
+  {
+   "id": "mn_stage_iv",
+   "label": "Stages the disease as stage IV",
+   "why": "The spleen is nodal under Lugano; calling this stage IV misstates disease extent and misinforms counselling.",
+   "checker_revised": "The old why claimed overstaging 'inflates IPI'. Stage III and stage IV score the same IPI and CNS-IPI point, so the IPI claim was clinically wrong."
+  },
+  {
+   "id": "mn_spleen_extranodal_count",
+   "label": "Counts the spleen as extranodal site when scoring IPI/CNS-IPI",
+   "why": "The spleen is lymphatic tissue under Lugano; scoring it as extranodal misapplies IPI and CNS-IPI and can mislead risk counselling.",
+   "checker_revised": "The old why said this inflates IPI/CNS-IPI and could trigger CNS prophylaxis. Both scores count extranodal disease only when more than one site is involved, so the spleen alone (one site) would not raise either score. The why overstated the consequence."
+  },
+  {
+   "id": "mol_de_not_dh",
+   "label": "Calls it double-expressor (MYC 50%, BCL2 80%) but not double-hit",
+   "why": "FISH shows no rearrangements; the distinction decides between standard therapy and intensified high-grade lymphoma regimens."
+  },
+  {
+   "id": "mn_calls_double_hit",
+   "label": "Calls it double-hit high-grade B-cell lymphoma with MYC/BCL2 rearrangements",
+   "why": "FISH is negative; this misclassification leads to unnecessarily intensive, more toxic treatment.",
+   "checker_revised": "The old label ran to 13 words, over the ~10-word limit. The shorter label keeps the same meaning and polarity."
+  },
+  {
+   "id": "mn_denies_double_expressor",
+   "label": "States it is not double-expressor despite MYC 50% and BCL2 80%",
+   "why": "Misses an adverse prognostic feature that should inform counselling and response vigilance."
+  },
+  {
+   "id": "prog_ipi_3",
+   "label": "Calculates IPI 3, high-intermediate risk (age, LDH, stage III)",
+   "why": "IPI of 2 or more supports Pola-R-CHP and sets prognosis; ECOG 1 and zero extranodal sites must not score."
+  },
+  {
+   "id": "prog_cns_ipi_intermediate",
+   "label": "Calculates CNS-IPI 3, intermediate risk, without counting spleen as extranodal",
+   "why": "Intermediate CNS risk means no routine CNS prophylaxis; overcounting would push him into high-risk management."
+  },
+  {
+   "id": "tx_curative_pola_or_rchop",
+   "label": "Recommends curative full-dose Pola-R-CHP or R-CHOP for 6 cycles",
+   "why": "This is standard curative therapy for a fit patient whose goal is cure."
+  },
+  {
+   "id": "tx_pola_preferred",
+   "label": "Prefers Pola-R-CHP given IPI >=2; R-CHOP acceptable alternative",
+   "why": "POLARIX showed a progression-free survival benefit, most notable in non-GCB/ABC disease like his."
+  },
+  {
+   "id": "tx_isrt_residual_bulk",
+   "label": "Considers ISRT to bulky site if PET-positive (Deauville 4-5) at end",
+   "why": "Consolidative radiotherapy only for residual PET-positive bulk spares him unnecessary radiation otherwise."
+  },
+  {
+   "id": "mn_non_curative",
+   "label": "Recommends palliative-only treatment, best supportive care or hospice",
+   "why": "He is fit with curable disease and wants cure; withholding curative therapy would cost him survival."
+  },
+  {
+   "id": "mn_da_epoch",
+   "label": "Recommends DA-EPOCH-R or intensified regimen for double-expressor status alone",
+   "why": "Double-expressor without rearrangements does not justify intensification; it adds toxicity without proven benefit."
+  },
+  {
+   "id": "mn_dose_reduced_initial",
+   "label": "Recommends dose-reduced regimen (e.g. R-mini-CHOP) for this fit patient",
+   "why": "At 62 with ECOG 1, dose reduction compromises his chance of cure."
+  },
+  {
+   "id": "hbv_prophylaxis",
+   "label": "Recognises resolved HBV; entecavir/tenofovir before rituximab, until 12+ months after last dose",
+   "why": "Anti-HBc positive despite negative HBsAg; rituximab can reactivate HBV, causing potentially fatal hepatitis.",
+   "checker_revised": "The old label said 'continues 12+ months' and dropped the qualifier 'after the last rituximab dose'. Without it, the duration could be read as 12 months from the start, which is too short."
+  },
+  {
+   "id": "hbv_dna_lft_monitoring",
+   "label": "Orders baseline HBV DNA and LFTs; monitors ALT and HBV DNA during/after therapy",
+   "why": "Detects active infection at baseline and catches reactivation early during and after rituximab."
+  },
+  {
+   "id": "mn_no_hbv_action",
+   "label": "States no HBV action or antiviral prophylaxis needed (e.g. HBsAg negative)",
+   "why": "Negative HBsAg does not exclude reactivation risk; omitting prophylaxis risks fulminant hepatitis on rituximab."
+  },
+  {
+   "id": "cns_no_routine_prophylaxis",
+   "label": "Judges CNS risk intermediate; no routine CNS prophylaxis or MRI/LP without symptoms",
+   "why": "No high-risk sites or neurologic symptoms; avoids unnecessary toxic prophylaxis and invasive procedures."
+  },
+  {
+   "id": "mn_mandates_cns_prophylaxis",
+   "label": "Mandates CNS prophylaxis (high-dose or intrathecal methotrexate) for intermediate risk",
+   "why": "Adds toxicity and treatment delay without indication at intermediate CNS-IPI risk."
+  },
+  {
+   "id": "resp_eot_pet_lugano",
+   "label": "Plans end-of-treatment PET-CT read with Lugano/Deauville 5-point scale",
+   "why": "Standardised end-of-treatment response assessment defines complete response and guides any further therapy."
+  },
+  {
+   "id": "resp_ds45_biopsy",
+   "label": "Biopsies residual Deauville 4-5 uptake before changing therapy, when management-changing",
+   "why": "Residual uptake can be false positive; biopsy prevents unnecessary salvage therapy."
+  },
+  {
+   "id": "sup_tls_allopurinol",
+   "label": "Recognises at least intermediate TLS risk; orders allopurinol, hydration, TLS labs",
+   "why": "11 cm mass and LDH about 3x normal put him at risk of tumor lysis and kidney injury with cycle 1."
+  },
+  {
+   "id": "sup_gcsf",
+   "label": "Considers primary G-CSF prophylaxis (e.g. pegfilgrastim) with this regimen",
+   "why": "Reduces febrile neutropenia risk, helping keep full-dose therapy on schedule."
+  },
+  {
+   "id": "work_echo_reviewed",
+   "label": "Notes baseline LVEF 58% permits anthracycline",
+   "why": "Confirms he can safely receive doxorubicin, a core component of the curative regimen."
+  },
+  {
+   "id": "fit_full_dose",
+   "label": "Judges fit for full-dose curative therapy, matching his goal of cure",
+   "why": "ECOG 1, normal organ function and controlled comorbidities support full doses aligned with his stated goals."
+  },
+  {
+   "id": "miss_hbv_dna",
+   "label": "Lists quantitative HBV DNA as missing information still needed",
+   "why": "HBV DNA has not been sent; it determines prophylaxis versus treating active hepatitis B before rituximab."
+  }
+ ]
+}

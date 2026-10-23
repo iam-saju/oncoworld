@@ -1,0 +1,180 @@
+{
+ "id": "3model_fhir5_r2__Qo9bHw7",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "germinal-center B-cell (GCB) subtype",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_i": {
+   "met": true,
+   "quote": "Ann Arbor stage IA, non-bulky, with no B symptoms",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_nonbulky_no_b": {
+   "met": true,
+   "quote": "Ann Arbor stage IA, non-bulky, with no B symptoms",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_pet_no_marrow_biopsy": {
+   "met": true,
+   "quote": "Bone marrow biopsy and lumbar puncture are not indicated because PET shows no marrow or CNS involvement",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_overstaged": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "so this is not a double-expressor lymphoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_low": {
+   "met": true,
+   "quote": "IPI 0 (age <60, stage I, ECOG 0, normal LDH, no extranodal sites)",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_low": {
+   "met": true,
+   "quote": "CNS-IPI is 0",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_rchop": {
+   "met": true,
+   "quote": "Curative-intent R-CHOP-21 for 6 cycles without consolidative radiation",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_flyer_4rchop_2r": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_no_rt_goals": {
+   "met": true,
+   "quote": "GCB DLBCL and strongly wishes to avoid neck radiation because of her sister's radiation-related hypothyroidism",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_alternatives": {
+   "met": false,
+   "quote": "4 cycles of R-CHOP followed by 30-36 Gy involved-site radiation would be the alternative",
+   "confidence": "medium",
+   "note": "Names 4xR-CHOP+ISRT, a reasonable combined-modality alternative, but not 3 cycles+RT or PET-adapted approach."
+  },
+  "mn_six_cycles": {
+   "met": true,
+   "quote": "Curative-intent R-CHOP-21 for 6 cycles without consolidative radiation",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_pola_preferred": {
+   "met": false,
+   "quote": "I would not use Pola-R-CHP or other novel regimens",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_observation_or_rt_alone": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_low_no_prophylaxis": {
+   "met": true,
+   "quote": "I will not perform a routine lumbar puncture or brain MRI in the absence of neurologic symptoms",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "I will not give intrathecal methotrexate or high-dose methotrexate CNS prophylaxis",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "interpret it with the Lugano/Deauville 5-point scale",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_interim_pet": {
+   "met": false,
+   "quote": "Interim PET after 2 cycles is not recommended outside a clinical trial.",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_pregnancy_test": {
+   "met": true,
+   "quote": "No serum beta-hCG pregnancy test is in the record; a negative result must be documented before starting",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "No hepatitis B antiviral prophylaxis is needed because she is anti-HBc negative and anti-HBs positive (immune).",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "baseline echocardiogram (LVEF 63%)",
+   "confidence": "medium",
+   "note": "LVEF 63% noted as adequate workup and in fitness for full-dose R-CHOP, not explicitly tied to anthracycline eligibility."
+  },
+  "sup_stop_coc_switch": {
+   "met": true,
+   "quote": "She should stop the combined oral contraceptive and use a progestin-only or non-hormonal method",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_coc_reason": {
+   "met": true,
+   "quote": "migraine with aura plus estrogen increases ischemic stroke risk",
+   "confidence": "medium",
+   "note": "Stroke reason explicit; VTE risk only implied by low threshold to evaluate VTE."
+  },
+  "sup_fertility_counselling": {
+   "met": true,
+   "quote": "urgent reproductive-endocrinology referral with AMH/antral follicle count and oocyte or embryo cryopreservation",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_goals": {
+   "met": true,
+   "quote": "Her goals are cure, preservation of fertility, and maintaining her teaching schedule, and she wants to avoid neck radiation",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

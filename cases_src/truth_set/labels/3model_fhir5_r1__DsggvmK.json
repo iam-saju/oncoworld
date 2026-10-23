@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r1__DsggvmK",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "MUM1/IRF4 positive (~80%) = NON-GERMINAL-CENTER (activated B-cell-like)",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_not_breast_recurrence": {
+   "met": true,
+   "quote": "cytokeratin AE1/AE3 and GATA3 are negative in lesional cells",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": false,
+   "quote": "Ann Arbor stage IV (nodal disease both above and below the diaphragm plus splenic parenchymal involvement, stage IVS)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_lymphatic": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms present (fever to 38.4 C, drenching night sweats 2-3x/week",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulk_definition": {
+   "met": true,
+   "quote": "NOT bulky by Lugano/NCCN criteria (no mass >=10 cm), although the 7.5 cm mesenteric conglomerate represents high-volume disease",
+   "confidence": "medium",
+   "note": "Notes below 10 cm threshold but does not explicitly acknowledge varying bulk definitions."
+  },
+  "mn_stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IV (nodal disease both above and below the diaphragm plus splenic parenchymal involvement, stage IVS)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_del_not_dh": {
+   "met": true,
+   "quote": "the correct designation is DLBCL, NOS, double expressor",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "this does NOT meet criteria for high-grade B-cell lymphoma with MYC and BCL2 rearrangements",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "I am deliberately NOT using DA-EPOCH-R",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_2": {
+   "met": true,
+   "quote": "IPI = 2 (LDH elevated + stage IV; age 59 = 0, ECOG 1 = 0, no extranodal sites = 0)",
+   "confidence": "medium",
+   "note": "Correct IPI value 2 but derived via stage IV rather than stage III."
+  },
+  "prog_cns_ipi_2": {
+   "met": false,
+   "quote": "CNS-IPI = 3 (LDH elevated, ECOG >=1, stage III/IV",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": true,
+   "quote": "intrathecal prophylaxis for CSF-negative disease: methotrexate 12 mg with or without cytarabine 50 mg on days 1 and 4 of each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_aware_no_full_dox": {
+   "met": true,
+   "quote": "proceed with full-dose R-CHOP only if cardiology concurs",
+   "confidence": "medium",
+   "note": "Recognizes cardiac risk and conditions on cardiology, but default plan remains full-dose R-CHOP."
+  },
+  "mn_standard_dox_ignores_heart": {
+   "met": false,
+   "quote": "proceed with full-dose R-CHOP only if cardiology concurs",
+   "confidence": "medium",
+   "note": "Full-dose R-CHOP is planned but explicitly conditioned on cardio-oncology clearance and cardioprotection."
+  },
+  "tx_cardio_onc_referral": {
+   "met": true,
+   "quote": "obtain cardio-oncology review within one week",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardioprotection": {
+   "met": true,
+   "quote": "start an ACE inhibitor plus a beta-blocker with BP driven to <130/80",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_anthracycline_free_curative": {
+   "met": false,
+   "quote": "If cardiology judges baseline LVEF 45% unacceptable for any anthracycline, I will treat with R-CVP x8 (curative intent)",
+   "confidence": "medium",
+   "note": "Anthracycline-free regimen only a contingency fallback; primary plan is full-dose R-CHOP."
+  },
+  "tx_lower_efficacy_ack": {
+   "met": false,
+   "quote": "",
+   "confidence": "medium",
+   "note": "Says it will not 'compromise the chance of cure' but never states anthracycline-free therapy is less effective."
+  },
+  "tx_cardiac_monitoring": {
+   "met": false,
+   "quote": "echocardiogram plus GLS before cycle 4, before cycle 6, and 3 months after the last dose",
+   "confidence": "medium",
+   "note": "Serial echo/GLS planned but no troponin or natriuretic peptide."
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Response will be assessed by PET-CT using Lugano/Deauville criteria",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "so she is not currently at high risk",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "G-CSF with every cycle (pegfilgrastim 6 mg SC day 2, or filgrastim daily from day 3)",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_anastrozole": {
+   "met": true,
+   "quote": "My decision is to continue anastrozole through chemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBs Ag, anti-HBc and anti-HBs all nonreactive and HCV Ab nonreactive, so no antiviral prophylaxis is required",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_curative_ecog1": {
+   "met": true,
+   "quote": "she wants treatment aimed at cure and hopes to return to full-time work",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_cardiac_workup": {
+   "met": true,
+   "quote": "Cardiology / cardio-oncology assessment of the new LVEF 45% with GLS -14% (down from LVEF 62% in 2016)",
+   "confidence": "medium",
+   "note": "Lists cardio-oncology assessment as missing but not ischemic workup, cardiac MRI or biomarkers."
+  }
+ }
+}

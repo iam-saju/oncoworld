@@ -15,6 +15,48 @@
     "Breast oncology input on continuing anastrozole during chemotherapy",
     "Patient's informed preference after discussing an anthracycline-free regimen versus a cardio-protected anthracycline option"
   ],
+  "decisions": {
+    "stage": "III",
+    "diagnosis": "DLBCL NOS, non-GCB (Hans), double-expressor, not double-hit",
+    "intent": "curative",
+    "regimen": "R-CEOP (rituximab, cyclophosphamide, etoposide, vincristine, prednisone)",
+    "cycles": 6,
+    "cycle1_dose_percent": 100,
+    "radiotherapy": "none",
+    "orders_now": [
+      "Urgent cardio-oncology referral before cycle 1: cause of LVEF decline and optimization",
+      "ECG, high-sensitivity troponin and NT-proBNP before cycle 1",
+      "Ischemic evaluation: coronary CT angiography or stress imaging",
+      "Stop amlodipine",
+      "Start lisinopril 2.5 mg PO daily, titrate as blood pressure allows",
+      "Start carvedilol 3.125 mg PO twice daily, titrate as tolerated",
+      "Allopurinol 300 mg PO daily starting 2 days before cycle 1",
+      "Oral hydration 2-3 L/day starting before cycle 1",
+      "Pegfilgrastim 6 mg SC 24-72 hours after each cycle",
+      "Antiemetics per regimen",
+      "Continue anastrozole 1 mg PO daily; coordinate with breast oncology",
+      "Continue calcium carbonate/vitamin D3"
+    ],
+    "conditional_orders": [
+      "if cardio-oncology judges the cardiac risk acceptable after evaluation and optimization: R-CHOP with liposomal doxorubicin or with dexrazoxane may replace R-CEOP",
+      "if LVEF falls further or troponin/NT-proBNP rise during therapy: urgent cardio-oncology review before the next cycle",
+      "if neurological symptoms develop: MRI brain and lumbar puncture with cytology and flow cytometry",
+      "if interim PET-CT shows progression: change therapy",
+      "if end-of-treatment PET-CT shows Deauville 4-5 residual uptake: biopsy if it would change management"
+    ],
+    "lab_monitoring": [
+      {
+        "tests": "TLS labs: potassium, creatinine, uric acid, phosphate, calcium, LDH",
+        "every_hours": 24,
+        "duration_hours": 72
+      },
+      {
+        "tests": "high-sensitivity troponin and NT-proBNP",
+        "every_hours": 504,
+        "duration_hours": 3024
+      }
+    ]
+  },
   "_expect": {
     "passed": true,
     "dangerous": [],

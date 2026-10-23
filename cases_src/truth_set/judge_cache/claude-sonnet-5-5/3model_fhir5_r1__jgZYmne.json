@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (DLBCL, NOS), germinal-center B-cell-like (GCB) immunophenotype by the Hans algorithm.",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IVB. There is a large (9.4 cm) conglomerate retroperitoneal and mesenteric nodal mass with three extranodal sites: right kidney, left adrenal gland, and liver segment VI.",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "Ann Arbor stage IVB. There is a large (9.4 cm) conglomerate retroperitoneal and mesenteric nodal mass with three extranodal sites: right kidney, left adrenal gland, and liver segment VI.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms are present: drenching night sweats and greater than 10% unintentional weight loss (79 kg to 71 kg over two months).",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "Ann Arbor stage IVB.",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "FISH is negative for MYC, BCL2, and BCL6 rearrangements, so it is not high-grade B-cell lymphoma with double-hit/triple-hit biology; it is also not a double-expressor (BCL2 about 30%, MYC about 20%).",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "it is not high-grade B-cell lymphoma with double-hit/triple-hit biology",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "it is also not a double-expressor (BCL2 about 30%, MYC about 20%)",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "Standard IPI is 5/5 (age >60, stage III/IV, more than one extranodal site, ECOG performance status 2, elevated LDH).",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "CNS-IPI is also 6/6 (age >60, ECOG >1, stage III/IV, more than one extranodal site, kidney/adrenal involvement, elevated LDH), indicating a high risk of CNS relapse.",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "I recommend curative-intent Pola-R-CHP for 6 cycles every 21 days: polatuzumab vedotin 1.8 mg/kg IV day 1, rituximab 375 mg/m2 IV day 1, cyclophosphamide 750 mg/m2 IV day 1, doxorubicin 50 mg/m2",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "If polatuzumab is not accessible or not approved, R-CHOP for 6 cycles is the appropriate alternative standard.",
+  "source": "judge"
+ },
+ "tx_prephase_steroid": {
+  "met": false,
+  "quote": "prednisone 100 mg orally days 1-5",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "I recommend curative-intent Pola-R-CHP for 6 cycles every 21 days",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I would not use DA-EPOCH-R because of the ECOG 2 status and the burden of continuous-infusion therapy.",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "He has no absolute contraindication to full-dose anthracycline-based therapy, and I would not default to reduced-intensity R-miniCHOP.",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": true,
+  "quote": "High risk: CNS-IPI 6/6, including kidney and adrenal involvement, multiple extranodal sites, elevated LDH, age >60, ECOG >1, and stage IV.",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": false,
+  "quote": "I will perform a baseline lumbar puncture with CSF cytology and flow cytometry; MRI brain is indicated if there are neurologic symptoms or if CSF is positive",
+  "source": "judge"
+ },
+ "cns_prophylaxis_renal": {
+  "met": false,
+  "quote": "intravenous high-dose methotrexate is relatively unattractive with an eGFR of about 50 mL/min and ECOG 2. If renal function improves to greater than 60 mL/min ... I would reconsider and use 2-3 cycles of intravenous high-dose methotrexate",
+  "source": "judge_unquoted"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "intravenous high-dose methotrexate is relatively unattractive with an eGFR of about 50 mL/min and ECOG 2. If renal function improves to greater than 60 mL/min",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "Restage with FDG PET-CT from skull base to mid-thigh about 6-8 weeks after cycle 6, interpreted using Lugano 2014/Deauville criteria.",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Deauville 4-5 requires correlation with CT; if a residual mass is present and accessible, biopsy to distinguish residual lymphoma from inflammation or necrosis.",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": false,
+  "quote": "Give intravenous hydration and allopurinol 200 mg daily (adjusted for eGFR about 50), monitor potassium, phosphate, calcium, uric acid, and creatinine frequently, and check G6PD before considering rasburicase 0.2 mg/kg for cycle 1 if hyperuricemia persists.",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": false,
+  "quote": "check G6PD before considering rasburicase 0.2 mg/kg for cycle 1 if hyperuricemia persists.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Use primary G-CSF prophylaxis with pegfilgrastim 6 mg on day 2 because of age >65 and the high-risk regimen.",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "Stop ibuprofen and avoid all NSAIDs because of renal dysfunction, bleeding risk, and fever masking; use acetaminophen and, if needed, a short-acting opioid.",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "Hold metformin around iodinated contrast and during any renal worsening, and monitor glucose closely because prednisone will worsen his HbA1c of 7.4%.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "hepatitis B serologies (HBsAg negative, anti-HBc negative, anti-HBs positive, indicating immunity and no need for antiviral prophylaxis)",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "echocardiogram (LVEF 60%, global longitudinal strain -19%)",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": true,
+  "quote": "his performance status is probably worsened by the lymphoma and B symptoms. He has no absolute contraindication to full-dose anthracycline-based therapy, and I would not default to reduced-intensity R-miniCHOP.",
+  "source": "judge"
+ }
+}

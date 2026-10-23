@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified (ICD-10-CM C83.3x), germinal-center B-cell (GCB) type by the Hans algorithm (CD10+, BCL6+, MUM1/IRF4 negative).",
+  "source": "judge"
+ },
+ "stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IV, B symptoms present (Lugano stage IV-B).",
+  "source": "judge"
+ },
+ "stage_extranodal_sites": {
+  "met": true,
+  "quote": "extranodal lymphoma in the right kidney (3.2 cm), left adrenal (2.6 cm) and liver segment VI (1.8 cm). The hepatic lesion is not contiguous with the nodal mass, so it alone makes the disease stage IV.",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms: unintentional weight loss of about 10% (79 to 71 kg over two months, 70.2 kg on 2026-09-17) and drenching night sweats.",
+  "source": "judge"
+ },
+ "mn_stage_below_iv": {
+  "met": false,
+  "quote": "Ann Arbor stage IV, B symptoms present (Lugano stage IV-B).",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "MYC by IHC 20% and BCL2 by IHC 30%: below double-expressor thresholds (MYC >=40% and BCL2 >=50%). Break-apart FISH for MYC, BCL2 and BCL6: no rearrangement in 200 nuclei, so no double-hit or triple-hit biology.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "Not high-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements (FISH negative for all three).",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "MYC by IHC 20% and BCL2 by IHC 30%: below double-expressor thresholds (MYC >=40% and BCL2 >=50%).",
+  "source": "judge"
+ },
+ "prog_ipi_high": {
+  "met": true,
+  "quote": "IPI 5 of 5 (age >60, stage IV, LDH above ULN, ECOG 2, more than one extranodal site): high risk.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_high": {
+  "met": true,
+  "quote": "CNS-IPI is 6 of 6 (age >60, stage IV, LDH above ULN, ECOG >=2, more than one extranodal site, kidney and adrenal involvement), so his CNS relapse risk is high.",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Start curative first-line immunochemotherapy: pola-R-CHP for six 21-day cycles (polatuzumab vedotin replaces vincristine), plus intrathecal methotrexate CNS prophylaxis.",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "IPI 5 favors the polatuzumab addition. POLARIX enrolled IPI 2 to 5, ages up to 80 and ECOG 0 to 2",
+  "source": "judge"
+ },
+ "tx_prephase_steroid": {
+  "met": false,
+  "quote": "prednisone 100 mg PO days 1 to 5.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Palliative care is recommended as supportive care alongside curative treatment, not instead of it.",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I would not use DA-EPOCH-R or other intensification on this biology.",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "Full dose, with no empiric reduction. He is ECOG 2 but independent in self-care",
+  "source": "judge"
+ },
+ "cns_risk_addressed": {
+  "met": true,
+  "quote": "CNS-IPI is 6 of 6 (age >60, stage IV, LDH above ULN, ECOG >=2, more than one extranodal site, kidney and adrenal involvement), so his CNS relapse risk is high.",
+  "source": "judge"
+ },
+ "cns_staging_mri_csf": {
+  "met": true,
+  "quote": "Before cycle 1: MRI brain and spine with gadolinium (group II agent is acceptable at eGFR 50), and diagnostic LP with cell count, cytology, flow cytometry, protein and glucose.",
+  "source": "judge"
+ },
+ "cns_prophylaxis_renal": {
+  "met": true,
+  "quote": "NCCN lists high-dose methotrexate as an alternative. It may be more effective in some data, but I am not using it now because of eGFR 50, age 67 and PS 2",
+  "source": "judge"
+ },
+ "mn_hdmtx_now_despite_aki": {
+  "met": false,
+  "quote": "I am not using it now because of eGFR 50, age 67 and PS 2, which together raise the risk of delayed MTX clearance and toxicity.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT about 3 to 4 weeks after cycle 6, scored by Deauville and Lugano 2014.",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Deauville 4 to 5 with residual mass: biopsy when it would change management, and consider consolidative radiotherapy to the bulky retroperitoneal site, per tumor board.",
+  "source": "judge"
+ },
+ "sup_tls_prophylaxis": {
+  "met": false,
+  "quote": "oral or IV hydration of about 2 to 3 L/day starting 24 to 48 hours before cycle 1, urine output monitoring, and LVEF 60% so no contraindication. Rasburicase 0.2 mg/kg IV once before cycle 1 if G6PD is normal, with repeat urate, potassium, phosphate, calcium and creatinine every 6 to 8 hours for the first 24 to 48 hours.",
+  "source": "judge"
+ },
+ "sup_rasburicase_g6pd": {
+  "met": true,
+  "quote": "Rasburicase 0.2 mg/kg IV once before cycle 1 if G6PD is normal",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Febrile neutropenia prophylaxis: pegfilgrastim every cycle, using the on-body injector applied on day 1 to avoid an extra trip. Indicated by age over 65, ECOG 2, diabetes and CKD.",
+  "source": "judge"
+ },
+ "sup_stop_nsaid": {
+  "met": true,
+  "quote": "Stop ibuprofen now and do not restart any NSAID (including celecoxib and ketorolac) for the rest of treatment.",
+  "source": "judge"
+ },
+ "sup_steroid_glucose": {
+  "met": true,
+  "quote": "Steroid hyperglycemia on prednisone days 1 to 5: home glucose checks before meals and at bedtime. Add morning NPH or basal insulin per glucose log.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "HBV: HBsAg and anti-HBc nonreactive, anti-HBs reactive (vaccine immunity), so no HBV antiviral prophylaxis is needed.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "Echo is done (LVEF 60%, GLS -19%, grade I diastolic dysfunction); no repeat unless symptoms.",
+  "source": "judge"
+ },
+ "fit_ecog_disease_related": {
+  "met": false,
+  "quote": "ECOG 2 with self-care is acceptable for full-dose therapy. Reassess at cycle 1. | Patient goal: cure, and attendance at granddaughter's wedding in mid-December.",
+  "source": "judge_unquoted"
+ }
+}

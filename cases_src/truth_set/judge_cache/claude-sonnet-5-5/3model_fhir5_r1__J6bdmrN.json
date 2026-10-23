@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Newly diagnosed, previously untreated diffuse large B-cell lymphoma, NOS (SNOMED 109969005; ICD-10-CM C83.30), non-germinal-center (activated B-cell-like) subtype",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "Non-germinal-center B-cell-like (ABC-like) phenotype by the Hans algorithm (CD10 negative, BCL6 positive, MUM1/IRF4 positive in approximately 70% of cells)",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor / Lugano stage IIIBS with bulky disease - i.e. stage III, B symptoms, splenic involvement, no extranodal (E) disease.",
+  "source": "judge"
+ },
+ "stage_spleen_nodal": {
+  "met": true,
+  "quote": "because the spleen is a lymphoid organ this does NOT upstage to IV, and this distinction is worth stating explicitly at tumor board",
+  "source": "judge"
+ },
+ "stage_bulky_b_symptoms": {
+  "met": true,
+  "quote": "Bulky disease by Lugano / International Working Group criteria: largest nodal mass 11.0 cm (>=10 cm).",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "because the spleen is a lymphoid organ this does NOT upstage to IV",
+  "source": "judge"
+ },
+ "mn_spleen_extranodal_count": {
+  "met": false,
+  "quote": "IPI 3 of 5: age 62 (>60) = 1, elevated LDH = 1, stage III = 1, ECOG 1 (i.e. <2) = 0, no extranodal sites = 0.",
+  "source": "judge"
+ },
+ "mol_de_not_dh": {
+  "met": true,
+  "quote": "Double-expressor by IHC: MYC positive in approximately 50% of tumor cells (threshold >=40%) and BCL2 positive in approximately 80% (threshold >=50%)",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "shows NO rearrangement of MYC (8q24), BCL2 (18q21) or BCL6 (3q27), so this is not HGBL-DH or HGBL-TH",
+  "source": "judge"
+ },
+ "mn_denies_double_expressor": {
+  "met": false,
+  "quote": "Double-expressor by IHC: MYC positive in approximately 50% of tumor cells (threshold >=40%) and BCL2 positive in approximately 80% (threshold >=50%)",
+  "source": "judge"
+ },
+ "prog_ipi_3": {
+  "met": true,
+  "quote": "IPI 3 of 5: age 62 (>60) = 1, elevated LDH = 1, stage III = 1, ECOG 1 (i.e. <2) = 0, no extranodal sites = 0.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_intermediate": {
+  "met": false,
+  "quote": "High risk by the CNS-IPI, score 4 of 8: age over 60 (1), elevated LDH (1), ECOG performance status >=1 (1), stage III/IV (1)",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Polatuzumab vedotin plus R-CHP (pola-R-CHP), 6 cycles of 21 days, followed by involved-site radiotherapy (ISRT) to the bulky retroperitoneal mass.",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "disease is non-GCB/ABC-like, which is precisely the group with the clearest PFS benefit from polatuzumab in POLARIX",
+  "source": "judge"
+ },
+ "tx_isrt_residual_bulk": {
+  "met": true,
+  "quote": "escalated to 36 Gy if the end-of-treatment PET shows residual FDG uptake there. The mediastinal (2.6 cm) and cervical (3.1 cm) nodal sites are not bulky, so they get RT only if the end-of-treatment PET shows Deauville 4-5",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "this is curable-intent disease with an approximately 50-60% chance of cure with current standard therapy",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "DA-EPOCH-R (no EFS or OS advantage over R-CHOP in the ProSPECT trial; it belongs to double-hit/very-high-risk biology, which he does not have",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "cyclophosphamide 750 mg/m2 IV day 1, doxorubicin 50 mg/m2 IV day 1",
+  "source": "judge"
+ },
+ "hbv_prophylaxis": {
+  "met": false,
+  "quote": "document that no antiviral prophylaxis is required (HBsAg negative, anti-HBc and anti-HBs reactive equals resolved infection with immunity), with monitoring and tenofovir/entecavir only if serologies change",
+  "source": "judge"
+ },
+ "hbv_dna_lft_monitoring": {
+  "met": false,
+  "quote": "No hepatitis B DNA or antiviral prophylaxis decision is documented; HBsAg negative with reactive anti-HBc and anti-HBs is resolved infection with immunity, so no antiviral is required, but I want this interpretation explicitly recorded and reactivation monitoring noted if his anti-HBs titre is low.",
+  "source": "judge"
+ },
+ "mn_no_hbv_action": {
+  "met": true,
+  "quote": "document that no antiviral prophylaxis is required (HBsAg negative, anti-HBc and anti-HBs reactive equals resolved infection with immunity)",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": false,
+  "quote": "High risk by the CNS-IPI, score 4 of 8 ... Decision: I will offer intrathecal CNS prophylaxis - methotrexate and/or cytarabine with each cycle of pola-R-CHP",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": true,
+  "quote": "I will offer intrathecal CNS prophylaxis - methotrexate and/or cytarabine with each cycle of pola-R-CHP",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "Lugano criteria with Deauville scoring, using FDG PET-CT as the primary response modality. End-of-treatment PET-CT at 8-12 weeks after the last cycle",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": true,
+  "quote": "Deauville 4-5 requires biopsy of the abnormal site before any salvage decision, because post-chemotherapy inflammatory or infectious uptake",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumour lysis prophylaxis: allopurinol 300 mg daily (adjust to keep uric acid normal) with oral and IV hydration, and check potassium, phosphate, calcium, uric acid, LDH and creatinine before each cycle - he has a large-volume tumour with LDH 3x ULN",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Neutropenia: pegfilgrastim 6 mg SC 24-72 hours after each cycle (age over 60, double-expressor and bulky disease all add risk)",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "Cumulative doxorubicin exposure will be 300 mg/m2 (approximately 594 mg total), which is within an acceptable anthracycline budget for a 62-year-old with LVEF 58%.",
+  "source": "judge"
+ },
+ "fit_full_dose": {
+  "met": true,
+  "quote": "He is therefore a fit candidate for aggressive curative therapy, but not a trivially fit one",
+  "source": "judge"
+ },
+ "miss_hbv_dna": {
+  "met": true,
+  "quote": "No hepatitis B DNA or antiviral prophylaxis decision is documented; HBsAg negative with reactive anti-HBc and anti-HBs is resolved infection with immunity, so no antiviral is required",
+  "source": "judge"
+ }
+}

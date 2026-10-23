@@ -1,0 +1,78 @@
+{
+ "id": "journey_sample_deepseek__D97QxnD__L4",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "l4_icans_grade_steroids": {
+   "met": true,
+   "quote": "treat ICANS immediately with dexamethasone 10 mg IV every 6 hours",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_crs_management": {
+   "met": true,
+   "quote": "give a repeat tocilizumab 8 mg/kg IV for the CRS component; tocilizumab does not cross the blood-brain barrier and does not treat ICANS itself",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_neutropenic_sepsis": {
+   "met": true,
+   "quote": "obtain blood cultures and start broad-spectrum antibiotics within 1 hour (piperacillin-tazobactam or cefepime",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_airway_icu_seizure": {
+   "met": true,
+   "quote": "increase levetiracetam to 750-1000 mg twice daily (renally adjusted), obtain an urgent EEG",
+   "confidence": "medium",
+   "note": "ICU setting, monitoring and seizure management covered; explicit airway/aspiration precautions and serial ICE checks not stated."
+  },
+  "l4_ddx_cns_relapse": {
+   "met": true,
+   "quote": "I would also keep CNS lymphoma progression in mind given his high CNS-IPI",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_ddx_infection_bleed": {
+   "met": true,
+   "quote": "CNS infection is a major concern, including HSV encephalitis",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_ddx_metabolic_seizure": {
+   "met": true,
+   "quote": "Other considerations are nonconvulsive status epilepticus",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_ct_then_mri": {
+   "met": true,
+   "quote": "obtain an emergent noncontrast CT head to exclude hemorrhage and edema, followed by MRI brain with contrast and MRV",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_eeg_lp_safe": {
+   "met": true,
+   "quote": "Lumbar puncture only after imaging and neurosurgical clearance, and after platelets are at least 50,000-100,000/uL and INR is corrected",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_glucose_steroids_diabetes": {
+   "met": false,
+   "quote": "manage glucose and sodium carefully",
+   "confidence": "medium",
+   "note": "Generic glucose management mentioned, but no link to dexamethasone-induced hyperglycemia or insulin plan."
+  },
+  "l4_mn_lp_unsafe": {
+   "met": false,
+   "quote": "defer lumbar puncture until imaging is reviewed and platelets/coagulation are corrected",
+   "confidence": "high",
+   "note": ""
+  },
+  "l4_mn_withhold_steroids_for_tcell": {
+   "met": false,
+   "quote": "Do not delay antibiotics or steroids for imaging or lumbar puncture.",
+   "confidence": "high",
+   "note": ""
+  }
+ }
+}

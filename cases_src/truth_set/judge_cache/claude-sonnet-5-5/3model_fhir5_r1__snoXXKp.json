@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified, newly diagnosed (first presentation, no prior lymphoma). Excisional biopsy of left cervical level IV lymph node",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": false,
+  "quote": "Non-GCB (activated B-cell-like by IHC) DLBCL with a double-expressor phenotype",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": false,
+  "quote": "Ann Arbor stage IV-B with bulky disease (provisional, see note).",
+  "source": "judge"
+ },
+ "stage_spleen_nodal": {
+  "met": false,
+  "quote": "strict Ann Arbor treats the spleen as a lymphatic (nodal) organ, which would make this III-S B; I am counting the multifocal splenic lesions as stage IV, as the PET read does.",
+  "source": "judge"
+ },
+ "stage_bulky_b_symptoms": {
+  "met": true,
+  "quote": "retroperitoneal mass 11.0 x 8.1 cm, SUVmax 22.4, bulky at 10 cm or more",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": true,
+  "quote": "Ann Arbor stage IV-B with bulky disease (provisional, see note).",
+  "source": "judge"
+ },
+ "mn_spleen_extranodal_count": {
+  "met": false,
+  "quote": "IPI is 3 (age 62: 1; LDH above ULN: 1; stage IV: 1; ECOG 1: 0; extranodal sites: 0)",
+  "source": "judge"
+ },
+ "mol_de_not_dh": {
+  "met": true,
+  "quote": "double-expressor phenotype: MYC protein in about 50% and BCL2 protein in about 80% of tumor cells (usual cutoffs MYC 40% or more, BCL2 50% or more). High proliferation (Ki-67 about 85%). Interphase break-apart FISH (200 nuclei) shows no MYC (8q24), BCL2 (18q21) or BCL6 (3q27) rearrangement, so this is not double-hit or triple-hit lymphoma.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "so this is not double-hit or triple-hit lymphoma.",
+  "source": "judge"
+ },
+ "mn_denies_double_expressor": {
+  "met": false,
+  "quote": "Non-GCB (activated B-cell-like by IHC) DLBCL with a double-expressor phenotype: MYC protein in about 50% and BCL2 protein in about 80% of tumor cells",
+  "source": "judge"
+ },
+ "prog_ipi_3": {
+  "met": true,
+  "quote": "IPI is 3 (age 62: 1; LDH above ULN: 1; stage IV: 1; ECOG 1: 0; extranodal sites: 0), which is high-intermediate.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_intermediate": {
+  "met": false,
+  "quote": "CNS-IPI is 3 of 6: age over 60 (1), stage III-IV (1), LDH above ULN (1), ECOG 2 or more (0), 2 or more extranodal sites (0), kidney or adrenal involvement (0). Score 3 falls in the high-risk tier (3 to 6)",
+  "source": "judge"
+ },
+ "tx_curative_pola_or_rchop": {
+  "met": true,
+  "quote": "Curative-intent first-line therapy: polatuzumab vedotin plus rituximab, cyclophosphamide, doxorubicin and prednisone (pola-R-CHP), 6 cycles every 21 days on the POLARIX schedule",
+  "source": "judge"
+ },
+ "tx_pola_preferred": {
+  "met": true,
+  "quote": "IPI high-intermediate, bulk and splenic involvement make this a high-risk patient in whom the POLARIX PFS benefit matters most; pola-R-CHP is an NCCN-listed option",
+  "source": "judge"
+ },
+ "tx_isrt_residual_bulk": {
+  "met": true,
+  "quote": "If end-of-treatment PET shows Deauville 4 or 5 at the retroperitoneal site, refer to radiation oncology for consolidative involved-site RT (about 30 Gy)",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Curative-intent first-line therapy: polatuzumab vedotin plus rituximab, cyclophosphamide, doxorubicin and prednisone",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "I do not recommend DA-EPOCH-R, since there is no double-hit",
+  "source": "judge"
+ },
+ "mn_dose_reduced_initial": {
+  "met": false,
+  "quote": "he is fit for full-dose therapy (ECOG 1, eGFR 96, bilirubin 0.6, LVEF 58%, albumin 3.7)",
+  "source": "judge"
+ },
+ "hbv_prophylaxis": {
+  "met": true,
+  "quote": "resolved infection with high reactivation risk on rituximab. Send quantitative HBV DNA and LFTs. Start entecavir 0.5 mg PO daily now, before the first rituximab dose, and continue for at least 12 months after the last rituximab dose",
+  "source": "judge"
+ },
+ "hbv_dna_lft_monitoring": {
+  "met": true,
+  "quote": "Send quantitative HBV DNA and LFTs. Start entecavir 0.5 mg PO daily now",
+  "source": "judge"
+ },
+ "mn_no_hbv_action": {
+  "met": false,
+  "quote": "Start entecavir 0.5 mg PO daily now, before the first rituximab dose, and continue for at least 12 months after the last rituximab dose",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": false,
+  "quote": "Score 3 falls in the high-risk tier (3 to 6) of the original CNS-IPI, with a roughly 10% 2-year CNS relapse rate in the derivation cohort",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": true,
+  "quote": "Decision: offer CNS prophylaxis with intrathecal methotrexate 12 mg, on a schedule per local protocol (commonly with cycles 1 to 6, or cycles 1, 3 and 5).",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "Use Lugano 2014 criteria with the 5-point Deauville PET scale. Reference study: baseline FDG-PET-CT of 2026-09-05",
+  "source": "judge"
+ },
+ "resp_ds45_biopsy": {
+  "met": false,
+  "quote": "If end-of-treatment PET shows Deauville 4 or 5 at the retroperitoneal site, refer to radiation oncology for consolidative involved-site RT (about 30 Gy); biopsy first if the uptake is equivocal.",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis prophylaxis: intermediate-to-high risk (bulk 11 cm, LDH about 2.7 to 3 times ULN, uric acid 7.1 mg/dL). Start allopurinol 300 mg PO daily 1 to 2 days before C1, with oral or IV hydration as tolerated.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Primary G-CSF: pegfilgrastim 6 mg SC on day 4 of each cycle (or an on-body injector), because age over 60 with an anthracycline-cyclophosphamide regimen carries meaningful febrile neutropenia risk.",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "he is fit for full-dose therapy (ECOG 1, eGFR 96, bilirubin 0.6, LVEF 58%, albumin 3.7)",
+  "source": "judge"
+ },
+ "fit_full_dose": {
+  "met": true,
+  "quote": "He is fit for full-dose curative therapy: age 62, ECOG 1 on 2026-09-02 (still fully independent in self-care, working reduced hours, no longer hiking), normal renal and hepatic function, LVEF 58%",
+  "source": "judge"
+ },
+ "miss_hbv_dna": {
+  "met": true,
+  "quote": "Quantitative HBV DNA and anti-HBs titer (anti-HBc and anti-HBs are reactive; no viral load in the record).",
+  "source": "judge"
+ }
+}

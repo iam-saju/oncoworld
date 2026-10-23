@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__sGj4adn",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "non-germinal-center B-cell-like (non-GCB) by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "",
+   "confidence": "medium",
+   "note": "Lists gene-expression cell-of-origin as untested but never states Hans is only a surrogate for ABC."
+  },
+  "dx_not_breast_recurrence": {
+   "met": true,
+   "quote": "The left axillary biopsy shows no evidence of metastatic breast carcinoma (cytokeratin AE1/AE3 and GATA3 negative in the lesional cells).",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Stage III (Ann Arbor/Lugano IIIS)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_lymphatic": {
+   "met": true,
+   "quote": "The spleen is a lymphatic organ, so splenic involvement is stage III (IIIS), not stage IV.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms (fevers and night sweats)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulk_definition": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_del_not_dh": {
+   "met": true,
+   "quote": "so this is not a double-hit or triple-hit high-grade B-cell lymphoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_2": {
+   "met": true,
+   "quote": "IPI 2 (low-intermediate); age-adjusted IPI 2",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_2": {
+   "met": true,
+   "quote": "NCCN-IPI 3 (low-intermediate); CNS-IPI 2 (intermediate)",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": true,
+   "quote": "I do not recommend intrathecal methotrexate or high-dose IV methotrexate prophylaxis.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardiac_aware_no_full_dox": {
+   "met": true,
+   "quote": "I am not using R-CHOP or pola-R-CHP because both contain doxorubicin.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_standard_dox_ignores_heart": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardio_onc_referral": {
+   "met": true,
+   "quote": "Before cycle 1: formal cardio-oncology consultation and confirmation of LVEF/GLS",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_cardioprotection": {
+   "met": true,
+   "quote": "start an ACE inhibitor or ARB and a beta-blocker for LVEF 45% if not contraindicated",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_anthracycline_free_curative": {
+   "met": true,
+   "quote": "Curative-intent anthracycline-free immunochemotherapy: R-CEOP every 21 days for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_lower_efficacy_ack": {
+   "met": false,
+   "quote": "the need for an anthracycline-free regimen adding uncertainty",
+   "confidence": "medium",
+   "note": "Only says anthracycline-free therapy adds uncertainty, not that efficacy is likely lower."
+  },
+  "tx_cardiac_monitoring": {
+   "met": false,
+   "quote": "repeat echocardiography with GLS at the end of therapy",
+   "confidence": "medium",
+   "note": "Only end-of-therapy echo; no serial on-treatment imaging or biomarkers."
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "whole-body FDG PET-CT about 6-8 weeks after cycle 6, interpreted by Lugano/Deauville criteria",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "allopurinol 300 mg daily (adjust for renal function) with vigorous hydration starting before cycle 1",
+   "confidence": "medium",
+   "note": "Gives allopurinol/hydration but does not explicitly grade risk as low-intermediate."
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim 6 mg SC on day 2 (or filgrastim) with each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_anastrozole": {
+   "met": true,
+   "quote": "Continue anastrozole 1 mg daily without interruption",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "no HBV antiviral prophylaxis is needed because HBsAg and anti-HBc are negative",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_curative_ecog1": {
+   "met": true,
+   "quote": "she is fit for full-dose curative-intent immunochemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_cardiac_workup": {
+   "met": true,
+   "quote": "Formal cardio-oncology assessment, including a repeat echocardiogram with GLS (or cardiac MRI if there is uncertainty)",
+   "confidence": "medium",
+   "note": "Lists cardio-oncology work-up as missing but not the cause/ischemic evaluation or biomarkers."
+  }
+ }
+}

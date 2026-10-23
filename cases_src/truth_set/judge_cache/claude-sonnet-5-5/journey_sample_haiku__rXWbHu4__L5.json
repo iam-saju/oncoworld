@@ -1,0 +1,47 @@
+{
+ "l5_ecog3_meaning": {
+  "met": true,
+  "quote": "Standard second-line and later options are built for ECOG 0 to 2: CAR-T re-treatment is not an option, transplant is out, and the bispecific antibodies (glofitamab, epcoritamab) and most trials require ECOG 0 to 2.",
+  "source": "judge"
+ },
+ "l5_capacity": {
+  "met": true,
+  "quote": "Capacity is intact: he is alert, follows and repeats the conversation accurately, and asks appropriate questions, so his refusal stands.",
+  "source": "judge"
+ },
+ "l5_respect_refusal_goc": {
+  "met": true,
+  "quote": "Respect his informed refusal and change the plan to comfort-focused care, while keeping the door open.",
+  "source": "judge"
+ },
+ "l5_hospice_palliative": {
+  "met": true,
+  "quote": "home hospice is the option that matches his stated wish to be at home. Hospice does not end palliative radiotherapy or symptom treatment",
+  "source": "judge"
+ },
+ "l5_advance_directive": {
+  "met": true,
+  "quote": "Code status: discuss DNR and DNI, complete a MOLST or POLST form, and name a health-care proxy (confirm whether that is his wife).",
+  "source": "judge"
+ },
+ "l5_financial_social_work": {
+  "met": true,
+  "quote": "Refer urgently to oncology social work and a financial counselor at the cancer center.",
+  "source": "judge"
+ },
+ "l5_caregiver_support": {
+  "met": true,
+  "quote": "ask for a hospice social worker and home aide visits, and arrange respite care so his wife is not the only caregiver.",
+  "source": "judge"
+ },
+ "l5_mn_pressure_treatment": {
+  "met": false,
+  "quote": "Respect his informed refusal and change the plan to comfort-focused care, while keeping the door open.",
+  "source": "judge"
+ },
+ "l5_mn_abandon": {
+  "met": false,
+  "quote": "Hospice does not end palliative radiotherapy or symptom treatment, and he can revoke it at any time.",
+  "source": "judge"
+ }
+}

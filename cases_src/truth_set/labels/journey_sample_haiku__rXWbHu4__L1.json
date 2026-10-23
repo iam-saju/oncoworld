@@ -1,0 +1,186 @@
+{
+ "id": "journey_sample_haiku__rXWbHu4__L1",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "Diffuse large B-cell lymphoma, not otherwise specified, germinal-center B-cell type by Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IV, Lugano stage IV B, with bulky disease.",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "plus FDG-avid right renal (3.2 cm), left adrenal (2.6 cm) and hepatic segment VI (1.8 cm) lesions",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms are present: drenching night sweats most nights and unintentional weight loss of about 11%",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "so not double-expressor by standard cut-offs; FISH is negative for MYC, BCL2 and BCL6 rearrangements, so there is no double-hit biology",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "so not double-expressor by standard cut-offs",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "International Prognostic Index 5 of 5",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "Four points places him in the high-risk group",
+   "confidence": "medium",
+   "note": "Counts CNS-IPI as 4 (omits ECOG and extranodal points; true score 6) but correctly classifies high risk including kidney/adrenal."
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "pola-R-CHP (polatuzumab vedotin, rituximab, cyclophosphamide, doxorubicin, prednisone) every 21 days for 6 cycles",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "NCCN lists pola-R-CHP as a preferred first-line regimen for DLBCL",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "Not indicated now: DA-EPOCH-R (no double-hit biology)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "If ECOG is confirmed at 3 before cycle 1, I would switch to a dose-reduced regimen (R-mini-CHOP type) rather than full pola-R-CHP.",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "and renal and/or adrenal involvement (1). Four points places him in the high-risk group",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": true,
+   "quote": "brain MRI with and without gadolinium (a group II agent is acceptable at eGFR 50) and lumbar puncture with CSF cytology and flow cytometry",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_prophylaxis_renal": {
+   "met": true,
+   "quote": "(c) Avoid high-dose methotrexate: eGFR 50, age, and the hydration needs of tumor lysis.",
+   "confidence": "medium",
+   "note": "Discusses prophylaxis with uncertain evidence and ties HD-MTX to renal function, but rejects HD-MTX outright and favors IT MTX rather than framing HD-MTX as an option after renal recovery."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "avoid high-dose methotrexate given eGFR 50 and age",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Complete metabolic response (Deauville 1 to 3, no new lesions) means observation.",
+   "confidence": "medium",
+   "note": "Uses Deauville 5-point scale and CMR terminology but does not name Lugano."
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Residual Deauville 4 to 5 at end of treatment: biopsy if clinically suspicious",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_prophylaxis": {
+   "met": true,
+   "quote": "Recheck electrolytes and urate every 6 to 12 hours for the first 48 hours.",
+   "confidence": "medium",
+   "note": "Hydration, rasburicase and q6-12h labs ordered, but only for 48 hours (workup section says daily through 72 hours)."
+  },
+  "sup_rasburicase_g6pd": {
+   "met": true,
+   "quote": "If G6PD is normal, give rasburicase 0.2 mg/kg IV daily per protocol because urate is already elevated.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "Give primary G-CSF support (pegfilgrastim or on-body injector)",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "stop ibuprofen and all NSAIDs, including OTC products",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "arrange basal or NPH insulin with the prednisone schedule and glucose checks through the diabetes team",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg and anti-HBc nonreactive, anti-HBs reactive; no antiviral prophylaxis needed.",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "This is acceptable for an anthracycline; repeat only with symptoms.",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "Assessment: fit for curative full-dose pola-R-CHP with supportive care",
+   "confidence": "medium",
+   "note": "Gives full-dose curative therapy at ECOG 2 and notes goal of cure, but does not explicitly attribute ECOG 2 to the lymphoma."
+  }
+ }
+}

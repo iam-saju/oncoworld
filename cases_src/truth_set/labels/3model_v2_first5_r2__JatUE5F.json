@@ -1,0 +1,186 @@
+{
+ "id": "3model_v2_first5_r2__JatUE5F",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_gcb": {
+   "met": true,
+   "quote": "germinal-center B-cell type by Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iv": {
+   "met": true,
+   "quote": "Ann Arbor stage IV-B (Lugano 2014 IV-B)",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_extranodal_sites": {
+   "met": true,
+   "quote": "Extranodal disease: right renal cortical lesion 3.2 cm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_b_symptoms": {
+   "met": true,
+   "quote": "B symptoms present: unintentional weight loss 79 to 70.2 kg",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_below_iv": {
+   "met": false,
+   "quote": "If it were not lymphoma, the stage would be III-B.",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_not_de_not_dh": {
+   "met": true,
+   "quote": "Double-expressor status is negative by IHC",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "so this is not double-hit or triple-hit lymphoma",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_expressor": {
+   "met": false,
+   "quote": "Double-expressor status is negative by IHC",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_high": {
+   "met": true,
+   "quote": "IPI 5 (age >60, LDH >ULN, ECOG >=2, stage IV, more than one extranodal site) is high risk",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_high": {
+   "met": true,
+   "quote": "all six factors present; high-risk group is 4 or more points",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Full-dose curative-intent immunochemotherapy: pola-R-CHP",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "Fallback if polatuzumab is not approved or covered: R-CHOP-21 x6",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_prephase_steroid": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "dose-adjusted EPOCH-R, because there is no double-hit biology",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "reduced-intensity regimens, because he is fit enough for full dose",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_risk_addressed": {
+   "met": true,
+   "quote": "Kidney and adrenal involvement, high IPI and bulky disease all favor CNS prophylaxis.",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_staging_mri_csf": {
+   "met": true,
+   "quote": "brain MRI with and without gadolinium (a group II agent is acceptable at eGFR 50) and LP with cell count, cytology, flow cytometry",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_prophylaxis_renal": {
+   "met": true,
+   "quote": "high-dose methotrexate needs reliable renal clearance; his eGFR is 50 and declining, with recent NSAID exposure",
+   "confidence": "medium",
+   "note": "Ties HD-MTX feasibility to renal function and notes uncertain IT benefit, but commits to IT MTX rather than framing HD-MTX as a later individualized option."
+  },
+  "mn_hdmtx_now_despite_aki": {
+   "met": false,
+   "quote": "Not chosen: high-dose methotrexate, because eGFR is about 50 and falling",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "End-of-treatment PET-CT about 4-6 weeks after cycle 6 (about late January to early February 2027), read by Lugano 2014 criteria",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "and biopsy if the residual uptake is high or new",
+   "confidence": "medium",
+   "note": "Default for residual uptake is ISRT; biopsy only if uptake high or new."
+  },
+  "sup_tls_prophylaxis": {
+   "met": true,
+   "quote": "Admit for cycle 1 from day -1 to day 3 for IV hydration",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_rasburicase_g6pd": {
+   "met": true,
+   "quote": "If G6PD is normal, give rasburicase 0.2 mg/kg IV once before chemotherapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "primary pegfilgrastim prophylaxis each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_stop_nsaid": {
+   "met": true,
+   "quote": "Stop ibuprofen today and avoid all NSAIDs.",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_steroid_glucose": {
+   "met": true,
+   "quote": "Diabetes with steroid-induced hyperglycemia: glucose before meals and at bedtime during prednisone days",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_hbv_reviewed": {
+   "met": true,
+   "quote": "HBsAg and anti-HBc negative, anti-HBs positive. No HBV prophylaxis",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "Cardiac: baseline LVEF 60% with GLS -19%; cumulative doxorubicin 300 mg/m2.",
+   "confidence": "medium",
+   "note": "LVEF noted and anthracycline given, but permission not stated explicitly."
+  },
+  "fit_ecog_disease_related": {
+   "met": true,
+   "quote": "he is fit enough for full-dose curative-intent immunochemotherapy with G-CSF and CNS prophylaxis",
+   "confidence": "medium",
+   "note": "Does not explicitly attribute ECOG 2 to the lymphoma, though it rejects de-escalation and honors the goal of cure."
+  }
+ }
+}

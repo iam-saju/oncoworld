@@ -1,0 +1,186 @@
+{
+ "id": "3model_fhir5_r1__J6bdmrN",
+ "labeller": "agent-heme-onc",
+ "labels": {
+  "dx_dlbcl_non_gcb": {
+   "met": true,
+   "quote": "diffuse large B-cell lymphoma, NOS (SNOMED 109969005; ICD-10-CM C83.30), non-germinal-center (activated B-cell-like) subtype",
+   "confidence": "medium",
+   "note": "Correct DLBCL non-GCB, but also confusingly relabels it 'high-grade B-cell lymphoma, NOS / double-expressor DLBCL'."
+  },
+  "dx_hans_not_abc": {
+   "met": false,
+   "quote": "Non-germinal-center B-cell-like (ABC-like) phenotype by the Hans algorithm",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_iii": {
+   "met": true,
+   "quote": "Ann Arbor / Lugano stage IIIBS with bulky disease",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_spleen_nodal": {
+   "met": true,
+   "quote": "because the spleen is a lymphoid organ this does NOT upstage to IV",
+   "confidence": "high",
+   "note": ""
+  },
+  "stage_bulky_b_symptoms": {
+   "met": true,
+   "quote": "Bulky disease by Lugano / International Working Group criteria: largest nodal mass 11.0 cm (>=10 cm)",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_stage_iv": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_spleen_extranodal_count": {
+   "met": false,
+   "quote": "no extranodal sites = 0",
+   "confidence": "high",
+   "note": ""
+  },
+  "mol_de_not_dh": {
+   "met": true,
+   "quote": "double-expressor phenotype by IHC but FISH-negative for MYC/BCL2/BCL6 rearrangements",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_calls_double_hit": {
+   "met": false,
+   "quote": "NOT high-grade B-cell lymphoma with double-hit or triple-hit rearrangements",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_denies_double_expressor": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_ipi_3": {
+   "met": true,
+   "quote": "IPI 3 of 5: age 62 (>60) = 1, elevated LDH = 1, stage III = 1, ECOG 1 (i.e. <2) = 0, no extranodal sites = 0",
+   "confidence": "high",
+   "note": ""
+  },
+  "prog_cns_ipi_intermediate": {
+   "met": false,
+   "quote": "High risk by the CNS-IPI, score 4 of 8",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_curative_pola_or_rchop": {
+   "met": true,
+   "quote": "Polatuzumab vedotin plus R-CHP (pola-R-CHP), 6 cycles of 21 days",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_pola_preferred": {
+   "met": true,
+   "quote": "disease is non-GCB/ABC-like, which is precisely the group with the clearest PFS benefit from polatuzumab in POLARIX",
+   "confidence": "high",
+   "note": ""
+  },
+  "tx_isrt_residual_bulk": {
+   "met": true,
+   "quote": "30 Gy in 15 fractions (2 Gy x 15) to the bulky retroperitoneal mass after chemotherapy, escalated to 36 Gy if the end-of-treatment PET shows residual FDG uptake there",
+   "confidence": "medium",
+   "note": "Plans routine ISRT to bulk regardless of PET response rather than PET-adapted; still considers RT for the bulky site."
+  },
+  "mn_non_curative": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_da_epoch": {
+   "met": false,
+   "quote": "Alternatives I considered and rejected with reasons: DA-EPOCH-R",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_dose_reduced_initial": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_prophylaxis": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "hbv_dna_lft_monitoring": {
+   "met": false,
+   "quote": "",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_no_hbv_action": {
+   "met": true,
+   "quote": "document that no antiviral prophylaxis is required (HBsAg negative, anti-HBc and anti-HBs reactive equals resolved infection with immunity)",
+   "confidence": "high",
+   "note": ""
+  },
+  "cns_no_routine_prophylaxis": {
+   "met": false,
+   "quote": "I will offer intrathecal methotrexate/cytarabine with each cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "mn_mandates_cns_prophylaxis": {
+   "met": true,
+   "quote": "Decision: I will offer intrathecal CNS prophylaxis - methotrexate and/or cytarabine with each cycle of pola-R-CHP",
+   "confidence": "medium",
+   "note": "Framed as an offer with shared decision-making, but it is the committed plan based on an inflated CNS-IPI."
+  },
+  "resp_eot_pet_lugano": {
+   "met": true,
+   "quote": "Lugano criteria with Deauville scoring, using FDG PET-CT as the primary response modality",
+   "confidence": "high",
+   "note": ""
+  },
+  "resp_ds45_biopsy": {
+   "met": true,
+   "quote": "Deauville 4-5 requires biopsy of the abnormal site before any salvage decision",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_tls_allopurinol": {
+   "met": true,
+   "quote": "allopurinol 300 mg daily (adjust to keep uric acid normal) with oral and IV hydration",
+   "confidence": "high",
+   "note": ""
+  },
+  "sup_gcsf": {
+   "met": true,
+   "quote": "pegfilgrastim 6 mg SC with every cycle",
+   "confidence": "high",
+   "note": ""
+  },
+  "work_echo_reviewed": {
+   "met": true,
+   "quote": "within an acceptable anthracycline budget for a 62-year-old with LVEF 58%",
+   "confidence": "high",
+   "note": ""
+  },
+  "fit_full_dose": {
+   "met": true,
+   "quote": "He is therefore a fit candidate for aggressive curative therapy",
+   "confidence": "high",
+   "note": ""
+  },
+  "miss_hbv_dna": {
+   "met": true,
+   "quote": "No hepatitis B DNA or antiviral prophylaxis decision is documented",
+   "confidence": "medium",
+   "note": "HBV DNA is listed as undocumented, but the item then says no antiviral is required, so it is not framed as needed."
+  }
+ }
+}

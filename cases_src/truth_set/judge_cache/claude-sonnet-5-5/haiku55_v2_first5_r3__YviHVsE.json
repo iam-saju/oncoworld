@@ -1,0 +1,152 @@
+{
+ "dx_dlbcl_non_gcb": {
+  "met": true,
+  "quote": "Diffuse large B-cell lymphoma, not otherwise specified, arising in the left axillary lymph node (excisional biopsy 2026-08-25; diagnosis unchanged by FISH addendum 2026-09-08). Non-germinal-center (ABC-like) phenotype by Hans algorithm",
+  "source": "judge"
+ },
+ "dx_hans_not_abc": {
+  "met": true,
+  "quote": "Cell of origin is by IHC only; gene expression profiling (for example Lymph2Cx) was not done and would not change first-line choice.",
+  "source": "judge"
+ },
+ "dx_not_breast_recurrence": {
+  "met": true,
+  "quote": "This is a new lymphoma and not a recurrence of the 2016 ER-positive breast carcinoma: lesional cells are CD20 positive, with CK AE1/AE3 and GATA3 negative and no carcinoma morphology.",
+  "source": "judge"
+ },
+ "stage_iii": {
+  "met": true,
+  "quote": "Ann Arbor stage IIIB (Lugano 2014). Disease is above and below the diaphragm",
+  "source": "judge"
+ },
+ "stage_spleen_lymphatic": {
+  "met": true,
+  "quote": "Spleen with focal nodules is nodal-type involvement, so stage III; stage IV would apply only if radiology read the splenic disease as extranodal organ involvement",
+  "source": "judge"
+ },
+ "stage_b_symptoms": {
+  "met": true,
+  "quote": "B symptoms are present: fever of 38.0 C or higher on several days (maximum 38.4 C) and drenching night sweats",
+  "source": "judge"
+ },
+ "stage_bulk_definition": {
+  "met": false,
+  "quote": "Bulky disease: mesenteric conglomerate 7.5 x 5.1 cm (SUVmax 22.3).",
+  "source": "judge"
+ },
+ "mn_stage_iv": {
+  "met": false,
+  "quote": "Spleen with focal nodules is nodal-type involvement, so stage III; stage IV would apply only if radiology read the splenic disease as extranodal organ involvement",
+  "source": "judge"
+ },
+ "mol_del_not_dh": {
+  "met": true,
+  "quote": "Double-expressor by IHC: MYC 45% (cutoff 40%) and BCL2 70% (cutoff 50%). Ki-67 about 80%.",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "Interphase FISH shows no MYC, BCL2 or BCL6 rearrangement, so this does not meet WHO 2022 criteria for high-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangement (no double-hit or triple-hit).",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "The double-expressor phenotype is an adverse marker but, without rearrangement, does not by itself change the standard regimen or justify DA-EPOCH-R.",
+  "source": "judge"
+ },
+ "prog_ipi_2": {
+  "met": false,
+  "quote": "IPI is lower (about 2-3) because it does not weight age 59 or the splenic disease the same way.",
+  "source": "judge"
+ },
+ "prog_cns_ipi_2": {
+  "met": true,
+  "quote": "CNS-IPI intermediate by my estimate (verify with the calculator). Elevated LDH and stage III contribute.",
+  "source": "judge"
+ },
+ "cns_no_routine_prophylaxis": {
+  "met": true,
+  "quote": "Decision: no lumbar puncture and no CNS prophylaxis (high-dose methotrexate or intrathecal) now.",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "Decision: no lumbar puncture and no CNS prophylaxis (high-dose methotrexate or intrathecal) now.",
+  "source": "judge"
+ },
+ "tx_cardiac_aware_no_full_dox": {
+  "met": true,
+  "quote": "I would not give full-dose R-CHOP or Pola-R-CHP in this setting.",
+  "source": "judge"
+ },
+ "mn_standard_dox_ignores_heart": {
+  "met": false,
+  "quote": "Gates before cycle 1, with the aim of starting within about 2-3 weeks: cardio-oncology agreement; repeat echocardiogram after 2-3 weeks of guideline-directed therapy showing LVEF 45% or higher",
+  "source": "judge"
+ },
+ "tx_cardio_onc_referral": {
+  "met": true,
+  "quote": "1) Cardio-oncology consult now.",
+  "source": "judge"
+ },
+ "tx_cardioprotection": {
+  "met": true,
+  "quote": "start guideline-directed therapy now rather than waiting for the echo: an ARNI or ACE inhibitor/ARB, an evidence-based beta-blocker (carvedilol or metoprolol succinate)",
+  "source": "judge"
+ },
+ "tx_anthracycline_free_curative": {
+  "met": true,
+  "quote": "Cycles 5-6 are anthracycline-free: rituximab, cyclophosphamide, vincristine and prednisone, with polatuzumab if tolerated.",
+  "source": "judge"
+ },
+ "tx_lower_efficacy_ack": {
+  "met": true,
+  "quote": "use an anthracycline-free regimen (R-CVP-based, with polatuzumab if the team agrees) or refer to a clinical trial, accepting a lower expected cure rate.",
+  "source": "judge"
+ },
+ "tx_cardiac_monitoring": {
+  "met": true,
+  "quote": "Cardiac monitoring: troponin and NT-proBNP with each cycle, ECG, and echocardiogram with GLS before cycle 1, after cycle 4 (before the anthracycline-free cycles), and at the end of treatment.",
+  "source": "judge"
+ },
+ "mn_non_curative": {
+  "met": false,
+  "quote": "Curative-intent immunochemotherapy: Pola-R-CHP every 21 days for 6 cycles, with a doxorubicin ceiling.",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "End-of-treatment PET-CT about 3-4 weeks after cycle 6, scored by Deauville per Lugano 2014.",
+  "source": "judge"
+ },
+ "sup_tls_allopurinol": {
+  "met": true,
+  "quote": "Tumor lysis: intermediate risk (LDH about 2x ULN, bulk 7.5 cm); allopurinol or febuxostat, and modest hydration given the LVEF.",
+  "source": "judge"
+ },
+ "sup_gcsf": {
+  "met": true,
+  "quote": "Febrile neutropenia prophylaxis: pegfilgrastim or biosimilar each cycle, given age, cardiac comorbidity and the intermediate risk of this regimen.",
+  "source": "judge"
+ },
+ "sup_anastrozole": {
+  "met": true,
+  "quote": "Anastrozole: continue to the planned completion in November 2026; it is not affected by the lymphoma and has no major interaction with the regimen; the breast team should confirm.",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "Hepatitis B: HBsAg and anti-HBc negative, so no antiviral prophylaxis is needed; anti-HBs negative, so offer hepatitis B vaccination",
+  "source": "judge"
+ },
+ "fit_curative_ecog1": {
+  "met": true,
+  "quote": "She is fit for curative-intent immunochemotherapy by age, ECOG 1, and normal renal, hepatic and marrow reserve. Her goal is cure and a return to work at the school library, and this plan is consistent with that.",
+  "source": "judge"
+ },
+ "miss_cardiac_workup": {
+  "met": true,
+  "quote": "ECG, high-sensitivity troponin, NT-proBNP, ischemia evaluation and cardiac MRI: none documented. Cardio-oncology consult not documented.",
+  "source": "judge"
+ }
+}

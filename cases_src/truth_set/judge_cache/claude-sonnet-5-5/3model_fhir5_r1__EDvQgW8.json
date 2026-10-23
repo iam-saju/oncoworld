@@ -1,0 +1,147 @@
+{
+ "dx_dlbcl_gcb": {
+  "met": true,
+  "quote": "DLBCL, NOS, germinal-center B-cell-like (GCB) subtype by both the Hans algorithm and the COO algorithm (CD10 positive; BCL6 positive; MUM1 negative).",
+  "source": "judge"
+ },
+ "stage_i": {
+  "met": true,
+  "quote": "Ann Arbor/Lugano stage IA. FDG PET-CT 2026-09-03 shows a single contiguous right cervical nodal region (levels IIA and III; largest node 3.1 x 2.4 cm, SUVmax 14.2",
+  "source": "judge"
+ },
+ "stage_nonbulky_no_b": {
+  "met": true,
+  "quote": "No B symptoms: no fever, no drenching night sweats, weight stable at 64 kg over the past year, no pruritus and no alcohol-induced pain; LDH 190 U/L is normal. Disease is non-bulky (largest node 3.1 cm; bulky = >=10 cm)",
+  "source": "judge"
+ },
+ "stage_pet_no_marrow_biopsy": {
+  "met": true,
+  "quote": "Bone marrow biopsy is deliberately not being performed: NCCN does not require marrow biopsy when PET shows no marrow involvement.",
+  "source": "judge"
+ },
+ "mn_overstaged": {
+  "met": false,
+  "quote": "This is therefore limited-stage, non-bulky, Ann Arbor stage I, A, with normal LDH, ECOG 0 and no adverse prognostic features.",
+  "source": "judge"
+ },
+ "mol_not_de_not_dh": {
+  "met": true,
+  "quote": "This is NOT high-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements (double-hit or triple-hit), and it is NOT a double-expressor by the Hans definition",
+  "source": "judge"
+ },
+ "mn_calls_double_hit": {
+  "met": false,
+  "quote": "no MYC (8q24), no BCL2 (18q21) and no BCL6 (3q27) rearrangement. This is NOT high-grade B-cell lymphoma with MYC and BCL2 and/or BCL6 rearrangements (double-hit or triple-hit)",
+  "source": "judge"
+ },
+ "mn_calls_double_expressor": {
+  "met": false,
+  "quote": "it is NOT a double-expressor by the Hans definition, since MYC immunostaining is 15% (above 10%) but BCL2 is 30% (below the 50% threshold)",
+  "source": "judge"
+ },
+ "prog_ipi_low": {
+  "met": true,
+  "quote": "IPI 0 of 5: age 45 (>=0, <=60), stage I (0), ECOG 0 (0), LDH normal (0), no extranodal sites (0)",
+  "source": "judge"
+ },
+ "prog_cns_ipi_low": {
+  "met": true,
+  "quote": "Low. CNS-IPI 0 of 6: age <60 (0), LDH normal (0), ECOG <1 (0), stage I-II (0), 0-1 extranodal sites (0), no kidney or adrenal involvement (0).",
+  "source": "judge"
+ },
+ "tx_curative_rchop": {
+  "met": true,
+  "quote": "Decision: 4 cycles of R-CHOP 21 with primary G-CSF support and NO radiotherapy.",
+  "source": "judge"
+ },
+ "tx_flyer_4rchop_2r": {
+  "met": false,
+  "quote": "Decision: 4 cycles of R-CHOP 21 with primary G-CSF support and NO radiotherapy.",
+  "source": "judge"
+ },
+ "tx_no_rt_goals": {
+  "met": true,
+  "quote": "Omitting radiation is the option that best matches her explicit wish to avoid neck irradiation and the thyroid, xerostomia and taste toxicity she watched her sister experience",
+  "source": "judge"
+ },
+ "tx_alternatives": {
+  "met": true,
+  "quote": "my alternative is 3 cycles R-CHOP plus 3 cycles R with ISRT 30 Gy to the right cervical field",
+  "source": "judge"
+ },
+ "mn_six_cycles": {
+  "met": false,
+  "quote": "Decision: 4 cycles of R-CHOP 21 with primary G-CSF support and NO radiotherapy.",
+  "source": "judge"
+ },
+ "mn_pola_preferred": {
+  "met": false,
+  "quote": "",
+  "source": "judge"
+ },
+ "mn_da_epoch": {
+  "met": false,
+  "quote": "Explicitly NOT doing: no DA-R-EPOCH-R (no double-hit), no upfront autologous transplant, no bendamustine consolidation, no CNS prophylaxis",
+  "source": "judge"
+ },
+ "mn_observation_or_rt_alone": {
+  "met": false,
+  "quote": "Decision: 4 cycles of R-CHOP 21 with primary G-CSF support and NO radiotherapy.",
+  "source": "judge"
+ },
+ "cns_low_no_prophylaxis": {
+  "met": true,
+  "quote": "Decision: no CNS prophylaxis, meaning no intrathecal methotrexate and no high-dose systemic methotrexate, and no routine brain MRI or CSF sampling.",
+  "source": "judge"
+ },
+ "mn_mandates_cns_prophylaxis": {
+  "met": false,
+  "quote": "Decision: no CNS prophylaxis, meaning no intrathecal methotrexate and no high-dose systemic methotrexate",
+  "source": "judge"
+ },
+ "resp_eot_pet_lugano": {
+  "met": true,
+  "quote": "I will do an interim PET-CT after cycle 2 and an end-of-treatment PET-CT 8-12 weeks after the last dose",
+  "source": "judge"
+ },
+ "resp_interim_pet": {
+  "met": false,
+  "quote": "I will do an interim PET-CT after cycle 2 and an end-of-treatment PET-CT 8-12 weeks after the last dose; a Deauville 1-3 interim scan will not change management, and a Deauville 4-5 interim scan will prompt biopsy",
+  "source": "judge"
+ },
+ "work_pregnancy_test": {
+  "met": true,
+  "quote": "Remaining before cycle 1: (1) a negative pregnancy test; she was cycle day 21 on 2026-09-17 and on a combined oral contraceptive, which I am stopping now, so contraception and pregnancy status must be confirmed before the first dose",
+  "source": "judge"
+ },
+ "work_hbv_reviewed": {
+  "met": true,
+  "quote": "hepatitis B surface antigen, core antibody and surface antibody (nonreactive, nonreactive, reactive), so she is immune to HBV and needs neither antiviral prophylaxis nor HBV DNA monitoring",
+  "source": "judge"
+ },
+ "work_echo_reviewed": {
+  "met": true,
+  "quote": "transthoracic echocardiogram 2026-09-08 (LVEF 63%, no pericardial effusion, no significant valvular regurgitation)",
+  "source": "judge"
+ },
+ "sup_stop_coc_switch": {
+  "met": true,
+  "quote": "Her combined oral contraceptive must also be stopped now, for two independent reasons: estrogen-containing contraception is contraindicated in migraine with aura (ischemic stroke risk) and it increases thromboembolic risk during chemotherapy; if she wants contraception during treatment I will use a progestin-only or non-hormonal method.",
+  "source": "judge"
+ },
+ "sup_coc_reason": {
+  "met": true,
+  "quote": "estrogen-containing contraception is contraindicated in migraine with aura (ischemic stroke risk) and it increases thromboembolic risk during chemotherapy",
+  "source": "judge"
+ },
+ "sup_fertility_counselling": {
+  "met": true,
+  "quote": "I will refer her now for oocyte or embryo cryopreservation counseling with a realistic expectation of reduced ovarian reserve at age 45, discuss the risk of treatment-related premature ovarian insufficiency",
+  "source": "judge"
+ },
+ "fit_goals": {
+  "met": true,
+  "quote": "She is fully fit for full-dose R-CHOP; no dose reduction or comorbidity-driven modification is indicated.",
+  "source": "judge"
+ }
+}

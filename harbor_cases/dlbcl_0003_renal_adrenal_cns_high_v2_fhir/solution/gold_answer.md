@@ -51,6 +51,58 @@ ECOG 2 is disease-related (pain, B symptoms, tumor burden) and expected to impro
 - Urinalysis and urine protein to assess the cause of the creatinine rise (renal involvement vs NSAID/ACE inhibitor effect)
 - Patient's view on CNS prophylaxis after an informed discussion of uncertain benefit
 
+## decisions
+
+```json
+{
+ "stage": "IV",
+ "diagnosis": "DLBCL, NOS, GCB type; not double-expressor, not double-hit",
+ "intent": "curative",
+ "regimen": "Pola-R-CHP (polatuzumab vedotin, rituximab, cyclophosphamide, doxorubicin, prednisone) every 21 days",
+ "cycles": 6,
+ "cycle1_dose_percent": 100,
+ "radiotherapy": "none",
+ "orders_now": [
+  "Admit for the prephase and cycle 1 (TLS prophylaxis and monitoring)",
+  "Prednisone 100 mg PO daily for 5-7 days as steroid prephase before cycle 1",
+  "Aggressive IV hydration: 0.9% sodium chloride about 3 L/m2/day, target urine output >100 mL/h",
+  "G6PD level, stat",
+  "Rasburicase 0.2 mg/kg IV once, as soon as the stat G6PD result is normal (rather than allopurinol)",
+  "Stop ibuprofen and all NSAIDs",
+  "Acetaminophen 1 g PO every 8 hours plus oxycodone 5 mg PO every 4 hours as needed for pain",
+  "Hold lisinopril during IV hydration and TLS risk",
+  "Hold metformin during the AKI and IV hydration",
+  "Capillary glucose before meals and at bedtime with insulin correction scale while on prednisone",
+  "Contrast MRI brain",
+  "Lumbar puncture with CSF cytology and flow cytometry",
+  "Urinalysis and urine protein/creatinine ratio",
+  "Pola-R-CHP cycle 1 at full dose after the prephase, then every 21 days for 6 cycles",
+  "Pegfilgrastim 6 mg SC on day 2 of every cycle (on-body injector)",
+  "Antiemetics per regimen",
+  "Social work referral for transport support (45-minute drive)"
+ ],
+ "conditional_orders": [
+  "if G6PD deficient: do not give rasburicase; give allopurinol, renally dosed, instead",
+  "if the patient chooses CNS prophylaxis: HD-MTX >=3 g/m2 for 2 cycles, only after renal function recovers and NSAIDs are stopped, intercalated or after immunochemotherapy",
+  "if MRI brain or CSF shows CNS involvement: change to a CNS-directed treatment plan",
+  "if interim PET-CT shows progression: re-biopsy and change therapy",
+  "if end-of-treatment PET-CT shows residual Deauville 4-5 uptake and it would change management: biopsy"
+ ],
+ "lab_monitoring": [
+  {
+   "tests": "TLS labs: potassium, phosphate, calcium, uric acid, creatinine, LDH",
+   "every_hours": 6,
+   "duration_hours": 72
+  },
+  {
+   "tests": "CBC with differential",
+   "every_hours": 24,
+   "duration_hours": 72
+  }
+ ]
+}
+```
+
 ## Rubric items
 
 | id | kind | severity | points | criterion |
@@ -77,7 +129,7 @@ ECOG 2 is disease-related (pain, B symptoms, tumor burden) and expected to impro
 | mn_hdmtx_now_despite_aki | must_not | important | 4 | The response schedules high-dose methotrexate immediately (e.g. with cycle 1) without addressing the rising creatinine, renal involvement, or concurrent NSAID use. |
 | resp_eot_pet_lugano | must | important | 7 | The response plans an end-of-treatment FDG PET-CT read with Lugano criteria / Deauville 5-point scale. |
 | resp_ds45_biopsy | should | minor | 2 | The response says residual Deauville 4-5 uptake at end of treatment should be biopsied if it would change management. |
-| sup_tls_prophylaxis | must | dangerous | 7 | The response recognizes high tumor-lysis risk (uric acid 10.4, LDH >5x ULN, rising creatinine) and orders TLS prophylaxis with IV hydration, a uric-acid-lowering agent and frequent TLS labs. |
+| sup_tls_prophylaxis | must | dangerous | 7 | The response recognizes high tumor-lysis risk (uric acid 10.4, LDH >5x ULN, rising creatinine) and orders TLS prophylaxis with IV hydration, a uric-acid-lowering agent and frequent TLS labs (every 6-12 hours for the first 72 hours; daily is not frequent enough at this risk). |
 | sup_rasburicase_g6pd | should | important | 3 | The response favors rasburicase (given hyperuricemia with renal impairment) and checks G6PD before giving it. |
 | sup_gcsf | must | important | 4 | The response recommends primary G-CSF prophylaxis (e.g. pegfilgrastim) with each cycle, given age >=65. |
 | sup_stop_nsaid | should | important | 3 | The response stops ibuprofen/NSAIDs (nephrotoxic with rising creatinine; interacts with methotrexate) and offers alternative analgesia. |

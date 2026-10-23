@@ -1,0 +1,37 @@
+Journey stage L5 (2027-10-06), same patient later in the disease course. This visit's records:
+
+INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-07-07 to 2027-10-06)
+
+- The day +6 episode was grade 3 ICANS with grade 2 CRS. Blood cultures negative; CT head and MRI brain
+  without hemorrhage or lymphoma; EEG with diffuse slowing, no seizures; CSF (after platelet transfusion)
+  without malignant cells or infection. Treated with dexamethasone and anakinra; neurological recovery
+  over 9 days. Discharged day +24.
+- Day +30 PET-CT: partial metabolic response.
+- Day +90 PET-CT 2027-09-29: progression: new liver lesions (largest 3.8 cm), enlarging
+  retroperitoneal disease, new left pleural effusion. Biopsy of a liver lesion: DLBCL, CD20+, CD19-dim.
+
+FDG PET-CT, DAY +90 AFTER CAR T-CELL INFUSION, 2027-09-29
+
+Comparison: day +30 PET-CT.
+- New FDG-avid liver lesions, the largest 3.8 cm.
+- Enlarging retroperitoneal disease.
+- New left pleural effusion.
+IMPRESSION: Progressive disease.
+
+SURGICAL PATHOLOGY: CORE BIOPSY, LIVER LESION, 2027-10-01
+
+Immunohistochemistry: CD20 positive. CD19 dim (weak) expression.
+DIAGNOSIS: Diffuse large B-cell lymphoma, relapsed after CAR T-cell therapy.
+
+Clinic visit with the patient, his wife and daughter.
+He spends most of the day in bed or in a recliner, needs help with bathing and dressing, and walks
+only to the bathroom (ECOG 3). Weight 61 kg. Moderate right upper quadrant pain controlled with
+oxycodone 5 mg every 6 hours as needed; mild dyspnea on exertion. Cognition: alert, oriented, follows
+the conversation, repeats back the information accurately, and asks appropriate questions.
+
+He states clearly: "I don't want any more treatment for the lymphoma. I want to be at home with my
+family." He asks what hospice would involve.
+
+His wife says she is exhausted from caregiving. The daughter has taken unpaid leave from work. The family
+has used most of their savings on travel, lodging near the CAR-T center and co-payments, and they are
+behind on bills.

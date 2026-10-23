@@ -1,0 +1,138 @@
+{
+ "_about": "Plain-language labels for the oncologist report (scripts/build_report.py). Written by a senior heme-onc agent from rubric_v2.toml, case.toml and gold.json, then checked item by item against the rubric text by an independent heme-onc agent (2026-10-22). Not human-reviewed. Never shown to the model.",
+ "case_card": {
+  "title": "Double-hit lymphoma found after R-CHOP was planned",
+  "patient": "54M, ECOG 1, with a rapidly enlarging right cervical mass, dysphagia and morning facial fullness; 12.0 cm anterior mediastinal mass with about 50% SVC narrowing, all disease above the diaphragm, LDH 740 rising to 812, uric acid 7.6 to 7.9, LVEF 60%. Node biopsy was signed out as DLBCL NOS (GCB, MYC 80%/BCL2 90% by IHC, Ki-67 95%), but the 9/19 FISH addendum shows MYC and BCL2 rearrangements after R-CHOP x6 had already been planned to start 9/22.",
+  "tests": [
+   "The late FISH addendum changes the diagnosis to double-hit lymphoma (HGBL with MYC and BCL2 rearrangements), not DLBCL NOS.",
+   "The R-CHOP plan was written before FISH and must be replaced with intensive therapy such as DA-EPOCH-R x6 or a clinical trial.",
+   "Disease is stage II bulky (12 cm mediastinal mass, above the diaphragm only), not stage III or IV.",
+   "IPI and CNS-IPI are only 1, but double-hit biology drives the risk, so brain MRI, lumbar puncture and CNS prophylaxis are still needed.",
+   "Bulky mass, high LDH and rising uric acid need TLS prophylaxis; DA-EPOCH-R needs G-CSF every cycle and its 96-hour infusion goes through the new port."
+  ],
+  "correct_plan": "Revise to double-hit lymphoma, cancel the R-CHOP plan and give curative DA-EPOCH-R x6 (or a trial) with G-CSF, TLS prophylaxis, baseline brain MRI and LP, CNS prophylaxis, sperm banking and SVC/airway precautions. Then interim and end-of-treatment PET-CT read with Deauville, with ISRT to the mediastinum decided at multidisciplinary review."
+ },
+ "items": [
+  {
+   "id": "dx_hgbl_double_hit",
+   "label": "Revises diagnosis to double-hit lymphoma (MYC and BCL2 rearranged)",
+   "why": "The FISH addendum overrides the DLBCL NOS sign-out, and this diagnosis decides the regimen and the CNS work-up."
+  },
+  {
+   "id": "mn_dx_dlbcl_nos",
+   "label": "Keeps the final diagnosis as DLBCL NOS or denies double-hit",
+   "why": "Missing the double-hit result leads to standard R-CHOP and under-treatment of an aggressive lymphoma."
+  },
+  {
+   "id": "dx_gcb_hans",
+   "label": "Notes GCB phenotype by Hans (CD10+, BCL6+, MUM1-)",
+   "why": "Documents cell of origin; double-hit lymphoma with BCL2 rearrangement is typically GCB-type."
+  },
+  {
+   "id": "tx_plan_outdated",
+   "label": "Recognises the 9/14 R-CHOP plan predates FISH and cancels it",
+   "why": "Cycle 1 of R-CHOP is booked for 9/22; it must be stopped before he receives the wrong regimen."
+  },
+  {
+   "id": "stage_ii_bulky",
+   "label": "Stages as Lugano stage II bulky (12 cm mediastinal mass)",
+   "why": "All disease is above the diaphragm with no extranodal sites; the 12 cm bulk supports considering consolidative mediastinal radiotherapy.",
+   "checker_revised": "The current why says bulk means he 'is treated as advanced-stage disease'. Lugano 2014 says stage II bulky is treated as limited or advanced depending on histology and other factors. In this patient the double-hit biology, not the stage, sets DA-EPOCH-R x6, so the statement overreaches and could mislead."
+  },
+  {
+   "id": "mn_stage_iii_iv",
+   "label": "Assigns stage III or stage IV",
+   "why": "PET shows no disease below the diaphragm and no extranodal sites, so this would be an incorrect stage."
+  },
+  {
+   "id": "bio_double_expressor_secondary",
+   "label": "Notes double-expressor IHC, but FISH double-hit is the key classification",
+   "why": "MYC 80%/BCL2 90% protein expression is secondary; the rearrangements, not the IHC, drive treatment choice."
+  },
+  {
+   "id": "prog_ipi1_biology_dominates",
+   "label": "Calculates IPI 1 (LDH only); double-hit biology dominates the risk",
+   "why": "A low IPI here is misleading; the rearrangements make outcomes poor with standard therapy."
+  },
+  {
+   "id": "tx_intensive_curative",
+   "label": "Recommends DA-EPOCH-R x6 or trial; intensive alternatives acceptable",
+   "why": "Double-hit lymphoma is not adequately treated by R-CHOP; a fit 54-year-old needs intensive curative therapy."
+  },
+  {
+   "id": "mn_rchop_preferred",
+   "label": "Recommends R-CHOP alone, or proceeding with the 9/14 plan",
+   "why": "R-CHOP alone is not preferred for rearrangement-defined double-hit lymphoma and risks lower cure rates."
+  },
+  {
+   "id": "mn_non_curative",
+   "label": "Recommends palliative-only care, best supportive care or hospice",
+   "why": "He is fit, his goal is cure, and this lymphoma can be cured with intensive therapy."
+  },
+  {
+   "id": "tx_isrt_consolidation",
+   "label": "Considers ISRT to the bulky mediastinal site",
+   "why": "Radiotherapy can consolidate residual PET-positive disease in a 12 cm mediastinal mass."
+  },
+  {
+   "id": "cns_staging_mri_csf",
+   "label": "Orders brain MRI and LP with CSF cytology and flow",
+   "why": "Double-hit carries high CNS risk despite CNS-IPI 1; occult CNS disease would change the regimen."
+  },
+  {
+   "id": "cns_prophylaxis",
+   "label": "Recommends CNS prophylaxis (intrathecal or high-dose methotrexate)",
+   "why": "Reduces the high risk of CNS relapse that comes with double-hit biology."
+  },
+  {
+   "id": "mn_cns_dismissed",
+   "label": "Dismisses CNS risk as low; says no CNS evaluation or prophylaxis needed",
+   "why": "A low CNS-IPI understates the risk; skipping evaluation or prophylaxis leaves CNS relapse unaddressed."
+  },
+  {
+   "id": "resp_pet_lugano",
+   "label": "Plans end-of-treatment PET-CT read with Lugano/Deauville",
+   "why": "Confirms complete metabolic response and guides biopsy or radiotherapy for residual mediastinal uptake."
+  },
+  {
+   "id": "sup_gcsf",
+   "label": "States G-CSF is mandatory every cycle of DA-EPOCH-R",
+   "why": "DA-EPOCH-R dose escalation depends on growth-factor support to limit neutropenia and infection."
+  },
+  {
+   "id": "sup_tls",
+   "label": "Addresses TLS risk with allopurinol/rasburicase, hydration and lab monitoring",
+   "why": "12 cm mass, LDH about 3.6x ULN and rising uric acid put him at risk of tumor lysis."
+  },
+  {
+   "id": "sup_central_access_infusion",
+   "label": "Notes 96-hour infusion needs central access; uses existing port",
+   "why": "Continuous infusion of vesicant drugs needs a central line; the port placed 9/18 can be used."
+  },
+  {
+   "id": "sup_fertility",
+   "label": "Offers sperm banking before chemotherapy",
+   "why": "Intensive alkylator and anthracycline chemotherapy can impair fertility in a 54-year-old man."
+  },
+  {
+   "id": "sup_svc_airway",
+   "label": "Monitors for SVC syndrome or airway compromise; educates patient",
+   "why": "The mediastinal mass narrows the SVC by about 50% and he already has morning facial fullness."
+  },
+  {
+   "id": "work_hbv_reviewed",
+   "label": "Confirms HBsAg and anti-HBc nonreactive before rituximab",
+   "why": "Rituximab can reactivate hepatitis B; negative serology means no antiviral is needed."
+  },
+  {
+   "id": "work_echo_reviewed",
+   "label": "Notes baseline LVEF 60% permits anthracycline",
+   "why": "Doxorubicin in the regimen is cardiotoxic; a normal ejection fraction confirms it is safe to give."
+  },
+  {
+   "id": "fit_intensive",
+   "label": "Judges him fit for intensive curative therapy, matching his goal",
+   "why": "Age 54, ECOG 1, normal heart and organ function, and he wants the best chance of cure."
+  }
+ ]
+}

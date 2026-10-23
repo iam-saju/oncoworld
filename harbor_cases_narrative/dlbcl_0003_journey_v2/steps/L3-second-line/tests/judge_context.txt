@@ -1,0 +1,51 @@
+Journey stage L3 (2027-05-12), same patient later in the disease course. This visit's records:
+
+INTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-02-24 to 2027-05-12)
+
+The patient chose a short-interval PET-CT instead of a repeat biopsy.
+- PET-CT 2027-04-20: retroperitoneal mass enlarged to 5.8 x 4.4 cm, SUVmax 18.3; two new FDG-avid
+  liver lesions (1.4 and 2.0 cm). Deauville 5.
+- He then agreed to biopsy. CT-guided core biopsy of the retroperitoneal mass 2027-04-28: diffuse large
+  B-cell lymphoma, GCB phenotype, CD20+, CD19+ (IHC and flow cytometry), MYC 20%, BCL2 30%. FISH: no
+  MYC or BCL2 rearrangement.
+- Current status: ECOG 1. Creatinine 1.0 mg/dL, bilirubin 0.6 mg/dL, Hb 12.1 g/dL, ANC 3.4 x10^3/uL,
+  platelets 188 x10^3/uL, LDH 410 U/L (135-225). Echo 2027-05-05: LVEF 58%. No neurological symptoms.
+- He has good family support (wife; daughter lives 20 minutes away) and can travel for appointments.
+- First-line therapy (Pola-R-CHP) finished 2027-01-08.
+
+FDG PET-CT, SHORT-INTERVAL RESTAGING, 2027-04-20
+
+Comparison: end-of-treatment PET-CT 2027-02-17.
+- Retroperitoneal mass enlarged to 5.8 x 4.4 cm (previously 3.4 x 2.1 cm); SUVmax 18.3 (previously 6.2).
+- Two new FDG-avid liver lesions, 1.4 cm and 2.0 cm.
+Deauville score: 5.
+IMPRESSION: Enlarging, intensely FDG-avid retroperitoneal mass and new liver lesions, consistent with
+progressive disease.
+
+SURGICAL PATHOLOGY: CT-GUIDED CORE BIOPSY, RETROPERITONEAL MASS, 2027-04-28
+
+Specimen: core biopsies of the retroperitoneal mass, adequate for diagnosis.
+Immunohistochemistry: CD20 positive. CD19 positive. MYC 20% of tumor cells. BCL2 30% of tumor cells.
+Flow cytometry: CD19 and CD20 expressed on the abnormal B-cell population.
+FISH: MYC: no rearrangement detected. BCL2: no rearrangement detected.
+DIAGNOSIS: Diffuse large B-cell lymphoma, germinal center B-cell (GCB) phenotype, in a patient with
+previously treated diffuse large B-cell lymphoma.
+
+TRANSTHORACIC ECHOCARDIOGRAM, 2027-05-05
+
+Indication: relapsed lymphoma, cardiac evaluation before further therapy.
+Left ventricular ejection fraction 58% (biplane). Normal left ventricular size and wall motion.
+IMPRESSION: Normal left ventricular systolic function.
+
+TUMOR NEXT-GENERATION SEQUENCING (DNA, 523-gene hybrid-capture panel), specimen 2027-04-28
+Tumor content estimated 60%.
+
+Variants of clinical or possible significance:
+  EZH2    c.1937A>T  p.Y646F   missense   VAF 34%
+  CREBBP  c.4336C>T  p.R1446*  nonsense   VAF 29%
+  KMT2D   c.11563dup p.Q3855fs frameshift VAF 31%
+  TNFRSF14 deletion (exons 1-3)
+Not detected: TP53, MYD88, CD79B, BCL2 amplification, MYC amplification.
+Tumor mutational burden: 6 mutations/Mb. Microsatellite status: stable.
+Comment: mutation pattern is typical of germinal-center-derived lymphoma. EZH2 Y646 is an activating
+hotspot mutation. Correlate clinically.

@@ -21,7 +21,9 @@ passing_score = 0.75
 timeout_sec = 300.0
 
 [verifier.env]
-# LLM judge for the v2 rubric. Unset key = regex fallback (review.json says judge="none").
+# Optional LLM judge, used only when ONCOWORLD_GRADER=judge; the regex rules are the grader of record.
 ONCOWORLD_JUDGE_API_KEY = "${ONCOWORLD_JUDGE_API_KEY:-}"
 ONCOWORLD_JUDGE_MODEL = "${ONCOWORLD_JUDGE_MODEL:-}"
 ONCOWORLD_JUDGE_BASE_URL = "${ONCOWORLD_JUDGE_BASE_URL:-https://openrouter.ai/api/v1}"
+ONCOWORLD_JUDGE_HEADERS = "${ONCOWORLD_JUDGE_HEADERS:-}"
+ONCOWORLD_GRADER = "${ONCOWORLD_GRADER:-regex}"

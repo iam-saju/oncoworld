@@ -1,0 +1,59 @@
+{
+  "n_concurrent_trials": 6,
+  "agent_setup_timeout_multiplier": 3.0,
+  "agents": [
+    {
+      "name": "opencode",
+      "n_concurrent": 2,
+      "model_name": "opencode-go/minimax-m3.1-flash-free",
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_GO_API_KEY}"
+      }
+    },
+    {
+      "name": "opencode",
+      "n_concurrent": 2,
+      "model_name": "opencode/deepseek-v4.1-flash-free",
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_API_KEY}"
+      }
+    },
+    {
+      "name": "claude-code",
+      "n_concurrent": 2,
+      "model_name": "anthropic/claude-haiku-5-5",
+      "kwargs": {
+        "disable_web_search": true,
+        "reasoning_effort": "high",
+        "max_budget_usd": "1"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${ANTHROPIC_CUSTOM_HEADERS}"
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "path": "harbor_cases/dlbcl_0001_bulky_stage_iii_hbv_v2_fhir"
+    },
+    {
+      "path": "harbor_cases/dlbcl_0002_splenic_stage_iii_cardiac_v2_fhir"
+    },
+    {
+      "path": "harbor_cases/dlbcl_0003_renal_adrenal_cns_high_v2_fhir"
+    },
+    {
+      "path": "harbor_cases/dlbcl_0004_double_hit_addendum_v2_fhir"
+    },
+    {
+      "path": "harbor_cases/dlbcl_0005_limited_stage_flyer_v2_fhir"
+    }
+  ]
+}

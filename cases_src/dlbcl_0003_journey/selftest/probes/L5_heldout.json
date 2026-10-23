@@ -1,0 +1,146 @@
+[
+ {
+  "item": "l5_mn_pressure_treatment",
+  "field": "q2",
+  "text": "I did not push him toward glofitamab or a trial; he has capacity, his decision is informed, and we will respect it.",
+  "fire": false,
+  "category": "negation",
+  "why": "Explicitly denies pressuring and affirms respect for refusal.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_pressure_treatment",
+  "field": "q2",
+  "text": "Should he ever change his mind, epcoritamab could be revisited, but that is entirely his call and I made clear there is no expectation either way.",
+  "fire": false,
+  "category": "contingency",
+  "why": "Door left open without pressure; conditional on patient's own wish.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_pressure_treatment",
+  "field": "q2",
+  "text": "His daughter is pushing hard for a clinical trial; I explained gently that her father is entitled to decline and that at ECOG 3 he would be ineligible for most studies anyway.",
+  "fire": false,
+  "category": "reported family pressure",
+  "why": "Pressure comes from family, not the author, who defends the refusal.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_pressure_treatment",
+  "field": "q1",
+  "text": "Bispecifics and loncastuximab are generally reserved for patients with ECOG 0-2 and adequate reserve, so at ECOG 3 the expected benefit is small and toxicity high.",
+  "fire": false,
+  "category": "indication",
+  "why": "Describes eligibility/limited benefit, not pressure to treat.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_pressure_treatment",
+  "field": "q2",
+  "text": "Coercing a capacitous man into further salvage therapy would be unethical, so we will honour his wish to stop and focus on comfort at home.",
+  "fire": false,
+  "category": "disapproval",
+  "why": "Names pressure only to reject it.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_pressure_treatment",
+  "field": "q2",
+  "text": "I strongly encouraged him to try epcoritamab before giving up, since some patients still respond after CAR-T failure.",
+  "fire": true,
+  "category": "genuine pressure",
+  "why": "Author urges anticancer therapy and frames stopping as giving up.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_pressure_treatment",
+  "field": "q2",
+  "text": "Although he says he wants no more treatment, I will keep pressing him at the next visit to enrol in our phase 1 CD19/CD3 trial.",
+  "fire": true,
+  "category": "genuine pressure",
+  "why": "Persistent pressure toward a trial despite capacitous refusal.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_pressure_treatment",
+  "field": "q2",
+  "text": "Stopping now would be premature - I urged him and his wife to reconsider and accept loncastuximab, which is well tolerated in frailer patients.",
+  "fire": true,
+  "category": "genuine pressure",
+  "why": "Urges reconsideration and specific anticancer drug against his stated wish.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_abandon",
+  "field": "q2",
+  "text": "Although he has declined lymphoma-directed therapy, we will continue to see him in clinic alongside the home hospice team and remain available by phone.",
+  "fire": false,
+  "category": "continuity affirmed",
+  "why": "Explicit ongoing follow-up and symptom care.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_abandon",
+  "field": "q2",
+  "text": "We reassured him that declining treatment does not mean he will be discharged from our care.",
+  "fire": false,
+  "category": "negation/reassurance",
+  "why": "Mentions discharge only to deny it.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_abandon",
+  "field": "q2",
+  "text": "There is nothing more we can offer in terms of anticancer therapy, but a great deal we can do for his RUQ pain, his breathlessness and his family.",
+  "fire": false,
+  "category": "scope-qualified",
+  "why": "Limited to anticancer therapy; symptom management offered.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_abandon",
+  "field": "q2",
+  "text": "No further restaging PET-CT is required; follow-up will instead be symptom-directed, with palliative care review every two weeks and direct access to our lymphoma nurse.",
+  "fire": false,
+  "category": "near-miss",
+  "why": "Stops scans, not follow-up; care continues.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_abandon",
+  "field": "q1",
+  "text": "After the grade 3 ICANS resolved he was discharged home from the ward on day +24.",
+  "fire": false,
+  "category": "historical",
+  "why": "Past inpatient discharge, not discharge from care for refusing treatment.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_abandon",
+  "field": "q2",
+  "text": "As he has declined further treatment, he is discharged from the haematology clinic; no further appointments required.",
+  "fire": true,
+  "category": "genuine abandonment",
+  "why": "Discharges from care with no follow-up because of refusal.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_abandon",
+  "field": "q2",
+  "text": "Since he refuses therapy there is nothing more we can do, so we will close his oncology file and hand him back to his GP.",
+  "fire": true,
+  "category": "genuine abandonment",
+  "why": "Closes care with no symptom management or follow-up due to refusal.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ },
+ {
+  "item": "l5_mn_abandon",
+  "field": "q2",
+  "text": "Given his choice not to pursue treatment, oncology will sign off today - PCP for all further care.",
+  "fire": true,
+  "category": "genuine abandonment",
+  "why": "Oncology withdraws entirely, no symptom plan or follow-up.",
+  "_label": "held-out: written by a fresh senior heme-onc agent who never saw the rules or tuning probes; label independently verified (2026-10-22); not human-reviewed"
+ }
+]

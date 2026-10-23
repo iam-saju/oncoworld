@@ -7,7 +7,7 @@
 # LVEF decline 62% -> 45% (GLS -14%). Standard full-dose anthracycline (R-CHOP / Pola-R-CHP) must not be given
 # without addressing cardiac function.
 #
-# Regex fallback fields are a coarse safety net for runs without a judge; the judge reads `text`.
+# Graded by the regex rules on each item (grader of record); `text` states the criterion in clinical terms.
 # All regexes run on the lower-cased answer.
 
 version = "dlbcl_0002.v2.0"
@@ -62,7 +62,11 @@ kind = "must"
 severity = "dangerous"
 points = 8
 text = "The response stages the disease as Lugano/Ann Arbor stage III (nodes on both sides of the diaphragm with splenic involvement)."
-any = ["\\bstage\\s*(?:iii|3)\\b"]
+# affirm: a negated, hedged or 'III versus IV' sentence is not a staging call; suffixes (IIIB, IIIS, IIIB-S, 3B) allowed,
+# ranges ('III-IV', 'III/IV', 'III or IV') rejected because the item demands one stage.
+affirm = ['\bstage\s*(?:iii|3)[abesx]{0,2}\b(?!\s*(?:[-/–]|to|or|and|versus|vs\.?)\s*(?:stage\s*)?(?:iv|4|ii|2)\b)']
+# structured: decisions.stage is III (IIIB / III-S tolerated; a range such as III-IV is no stage call)
+decision = [ { field = "stage", in = ["III"] } ]
 
 [[items]]
 id = "stage_spleen_lymphatic"
@@ -72,6 +76,8 @@ severity = "important"
 points = 4
 text = "The response explains that the spleen is lymphatic tissue (a nodal site), so splenic nodules do not make the disease stage IV, and that there is no non-lymphatic extranodal or marrow involvement."
 all = ["spleen|splenic", "lymph(?:atic|oid) (?:tissue|organ|site|structure)|(?<!extra)nodal site|not (?:an? |counted as (?:an? )?)?extranodal"]
+# credited only when the note actually stages it III (a note that stages IV cannot be basing stage III on a nodal spleen)
+affirm = ['\bstage\s*(?:iii|3)[abesx]{0,2}\b(?!\s*(?:[-/–]|to|or|and|versus|vs\.?)\s*(?:stage\s*)?(?:iv|4|ii|2)\b)']
 
 [[items]]
 id = "stage_b_symptoms"
@@ -98,7 +104,8 @@ kind = "must_not"
 severity = "dangerous"
 points = 0
 text = "The response stages this patient as stage IV (e.g. by counting splenic involvement as extranodal disease)."
-affirm = ["\\bstage\\s*(?:iv|4)\\b"]
+affirm = ['\bstage\s*(?:iv|4)[abesx]{0,2}\b']  # allows IVB, IV-B, 4B
+decision = [ { field = "stage", in = ["IV"] } ]
 
 # ---------------- molecular classification
 [[items]]
@@ -119,7 +126,11 @@ severity = "dangerous"
 points = 0
 text = "The response classifies this lymphoma as double-hit / high-grade B-cell lymphoma with MYC and BCL2 rearrangements."
 check = "affirms_double_hit"
-
+# plus: generic class statements ('double-hit lymphomas do poorly') and sentences that declare the point inapplicable
+# to this patient do not classify her.
+affirm = ['(?:double[-_ ]hit(?!\s+(?:lymphomas|cases)\b)|triple[-_ ]hit|hgbl[- ]?(?:dh|th)\b|hgbl[- ]?myc/bcl2|myc and bcl2 rearrangements|myc/bcl2[- ]rearranged|\(dh\)|\bdh\b(?= lymphoma| biology| disease|\s*\())(?![^.;]*\b(?:(?:does|do|would) not apply|doesn.t apply|not applicable|not relevant|irrelevant)\b)']
+# structured: the final diagnosis names double-/triple-hit or HGBL with rearrangements, and does not negate it
+decision = [ { field = "diagnosis", matches = 'double[- ]hit|triple[- ]hit|\bhgbl\b|\bdhl\b|\bdh\b|high[- ]grade b[- ]cell lymphoma|myc and bcl2 rearrange|myc/bcl2[- ]rearrange|myc[/ -]?(?:and |& )?bcl-?2[- ]?(?:re)?arrange|(?:myc|bcl-?2)\W+(?:and\W+)?(?:bcl-?2\W+)?translocat|t\(8;14\)[^;]*t\(14;18\)', not_matches = '(?:not|non|no|without|negative for|rather than)[- ](?:an? )?(?:double|triple)[- ]hit|(?:double|triple)[- ]hit (?:excluded|ruled out|negative)|(?:not|non|no|without)[- ](?:\w+[- ]){0,2}(?:hgbl|high[- ]grade)|fish[- ]negative|no (?:myc|bcl-?2|bcl6)\b[^;,]{0,30}(?:rearrange|translocat)|(?:no|without|negative for) (?:\w+ ){0,3}(?:translocation|rearrangement)' } ]
 [[items]]
 id = "mn_da_epoch"
 domain = "first_line_treatment"
@@ -127,8 +138,11 @@ kind = "must_not"
 severity = "important"
 points = 5
 text = "The response recommends DA-EPOCH-R (or another intensified regimen) on the basis of double-expressor biology."
-check = "recommends_da_epoch"
-
+# recommend (not the DA-EPOCH-only check) so other intensified regimens count; indication ('reserve X for') and
+# considered-and-rejected sentences do not.
+recommend = ['(?<!reserve )(?:(?:da|dose[- ]adjusted)[- ]?(?:r[- ])?epoch|\br[- ]?codox|\bcodox[- ]?m\b|\b(?:r[- ]?)?hyper[- ]?cvad|\b(?:intensified|more intensive|dose[- ]intensive|dose[- ]intensified)\s+(?:\w+\s+)?(?:regimen|therapy|treatment|chemo\w*|induction|approach|protocol))(?![^.;]*\b(?:reserved? for|rejected|decided against|declined|dismissed))']
+# structured: the ordered regimen is DA-EPOCH-R or another intensified regimen (same list as the prose rule)
+decision = [ { field = "regimen", matches = 'epoch|codox|hyper[- ]?cvad|intensif', not_matches = '(?:not|no|without|rather than|instead of|avoid\w*)\W+(?:\w+\W+){0,2}(?:(?:da|dose[- ]adjusted)[- ]?)?(?:r[- ])?epoch|(?:not|no|without)\W+(?:\w+\W+){0,2}intensif' } ]
 # ---------------- prognosis
 [[items]]
 id = "prog_ipi_2"
@@ -166,8 +180,10 @@ kind = "must_not"
 severity = "important"
 points = 4
 text = "The response mandates CNS prophylaxis (high-dose methotrexate or intrathecal therapy) for this patient."
-recommend = ["(?:cns|central nervous system)[^.]{0,20}prophyla|high[- ]dose methotrexate|hd[- ]?mtx|intrathecal"]
-
+# considered-and-rejected sentences ('HD-MTX was discussed and decided against') are not a mandate
+recommend = ['(?:(?:cns|central nervous system)[^.]{0,20}prophyla|high[- ]dose methotrexate|hd[- ]?mtx|intrathecal)(?![^.;]*\b(?:decided against|rejected|declined|dismissed|hold\w*|defer\w*|skip\w*|not (?:indicated|recommended|warranted|required|needed)))']
+# structured: HD-MTX / intrathecal / CNS prophylaxis among the unconditional orders or in the regimen ('no CNS prophylaxis' entries excluded)
+decision = [ { any = [ { field = "orders_now", matches = '(?:^|[;,(:.])(?:(?!\b(?:no|not|without|omit\w*|avoid\w*|declin\w*|against|hold(?:ing)?|defer(?:ring)?|skip(?:ping)?)\b)[^;,(:.])*?(?:methotrexate|\bmtx\b|intrathecal|\bit (?:chemo|cytarabine)|cns prophyla)(?![^;,()]*\bnot (?:indicated|recommended|needed|required|warranted|planned)\b)' }, { field = "regimen", matches = '(?:^|[;,(:.])(?:(?!\b(?:no|not|without|omit\w*|avoid\w*|declin\w*|against|hold(?:ing)?|defer(?:ring)?|skip(?:ping)?)\b)[^;,(:.])*?(?:methotrexate|\bmtx\b|intrathecal|\bit (?:chemo|cytarabine)|cns prophyla)(?![^;,()]*\bnot (?:indicated|recommended|needed|required|warranted|planned)\b)' } ] } ]
 # ---------------- first-line treatment: the cardiac twist
 [[items]]
 id = "tx_cardiac_aware_no_full_dox"
@@ -177,8 +193,20 @@ severity = "dangerous"
 points = 10
 text = "The response recognizes anthracycline-related cardiac risk (prior doxorubicin 240 mg/m2, left chest radiotherapy, LVEF fall from 62% to 45%, i.e. cancer therapy-related cardiac dysfunction) and does NOT plan standard full-dose doxorubicin (R-CHOP or Pola-R-CHP) without first addressing cardiac function."
 all = ["lvef|ejection fraction|\\bef\\b", "anthracycline|doxorubicin",
-       "cardiotox|cardiac dysfunction|ctrcd|cardiomyopathy|heart failure|cardiac (?:risk|toxicity|injury)"]
-
+       "cardiotox|cardiac dysfunction|ctrcd|cardiomyopathy|heart failure|cardiac (?:risk|toxicity|injury)|(?:\\blv|left[- ]ventricular|ventricular|systolic)[^.]{0,15}dysfunction"]
+# structured (the plan half of the text; the 'recognizes' half is reasoning and stays with the prose cross-check):
+# NOT met when the ordered regimen contains conventional doxorubicin (R-CHOP, Pola-R-CHP, R-mini-CHOP, CHOEP,
+# DA-EPOCH-R, any dose) and the plan does not first address cardiac function, i.e. is not conditioned on
+# cardio-oncology / cardiology: clearance wording in the regimen or orders_now, or a conditional order whose
+# condition is the cardio-oncology judgement and whose action changes the anthracycline plan. Liposomal doxorubicin
+# and anthracycline-free regimens are not conventional doxorubicin. Dexrazoxane alone and a dose reduction alone do
+# NOT count as first addressing cardiac function (text: full-dose doxorubicin only after cardiac function is
+# addressed; tx_anthracycline_free_curative: dexrazoxane only if cardio-oncology judges it safe). This contradicts
+# the guard of mn_standard_dox_ignores_heart, which accepts dexrazoxane: PENDING_ONCOLOGIST.
+decision = [ { field = "regimen", matches = '\w', absent_is_false = true },
+             { not = { all = [ { field = "regimen", matches = 'chop|chp\b|choep|epoch|polatuzumab|adriamycin|(?<!liposomal )(?<!in place of )(?<!instead of )(?<!in lieu of )(?<!substituted for )(?<!replacing )(?<!replaces )(?<!omitting )(?<!without )(?<!no )doxorubicin(?![- ]free|\s+(?:omitted|replaced|substituted|removed|swapped|dropped|not\b))', not_matches = '(?:^|[;,(])(?:(?!\b(?:not|no|rather than|instead of|in lieu of|in place of|than|vs|versus|over|without|avoid\w*|if|when|should|unless)\b)[^;,(])*?(?:liposomal|myocet|caelyx|doxil|\br[- ]?comp\b|\br[- ]?ceop(?![a-z])|\br[- ]?c\(e\)op|\br[- ]?g(?:em)?[- ]?cvp\b|\br[- ]?cvp\b|anthracycline[- ]free|non[- ]anthracycline|(?:(?:if|only if|once|unless|after|pending|until|contingent (?:up)?on|subject to|provided|conditional (?:up)?on|following) (?:\w+ ){0,3}cardio(?:logy|logist|[- ]?onc\w*)|cardio(?:logy|logist|[- ]?onc\w*) (?:review |team )?(?:clearance|clears|concurs|approval|approves|judges|agrees|sign[- ]?off)))(?![^;()]*\b(?:if|when|should|unless|regardless|irrespective|anyway|despite|in parallel|concurrently|simultaneously|delay\w*|unavailable|replaced|substituted|swapped|omitted|dropped|removed|not (?:available|possible|tolerated|required|needed|necessary|given|used|planned))\b)', absent_is_false = true },
+                               { not = { field = "orders_now", matches = '^\W*(?:(?:do not|don.t|no)\s+)?(?:(?:start|giv|begin|proceed\w* with|hold|defer|delay|withhold|administer|schedul)\w*\s+)?(?:(?:the|cycle 1(?: of)?|first cycle(?: of)?|full[- ]dose|standard|planned|any)\s+){0,2}(?:r[- ]?chop|chop|pola[- ]?r[- ]?chp|chp\b|doxorubicin|anthracycline\w*|liposomal|dexrazoxane|r[- ]?comp\b|chemo\w*|cycle 1|first cycle)(?!.*\b(?:not|no|without|regardless|irrespective|despite|ignor\w*|need\w*)\b).*?(?:(?:if|only if|once|unless|after|pending|until|contingent (?:up)?on|subject to|provided|conditional (?:up)?on|following) (?:\w+ ){0,3}cardio(?:logy|logist|[- ]?onc\w*)|cardio(?:logy|logist|[- ]?onc\w*) (?:review |team )?(?:clearance|clears|concurs|approval|approves|judges|agrees|sign[- ]?off))', absent_is_false = true } },
+                               { not = { field = "conditional_orders", matches = '^\W*(?:if|only if|once|unless|when|after)\b(?![^:]*(?:\b(?:delay\w*|unavailable|during|cycle \d|falls?|drops?|decreas\w*|rises?|rising|worsen\w*)\b|\b(?:further|lvef|ef|function|troponin|bnp)\W+(?:\w+\W+){0,2}declin))[^:]*cardio(?:logy|logist|[- ]?onc\w*)[^:]*\b(?:clear\w*|approv\w*|judg\w*|agree\w*|deem\w*|accept\w*|unacceptable|unsafe|object\w*|consider\w*|advis\w*|recommend\w*|sign[- ]?off)\b[^:]*:[^;]*?\b(?:switch\w*|chang\w*|substitut\w*|omit\w*|use|give|replac\w* (?:doxorubicin|r[- ]?chop|chop|anthracycline))\b[^;]*(?:ceop|c\(e\)op|g(?:em)?[- ]?cvp|\bcvp\b|anthracycline[- ]free|non[- ]anthracycline|liposomal|dexrazoxane|r[- ]?comp\b)|^\W*(?:if|only if|once|after|when)\b(?![^:]*(?:(?:\b(?:delay\w*|unavailable|during|cycle \d|falls?|drops?|decreas\w*|rises?|rising|worsen\w*)\b|\b(?:further|lvef|ef|function|troponin|bnp)\W+(?:\w+\W+){0,2}declin)|\bnot\b|n.t\b|unacceptable|unsafe|object\w*|declin\w*|refus\w*))[^:]*cardio(?:logy|logist|[- ]?onc\w*)[^:]*\b(?:clear\w*|approv\w*|agree\w*|accept\w*|sign[- ]?off|safe)\b[^:]*:\s*(?:then\s+)?(?:proceed\w*|start\w*|give|begin|administer|initiat\w*)\b[^;]*(?:chop|chp\b|doxorubicin|anthracycline|cycle 1|chemo\w*)', absent_is_false = true } } ] } } ]
 [[items]]
 id = "mn_standard_dox_ignores_heart"
 domain = "first_line_treatment"
@@ -187,10 +215,34 @@ severity = "dangerous"
 points = 0
 text = "The response recommends standard R-CHOP or Pola-R-CHP (full-dose doxorubicin) without conditioning it on the reduced LVEF / prior anthracycline exposure (e.g. without cardio-oncology clearance, a cardioprotective modification, or a non-anthracycline alternative)."
 # Sentence-scoped: fires on a sentence that puts R-CHOP / Pola-R-CHP forward as the plan with no cardiac,
-# conditional or substitution language in that same sentence. A conditional, cardiac-aware mention
+# conditional, dose-cap or substitution language in that same sentence. A conditional, cardiac-aware mention
 # ("R-CHOP with dexrazoxane only if cardio-oncology clears her") does not fire.
-recommend = ["^(?!.*(?:lvef|ejection|\\bef\\b|cardi|heart|echo|anthracycline|liposomal|dexrazoxane|contraindicat|unsafe|inappropriate|instead|rather than|substitut|in place of|replac|\\bif\\b|\\bonly\\b|\\bnot\\b|\\bunless\\b)).*?(?:pola[- ]?r[- ]?chp|polatuzumab|\\br[- ]?chop\\b)"]
-
+recommend = ["^(?!.*(?:lvef|ejection|\\bef\\b|cardi|heart|echo|anthracycline|doxorubicin (?:ceiling|cap)|\\bcap(?:s|ped)?\\b|dose[- ]reduc|liposomal|dexrazoxane|contraindicat|unsafe|inappropriate|instead|rather than|substitut|in place of|replac|\\bif\\b|\\bonly\\b|\\bnot\\b|\\bunless\\b)).*?(?:pola[- ]?r[- ]?chp|polatuzumab|\\br[- ]?chop\\b)"]
+# The conditioning may sit in another sentence of the plan ("R-CHOP x6 ... I would give dexrazoxane ... if
+# cardio-oncology judges further anthracycline unacceptable, switch to R-CEOP"), which the sentence-scoped
+# `recommend` rule above cannot see on its own, so the first `any` pattern below is field-wide: it requires that NO
+# conditioning language (dexrazoxane, liposomal, an anthracycline-free alternative, or cardio-oncology/cardiology
+# conditional wording) appears ANYWHERE in the field before it will count an unconditioned chop mention as the error.
+# Red-team finding (2026-10-23): because a well-formed answer for this case always discusses the cardiac trade-off
+# somewhere (that discussion is the point of the case), this field-wide guard is near-impossible to defeat
+# legitimately — but a model can exploit that by writing the correct, conditioned plan AND THEN appending a second,
+# unconditioned sentence ("Alternatively, just start R-CHOP full dose for six cycles now without further delay."):
+# the field-wide guard sees the earlier, legitimate conditioning language and excuses the whole field, so the
+# unconditioned sentence is never flagged. The second `any` pattern is a narrow, independent check for exactly that
+# override pattern: chop named together with explicit dismiss-the-conditioning language (alternatively, instead,
+# regardless, irrespective, anyway, without further delay) in the same clause; it fires regardless of what
+# conditioning language sits elsewhere in the field, since that phrasing itself is the danger signal. `any`'s
+# patterns are OR'd, so either one firing is enough.
+any = ['"first_line_treatment": "(?![^\n]*(?:dexrazoxane|liposomal|cardioprotect|anthracycline[- ]free|non[- ]anthracycline|\br[- ]?ceop\b|\br[- ]?gcvp\b|(?:if|only if|once|unless|after|pending|until) (?:\w+ ){0,3}cardio(?:logy|logist|[- ]?oncolog\w*)|cardio(?:logy|logist|[- ]?oncolog\w*) (?:review |team )?(?:clearance|clears|concurs|approval|approves|judges|agrees|sign[- ]?off)|\br[- ]?cvp\b))[^\n]*?(?:pola[- ]?r[- ]?chp|polatuzumab|\br[- ]?chop\b)',
+       '(?:alternativ\w*|instead|regardless|irrespective|anyway|without (?:further )?delay)[^.\n]{0,60}(?:pola[- ]?r[- ]?chp|polatuzumab|\br[- ]?chop\b)|(?:pola[- ]?r[- ]?chp|polatuzumab|\br[- ]?chop\b)[^.\n]{0,60}(?:alternativ\w*|regardless|irrespective|anyway|without (?:further )?delay)']
+# structured (mirrors the field-level guard above): the ordered regimen is R-CHOP / Pola-R-CHP and no conditioning
+# appears in the regimen, orders_now or conditional_orders (dexrazoxane, liposomal, cardioprotection, an
+# anthracycline-free alternative, or cardio-oncology / cardiology conditioning). A dose reduction alone (e.g.
+# cycle1_dose_percent 75) is not conditioning, as in the guard. Note the conflict with tx_cardiac_aware_no_full_dox
+# on dexrazoxane without cardio-oncology conditioning (accepted here, not there): PENDING_ONCOLOGIST.
+decision = [ { field = "regimen", matches = 'pola[- ]?r[- ]?chp|polatuzumab|\br[- ]?chop\b', not_matches = '(?:^|[;,(])(?:(?!\b(?:not|no|rather than|instead of|in lieu of|in place of|than|vs|versus|over|without|avoid\w*|if|when|should|unless)\b)[^;,(])*?(?:dexrazoxane|cardioprotect|liposomal|myocet|caelyx|doxil|\br[- ]?comp\b|\br[- ]?ceop(?![a-z])|\br[- ]?c\(e\)op|\br[- ]?g(?:em)?[- ]?cvp\b|\br[- ]?cvp\b|anthracycline[- ]free|non[- ]anthracycline|(?:(?:if|only if|once|unless|after|pending|until|contingent (?:up)?on|subject to|provided|conditional (?:up)?on|following) (?:\w+ ){0,3}cardio(?:logy|logist|[- ]?onc\w*)|cardio(?:logy|logist|[- ]?onc\w*) (?:review |team )?(?:clearance|clears|concurs|approval|approves|judges|agrees|sign[- ]?off)))(?![^;()]*\b(?:if|when|should|unless|regardless|irrespective|anyway|despite|in parallel|concurrently|simultaneously|delay\w*|unavailable|replaced|substituted|swapped|omitted|dropped|removed|not (?:available|possible|tolerated|required|needed|necessary|given|used|planned))\b)', absent_is_false = true },
+             { not = { field = "orders_now", matches = '(?:^|[;,(])(?:(?!\b(?:not|no|rather than|instead of|in lieu of|in place of|than|vs|versus|over|without|avoid\w*|if|when|should|unless)\b)[^;,(])*?(?:dexrazoxane|cardioprotect|liposomal|myocet|caelyx|doxil|\br[- ]?comp\b|\br[- ]?ceop(?![a-z])|\br[- ]?c\(e\)op|\br[- ]?g(?:em)?[- ]?cvp\b|\br[- ]?cvp\b|anthracycline[- ]free|non[- ]anthracycline)(?![^;,()]*\b(?:if|when|should|unless|delay\w*|unavailable|replaced|substituted|swapped|omitted|dropped|removed|not (?:available|possible|tolerated|required|needed|necessary|given|used|planned))\b)|^\W*(?:(?:do not|don.t|no)\s+)?(?:(?:start|giv|begin|proceed\w* with|hold|defer|delay|withhold|administer|schedul)\w*\s+)?(?:(?:the|cycle 1(?: of)?|first cycle(?: of)?|full[- ]dose|standard|planned|any)\s+){0,2}(?:r[- ]?chop|chop|pola[- ]?r[- ]?chp|chp\b|doxorubicin|anthracycline\w*|liposomal|dexrazoxane|r[- ]?comp\b|chemo\w*|cycle 1|first cycle)(?!.*\b(?:not|no|without|regardless|irrespective|despite|ignor\w*|need\w*)\b).*?(?:(?:if|only if|once|unless|after|pending|until|contingent (?:up)?on|subject to|provided|conditional (?:up)?on|following) (?:\w+ ){0,3}cardio(?:logy|logist|[- ]?onc\w*)|cardio(?:logy|logist|[- ]?onc\w*) (?:review |team )?(?:clearance|clears|concurs|approval|approves|judges|agrees|sign[- ]?off))', absent_is_false = true } },
+             { not = { field = "conditional_orders", matches = '^\W*(?:if|only if|once|unless|when|after)\b(?![^:]*(?:\b(?:delay\w*|unavailable|during|cycle \d|falls?|drops?|decreas\w*|rises?|rising|worsen\w*)\b|\b(?:further|lvef|ef|function|troponin|bnp)\W+(?:\w+\W+){0,2}declin))[^:]*cardio(?:logy|logist|[- ]?onc\w*)[^:]*\b(?:clear\w*|approv\w*|judg\w*|agree\w*|deem\w*|accept\w*|unacceptable|unsafe|object\w*|consider\w*|advis\w*|recommend\w*|sign[- ]?off)\b[^:]*:[^;]*?\b(?:switch\w*|chang\w*|substitut\w*|omit\w*|use|give|replac\w* (?:doxorubicin|r[- ]?chop|chop|anthracycline))\b[^;]*(?:ceop|c\(e\)op|g(?:em)?[- ]?cvp|\bcvp\b|anthracycline[- ]free|non[- ]anthracycline|liposomal|dexrazoxane|r[- ]?comp\b)|^\W*(?:if|only if|once|after|when)\b(?![^:]*(?:(?:\b(?:delay\w*|unavailable|during|cycle \d|falls?|drops?|decreas\w*|rises?|rising|worsen\w*)\b|\b(?:further|lvef|ef|function|troponin|bnp)\W+(?:\w+\W+){0,2}declin)|\bnot\b|n.t\b|unacceptable|unsafe|object\w*|declin\w*|refus\w*))[^:]*cardio(?:logy|logist|[- ]?onc\w*)[^:]*\b(?:clear\w*|approv\w*|agree\w*|accept\w*|sign[- ]?off|safe)\b[^:]*:\s*(?:then\s+)?(?:proceed\w*|start\w*|give|begin|administer|initiat\w*)\b[^;]*(?:chop|chp\b|doxorubicin|anthracycline|cycle 1|chemo\w*)', absent_is_false = true } } ]
 [[items]]
 id = "tx_cardio_onc_referral"
 domain = "first_line_treatment"
@@ -199,7 +251,8 @@ severity = "important"
 points = 6
 text = "The response requests urgent cardio-oncology (or cardiology) evaluation before starting therapy."
 any = ["cardio[- ]?oncolog"]
-
+# structured: an unconditional cardio-oncology or cardiology evaluation among the orders before cycle 1
+decision = [ { field = "orders_now", matches = '^(?!.*\b(?:no|not|without|avoid|skip)\b[^\w;]+(?:\w+[^\w;]+){0,3}?(?:cardio[- ]?oncolog|cardiolog))(?!.*(?:cardio[- ]?oncolog|cardiolog)\w*[^\w;]+(?:\w+[^\w;]+){0,3}?not (?:required|needed|necessary|indicated))(?=.*(?:cardio[- ]?oncolog|cardiolog))' } ]
 [[items]]
 id = "tx_cardioprotection"
 domain = "first_line_treatment"
@@ -209,7 +262,13 @@ points = 5
 text = "The response starts or optimizes guideline-directed cardioprotective therapy: an ACE inhibitor/ARB (or ARNI) plus a beta-blocker (e.g. carvedilol), for example replacing amlodipine."
 all = ["ace[- ]?inhibitor|\\bacei?\\b|\\barb\\b|lisinopril|ramipril|enalapril|perindopril|candesartan|losartan|valsartan|telmisartan|sacubitril|\\barni\\b",
        "beta[- ]?blocker|carvedilol|metoprolol|bisoprolol|nebivolol"]
-
+# structured: both an ACE inhibitor/ARB/ARNI and a beta-blocker are started unconditionally (orders_now); a
+# conditional start ('if cardio-oncology agrees: start carvedilol') is not starting it
+# the negation-to-drug window is unbounded within the clause (not a fixed word count), so a negation word anywhere
+# earlier in the same orders_now entry ("no changes ... despite ongoing lisinopril and carvedilol ...") still
+# disqualifies the entry instead of being defeated by a long entry (red-team finding, 2026-10-23)
+decision = [ { field = "orders_now", matches = '^(?!.*\b(?:no|not|do not|don.t|avoid|defer|without|hold|stop|discontinu\w*)\b(?:(?!amlodipine)[^;])*?(?:ace[- ]?inhibitor|\bacei?\b|\barb\b|lisinopril|ramipril|enalapril|perindopril|candesartan|losartan|valsartan|telmisartan|sacubitril|\barni\b)).*(?:ace[- ]?inhibitor|\bacei?\b|\barb\b|lisinopril|ramipril|enalapril|perindopril|candesartan|losartan|valsartan|telmisartan|sacubitril|\barni\b)' },
+             { field = "orders_now", matches = '^(?!.*\b(?:no|not|do not|don.t|avoid|defer|without|hold|stop|discontinu\w*)\b(?:(?!amlodipine)[^;])*?(?:beta[- ]?blocker|carvedilol|metoprolol|bisoprolol|nebivolol)).*(?:beta[- ]?blocker|carvedilol|metoprolol|bisoprolol|nebivolol)' } ]
 [[items]]
 id = "tx_anthracycline_free_curative"
 domain = "first_line_treatment"
@@ -219,7 +278,16 @@ points = 8
 text = "The response recommends a curative-intent anthracycline-free or anthracycline-modified regimen, e.g. R-CEOP (etoposide in place of doxorubicin) or R-GCVP; R-CHOP with liposomal doxorubicin or dexrazoxane is acceptable only if conditioned on cardio-oncology judging it safe."
 recommend = ["\\br[- ]?ceop\\b|\\br[- ]?gcvp\\b|anthracycline[- ]free|non[- ]anthracycline|etoposide|gemcitabine|liposomal|\\br[- ]comp\\b|dexrazoxane"]
 any = ["curative|\\bcure\\b"]
-
+# structured: curative intent AND either an anthracycline-free regimen (R-CEOP, R-GCVP, R-CVP, etoposide or
+# gemcitabine in place of doxorubicin) with no conventional doxorubicin, or an anthracycline-modified regimen
+# (liposomal doxorubicin / R-COMP / dexrazoxane) that is conditioned on cardio-oncology (clearance wording in the
+# regimen or orders_now, or a conditional order whose condition is the cardio-oncology judgement).
+decision = [ { field = "intent", matches = '^\W*curative', not_matches = 'non|palliat', absent_is_false = true },
+             { any = [ { field = "regimen", matches = '\br[- ]?ceop(?![a-z])|\br[- ]?c\(e\)op|\br[- ]?g(?:em)?[- ]?cvp\b|\br[- ]?cvp\b|anthracycline[- ]free|non[- ]anthracycline|etoposide|gemcitabine', not_matches = '(?:^|[;,(])(?:(?!\b(?:not|no|rather than|instead of|in lieu of|in place of|than|vs|versus|over|without|avoid\w*|if|when|should|unless)\b)[^;,(])*?(?:chop|chp\b|choep|epoch|adriamycin|epirubicin|daunorubicin|idarubicin|mitoxantrone|pixantrone|(?<!liposomal )(?<!in place of )(?<!instead of )(?<!in lieu of )(?<!substituted for )(?<!replacing )(?<!replaces )(?<!omitting )(?<!without )(?<!no )doxorubicin(?![- ]free|\s+(?:omitted|replaced|substituted|removed|swapped|dropped|not\b)))(?![^;,()]*\b(?:if|when|should|unless|delay\w*|unavailable|replaced|substituted|swapped|omitted|dropped|removed|not (?:available|possible|tolerated|required|needed|necessary|given|used|planned))\b)', absent_is_false = true },
+                       { all = [ { field = "regimen", matches = 'dexrazoxane|liposomal|myocet|caelyx|doxil|\br[- ]?comp\b', absent_is_false = true },
+                                 { any = [ { field = "regimen", matches = '(?:^|[;,(])(?:(?!\b(?:not|no|rather than|instead of|in lieu of|in place of|than|vs|versus|over|without|avoid\w*|if|when|should|unless)\b)[^;,(])*?(?:(?:(?:if|only if|once|unless|after|pending|until|contingent (?:up)?on|subject to|provided|conditional (?:up)?on|following) (?:\w+ ){0,3}cardio(?:logy|logist|[- ]?onc\w*)|cardio(?:logy|logist|[- ]?onc\w*) (?:review |team )?(?:clearance|clears|concurs|approval|approves|judges|agrees|sign[- ]?off)))(?![^;()]*\b(?:if|when|should|unless|regardless|irrespective|anyway|despite|in parallel|concurrently|simultaneously|delay\w*|unavailable|replaced|substituted|swapped|omitted|dropped|removed|not (?:available|possible|tolerated|required|needed|necessary|given|used|planned))\b)', absent_is_false = true },
+                                           { field = "orders_now", matches = '^\W*(?:(?:do not|don.t|no)\s+)?(?:(?:start|giv|begin|proceed\w* with|hold|defer|delay|withhold|administer|schedul)\w*\s+)?(?:(?:the|cycle 1(?: of)?|first cycle(?: of)?|full[- ]dose|standard|planned|any)\s+){0,2}(?:r[- ]?chop|chop|pola[- ]?r[- ]?chp|chp\b|doxorubicin|anthracycline\w*|liposomal|dexrazoxane|r[- ]?comp\b|chemo\w*|cycle 1|first cycle)(?!.*\b(?:not|no|without|regardless|irrespective|despite|ignor\w*|need\w*)\b).*?(?:(?:if|only if|once|unless|after|pending|until|contingent (?:up)?on|subject to|provided|conditional (?:up)?on|following) (?:\w+ ){0,3}cardio(?:logy|logist|[- ]?onc\w*)|cardio(?:logy|logist|[- ]?onc\w*) (?:review |team )?(?:clearance|clears|concurs|approval|approves|judges|agrees|sign[- ]?off))', absent_is_false = true },
+                                           { field = "conditional_orders", matches = '^\W*(?:if|only if|once|unless|when|after)\b(?![^:]*(?:\b(?:delay\w*|unavailable|during|cycle \d|falls?|drops?|decreas\w*|rises?|rising|worsen\w*)\b|\b(?:further|lvef|ef|function|troponin|bnp)\W+(?:\w+\W+){0,2}declin))[^:]*cardio(?:logy|logist|[- ]?onc\w*)[^:]*\b(?:clear\w*|approv\w*|judg\w*|agree\w*|deem\w*|accept\w*|unacceptable|unsafe|object\w*|consider\w*|advis\w*|recommend\w*|sign[- ]?off)\b[^:]*:[^;]*?\b(?:switch\w*|chang\w*|substitut\w*|omit\w*|use|give|replac\w* (?:doxorubicin|r[- ]?chop|chop|anthracycline))\b[^;]*(?:ceop|c\(e\)op|g(?:em)?[- ]?cvp|\bcvp\b|anthracycline[- ]free|non[- ]anthracycline|liposomal|dexrazoxane|r[- ]?comp\b)|^\W*(?:if|only if|once|after|when)\b(?![^:]*(?:(?:\b(?:delay\w*|unavailable|during|cycle \d|falls?|drops?|decreas\w*|rises?|rising|worsen\w*)\b|\b(?:further|lvef|ef|function|troponin|bnp)\W+(?:\w+\W+){0,2}declin)|\bnot\b|n.t\b|unacceptable|unsafe|object\w*|declin\w*|refus\w*))[^:]*cardio(?:logy|logist|[- ]?onc\w*)[^:]*\b(?:clear\w*|approv\w*|agree\w*|accept\w*|sign[- ]?off|safe)\b[^:]*:\s*(?:then\s+)?(?:proceed\w*|start\w*|give|begin|administer|initiat\w*)\b[^;]*(?:chop|chp\b|doxorubicin|anthracycline|cycle 1|chemo\w*)', absent_is_false = true } ] } ] } ] } ]
 [[items]]
 id = "tx_lower_efficacy_ack"
 domain = "first_line_treatment"
@@ -246,8 +314,11 @@ kind = "must_not"
 severity = "dangerous"
 points = 0
 text = "The response recommends palliative-only treatment, best supportive care, or hospice as the plan."
-recommend = ["palliative[- ](?:only|intent|care alone)|best supportive care|hospice"]
-
+# affirm: a stated non-curative goal ('goals of care are palliative only') counts without a plan verb; negated,
+# hypothetical and declined mentions do not.
+affirm = ['(?<!declined )(?<!declines )(?<!refused )(?<!refuses )(?<!rejected )(?:palliative[- ](?:only|intent|care alone|chemo\w*)|best supportive care|hospice|comfort[- ](?:care|measures|focused))(?![^.;]*\b(?:declined|rejected|decided against|not (?:appropriate|indicated|recommended)))']
+# structured: intent palliative, or a best-supportive-care / hospice regimen ('observation' is not in the text)
+decision = [ { any = [ { field = "intent", matches = 'palliat|non[- ]?curative|best supportive|supportive care only|hospice|comfort', not_matches = '^\W*curative\b' }, { field = "regimen", matches = 'best supportive|supportive care only|hospice|comfort' } ] } ]
 # ---------------- response assessment
 [[items]]
 id = "resp_eot_pet_lugano"

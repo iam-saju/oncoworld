@@ -1,0 +1,100 @@
+{
+ "id": "journey_sample_haiku__rXWbHu4__L4",
+ "model": "claude-haiku-5-5",
+ "task": "dlbcl_0003_journey_v2_fhir",
+ "layer": "L4",
+ "rubric": "cases_src/dlbcl_0003_journey/L4_rubric.toml",
+ "answer_path": "jobs/journey_sample_haiku/dlbcl_0003_journey_v2_fhir__rXWbHu4/steps/L4-acute-admission/verifier/final_answer.json",
+ "context": "Journey stage L4 (2027-07-07), same patient later in the disease course.\nINTERVAL HISTORY: WHAT ACTUALLY HAPPENED (2027-05-12 to 2027-07-07)\n\n- Referred to the cellular therapy center. Leukapheresis 2027-05-27. Bridging: dexamethasone pulse and\n  radiotherapy to the retroperitoneal mass (20 Gy in 5 fractions).\n- Lymphodepletion fludarabine/cyclophosphamide 2027-06-26 to 06-28.\n- Axicabtagene ciloleucel infused 2027-07-01 (day 0).\n- Day 2: fever 38.6 C, normotensive, no oxygen (CRS grade 1). Day 3: tocilizumab 8 mg/kg x1; fever resolved.\n- Prophylaxis: levetiracetam 500 mg twice daily since day 0, acyclovir, fluconazole. Atovaquone for\n  Pneumocystis prophylaxis is planned (sulfonamide allergy).\n\nRAPID RESPONSE NOTE, DAY +6 (2027-07-07, 06:40), cellular therapy unit\n\nOvernight the nurse noted new confusion. This morning he reports a severe headache and has vomited twice.\nHis wife says he could not find words for objects last night and his handwriting \"looks strange\".\n\nVitals: T 38.9 C, HR 112, BP 96/58 (baseline 124/76), RR 22, SpO2 95% on room air.\nNeuro: GCS 13 (E3 V4 M6). Oriented to person only. ICE score 2/10 (not oriented to year, month, city or\nhospital; names 1 of 3 objects; follows commands; cannot write a standard sentence; cannot count backwards\nfrom 100 by 10). No focal limb weakness. Pupils equal and\nreactive. No neck stiffness. No witnessed seizure activity. Mild tremor of both hands.\nChest clear. Abdomen soft. Central line site clean.\n\nCurrent medications: levetiracetam 500 mg BID, acyclovir 400 mg BID, fluconazole 400 mg daily,\ninsulin correction scale, ondansetron PRN, pantoprazole.\n\nLabs 05:30:\n  WBC 0.4 x10^3/uL (ANC 0.2), Hb 8.6 g/dL, platelets 44 x10^3/uL\n  Na 131 mmol/L, K 3.6, creatinine 1.2 mg/dL, glucose 242 mg/dL\n  CRP 214 mg/L (<5), ferritin 4,820 ng/mL (30-400)\n  INR 1.3, fibrinogen 210 mg/dL (200-400)\n  Lactate 2.6 mmol/L (0.5-2.0)\n\nQuestions: What do you consider first (immediate priorities)? | What are your differential diagnoses? | How do you investigate?",
+ "answer": {
+  "q1": "Immediate priorities, in order, with the patient moved to a higher level of care now (ICU or step-down with 1:1 or 1:2 nursing). (1) Neuroprotection and airway: he is confused, has vomited twice and has an ICE score of 2/10. He is at risk of aspiration and of further decline. Neuro checks with ICE and GCS every hour, strict NPO while vomiting, head of bed 30 degrees, seizure precautions, and a low threshold for airway protection (intubation if GCS 8 or below, or if he cannot protect the airway). (2) Exclude intracranial haemorrhage and non-convulsive status before anything else on the neurology side: STAT non-contrast CT head. He has platelets 44, INR 1.3, a severe headache and vomiting, so haemorrhage or raised intracranial pressure must be excluded at once. Transfuse platelets to at least 50 before any lumbar puncture. (3) Treat possible sepsis as febrile neutropenia until proven otherwise (ANC 0.2, T 38.9, HR 112, BP 96/58, lactate 2.6, CRP 214). Take two blood cultures (one peripheral, one from the central line) without delaying antibiotics, then start empirical meropenem within the hour; add vancomycin because of the central line and haemodynamic change. Meropenem rather than cefepime, because cefepime can cause encephalopathy that confounds the neurological picture. Give a 500 mL crystalloid bolus and reassess, avoiding overload given that capillary leak can accompany CRS. (4) Treat the possible infectious encephalitis empirically: stop prophylactic-dose acyclovir and start treatment-dose IV acyclovir (about 10 mg/kg every 8 hours, adjusted for creatinine 1.2 and weight 74 kg; estimated creatinine clearance about 60 mL/min) until HSV and VZV PCR are negative. Breakthrough fever on fluconazole with profound neutropenia needs an empirical echinocandin, micafungin, changed to liposomal amphotericin if imaging shows a CNS lesion or fungal concern. (5) Treat the likely ICANS: after CT head excludes haemorrhage, start dexamethasone 10 mg IV every 6 hours. Do not wait for MRI or LP to start it. Continue levetiracetam 500 mg twice daily, increase to 1000 mg twice daily if seizures or EEG activity appear. Anakinra is the second-line option if there is no improvement in 24 to 48 hours. Tocilizumab is not an ICANS treatment (poor CNS penetration) and should be used only if CRS progresses to grade 2 or above, and then with caution because it blunts fever and CRP. (6) Supportive care: transfuse red cells to haemoglobin above 7 g/dL (irradiated, leukoreduced); start atovaquone now, as it was planned but not yet given; switch the insulin correction scale to basal plus correction insulin for glucose 242 on dexamethasone; check sodium and osmolality for hyponatraemia 131; and inform the cellular therapy team, neurology and infectious diseases today. Capacity is now doubtful, so involve his wife in decisions and document the discussion.",
+  "q2": "Ranked differential. (1) ICANS, grade 3 by ASTCT grading (ICE 2/10 falls in the 0 to 2 band, with GCS 13 and altered consciousness). Timing (day +6), word-finding difficulty, handwriting change, tremor and confusion are typical of axi-cel neurotoxicity. Headache and vomiting raise concern for cerebral oedema, so ICANS is a diagnosis of exclusion until imaging and infection are dealt with. (2) Infection with CNS involvement, which can coexist with ICANS. Neutropenic bacteraemia or meningitis (febrile, ANC 0.2, central line, CRP 214); HSV or VZV encephalitis despite prophylactic acyclovir; fungal CNS infection (breakthrough on fluconazole, which does not cover moulds); cryptococcal or Listeria meningitis; and HHV-6 encephalitis, which is recognised after cellular therapy. (3) Intracranial haemorrhage: platelets 44 and INR 1.3 with headache and vomiting. This must be excluded first. (4) Non-convulsive status epilepticus or subclinical seizures: aphasia and confusion can be the only signs, and he is on levetiracetam prophylaxis that may be incomplete. (5) Progression of CRS, or early immune effector cell-associated HLH. He has fever, tachycardia, borderline hypotension, ferritin 4820 (rising from earlier in the admission), CRP 214 and cytopenias. Fibrinogen 210 is not yet consumed. Tocilizumab on day 3 may have blunted the response. (6) Cerebral or systemic transplant-associated thrombotic microangiopathy: falling platelets and haemoglobin after cellular therapy with encephalopathy. Creatinine is 1.2, which is reassuring, but a smear and LDH are needed. (7) Metabolic and drug causes: hyponatraemia 131, glucose 242, unknown calcium, ammonia and liver function, fludarabine or other neurotoxicity (unlikely at standard lymphodepletion doses), and azole or other drug effects. (8) Ischaemic stroke or septic emboli (aphasia and tremor with sepsis physiology, and endocarditis if line-associated bacteraemia). There is no focal weakness, so this is less likely but must be imaged. (9) CNS lymphoma relapse: his CNS-IPI was high and he has progressive systemic disease, but the 2026 MRI and CSF were negative and acute onset of this kind is uncommon. (10) PML: possible after prior rituximab, but its usual course is subacute, so it is less likely over one day. Working diagnosis: ICANS grade 3 with a concurrent febrile neutropenic sepsis, until infection and haemorrhage are excluded.",
+  "q3": "Investigations, in order of urgency. Immediately (within the hour): STAT non-contrast CT head to exclude haemorrhage, mass effect and oedema; continuous EEG to detect non-convulsive status and subclinical seizures; two blood culture sets (peripheral and central line) before antibiotics; CBC with differential and blood film for schistocytes; repeat lactate and venous gas; chemistry panel including calcium, magnesium, phosphate, liver tests, LDH, haptoglobin, uric acid, glucose and serum osmolality; ammonia; ECG for QTc (fluconazole, ondansetron, and possible CRS-related arrhythmia); chest X-ray; urinalysis and urine culture; respiratory viral PCR and SARS-CoV-2; procalcitonin. Within 24 hours: MRI brain with and without gadolinium, with DWI, FLAIR and SWI, to assess infection, lymphoma, PML, stroke, haemorrhage and oedema; the MRI is not a reason to delay dexamethasone or antibiotics. Serum cryptococcal antigen, beta-D-glucan, galactomannan, CMV, EBV and HHV-6 PCR in blood; triglycerides and fibrinogen trend; ferritin and CRP trend; and a formal ICANS grade and ICE score every shift. Lumbar puncture once platelets are at least 50 and imaging excludes mass effect: opening pressure, cell count, protein, glucose, Gram stain and culture, fungal culture, cryptococcal antigen, HSV 1 and 2, VZV, HHV-6, CMV and EBV PCR, JC virus PCR, a meningitis and encephalitis multiplex panel, and cytology with flow cytometry for lymphoma. If the CSF is negative but the picture stays unexplained, repeat MRI spine or consider brain biopsy only if a lesion emerges that could change management. Tests to avoid or defer: serum cortisol after recent dexamethasone is uninterpretable. Interpret results as follows. Haemorrhage or mass effect: neurosurgery and platelet and INR correction. Positive HSV or VZV: continue treatment-dose acyclovir for 14 to 21 days. Bacterial or fungal growth: targeted therapy in discussion with infectious diseases. EEG seizures: increase levetiracetam and consider benzodiazepines or other antiseizure therapy. TMA on smear with low haptoglobin: complement and TMA workup. Ferritin still rising with fibrinogen falling: IEC-HS criteria and anakinra. Negative infectious and haemorrhage workup with persistent ICANS: second-line immunomodulation, and a discussion of re-staging for CNS lymphoma only if MRI, CSF or EEG changes."
+ },
+ "items": [
+  {
+   "id": "l4_icans_grade_steroids",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 15,
+   "criterion": "The response recognizes ICANS (ASTCT grade 3: ICE 2/10, GCS 13) and starts corticosteroids (e.g. dexamethasone 10 mg IV every 6 hours) promptly."
+  },
+  {
+   "id": "l4_crs_management",
+   "kind": "must",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response recognizes concurrent CRS (fever with relative hypotension vs baseline, tachycardia, lactate 2.6; grade 1-2 at presentation) and treats it: IV fluid bolus, repeat tocilizumab (dose not exhausted) if hypotension persists, and escalation if refractory; it notes tocilizumab alone does not treat ICANS."
+  },
+  {
+   "id": "l4_neutropenic_sepsis",
+   "kind": "must",
+   "severity": "dangerous",
+   "points": 15,
+   "criterion": "The response treats possible neutropenic sepsis: blood cultures (peripheral and line) and empiric broad-spectrum IV antibiotics (e.g. cefepime or piperacillin-tazobactam) within one hour, without waiting for results."
+  },
+  {
+   "id": "l4_airway_icu_seizure",
+   "kind": "should",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response addresses airway protection/ICU-level monitoring, frequent neuro checks (ICE/GCS), aspiration and seizure precautions, and continuation/optimization of levetiracetam."
+  },
+  {
+   "id": "l4_ddx_cns_relapse",
+   "kind": "must",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The differential includes CNS relapse of lymphoma, given his high CNS-IPI with kidney/adrenal involvement at diagnosis."
+  },
+  {
+   "id": "l4_ddx_infection_bleed",
+   "kind": "must",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The differential includes CNS infection (bacterial meningitis; HSV/HHV-6 encephalitis) and intracranial hemorrhage (platelets 44)."
+  },
+  {
+   "id": "l4_ddx_metabolic_seizure",
+   "kind": "should",
+   "severity": "minor",
+   "points": 5,
+   "criterion": "The differential includes non-convulsive seizures/status and metabolic causes (hyponatremia, hyperglycemia, sepsis-associated encephalopathy, drugs)."
+  },
+  {
+   "id": "l4_ct_then_mri",
+   "kind": "must",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response orders urgent non-contrast CT head (hemorrhage), then MRI brain with contrast."
+  },
+  {
+   "id": "l4_eeg_lp_safe",
+   "kind": "should",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response orders an EEG, and a lumbar puncture only once safe (after imaging; platelets transfused to >=50) with CSF cell count, cultures, HSV/HHV-6 PCR, cytology and flow cytometry."
+  },
+  {
+   "id": "l4_glucose_steroids_diabetes",
+   "kind": "should",
+   "severity": "minor",
+   "points": 5,
+   "criterion": "The response anticipates worsening hyperglycemia from dexamethasone in this diabetic patient (glucose 242) and plans insulin adjustment."
+  },
+  {
+   "id": "l4_mn_lp_unsafe",
+   "kind": "must_not",
+   "severity": "important",
+   "points": 10,
+   "criterion": "The response performs a lumbar puncture immediately, before head imaging or without correcting platelets of 44."
+  },
+  {
+   "id": "l4_mn_withhold_steroids_for_tcell",
+   "kind": "must_not",
+   "severity": "dangerous",
+   "points": 0,
+   "criterion": "The response withholds corticosteroids for ICANS out of concern that they will harm CAR-T efficacy."
+  }
+ ]
+}
