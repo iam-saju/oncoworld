@@ -245,3 +245,18 @@ severity = "important"
 points = 4
 text = "The response refers the patient to a multidisciplinary neuro-oncology/tumor-board review."
 any = ['multidisciplinary|tumor board|\bmdt\b|neuro[- ]oncology']
+
+# added 2026-10-23: the source handout's own Step 1 has a dedicated prognosis question ("What is the prognosis of
+# IMT?") that this case's output schema and rubric had no equivalent for at all - a real gap against the source,
+# not a rubric bug. instruction.md now asks for a `prognosis` field; this item tests the same appropriate
+# epistemic humility the rest of the case rewards (don't commit to specifics an unestablished entity can't
+# support), rather than a specific survival statistic.
+[[items]]
+id = "prog_entity_dependent"
+domain = "prognosis"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response states that prognosis cannot be meaningfully given until the entity and WHO grade are established, and names what it depends on (entity, grade, extent, dissemination)."
+all = ['prognosis',
+       '(?:depend|vary|varies|cannot be (?:given|stated|determined|established|meaningfully)|not (?:yet )?(?:known|established|determinable)|once (?:the )?(?:entity|grade|diagnosis)|until (?:the )?(?:entity|grade|diagnosis))']

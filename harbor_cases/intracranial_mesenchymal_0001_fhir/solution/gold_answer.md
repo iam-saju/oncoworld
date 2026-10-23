@@ -36,6 +36,14 @@ unresectable, metastatic, or recurrent disease. The evidence for solitary fibrou
 largely retrospective, so do not present any regimen as a universal Category 1 standard. Arrange long-term
 serial contrast-enhanced MRI surveillance, with extracranial surveillance as clinically appropriate.
 
+## Prognosis
+
+Cannot be meaningfully stated until the entity and WHO grade are established: outcomes for intracranial
+mesenchymal/sarcomatous neoplasms vary widely by the specific diagnosis, grade, extent of resection, and whether
+there is craniospinal dissemination. A confirmed high-grade sarcoma, or one with leptomeningeal/spinal
+dissemination as suspected here, would carry a substantially worse prognosis than a lower-grade, resectable
+lesion without craniospinal spread. Do not quote a specific survival figure before the diagnosis is confirmed.
+
 ## Missing information
 
 - Definitive histologic entity and WHO grade

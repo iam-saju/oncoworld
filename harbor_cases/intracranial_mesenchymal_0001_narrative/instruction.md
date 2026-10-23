@@ -14,7 +14,10 @@ Read all files under `/app/case/`. Write one JSON object to `/app/final_answer.j
 - `initial_assessment`
 - `diagnostic_confirmation_and_staging`
 - `immediate_management_plan`
+- `prognosis`
 - `missing_information`
 
-All values must be strings except `missing_information`, which must be a list of strings. Give a clinically reasoned
-short-horizon plan, not a list of unsupported treatment options. This is not clinical decision support.
+All values must be strings except `missing_information`, which must be a list of strings. For `prognosis`, state what
+it depends on (the entity, WHO grade, extent, and dissemination) rather than quoting a specific survival figure before
+the diagnosis is confirmed. Give a clinically reasoned short-horizon plan, not a list of unsupported treatment
+options. This is not clinical decision support.
