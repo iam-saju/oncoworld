@@ -83,6 +83,15 @@ _LATE_NEGATION = re.compile(
 _COPULAR_NEGATION = re.compile(r"\b(?:is|are|was|were) not\b|\bisn't\b|\baren't\b|\bnot consistent with\b|\bno evidence of\b|"
                                r"\bdoes not (?:meet|have|fulfil\w*|satisfy|carry)\b|\bnot (?:a|an) (?:case|diagnosis) of\b|"
                                r"\b(?:has|have|had|with) no\b|\bwithout any\b|\bnone of\b")
+# a negator immediately in front of a deferral verb cancels it out ("we should NOT WAIT any longer and will start
+# chemotherapy" = start now), but _NEGATION's own proximity window can't tell a negator attached to WAIT from one
+# attached to the drug name that follows - it just sees a bare "not" somewhere in the last 10 words. Strip the
+# whole negator+verb phrase out of that window before _NEGATION ever sees it (found 2026-10-23, red-teaming
+# intracranial_mesenchymal_0001's mn_unsupported_regimen; that case's own except-list got a narrower, item-scoped
+# version of this same fix first - this is the general one, for every recommend()/affirm() item in every case).
+_DOUBLE_NEGATIVE_DEFER = re.compile(
+    r"\b(?:not|no longer|cannot|can't|won't|will not|should not|shouldn't|isn't|aren't)\s+"
+    r"(?:wait(?:ing)?|await(?:ing)?|delay(?:ing)?|defer(?:ring)?|withh[eo]ld(?:ing)?|hold(?:ing)?(?:\s+off)?|on\s+hold)\b")
 _NON_PREFIX = re.compile(r"\bnon[- ]?$")
 _HEDGE = re.compile(r"\b(?:is defined|are defined|defined as|definition|refers to|by definition|criteria|eligib\w*|"
                     r"(?<!she )(?<!he )(?<!they )(?<!patient )(?<!disease )requires?|"
@@ -204,6 +213,7 @@ def _mentions(text: str, term: str):
         neg_scope = _PRECONDITION.sub("", before, count=1)
         # negation only reaches a short way back: "HBsAg-negative, anti-HBc positive ... start entecavir" is not a denial
         near = " ".join(neg_scope.split()[-10:]) + " " + m.group(0)
+        near = _DOUBLE_NEGATIVE_DEFER.sub(" ", near)
         after_clause = re.split(r"\bbut\b(?! (?:rejected|not|excluded))|\bhowever\b|;", s[m.end():])[0]
         # "non-" negates only the word it is attached to: "non-double-hit" yes, "non-bulky ... R-CHOP" no
         negated = (lead_neg or bool(_NEGATION.search(near)) or bool(_COPULAR_NEGATION.search(neg_scope))
