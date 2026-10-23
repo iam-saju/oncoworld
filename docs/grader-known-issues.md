@@ -58,3 +58,52 @@ confirmed" correctly. No safe fix found with the current primitives.
 **Next step:** likely needs either a per-item hand-verified conversion to `affirm`/`recommend` (reviewed
 individually, since each item's semantics differ) or a new primitive that does sentence-scoped `all` without
 losing the negation check - not a generic find-and-replace across every `all`/`any` item.
+
+## 3. Judge/regex disagreement watchlist (`intracranial_mesenchymal_journey_v1`)
+
+**Found:** 2026-10-24, building `scripts/hybrid_disagreement_report.py` and `scripts/rescore_mesenchymal_trials.py`
+for the hardening plan's item 5. Regex became the grader of record in hybrid mode that same day (see the
+`score()`/`grade()` history, `graders/oncoworld_grader/grader_v2.py`), so none of these can move a score
+anymore - this list exists purely to decide where regex itself is worth tightening next.
+
+The original scope was 5 items spotted live across 3 fresh trials. Running the actual tool against every
+hybrid-mode trial on record (10-13 evaluations per item, not 3) found a materially bigger picture - both
+`chemo_escalation_rationale`/`monitoring` dropped sharply (75% -> 10-20%) once item 4b's `applies_if` fix
+landed (the judge is still asked about an inapplicable item and can still occasionally disagree, which no
+longer costs anything - the residual is an asking-cleanliness question, not a scoring one), but several other
+items turned out to disagree far more often than the original spot-check suggested:
+
+| item | evals | disagree | models | rate |
+|---|---|---|---|---|
+| `mol_access_blood_limitation` | 11 | 6 | 5 | 55% |
+| `chemo_options_entity_pragmatic` | 10 | 5 | 4 | 50% |
+| `tgt_atypical_comutation_pattern` | 10 | 5 | 4 | 50% |
+| `mol_access_tissue_insufficient` | 11 | 3 | 3 | 27% |
+| `mol_not_sufficient_alone` | 11 | 3 | 3 | 27% |
+| `tx_evidence_caveat` | 11 | 3 | 3 | 27% |
+| `tx_surgery_assessment` | 11 | 3 | 3 | 27% |
+| `tx_surveillance` | 11 | 3 | 3 | 27% |
+| `chemo_escalation_rationale` | 10 | 2 | 2 | 20% |
+| `path_stat6_if_sft` | 11 | 2 | 2 | 18% |
+| `sup_symptoms` | 11 | 2 | 2 | 18% |
+| `tgt_bbb_penetration_caveat` | 10 | 2 | 2 | 20% |
+| `chemo_escalation_irinotecan` | 10 | 1 | 1 | 10% |
+| `chemo_escalation_monitoring` | 10 | 1 | 1 | 10% |
+| `tgt_molecular_not_sufficient_alone` | 10 | 1 | 1 | 10% |
+
+(Reproduce with `python3 scripts/rescore_mesenchymal_trials.py "jobs/*mesenchymal_journey*"` - the corrected
+per-item section at the end of its output. `chemo_options_entity_pragmatic` and `tgt_atypical_comutation_pattern`
+were already each widened against real misses earlier the same day - this list is the first time either has
+been quantified rather than fixed one real miss at a time, and both are clearly still an open gap, not a
+closed one.)
+
+**Why not fixed yet:** this is a report, not a diagnosis - each item needs the same per-item treatment every
+other fix in this file got (read the actual disagreeing answers, confirm which side is actually right, widen
+or rebuild only against real evidence). At 4-5 different models disagreeing on the top three, this isn't noise
+to wait out; it's the next thing to actually read.
+
+**Next step:** work down this list same as always - read the real answer text behind each flagged disagreement
+(not just the regex/judge booleans), confirm whether regex or judge is right, fix the rubric if regex is wrong,
+and re-run `rescore_mesenchymal_trials.py` after each fix to confirm the item's rate actually drops. Re-check
+this whole list again once a meaningfully larger batch of trials exists - 10-13 evaluations per item is enough
+to stop treating single disagreements as noise, but still thin for the clean items at the bottom of the table.
