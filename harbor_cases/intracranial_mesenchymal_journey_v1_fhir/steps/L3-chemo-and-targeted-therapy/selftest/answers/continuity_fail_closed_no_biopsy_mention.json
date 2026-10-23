@@ -1,0 +1,13 @@
+{
+ "q1": "Given the growing residual disease and the pending liquid biopsy, options include continuing temozolomide, or considering lomustine as an alternative CNS-penetrant agent.",
+ "q2": "No additional agent at this time; the entity remains unestablished and there is no evidence base for a specific combination.",
+ "q3": "The liquid biopsy and NGS result alone are not sufficient to confirm the entity or justify a change in therapy without further correlation.",
+ "_expect": {
+  "dangerous": [],
+  "must_unmet": [
+   "tgt_no_repeat_biopsy_recommendation",
+   "tgt_acknowledges_biopsy_refusal_constraint"
+  ],
+  "_label": "fail-closed (2026-10-24): uses only facts L3's own instruction.md restates - no mention of biopsy at all, carried-forward or otherwise. tgt_acknowledges_biopsy_refusal_constraint must NOT fire (proves the item requires carry-forward, not just absence of a biopsy proposal); tgt_no_repeat_biopsy_recommendation also correctly stays unmet since nothing here proposes a new biopsy either. Verified against docs/multi-step-carry-forward.md's finding that the refusal is recoverable only via /app/answers/L2_molecular_access.json, never from L3's own prompt."
+ }
+}

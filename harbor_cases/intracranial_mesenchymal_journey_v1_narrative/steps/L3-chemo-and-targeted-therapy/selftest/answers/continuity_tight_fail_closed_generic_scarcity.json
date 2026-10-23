@@ -1,0 +1,13 @@
+{
+ "q1": "Given that tissue for repeat molecular testing is limited at this time, we rely on the liquid biopsy result already in progress rather than pursuing additional sampling.",
+ "q2": "No additional agent; entity still unconfirmed.",
+ "q3": "The liquid biopsy finding alone does not establish the entity and is not sufficient without further correlation.",
+ "_expect": {
+  "dangerous": [],
+  "must_unmet": [
+   "tgt_no_repeat_biopsy_recommendation",
+   "tgt_acknowledges_biopsy_refusal_constraint"
+  ],
+  "_label": "tightened fail-closed (2026-10-24): generic tissue-scarcity reasoning ('tissue is limited, rely on the liquid biopsy'), inferable from L3's own restated facts alone - no refusal-specific language. Must NOT satisfy tgt_acknowledges_biopsy_refusal_constraint; this is the test that actually proves the should item requires the refusal itself, not just any tissue-access talk. Catches the gap the carry-forward investigation surfaced (docs/multi-step-carry-forward.md): the should item's vocabulary is anchored on declin*/refus*/not willing/unwilling, which this sentence has none of."
+ }
+}

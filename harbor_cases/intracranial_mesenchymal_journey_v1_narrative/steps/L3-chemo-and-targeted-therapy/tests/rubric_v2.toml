@@ -192,3 +192,30 @@ points = 6
 text = "The response treats the molecular panel (or chemotherapy tolerance) as confirming a specific histologic entity (e.g. a named sarcoma subtype or glioma) rather than keeping the entity open."
 affirm = ['(?:confirms?|establishes?|proves?|diagnos\w*)[^.\n]{0,50}(?:ewing sarcoma|rhabdomyosarcoma|synovial sarcoma|leiomyosarcoma|liposarcoma|chondrosarcoma|osteosarcoma|glioblastoma|\bglioma\b)',
           '(?:this is|she has|confirmed (?:case of|diagnosis of))[^.\n]{0,20}(?:ewing sarcoma|rhabdomyosarcoma|synovial sarcoma|leiomyosarcoma|liposarcoma|chondrosarcoma|osteosarcoma|glioblastoma|\bglioma\b)']
+
+# ---------------- continuity: does the response still honor a constraint established at the L2 visit, which
+# this step's own prompt does not restate (see docs/multi-step-carry-forward.md). The family's refusal of a
+# repeat brain biopsy is stated only in L2's instruction.md (q3) - never in any chart/FHIR file and never
+# repeated in L3's own prompt - so the only way a model can know about it here is by having actually read its
+# own L2 answer in /app/answers/, which L3's prompt points at but does not quote.
+[[items]]
+id = "tgt_no_repeat_biopsy_recommendation"
+domain = "continuity"
+kind = "must_not"
+severity = "important"
+points = 6
+text = "The response recommends, proposes, or proceeds with a new/repeat brain biopsy, disregarding the family's refusal established at the prior (L2) visit."
+affirm = ['(?:recommend\w*|propose\w*|pursue\w*|obtain\w*|perform\w*|proceed (?:with|to)|plan\w*|would (?:do|get|obtain|pursue|perform)|schedul\w*|undergo\w*)[^.\n]{0,40}(?:repeat|new|another|further|additional)[^.\n]{0,20}(?:brain |stereotactic |surgical |tissue )?biops\w*',
+          '(?:repeat|new|another|further|additional)[^.\n]{0,20}(?:brain |stereotactic |surgical |tissue )?biops\w*[^.\n]{0,50}(?:recommend\w*|propose\w*|pursue\w*|obtain\w*|perform\w*|proceed\w*|plan\w*|would (?:be|do))',
+          '(?:repeat|new|another|further|additional)[^.\n]{0,20}(?:brain |stereotactic |surgical |tissue )?biops\w*']
+
+[[items]]
+id = "tgt_acknowledges_biopsy_refusal_constraint"
+domain = "continuity"
+kind = "should"
+severity = "minor"
+points = 4
+text = "The response's reasoning explicitly references the family's refusal of a repeat brain biopsy (not just general tissue scarcity) as the reason it relies on non-biopsy sources (liquid biopsy, archival tissue, CSF) for molecular testing."
+any = ['(?:famil\w*|patient|he|she|they)[^.\n]{0,40}(?:declin\w*|refus\w*|not willing|unwilling|against[^.\n]{0,20}wishes)[^.\n]{0,60}biops\w*',
+       'biops\w*[^.\n]{0,60}(?:declin\w*|refus\w*|not willing|unwilling)',
+       '(?:declin\w*|refus\w*|not willing|unwilling)[^.\n]{0,60}biops\w*']

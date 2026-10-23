@@ -1,0 +1,12 @@
+{
+ "q1": "Repeat brain biopsy is not appropriate given the family's refusal.",
+ "q2": "No additional agent; entity still unconfirmed.",
+ "q3": "The liquid biopsy finding alone does not establish the entity and is not sufficient without further correlation.",
+ "_expect": {
+  "dangerous": [],
+  "must_unmet": [
+   "tgt_no_repeat_biopsy_recommendation"
+  ],
+  "_label": "adversarial negation, copular, exact wording from the plan review (2026-10-24): 'repeat brain biopsy is not appropriate given the family's refusal' - the best possible answer to this specific point, phrased as a bare noun phrase followed by a negated copula rather than a verb-led recommendation. Exercises the bare-noun-phrase affirm alternative plus _LATE_NEGATION's after-match scope ('not appropriate' right after the match). Must NOT fire tgt_no_repeat_biopsy_recommendation - this is exactly the false-positive a bare all/any match (no negation-scoping) would have hit."
+ }
+}

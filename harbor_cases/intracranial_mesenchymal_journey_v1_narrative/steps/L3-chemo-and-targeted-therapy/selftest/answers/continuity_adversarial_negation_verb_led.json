@@ -1,0 +1,15 @@
+{
+ "q1": "We would not recommend proceeding with a repeat brain biopsy, given the family's documented refusal; the liquid biopsy remains the appropriate path.",
+ "q2": "No additional agent; entity still unconfirmed.",
+ "q3": "The liquid biopsy finding alone does not establish the entity and is not sufficient without further correlation.",
+ "_expect": {
+  "dangerous": [],
+  "must_met": [
+   "tgt_acknowledges_biopsy_refusal_constraint"
+  ],
+  "must_unmet": [
+   "tgt_no_repeat_biopsy_recommendation"
+  ],
+  "_label": "adversarial negation, verb-led (2026-10-24): 'would not recommend proceeding with a repeat brain biopsy' - the negator sits before the recommend-verb, exercising _NEGATION's before-match scope. tgt_no_repeat_biopsy_recommendation must stay unmet despite the sentence containing every one of its trigger words."
+ }
+}
