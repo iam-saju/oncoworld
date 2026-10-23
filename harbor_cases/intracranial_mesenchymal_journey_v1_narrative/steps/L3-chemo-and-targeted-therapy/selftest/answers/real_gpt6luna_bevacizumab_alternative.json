@@ -1,0 +1,18 @@
+{
+ "q1": "Because the residual tumor is growing after subtotal resection and focal radiotherapy, I would discuss starting systemic treatment while the ctDNA result is pending, preferably in a clinical trial if available. With the entity still unclassified, reasonable empiric options include CNS-penetrant temozolomide, or soft-tissue-sarcoma-style doxorubicin (alone or with ifosfamide); gemcitabine/docetaxel is another sarcoma-based option. These are extrapolations rather than an entity-specific standard. Temozolomide is a reasonable oral, relatively tolerable initial choice in this CNS presentation, with the regimen revisited when pathology and molecular review are available.",
+ "q2": "Yes, I would consider adding bevacizumab to temozolomide given the documented growth of enhancing residual disease. Bevacizumab is an anti-VEGF biologic, not a conventional cytotoxic chemotherapy; it can provide disease control and reduce tumor-associated edema in some recurrent high-grade CNS tumors. This is an empiric option with limited evidence for an unclassified mesenchymal tumor, not a proven standard. I would not add another cytotoxic drug solely because temozolomide has been tolerated; combination cytotoxic therapy has no established rationale here without a more specific diagnosis.",
+ "q3": "No—not on the liquid-biopsy report alone. An FGFR2 fusion is potentially targetable and warrants prompt assay/pathology review, confirmation of the fusion's identity and functional significance (ideally against tumor tissue or another suitable specimen), and molecular tumor-board/trial discussion; an FGFR inhibitor could then be considered if the finding is validated and an appropriate CNS-active option is available. The plasma result does not establish the tumor's histologic entity or by itself prove that the alteration is present in the CNS tumor. KRAS, STK11, and CTNNB1 alterations likewise do not establish an entity or automatically select an effective therapy. Given progressive residual disease, I would not reflexively stop the current chemotherapy while this is clarified; I would change treatment only after weighing confirmatory evidence, clinical-trial options, CNS activity, and the patient's course.",
+ "_expect": {
+  "dangerous": [],
+  "must_met": [
+   "chemo_escalation_alternative_reasoned"
+  ],
+  "must_unmet": [
+   "chemo_escalation_irinotecan",
+   "chemo_escalation_defer_reasoned",
+   "chemo_escalation_rationale",
+   "chemo_escalation_monitoring"
+  ],
+  "_label": "real GPT-6-Luna answer (jobs/gpt6luna_mesenchymal_journey_hybrid3, 2026-10-24): proposes bevacizumab (anti-VEGF, not cytotoxic) instead of irinotecan or deferring - a genuine third path, second independent real-model occurrence of this exact pattern. chemo_escalation domain was 0/8 before this item existed (neither irinotecan nor defer_reasoned fired, correctly, since this is neither); now 8/8 via the new alt_group member. rationale/monitoring correctly stay excluded (applies_if gated to irinotecan specifically - different toxicity profile, not applicable to bevacizumab)."
+ }
+}

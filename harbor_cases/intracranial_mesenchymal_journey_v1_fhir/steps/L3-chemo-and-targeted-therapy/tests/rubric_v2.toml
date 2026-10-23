@@ -92,6 +92,26 @@ text = "When asked whether to add a second chemotherapy drug, the response inste
 all = ['(?:no|not|would not|do not|decline\w*|hold off|defer\w*)[^.\n]{0,60}(?:add\w*|adding)[^.\n]{0,40}second[^.\n]{0,30}(?:chemotherap\w*|cytotoxic|drug|agent)',
        '(?:unconfirmed|unclassified|unestablish\w*|no evidence (?:base|for)|not (?:yet )?(?:established|confirmed)|avoid\w* (?:added |additional )?toxicity|secure (?:the )?(?:molecular )?diagnosis|adequate trial|too short|lack of evidence|no defined target)']
 
+# chemo_escalation_alternative_reasoned: a third alt_group member, added 2026-10-24 after a real GPT-6-Luna
+# answer proposed bevacizumab (an anti-VEGF biologic, not a cytotoxic) instead of irinotecan or deferring - a
+# genuinely distinct, reasoned path that neither of the other two items credits, and this is the second
+# independent real-model occurrence of it (the first was recorded, deliberately unfixed, in an earlier
+# same-day commit - see "Let models reason independently on L3 q2" - as an n=1 pattern not worth chasing yet;
+# n=2 across two different real trials crosses that bar). `affirm` (not bare `all`) for the core "bevacizumab
+# is actually being proposed" check specifically so a rejection ("I would not add bevacizumab...") can't
+# misfire - verified against both the real text and that exact adversarial phrasing before adding this.
+[[items]]
+id = "chemo_escalation_alternative_reasoned"
+domain = "chemo_escalation"
+kind = "should"
+severity = "important"
+points = 8
+alt_group = "chemo_escalation_add_or_defer"
+text = "When asked whether to add a second chemotherapy drug, the response instead proposes a reasoned non-cytotoxic alternative (e.g. bevacizumab or another anti-angiogenic agent) rather than irinotecan specifically, explicitly acknowledging that the evidence for it in this entity is limited/empirical rather than standard."
+affirm = ['bevacizumab']
+all = ['(?:add\w*|adding|consider\w*|propose\w*|recommend\w*|yes)',
+       '(?:empiric\w*|limited evidence|not (?:a |an )?(?:established|proven|standard)|off-?label|experimental|unclassified|unestablish\w*|unconfirmed)']
+
 # chemo_escalation_rationale/monitoring only make sense when irinotecan was actually added - applies_if excludes
 # them from both earned and total otherwise, rather than the old vacuous-match regex that scored them "met" by a
 # whole-document negative lookahead. That vacuous-match design handed free points to every model that took the

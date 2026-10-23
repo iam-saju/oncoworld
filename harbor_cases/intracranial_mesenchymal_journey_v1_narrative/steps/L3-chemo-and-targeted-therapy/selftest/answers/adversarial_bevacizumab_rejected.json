@@ -1,0 +1,12 @@
+{
+ "q1": "Temozolomide to start.",
+ "q2": "I would not add bevacizumab given the unconfirmed entity; instead I would continue temozolomide alone, which remains the empiric standard of care here.",
+ "q3": "The liquid biopsy finding alone does not establish the entity and is not sufficient without further correlation.",
+ "_expect": {
+  "dangerous": [],
+  "must_unmet": [
+   "chemo_escalation_alternative_reasoned"
+  ],
+  "_label": "adversarial (2026-10-24): explicitly rejects bevacizumab ('I would not add bevacizumab') while still containing every one of the item's trigger words (add, bevacizumab, empiric, standard) elsewhere in the same sentence - exactly the bare-all false-positive risk this item's `affirm` (not `all`) on the core bevacizumab mention is meant to guard against. Must stay unmet."
+ }
+}
