@@ -1,0 +1,19 @@
+{
+  "n_concurrent_trials": 1,
+  "agent_setup_timeout_multiplier": 3.0,
+  "agents": [
+    {
+      "name": "opencode",
+      "model_name": "opencode-go/claude-haiku-5-5",
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_GO_API_KEY}"
+      }
+    }
+  ],
+  "tasks": [
+    { "path": "harbor_cases/intracranial_mesenchymal_journey_v1_fhir" }
+  ]
+}
