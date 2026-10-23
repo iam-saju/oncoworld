@@ -151,7 +151,11 @@ kind = "must"
 severity = "dangerous"
 points = 10
 text = "The response defers definitive disease-directed treatment until the diagnosis, grade, extent and resectability are established."
-all = ['(?:do not start|defer|delay|hold|withhold|not start)',
+# condition 1 widened 2026-10-23: a real Haiku answer wrote "No disease-directed treatment now" / "No radiotherapy
+# before classification..." and a real DeepSeek-style answer wrote "No chemotherapy ... is proposed" - both
+# textbook-correct deferrals, both missed because the old list only covered explicit verbs (defer/delay/hold/
+# withhold/do not start/not start), not the equally common "no X" / "not proposed/indicated/recommended" forms.
+all = ['(?:do not start|defer\w*|delay\w*|hold\w*|withh[eo]ld\w*|not start|no\s+(?:chemotherapy|disease[- ]directed|definitive|targeted(?: therapy)?|systemic(?: therapy)?|radiotherapy|regimen|treatment)|not\s+(?:propos\w*|indicat\w*|recommend\w*|warrant\w*|start\w*))',
        '(?:until|pending|before)',
        '(?:diagnos|pathology|grade|molecular|resectab|staging)']
 
