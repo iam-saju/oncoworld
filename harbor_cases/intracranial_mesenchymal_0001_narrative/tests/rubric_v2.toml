@@ -35,7 +35,10 @@ text = "The response states that 'intracranial mesenchymal tumor' is not a speci
 # "not met" on a dangerous must item forced reward to 0. Now also accepts "mesenchymal" paired with a generic
 # tumor noun, or with a brain/CNS reference within the same clause, in either order.
 all = ['(?:intracranial mesenchymal|mesenchymal (?:tumor|neoplasm|lesion|mass|origin|process)|mesenchymal[^.!?\n]{0,40}(?:intracranial|brain|cerebral|\bcns\b|central nervous system)|(?:intracranial|brain|cerebral|\bcns\b|central nervous system)[^.!?\n]{0,40}mesenchymal)',
-       '(?:not (?:a )?(?:sufficiently )?specific|non[- ]specific|provisional|not established|not definitive|unknown entity|does not establish[^.\n]{0,60}(?:entity|diagnos|subtype)|no definitive[^.\n]{0,40}(?:subtype|diagnos|entity))',
+       # widened 2026-10-23: a real grok-4.7 answer wrote "not a final diagnosis" and "unestablished" (prefix form)
+       # - both clinically identical to "not specific"/"not established" but unmatched by either, false-failing
+       # this dangerous item on an answer that correctly, explicitly made the required point.
+       '(?:not (?:a )?(?:sufficiently )?specific|non[- ]specific|provisional|not established|unestablish\w*|not (?:a|the) (?:final|definitive|confirmed) diagnos\w*|not definitive|unknown entity|does not establish[^.\n]{0,60}(?:entity|diagnos|subtype)|no definitive[^.\n]{0,40}(?:subtype|diagnos|entity))',
        '(?:grade|entity)']
 
 [[items]]
