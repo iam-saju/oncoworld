@@ -19,13 +19,9 @@
 # Graded by the shared grader (graders/oncoworld_grader/grader_v2.py). All regexes run on the lower-cased
 # answer, which grader_v2 re-serialises as JSON with indent=1.
 
-version = "intracranial_mesenchymal_journey_v1.L3.v1.0"
+version = "intracranial_mesenchymal_journey_v1.L3.v2.0"
 review_status = "DRAFT_NEEDS_ONCOLOGIST"
 passing_score = 0.75
-# chemo_escalation_irinotecan and chemo_escalation_defer_reasoned are mutually-exclusive alternatives (see their
-# comments below): the gold answer chose to escalate, so it cannot also satisfy the "reasoned to defer" item -
-# exempted from scripts/check_rules.py's generic "gold meets every must/should item" calibration check.
-known_gold_unmet = ["chemo_escalation_defer_reasoned"]
 
 [leak_check]
 # Terms that would give away this step's own reveal, or the next step's complication, if they appeared in the
@@ -70,13 +66,17 @@ all = ['(?:unconfirmed|unestablish\w*|not (?:yet )?(?:established|confirmed|know
 # that is the case continuing down one path, not something q2's own text requires). Per explicit direction: let
 # the models reason independently rather than scoring only the one path the source narrative happens to take.
 # chemo_escalation_irinotecan and chemo_escalation_defer_reasoned are deliberately parallel, equal-weight
-# alternatives - either a well-reasoned "add it" or a well-reasoned "wait" earns credit.
+# alternatives - either a well-reasoned "add it" or a well-reasoned "wait" earns credit. alt_group makes this
+# real in the scoring, not just in the comment: before 2026-10-24 both items' 8 points counted toward `total`
+# even though only one side can ever be true for a single answer, capping any flawless answer at 45/53=84.9%
+# on this step. Now the group's max-points member (either, since they're equal) counts once.
 [[items]]
 id = "chemo_escalation_irinotecan"
 domain = "chemo_escalation"
 kind = "should"
 severity = "important"
 points = 8
+alt_group = "chemo_escalation_add_or_defer"
 text = "When asked whether to add a second chemotherapy drug to tolerated single-agent temozolomide, the response adds irinotecan specifically."
 any = ['(?:add\w*|adding|start\w*|combin\w*|escalat\w*|consider\w*|recommend\w*|plan\w*|propose\w*|initiat\w*|yes)[^.\n]{0,60}irinotecan',
        'irinotecan[^.\n]{0,60}(?:add\w*|adding|second (?:agent|drug|chemotherap\w*)|escalat\w*|temozolomide)']
@@ -87,21 +87,28 @@ domain = "chemo_escalation"
 kind = "should"
 severity = "important"
 points = 8
+alt_group = "chemo_escalation_add_or_defer"
 text = "When asked whether to add a second chemotherapy drug, the response instead reasons soundly to defer escalation (e.g. the entity is still unclassified/unconfirmed, there is no evidence base for a specific combination, or escalating adds toxicity without a defined target before an adequate trial of the current agent)."
 all = ['(?:no|not|would not|do not|decline\w*|hold off|defer\w*)[^.\n]{0,60}(?:add\w*|adding)[^.\n]{0,40}second[^.\n]{0,30}(?:chemotherap\w*|cytotoxic|drug|agent)',
        '(?:unconfirmed|unclassified|unestablish\w*|no evidence (?:base|for)|not (?:yet )?(?:established|confirmed)|avoid\w* (?:added |additional )?toxicity|secure (?:the )?(?:molecular )?diagnosis|adequate trial|too short|lack of evidence|no defined target)']
 
+# chemo_escalation_rationale/monitoring only make sense when irinotecan was actually added - applies_if excludes
+# them from both earned and total otherwise, rather than the old vacuous-match regex that scored them "met" by a
+# whole-document negative lookahead. That vacuous-match design handed free points to every model that took the
+# defer path (confirmed 2026-10-24: a real judge/regex disagreement on exactly these two items across 4/4
+# checked trials traced back to the judge not reliably inferring "met by absence" from the vacuous clause, which
+# the applies_if mechanism sidesteps entirely - see the hardening plan's item 4b).
 [[items]]
 id = "chemo_escalation_rationale"
 domain = "chemo_escalation"
 kind = "should"
 severity = "minor"
 points = 3
-text = "If adding irinotecan, the response grounds it in real-world precedent (relapsed/refractory CNS tumors, recurrent Ewing sarcoma, or similar combination data) rather than an unsupported assertion. Not applicable, and does not cost points, when irinotecan is not named at all."
+applies_if = "chemo_escalation_irinotecan"
+text = "If adding irinotecan, the response grounds it in real-world precedent (relapsed/refractory CNS tumors, recurrent Ewing sarcoma, or similar combination data) rather than an unsupported assertion. Not applicable, and excluded from scoring, when irinotecan is not added at all."
 any = ['(?:precedent|evidence|data|experience|used|studied|reported)[^.\n]{0,100}(?:relapsed|refractory|recurrent|cns tumor|ewing)',
        '(?:relapsed|refractory|recurrent|cns tumor|ewing)[^.\n]{0,100}(?:precedent|evidence|data|experience|used|studied|reported)',
-       'temiri',
-       '(?s)^(?!.*irinotecan).*$']
+       'temiri']
 
 [[items]]
 id = "chemo_escalation_monitoring"
@@ -109,10 +116,10 @@ domain = "chemo_escalation"
 kind = "should"
 severity = "minor"
 points = 2
-text = "If adding irinotecan, the response notes monitoring for the additional toxicity it brings (diarrhea, myelosuppression). Not applicable, and does not cost points, when irinotecan is not named at all."
+applies_if = "chemo_escalation_irinotecan"
+text = "If adding irinotecan, the response notes monitoring for the additional toxicity it brings (diarrhea, myelosuppression). Not applicable, and excluded from scoring, when irinotecan is not added at all."
 any = ['(?:diarrhea|myelosuppress\w*|neutropeni\w*|cytopeni\w*|(?:blood|cell) counts?|bowel movements?)[^.\n]{0,150}(?:monitor|watch|check|assess|follow)',
-       '(?:monitor|watch|check|assess|follow)[^.\n]{0,150}(?:diarrhea|myelosuppress\w*|neutropeni\w*|cytopeni\w*|(?:blood|cell) counts?|bowel movements?)',
-       '(?s)^(?!.*irinotecan).*$']
+       '(?:monitor|watch|check|assess|follow)[^.\n]{0,150}(?:diarrhea|myelosuppress\w*|neutropeni\w*|cytopeni\w*|(?:blood|cell) counts?|bowel movements?)']
 
 # ---------------- q3: the NGS result - stop chemotherapy for targeted therapy, or not
 [[items]]

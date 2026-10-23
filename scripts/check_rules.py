@@ -68,13 +68,22 @@ def calibration(rubric, gold, answer_dir):
         pr += [f"should meet {i}" for i in e.get("must_met", []) if i not in met]
         pr += [f"should NOT meet {i}" for i in e.get("must_unmet", []) if i in met]
         if e.get("all_met"):
-            # a rubric may declare mutually-exclusive alternative items (e.g. "add drug X" vs. "reason soundly not
-            # to", intracranial_mesenchymal_journey_v1's L3) where the gold answer, by construction, can satisfy
-            # only one side - exempt those named ids from the blanket "gold meets everything" expectation rather
-            # than faking a second gold answer just to keep this generic check happy.
+            # a rubric may declare mutually-exclusive alternative items via alt_group (e.g. "add drug X" vs.
+            # "reason soundly not to", intracranial_mesenchymal_journey_v1's L3) where the gold answer, by
+            # construction, can satisfy only one side - an unmet item only fails this check if no other member
+            # of its own alt_group was met instead. known_gold_unmet remains for any other, non-alt_group reason
+            # a rubric might declare an item gold can't satisfy (none currently use it for that).
             exempt = set(rubric.get("known_gold_unmet", []))
+            group_of = {it["id"]: it["alt_group"] for it in rubric["items"] if it.get("alt_group")}
+            group_met = {g for iid, g in group_of.items() if iid in met}
+            # an applies_if item that isn't applicable on gold's path (its condition item wasn't met) isn't a
+            # real miss either - score() deliberately leaves its raw `met` as whatever the regex/judge found,
+            # rather than redefining "met" to mean "applicable or satisfied", so that distinction is made here.
+            applies_if = {it["id"]: it["applies_if"] for it in rubric["items"] if it.get("applies_if")}
             pr += [f"unmet {i['id']}" for i in r["items"]
-                   if i["kind"] != "must_not" and not i["met"] and i["id"] not in exempt]
+                   if i["kind"] != "must_not" and not i["met"] and i["id"] not in exempt
+                   and group_of.get(i["id"]) not in group_met
+                   and not (i["id"] in applies_if and applies_if[i["id"]] not in met)]
         if pr:
             bad.append((name, pr))
     return len(docs), bad

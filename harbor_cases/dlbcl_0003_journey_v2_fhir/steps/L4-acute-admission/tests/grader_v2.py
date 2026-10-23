@@ -10,6 +10,16 @@ Rubric (tests/rubric_v2.toml), one [[items]] table per criterion:
   severity              minor | important | dangerous
   points                must/should: points earned when met; must_not: points deducted when met
   any / all / affirm / recommend / check     the regex rules that decide "met" (see rule_met)
+  alt_group             (optional) items sharing this name are mutually-exclusive alternatives (e.g. "add
+                        drug X" vs. "reason soundly not to") - the group's max-points member counts once in
+                        `total`, and the group's earned contribution is the max across members, not their
+                        sum, so a flawless answer on either path reaches 100% rather than being structurally
+                        capped. Disallowed on must_not/dangerous items (validated in score()).
+  applies_if            (optional) this item's id of another item in the same rubric; this item counts in
+                        neither `earned` nor `total` (not met, not missed - simply absent) unless that other
+                        item is met. For a clause that is genuinely not applicable on one path (e.g. "if
+                        adding irinotecan, note the monitoring plan for it"), rather than handing out free
+                        points via a vacuous-match regex. Disallowed on must_not/dangerous items.
 
 Reading rules (how a senior oncologist reads a consult note, encoded in the helpers below):
   - a term only counts when it is asserted: negations ("not double-hit"), hypotheticals ("if FISH were positive"),
@@ -584,6 +594,23 @@ def judge_with_retry(items: list[dict], response: str, attempts: int = 3, contex
 
 
 # --- scoring ---
+def _validate_conditional_items(items: list[dict]) -> None:
+    """alt_group/applies_if change what counts toward earned/total for an item other rules don't touch, which
+    would make a dangerous or must_not item's accounting silently conditional on another item's verdict - not
+    something either mechanism is designed to reason about safely. Disallow both there; applies_if must also
+    name a real sibling id, not a typo that would silently never apply."""
+    ids = {it["id"] for it in items}
+    for it in items:
+        for key in ("alt_group", "applies_if"):
+            if not it.get(key):
+                continue
+            if it["kind"] == "must_not" or it["severity"] == "dangerous":
+                raise ValueError(f"item {it['id']!r}: {key} is not allowed on a must_not or dangerous item")
+        ref = it.get("applies_if")
+        if ref and ref not in ids:
+            raise ValueError(f"item {it['id']!r}: applies_if {ref!r} is not an item id in this rubric")
+
+
 def score(response: str, rubric: dict, judge_verdicts: dict | None = None) -> dict:
     """judge_verdicts: {item_id: {"met": bool, "evidence": str}}; None means the regex rules decide.
     Items with a `decision` rule are decided by the answer's structured "decisions" object when it has the fields."""
@@ -591,10 +618,12 @@ def score(response: str, rubric: dict, judge_verdicts: dict | None = None) -> di
     lowered = response.lower()
     norm_response = _norm(response)
     items = rubric["items"]
+    _validate_conditional_items(items)
     total = sum(it["points"] for it in items if it["kind"] != "must_not")
     earned = 0
     domains: dict[str, dict] = {}
     dangerous, disagreements, detail = [], [], []
+    item_deltas: dict[str, int] = {}
 
     for it in items:
         rx = rule_met(it, lowered)
@@ -653,6 +682,7 @@ def score(response: str, rubric: dict, judge_verdicts: dict | None = None) -> di
             delta = it["points"] if met else 0
             fired = it["kind"] == "must" and not met
         earned += delta
+        item_deltas[it["id"]] = delta
         if fired and it["severity"] == "dangerous":
             dangerous.append(it["id"])
         d = domains.setdefault(it["domain"], {"points": 0, "max_points": 0})
@@ -664,6 +694,41 @@ def score(response: str, rubric: dict, judge_verdicts: dict | None = None) -> di
                        "evidence": evidence, "judge_met": judge_met, "structured": sv,
                        "needs_review": source == "hybrid_review" or (conflict and grader_mode() == "hybrid"),
                        "structured_conflict": conflict})
+
+    # alt_group: each member's own points/delta were already folded into total/earned above independently, so a
+    # group's max-points member counted once per member instead of once per group - correct both to count it once,
+    # crediting whichever path the response actually took in full rather than capping every answer structurally.
+    alt_groups: dict[str, list[dict]] = {}
+    for it in items:
+        if it.get("alt_group"):
+            alt_groups.setdefault(it["alt_group"], []).append(it)
+    for members in alt_groups.values():
+        member_points = [m["points"] for m in members]
+        member_deltas = [item_deltas[m["id"]] for m in members]
+        total_delta = max(member_points) - sum(member_points)
+        earned_delta = max(member_deltas) - sum(member_deltas)
+        total += total_delta
+        earned += earned_delta
+        # mirror the same correction onto the per-domain breakdown so a domain sub-score isn't left showing the
+        # old structurally-capped ratio while the overall reward is already fixed. All current alt_groups share
+        # one domain across their members; if a future one doesn't, this intentionally skips the domain-level
+        # correction rather than guessing how to split it - the overall total/earned above are correct either way.
+        member_domains = {m["domain"] for m in members}
+        if len(member_domains) == 1:
+            d = domains[member_domains.pop()]
+            d["max_points"] += total_delta
+            d["points"] += earned_delta
+    # applies_if: an item that doesn't apply on this response's path counts in neither earned nor total - not a
+    # miss, simply absent - rather than needing a vacuous-match regex to hand out points it was never testing for.
+    for it in items:
+        ref = it.get("applies_if")
+        if ref and not next(d["met"] for d in detail if d["id"] == ref):
+            d = domains[it["domain"]]
+            if it["kind"] != "must_not":
+                total -= it["points"]
+                d["max_points"] -= it["points"]
+            earned -= item_deltas[it["id"]]
+            d["points"] -= item_deltas[it["id"]]
 
     raw = max(0, earned)
     reward = 0.0 if dangerous else round(raw / total, 4)
