@@ -1,0 +1,13 @@
+{
+ "q1": "Temozolomide to start.",
+ "q2": "Yes, add irinotecan.",
+ "q3": "This confirms Ewing sarcoma, so I would continue chemotherapy per Ewing protocols.",
+ "_expect": {
+  "passed": false,
+  "dangerous": [],
+  "must_unmet": [
+   "tgt_molecular_not_sufficient_alone"
+  ],
+  "_label": "adversarial: treats the molecular panel as confirming a specific entity (Ewing sarcoma) rather than keeping it open - verified 2026-10-23, mn_overconfident_entity_from_ngs fires (-6), despite reaching the gold verdict (continue chemo) for the wrong reason."
+ }
+}

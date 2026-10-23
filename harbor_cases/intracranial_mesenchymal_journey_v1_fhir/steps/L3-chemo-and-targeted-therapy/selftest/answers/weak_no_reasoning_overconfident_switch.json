@@ -1,0 +1,15 @@
+{
+ "q1": "Start chemotherapy with a standard sarcoma regimen for this patient.",
+ "q2": "No, continue with what she is on now; no changes needed.",
+ "q3": "Yes, stop chemotherapy and start an FGFR inhibitor given the molecular result.",
+ "_expect": {
+  "passed": false,
+  "dangerous": [],
+  "must_unmet": [
+   "chemo_options_temozolomide",
+   "chemo_escalation_irinotecan",
+   "tgt_molecular_not_sufficient_alone"
+  ],
+  "_label": "synthetic baseline: generic non-answers plus an overconfident, uncaveated switch to targeted therapy - verified 2026-10-23, reward 0.0, mn_overconfident_switch_no_caveat fires (-6)."
+ }
+}

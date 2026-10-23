@@ -1,0 +1,152 @@
+# HIDDEN. OncoWorld-style rubric for intracranial_mesenchymal_journey_v1, step L3-chemo-and-targeted-therapy.
+# Drafted from the oncologist-provided teaching handout (Onco MysticA, Step three questions) and grounded against
+# real literature on temozolomide+irinotecan ("TEMIRI") in relapsed/refractory CNS tumors and recurrent Ewing
+# sarcoma, and on the actual (thin, case-report-level) evidence for FGFR inhibitors in CNS/mesenchymal tumors.
+# Review status: DRAFT_NEEDS_ONCOLOGIST. Do not treat scores as clinical performance until signed off.
+#
+# q3 (stop chemo for FGFR-directed targeted therapy, or not) is the heaviest-weighted question in the source
+# handout's entire 4-step case and is a genuine, debatable clinical judgment call, not a clean right/wrong. The
+# source's own later material confirms the real-world outcome was to continue chemotherapy (by the opening of the
+# next step, the patient is still on temozolomide+irinotecan), so that is the gold verdict - but it is scored as
+# `should`, not `must`/dangerous: a well-reasoned, properly-caveated answer that chose to add (not switch
+# entirely to) an FGFR inhibitor is a defensible second opinion, not a dangerous error. The must_not below catches
+# the one failure mode that genuinely is a red flag regardless of which verdict the model reaches: switching off
+# a tolerated regimen on this molecular finding WITHOUT any caveat about its weak actionability in this entity.
+#
+# Kept deliberately lean on first build (no real-model trials yet), same discipline as L2's rubric: widen wording
+# only against real misses, not speculation.
+#
+# Graded by the shared grader (graders/oncoworld_grader/grader_v2.py). All regexes run on the lower-cased
+# answer, which grader_v2 re-serialises as JSON with indent=1.
+
+version = "intracranial_mesenchymal_journey_v1.L3.v1.0"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+passing_score = 0.75
+
+[leak_check]
+# Terms that would give away this step's own reveal, or the next step's complication, if they appeared in the
+# model-visible chart update.
+forbidden_in_case = ["pemigatinib", "erdafitinib", "futibatinib", "infigratinib", "encephalitis", "hsv",
+                     "altered sensorium", "day 12"]
+
+# ---------------- q1: chemotherapy options while awaiting the liquid biopsy
+[[items]]
+id = "chemo_options_temozolomide"
+domain = "chemo_options"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response names temozolomide as a chemotherapy option to consider while awaiting the liquid biopsy result."
+any = ['temozolomide|tamozolomide']
+
+[[items]]
+id = "chemo_options_entity_pragmatic"
+domain = "chemo_options"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response reasons that, with the entity still unconfirmed, a broadly active/well-tolerated option is preferable to committing to one entity-specific intensive regimen."
+all = ['(?:unconfirmed|unestablish\w*|not (?:yet )?(?:established|confirmed|known|pinned down)|no confirmed (?:entity|diagnosis)|(?:entity|diagnosis) (?:is|remains|still) (?:still )?(?:unclear|unknown|not confirmed|open))',
+       '(?:broadly active|well[- ]tolerated|favorable toxicity|pragmatic|regardless of (?:the )?(?:entity|diagnosis)|entity[- ]agnostic|across (?:several|multiple|different) (?:entities|candidates|possibilities|tumor types|diagnoses|possible diagnoses)|(?:before|until|once) (?:the|we know (?:the|more))? ?(?:entity|diagnosis) is (?:clearer|established|confirmed|better defined)|know more)']
+
+# ---------------- q2: escalating from single-agent temozolomide
+[[items]]
+id = "chemo_escalation_irinotecan"
+domain = "chemo_escalation"
+kind = "must"
+severity = "important"
+points = 8
+text = "When asked whether to add a second chemotherapy drug to tolerated single-agent temozolomide, the response adds irinotecan specifically."
+any = ['(?:add\w*|adding|start\w*|combin\w*|escalat\w*|consider\w*|recommend\w*|plan\w*|propose\w*|initiat\w*|yes)[^.\n]{0,60}irinotecan',
+       'irinotecan[^.\n]{0,60}(?:add\w*|adding|second (?:agent|drug|chemotherap\w*)|escalat\w*|temozolomide)']
+
+[[items]]
+id = "chemo_escalation_rationale"
+domain = "chemo_escalation"
+kind = "should"
+severity = "minor"
+points = 3
+text = "The response grounds adding irinotecan in real-world precedent (relapsed/refractory CNS tumors, recurrent Ewing sarcoma, or similar combination data) rather than an unsupported assertion."
+any = ['(?:precedent|evidence|data|experience|used|studied|reported)[^.\n]{0,100}(?:relapsed|refractory|recurrent|cns tumor|ewing)',
+       '(?:relapsed|refractory|recurrent|cns tumor|ewing)[^.\n]{0,100}(?:precedent|evidence|data|experience|used|studied|reported)',
+       'temiri']
+
+[[items]]
+id = "chemo_escalation_monitoring"
+domain = "chemo_escalation"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes monitoring for the additional toxicity irinotecan brings (diarrhea, myelosuppression) when escalating."
+all = ['(?:diarrhea|myelosuppress\w*|neutropeni\w*|cytopeni\w*|(?:blood|cell) counts?|bowel movements?)',
+       '(?:monitor|watch|check|assess|follow)']
+
+# ---------------- q3: the NGS result - stop chemotherapy for targeted therapy, or not
+[[items]]
+id = "tgt_molecular_not_sufficient_alone"
+domain = "targeted_therapy_decision"
+kind = "must"
+severity = "important"
+points = 8
+text = "The response states that the molecular/liquid-biopsy finding alone is not sufficient to justify changing therapy without further confirmation (e.g. tissue correlation, entity confirmation, or molecular tumor board review)."
+all = ['(?:fgfr2?|fusion|molecular|ngs|liquid biops\w*|ctdna|circulating tumor dna)',
+       '(?:not (?:sufficient|enough)|alone|by itself|does not (?:establish|confirm|justify)|confirm(?:ation)? (?:is )?(?:required|needed)|correlat\w*|validate|further (?:confirmation|testing|work[- ]?up))']
+
+[[items]]
+id = "tgt_atypical_comutation_pattern"
+domain = "targeted_therapy_decision"
+kind = "should"
+severity = "important"
+points = 6
+text = "The response notes that the co-occurring KRAS, STK11, and CTNNB1 alterations are not an established co-actionable signature with an FGFR2 fusion in this tumor type, raising doubt about a clean single-driver story (e.g. passenger alteration, low variant allele fraction, assay artifact, or genuinely complex biology)."
+all = ['(?:kras|stk11|ctnnb1)',
+       '(?:passenger|artifact|noise|coincidental|complex (?:tumor|biology)|complicated tumor|atypical|unusual|odd combination|not (?:an? )?(?:established|validated|clean|recognized|known|co[- ]?actionable|effective match)|unclear significance|uncertain significance|variant allele fraction|\bvaf\b)']
+
+[[items]]
+id = "tgt_verdict_continue_chemo"
+domain = "targeted_therapy_decision"
+kind = "should"
+severity = "important"
+points = 6
+# `should`, not `must`/dangerous - see the file header: a well-reasoned, properly-caveated decision to add an
+# FGFR inhibitor is a defensible second opinion on this evidence, not a dangerous error.
+text = "The response's decision is to continue the current chemotherapy regimen rather than switch to FGFR-directed targeted therapy at this point."
+any = ['(?:continue|keep|maintain|stay (?:on|with))[^.\n]{0,60}(?:chemotherapy|temozolomide|irinotecan|current regimen)',
+       '(?:not|no|would not|do not|wouldn.t|don.t)[^.\n]{0,80}(?:stop|switch|chang\w* to|discontinu\w*|abandon\w*)[^.\n]{0,60}(?:chemotherapy|targeted therapy|fgfr)',
+       '(?:not|wouldn.t|would not|don.t|do not)[^.\n]{0,40}abandon\w*[^.\n]{0,60}(?:chemotherapy|current (?:two[- ]drug )?regimen)[^.\n]{0,60}for']
+
+[[items]]
+id = "mn_overconfident_switch_no_caveat"
+domain = "targeted_therapy_decision"
+kind = "must_not"
+severity = "important"
+points = 6
+text = "The response stops chemotherapy and switches to FGFR-directed targeted therapy without any caveat about the unconfirmed entity, the atypical co-mutation pattern, or the liquid-biopsy-only nature of the finding."
+# `affirm`, not `recommend`: the shared _RECOMMEND gate recommend() requires is built around prescribing a drug
+# ("start/give/initiate ..."), not switching away from one - "stop chemotherapy and switch to X" never matches
+# it, which silently made this item a no-op (found via adversarial testing before any real model, 2026-10-23).
+# affirm()'s negation handling (via _mentions()) still protects the gold answer's own "I would NOT stop
+# chemotherapy and switch to..." from a false fire.
+except = ['unconfirmed|unestablish\w*|not (?:yet )?(?:established|confirmed)|entity (?:is|remains)|passenger|artifact|liquid biops\w*|plasma|cell[- ]free|tissue correlat\w*|co-?mutation|atypical|unusual|uncertain']
+affirm = ['(?:stop\w*|discontinu\w*|switch\w*|chang\w* to)[^.\n]{0,60}(?:chemotherapy)[^.\n]{0,60}(?:fgfr|targeted therapy|pemigatinib|erdafitinib|futibatinib|infigratinib)',
+          '(?:fgfr inhibitor|targeted therapy|pemigatinib|erdafitinib|futibatinib|infigratinib)[^.\n]{0,100}(?:instead of|in place of|rather than)[^.\n]{0,40}chemotherapy']
+
+[[items]]
+id = "tgt_bbb_penetration_caveat"
+domain = "targeted_therapy_decision"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes that available FGFR inhibitors have blood-brain-barrier penetration limitations as a reason weighing against switching now."
+any = ['blood[- ]brain[- ]barrier', '\bbbb\b[^.\n]{0,60}(?:penetrat\w*|cross\w*|limit\w*)', 'penetrat\w*[^.\n]{0,40}(?:brain|cns|central nervous system)']
+
+# ---------------- whole-step: do not overclaim a specific entity from this evidence
+[[items]]
+id = "mn_overconfident_entity_from_ngs"
+domain = "diagnosis"
+kind = "must_not"
+severity = "important"
+points = 6
+text = "The response treats the molecular panel (or chemotherapy tolerance) as confirming a specific histologic entity (e.g. a named sarcoma subtype or glioma) rather than keeping the entity open."
+affirm = ['(?:confirms?|establishes?|proves?|diagnos\w*)[^.\n]{0,50}(?:ewing sarcoma|rhabdomyosarcoma|synovial sarcoma|leiomyosarcoma|liposarcoma|chondrosarcoma|osteosarcoma|glioblastoma|\bglioma\b)',
+          '(?:this is|she has|confirmed (?:case of|diagnosis of))[^.\n]{0,20}(?:ewing sarcoma|rhabdomyosarcoma|synovial sarcoma|leiomyosarcoma|liposarcoma|chondrosarcoma|osteosarcoma|glioblastoma|\bglioma\b)']

@@ -1,0 +1,8 @@
+INTERVAL HISTORY (2026-12-15 to 2027-01-12) - this is what ACTUALLY happened, take it as fact even if it differs
+from what you previously recommended.
+
+A peripheral blood sample was drawn on 2026-12-15 and sent to the reference laboratory for circulating tumor DNA
+next-generation sequencing, with an estimated four-week turnaround. The family has asked to proceed with
+systemic treatment now rather than wait for the result, given the residual disease seen growing on the
+2026-12-12 surveillance MRI. The entity remains histologically unconfirmed: the 2026-11-04 surgical pathology
+is "high-grade spindle cell/mesenchymal neoplasm, NOS," STAT6 negative, no NAB2-STAT6 fusion.

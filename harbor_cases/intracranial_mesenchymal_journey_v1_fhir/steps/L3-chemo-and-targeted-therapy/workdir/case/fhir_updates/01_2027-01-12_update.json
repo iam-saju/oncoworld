@@ -1,0 +1,106 @@
+{
+  "resourceType": "Bundle",
+  "id": "mesench-0001-l3-update",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "http://oncoworld.example/fhir/sid/bundle",
+    "value": "mesench-0001-l3-update"
+  },
+  "type": "collection",
+  "timestamp": "2027-01-12T09:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DocumentReference/mesench-0001-l3-interval-history",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "mesench-0001-l3-interval-history",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34117-2",
+              "display": "History and physical note"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+                "code": "clinical-note",
+                "display": "Clinical Note"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/mesench-0001-patient"
+        },
+        "date": "2027-01-12T09:00:00Z",
+        "author": [
+          {
+            "reference": "Practitioner/mesench-0001-neurooncologist"
+          }
+        ],
+        "description": "Interval history, 2026-12-15 to 2027-01-12",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "SU5URVJWQUwgSElTVE9SWSAoMjAyNi0xMi0xNSB0byAyMDI3LTAxLTEyKSAtIHRoaXMgaXMgd2hhdCBBQ1RVQUxMWSBoYXBwZW5lZCwgdGFrZSBpdCBhcyBmYWN0IGV2ZW4gaWYgaXQgZGlmZmVycwpmcm9tIHdoYXQgeW91IHByZXZpb3VzbHkgcmVjb21tZW5kZWQuCgpBIHBlcmlwaGVyYWwgYmxvb2Qgc2FtcGxlIHdhcyBkcmF3biBvbiAyMDI2LTEyLTE1IGFuZCBzZW50IHRvIHRoZSByZWZlcmVuY2UgbGFib3JhdG9yeSBmb3IgY2lyY3VsYXRpbmcgdHVtb3IgRE5BCm5leHQtZ2VuZXJhdGlvbiBzZXF1ZW5jaW5nLCB3aXRoIGFuIGVzdGltYXRlZCBmb3VyLXdlZWsgdHVybmFyb3VuZC4gVGhlIGZhbWlseSBoYXMgYXNrZWQgdG8gcHJvY2VlZCB3aXRoCnN5c3RlbWljIHRyZWF0bWVudCBub3cgcmF0aGVyIHRoYW4gd2FpdCBmb3IgdGhlIHJlc3VsdCwgZ2l2ZW4gdGhlIHJlc2lkdWFsIGRpc2Vhc2Ugc2VlbiBncm93aW5nIG9uIHRoZQoyMDI2LTEyLTEyIHN1cnZlaWxsYW5jZSBNUkkuIFRoZSBlbnRpdHkgcmVtYWlucyBoaXN0b2xvZ2ljYWxseSB1bmNvbmZpcm1lZDogdGhlIDIwMjYtMTEtMDQgc3VyZ2ljYWwgcGF0aG9sb2d5CmlzICJoaWdoLWdyYWRlIHNwaW5kbGUgY2VsbC9tZXNlbmNoeW1hbCBuZW9wbGFzbSwgTk9TLCIgU1RBVDYgbmVnYXRpdmUsIG5vIE5BQjItU1RBVDYgZnVzaW9uLgo="
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Interval history, 2026-12-15 to 2027-01-12: liquid biopsy sent, result pending, treatment decision needed now.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/ServiceRequest/mesench-0001-l3-ngs-request",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "mesench-0001-l3-ngs-request",
+        "status": "active",
+        "intent": "order",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "81247-9",
+              "display": "Master HL7 genetic variant reporting panel"
+            }
+          ],
+          "text": "Circulating tumor DNA next-generation sequencing, peripheral blood"
+        },
+        "subject": {
+          "reference": "Patient/mesench-0001-patient"
+        },
+        "authoredOn": "2026-12-15",
+        "requester": {
+          "reference": "Practitioner/mesench-0001-neurooncologist"
+        },
+        "note": [
+          {
+            "text": "Peripheral blood liquid biopsy for ctDNA NGS; estimated 4-week turnaround. Result not yet available as of this visit."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ctDNA NGS ordered 2026-12-15 on peripheral blood; result pending.</p></div>"
+        }
+      }
+    }
+  ]
+}

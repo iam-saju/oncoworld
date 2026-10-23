@@ -1,0 +1,54 @@
+# Gold answer: intracranial mesenchymal tumor journey, step L3 (chemo-and-targeted-therapy)
+
+Status: draft, pending oncologist sign-off.
+
+## q1 - chemotherapy options while awaiting the liquid biopsy
+
+Because the entity is still unconfirmed, favor a broadly active, CNS-penetrant, well-tolerated option over an
+entity-specific intensive regimen: single-agent oral temozolomide is a reasonable way to start, given its CNS
+penetration, oral route, and generally favorable toxicity profile, and it is active across several candidate
+entities (high-grade mesenchymal/spindle-cell neoplasms, several sarcoma subtypes, and gliomas). Other options
+worth naming, to be weighed once the entity is clearer, include a vincristine-based multi-agent combination if a
+small round-cell/rhabdomyosarcoma-type sarcoma remains in the differential, and an anthracycline-containing
+regimen, the standard sarcoma backbone; both carry more acute toxicity and are better reserved until the entity
+is better defined, with dose intensification or a second agent to be considered once tolerance to a first agent
+is seen. Check whether a clinical trial is open to her, since the entity remains unconfirmed. Avoid committing to
+a single entity-specific "gold standard" regimen as if the diagnosis were already established.
+
+## q2 - escalating from single-agent temozolomide
+
+Yes. Given the entity is still unconfirmed and the disease has been growing, escalating from single-agent
+temozolomide to temozolomide plus irinotecan (the TEMIRI combination) is a reasonable next step: this
+combination has real-world precedent in relapsed/refractory CNS tumors and in recurrent Ewing sarcoma, is usually
+well tolerated, and she has already demonstrated she tolerates temozolomide without significant toxicity. Adding
+irinotecan increases the chance of disease control while the team continues working toward a definitive
+diagnosis. Monitor more closely for the toxicities irinotecan adds, chiefly diarrhea and myelosuppression, and
+dose-adjust or hold either drug if those become limiting.
+
+## q3 - the NGS result: stop chemotherapy for targeted therapy, or not
+
+No, do not stop chemotherapy and switch to FGFR-directed targeted therapy at this point; continue the current
+temozolomide-plus-irinotecan regimen.
+
+Reasons:
+
+1. The entity itself is still not established (high-grade spindle cell/mesenchymal neoplasm, NOS, STAT6
+   negative) - an FGFR2 fusion is not a validated predictive biomarker for this specific, unconfirmed entity; its
+   actionability is best established in cholangiocarcinoma, and evidence for FGFR-directed therapy in
+   CNS/mesenchymal tumors is limited to case reports and small series, not a standard of care.
+2. The co-occurring KRAS, STK11, and CTNNB1 alterations are not an established co-actionable signature with an
+   FGFR2 fusion in this tumor type; this combination is atypical, and raises the possibility of a passenger
+   alteration, a technical/low-variant-allele-fraction artifact of circulating tumor DNA, or genuinely complex
+   tumor biology, rather than a clean single-driver story - it does not by itself strengthen the case for
+   FGFR-directed monotherapy.
+3. This is a plasma liquid-biopsy finding, not confirmed on tissue; a cell-free DNA result has a real
+   false-positive and specificity risk, especially for disease that may be largely CNS-confined, and ideally
+   would be correlated with tissue before making a major therapy change.
+4. Available FGFR inhibitors (e.g. pemigatinib, erdafitinib, futibatinib, infigratinib) have blood-brain-barrier
+   penetration limitations, which further weakens the case for switching away from a regimen she is tolerating
+   and that may be controlling disease.
+
+Plan: continue temozolomide plus irinotecan, pursue tissue correlation of the FGFR2 fusion if feasible, present
+the result at the molecular tumor board, and keep an FGFR inhibitor in reserve - via a clinical trial or
+compassionate-use pathway - if the disease progresses on chemotherapy or if further evidence supports its
+actionability, rather than switching to it now on this evidence alone.

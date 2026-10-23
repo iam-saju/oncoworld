@@ -41,7 +41,7 @@ def rubric_sets():
     # layer under its own steps/<name>/ directory (narrative is the source of truth; the fhir copy is checked
     # byte-identical separately, same as the single-step case's own fhir sibling).
     mj = ROOT / "harbor_cases" / "intracranial_mesenchymal_journey_v1_narrative" / "steps"
-    for step in ["L1-initial-assessment", "L2-molecular-access"]:
+    for step in ["L1-initial-assessment", "L2-molecular-access", "L3-chemo-and-targeted-therapy"]:
         yield (f"mesenchymal_journey_{step}", mj / step / "tests" / "rubric_v2.toml",
                mj / step / "solution" / "final_answer.json", mj / step / "selftest" / "answers",
                mj / step / "selftest" / "probes.json", mj / step / "selftest" / "heldout_probes.json")

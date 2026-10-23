@@ -1,0 +1,11 @@
+{
+ "q1": "With no confirmed entity yet, I would start with a single oral alkylator, temozolomide, because it crosses into the brain well, is easy to tolerate, and works reasonably across several possible diagnoses here. I would hold off on a heavier multi-drug sarcoma protocol or an anthracycline-based plan until we know more, and would check for an open trial given how unclear the diagnosis still is.",
+ "q2": "Given she has had no real trouble with temozolomide alone and the mass keeps growing, yes, I would add irinotecan next. This two-drug combination has been used before in children with tumors that come back after treatment and in Ewing sarcoma that relapses, and is generally manageable. I would watch her counts and bowel movements closely once irinotecan is on board.",
+ "q3": "I would not abandon the current two-drug chemotherapy for an FGFR-targeted drug right now. The tumor type itself has never been pinned down, so one fusion on a blood test does not by itself tell us this cancer will respond to that drug class - that link is really only solid in bile-duct cancer, and in brain tumors it rests on a handful of individual reports, not a proven standard. On top of that, finding KRAS, STK11 and CTNNB1 changes alongside the fusion is an odd combination that is not a known effective match for FGFR blockers, which makes me wonder if this is noise, a minor passenger change, or just a complicated tumor rather than a single clear driver. It is also only a plasma result, not a tissue result, so I would want it checked against tissue before trusting it that much. And on top of all that, the available drugs in this class do not get into the brain well, which further argues against dropping a regimen that seems to be working. I would stick with the current plan, try to confirm the fusion on tissue, bring it to our molecular board, and keep the targeted option in reserve for later.",
+ "_expect": {
+  "passed": true,
+  "dangerous": [],
+  "must_unmet": [],
+  "_label": "vocabulary-robustness check: same clinical content as gold, deliberately different phrasing throughout - verified 2026-10-23, reward 0.9556 (misses only the bbb-penetration minor bonus item's exact wording)."
+ }
+}

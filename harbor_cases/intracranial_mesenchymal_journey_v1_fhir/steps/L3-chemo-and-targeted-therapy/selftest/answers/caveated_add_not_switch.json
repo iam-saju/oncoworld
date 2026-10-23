@@ -1,0 +1,11 @@
+{
+ "q1": "Temozolomide to start.",
+ "q2": "Yes, add irinotecan given growing disease; well tolerated in similar settings.",
+ "q3": "Although the entity remains unconfirmed and this is only a liquid biopsy finding, after discussing the atypical co-mutation pattern with the molecular board, I would still add an FGFR inhibitor to the regimen as a reasonable trial given the growing disease.",
+ "_expect": {
+  "passed": false,
+  "dangerous": [],
+  "must_unmet": [],
+  "_label": "boundary case: a well-reasoned, properly-caveated decision to ADD (not switch to) an FGFR inhibitor - a defensible second opinion per the file header. Verified 2026-10-23: mn_overconfident_switch_no_caveat correctly does not fire (the caveat-bearing sentence is stripped by `except` before the check runs), and tgt_verdict_continue_chemo correctly does not fire either (this response does not continue chemo alone). Not expected to pass (reward 0.4, missing several reasoning items this short answer skips) - included to pin the boundary behavior, not as a target score."
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "q1": "Temozolomide to start.",
+ "q2": "Yes, add irinotecan given growing disease; well tolerated in similar settings.",
+ "q3": "Stop chemotherapy now and switch to an FGFR inhibitor instead of chemotherapy, since we have a clear actionable target.",
+ "_expect": {
+  "passed": false,
+  "dangerous": [],
+  "must_met": [
+   "chemo_options_temozolomide",
+   "chemo_escalation_irinotecan"
+  ],
+  "_label": "adversarial: confident, uncaveated switch to targeted therapy on a liquid-biopsy finding with no mention of entity uncertainty, co-mutation pattern, or confirmation - verified 2026-10-23, mn_overconfident_switch_no_caveat fires (-6). Found and fixed a real bug here: an earlier version used `recommend` for this item, whose shared _RECOMMEND gate (built around prescribing a drug, not switching away from one) never matched 'stop chemotherapy and switch to X' phrasing, silently making the item a no-op; switched to `affirm`."
+ }
+}
