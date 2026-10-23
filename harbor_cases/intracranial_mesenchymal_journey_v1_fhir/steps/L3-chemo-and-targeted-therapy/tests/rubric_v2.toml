@@ -236,12 +236,37 @@ affirm = ['(?:recommend\w*|propose\w*|pursue\w*|obtain\w*|perform\w*|proceed (?:
           '(?:repeat|new|another|further|additional)[^.\n]{0,20}(?:brain |stereotactic |surgical |tissue )?biops\w*[^.\n]{0,50}(?:recommend\w*|propose\w*|pursue\w*|obtain\w*|perform\w*|proceed\w*|plan\w*|would (?:be|do))',
           '(?:repeat|new|another|further|additional)[^.\n]{0,20}(?:brain |stereotactic |surgical |tissue )?biops\w*']
 
+# tgt_raises_tissue_reacquisition: a 0-point marker, scored like any other item but never contributing to
+# earned/total itself - it exists purely as the applies_if condition for tgt_acknowledges_biopsy_refusal_constraint
+# below. Added 2026-10-24 after a real Qwen3.7-Plus L3 answer gave a fully valid "don't switch to targeted
+# therapy" argument (no validated drug for these alterations in this entity) that never needed to discuss tissue
+# access at all - confirming the exact fairness concern raised in review: requiring every answer to mention the
+# refusal, explicitly or by decision, only makes sense when the answer's own argument actually raises tissue
+# reacquisition as a live question. When it doesn't, scoring it as a plain miss would penalize verbosity over
+# correctness (the presence-over-decision failure mode, one level up). Verified against 3 real fresh answers
+# (Haiku: fires; Qwen: does not; GPT-6-Luna: does not - a generic "tumor tissue" mention without the
+# archival/existing qualifier, kept conservative rather than widened on zero real positive evidence) and all 6
+# existing continuity calibration files before adding.
+[[items]]
+id = "tgt_raises_tissue_reacquisition"
+domain = "continuity"
+kind = "should"
+severity = "minor"
+points = 0
+text = "Internal marker (0 points, not scored on its own): the response raises tissue reacquisition/correlation or repeat-biopsy as part of answering q3. Gates whether tgt_acknowledges_biopsy_refusal_constraint applies at all."
+any = ['(?:declin\w*|refus\w*|not willing|unwilling)[^.\n]{0,60}biops\w*',
+       'biops\w*[^.\n]{0,60}(?:declin\w*|refus\w*|not willing|unwilling)',
+       '(?:repeat|new|another|further|additional)[^.\n]{0,20}(?:brain |stereotactic |surgical |tissue )?biops\w*',
+       '(?:archival|existing)[^.\n]{0,15}(?:tissue|specimen|block|material|sample)',
+       'tissue[^.\n]{0,30}(?:is|are|remains?)\s*(?:limited|insufficient|inadequate|scarc\w*)']
+
 [[items]]
 id = "tgt_acknowledges_biopsy_refusal_constraint"
 domain = "continuity"
 kind = "should"
 severity = "minor"
 points = 4
+applies_if = "tgt_raises_tissue_reacquisition"
 # widened 2026-10-24 (real Haiku answer, found via a user-prompted re-check of a live hybrid run): the original
 # 3 alternatives require the refusal to be stated explicitly. A real Haiku L3 answer requested "RNA-based fusion
 # testing of the archival tissue" when tissue correlation was needed - the clinically correct decision, fully
@@ -251,7 +276,10 @@ points = 4
 # whether the constraint was NAMED, not whether the response's actual plan was consistent with it. Added two new
 # alternatives crediting the decision itself (archival/existing tissue specifically, for correlation/confirmation
 # of the molecular finding) alongside the original explicit-mention alternatives, which still count on their own.
-text = "The response's reasoning either explicitly references the family's refusal of a repeat brain biopsy, or makes the decision consistent with it: pursuing tissue correlation from archival/existing material (not a new/repeat biopsy) when further tissue confirmation is needed. Not just general tissue scarcity without either signal."
+# Gated by applies_if (see tgt_raises_tissue_reacquisition above) the same day, after a real Qwen3.7-Plus answer
+# showed a fully valid L3 argument that never raises tissue access at all - this item now only counts against a
+# response that actually engages with the topic, not every response regardless of whether it's relevant.
+text = "The response's reasoning either explicitly references the family's refusal of a repeat brain biopsy, or makes the decision consistent with it: pursuing tissue correlation from archival/existing material (not a new/repeat biopsy) when further tissue confirmation is needed. Not applicable, and excluded from scoring, when the response never raises tissue reacquisition at all."
 any = ['(?:famil\w*|patient|he|she|they)[^.\n]{0,40}(?:declin\w*|refus\w*|not willing|unwilling|against[^.\n]{0,20}wishes)[^.\n]{0,60}biops\w*',
        'biops\w*[^.\n]{0,60}(?:declin\w*|refus\w*|not willing|unwilling)',
        '(?:declin\w*|refus\w*|not willing|unwilling)[^.\n]{0,60}biops\w*',
