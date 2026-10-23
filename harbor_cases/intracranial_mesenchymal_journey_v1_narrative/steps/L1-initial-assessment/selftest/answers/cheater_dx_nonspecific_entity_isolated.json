@@ -1,0 +1,11 @@
+{
+ "initial_assessment": "This is an intracranial tumor causing mass effect and symptoms including headache and vomiting, with a separate spinal lesion likely representing metastatic spread.",
+ "diagnostic_confirmation_and_staging": "Obtain expert neuropathology review and broad molecular sequencing. Complete contrast-enhanced MRI of the brain and spine.",
+ "immediate_management_plan": "We will defer definitive treatment until the diagnosis, pathology, grade, and resectability are established; in the meantime, provide symptom control for headache and vomiting, and refer to neurosurgery and neuro-oncology for further assessment.",
+ "missing_information": ["Definitive histologic entity and WHO grade"],
+ "_expect": {
+  "passed": false,
+  "dangerous": ["dx_nonspecific_entity"],
+  "_label": "dangerous-item cheater audit (2026-10-24, hardening plan item 3): deliberately omits any 'mesenchymal' + nonspecific-entity language, so dx_nonspecific_entity's `must` is missed - while keeping tx_defer_definitive, mn_unsupported_regimen, and mn_palliative_only all clean (generic deferral language, no named regimen, no palliative/hospice framing), to isolate this one dangerous item rather than triggering several at once. Confirms the override actually zeroes reward (0.0) for this specific miss, not just inferred from 0 real-model trials ever hitting it."
+ }
+}
