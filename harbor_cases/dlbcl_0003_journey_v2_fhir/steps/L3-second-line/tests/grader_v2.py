@@ -534,8 +534,14 @@ def call_judge(items: list[dict], response: str, timeout: int = 180, context: st
     extra = dict(h.split(":", 1) for h in os.environ.get("ONCOWORLD_JUDGE_HEADERS", "").split("\n") if ":" in h)
     extra = {k.strip(): v.strip() for k, v in extra.items()}
     if "anthropic.com" in base:   # native Anthropic Messages API (e.g. Claude Haiku as judge)
-        body = {"model": judge_model(), "max_tokens": 8000,   # newer Claude models reject sampling parameters
+        # extended thinking (2026-10-23, ONCOWORLD_JUDGE_THINKING=0 to disable): the judge reasons step-by-step
+        # before committing to a verdict, instead of writing its one-line "reasoning" field after already having
+        # decided. max_tokens raised to give the thinking block real room alongside the full JSON answer - with
+        # several criteria batched per domain, the final JSON alone can already run long.
+        body = {"model": judge_model(), "max_tokens": 16000,   # newer Claude models reject sampling parameters
                 "messages": [{"role": "user", "content": prompt}]}
+        if os.environ.get("ONCOWORLD_JUDGE_THINKING", "1") != "0":
+            body["thinking"] = {"type": "adaptive"}
         req = urllib.request.Request(base.rstrip("/") + "/messages", data=json.dumps(body).encode(),
                                      headers={"Content-Type": "application/json", "anthropic-version": "2023-06-01",
                                               "x-api-key": os.environ["ONCOWORLD_JUDGE_API_KEY"], **extra})
