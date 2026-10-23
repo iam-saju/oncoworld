@@ -219,7 +219,11 @@ kind = "must"
 severity = "important"
 points = 5
 text = "The response provides symptom control for headache and vomiting and assesses for raised intracranial pressure and seizures."
-all = ['(?:symptom control|symptomatic|supportive care|palliative (?:symptom|care))',
+# condition 1 widened 2026-10-23: a real gpt-6-luna narrative answer wrote "symptom-directed analgesia and
+# antiemetics" - clinically identical to "symptom control"/"symptomatic" but not matched by either; its FHIR
+# counterpart only happened to pass because it separately used the word "symptomatic" to describe edema, not
+# symptom control itself. Added the symptom-directed/-focused/-based compound-adjective forms.
+all = ['(?:symptom control|symptomatic|symptom[- ](?:directed|focused|based)|supportive care|palliative (?:symptom|care))',
        '(?:headache|vomiting|intracranial pressure|seizure)']
 
 [[items]]
