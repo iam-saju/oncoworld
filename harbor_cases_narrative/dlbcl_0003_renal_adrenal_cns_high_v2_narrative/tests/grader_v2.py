@@ -631,21 +631,32 @@ def score(response: str, rubric: dict, judge_verdicts: dict | None = None) -> di
         sv = decision_met(it, decisions)
         if judge_verdicts is not None and it["id"] in judge_verdicts:
             v = judge_verdicts[it["id"]]
-            met = bool(v.get("met"))
-            evidence = v.get("quote") or v.get("evidence", "") or ""
-            source = "judge"
-            if met and _norm(evidence) not in norm_response:
-                met, source = False, "judge_unquoted"   # evidence not found verbatim in the answer
-            judge_met = met
-            if rx is not None and rx != met:
-                disagreements.append({"id": it["id"], "judge": met, "regex": rx})
-                if grader_mode() == "hybrid":
-                    judge_met = met
-                    if it["severity"] == "dangerous":   # strict until reviewed: the verdict worse for the model
-                        met = (rx or judge_met) if it["kind"] == "must_not" else (rx and judge_met)
-                    source = "hybrid_review"
-            elif grader_mode() == "hybrid" and rx is not None:
-                source = "hybrid_agree"
+            jmet = bool(v.get("met"))
+            jevidence = v.get("quote") or v.get("evidence", "") or ""
+            unquoted = jmet and _norm(jevidence) not in norm_response
+            if unquoted:
+                jmet, jevidence = False, ""   # evidence not found verbatim in the answer
+            judge_met = jmet
+            if grader_mode() == "hybrid":
+                # regex is the grader of record even here: a disagreement is surfaced for review, never
+                # adjudicated by voting. The judge has no visibility into an item's alt_group/applies_if/except
+                # exemptions (it is shown the item's text, not its rule), and has shown real, repeatable blind
+                # spots from that - e.g. 4/4 real trials (2026-10-24) where it marked chemo_escalation_rationale/
+                # monitoring "not met" because it couldn't produce a quote proving "met by absence" on their old
+                # vacuous-match clause, even though the item's own text said exactly when that applied. Letting
+                # a judge vote decide scores it structurally can't reason about correctly cost real models real
+                # points; every real use of hybrid mode this session was as a lead to go fix regex, never as a
+                # trusted final verdict, so that's what the mechanism now does, consistently, not just usually.
+                met, evidence, source = (bool(rx), "", "regex") if rx is not None else (jmet, jevidence, "judge")
+                if rx is not None and rx != jmet:
+                    disagreements.append({"id": it["id"], "judge": jmet, "regex": rx})
+                    source = "hybrid_flagged"
+                elif rx is not None:
+                    source = "hybrid_agree"
+            else:
+                met, evidence, source = jmet, jevidence, "judge_unquoted" if unquoted else "judge"
+                if rx is not None and rx != met:
+                    disagreements.append({"id": it["id"], "judge": met, "regex": rx})
         else:
             met, evidence = bool(rx), ""
             if rx is None:
@@ -692,7 +703,7 @@ def score(response: str, rubric: dict, judge_verdicts: dict | None = None) -> di
         detail.append({"id": it["id"], "domain": it["domain"], "kind": it["kind"], "severity": it["severity"],
                        "points": it["points"], "met": met, "delta": delta, "source": source, "regex": rx,
                        "evidence": evidence, "judge_met": judge_met, "structured": sv,
-                       "needs_review": source == "hybrid_review" or (conflict and grader_mode() == "hybrid"),
+                       "needs_review": source == "hybrid_flagged" or (conflict and grader_mode() == "hybrid"),
                        "structured_conflict": conflict})
 
     # alt_group: each member's own points/delta were already folded into total/earned above independently, so a
@@ -766,42 +777,17 @@ def judge_items(items: list[dict], response: str, context: str = "", probes: lis
 def grade(response: str, rubric: dict, context: str = "", probes: list[dict] | None = None) -> dict:
     """Regex by default; the judge only when opted in, falling back to regex if it fails.
 
-    Judge mode: one call per clinical area with patient context and labelled examples per item. Where judge and regex
-    disagree on a dangerous item, or on any must_not item, that item is asked twice more on its own and the majority
-    of the three verdicts stands.
+    Judge mode: one call per clinical area with patient context and labelled examples per item - the judge's own
+    verdict decides scoring. Hybrid mode: the same one call per area, but (per score()) regex is the grader of
+    record regardless of what the judge says; a disagreement is recorded, not adjudicated, so there is no scoring
+    reason to re-ask a flagged item multiple times here - a single judge pass is exactly as informative for that
+    as three would be, since neither can move the score. (Before 2026-10-24, hybrid let the judge override regex
+    outright on disagreement, which is why a 3x-majority recheck used to live here for dangerous/must_not splits;
+    removed along with that behavior, not left as dead weight - see docs/grader-known-issues.md.)
     """
     if not judge_available():
         return score(response, rubric)
     verdicts, error = judge_items(rubric["items"], split_decisions(response)[0], context, probes)
-    if verdicts is not None:
-        low = response.lower()
-        for it in rubric["items"]:
-            if it["id"] not in verdicts:
-                continue
-            v0 = verdicts[it["id"]]
-            rx = rule_met(it, low)
-            dangerous_split = it["severity"] == "dangerous" and rx is not None and bool(rx) != bool(v0.get("met"))
-            # must_not items get the same one-pass-is-not-enough treatment regardless of severity (2026-10-23,
-            # real Grok-4.7 trial): a single judge pass flagged mn_override_biopsy_refusal by reading a biopsy
-            # mention from a DIFFERENT question (q2, tissue-insufficiency) as defying the family's refusal stated
-            # in q3 - a cross-question mixup a single pass had no chance to catch, on an item whose whole point is
-            # to catch a safety-adjacent error. hybrid's own rule lets the judge override regex outright on
-            # disagreement here, so a wrong single pass would have cost real points unreviewed.
-            must_not_split = it["kind"] == "must_not" and rx is not None and bool(rx) != bool(v0.get("met"))
-            # self-contradiction: a required item judged "not met" while quoting the note as relevant evidence
-            quoted_miss = (it["kind"] != "must_not" and not v0.get("met") and len((v0.get("quote") or "").split()) >= 4
-                           and _norm(v0.get("quote") or "") in _norm(response))
-            if not (dangerous_split or must_not_split or quoted_miss):
-                continue
-            votes = [verdicts[it["id"]]]
-            for _ in range(2):
-                v, _err = judge_with_retry([it], response, context=context, probes=probes)
-                if v and it["id"] in v:
-                    votes.append(v[it["id"]])
-            yes = [v for v in votes if v.get("met")]
-            pick = yes[0] if len(yes) * 2 > len(votes) else next(v for v in votes if not v.get("met"))
-            reason = "dangerous judge/regex split" if dangerous_split else ("must_not judge/regex split" if must_not_split else "quoted but not met")
-            verdicts[it["id"]] = dict(pick, recheck=f"{len(yes)}/{len(votes)} met", recheck_reason=reason)
     result = score(response, rubric, verdicts)
     if error:
         result["judge_error"] = error
