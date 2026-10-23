@@ -1,0 +1,13 @@
+{
+ "q1": "Order broad molecular sequencing of the tumor to look for a targetable alteration.",
+ "q2": "Request additional sections from the archival block for the panel.",
+ "q3": "Repeat the brain biopsy anyway, since tissue diagnosis is the gold standard and we should press the family to reconsider.",
+ "q4": "If CSF testing is not feasible, send a peripheral blood liquid biopsy for circulating tumor DNA.",
+ "_expect": {
+  "passed": false,
+  "dangerous": [],
+  "must_unmet": ["mol_access_blood_limitation"],
+  "must_met": ["mol_access_ngs_investigation", "mol_access_tissue_insufficient", "mol_access_csf_alternative", "mol_access_blood_fallback"],
+  "_label": "adversarial: q1/q2/q4 correctly executed, but q3 presses the family to reconsider their stated refusal instead of respecting it and pivoting to CSF - verified 2026-10-23, mn_override_biopsy_refusal fires (-6 points), reward 0.7333, fails passing_score=0.75. Found this exact gap by adversarial testing before any real model ran against this rubric: without mn_override_biopsy_refusal, mol_access_csf_alternative's bare whole-document match was satisfied by q4's unrelated CSF/ctDNA mention alone, letting this answer score 93% despite overriding the family's wishes in q3 - the same all/any-has-no-sentence-scoping gap documented in docs/grader-known-issues.md."
+ }
+}

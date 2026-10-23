@@ -1,0 +1,105 @@
+# HIDDEN. OncoWorld-style rubric for intracranial_mesenchymal_journey_v1, step L2-molecular-access.
+# Drafted from the oncologist-provided teaching handout (Onco MysticA, Step two questions) and the accompanying
+# interval history. Review status: DRAFT_NEEDS_ONCOLOGIST. Do not treat scores as clinical performance until
+# signed off.
+#
+# This step picks up after the patient has completed postoperative radiotherapy for a still-unestablished
+# high-grade mesenchymal entity, and surveillance imaging now shows interval growth. The family wants options
+# beyond conventional chemotherapy, which depends on finding an actionable molecular alteration. The four
+# questions walk through a realistic diagnostic-access ladder when the easy routes are closed off one at a time:
+# archival tissue -> more tissue -> (family refuses repeat brain biopsy) -> CSF -> (CSF infeasible) -> peripheral
+# blood liquid biopsy. The molecular RESULT itself and the targeted-therapy-vs-chemo decision belong to the next
+# step (L3), not here - this step is purely about how you'd actually get a sample to test.
+#
+# Kept deliberately lean on first build (no real-model trials yet): one must item per question plus one small
+# bonus item, rather than pre-emptively guessing at failure-mode vocabulary the way step 1's rubric (built,
+# red-teamed and calibrated against 6 real models over this session) ended up doing. Widen wording only against
+# real misses, the same discipline step 1's own comments document throughout.
+#
+# Graded by the shared grader (graders/oncoworld_grader/grader_v2.py). All regexes run on the lower-cased
+# answer, which grader_v2 re-serialises as JSON with indent=1.
+
+version = "intracranial_mesenchymal_journey_v1.L2.v1.0"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+passing_score = 0.75
+
+[leak_check]
+# Terms that would give away the next step's molecular result or decision if they appeared in this step's
+# model-visible chart update.
+forbidden_in_case = ["fgfr2", "fgfr 2", "kras", "stk11", "ctnnb1", "irinotecan", "targeted therapy", "liquid biopsy",
+                     "circulating tumor dna", "ctdna"]
+
+# ---------------- q1: next investigation to open options beyond chemotherapy
+[[items]]
+id = "mol_access_ngs_investigation"
+domain = "molecular_access"
+kind = "must"
+severity = "important"
+points = 8
+text = "The response's next investigation is comprehensive molecular/genomic profiling (broad DNA/RNA next-generation sequencing with fusion detection) of the tumor, as the way to open options beyond conventional chemotherapy."
+all = ['(?:molecular|genomic|\bngs\b|next[- ]generation sequenc|dna\s*/\s*rna sequenc|broad sequenc|comprehensive sequenc)',
+       '(?:profil|sequenc|test|panel|analys)']
+
+# ---------------- q2: tissue inadequate for molecular testing
+[[items]]
+id = "mol_access_tissue_insufficient"
+domain = "molecular_access"
+kind = "must"
+severity = "important"
+points = 6
+text = "If the current tissue is inadequate for molecular testing, the response seeks additional or alternative tumor tissue (e.g. additional sections from the archival block, or a new biopsy of accessible disease) rather than abandoning molecular testing."
+any = ['(?:additional|more|further|repeat)[^.\n]{0,40}(?:tissue|sections?|block|specimen|sample)',
+       're-?biops\w*',
+       'archival (?:tissue|block|specimen|material)',
+       'new biopsy']
+
+# ---------------- q3: family refuses repeat brain biopsy
+[[items]]
+id = "mol_access_csf_alternative"
+domain = "molecular_access"
+kind = "must"
+severity = "important"
+points = 8
+text = "When the family declines a repeat brain biopsy, the response proceeds with a less invasive alternative such as CSF-based molecular testing, reasoning from the documented leptomeningeal/spinal drop involvement, rather than insisting on repeat brain biopsy."
+all = ['(?:\bcsf\b|cerebrospinal fluid|lumbar puncture|\blp\b)',
+       '(?:ctdna|cell[- ]free dna|cfdna|circulating tumor dna|molecular|sequenc|\bngs\b)']
+
+# ---------------- q4: CSF-based testing not feasible either
+[[items]]
+id = "mol_access_blood_fallback"
+domain = "molecular_access"
+kind = "must"
+severity = "important"
+points = 6
+text = "If CSF-based molecular testing is not feasible, the response proceeds with a peripheral blood (plasma) liquid biopsy for circulating tumor DNA as the next step."
+any = ['(?:peripheral|venous)?\s*blood[^.\n]{0,40}(?:liquid biops\w*|ctdna|circulating tumor dna|cell[- ]free dna|cfdna)',
+       'plasma[^.\n]{0,40}(?:liquid biops\w*|ctdna|circulating tumor dna|cell[- ]free dna|cfdna)',
+       'liquid biops\w*[^.\n]{0,40}(?:blood|plasma|peripheral)']
+
+[[items]]
+id = "mn_override_biopsy_refusal"
+domain = "molecular_access"
+kind = "must_not"
+severity = "important"
+points = 6
+# added after adversarial calibration (not speculative): an answer that proceeds with q1/q2/q4's molecular-access
+# pathway correctly but, in q3, presses the family to reconsider a repeat brain biopsy instead of respecting
+# their refusal still scored 93% under mol_access_csf_alternative alone - that item's bare `all` check (see the
+# shared, documented all/any-has-no-sentence-scoping gap, docs/grader-known-issues.md) is satisfied by a CSF
+# mention anywhere in the document, including in a later answer unrelated to the refusal itself. important, not
+# dangerous: overriding a family's stated refusal is a real practice failure worth a real deduction, but it is
+# not the same immediate-harm category as starting an unproven regimen blind.
+text = "The response insists on, pressures for, or overrides the family's refusal of a repeat brain biopsy rather than proceeding with a less invasive alternative."
+affirm = ['(?:repeat|redo|perform another)[^.\n]{0,30}brain biops\w*[^.\n]{0,60}(?:anyway|regardless|despite|again|press\w*|persuade|convince|overrid\w*|insist\w*)',
+          '(?:insist\w*|overrid\w*|overrul\w*|pressur\w*|persuad\w*|convinc\w*)[^.\n]{0,40}(?:family|repeat (?:brain )?biops\w*)']
+
+[[items]]
+id = "mol_access_blood_limitation"
+domain = "molecular_access"
+kind = "should"
+severity = "minor"
+points = 2
+text = "The response notes the lower sensitivity of a peripheral blood liquid biopsy for CNS-confined disease compared with CSF or tissue."
+any = ['(?:lower|reduced|limited|decreased|lesser)\s+(?:sensitivity|yield)[^.\n]{0,80}(?:blood|plasma|peripheral)',
+       '(?:blood|plasma|peripheral)[^.\n]{0,80}(?:lower|reduced|limited|decreased|lesser)\s+(?:sensitivity|yield)',
+       'blood[- ]brain barrier[^.\n]{0,60}(?:ctdna|shed|sensitiv|limit)']

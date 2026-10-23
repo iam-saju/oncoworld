@@ -1,0 +1,20 @@
+INTERVAL HISTORY (2026-10-21 to 2026-12-15) - this is what ACTUALLY happened, take it as fact even if it differs
+from what you previously recommended.
+
+The patient underwent neurosurgical evaluation. At craniotomy on 2026-10-28, a subtotal resection of the left
+frontal mass was achieved; the posterior margin was left in situ adjacent to eloquent cortex. Final surgical
+pathology (issued 2026-11-04) confirmed a high-grade mesenchymal/spindle cell neoplasm but could not further
+subclassify the entity beyond "high-grade spindle cell/mesenchymal neoplasm, NOS" on the available
+immunohistochemistry and sequencing panel; STAT6 immunohistochemistry was negative and no NAB2-STAT6 fusion was
+detected. No additional actionable alteration was identified on this panel.
+
+Given the subtotal resection and high-grade histology, the tumor board recommended postoperative focal
+radiotherapy to the resection bed, which the patient completed on 2026-12-05 (60 Gy in 30 fractions, started
+2026-10-31).
+
+Surveillance brain and spine MRI on 2026-12-12 shows interval growth of residual enhancing tumor along the left
+frontal resection margin. The C6 pial nodule is stable in size and enhancement, unchanged from prior.
+
+The patient's performance status remains 1. The patient and family, having completed radiotherapy, now wish to
+explore all therapeutic options, including options beyond conventional chemotherapy, for the growing residual
+disease.

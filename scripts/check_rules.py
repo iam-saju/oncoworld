@@ -37,6 +37,14 @@ def rubric_sets():
     m = ROOT / "harbor_cases" / "intracranial_mesenchymal_0001_narrative"
     yield ("intracranial_mesenchymal_0001", m / "tests" / "rubric_v2.toml", m / "solution" / "final_answer.json",
            m / "selftest" / "answers", m / "selftest" / "probes.json", m / "selftest" / "heldout_probes.json")
+    # the longitudinal continuation of the case above: same hand-built, no-cases_src convention, one step per
+    # layer under its own steps/<name>/ directory (narrative is the source of truth; the fhir copy is checked
+    # byte-identical separately, same as the single-step case's own fhir sibling).
+    mj = ROOT / "harbor_cases" / "intracranial_mesenchymal_journey_v1_narrative" / "steps"
+    for step in ["L1-initial-assessment", "L2-molecular-access"]:
+        yield (f"mesenchymal_journey_{step}", mj / step / "tests" / "rubric_v2.toml",
+               mj / step / "solution" / "final_answer.json", mj / step / "selftest" / "answers",
+               mj / step / "selftest" / "probes.json", mj / step / "selftest" / "heldout_probes.json")
     j = ROOT / "cases_src" / "dlbcl_0003_journey"
     for L in LAYERS:
         yield (f"journey_{L}", j / f"{L}_rubric.toml", j / f"{L}_gold.json", j / "selftest" / L,

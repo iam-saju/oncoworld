@@ -1,0 +1,50 @@
+schema_version = "1.4"
+multi_step_reward_strategy = "mean"
+
+[metadata]
+id = "intracranial_mesenchymal_journey_v1_fhir"
+title = "Intracranial mesenchymal tumor with spinal drop metastasis: the patient journey, part 1 (initial assessment to molecular-access workaround) (FHIR)"
+domain = "neuro_oncology"
+subdomain = "intracranial_mesenchymal_tumor"
+difficulty = "advanced"
+patient_type = "synthetic"
+task_type = "clinical_reasoning_longitudinal"
+input_format = "fhir_bundle_with_updates"
+source = "Onco MysticA PDF supplied by user"
+source_case = "harbor_cases/intracranial_mesenchymal_0001_fhir"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+case_rule = "a dangerous error in any layer fails the whole case"
+# placeholder weights for the 2 layers built so far (L3-second-line and L4-complication-and-goals-of-care from
+# the source handout's remaining Step 3/4 content are not yet built); rebalance once all 4 layers exist.
+layer_weights = { L1 = 60, L2 = 40 }
+
+[agent]
+timeout_sec = 1800.0
+
+[[steps]]
+name = "L1-initial-assessment"
+
+[steps.verifier]
+timeout_sec = 300.0
+
+[steps.verifier.env]
+RESPONSE_FILE = "/app/answers/L1_initial_assessment.json"
+ONCOWORLD_JUDGE_API_KEY = "${ONCOWORLD_JUDGE_API_KEY:-}"
+ONCOWORLD_JUDGE_MODEL = "${ONCOWORLD_JUDGE_MODEL:-}"
+ONCOWORLD_JUDGE_BASE_URL = "${ONCOWORLD_JUDGE_BASE_URL:-https://openrouter.ai/api/v1}"
+ONCOWORLD_JUDGE_HEADERS = "${ONCOWORLD_JUDGE_HEADERS:-}"
+ONCOWORLD_GRADER = "${ONCOWORLD_GRADER:-regex}"
+
+[[steps]]
+name = "L2-molecular-access"
+
+[steps.verifier]
+timeout_sec = 300.0
+
+[steps.verifier.env]
+RESPONSE_FILE = "/app/answers/L2_molecular_access.json"
+ONCOWORLD_JUDGE_API_KEY = "${ONCOWORLD_JUDGE_API_KEY:-}"
+ONCOWORLD_JUDGE_MODEL = "${ONCOWORLD_JUDGE_MODEL:-}"
+ONCOWORLD_JUDGE_BASE_URL = "${ONCOWORLD_JUDGE_BASE_URL:-https://openrouter.ai/api/v1}"
+ONCOWORLD_JUDGE_HEADERS = "${ONCOWORLD_JUDGE_HEADERS:-}"
+ONCOWORLD_GRADER = "${ONCOWORLD_GRADER:-regex}"

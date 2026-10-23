@@ -1,0 +1,453 @@
+{
+  "resourceType": "Bundle",
+  "id": "mesench-0001-l2-update",
+  "meta": {
+    "security": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  },
+  "identifier": {
+    "system": "http://oncoworld.example/fhir/sid/bundle",
+    "value": "mesench-0001-l2-update"
+  },
+  "type": "collection",
+  "timestamp": "2026-12-15T09:00:00Z",
+  "entry": [
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DocumentReference/mesench-0001-l2-interval-history",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "mesench-0001-l2-interval-history",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34117-2",
+              "display": "History and physical note"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+                "code": "clinical-note",
+                "display": "Clinical Note"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/mesench-0001-patient"
+        },
+        "date": "2026-12-15T09:00:00Z",
+        "author": [
+          {
+            "reference": "Practitioner/mesench-0001-neurooncologist"
+          }
+        ],
+        "description": "Interval history, 2026-10-21 to 2026-12-15",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "SU5URVJWQUwgSElTVE9SWSAoMjAyNi0xMC0yMSB0byAyMDI2LTEyLTE1KSAtIHRoaXMgaXMgd2hhdCBBQ1RVQUxMWSBoYXBwZW5lZCwgdGFrZSBpdCBhcyBmYWN0IGV2ZW4gaWYgaXQgZGlmZmVycwpmcm9tIHdoYXQgeW91IHByZXZpb3VzbHkgcmVjb21tZW5kZWQuCgpUaGUgcGF0aWVudCB1bmRlcndlbnQgbmV1cm9zdXJnaWNhbCBldmFsdWF0aW9uLiBBdCBjcmFuaW90b215IG9uIDIwMjYtMTAtMjgsIGEgc3VidG90YWwgcmVzZWN0aW9uIG9mIHRoZSBsZWZ0CmZyb250YWwgbWFzcyB3YXMgYWNoaWV2ZWQ7IHRoZSBwb3N0ZXJpb3IgbWFyZ2luIHdhcyBsZWZ0IGluIHNpdHUgYWRqYWNlbnQgdG8gZWxvcXVlbnQgY29ydGV4LiBGaW5hbCBzdXJnaWNhbApwYXRob2xvZ3kgKGlzc3VlZCAyMDI2LTExLTA0KSBjb25maXJtZWQgYSBoaWdoLWdyYWRlIG1lc2VuY2h5bWFsL3NwaW5kbGUgY2VsbCBuZW9wbGFzbSBidXQgY291bGQgbm90IGZ1cnRoZXIKc3ViY2xhc3NpZnkgdGhlIGVudGl0eSBiZXlvbmQgImhpZ2gtZ3JhZGUgc3BpbmRsZSBjZWxsL21lc2VuY2h5bWFsIG5lb3BsYXNtLCBOT1MiIG9uIHRoZSBhdmFpbGFibGUKaW1tdW5vaGlzdG9jaGVtaXN0cnkgYW5kIHNlcXVlbmNpbmcgcGFuZWw7IFNUQVQ2IGltbXVub2hpc3RvY2hlbWlzdHJ5IHdhcyBuZWdhdGl2ZSBhbmQgbm8gTkFCMi1TVEFUNiBmdXNpb24gd2FzCmRldGVjdGVkLiBObyBhZGRpdGlvbmFsIGFjdGlvbmFibGUgYWx0ZXJhdGlvbiB3YXMgaWRlbnRpZmllZCBvbiB0aGlzIHBhbmVsLgoKR2l2ZW4gdGhlIHN1YnRvdGFsIHJlc2VjdGlvbiBhbmQgaGlnaC1ncmFkZSBoaXN0b2xvZ3ksIHRoZSB0dW1vciBib2FyZCByZWNvbW1lbmRlZCBwb3N0b3BlcmF0aXZlIGZvY2FsCnJhZGlvdGhlcmFweSB0byB0aGUgcmVzZWN0aW9uIGJlZCwgd2hpY2ggdGhlIHBhdGllbnQgY29tcGxldGVkIG9uIDIwMjYtMTItMDUgKDYwIEd5IGluIDMwIGZyYWN0aW9ucywgc3RhcnRlZAoyMDI2LTEwLTMxKS4KClN1cnZlaWxsYW5jZSBicmFpbiBhbmQgc3BpbmUgTVJJIG9uIDIwMjYtMTItMTIgc2hvd3MgaW50ZXJ2YWwgZ3Jvd3RoIG9mIHJlc2lkdWFsIGVuaGFuY2luZyB0dW1vciBhbG9uZyB0aGUgbGVmdApmcm9udGFsIHJlc2VjdGlvbiBtYXJnaW4uIFRoZSBDNiBwaWFsIG5vZHVsZSBpcyBzdGFibGUgaW4gc2l6ZSBhbmQgZW5oYW5jZW1lbnQsIHVuY2hhbmdlZCBmcm9tIHByaW9yLgoKVGhlIHBhdGllbnQncyBwZXJmb3JtYW5jZSBzdGF0dXMgcmVtYWlucyAxLiBUaGUgcGF0aWVudCBhbmQgZmFtaWx5LCBoYXZpbmcgY29tcGxldGVkIHJhZGlvdGhlcmFweSwgbm93IHdpc2ggdG8KZXhwbG9yZSBhbGwgdGhlcmFwZXV0aWMgb3B0aW9ucywgaW5jbHVkaW5nIG9wdGlvbnMgYmV5b25kIGNvbnZlbnRpb25hbCBjaGVtb3RoZXJhcHksIGZvciB0aGUgZ3Jvd2luZyByZXNpZHVhbApkaXNlYXNlLgo="
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Interval history, 2026-10-21 to 2026-12-15: subtotal resection, postoperative RT, growing residual disease.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Procedure/mesench-0001-l2-resection",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "mesench-0001-l2-resection",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1201979001",
+              "display": "Excision of lesion of brain"
+            }
+          ],
+          "text": "Craniotomy with subtotal resection of left frontal lobe mass"
+        },
+        "subject": {
+          "reference": "Patient/mesench-0001-patient"
+        },
+        "performedDateTime": "2026-10-28",
+        "performer": [
+          {
+            "actor": {
+              "reference": "Organization/mesench-0001-neurosurgery"
+            }
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [],
+            "text": "Left frontal lobe"
+          }
+        ],
+        "note": [
+          {
+            "text": "Subtotal resection; posterior margin left in situ adjacent to eloquent cortex."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Craniotomy, subtotal resection of the left frontal mass, 2026-10-28.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/mesench-0001-l2-surgical-pathology",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "mesench-0001-l2-surgical-pathology",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                "code": "SP",
+                "display": "Surgical Pathology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "60568-3",
+              "display": "Pathology synoptic report"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mesench-0001-patient"
+        },
+        "effectiveDateTime": "2026-10-28",
+        "issued": "2026-11-04T16:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/mesench-0001-neuropathology-lab"
+          }
+        ],
+        "conclusion": "High-grade spindle cell/mesenchymal neoplasm, NOS. STAT6 immunohistochemistry negative; NAB2-STAT6 fusion not detected. No additional actionable alteration identified on the available immunohistochemistry and sequencing panel. The specific entity remains unresolved.",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Surgical pathology (2026-11-04): high-grade spindle cell/mesenchymal neoplasm, NOS; STAT6 negative; entity still unresolved.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Procedure/mesench-0001-l2-radiotherapy",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "mesench-0001-l2-radiotherapy",
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "169332007",
+              "display": "External beam radiotherapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mesench-0001-patient"
+        },
+        "performedPeriod": {
+          "start": "2026-10-31",
+          "end": "2026-12-05"
+        },
+        "bodySite": [
+          {
+            "coding": [],
+            "text": "Left frontal resection bed"
+          }
+        ],
+        "note": [
+          {
+            "text": "Postoperative focal radiotherapy to the resection bed, 60 Gy in 30 fractions, completed 2026-12-05."
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Postoperative focal radiotherapy to the resection bed, 60 Gy/30 fractions, completed 2026-12-05.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/mesench-0001-l2-residual-growth",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mesench-0001-l2-residual-growth",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "21889-1",
+              "display": "Size Tumor"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mesench-0001-patient"
+        },
+        "effectiveDateTime": "2026-12-12",
+        "performer": [
+          {
+            "reference": "Organization/mesench-0001-imaging"
+          }
+        ],
+        "method": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "113091000",
+              "display": "Magnetic resonance imaging (procedure)"
+            }
+          ]
+        },
+        "bodySite": {
+          "coding": [],
+          "text": "Left frontal resection margin"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "Higher than normal (worse)"
+              }
+            ],
+            "text": "Interval growth since 2026-10-17 baseline"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Interval growth of residual enhancing tumor along the left frontal resection margin, 2026-12-12.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/mesench-0001-l2-c6-nodule-stable",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mesench-0001-l2-c6-nodule-stable",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "21889-1",
+              "display": "Size Tumor"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mesench-0001-patient"
+        },
+        "effectiveDateTime": "2026-12-12",
+        "performer": [
+          {
+            "reference": "Organization/mesench-0001-imaging"
+          }
+        ],
+        "method": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "113091000",
+              "display": "Magnetic resonance imaging (procedure)"
+            }
+          ]
+        },
+        "bodySite": {
+          "coding": [],
+          "text": "Posterior pial surface of the cervical spinal cord at C6"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "33728-7",
+                  "display": "Size.maximum dimension in Tumor"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 0.5,
+              "unit": "cm",
+              "system": "http://unitsofmeasure.org",
+              "code": "cm"
+            }
+          }
+        ],
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "N",
+                "display": "Normal"
+              }
+            ],
+            "text": "Unchanged from 2026-10-17 baseline"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>C6 pial nodule stable in size and enhancement, unchanged from prior, 2026-12-12.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/DiagnosticReport/mesench-0001-l2-surveillance-mri",
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "mesench-0001-l2-surveillance-mri",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LP29684-5",
+                "display": "Radiology"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "24587-8",
+              "display": "MR Brain WO and W contrast IV"
+            }
+          ],
+          "text": "Surveillance brain and spine MRI"
+        },
+        "subject": {
+          "reference": "Patient/mesench-0001-patient"
+        },
+        "effectiveDateTime": "2026-12-12",
+        "issued": "2026-12-12T18:00:00Z",
+        "performer": [
+          {
+            "reference": "Organization/mesench-0001-imaging"
+          }
+        ],
+        "result": [
+          {
+            "reference": "Observation/mesench-0001-l2-residual-growth"
+          },
+          {
+            "reference": "Observation/mesench-0001-l2-c6-nodule-stable"
+          }
+        ],
+        "conclusion": "Interval growth of residual enhancing tumor along the left frontal resection margin. The C6 pial nodule is stable in size and enhancement, unchanged from prior.",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Surveillance brain/spine MRI, 2026-12-12: residual disease growth at the primary site; C6 nodule stable.</p></div>"
+        }
+      }
+    },
+    {
+      "fullUrl": "http://oncoworld.example/fhir/Observation/mesench-0001-l2-ecog",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mesench-0001-l2-ecog",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "survey",
+                "display": "Survey"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "89247-1",
+              "display": "ECOG Performance Status score"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mesench-0001-patient"
+        },
+        "effectiveDateTime": "2026-12-15",
+        "performer": [
+          {
+            "reference": "Practitioner/mesench-0001-neurooncologist"
+          }
+        ],
+        "valueInteger": 1,
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA9623-5",
+                "display": "Restricted in physically strenuous activity but ambulatory and able to carry out light or sedentary work"
+              }
+            ]
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>ECOG performance status 1, 2026-12-15.</p></div>"
+        }
+      }
+    }
+  ]
+}

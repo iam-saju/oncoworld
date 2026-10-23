@@ -1,0 +1,16 @@
+{
+  "n_concurrent_trials": 2,
+  "agents": [
+    {
+      "name": "oracle"
+    }
+  ],
+  "tasks": [
+    {
+      "path": "harbor_cases/intracranial_mesenchymal_journey_v1_fhir"
+    },
+    {
+      "path": "harbor_cases/intracranial_mesenchymal_journey_v1_narrative"
+    }
+  ]
+}

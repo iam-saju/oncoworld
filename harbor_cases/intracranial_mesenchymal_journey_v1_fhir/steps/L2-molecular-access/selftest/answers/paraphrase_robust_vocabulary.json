@@ -1,0 +1,12 @@
+{
+ "q1": "Order an extended genomic panel using DNA and RNA sequencing to look for a fusion or other alteration that could be targeted with a non-chemotherapy agent.",
+ "q2": "Ask pathology for more sections from the paraffin block; if that is still not enough, proceed to a fresh biopsy of an accessible site of disease after discussing the risks with the family.",
+ "q3": "Given the known C6 pial nodule concerning for spinal drop disease, proceed to a lumbar puncture and send the cerebrospinal fluid for cell-free DNA testing instead of repeating the brain biopsy.",
+ "q4": "Send a venous blood sample for a cell-free tumor DNA liquid biopsy; counsel the family that blood-based testing has lower sensitivity than CSF for a brain-confined process.",
+ "_expect": {
+  "passed": true,
+  "dangerous": [],
+  "all_met": true,
+  "_label": "vocabulary-robustness check: same clinical content as gold, deliberately different phrasing throughout (genomic panel vs NGS, venous blood vs peripheral blood, etc.) - verified 2026-10-23, all 5 scoring items met, reward 1.0."
+ }
+}

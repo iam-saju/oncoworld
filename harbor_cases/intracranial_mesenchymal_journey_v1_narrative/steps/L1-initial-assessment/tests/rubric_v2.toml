@@ -1,0 +1,262 @@
+# HIDDEN. OncoWorld-style rubric for intracranial_mesenchymal_0001.
+# Drafted from the oncologist-provided teaching handout and the accompanying treatment-plan discussion.
+# Review status: DRAFT_NEEDS_ONCOLOGIST. Do not treat scores as clinical performance until signed off.
+#
+# The case is deliberately short-horizon. "Intracranial mesenchymal tumor" is not a specific diagnosis, so the
+# correct immediate plan is diagnostic confirmation, staging, symptom control and multidisciplinary review.
+# No chemotherapy, targeted therapy or definitive radiotherapy should be started until the entity, grade,
+# extent and resectability are established. The later handout stages (NGS, HSV encephalitis, goals of care)
+# are not part of this task.
+#
+# Graded by the shared grader (graders/oncoworld_grader/grader_v2.py). All regexes run on the lower-cased
+# answer, which grader_v2 re-serialises as JSON with indent=1.
+
+version = "intracranial_mesenchymal_0001.v2.0"
+review_status = "DRAFT_NEEDS_ONCOLOGIST"
+passing_score = 0.75
+
+[leak_check]
+# Terms that would give the diagnosis away if they appeared in the model-visible chart.
+forbidden_in_case = ["solitary fibrous", "sft", "hemangiopericytoma", "stat6", "nab2", "sarcoma", "ewing",
+                     "rhabdomyosarcoma", "maximum safe resection", "gross-total", "adjuvant radiotherapy",
+                     "surveillance mri", "category 1"]
+
+# ---------------- diagnosis
+[[items]]
+id = "dx_nonspecific_entity"
+domain = "diagnosis"
+kind = "must"
+severity = "dangerous"
+points = 10
+text = "The response states that 'intracranial mesenchymal tumor' is not a specific diagnosis and that the entity and grade must be established before a treatment can be selected."
+# broadened 2026-10-23 red-team: the literal two-word phrase "intracranial mesenchymal" false-failed a clinically
+# correct answer that paraphrased it ("a mesenchymal neoplasm of the central nervous system", "a mesenchymal
+# tumor involving the brain") while still correctly asserting the entity/grade were unestablished -- that false
+# "not met" on a dangerous must item forced reward to 0. Now also accepts "mesenchymal" paired with a generic
+# tumor noun, or with a brain/CNS reference within the same clause, in either order.
+all = ['(?:intracranial mesenchymal|mesenchymal (?:tumor|neoplasm|lesion|mass|origin|process)|mesenchymal[^.!?\n]{0,40}(?:intracranial|brain|cerebral|\bcns\b|central nervous system)|(?:intracranial|brain|cerebral|\bcns\b|central nervous system)[^.!?\n]{0,40}mesenchymal)',
+       # widened 2026-10-23: a real grok-4.7 answer wrote "not a final diagnosis" and "unestablished" (prefix form)
+       # - both clinically identical to "not specific"/"not established" but unmatched by either, false-failing
+       # this dangerous item on an answer that correctly, explicitly made the required point.
+       '(?:not (?:a )?(?:sufficiently )?specific|non[- ]specific|provisional|not established|unestablish\w*|not (?:a|the) (?:final|definitive|confirmed) diagnos\w*|not definitive|unknown entity|does not establish[^.\n]{0,60}(?:entity|diagnos|subtype)|no definitive[^.\n]{0,40}(?:subtype|diagnos|entity))',
+       '(?:grade|entity)']
+
+[[items]]
+id = "dx_differential_entity"
+domain = "diagnosis"
+kind = "should"
+severity = "important"
+points = 4
+# redesigned 2026-10-23 against the actual source handout (Onco MysticA Case 1): the source never names solitary
+# fibrous tumor/hemangiopericytoma - it treats "intracranial mesenchymal tumor" as the working entity name itself.
+# SFT/HPC was this case's own addition, not drawn from the source, and the source's own eventual molecular reveal
+# (Step 3: FGFR2 fusion, KRAS, STK11, CTNNB1) doesn't match SFT/HPC's defining NAB2-STAT6 fusion - so requiring it
+# as THE differential was never well-founded and may have been actively penalizing more epistemically appropriate
+# answers. Every real model tested (6 models) consistently avoided naming SFT/HPC specifically while still
+# correctly flagging the entity as unestablished - not over-hedging, just not making an unsupported leap. Changed
+# from requiring SFT/HPC+a sarcoma term (both) to accepting any one plausible specific candidate - SFT/HPC remains
+# a valid answer, just no longer the only one that counts.
+text = "The response names at least one plausible specific differential entity (e.g. solitary fibrous tumor/hemangiopericytoma, a sarcoma subtype such as Ewing sarcoma or rhabdomyosarcoma, or another reasonable mesenchymal/CNS candidate) rather than staying only generic."
+any = ['(?:solitary fibrous|\bsft\b|hemangiopericytoma|\bhpc\b)',
+       '(?:sarcoma|ewing|rhabdomyosarcoma|synovial sarcoma|leiomyosarcoma|liposarcoma|chondrosarcoma|osteosarcoma|undifferentiated pleomorphic sarcoma|\bups\b)',
+       '(?:malignant peripheral nerve sheath|\bmpnst\b)',
+       '(?:anaplastic meningioma|malignant meningioma)']
+
+# ---------------- pathology and molecular confirmation
+[[items]]
+id = "path_expert_review"
+domain = "pathology"
+kind = "must"
+severity = "important"
+points = 8
+text = "The response requires expert neuropathology review with expanded immunohistochemistry and broad molecular/sequencing testing, including fusion detection."
+all = ['(?:expert )?(?:neuropathology|pathology review)',
+       '(?:immunohistochemistry|\bihc\b|sequenc|molecular|ngs|fusion)']
+[[items]]
+id = "path_stat6_if_sft"
+domain = "pathology"
+kind = "should"
+severity = "important"
+points = 5
+# made genuinely conditional 2026-10-23 (see dx_differential_entity's note): SFT is no longer a required
+# candidate, so this item must not cost points when the premise doesn't apply. The third alternative is a
+# whole-document negative lookahead (DOTALL so it spans the multi-line serialised JSON) that is vacuously true
+# when SFT/HPC is never mentioned anywhere in the answer - only an answer that DOES raise SFT, without then
+# asking for STAT6/NAB2-STAT6, now loses these points.
+text = "If solitary fibrous tumor is in the differential, the response asks for STAT6 and/or NAB2-STAT6 confirmation. Not applicable, and does not cost points, when SFT/hemangiopericytoma is not named at all."
+any = ['stat6', 'nab2[- ]stat6', '(?s)^(?!.*(?:solitary fibrous|\bsft\b|hemangiopericytoma|\bhpc\b)).*$']
+
+[[items]]
+id = "mol_not_sufficient_alone"
+domain = "molecular"
+kind = "must"
+severity = "important"  # downgraded from dangerous 2026-10-23 per oncologist review (see review_questions.json: mol_alone_severity)
+points = 8
+text = "The response states that a molecular result alone is not sufficient to establish the entity or to select targeted therapy; it must be interpreted with the histology and confirmed."
+all = ['(?:molecular|sequenc|ngs|genomic|fgfr|stat6|nab2)',
+       '(?:not (?:sufficient|enough)|alone|by itself|does not (?:establish|exclude|confirm)|adjunct|integrated|confirm(?:ation)? (?:is )?(?:required|needed)|validate)']
+
+[[items]]
+id = "mn_unsupported_regimen"
+domain = "treatment"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response starts or recommends a specific chemotherapy, targeted therapy or other disease-directed regimen for the unspecified tumor."
+recommend = ['(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)']
+# except patterns strip a whole sentence before `recommend` is checked. Two fixes here (2026-10-23 red-team):
+# (1) the old 'no[^.!?\n]{0,80}...' pattern had no \b on "no", so it matched the "no" *inside* "cannot", "known",
+#     "ignore" etc: "given the known imaging pattern, start temozolomide this week" was wrongly exempted. Fixed
+#     with \bno\b and by excluding ';'/':' from the gap so an unrelated clause spliced on with a semicolon can no
+#     longer bridge into the regimen mention ("no further imaging needed; begin temozolomide now" no longer exempts).
+# (2) added deferral synonyms ("should wait until pathology...", "awaiting expert review before...") that are
+#     clinically identical to "defer/delay" but were not recognised, false-failing a correct deferral as the
+#     dangerous error. Each is guarded by a lookbehind so the double-negative escape ("we cannot wait and will
+#     start temozolomide now", "there is no time to wait for pathology; begin temozolomide today") is NOT exempted.
+except = ['\bno\b[^.!?;:\n]{0,80}(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)',
+          '(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)[^.!?;:\n]{0,100}(?:defer\w*|not appropriate|not justified|not indicated|not recommended|not the default|withhold\w*|hold\b)',
+          '(?:defer\w*|delay\w*|hold\b|withhold\w*|avoid\w*|do not start|not start)[^.!?;:\n]{0,100}(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)',
+          '(?<!cannot )(?<!can.t )(?<!wont )(?<!won.t )(?<!will not )(?<!should not )(?<!shouldnt )(?<!shouldn.t )(?<!no longer )(?<!not )wait(?:ing)?\s+(?:until|for|on|to)\b[^.!?;:\n]{0,100}(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)',
+          '(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)[^.!?;:\n]{0,100}(?<!cannot )(?<!can.t )(?<!wont )(?<!won.t )(?<!will not )(?<!should not )(?<!shouldnt )(?<!shouldn.t )(?<!no longer )(?<!not )(?:should |will |can |would |is to |are to )?wait(?:ing)?\s+(?:until|for|on)\b',
+          '(?<!not )await(?:ing)?\b[^.!?;:\n]{0,100}(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)',
+          '(?:temozolomide|tamozolomide|irinotecan|chemotherapy|systemic therapy|targeted therapy|fgfr inhibitor|egfr inhibitor)[^.!?;:\n]{0,100}(?<!not )await(?:ing)?\b']
+
+[[items]]
+id = "mn_palliative_only"
+domain = "treatment"
+kind = "must_not"
+severity = "dangerous"
+points = 0
+text = "The response recommends palliative-only care, best supportive care or hospice as the plan before diagnostic confirmation."
+# the second alternative (added 2026-10-23 red-team) closes a confirmed gap: "focus on comfort and quality of
+# life, no further workup" did not match any of the original phrases (none of "palliative-only", "best supportive
+# care", "comfort-focused", hospice referral). The boundary is NOT "comfort"/"quality of life" wording alone --
+# that also appears in legitimate goals-of-care discussion alongside active workup (e.g. "discuss quality of
+# life while neurosurgery assesses resectability") and must not fire. It fires only when a comfort/palliative/
+# QOL phrase is paired, in the same clause, with an explicit renunciation of further workup/treatment (no
+# further/without further/forgo/decline/stop/discontinue/hold/withhold + workup/testing/evaluation/diagnosis/
+# treatment/therapy/intervention/biopsy/staging). Genuine denials ("we will not pursue a comfort-focused plan
+# without completing further workup") are unaffected: affirms() still reads the leading "not"/"inappropriate"
+# ahead of "comfort" as a negation of the whole clause.
+affirm = ['palliative[- ](?:only|intent|care alone)|best supportive care|comfort[- ](?:focused|measures)|(?:refer\w*|transition\w*|enrol\w*)(?: \w+){0,2} (?:to|in|into) hospice',
+          '(?:comfort|palliative|quality of life)(?=[^.!?\n]{0,80}(?:no further|without (?:any |further )?|forgo\w*|declin\w*|stop\w*|discontinu\w*|hold\w*|withhold\w*)[^.!?\n]{0,40}(?:workup|work-?up|testing|evaluation|investigation|diagnos\w*|treatment|therapy|intervention|biopsy|staging))']
+
+# ---------------- staging
+[[items]]
+id = "stage_neuraxis"
+domain = "staging"
+kind = "must"
+severity = "important"
+points = 8
+text = "The response treats the enhancing C6 nodule as suspected spinal drop/leptomeningeal dissemination and stages the whole neuraxis, not just the brain."
+all = ['(?:spinal|spine|neuraxis|leptomeningeal|drop metastasis|\bc6\b)',
+       '(?:mri|imaging|staging|dissemination)']
+
+[[items]]
+id = "stage_systemic"
+domain = "staging"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response recommends systemic staging for extracranial disease (CT chest/abdomen/pelvis or PET-CT) when clinically appropriate."
+all = ['(?:systemic staging|extracranial|ct (?:chest|abdomen)|pet[- ]?ct)',
+       '(?:staging|disease|metastas)']
+
+# ---------------- immediate management
+[[items]]
+id = "tx_defer_definitive"
+domain = "treatment"
+kind = "must"
+severity = "dangerous"
+points = 10
+text = "The response defers definitive disease-directed treatment until the diagnosis, grade, extent and resectability are established."
+# condition 1 widened 2026-10-23: a real Haiku answer wrote "No disease-directed treatment now" / "No radiotherapy
+# before classification..." and a real DeepSeek-style answer wrote "No chemotherapy ... is proposed" - both
+# textbook-correct deferrals, both missed because the old list only covered explicit verbs (defer/delay/hold/
+# withhold/do not start/not start), not the equally common "no X" / "not proposed/indicated/recommended" forms.
+all = ['(?:do not start|defer\w*|delay\w*|hold\w*|withh[eo]ld\w*|not start|no\s+(?:chemotherapy|disease[- ]directed|definitive|targeted(?: therapy)?|systemic(?: therapy)?|radiotherapy|regimen|treatment)|not\s+(?:propos\w*|indicat\w*|recommend\w*|warrant\w*|start\w*))',
+       '(?:until|pending|before)',
+       '(?:diagnos|pathology|grade|molecular|resectab|staging)']
+
+[[items]]
+id = "tx_surgery_assessment"
+domain = "treatment"
+kind = "must"
+severity = "important"
+points = 6
+text = "The response refers to neurosurgery and assesses maximal safe resection, with gross-total resection as the goal when feasible."
+all = ['(?:resect|surgery|surgical|neurosurg)',
+       '(?:maximal safe|gross[- ]total|\bgtr\b|feasib|consider|assess)']
+
+# tx_adjuvant_rt_after_diagnosis and tx_no_routine_adjuvant_chemo REMOVED 2026-10-23: both asked the model to
+# speculate about treatment decisions (future adjuvant RT, future adjuvant chemo policy) that depend on
+# information this short-horizon step explicitly does not have (the entity and grade), while the task's own
+# instruction says "Do not create a chemotherapy or definitive radiotherapy regimen for an unspecified tumor"
+# and "this is a short-horizon task". Every real model tested (6 models, 12+ trials) consistently skipped both -
+# not a content gap, but models correctly respecting the instruction's own scope. These belong in a later
+# journey step once the diagnosis/grade is actually established (the source handout's Step 2/3 material covers
+# exactly this - post-radiotherapy options, NGS results, targeted-vs-chemo decisions - not yet built), not in
+# this short-horizon step's rubric. Re-add them there when that step is built, not here.
+
+[[items]]
+id = "tx_evidence_caveat"
+domain = "treatment"
+kind = "should"
+severity = "minor"
+points = 2
+# made genuinely conditional 2026-10-23, same reasoning as path_stat6_if_sft. Converted from two independent
+# doc-wide "all" conditions (which could be satisfied by evidence language and an SFT mention anywhere in the
+# whole document, unrelated to each other) to one proximity-scoped pattern requiring both within the same
+# ~120-char span, in either order, plus the same vacuous-when-SFT-absent escape hatch.
+text = "The response notes that the evidence for solitary fibrous tumor/hemangiopericytoma is largely retrospective and should not be presented as a universal Category 1 regimen. Not applicable, and does not cost points, when SFT/hemangiopericytoma is not named at all."
+any = ['(?:retrospective|non[- ]randomi[sz]ed|no randomi[sz]ed|limited evidence)[^.\n]{0,120}(?:sft|solitary fibrous|hemangiopericytoma)|(?:sft|solitary fibrous|hemangiopericytoma)[^.\n]{0,120}(?:retrospective|non[- ]randomi[sz]ed|no randomi[sz]ed|limited evidence)',
+       '(?s)^(?!.*(?:solitary fibrous|\bsft\b|hemangiopericytoma|\bhpc\b)).*$']
+
+[[items]]
+id = "tx_surveillance"
+domain = "surveillance"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response arranges long-term serial contrast-enhanced MRI surveillance, with extracranial surveillance as clinically appropriate."
+all = ['(?:surveillance|follow[- ]up|serial)',
+       '(?:mri|imaging)']
+
+# ---------------- supportive care and multidisciplinary review
+[[items]]
+id = "sup_symptoms"
+domain = "supportive_care"
+kind = "must"
+severity = "important"
+points = 5
+text = "The response provides symptom control for headache and vomiting and assesses for raised intracranial pressure and seizures."
+# condition 1 widened 2026-10-23: a real gpt-6-luna narrative answer wrote "symptom-directed analgesia and
+# antiemetics" - clinically identical to "symptom control"/"symptomatic" but not matched by either; its FHIR
+# counterpart only happened to pass because it separately used the word "symptomatic" to describe edema, not
+# symptom control itself. Added the symptom-directed/-focused/-based compound-adjective forms.
+all = ['(?:symptom control|symptomatic|symptom[- ](?:directed|focused|based)|supportive care|palliative (?:symptom|care))',
+       '(?:headache|vomiting|intracranial pressure|seizure)']
+
+[[items]]
+id = "work_mdt"
+domain = "multidisciplinary"
+kind = "must"
+severity = "important"
+points = 4
+text = "The response refers the patient to a multidisciplinary neuro-oncology/tumor-board review."
+any = ['multidisciplinary|tumor board|\bmdt\b|neuro[- ]oncology']
+
+# added 2026-10-23: the source handout's own Step 1 has a dedicated prognosis question ("What is the prognosis of
+# IMT?") that this case's output schema and rubric had no equivalent for at all - a real gap against the source,
+# not a rubric bug. instruction.md now asks for a `prognosis` field; this item tests the same appropriate
+# epistemic humility the rest of the case rewards (don't commit to specifics an unestablished entity can't
+# support), rather than a specific survival statistic.
+[[items]]
+id = "prog_entity_dependent"
+domain = "prognosis"
+kind = "should"
+severity = "important"
+points = 4
+text = "The response states that prognosis cannot be meaningfully given until the entity and WHO grade are established, and names what it depends on (entity, grade, extent, dissemination)."
+all = ['prognosis',
+       '(?:depend|vary|varies|cannot be (?:given|stated|determined|established|meaningfully)|not (?:yet )?(?:known|established|determinable)|once (?:the )?(?:entity|grade|diagnosis)|until (?:the )?(?:entity|grade|diagnosis))']

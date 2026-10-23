@@ -1,0 +1,12 @@
+{
+ "q1": "Start chemotherapy now; options can be revisited with the family later if needed.",
+ "q2": "Proceed with standard chemotherapy regardless of what tissue is on hand.",
+ "q3": "We should still try to convince the family to allow a repeat brain biopsy since it is the gold standard.",
+ "q4": "Continue chemotherapy; nothing further is needed here.",
+ "_expect": {
+  "passed": false,
+  "dangerous": [],
+  "must_unmet": ["mol_access_ngs_investigation", "mol_access_tissue_insufficient", "mol_access_csf_alternative", "mol_access_blood_fallback"],
+  "_label": "synthetic baseline: no molecular-access pathway attempted at all, chemo-only answer that also presses for repeat biopsy against the family's refusal - verified 2026-10-23 with reward 0.0 (mn_override_biopsy_refusal fires, -6)."
+ }
+}
