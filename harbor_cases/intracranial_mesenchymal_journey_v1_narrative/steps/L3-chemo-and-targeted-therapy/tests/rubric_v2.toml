@@ -54,8 +54,12 @@ text = "The response reasons that, with the entity still unconfirmed, a broadly 
 # lower than MiMo on this case): Haiku wrote "should be chosen only once the entity is supported" and
 # "[entity-specific regimens] are not appropriate until those diagnoses are supported" - clinically identical to
 # "pick a broadly-active option until the entity is clearer" but missed by every existing alternative.
-all = ['(?:unconfirmed|unestablish\w*|not (?:yet )?(?:established|confirmed|known|pinned down)|no confirmed (?:entity|diagnosis)|(?:entity|diagnosis) (?:is|remains|still) (?:still )?(?:unclear|unknown|not confirmed|open))',
-       '(?:broadly active|well[- ]tolerated|favorable toxicity|pragmatic|regardless of (?:the )?(?:entity|diagnosis)|entity[- ]agnostic|across (?:several|multiple|different) (?:entities|candidates|possibilities|tumor types|diagnoses|possible diagnoses)|(?:before|until|once) (?:the|we know (?:the|more))? ?(?:entity|diagnosis) is (?:clearer|established|confirmed|better defined)|know more|only once (?:the )?(?:entity|diagnosis)[^.\n]{0,20}(?:support|confirm|establish)\w*|not appropriate until[^.\n]{0,40}(?:support|confirm|establish)\w*|document\w* as empirical|empirical[^.\n]{0,40}(?:bridge|choice)|expected to redirect therapy)']
+# widened again 2026-10-23 (third independent miss, this time found by the hybrid judge on a fresh Haiku trial,
+# not by hand): "I would not start an entity-specific regimen, because no histologic or molecular entity is
+# established" - a third distinct phrasing of the exact same idea. This item has now missed three different
+# real phrasings in one day; treat it as a standing risk that pure regex may never fully close, not a one-off.
+all = ['(?:unconfirmed|unestablish\w*|not (?:yet )?(?:established|confirmed|known|pinned down)|no confirmed (?:entity|diagnosis)|(?:entity|diagnosis) (?:is|remains|still) (?:still )?(?:unclear|unknown|not confirmed|open)|no[^.\n]{0,30}(?:entity|diagnosis)[^.\n]{0,15}is established)',
+       '(?:broadly active|well[- ]tolerated|favorable toxicity|pragmatic|regardless of (?:the )?(?:entity|diagnosis)|entity[- ]agnostic|across (?:several|multiple|different) (?:entities|candidates|possibilities|tumor types|diagnoses|possible diagnoses)|(?:before|until|once) (?:the|we know (?:the|more))? ?(?:entity|diagnosis) is (?:clearer|established|confirmed|better defined)|know more|only once (?:the )?(?:entity|diagnosis)[^.\n]{0,20}(?:support|confirm|establish)\w*|not appropriate until[^.\n]{0,40}(?:support|confirm|establish)\w*|document\w* as empirical|empirical[^.\n]{0,40}(?:bridge|choice)|expected to redirect therapy|not start\w*[^.\n]{0,20}entity[- ]specific)']
 
 # ---------------- q2: escalating from single-agent temozolomide, or not
 # q2's own wording in the source handout ("would you consider adding a second chemotherapy drug? If so, what?")
