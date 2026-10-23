@@ -1,0 +1,72 @@
+{
+  "n_concurrent_trials": 3,
+  "agent_setup_timeout_multiplier": 3.0,
+  "agents": [
+    {
+      "name": "claude-code",
+      "model_name": "anthropic/claude-haiku-5-5",
+      "kwargs": {
+        "disable_web_search": true,
+        "reasoning_effort": "high",
+        "max_budget_usd": "1"
+      },
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "ANTHROPIC_CUSTOM_HEADERS": "${ANTHROPIC_CUSTOM_HEADERS}"
+      }
+    },
+    {
+      "name": "opencode",
+      "model_name": "opencode/deepseek-v4.1-flash-free",
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_API_KEY}"
+      }
+    },
+    {
+      "name": "opencode",
+      "model_name": "opencode/mimo-v2.6-flash-free",
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_API_KEY}"
+      }
+    },
+    {
+      "name": "opencode",
+      "model_name": "opencode/glm-5.3-flash-free",
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_API_KEY}"
+      }
+    },
+    {
+      "name": "opencode",
+      "model_name": "opencode-go/qwen3.7-plus",
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_GO_API_KEY}"
+      }
+    },
+    {
+      "name": "opencode",
+      "model_name": "opencode-go/gpt-6-luna",
+      "kwargs": {
+        "disable_web_search": true
+      },
+      "env": {
+        "OPENCODE_API_KEY": "${OPENCODE_GO_API_KEY}"
+      }
+    }
+  ],
+  "tasks": [
+    { "path": "harbor_cases/intracranial_mesenchymal_journey_v1_fhir" }
+  ]
+}

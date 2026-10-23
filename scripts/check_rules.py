@@ -68,7 +68,13 @@ def calibration(rubric, gold, answer_dir):
         pr += [f"should meet {i}" for i in e.get("must_met", []) if i not in met]
         pr += [f"should NOT meet {i}" for i in e.get("must_unmet", []) if i in met]
         if e.get("all_met"):
-            pr += [f"unmet {i['id']}" for i in r["items"] if i["kind"] != "must_not" and not i["met"]]
+            # a rubric may declare mutually-exclusive alternative items (e.g. "add drug X" vs. "reason soundly not
+            # to", intracranial_mesenchymal_journey_v1's L3) where the gold answer, by construction, can satisfy
+            # only one side - exempt those named ids from the blanket "gold meets everything" expectation rather
+            # than faking a second gold answer just to keep this generic check happy.
+            exempt = set(rubric.get("known_gold_unmet", []))
+            pr += [f"unmet {i['id']}" for i in r["items"]
+                   if i["kind"] != "must_not" and not i["met"] and i["id"] not in exempt]
         if pr:
             bad.append((name, pr))
     return len(docs), bad

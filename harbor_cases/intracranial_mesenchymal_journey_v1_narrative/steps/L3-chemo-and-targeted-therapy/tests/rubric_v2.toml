@@ -22,6 +22,10 @@
 version = "intracranial_mesenchymal_journey_v1.L3.v1.0"
 review_status = "DRAFT_NEEDS_ONCOLOGIST"
 passing_score = 0.75
+# chemo_escalation_irinotecan and chemo_escalation_defer_reasoned are mutually-exclusive alternatives (see their
+# comments below): the gold answer chose to escalate, so it cannot also satisfy the "reasoned to defer" item -
+# exempted from scripts/check_rules.py's generic "gold meets every must/should item" calibration check.
+known_gold_unmet = ["chemo_escalation_defer_reasoned"]
 
 [leak_check]
 # Terms that would give away this step's own reveal, or the next step's complication, if they appeared in the
@@ -49,11 +53,20 @@ text = "The response reasons that, with the entity still unconfirmed, a broadly 
 all = ['(?:unconfirmed|unestablish\w*|not (?:yet )?(?:established|confirmed|known|pinned down)|no confirmed (?:entity|diagnosis)|(?:entity|diagnosis) (?:is|remains|still) (?:still )?(?:unclear|unknown|not confirmed|open))',
        '(?:broadly active|well[- ]tolerated|favorable toxicity|pragmatic|regardless of (?:the )?(?:entity|diagnosis)|entity[- ]agnostic|across (?:several|multiple|different) (?:entities|candidates|possibilities|tumor types|diagnoses|possible diagnoses)|(?:before|until|once) (?:the|we know (?:the|more))? ?(?:entity|diagnosis) is (?:clearer|established|confirmed|better defined)|know more)']
 
-# ---------------- q2: escalating from single-agent temozolomide
+# ---------------- q2: escalating from single-agent temozolomide, or not
+# q2's own wording in the source handout ("would you consider adding a second chemotherapy drug? If so, what?")
+# is genuinely open - it does not mandate "yes". A real-model run (2026-10-23, 6 models) found 3 independent
+# models (Haiku, DeepSeek, MiMo) all gave a well-reasoned "no": the entity is still unclassified, there is no
+# evidence base for a specific combination, and escalating adds toxicity without a defined target - at least as
+# defensible as the source narrative's own path (by the next step the patient IS on temozolomide+irinotecan, but
+# that is the case continuing down one path, not something q2's own text requires). Per explicit direction: let
+# the models reason independently rather than scoring only the one path the source narrative happens to take.
+# chemo_escalation_irinotecan and chemo_escalation_defer_reasoned are deliberately parallel, equal-weight
+# alternatives - either a well-reasoned "add it" or a well-reasoned "wait" earns credit.
 [[items]]
 id = "chemo_escalation_irinotecan"
 domain = "chemo_escalation"
-kind = "must"
+kind = "should"
 severity = "important"
 points = 8
 text = "When asked whether to add a second chemotherapy drug to tolerated single-agent temozolomide, the response adds irinotecan specifically."
@@ -61,15 +74,26 @@ any = ['(?:add\w*|adding|start\w*|combin\w*|escalat\w*|consider\w*|recommend\w*|
        'irinotecan[^.\n]{0,60}(?:add\w*|adding|second (?:agent|drug|chemotherap\w*)|escalat\w*|temozolomide)']
 
 [[items]]
+id = "chemo_escalation_defer_reasoned"
+domain = "chemo_escalation"
+kind = "should"
+severity = "important"
+points = 8
+text = "When asked whether to add a second chemotherapy drug, the response instead reasons soundly to defer escalation (e.g. the entity is still unclassified/unconfirmed, there is no evidence base for a specific combination, or escalating adds toxicity without a defined target before an adequate trial of the current agent)."
+all = ['(?:no|not|would not|do not|decline\w*|hold off|defer\w*)[^.\n]{0,60}(?:add\w*|adding)[^.\n]{0,40}second[^.\n]{0,30}(?:chemotherap\w*|cytotoxic|drug|agent)',
+       '(?:unconfirmed|unclassified|unestablish\w*|no evidence (?:base|for)|not (?:yet )?(?:established|confirmed)|avoid\w* (?:added |additional )?toxicity|secure (?:the )?(?:molecular )?diagnosis|adequate trial|too short|lack of evidence|no defined target)']
+
+[[items]]
 id = "chemo_escalation_rationale"
 domain = "chemo_escalation"
 kind = "should"
 severity = "minor"
 points = 3
-text = "The response grounds adding irinotecan in real-world precedent (relapsed/refractory CNS tumors, recurrent Ewing sarcoma, or similar combination data) rather than an unsupported assertion."
+text = "If adding irinotecan, the response grounds it in real-world precedent (relapsed/refractory CNS tumors, recurrent Ewing sarcoma, or similar combination data) rather than an unsupported assertion. Not applicable, and does not cost points, when irinotecan is not named at all."
 any = ['(?:precedent|evidence|data|experience|used|studied|reported)[^.\n]{0,100}(?:relapsed|refractory|recurrent|cns tumor|ewing)',
        '(?:relapsed|refractory|recurrent|cns tumor|ewing)[^.\n]{0,100}(?:precedent|evidence|data|experience|used|studied|reported)',
-       'temiri']
+       'temiri',
+       '(?s)^(?!.*irinotecan).*$']
 
 [[items]]
 id = "chemo_escalation_monitoring"
@@ -77,9 +101,10 @@ domain = "chemo_escalation"
 kind = "should"
 severity = "minor"
 points = 2
-text = "The response notes monitoring for the additional toxicity irinotecan brings (diarrhea, myelosuppression) when escalating."
-all = ['(?:diarrhea|myelosuppress\w*|neutropeni\w*|cytopeni\w*|(?:blood|cell) counts?|bowel movements?)',
-       '(?:monitor|watch|check|assess|follow)']
+text = "If adding irinotecan, the response notes monitoring for the additional toxicity it brings (diarrhea, myelosuppression). Not applicable, and does not cost points, when irinotecan is not named at all."
+any = ['(?:diarrhea|myelosuppress\w*|neutropeni\w*|cytopeni\w*|(?:blood|cell) counts?|bowel movements?)[^.\n]{0,150}(?:monitor|watch|check|assess|follow)',
+       '(?:monitor|watch|check|assess|follow)[^.\n]{0,150}(?:diarrhea|myelosuppress\w*|neutropeni\w*|cytopeni\w*|(?:blood|cell) counts?|bowel movements?)',
+       '(?s)^(?!.*irinotecan).*$']
 
 # ---------------- q3: the NGS result - stop chemotherapy for targeted therapy, or not
 [[items]]
