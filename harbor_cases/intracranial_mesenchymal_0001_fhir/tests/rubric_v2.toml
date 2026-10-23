@@ -188,27 +188,15 @@ text = "The response refers to neurosurgery and assesses maximal safe resection,
 all = ['(?:resect|surgery|surgical|neurosurg)',
        '(?:maximal safe|gross[- ]total|\bgtr\b|feasib|consider|assess)']
 
-[[items]]
-id = "tx_adjuvant_rt_after_diagnosis"
-domain = "treatment"
-kind = "should"
-severity = "important"
-points = 5
-text = "Once the entity and grade are established, the response considers postoperative focal radiotherapy for a high-grade solitary fibrous tumor or after subtotal resection."
-all = ['(?:radiotherap|radiation therapy|\brt\b)',
-       '(?:postoperative|post[- ]?op|adjuvant|focal|surgical bed|residual)']
-
-[[items]]
-id = "tx_no_routine_adjuvant_chemo"
-domain = "treatment"
-kind = "should"
-severity = "important"
-points = 4
-text = "The response states that routine adjuvant chemotherapy is not the default after complete resection of localized solitary fibrous tumor, and that systemic therapy is reserved for unresectable, metastatic or recurrent disease."
-# \b added to "no" 2026-10-23 red-team: the bare form matched the "no" inside "know"/"cannot"/"ignore" etc, e.g.
-# "I know chemotherapy toxicity profiles well... surgical resection is planned" wrongly satisfied this item.
-all = ['(?:\bno\b[^.\n]{0,40}(?:routine )?(?:adjuvant )?chemotherapy|(?:routine )?(?:adjuvant )?chemotherapy[^.\n]{0,30}(?:is )?not (?:the )?(?:default|indicated|recommended|required))',
-       '(?:complete resection|localized|resect|unresectable|metastatic|recurrent)']
+# tx_adjuvant_rt_after_diagnosis and tx_no_routine_adjuvant_chemo REMOVED 2026-10-23: both asked the model to
+# speculate about treatment decisions (future adjuvant RT, future adjuvant chemo policy) that depend on
+# information this short-horizon step explicitly does not have (the entity and grade), while the task's own
+# instruction says "Do not create a chemotherapy or definitive radiotherapy regimen for an unspecified tumor"
+# and "this is a short-horizon task". Every real model tested (6 models, 12+ trials) consistently skipped both -
+# not a content gap, but models correctly respecting the instruction's own scope. These belong in a later
+# journey step once the diagnosis/grade is actually established (the source handout's Step 2/3 material covers
+# exactly this - post-radiotherapy options, NGS results, targeted-vs-chemo decisions - not yet built), not in
+# this short-horizon step's rubric. Re-add them there when that step is built, not here.
 
 [[items]]
 id = "tx_evidence_caveat"
