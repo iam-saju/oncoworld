@@ -78,8 +78,24 @@ severity = "important"
 points = 8
 alt_group = "chemo_escalation_add_or_defer"
 text = "When asked whether to add a second chemotherapy drug to tolerated single-agent temozolomide, the response adds irinotecan specifically."
-any = ['(?:add\w*|adding|start\w*|combin\w*|escalat\w*|consider\w*|recommend\w*|plan\w*|propose\w*|initiat\w*|yes)[^.\n]{0,60}irinotecan',
-       'irinotecan[^.\n]{0,60}(?:add\w*|adding|second (?:agent|drug|chemotherap\w*)|escalat\w*|temozolomide)']
+# converted any -> affirm 2026-10-24 (real DeepSeek-v4.1-flash answer, paid tier): "there is no evidence that
+# adding a second cytotoxic agent (for example lomustine/CCNU, etoposide, irinotecan, or an anthracycline) to
+# temozolomide improves outcome" - a deferral answer that lists irinotecan only as one of several drugs it is
+# NOT adding - wrongly credited. affirm() alone wasn't enough: the negator "no evidence" sits 12 words before
+# "irinotecan" (the match point), one past _NEGATION's 10-word lookback, because of the long parenthetical drug
+# list in between - a real example of the proximity-window limitation documented in
+# docs/grader-known-issues.md item 1. Fixed with `except` instead, which strips the whole sentence rather than
+# relying on a fixed-width word lookback.
+# a second, structurally different false positive found in the same verification pass (real Grok-4.7 answer):
+# "Adding doxorubicin, ifosfamide, a platinum, or irinotecan would import a sarcoma or embryonal regimen without
+# a defining diagnosis and would add marrow, cardiac, bladder, or neurologic toxicity" - rejected via a
+# consequence clause, no leading negator at all, so the first except pattern can't catch it either. Third except
+# pattern added for this shape; both verified against gold (stays met) and the real trials that drove each fix.
+except = ['no evidence[^.\n]{0,200}irinotecan',
+          '(?:no|not)[^.\n]{0,30}(?:add\w*|adding)[^.\n]{0,150}irinotecan[^.\n]{0,60}(?:improve|outcome|benefit)',
+          '(?:add\w*|adding)[^.\n]{0,100}irinotecan[^.\n]{0,100}(?:without (?:a |an )?(?:defining|established|confirmed|clear)|unestablish\w*|undefined entity|without a defined target)']
+affirm = ['(?:add\w*|adding|start\w*|combin\w*|escalat\w*|consider\w*|recommend\w*|plan\w*|propose\w*|initiat\w*|yes)[^.\n]{0,60}irinotecan',
+          'irinotecan[^.\n]{0,60}(?:add\w*|adding|second (?:agent|drug|chemotherap\w*)|escalat\w*|temozolomide)']
 
 [[items]]
 id = "chemo_escalation_defer_reasoned"
