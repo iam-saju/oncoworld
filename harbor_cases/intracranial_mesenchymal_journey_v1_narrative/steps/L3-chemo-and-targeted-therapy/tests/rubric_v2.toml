@@ -277,6 +277,18 @@ affirm = ['(?:recommend\w*|propose\w*|pursue\w*|obtain\w*|perform\w*|proceed (?:
 # (Haiku: fires; Qwen: does not; GPT-6-Luna: does not - a generic "tumor tissue" mention without the
 # archival/existing qualifier, kept conservative rather than widened on zero real positive evidence) and all 6
 # existing continuity calibration files before adding.
+#
+# Widened again same day after a 4-model repeat batch (deepseek-go, mimo-go, glm53flash-go) showed the exact
+# gap GPT-6-Luna's near-miss predicted: 3/3 used bare "tumor/tumour tissue" or archival-equivalent terms
+# without the words "archival"/"existing" (DeepSeek-go: "confirmed on tumor tissue...RNA-based fusion assay";
+# MiMo-go: "tumour tissue...RNA fusion/FISH...resection specimen"; GLM-go: "FFPE/resection blocks...RNA fusion
+# assay"), paired with confirmation/sequencing language the first pass didn't anticipate. The 3 new
+# alternatives require that pairing (tumor/tumour tissue + confirm/correlate/retest/fusion/NGS/sequencing/
+# RNA-based/IHC/methylation, either order, or bare resection/FFPE + block/specimen/material) rather than a
+# bare tissue mention alone, to avoid over-firing. Verified against all 3 real texts above (all fire), the
+# known false-positive-risk sentence (Qwen's "soft-tissue sarcoma...penetration is limited" - does not fire),
+# and all 8 existing continuity calibration files (zero regressions, including real_qwen_never_raises_tissue
+# staying False) before adding.
 [[items]]
 id = "tgt_raises_tissue_reacquisition"
 domain = "continuity"
@@ -288,7 +300,10 @@ any = ['(?:declin\w*|refus\w*|not willing|unwilling)[^.\n]{0,60}biops\w*',
        'biops\w*[^.\n]{0,60}(?:declin\w*|refus\w*|not willing|unwilling)',
        '(?:repeat|new|another|further|additional)[^.\n]{0,20}(?:brain |stereotactic |surgical |tissue )?biops\w*',
        '(?:archival|existing)[^.\n]{0,15}(?:tissue|specimen|block|material|sample)',
-       'tissue[^.\n]{0,30}(?:is|are|remains?)\s*(?:limited|insufficient|inadequate|scarc\w*)']
+       'tissue[^.\n]{0,30}(?:is|are|remains?)\s*(?:limited|insufficient|inadequate|scarc\w*)',
+       '(?:tumor|tumour)[^.\n]{0,10}(?:tissue|specimen)[^.\n]{0,150}(?:confirm\w*|correlat\w*|re-?test\w*|retest\w*|fusion (?:assay|test\w*)|\bngs\b|sequenc\w*|rna[- ]based|\bihc\b|immunohistochemistry|methylation)',
+       '(?:confirm\w*|correlat\w*|re-?test\w*|retest\w*|fusion (?:assay|test\w*)|\bngs\b|sequenc\w*|rna[- ]based|\bihc\b|immunohistochemistry|methylation)[^.\n]{0,150}(?:tumor|tumour)[^.\n]{0,10}(?:tissue|specimen)',
+       '(?:resection|ffpe)[^.\n]{0,10}(?:block|specimen|material)']
 
 [[items]]
 id = "tgt_acknowledges_biopsy_refusal_constraint"
@@ -309,9 +324,24 @@ applies_if = "tgt_raises_tissue_reacquisition"
 # Gated by applies_if (see tgt_raises_tissue_reacquisition above) the same day, after a real Qwen3.7-Plus answer
 # showed a fully valid L3 argument that never raises tissue access at all - this item now only counts against a
 # response that actually engages with the topic, not every response regardless of whether it's relevant.
+#
+# Widened again same day, together with tgt_raises_tissue_reacquisition's matching widening: the same
+# DeepSeek-go/MiMo-go/GLM-go batch that motivated that marker's widening also exposed a gap here specifically -
+# all 3 use "resection specimen"/"FFPE"/"resection blocks" (DeepSeek: "archived resection specimen"; MiMo:
+# "FFPE from the resection specimen"; GLM: "FFPE/resection blocks") rather than the word "archival"/"existing",
+# so without this widening they'd flip from excluded (the marker didn't fire) to a plain miss (the marker now
+# fires but this item didn't) - a worse outcome than before. "resection specimen"/"FFPE" are kept unqualified by
+# "archival/existing" deliberately: both terms are inherently backward-looking in this case's own history (the
+# resection already happened; FFPE means already fixed and embedded), unlike bare "tumor/tumour tissue" alone,
+# which could equally describe tissue from a newly proposed biopsy - that broader, riskier pairing was added
+# only to the 0-point gate above, never to this scored item. Verified: all 3 real texts now satisfy this item
+# (not just the gate); the dangerous-miss calibration file (new biopsy explicitly recommended, no
+# resection/FFPE language) does not satisfy it; all 8 existing continuity calibration files unchanged.
 text = "The response's reasoning either explicitly references the family's refusal of a repeat brain biopsy, or makes the decision consistent with it: pursuing tissue correlation from archival/existing material (not a new/repeat biopsy) when further tissue confirmation is needed. Not applicable, and excluded from scoring, when the response never raises tissue reacquisition at all."
 any = ['(?:famil\w*|patient|he|she|they)[^.\n]{0,40}(?:declin\w*|refus\w*|not willing|unwilling|against[^.\n]{0,20}wishes)[^.\n]{0,60}biops\w*',
        'biops\w*[^.\n]{0,60}(?:declin\w*|refus\w*|not willing|unwilling)',
        '(?:declin\w*|refus\w*|not willing|unwilling)[^.\n]{0,60}biops\w*',
        '(?:archival|existing)[^.\n]{0,15}(?:tissue|specimen|block|material|sample)[^.\n]{0,150}(?:correlat\w*|confirm\w*|re-?test\w*|retest\w*|fusion test\w*|\bngs\b|sequenc\w*|molecular (?:test\w*|work[- ]?up)|rna[- ]based)',
-       '(?:correlat\w*|confirm\w*|re-?test\w*|retest\w*|fusion test\w*|\bngs\b|sequenc\w*|molecular (?:test\w*|work[- ]?up)|rna[- ]based)[^.\n]{0,150}(?:archival|existing)[^.\n]{0,15}(?:tissue|specimen|block|material|sample)']
+       '(?:correlat\w*|confirm\w*|re-?test\w*|retest\w*|fusion test\w*|\bngs\b|sequenc\w*|molecular (?:test\w*|work[- ]?up)|rna[- ]based)[^.\n]{0,150}(?:archival|existing)[^.\n]{0,15}(?:tissue|specimen|block|material|sample)',
+       '(?:resection|ffpe)[^.\n]{0,10}(?:block|specimen|material)[^.\n]{0,150}(?:correlat\w*|confirm\w*|re-?test\w*|retest\w*|fusion test\w*|\bngs\b|sequenc\w*|molecular (?:test\w*|work[- ]?up)|rna[- ]based)',
+       '(?:correlat\w*|confirm\w*|re-?test\w*|retest\w*|fusion test\w*|\bngs\b|sequenc\w*|molecular (?:test\w*|work[- ]?up)|rna[- ]based)[^.\n]{0,150}(?:resection|ffpe)[^.\n]{0,10}(?:block|specimen|material)']
