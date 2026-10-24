@@ -67,35 +67,39 @@ for the hardening plan's item 5. Regex became the grader of record in hybrid mod
 anymore - this list exists purely to decide where regex itself is worth tightening next.
 
 The original scope was 5 items spotted live across 3 fresh trials. Running the actual tool against every
-hybrid-mode trial on record (10-13 evaluations per item, not 3) found a materially bigger picture - both
-`chemo_escalation_rationale`/`monitoring` dropped sharply (75% -> 10-20%) once item 4b's `applies_if` fix
+hybrid-mode trial on record (10-15 evaluations per item, not 3) found a materially bigger picture - both
+`chemo_escalation_rationale`/`monitoring` dropped sharply (75% -> 14%) once item 4b's `applies_if` fix
 landed (the judge is still asked about an inapplicable item and can still occasionally disagree, which no
 longer costs anything - the residual is an asking-cleanliness question, not a scoring one), but several other
-items turned out to disagree far more often than the original spot-check suggested:
+items turned out to disagree far more often than the original spot-check suggested.
+
+**Update, same day, after fixing the two that crossed 50%:** `chemo_escalation_irinotecan` (two real negation
+false positives - DeepSeek, Grok-4.7) dropped from 10% to clean. `chemo_options_entity_pragmatic` (57% -> 29%)
+and `tgt_atypical_comutation_pattern` (50% -> 29%) both dropped meaningfully after widening against 3 more real
+phrasings each, but neither is clean yet - more real models still disagree on each, just fewer. Current state:
 
 | item | evals | disagree | models | rate |
 |---|---|---|---|---|
-| `mol_access_blood_limitation` | 11 | 6 | 5 | 55% |
-| `chemo_options_entity_pragmatic` | 10 | 5 | 4 | 50% |
-| `tgt_atypical_comutation_pattern` | 10 | 5 | 4 | 50% |
-| `mol_access_tissue_insufficient` | 11 | 3 | 3 | 27% |
-| `mol_not_sufficient_alone` | 11 | 3 | 3 | 27% |
-| `tx_evidence_caveat` | 11 | 3 | 3 | 27% |
-| `tx_surgery_assessment` | 11 | 3 | 3 | 27% |
-| `tx_surveillance` | 11 | 3 | 3 | 27% |
-| `chemo_escalation_rationale` | 10 | 2 | 2 | 20% |
-| `path_stat6_if_sft` | 11 | 2 | 2 | 18% |
-| `sup_symptoms` | 11 | 2 | 2 | 18% |
-| `tgt_bbb_penetration_caveat` | 10 | 2 | 2 | 20% |
-| `chemo_escalation_irinotecan` | 10 | 1 | 1 | 10% |
-| `chemo_escalation_monitoring` | 10 | 1 | 1 | 10% |
-| `tgt_molecular_not_sufficient_alone` | 10 | 1 | 1 | 10% |
+| `mol_access_blood_limitation` | 15 | 6 | 5 | 40% |
+| `tx_evidence_caveat` | 15 | 6 | 5 | 40% |
+| `mol_not_sufficient_alone` | 15 | 5 | 5 | 33% |
+| `path_stat6_if_sft` | 15 | 5 | 4 | 33% |
+| `tx_surgery_assessment` | 15 | 5 | 4 | 33% |
+| `chemo_options_entity_pragmatic` | 14 | 4 | 3 | 29% |
+| `sup_symptoms` | 15 | 4 | 3 | 27% |
+| `tgt_atypical_comutation_pattern` | 14 | 4 | 2 | 29% |
+| `tgt_bbb_penetration_caveat` | 14 | 4 | 3 | 29% |
+| `tx_surveillance` | 15 | 4 | 4 | 27% |
+| `chemo_escalation_monitoring` | 14 | 2 | 2 | 14% |
+| `chemo_escalation_rationale` | 14 | 2 | 2 | 14% |
+| `dx_differential_entity` | 15 | 2 | 2 | 13% |
+| `mol_access_tissue_insufficient` | 15 | 2 | 2 | 13% |
+| `stage_systemic` | 15 | 2 | 1 | 13% |
 
 (Reproduce with `python3 scripts/rescore_mesenchymal_trials.py "jobs/*mesenchymal_journey*"` - the corrected
-per-item section at the end of its output. `chemo_options_entity_pragmatic` and `tgt_atypical_comutation_pattern`
-were already each widened against real misses earlier the same day - this list is the first time either has
-been quantified rather than fixed one real miss at a time, and both are clearly still an open gap, not a
-closed one.)
+per-item section at the end of its output. Per the revised validation plan, the next items to fix this way are
+`mol_access_blood_limitation` and `tx_evidence_caveat`, the two now at 40% - everything below that bar is
+lower priority until there's more trial volume to tell signal from noise.)
 
 **Why not fixed yet:** this is a report, not a diagnosis - each item needs the same per-item treatment every
 other fix in this file got (read the actual disagreeing answers, confirm which side is actually right, widen
