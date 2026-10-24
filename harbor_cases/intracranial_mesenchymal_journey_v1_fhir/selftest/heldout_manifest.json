@@ -1,0 +1,70 @@
+{
+ "case": "intracranial_mesenchymal_journey_v1_fhir",
+ "frozen_at": "2026-10-24T14:30:00Z",
+ "note": "Held-out set per the hardening plan's item 0/6. Generated with --disable-verification (no grading, no review.json ever produced). Answers recovered from agent/opencode.txt (the write tool, or for qwen3.8-max's L3 step, a bash-heredoc python script - see scripts/extract_opencode_answer.py) since test.sh's normal final_answer.json copy only runs as part of verification. Nothing in items 2-5 of the hardening plan read this content; sha256 here is the integrity check for that claim. Score once against the final grader, after oncologist blind labeling (see scripts/generate_blind_label_worksheet.py), not before.",
+ "entries": [
+  {
+   "model": "minimax-m3",
+   "step": "L1-initial-assessment",
+   "path": "jobs/minimax_m3_mesenchymal_journey_heldout/2026-10-24__13-36-31/intracranial_mesenchymal_journey__HcYewEj/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "cbdb5d2dca90f7d4fef136471626c0b265d9d64a556f96b80c84e85f17ae6d8c",
+   "bytes": 6068
+  },
+  {
+   "model": "minimax-m3",
+   "step": "L2-molecular-access",
+   "path": "jobs/minimax_m3_mesenchymal_journey_heldout/2026-10-24__13-36-31/intracranial_mesenchymal_journey__HcYewEj/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "c03f1e1a0d448cb7217b2e053e28dc7fbfd8ffd005c05b17b9a2d0fc7016768c",
+   "bytes": 3341
+  },
+  {
+   "model": "minimax-m3",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/minimax_m3_mesenchymal_journey_heldout/2026-10-24__13-36-31/intracranial_mesenchymal_journey__HcYewEj/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "aed5f71acc843b50e3122d19fe868f048d30682eb34fedafacbca1837c85dcc6",
+   "bytes": 10624
+  },
+  {
+   "model": "qwen3.8-max",
+   "step": "L1-initial-assessment",
+   "path": "jobs/qwen38max_mesenchymal_journey_heldout/2026-10-24__13-46-36/intracranial_mesenchymal_journey__hvTX9WV/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "2cb28a9e2b0ff0d228d4ae49d8b78e752a8bb90a02c7176738060debd54ee40f",
+   "bytes": 14469
+  },
+  {
+   "model": "qwen3.8-max",
+   "step": "L2-molecular-access",
+   "path": "jobs/qwen38max_mesenchymal_journey_heldout/2026-10-24__13-46-36/intracranial_mesenchymal_journey__hvTX9WV/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "f4e2e09d162c58e9694675880fed69e0d654457de1c33d4352e11a3c36ba9034",
+   "bytes": 14313
+  },
+  {
+   "model": "qwen3.8-max",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/qwen38max_mesenchymal_journey_heldout/2026-10-24__13-46-36/intracranial_mesenchymal_journey__hvTX9WV/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "33f08b66aaa0ab3c60dd237f4e29c9c327fea214547dbb0958f30c0d7e39af40",
+   "bytes": 9708
+  },
+  {
+   "model": "kimi-k3",
+   "step": "L1-initial-assessment",
+   "path": "jobs/kimik3_mesenchymal_journey_heldout/2026-10-24__14-02-17/intracranial_mesenchymal_journey__bvfSQy8/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "60592f6060305aba51dc39c0849aba330b29a0316fe8afd1b997906ce9ccd3fd",
+   "bytes": 7810
+  },
+  {
+   "model": "kimi-k3",
+   "step": "L2-molecular-access",
+   "path": "jobs/kimik3_mesenchymal_journey_heldout/2026-10-24__14-02-17/intracranial_mesenchymal_journey__bvfSQy8/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "006d64b20c4d2cf29024c7308ed0564b2aff52dc6300a352a633eddc14bad79d",
+   "bytes": 4974
+  },
+  {
+   "model": "kimi-k3",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/kimik3_mesenchymal_journey_heldout/2026-10-24__14-02-17/intracranial_mesenchymal_journey__bvfSQy8/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "42927fe0625eafef03ce3062aa0eac6adc38f217563ca54bbae3d7dd204721b0",
+   "bytes": 5619
+  }
+ ]
+}
