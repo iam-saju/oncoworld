@@ -106,7 +106,7 @@ items). Current state:
 
 | item | evals | disagree | models | rate |
 |---|---|---|---|---|
-| `tgt_bbb_penetration_caveat` | 18 | 6 | 5 | 33% | mixed direction - see note below |
+| `tgt_bbb_penetration_caveat` | 18 | 5 | 4 | 28% | one real miss fixed; residual is over-firing, see note below |
 | `tx_surgery_assessment` | 19 | 6 | 4 | 32% |
 | `mol_not_sufficient_alone` | 19 | 6 | 6 | 32% | bare doc-wide `all`, item 2's limitation |
 | `chemo_options_entity_pragmatic` | 18 | 5 | 4 | 28% |
@@ -122,11 +122,19 @@ items). Current state:
 | `tx_evidence_caveat` | - | - | - | clean (applies_if conversion; judge may still occasionally be asked and disagree at zero scoring cost) |
 | `path_stat6_if_sft` | - | - | - | clean (applies_if conversion; same residual asking-cleanliness note) |
 
-**`tgt_bbb_penetration_caveat` checked and NOT fixed (mixed-direction signal):** of its 6 disagreements, 4 are
-regex=True/judge=False (DeepSeek-go, GLM-go, Qwen3.7-Plus x2 - possible over-firing, since the current rule is a
-bare `blood-brain barrier` mention with no binding to "as a reason against switching") and 2 are
-regex=False/judge=True (GPT-6-Luna, MiMo-go - possible under-firing). This needs reading both directions'
-real text before touching the rule, not a one-sided widen - left for the next pass rather than guessed at.
+**`tgt_bbb_penetration_caveat` - read both directions, fixed one, confirmed the other needs a bigger pass:**
+read all 6 disagreements. GPT-6-Luna's (regex=False/judge=True) has no textual basis at all (no
+penetrat/blood/bbb anywhere in the answer) - a judge hallucination, not a regex gap. MiMo-go's (the other
+regex=False/judge=True) was real: "...their limited and variable brain and meningeal penetration" - genuinely
+about FGFR inhibitors, missed because the only reversed-order alternative requires "penetration" before
+"brain/cns", not after. Fixed with a new fgfr/inhibitor-anchored alternative (2026-10-24). Of the 4
+regex=True/judge=False disagreements, 3 (DeepSeek-go, Qwen3.7-Plus x2) are genuinely about chemo-CNS-penetration
+(temozolomide, doxorubicin, lomustine) or ctDNA/blood-brain-barrier shedding - unrelated to FGFR inhibitors, so
+the judge was right and the regex over-fired; only GLM-go's ("blood-brain-barrier constraints of fgfr
+inhibitors") looks like a genuine judge error. **The over-firing is not fixed** - the two pre-existing
+alternatives (`blood[- ]brain[- ]barrier` bare, and `penetrat...brain/cns` bare) have no FGFR/inhibitor anchor
+at all, and narrowing them risks breaking other real credits that already rely on their current breadth (not
+checked here) - that's a separate, careful pass, not a same-day bundle with the addition above.
 
 **`mol_not_sufficient_alone` checked and NOT fixed:** this is item 2's documented, deliberately-unfixed
 limitation (bare doc-wide `all`, no sentence scoping) on a different item than item 2's own example - a
