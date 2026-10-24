@@ -237,7 +237,20 @@ kind = "should"
 severity = "minor"
 points = 2
 text = "The response notes that available FGFR inhibitors have blood-brain-barrier penetration limitations as a reason weighing against switching now."
-any = ['blood[- ]brain[- ]barrier', '\bbbb\b[^.\n]{0,60}(?:penetrat\w*|cross\w*|limit\w*)', 'penetrat\w*[^.\n]{0,40}(?:brain|cns|central nervous system)']
+# widened 2026-10-24 (watchlist re-check, docs/grader-known-issues.md item 3): a real MiMo-go answer, "...would
+# only sensibly be used off-label or on a basket trial, with explicit attention to their limited and variable
+# brain and meningeal penetration" - genuinely about FGFR inhibitors ("their" refers back to the FGFR inhibitors
+# named earlier in the same sentence), missed because the existing reversed-order alternative requires
+# "penetration" before "brain/cns", not after, and there was no anchored alternative for the other direction.
+# Added one, anchored to fgfr/inhibitor-naming within reach so it doesn't also fire on the unrelated chemo-CNS-
+# penetration mentions (temozolomide, doxorubicin, lomustine, etc.) that fill q1/q2 of nearly every real answer -
+# confirmed as a real, separate false-positive risk in the same disagreement batch (3 of the 4 regex=True/
+# judge=False disagreements checked were genuinely about chemo CNS penetration or ctDNA/blood-brain-barrier
+# shedding, not FGFR inhibitors - the judge was right, not the regex). That broader over-firing is in the
+# existing, unanchored alternatives below and is not fixed here - narrowing rules other real credits already
+# depend on needs its own careful pass, not a same-day bundle with this addition.
+any = ['blood[- ]brain[- ]barrier', '\bbbb\b[^.\n]{0,60}(?:penetrat\w*|cross\w*|limit\w*)', 'penetrat\w*[^.\n]{0,40}(?:brain|cns|central nervous system)',
+       '(?:fgfr\w*|inhibitor\w*|pemigatinib|erdafitinib|futibatinib|infigratinib)[^.\n]{0,220}(?:brain|cns|central nervous system)[^.\n]{0,40}penetrat\w*']
 
 # ---------------- whole-step: do not overclaim a specific entity from this evidence
 [[items]]
