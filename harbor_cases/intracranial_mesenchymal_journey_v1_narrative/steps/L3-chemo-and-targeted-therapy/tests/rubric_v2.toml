@@ -62,8 +62,22 @@ text = "The response reasons that, with the entity still unconfirmed, a broadly 
 # "empiric" (bare), "not entity-directed", and "not default...multi-drug/regimen" to condition 2. Confirmed
 # against gold (still matches) and all 4 real trials that motivated this round before applying - per its own
 # comment above, this is unlikely to be the last time this item needs widening.
+#
+# widened a fifth time 2026-10-24 (watchlist re-check, docs/grader-known-issues.md item 3): 5 real
+# regex=False/judge=True disagreements (GPT-6-Luna, Grok-4.7 x2, Haiku, MiMo-go), all passing condition 1 but
+# none matching condition 2's specific "empiric...bridge/choice" phrasing. Real texts used: "the appropriate
+# bridge"/"the best risk-benefit bridge" (bridge alone, no "empiric" qualifier); "a reasonable choice"/"a
+# sensible empiric choice"/"the more reasonable choice" (various adjectives before "choice", not just
+# "empiric"); "the least-bad empiric cytotoxic" (bare "empiric" as a plain adjective, not paired with
+# bridge/choice/is); "can be stopped if a confirmed target or a real entity appears" (a distinct "revisit once
+# the entity is known" framing). Added bare `\bbridge\b`, a generalized adjective+choice pattern, a
+# stop/switch/revisit-once-entity-known pattern, and bare `\bempiric(?:al)?\b`. Checked all for false-positive
+# risk against the full real-trial corpus first: bridge (12 hits, all genuine), the choice pattern (8 hits, all
+# genuine), and empiric (47 hits across every real trial, all genuine - the central premise of this whole case
+# is "entity unconfirmed", so any empiric-therapy framing is reliably about exactly this tradeoff, not a
+# coincidental unrelated usage).
 all = ['(?:unconfirmed|unestablish\w*|unclassified|undefined entity|not (?:yet )?(?:established|confirmed|known|pinned down|classified)|no confirmed (?:entity|diagnosis)|(?:entity|diagnosis) (?:is|remains|still) (?:still )?(?:unclear|unknown|not confirmed|open)|no[^.\n]{0,30}(?:entity|diagnosis)[^.\n]{0,15}is established)',
-       '(?:broadly active|well[- ]tolerated|favorable toxicity|pragmatic|regardless of (?:the )?(?:entity|diagnosis)|entity[- ]agnostic|not entity[- ]directed|across (?:several|multiple|different) (?:entities|candidates|possibilities|tumor types|diagnoses|possible diagnoses)|(?:before|until|once) (?:the|we know (?:the|more))? ?(?:entity|diagnosis) is (?:clearer|established|confirmed|better defined)|know more|only once (?:the )?(?:entity|diagnosis)[^.\n]{0,20}(?:support|confirm|establish)\w*|not appropriate until[^.\n]{0,40}(?:support|confirm|establish)\w*|document\w* as empiric(?:al)?|empiric(?:al)?[^.\n]{0,40}(?:bridge|choice)|is empiric\b|expected to redirect therapy|not start\w*[^.\n]{0,20}entity[- ]specific|not default\w*[^.\n]{0,30}(?:multi-drug|regimen)|disease control rather than entity[- ]specific)']
+       '(?:broadly active|well[- ]tolerated|favorable toxicity|pragmatic|regardless of (?:the )?(?:entity|diagnosis)|entity[- ]agnostic|not entity[- ]directed|across (?:several|multiple|different) (?:entities|candidates|possibilities|tumor types|diagnoses|possible diagnoses)|(?:before|until|once) (?:the|we know (?:the|more))? ?(?:entity|diagnosis) is (?:clearer|established|confirmed|better defined)|know more|only once (?:the )?(?:entity|diagnosis)[^.\n]{0,20}(?:support|confirm|establish)\w*|not appropriate until[^.\n]{0,40}(?:support|confirm|establish)\w*|document\w* as empiric(?:al)?|empiric(?:al)?[^.\n]{0,40}(?:bridge|choice)|is empiric\b|expected to redirect therapy|not start\w*[^.\n]{0,20}entity[- ]specific|not default\w*[^.\n]{0,30}(?:multi-drug|regimen)|disease control rather than entity[- ]specific|\bbridge\b|(?:reasonable|appropriate|good|best|sensible|defensible)[^.\n]{0,50}choice|(?:stop|switch|revisit|reconsider)[^.\n]{0,60}(?:if|when|once|only if)[^.\n]{0,60}(?:entity|target|diagnosis|pathology|molecular)[^.\n]{0,30}(?:appear\w*|confirm\w*|available|known|establish\w*)|\bempiric(?:al)?\b)']
 
 # ---------------- q2: escalating from single-agent temozolomide, or not
 # q2's own wording in the source handout ("would you consider adding a second chemotherapy drug? If so, what?")
