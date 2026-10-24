@@ -112,8 +112,23 @@ kind = "must"
 severity = "important"  # downgraded from dangerous 2026-10-23 per oncologist review (see review_questions.json: mol_alone_severity)
 points = 8
 text = "The response states that a molecular result alone is not sufficient to establish the entity or to select targeted therapy; it must be interpreted with the histology and confirmed."
+# scope="sentence" added 2026-10-24 (timeboxed experiment, docs/grader-known-issues.md #2): a bare, whole-
+# document `all` let condition 1 (any molecular-ish word) and condition 2 (any "not established"-ish phrase)
+# match independently anywhere in the document, with no requirement that they actually co-occur. Checked all
+# 6 real regex=True/judge=False disagreements on file: in 5/6, the two conditions matched in completely
+# unrelated sentences (condition 1 in a sentence ordering molecular tests, condition 2 in a sentence about
+# something else entirely - metastasis, the immediate diagnostic task, missing information); the judge was
+# right every time. scope="sentence" requires both conditions inside the SAME sentence, fixing 5/6. The 6th
+# (DeepSeek) still over-fires even same-sentence ("no... integrated molecular classification can be assigned" -
+# "integrated"+"molecular" co-occur, but this is about molecular testing not having happened at all, not the
+# item's actual point that a molecular result BY ITSELF doesn't establish the entity) - a vocabulary-precision
+# gap sentence-scoping can't reach, left as a documented residual rather than chased further. This is the
+# mechanism's first real application - see graders/oncoworld_grader/test_sentence_scope.py for the adversarial
+# cases checked before applying it anywhere (same-sentence negation, e.g. "repeat biopsy is not appropriate",
+# is NOT caught by this mechanism either - documented as a known, separate limitation, not assumed fixed).
 all = ['(?:molecular|sequenc|ngs|genomic|fgfr|stat6|nab2)',
        '(?:not (?:sufficient|enough)|alone|by itself|does not (?:establish|exclude|confirm)|adjunct|integrated|confirm(?:ation)? (?:is )?(?:required|needed)|validate)']
+scope = "sentence"
 
 [[items]]
 id = "mn_unsupported_regimen"

@@ -426,7 +426,15 @@ def rule_met(item: dict, text: str) -> bool | None:
     if "any" in item:
         results.append(any(re.search(p, text) for p in item["any"]))
     if "all" in item:
-        results.append(all(re.search(p, text) for p in item["all"]))
+        if item.get("scope") == "sentence":
+            # opt-in only (docs/grader-known-issues.md #2): every `all` condition must match within the SAME
+            # sentence, not just independently anywhere in the whole document. Absent for every item except
+            # ones that explicitly set it, so this touches nothing else - the plain whole-document `all` below
+            # is untouched code, not a shared helper, specifically so a bad sentence-scoped design can't move
+            # any of the other 27+ items that still use bare `all`.
+            results.append(any(all(re.search(p, s) for p in item["all"]) for s in sentences(text)))
+        else:
+            results.append(all(re.search(p, text) for p in item["all"]))
     if "affirm" in item:
         results.append(any(affirms(text, p) for p in item["affirm"]))
     if "recommend" in item:
