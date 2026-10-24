@@ -73,18 +73,37 @@ text = "The response requires expert neuropathology review with expanded immunoh
 all = ['(?:expert )?(?:neuropathology|pathology review)',
        '(?:immunohistochemistry|\bihc\b|sequenc|molecular|ngs|fusion)']
 [[items]]
+id = "dx_sft_named"
+domain = "pathology"
+kind = "should"
+severity = "minor"
+points = 0
+# 0-point marker, added 2026-10-24: applies_if condition for path_stat6_if_sft and tx_evidence_caveat below.
+# Both items used to gate on a whole-document negative-lookahead regex alternative instead (vacuously "met" when
+# SFT/HPC is never named) - structurally identical to the chemo_escalation_rationale/monitoring bug the hardening
+# plan's item 4b fixed: the judge is shown the item's text, not its rule, so it can't parse "met by absence" and
+# has no quote to offer, and disagrees almost every time SFT genuinely isn't named (confirmed: both items were
+# tied for the #1 disagreement spot, 7 and 6 real trials respectively, zero of which mention SFT/HPC anywhere).
+# Replacing the vacuous alternative with applies_if removes the free vacuous "met" and lets the grader exclude
+# the item from scoring structurally, the same fix 4b already applied one layer up the rubric.
+text = "Internal marker (0 points, not scored on its own): the response names solitary fibrous tumor/hemangiopericytoma anywhere. Gates whether path_stat6_if_sft and tx_evidence_caveat apply at all."
+any = ['solitary fibrous', '\bsft\b', 'hemangiopericytoma', '\bhpc\b']
+
+[[items]]
 id = "path_stat6_if_sft"
 domain = "pathology"
 kind = "should"
 severity = "important"
 points = 5
+applies_if = "dx_sft_named"
 # made genuinely conditional 2026-10-23 (see dx_differential_entity's note): SFT is no longer a required
-# candidate, so this item must not cost points when the premise doesn't apply. The third alternative is a
-# whole-document negative lookahead (DOTALL so it spans the multi-line serialised JSON) that is vacuously true
-# when SFT/HPC is never mentioned anywhere in the answer - only an answer that DOES raise SFT, without then
-# asking for STAT6/NAB2-STAT6, now loses these points.
-text = "If solitary fibrous tumor is in the differential, the response asks for STAT6 and/or NAB2-STAT6 confirmation. Not applicable, and does not cost points, when SFT/hemangiopericytoma is not named at all."
-any = ['stat6', 'nab2[- ]stat6', '(?s)^(?!.*(?:solitary fibrous|\bsft\b|hemangiopericytoma|\bhpc\b)).*$']
+# candidate, so this item must not cost points when the premise doesn't apply.
+#
+# Converted to applies_if 2026-10-24 (see dx_sft_named above) - replaces the old whole-document negative-lookahead
+# vacuous-match alternative, which the judge could never agree with when genuinely vacuous (confirmed: regex=True/
+# judge=False in 6/6 checked real trials, none of which name SFT/HPC at all).
+text = "If solitary fibrous tumor is in the differential, the response asks for STAT6 and/or NAB2-STAT6 confirmation. Not applicable, and excluded from scoring, when SFT/hemangiopericytoma is not named at all."
+any = ['stat6', 'nab2[- ]stat6']
 
 [[items]]
 id = "mol_not_sufficient_alone"
@@ -217,13 +236,18 @@ domain = "treatment"
 kind = "should"
 severity = "minor"
 points = 2
+applies_if = "dx_sft_named"
 # made genuinely conditional 2026-10-23, same reasoning as path_stat6_if_sft. Converted from two independent
 # doc-wide "all" conditions (which could be satisfied by evidence language and an SFT mention anywhere in the
 # whole document, unrelated to each other) to one proximity-scoped pattern requiring both within the same
-# ~120-char span, in either order, plus the same vacuous-when-SFT-absent escape hatch.
-text = "The response notes that the evidence for solitary fibrous tumor/hemangiopericytoma is largely retrospective and should not be presented as a universal Category 1 regimen. Not applicable, and does not cost points, when SFT/hemangiopericytoma is not named at all."
-any = ['(?:retrospective|non[- ]randomi[sz]ed|no randomi[sz]ed|limited evidence)[^.\n]{0,120}(?:sft|solitary fibrous|hemangiopericytoma)|(?:sft|solitary fibrous|hemangiopericytoma)[^.\n]{0,120}(?:retrospective|non[- ]randomi[sz]ed|no randomi[sz]ed|limited evidence)',
-       '(?s)^(?!.*(?:solitary fibrous|\bsft\b|hemangiopericytoma|\bhpc\b)).*$']
+# ~120-char span, in either order.
+#
+# Converted to applies_if 2026-10-24 (see dx_sft_named above), replacing the vacuous-when-SFT-absent escape
+# hatch - this item was tied for the #1 disagreement-watchlist spot (7/19 real trials, regex=True/judge=False
+# every time, none naming SFT/HPC at all) for exactly the reason item 4b already fixed one layer up: the judge
+# can't agree with "met by absence" when shown only the item's text, never its rule.
+text = "The response notes that the evidence for solitary fibrous tumor/hemangiopericytoma is largely retrospective and should not be presented as a universal Category 1 regimen. Not applicable, and excluded from scoring, when SFT/hemangiopericytoma is not named at all."
+any = ['(?:retrospective|non[- ]randomi[sz]ed|no randomi[sz]ed|limited evidence)[^.\n]{0,120}(?:sft|solitary fibrous|hemangiopericytoma)|(?:sft|solitary fibrous|hemangiopericytoma)[^.\n]{0,120}(?:retrospective|non[- ]randomi[sz]ed|no randomi[sz]ed|limited evidence)']
 
 [[items]]
 id = "tx_surveillance"

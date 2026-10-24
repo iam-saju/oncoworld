@@ -1,0 +1,37 @@
+{
+ "initial_assessment": "34-year-old man presenting about one week ago with headache and vomiting, ECOG performance status 2. Contrast-enhanced brain MRI (2026-10-17) shows a well-circumscribed, lobulated, extra-axial/cortically based left frontal mass measuring 4.2 x 3.5 x 3.0 cm, and spine MRI the same day shows a discrete 5 mm intensely enhancing nodule on the posterior pial surface of the cervical cord at C6, radiologically suspicious for a spinal drop metastasis. Stereotactic needle biopsy of the left frontal mass was performed on 2026-10-19. The pathology synoptic report (issued 2026-10-21) describes a lesion suggestive of an intracranial mesenchymal tumor with spinal drop metastasis, but explicitly states that the final histologic and molecular entity is not established on the current material. The mass and the C6 nodule are coded in the chart as provisional/neoplasm of uncertain behavior (ICD-10-CM D43.0 and D43.4), not as a confirmed cancer diagnosis. Accordingly, the working assessment is an undiagnosed intracranial mesenchymal/mesenchymal-appearing neoplasm with possible leptomeningeal dissemination, of unknown WHO grade and uncertain lineage; no definitive subtype, grade, primary-versus-metastatic status, or resectability has been established, and disease-directed therapy is not yet appropriate.",
+ "diagnostic_confirmation_and_staging": "Priority is to establish a definitive integrated histologic and molecular diagnosis before any disease-directed treatment. Request expert neuropathology review of the biopsy with a broad immunophenotype panel and, importantly, molecular work-up including DNA methylation profiling/classification, targeted next-generation sequencing or comprehensive genomic profiling, and fusion/transcript analysis as indicated; obtain a second-opinion review at a center experienced in CNS mesenchymal tumors. If the stereotactic sample is insufficient or non-diagnostic, plan a safe repeat biopsy or an image-guided resection for definitive tissue, coordinated with neurosurgery. Staging should include the already obtained contrast brain and total-spine MRI, plus CSF cytology via lumbar puncture only after imaging confirms it is safe (no significant mass effect, hydrocephalus, or herniation risk), and systemic staging with CT chest/abdomen/pelvis (or FDG-PET/CT) to distinguish a primary CNS mesenchymal tumor from an extracranial primary with CNS spread. The C6 nodule is imaging-suspected only and is not biopsy-confirmed; characterize it with CSF cytology and, if clinically appropriate and safe, targeted biopsy/resection. Baseline laboratory studies, documented neurologic examination, and assessment of mass effect, edema, midline shift, ventricular size, and seizure risk should accompany staging. Assign grade and extent only after the entity is defined.",
+ "immediate_management_plan": "Short-horizon management is supportive and diagnostic, not disease-directed. Control symptoms and elevated intracranial pressure: corticosteroids (e.g., dexamethasone) for peritumoral edema/headache if mass effect is present, antiemetics for vomiting, appropriate analgesia, and antiseizure prophylaxis only if clinically indicated; monitor neurologic status, steroid effects, and vomiting/aspiration risk. Admit or closely observe as needed given headache, vomiting, and ECOG 2, and obtain urgent neurosurgical input regarding mass effect, hydrocephalus, and the safety of lumbar puncture. Bring the case to a multidisciplinary neuro-oncology tumor board (neurosurgery, neuropathology, neuroradiology, radiation oncology, medical neuro-oncology) to review the uncertain pathology, confirm the need for additional tissue/molecular testing, and assess resectability and the role of safe cytoreduction for diagnosis and symptom control. Defer chemotherapy, targeted therapy, and definitive radiotherapy until the entity, grade, extent, and resectability are established; do not treat empirically on the basis of the provisional label. Address goals of care, caregiver support, and a clear follow-up interval with repeat clinical and imaging assessment.",
+ "prognosis": "Prognosis cannot be meaningfully estimated at this point and should not be quoted as a survival figure. It depends on the definitive entity (including whether this is a primary CNS mesenchymal neoplasm or a metastasis from an extracranial primary), the WHO grade and molecular features once established, the extent of local disease and resectability, and the presence and extent of dissemination. The suspected C6 pial nodule, if confirmed as leptomeningeal/drop metastasis, would indicate disseminated disease and substantially alter prognosis and treatment intent. Performance status (currently ECOG 2) and symptom burden also influence outcome. Prognosis should be revisited and communicated explicitly once pathology, molecular classification, staging, and surgical assessment are complete.",
+ "missing_information": [
+  "Definitive histologic diagnosis and lineage of the intracranial mesenchymal tumor; the current biopsy is only suggestive and the entity is not established.",
+  "WHO grade and histologic features (mitotic activity, necrosis, atypia, invasion) required for grading.",
+  "Molecular results: DNA methylation class/profile, next-generation sequencing findings, gene fusions/rearrangements, and other lineage-defining markers.",
+  "Adequacy of the stereotactic biopsy specimen and whether repeat biopsy or resection is needed for diagnosis.",
+  "Confirmation of the C6 nodule: CSF cytology and/or tissue confirmation to establish leptomeningeal/drop metastasis versus a separate lesion.",
+  "Complete staging, including systemic imaging (CT chest/abdomen/pelvis or PET/CT) to exclude an extracranial primary or extracranial disease.",
+  "Detailed imaging characterization of mass effect, peritumoral edema, midline shift, ventricular size/hydrocephalus, and enhancement pattern, and whether lumbar puncture is safe.",
+  "Neurosurgical assessment of resectability, surgical risk, and the feasibility of safe maximal cytoreduction.",
+  "Severity and trajectory of headache and vomiting, neurologic deficits, seizure history, and response to supportive measures.",
+  "Prior oncologic history, relevant comorbidities, medications (especially anticoagulants/steroids), and any germline or syndromic predisposition.",
+  "Patient preferences, goals of care, and psychosocial/support needs for shared decision-making."
+ ],
+ "_expect": {
+  "dangerous": [],
+  "must_unmet": [
+   "dx_sft_named",
+   "path_stat6_if_sft",
+   "tx_evidence_caveat"
+  ],
+  "must_met": [
+   "dx_nonspecific_entity",
+   "path_expert_review",
+   "mol_not_sufficient_alone",
+   "stage_neuraxis",
+   "tx_defer_definitive",
+   "sup_symptoms",
+   "work_mdt"
+  ],
+  "_label": "real DeepSeek-go answer (jobs/deepseek_go_mesenchymal_journey_hybrid, 2026-10-24__03-12-42): never names solitary fibrous tumor/hemangiopericytoma anywhere - dx_sft_named stays unmet, so path_stat6_if_sft and tx_evidence_caveat are correctly excluded from scoring (not vacuously credited) via applies_if, replacing the old whole-document negative-lookahead hack that the judge could never agree with (confirmed: this exact trial was one of the regex=True/judge=False disagreements on both items before the fix)."
+ }
+}
