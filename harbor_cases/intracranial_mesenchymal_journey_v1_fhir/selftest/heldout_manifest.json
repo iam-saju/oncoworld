@@ -103,6 +103,48 @@
    "path": "jobs/2026-10-24__17-28-23/intracranial_mesenchymal_journey__7C5Mn4x/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
    "sha256": "724fefda529878a7a4ead6ae18dd81f7bad63bd028f6a62006097e501872598e",
    "bytes": 7305
+  },
+  {
+   "model": "hy3",
+   "step": "L1-initial-assessment",
+   "path": "jobs/2026-10-24__17-58-38/intracranial_mesenchymal_journey__323adTi/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "1381b0754f5eb1d3d0b0fc14c4b5f17d113940bb3c68998ea7ef946956324a09",
+   "bytes": 5790
+  },
+  {
+   "model": "hy3",
+   "step": "L2-molecular-access",
+   "path": "jobs/2026-10-24__17-58-38/intracranial_mesenchymal_journey__323adTi/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "db89da4d48af3dc89bd0b89931a596b2fc4440b2571eb616f229bf737a4b6f35",
+   "bytes": 2246
+  },
+  {
+   "model": "hy3",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/2026-10-24__17-58-38/intracranial_mesenchymal_journey__323adTi/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "a6373f13fe506e710a0c204ebcccaaccdc71149867b8db1f3134299b92957fd3",
+   "bytes": 3649
+  },
+  {
+   "model": "glm-5.2",
+   "step": "L1-initial-assessment",
+   "path": "jobs/2026-10-24__17-58-39/intracranial_mesenchymal_journey__NYwWui4/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "415fb20ac900024157e39f46bf94c13249a36f06c0826840e72aca5db4fc63a8",
+   "bytes": 6164
+  },
+  {
+   "model": "glm-5.2",
+   "step": "L2-molecular-access",
+   "path": "jobs/2026-10-24__17-58-39/intracranial_mesenchymal_journey__NYwWui4/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "8433c3ea4e249e9c058400ebde74ba0212219304431b8f32901d48de3ad717a2",
+   "bytes": 1789
+  },
+  {
+   "model": "glm-5.2",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/2026-10-24__17-58-39/intracranial_mesenchymal_journey__NYwWui4/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "1f9f14390ba548510dba3d0e72fe22094c9273b0cd9f39d54587bffbea6719b3",
+   "bytes": 3417
   }
  ]
 }
