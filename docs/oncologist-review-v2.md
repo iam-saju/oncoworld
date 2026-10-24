@@ -75,6 +75,13 @@ For: a reviewing neuro-oncologist. Rubric: `harbor_cases/intracranial_mesenchyma
 `.../steps/<step>/instruction.md` + `environment/case/` (L1) or `workdir/case/fhir_updates/` (L2, L3 - each
 step's own new chart update only; earlier steps' updates stay in the running container but are not reshown).
 
+**Also see `harbor_cases/intracranial_mesenchymal_journey_v1_{fhir,narrative}/review_questions.json`** (new,
+2026-10-24): two specific, structured questions about L3 items that needed real-model-driven regex widening 5
+and 4 times in two days - a signal the underlying judgment may need more than a keyword rule, worth a direct
+call on how to treat each item rather than another patch. This file does not need the held-out set or blind
+labeling to answer - it can be reviewed now, in parallel with the engineering work on the two open design items
+below (the `all`/`any` sentence-scoping limitation, `tgt_bbb_penetration_caveat`'s over-firing).
+
 Twist: intracranial mass, term "intracranial mesenchymal tumor" used throughout but never a confirmed
 molecular entity (Condition resources stay `verificationStatus: provisional`). L1 is the first assessment; L2
 picks up after subtotal resection + RT, with growing residual disease and the family declining a repeat brain

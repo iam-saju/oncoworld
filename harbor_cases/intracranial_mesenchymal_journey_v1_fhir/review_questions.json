@@ -1,0 +1,29 @@
+{
+  "_about": "Open clinical/rubric-design questions for the L3 step's rubric, surfaced 2026-10-24 while working a judge/regex disagreement watchlist (docs/grader-known-issues.md item 3). These two items needed real-model-driven regex widening 5 and 4 times respectively in two days - that is itself a signal that the underlying judgment is more semantic than a keyword rule can reliably capture, and deserves an oncologist's call on how to treat the item going forward, not another regex patch.",
+  "questions": [
+    {
+      "id": "entity_pragmatic_widening_count",
+      "items": ["chemo_options_entity_pragmatic"],
+      "question": "This item (\"with the entity still unconfirmed, a broadly active/well-tolerated option is preferable to one entity-specific intensive regimen\") has been widened 5 times in 2 days as new real models phrased the same underlying judgment differently: \"should be chosen only once the entity is supported\", \"the drug is empiric, not entity-directed\", \"the appropriate bridge\", \"the best risk-benefit bridge while the entity is unknown\", \"a reasonable choice for an unclassified tumour\", \"the least-bad empiric cytotoxic\". Each fix closed a real gap, but the pattern itself suggests the underlying judgment (is this regimen choice genuinely hedged pending diagnosis, vs. a confident entity-specific commitment dressed up in hedging language) needs clinical judgment a keyword list can't reliably bound. How should this item be treated going forward?",
+      "context": "Full widening history is in the rubric's own comments (harbor_cases/intracranial_mesenchymal_journey_v1_{fhir,narrative}/steps/L3-chemo-and-targeted-therapy/tests/rubric_v2.toml, item chemo_options_entity_pragmatic). Current state: clean against every real trial on file (0/18 judge disagreements) immediately after the 5th widening, but that measures fit to the models already tried, not generalization to new phrasing.",
+      "options": [
+        "Keep as regex-authoritative, but flag it \"low confidence\" in generalization reports until the held-out/blind-labeling pass gives real agreement data",
+        "Lower this item's point weight pending the blind-labeling pass, since a loosely-bounded keyword rule is more likely to mis-score at the margins",
+        "Convert to a structured decision field (the model states explicitly whether it chose the regimen for entity-agnostic/pragmatic reasons) instead of inferring it from prose - larger schema change, deferred work",
+        "Keep as-is, no change - the widenings each closed a real, confirmed gap and the item earns its points correctly in every case checked so far"
+      ]
+    },
+    {
+      "id": "atypical_comutation_widening_count",
+      "items": ["tgt_atypical_comutation_pattern"],
+      "question": "This item (\"the co-occurring KRAS/STK11/CTNNB1 alterations are not an established co-actionable signature with the FGFR2 fusion, raising doubt about a clean single-driver story\") has been widened 4 times in 2 days: an initial bug (whole-document contamination), then 3 more rounds adding real phrasings (\"more typical of\"/\"carcinoma pattern\"/\"not a coherent profile\", \"warrants evaluation for an occult primary\", \"complex genomic instability\", bare \"is typical of\", \"does not by itself establish\", and the doubt statement and gene list written as two separate sentences). Same underlying concern as the item above: is \"doubts a clean single-driver story\" a judgment call that needs more than keyword matching to score reliably?",
+      "context": "Full widening history is in the rubric's own comments, same file, item tgt_atypical_comutation_pattern. Current state: down to 2/18 real disagreements (both judge errors, not regex gaps, per docs/grader-known-issues.md item 3) after the 4th widening.",
+      "options": [
+        "Keep as regex-authoritative, but flag it \"low confidence\" in generalization reports until the held-out/blind-labeling pass gives real agreement data",
+        "Lower this item's point weight pending the blind-labeling pass",
+        "Convert to a structured decision field (the model states explicitly whether it doubts a single coherent driver, and why) instead of inferring it from prose - larger schema change, deferred work",
+        "Keep as-is, no change - the widenings each closed a real, confirmed gap and the item earns its points correctly in every case checked so far"
+      ]
+    }
+  ]
+}
