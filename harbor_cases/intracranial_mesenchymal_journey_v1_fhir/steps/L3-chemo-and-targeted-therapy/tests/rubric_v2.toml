@@ -212,8 +212,26 @@ text = "The response notes that the co-occurring KRAS, STK11, and CTNNB1 alterat
 # patterns, and CTNNB1 is a WNT alteration seen in unrelated tumors" / "not a coherent intracranial mesenchymal
 # profile"), Qwen3.7-Plus ("may represent complex genomic instability rather than a single actionable driver").
 # Confirmed against gold and all 3 real trials before applying.
-any = ['(?:kras|stk11|ctnnb1)[^.\n]{0,250}(?:passenger|artifact|noise|coincidental|complex (?:tumor|biology|genomic|molecular)(?:[^.\n]{0,20}instability)?|complicated tumor|atypical|unusual|odd combination|does ?n.t fit|inconsistent with|more typical of|more (?:commonly|often) (?:seen|found|associated)|typically (?:seen|found|associated)|(?:not|no) (?:an? )?(?:established|validated|clean|recognized|known|co[- ]?actionable|effective match|coherent)|unclear significance|uncertain significance|variant allele fractions?|variant allele frequenc(?:y|ies)|\bvaf\b|clonal hemat\w*|\bchip\b|confound\w*|warrants? evaluation for an? (?:occult|different|another|separate) (?:non-cns )?primary|carcinoma pattern|seen in unrelated tumors|not (?:a )?coherent[^.\n]{0,20}profile|various malignancies|co-?occur in[^.\n]{0,30}malignan\w*)',
-       '(?:passenger|artifact|noise|coincidental|complex (?:tumor|biology|genomic|molecular)(?:[^.\n]{0,20}instability)?|complicated tumor|atypical|unusual|odd combination|does ?n.t fit|inconsistent with|more typical of|more (?:commonly|often) (?:seen|found|associated)|typically (?:seen|found|associated)|(?:not|no) (?:an? )?(?:established|validated|clean|recognized|known|co[- ]?actionable|effective match|coherent)|unclear significance|uncertain significance|variant allele fractions?|variant allele frequenc(?:y|ies)|\bvaf\b|clonal hemat\w*|\bchip\b|confound\w*|warrants? evaluation for an? (?:occult|different|another|separate) (?:non-cns )?primary|carcinoma pattern|seen in unrelated tumors|not (?:a )?coherent[^.\n]{0,20}profile|various malignancies|co-?occur in[^.\n]{0,30}malignan\w*)[^.\n]{0,250}(?:kras|stk11|ctnnb1)']
+#
+# widened a fourth time 2026-10-24 (watchlist re-check, docs/grader-known-issues.md item 3): 4 real
+# regex=False/judge=True disagreements (Haiku x3, MiMo-go). Three distinct gaps, all against real evidence:
+# (1) bare "is typical of" (no "more") - a real Haiku answer wrote "KRAS with STK11 is typical of lung
+# adenocarcinoma" with no "more". (2) "does not by itself establish" - a real MiMo-go answer used the verb form
+# with a "by itself" hedge in between, which the old "not (?:an? )?established" (adjective only, tight gap)
+# couldn't reach. (3) the doubt statement and the gene list in two separate sentences - two real Haiku answers
+# write a topic sentence ("The combination is atypical for a primary CNS mesenchymal tumour.") immediately
+# followed by a new sentence naming the genes ("KRAS, STK11 and CTNNB1 changes...") - the existing `[^.\n]`
+# window can't cross that period at all. Added a narrowly-scoped one-period-crossing pattern (doubt word within
+# 40 chars of its own sentence's end, gene name within the next few words of the next sentence's start) rather
+# than removing the period restriction outright, which would reopen the exact whole-document contamination risk
+# this item was rebuilt to close. Checked all three widenings for false positives against the full real-trial
+# corpus: not-establish (9 hits, all genuine), typical-of (4 hits, all genuine), the one-period-crossing pattern
+# (3 hits, all genuine, 0 false positives on synthetic adversarial tests of unrelated sentences sharing a
+# document).
+any = ['(?:kras|stk11|ctnnb1)[^.\n]{0,250}(?:passenger|artifact|noise|coincidental|complex (?:tumor|biology|genomic|molecular)(?:[^.\n]{0,20}instability)?|complicated tumor|atypical|unusual|odd combination|does ?n.t fit|inconsistent with|(?:more )?typical of|more (?:commonly|often) (?:seen|found|associated)|typically (?:seen|found|associated)|(?:not|no)[^.\n]{0,20}(?:established|validated|clean|recognized|known|co[- ]?actionable|effective match|coherent|establish\w*)|unclear significance|uncertain significance|variant allele fractions?|variant allele frequenc(?:y|ies)|\bvaf\b|clonal hemat\w*|\bchip\b|confound\w*|warrants? evaluation for an? (?:occult|different|another|separate) (?:non-cns )?primary|carcinoma pattern|seen in unrelated tumors|not (?:a )?coherent[^.\n]{0,20}profile|various malignancies|co-?occur in[^.\n]{0,30}malignan\w*)',
+       '(?:passenger|artifact|noise|coincidental|complex (?:tumor|biology|genomic|molecular)(?:[^.\n]{0,20}instability)?|complicated tumor|atypical|unusual|odd combination|does ?n.t fit|inconsistent with|(?:more )?typical of|more (?:commonly|often) (?:seen|found|associated)|typically (?:seen|found|associated)|(?:not|no)[^.\n]{0,20}(?:established|validated|clean|recognized|known|co[- ]?actionable|effective match|coherent|establish\w*)|unclear significance|uncertain significance|variant allele fractions?|variant allele frequenc(?:y|ies)|\bvaf\b|clonal hemat\w*|\bchip\b|confound\w*|warrants? evaluation for an? (?:occult|different|another|separate) (?:non-cns )?primary|carcinoma pattern|seen in unrelated tumors|not (?:a )?coherent[^.\n]{0,20}profile|various malignancies|co-?occur in[^.\n]{0,30}malignan\w*)[^.\n]{0,250}(?:kras|stk11|ctnnb1)',
+       '(?:atypical|carcinoma pattern|unusual|not (?:a )?coherent[^.\n]{0,20}profile|does ?n.t fit|inconsistent with)[^.\n]{0,40}\.\s*(?:kras|stk11|ctnnb1)',
+       '(?:kras|stk11|ctnnb1)[^.\n]{0,40}\.\s*(?:atypical|carcinoma pattern|unusual|not (?:a )?coherent[^.\n]{0,20}profile|does ?n.t fit|inconsistent with)']
 
 [[items]]
 id = "tgt_verdict_continue_chemo"

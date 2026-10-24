@@ -6,15 +6,15 @@
   "dangerous": [],
   "must_unmet": [
    "chemo_escalation_irinotecan",
-   "tgt_atypical_comutation_pattern",
    "tgt_acknowledges_biopsy_refusal_constraint"
   ],
   "must_met": [
    "chemo_options_temozolomide",
    "tgt_molecular_not_sufficient_alone",
    "tgt_bbb_penetration_caveat",
-   "tgt_raises_tissue_reacquisition"
+   "tgt_raises_tissue_reacquisition",
+   "tgt_atypical_comutation_pattern"
   ],
-  "_label": "real MiMo-go answer (jobs/mimo_go_mesenchymal_journey_hybrid, 2026-10-23__22-31-54): q3 says FGFR2-fusion inhibitors 'would only sensibly be used off-label or on a basket trial, with explicit attention to their limited and variable brain and meningeal penetration' - genuinely about FGFR inhibitors ('their' refers back to the named inhibitors earlier in the sentence), missed by the pre-existing reversed-order alternative because 'brain' comes before 'penetration', not after. Confirms the tgt_bbb_penetration_caveat widening (new fgfr/inhibitor-anchored alternative) found re-checking the judge/regex disagreement watchlist - before this fix, this item scored a false miss."
+  "_label": "real MiMo-go answer (jobs/mimo_go_mesenchymal_journey_hybrid, 2026-10-23__22-31-54): q3 says FGFR2-fusion inhibitors 'would only sensibly be used off-label or on a basket trial, with explicit attention to their limited and variable brain and meningeal penetration' - genuinely about FGFR inhibitors ('their' refers back to the named inhibitors earlier in the sentence), missed by the pre-existing reversed-order alternative because 'brain' comes before 'penetration', not after. Confirms the tgt_bbb_penetration_caveat widening (new fgfr/inhibitor-anchored alternative) found re-checking the judge/regex disagreement watchlist - before this fix, this item scored a false miss. tgt_atypical_comutation_pattern moved to must_met (2026-10-24): this same q3 text ('an FGFR2 fusion together with KRAS, STK11 and CTNNB1 variants does not by itself establish any WHO entity or grade') is itself one of the 4 real misses that motivated that item's 4th widening (the verb-form 'does not by itself establish', not the adjective 'not established') - it was never genuinely unmet, just missed by both items' pre-widening regexes at the same time."
  }
 }
