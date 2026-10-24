@@ -4,7 +4,7 @@
   "agents": [
     {
       "name": "opencode",
-      "model_name": "opencode-go/minimax-m3.1-flash-free",
+      "model_name": "opencode-go/minimax-m3.1-flash",
       "kwargs": {
         "disable_web_search": true
       },
