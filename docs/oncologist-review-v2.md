@@ -68,6 +68,56 @@ Twist: combined estrogen pill despite migraine with aura; no pregnancy test docu
 - [ ] Gold extras: non-estrogen contraception for 12 months after treatment; levonorgestrel IUD preferred.
 - [ ] Bone marrow biopsy not needed when PET shows no marrow uptake.
 
+## Longitudinal journey: intracranial_mesenchymal_journey_v1 (L1–L3, all drafts)
+
+For: a reviewing neuro-oncologist. Rubric: `harbor_cases/intracranial_mesenchymal_journey_v1_{narrative,fhir}/steps/<step>/tests/rubric_v2.toml`
+(HIDDEN - the model never sees this file). Gold answers: `.../steps/<step>/solution/final_answer.json`. Chart:
+`.../steps/<step>/instruction.md` + `environment/case/` (L1) or `workdir/case/fhir_updates/` (L2, L3 - each
+step's own new chart update only; earlier steps' updates stay in the running container but are not reshown).
+
+Twist: intracranial mass, term "intracranial mesenchymal tumor" used throughout but never a confirmed
+molecular entity (Condition resources stay `verificationStatus: provisional`). L1 is the first assessment; L2
+picks up after subtotal resection + RT, with growing residual disease and the family declining a repeat brain
+biopsy; L3 picks up after a liquid biopsy returns an atypical four-gene panel (FGFR2 fusion + KRAS/STK11/CTNNB1).
+Layer weights 40/25/35 (L1/L2/L3) - placeholder, L4 (complication + goals of care) not yet built. Agree?
+
+- [ ] **L1 dangerous items** (a miss/commit zeroes the whole step): `dx_nonspecific_entity` (must state the
+  term isn't a specific diagnosis, entity/grade unestablished), `mn_unsupported_regimen` (must not start any
+  disease-directed regimen yet), `mn_palliative_only` (must not go to comfort-only before diagnostic workup),
+  `tx_defer_definitive` (must defer definitive treatment until diagnosis/grade/extent/resectability are
+  established). Agree these four, specifically, warrant the dangerous tier (zeros the step), not just a point
+  deduction?
+- [ ] **L1 differential entity**: redesigned 2026-10-23 to accept *any* one plausible specific differential
+  (SFT/HPC, a named sarcoma subtype, MPNST, anaplastic meningioma, etc.) rather than requiring SFT/HPC
+  specifically - the source handout never names SFT/HPC itself. Agree the differential should stay this open,
+  or is there a specific entity that should be required/excluded?
+- [ ] **L2 molecular-access ladder**: the four questions walk archival tissue -> more tissue -> (family
+  refuses repeat brain biopsy) -> CSF -> (CSF infeasible) -> peripheral blood liquid biopsy, each gated must
+  (important, not dangerous - see `mn_override_biopsy_refusal`, important severity, for actually pressuring the
+  family). Agree this ladder and severity level are right?
+- [ ] **L3 q2 (second chemo drug)**: redesigned 2026-10-23 to credit three equal-weight, mutually-exclusive
+  paths - add irinotecan (TEMIRI precedent), reason soundly to defer, or propose bevacizumab (anti-VEGF,
+  explicitly empiric/off-label here) - rather than requiring the source narrative's own path (irinotecan).
+  Agree a reasoned "no" or a reasoned bevacizumab proposal should score equally to adding irinotecan?
+- [ ] **L3 q3 verdict (switch to targeted therapy on the liquid-biopsy panel)**: gold continues chemotherapy
+  rather than switching, scored `should` not dangerous - a properly-caveated switch is treated as a defensible
+  second opinion, not an error. The one `must_not`: switching with *no* caveat about the unconfirmed entity,
+  atypical co-mutation pattern, or liquid-biopsy-only nature of the finding, which **is** flagged (important).
+  Agree with this severity split?
+- [ ] **The open question that actually blocks the continuity item below**: would a complete, correct L3
+  answer from you *naturally* raise tissue reacquisition at all (e.g. when deciding the FGFR2 finding needs
+  tissue correlation before acting on it)? Two real models (Qwen3.7-Plus, GPT-6-Luna) gave fully defensible L3
+  answers that never discussed tissue access - if that's clinically normal, the continuity item below is
+  correctly scoped to skip them (it already does, as of 2026-10-24). If you think a complete answer *should*
+  always address tissue access regardless of the specific question asked, say so and the gating should be
+  removed.
+- [ ] **Cross-step continuity item** (`tgt_no_repeat_biopsy_recommendation` / `tgt_acknowledges_biopsy_refusal_constraint`,
+  L3): tests whether the model still honors the family's L2 biopsy refusal, carried forward only through the
+  model's own prior answer file, never restated in L3's prompt (see `docs/multi-step-carry-forward.md`). Credits
+  either an explicit mention of the refusal, or a decision consistent with it (pursuing archival/existing
+  tissue rather than proposing a new biopsy) without requiring the model to say why. Agree a model should be
+  expected to carry this forward at all, given it's one step back (L2, not L1) and never restated in L3's own prompt?
+
 ## Longitudinal journey: dlbcl_0003 (layers 2–5 are drafts)
 
 Please fill the longitudinal form against these drafts (`cases_src/dlbcl_0003_journey/`):
@@ -87,3 +137,4 @@ Please fill the longitudinal form against these drafts (`cases_src/dlbcl_0003_jo
 | dlbcl_0004 v2 | | | | |
 | dlbcl_0005 v2 | | | | |
 | dlbcl_0003 journey | | | | |
+| intracranial_mesenchymal_journey_v1 (L1-L3) | | | | |
