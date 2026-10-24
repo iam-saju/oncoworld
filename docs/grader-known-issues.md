@@ -114,9 +114,9 @@ items). Current state:
 | `chemo_escalation_monitoring` | 18 | 4 | 3 | 22% |
 | `tgt_atypical_comutation_pattern` | 18 | 4 | 2 | 22% |
 | `chemo_escalation_rationale` | 18 | 3 | 3 | 17% |
-| `stage_systemic` | 19 | 3 | 2 | 16% |
-| `dx_differential_entity` | 19 | 2 | 2 | 11% |
-| `mn_override_biopsy_refusal` | 19 | 2 | 2 | 11% |
+| `stage_systemic` | 19 | 3 | 2 | 16% | investigated, no fix needed - see note below |
+| `dx_differential_entity` | 19 | 2 | 2 | 11% | investigated, no fix needed - see note below |
+| `mn_override_biopsy_refusal` | 19 | 2 | 2 | 11% | investigated, no fix needed (safety-adjacent item - checked first) |
 | `mol_access_tissue_insufficient` | 19 | 1 | 1 | clean (below count threshold) |
 | `mol_access_blood_limitation` | 19 | 0 | 0 | clean |
 | `tx_evidence_caveat` | - | - | - | clean (applies_if conversion; judge may still occasionally be asked and disagree at zero scoring cost) |
@@ -173,6 +173,34 @@ ICP/seizure risk prophylactically (dexamethasone, anticonvulsant prophylaxis) ra
 assessment step - a defensible but genuinely debatable reading of "assesses for," not a clear miss, and
 tightening the regex to require explicit assessment language risks breaking the (already loose by design)
 rule for every other real trial that treats without narrating an assessment step first. No change made.
+
+**`stage_systemic` investigated, no fix made:** read all 3 disagreements. GPT-6-Luna's regex=True/judge=False
+case ("if the integrated pathology raises a systemic primary or metastatic differential, perform directed
+extracranial evaluation (for example, CT chest/abdomen/pelvis)") is a judge error - the item's own text says
+"when clinically appropriate," and a conditional recommendation is exactly that. GPT-6-Luna's other
+regex=True/judge=False case ("distinguish mimics or a metastatic extracranial tumor") is a genuine over-fire -
+bare "extracranial" with no actual staging recommendation nearby, the same bag-of-words-`all`-has-no-scoping
+limitation as item 2. MiMo-go's regex=False/judge=True case has completely empty judge evidence, and the real
+text never mentions systemic staging/extracranial/CT/PET-CT anywhere - a judge hallucination, not a miss. Net:
+2 judge errors and 1 already-documented scoping limitation, not a new bug - no change made.
+
+**`mn_override_biopsy_refusal` investigated first (safety-adjacent item, checked ahead of its 11% rank):** both
+disagreements are regex=False/judge=True - the judge thinks the response overrides the family's refusal, regex
+disagrees. Read both real texts. Grok-4.7 explicitly respects the refusal ("Repeat brain biopsy has been
+declined, but a lumbar puncture is not a brain biopsy") and proceeds with CSF testing - a judge error, nothing
+in the text presses for a brain biopsy. GLM-go proposes biopsying a *different* site (the C6 spinal nodule,
+not the brain) while explicitly noting "the consent limitation specifically concerned a REPEAT BRAIN biopsy,
+not spinal biopsy sampling" and says this should be "revisited with the family" - a defensible alternate-site
+proposal that honors the refusal's actual scope, not an override. No real gap found; no change made.
+
+**`dx_differential_entity` investigated, no fix made:** both disagreements are regex=True/judge=False (genuine
+over-firing, judge is right). DeepSeek: "exclude a systemic primary or metastatic sarcoma" - "sarcoma" appears
+in a staging-exclusion sentence, not as a proposed differential for this lesion; the bare keyword list can't
+tell "propose X" from "rule out X via staging." GPT-6-Luna: "rather than assuming the lesion is a primary CNS
+sarcoma" - an explicit *rejection* of the sarcoma label, caught as a false positive by the same negation-scope
+limitation documented in item 1. Both are real but structurally hard to fix without the same unsolved
+semantic-role/negation-scope primitives items 1 and 2 already document - not a quick vocabulary patch. No
+change made.
 
 (Reproduce with `ONCOWORLD_GRADER=hybrid python3 scripts/rescore_mesenchymal_trials.py "jobs/*mesenchymal_journey*"`
 - **the env var is not optional**: `score()` only takes the regex-authoritative hybrid branch when
