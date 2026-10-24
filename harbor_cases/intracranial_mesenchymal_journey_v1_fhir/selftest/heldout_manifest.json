@@ -2,6 +2,16 @@
  "case": "intracranial_mesenchymal_journey_v1_fhir",
  "frozen_at": "2026-10-24T14:30:00Z",
  "note": "Held-out set per the hardening plan's item 0/6. Generated with --disable-verification (no grading, no review.json ever produced). Answers recovered from agent/opencode.txt (the write tool, or for qwen3.8-max's L3 step, a bash-heredoc python script - see scripts/extract_opencode_answer.py) since test.sh's normal final_answer.json copy only runs as part of verification. Nothing in items 2-5 of the hardening plan read this content; sha256 here is the integrity check for that claim. Score once against the final grader, after oncologist blind labeling (see scripts/generate_blind_label_worksheet.py), not before.",
+ "known_exposure": [
+  {
+   "model": "qwen3.8-max",
+   "step": "L2-molecular-access",
+   "when": "2026-10-24, fixing mol_access_blood_limitation's word-order/proximity gap (watchlist item in docs/grader-known-issues.md)",
+   "what": "a corpus-wide false-positive scan globbed jobs/*mesenchymal_journey*/**/verifier/final_answer.json without excluding *_heldout paths, printing one sentence of this step's q4 answer to the terminal (the plasma ctdna/low-yield sentence) while checking the new regex alternatives for false positives",
+   "scope": "one sentence, q4 only, this step only - minimax-m3 and kimi-k3 were not matched by that glob and stayed unread; the matched pattern (the original, pre-existing modifier-first alternative) was already justified by other real non-held-out trials and no new rule was written from this sentence",
+   "decision": "user chose (2026-10-24) to keep the held-out set as-is and score qwen3.8-max normally in the final pass - one sentence with no influence on scoring doesn't meaningfully compromise the benchmark"
+  }
+ ],
  "entries": [
   {
    "model": "minimax-m3",
