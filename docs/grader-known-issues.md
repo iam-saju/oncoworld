@@ -91,16 +91,24 @@ is **not** fixed - the `;` fix doesn't reach it, and binding "follow-up" to the 
 semantic scope, the same documented limitation as item 2 above. `tgt_raises_tissue_reacquisition`/
 `tgt_acknowledges_biopsy_refusal_constraint` (L3 continuity items) separately widened for bare "tumor
 tissue"/"resection specimen"/"FFPE" phrasing lacking the words "archival"/"existing" - see the rubric's own
-2026-10-24 comments for the full before/after. Current state:
+2026-10-24 comments for the full before/after.
+
+**Third update, same day:** `path_stat6_if_sft` and `tx_evidence_caveat` (tied for #1, 37% each) turned out to
+share the exact structural bug item 4b already fixed once - both used a whole-document negative-lookahead regex
+alternative to vacuously "pass" when SFT/HPC is never named, and the judge (shown only the item's text, not its
+rule) can never agree with "met by absence", so it disagreed in 6-7/7 checked real trials, none of which
+actually name SFT/HPC. Converted both to `applies_if` against a new 0-point marker (`dx_sft_named`), the same
+fix 4b applied to `chemo_escalation_rationale`/`monitoring` - net scoring is identical, but the item is honestly
+"excluded" instead of falsely "met", and the judge is no longer asked to agree with an unparseable claim.
+**Grepped the whole case for the same hack afterward - no other live instances remain** (`grep -n "(?s)^"` across
+all three steps' rubrics turns up only the historical comment describing the already-fixed `chemo_escalation`
+items). Current state:
 
 | item | evals | disagree | models | rate |
 |---|---|---|---|---|
-| `tx_evidence_caveat` | 19 | 7 | 5 | 37% |
-| `tx_surveillance` | 19 | 7 | 5 | 37% |
-| `mol_not_sufficient_alone` | 19 | 6 | 6 | 32% |
-| `path_stat6_if_sft` | 19 | 6 | 4 | 32% |
-| `tgt_bbb_penetration_caveat` | 18 | 6 | 5 | 33% |
+| `tgt_bbb_penetration_caveat` | 18 | 6 | 5 | 33% | mixed direction - see note below |
 | `tx_surgery_assessment` | 19 | 6 | 4 | 32% |
+| `mol_not_sufficient_alone` | 19 | 6 | 6 | 32% | bare doc-wide `all`, item 2's limitation |
 | `chemo_options_entity_pragmatic` | 18 | 5 | 4 | 28% |
 | `sup_symptoms` | 19 | 5 | 3 | 26% |
 | `chemo_escalation_monitoring` | 18 | 4 | 3 | 22% |
@@ -111,6 +119,19 @@ tissue"/"resection specimen"/"FFPE" phrasing lacking the words "archival"/"exist
 | `mn_override_biopsy_refusal` | 19 | 2 | 2 | 11% |
 | `mol_access_tissue_insufficient` | 19 | 1 | 1 | clean (below count threshold) |
 | `mol_access_blood_limitation` | 19 | 0 | 0 | clean |
+| `tx_evidence_caveat` | - | - | - | clean (applies_if conversion; judge may still occasionally be asked and disagree at zero scoring cost) |
+| `path_stat6_if_sft` | - | - | - | clean (applies_if conversion; same residual asking-cleanliness note) |
+
+**`tgt_bbb_penetration_caveat` checked and NOT fixed (mixed-direction signal):** of its 6 disagreements, 4 are
+regex=True/judge=False (DeepSeek-go, GLM-go, Qwen3.7-Plus x2 - possible over-firing, since the current rule is a
+bare `blood-brain barrier` mention with no binding to "as a reason against switching") and 2 are
+regex=False/judge=True (GPT-6-Luna, MiMo-go - possible under-firing). This needs reading both directions'
+real text before touching the rule, not a one-sided widen - left for the next pass rather than guessed at.
+
+**`mol_not_sufficient_alone` checked and NOT fixed:** this is item 2's documented, deliberately-unfixed
+limitation (bare doc-wide `all`, no sentence scoping) on a different item than item 2's own example - a
+sentence-scoped rewrite was already prototyped once and reverted for breaking `affirms()`'s negation check; this
+item needs that same unresolved design work, not a quick regex patch.
 
 (Reproduce with `ONCOWORLD_GRADER=hybrid python3 scripts/rescore_mesenchymal_trials.py "jobs/*mesenchymal_journey*"`
 - **the env var is not optional**: `score()` only takes the regex-authoritative hybrid branch when
