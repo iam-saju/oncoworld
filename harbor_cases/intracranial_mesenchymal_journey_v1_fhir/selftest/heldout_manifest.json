@@ -297,6 +297,27 @@
    "path": "jobs/heldout_mimov26pro_r2/intracranial_mesenchymal_journey__zghwe3X/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
    "sha256": "7ab4b0b6c0cfe6327e3dc594605f44be5ff389067bfc8eaa35374bf18bc3ec90",
    "bytes": 7389
+  },
+  {
+   "model": "kimi-k3.1-pro",
+   "step": "L1-initial-assessment",
+   "path": "jobs/heldout_kimik31pro_r2/intracranial_mesenchymal_journey__aTpAs3V/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "20b2f4f80c8b6e615cac707d012450bd520f83b4c2fbe565d8aaad9dae1ea8c5",
+   "bytes": 6152
+  },
+  {
+   "model": "kimi-k3.1-pro",
+   "step": "L2-molecular-access",
+   "path": "jobs/heldout_kimik31pro_r2/intracranial_mesenchymal_journey__aTpAs3V/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "0593fe1b30dc40d82de4e628d88f99599abfe9366c5c6b1e2581420e9eabb43d",
+   "bytes": 3207
+  },
+  {
+   "model": "kimi-k3.1-pro",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/heldout_kimik31pro_r2/intracranial_mesenchymal_journey__aTpAs3V/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "18373a81a6b9adf4653b11ae60fa16e8fa018866054f971c0d94ff10b9f9bfd6",
+   "bytes": 4150
   }
  ]
 }
