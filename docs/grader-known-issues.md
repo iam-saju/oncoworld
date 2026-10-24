@@ -76,38 +76,60 @@ items turned out to disagree far more often than the original spot-check suggest
 **Update, same day, after fixing the two that crossed 50%:** `chemo_escalation_irinotecan` (two real negation
 false positives - DeepSeek, Grok-4.7) dropped from 10% to clean. `chemo_options_entity_pragmatic` (57% -> 29%)
 and `tgt_atypical_comutation_pattern` (50% -> 29%) both dropped meaningfully after widening against 3 more real
-phrasings each, but neither is clean yet - more real models still disagree on each, just fewer. Current state:
+phrasings each, but neither is clean yet - more real models still disagree on each, just fewer.
+
+**Second update, same day, after a 4-model repeat batch (deepseek-go, opencode-haiku-go, mimo-go, glm53flash-go)
+plus a corrected re-score of everything on record:** `mol_access_tissue_insufficient` (real MiMo answer:
+"archived FFPE tissue"/"paraffin blocks", missing the exact word "archival") and `mol_access_blood_limitation`
+(tied for #1, 42%; real DeepSeek-go/Grok-4.7/GPT-6-Luna/GLM-go/OpenCode-Haiku-go answers used the reversed
+"sensitivity is lower" word order or a too-narrow 80-char proximity window) both fixed and now clean or
+near-clean. `tx_surveillance` (tied for #1, 42% -> 37%): a real GLM-go false positive ("serial neurologic
+assessments; urgent imaging if deterioration" - "serial" bound to the wrong noun across a semicolon) fixed by
+adding `;` to the proximity stop class; a second real false positive in the same batch (a Haiku answer, "...can
+change how follow-up MRI is interpreted" - about steroid effects on imaging artifact, not a surveillance plan)
+is **not** fixed - the `;` fix doesn't reach it, and binding "follow-up" to the right antecedent needs real
+semantic scope, the same documented limitation as item 2 above. `tgt_raises_tissue_reacquisition`/
+`tgt_acknowledges_biopsy_refusal_constraint` (L3 continuity items) separately widened for bare "tumor
+tissue"/"resection specimen"/"FFPE" phrasing lacking the words "archival"/"existing" - see the rubric's own
+2026-10-24 comments for the full before/after. Current state:
 
 | item | evals | disagree | models | rate |
 |---|---|---|---|---|
-| `mol_access_blood_limitation` | 15 | 6 | 5 | 40% |
-| `tx_evidence_caveat` | 15 | 6 | 5 | 40% |
-| `mol_not_sufficient_alone` | 15 | 5 | 5 | 33% |
-| `path_stat6_if_sft` | 15 | 5 | 4 | 33% |
-| `tx_surgery_assessment` | 15 | 5 | 4 | 33% |
-| `chemo_options_entity_pragmatic` | 14 | 4 | 3 | 29% |
-| `sup_symptoms` | 15 | 4 | 3 | 27% |
-| `tgt_atypical_comutation_pattern` | 14 | 4 | 2 | 29% |
-| `tgt_bbb_penetration_caveat` | 14 | 4 | 3 | 29% |
-| `tx_surveillance` | 15 | 4 | 4 | 27% |
-| `chemo_escalation_monitoring` | 14 | 2 | 2 | 14% |
-| `chemo_escalation_rationale` | 14 | 2 | 2 | 14% |
-| `dx_differential_entity` | 15 | 2 | 2 | 13% |
-| `mol_access_tissue_insufficient` | 15 | 2 | 2 | 13% |
-| `stage_systemic` | 15 | 2 | 1 | 13% |
+| `tx_evidence_caveat` | 19 | 7 | 5 | 37% |
+| `tx_surveillance` | 19 | 7 | 5 | 37% |
+| `mol_not_sufficient_alone` | 19 | 6 | 6 | 32% |
+| `path_stat6_if_sft` | 19 | 6 | 4 | 32% |
+| `tgt_bbb_penetration_caveat` | 18 | 6 | 5 | 33% |
+| `tx_surgery_assessment` | 19 | 6 | 4 | 32% |
+| `chemo_options_entity_pragmatic` | 18 | 5 | 4 | 28% |
+| `sup_symptoms` | 19 | 5 | 3 | 26% |
+| `chemo_escalation_monitoring` | 18 | 4 | 3 | 22% |
+| `tgt_atypical_comutation_pattern` | 18 | 4 | 2 | 22% |
+| `chemo_escalation_rationale` | 18 | 3 | 3 | 17% |
+| `stage_systemic` | 19 | 3 | 2 | 16% |
+| `dx_differential_entity` | 19 | 2 | 2 | 11% |
+| `mn_override_biopsy_refusal` | 19 | 2 | 2 | 11% |
+| `mol_access_tissue_insufficient` | 19 | 1 | 1 | clean (below count threshold) |
+| `mol_access_blood_limitation` | 19 | 0 | 0 | clean |
 
-(Reproduce with `python3 scripts/rescore_mesenchymal_trials.py "jobs/*mesenchymal_journey*"` - the corrected
-per-item section at the end of its output. Per the revised validation plan, the next items to fix this way are
-`mol_access_blood_limitation` and `tx_evidence_caveat`, the two now at 40% - everything below that bar is
-lower priority until there's more trial volume to tell signal from noise.)
+(Reproduce with `ONCOWORLD_GRADER=hybrid python3 scripts/rescore_mesenchymal_trials.py "jobs/*mesenchymal_journey*"`
+- **the env var is not optional**: `score()` only takes the regex-authoritative hybrid branch when
+`grader_mode() == "hybrid"`; without it, a passed-in `judge_verdicts` dict still gets used, but via the
+plain-`judge` branch instead - the *opposite* of what this script is trying to measure, inflating apparent
+"regressions" and disagreement rates alike. Found the hard way re-checking this same table: a first run without
+the env var showed misleading drops as large as -0.35 reward on trials that, under the correct hybrid branch,
+moved by at most -0.20 and mostly for well-understood reasons (see above). Next items to fix this way:
+`tx_evidence_caveat` and `tx_surveillance`, both now tied at 37% - everything below that bar is lower priority
+until there's more trial volume to tell signal from noise.)
 
 **Why not fixed yet:** this is a report, not a diagnosis - each item needs the same per-item treatment every
 other fix in this file got (read the actual disagreeing answers, confirm which side is actually right, widen
-or rebuild only against real evidence). At 4-5 different models disagreeing on the top three, this isn't noise
+or rebuild only against real evidence). At 4-6 different models disagreeing on the top few, this isn't noise
 to wait out; it's the next thing to actually read.
 
 **Next step:** work down this list same as always - read the real answer text behind each flagged disagreement
 (not just the regex/judge booleans), confirm whether regex or judge is right, fix the rubric if regex is wrong,
-and re-run `rescore_mesenchymal_trials.py` after each fix to confirm the item's rate actually drops. Re-check
-this whole list again once a meaningfully larger batch of trials exists - 10-13 evaluations per item is enough
-to stop treating single disagreements as noise, but still thin for the clean items at the bottom of the table.
+and re-run `rescore_mesenchymal_trials.py` (with `ONCOWORLD_GRADER=hybrid` set) after each fix to confirm the
+item's rate actually drops. Re-check this whole list again once a meaningfully larger batch of trials exists -
+10-13 evaluations per item is enough to stop treating single disagreements as noise, but still thin for the
+clean items at the bottom of the table.

@@ -237,8 +237,21 @@ text = "The response arranges long-term serial contrast-enhanced MRI surveillanc
 # board once the entity and grade are known" - nothing about MRI) get credit from an unrelated "MRI" mention
 # elsewhere in the document (staging imaging, not a surveillance plan). Sentence-scoped now, same fix pattern as
 # tx_evidence_caveat above.
-any = ['(?:surveillance|follow[- ]up|serial)[^.\n]{0,150}(?:mri|imaging)',
-       '(?:mri|imaging)[^.\n]{0,150}(?:surveillance|follow[- ]up|serial)']
+#
+# Tightened again 2026-10-24 (watchlist re-check, docs/grader-known-issues.md item 3 - this item was tied for
+# #1, 8/8 disagreements all in the opposite direction, regex=True/judge=False): a real GLM-go answer, "serial
+# neurologic assessments; urgent imaging if deterioration", was a genuine false positive - "serial" bound to
+# neurologic exams, "imaging" was PRN/urgent, not a scheduled surveillance plan, and the two clauses are only
+# separated by a semicolon, which the `[^.\n]` stop class doesn't treat as a clause boundary. Added `;` to the
+# stop class on both alternatives. A real Haiku answer in the same batch ("...can change how follow-up MRI is
+# interpreted", about steroid effects on imaging artifact, not a surveillance plan) is a second real false
+# positive this tightening does not reach - logged to the watchlist doc rather than force-fixed, since binding
+# "follow-up" to the right antecedent needs real semantic scope, the same documented limitation as
+# grader-known-issues.md item 2. Verified: the GLM-go false positive now correctly stays unmet; 3 confirmed
+# true positives (MiMo-go-h1 "interval MRI surveillance", MiMo-free "surveillance imaging", OpenCode-Haiku-go-h2
+# "MRI follow-up...neuro-oncology team") are unaffected; both existing calibration files unchanged.
+any = ['(?:surveillance|follow[- ]up|serial)[^.;\n]{0,150}(?:mri|imaging)',
+       '(?:mri|imaging)[^.;\n]{0,150}(?:surveillance|follow[- ]up|serial)']
 
 # ---------------- supportive care and multidisciplinary review
 [[items]]
