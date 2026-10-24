@@ -6,7 +6,12 @@
   {
    "model": "minimax-m3.1-flash-free",
    "when": "2026-10-24T17:27Z",
-   "what": "harbor run with configs/harbor-minimax31flash-go-mesenchymal-journey-fhir-heldout.json failed at L1 - the opencode-go API returned HTTP 410, \"Model minimax-m3.1-flash-free has been deprecated\" (non-retryable). No tokens spent, no content produced, nothing added to this manifest. The config file was built from an old, pre-deprecation reference without checking the model was still live - do not re-run it as-is; check the opencode-go model list first if this model is wanted again."
+   "what": "harbor run with configs/harbor-minimax31flash-go-mesenchymal-journey-fhir-heldout.json failed at L1 - the opencode-go API returned HTTP 410, \"Model minimax-m3.1-flash-free has been deprecated\" (non-retryable). No tokens spent, no content produced, nothing added to this manifest. The config file was built from an old, pre-deprecation reference without checking the model was still live - do not re-run it as-is; check the opencode-go model list first if this model is wanted again. Resolved 2026-10-24: the corrected name opencode-go/minimax-m3.1-flash (no \"-free\") is live and frozen in this manifest as \"minimax-m3.1-flash\"."
+  },
+  {
+   "model": "mimo-v2.5-pro",
+   "when": "2026-10-24T18:08Z",
+   "what": "harbor run with configs/harbor-mimov25pro-go-mesenchymal-journey-fhir-heldout.json failed at L1 - the opencode-go API returned HTTP 400, \"Upstream request failed: Unsupported model mimo-v2.5-pro\". No tokens spent, no content produced, nothing added to this manifest. Model-id string inferred from a pricing-page display name (\"MiMo-V2.5-Pro\"); the inference was wrong and the model does not exist under this name on opencode-go - not retried."
   }
  ],
  "known_exposure": [
@@ -145,6 +150,153 @@
    "path": "jobs/2026-10-24__17-58-39/intracranial_mesenchymal_journey__NYwWui4/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
    "sha256": "1f9f14390ba548510dba3d0e72fe22094c9273b0cd9f39d54587bffbea6719b3",
    "bytes": 3417
+  },
+  {
+   "model": "minimax-m3.1-flash",
+   "step": "L1-initial-assessment",
+   "path": "jobs/heldout_minimax31flash_r2/intracranial_mesenchymal_journey__GuZKasY/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "d6d92f85934459db1b18be3337f3a6d8ed785c387f231525b30d12af0119f6f4",
+   "bytes": 23032
+  },
+  {
+   "model": "minimax-m3.1-flash",
+   "step": "L2-molecular-access",
+   "path": "jobs/heldout_minimax31flash_r2/intracranial_mesenchymal_journey__GuZKasY/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "0358b60120ca1ef06c6275bc73df351cc7a9bc7f95933f5fd37f06ce152e93e7",
+   "bytes": 12680
+  },
+  {
+   "model": "minimax-m3.1-flash",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/heldout_minimax31flash_r2/intracranial_mesenchymal_journey__GuZKasY/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "ae48170fd972ba70e9a38428b2cf5bc68deca6782be6c3fa134199d54a8c22cc",
+   "bytes": 15183
+  },
+  {
+   "model": "deepseek-v4-pro",
+   "step": "L1-initial-assessment",
+   "path": "jobs/heldout_deepseekv4pro_r2/intracranial_mesenchymal_journey__kd4AJBv/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "d9590d7b78cdbff05f052c25eaa0c7edef96498ba140688638cf8533042ff7b8",
+   "bytes": 4985
+  },
+  {
+   "model": "deepseek-v4-pro",
+   "step": "L2-molecular-access",
+   "path": "jobs/heldout_deepseekv4pro_r2/intracranial_mesenchymal_journey__kd4AJBv/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "08ae26591e8b8e027752f2ee23f8c12523837d37bbd08a953e5c51cf56b6a2e2",
+   "bytes": 2299
+  },
+  {
+   "model": "deepseek-v4-pro",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/heldout_deepseekv4pro_r2/intracranial_mesenchymal_journey__kd4AJBv/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "9417e2a97dfa1ea4d77291e1c1f88c68f23e6106f0ce7ad291ae755f15c678f9",
+   "bytes": 3141
+  },
+  {
+   "model": "longcat-2.0",
+   "step": "L1-initial-assessment",
+   "path": "jobs/heldout_longcat20_r2/intracranial_mesenchymal_journey__kJmtX53/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "158037192056f4d2c5699b89015a8d4af6ea3fcec5dfdf8d7677d86edcbfa08b",
+   "bytes": 5118
+  },
+  {
+   "model": "longcat-2.0",
+   "step": "L2-molecular-access",
+   "path": "jobs/heldout_longcat20_r2/intracranial_mesenchymal_journey__kJmtX53/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "e117c06e39ae0372d10d7c2b68799240706a96c64358e16fb3aa067a26a5039a",
+   "bytes": 4383
+  },
+  {
+   "model": "longcat-2.0",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/heldout_longcat20_r2/intracranial_mesenchymal_journey__kJmtX53/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "42092145760a5b6ad2c407927785cc69cc464862675c06c942bd64afaa9898a6",
+   "bytes": 5462
+  },
+  {
+   "model": "gpt-5.6-luna",
+   "step": "L1-initial-assessment",
+   "path": "jobs/heldout_gpt56luna_r2/intracranial_mesenchymal_journey__eQedpJ5/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "39453ec4785f97ade132c83b95c95c971a57cb8a8918455d2844fc456be4de9d",
+   "bytes": 5047
+  },
+  {
+   "model": "gpt-5.6-luna",
+   "step": "L2-molecular-access",
+   "path": "jobs/heldout_gpt56luna_r2/intracranial_mesenchymal_journey__eQedpJ5/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "b3f5e833d641d4cc7bbeacb4720f7b4faecd2a4bece3f94b8c52c63316f53ba9",
+   "bytes": 2005
+  },
+  {
+   "model": "gpt-5.6-luna",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/heldout_gpt56luna_r2/intracranial_mesenchymal_journey__eQedpJ5/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "3ac19f26ec8635609a7774961a79af1b0902765e970495800eacc40768620d8c",
+   "bytes": 2104
+  },
+  {
+   "model": "qwen3.8-flash",
+   "step": "L1-initial-assessment",
+   "path": "jobs/heldout_qwen38flash_r2/intracranial_mesenchymal_journey__RAWVZoz/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "9d8fb8dd9827ee83c63d5889dc301dd251be3be2cc025ba5db6f65ad343e73db",
+   "bytes": 8504
+  },
+  {
+   "model": "qwen3.8-flash",
+   "step": "L2-molecular-access",
+   "path": "jobs/heldout_qwen38flash_r2/intracranial_mesenchymal_journey__RAWVZoz/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "be9feafed96c86c8c087138668bbdc7867c48ea2aae43cdb63d8b6f97b947f33",
+   "bytes": 4967
+  },
+  {
+   "model": "qwen3.8-flash",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/heldout_qwen38flash_r2/intracranial_mesenchymal_journey__RAWVZoz/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "0ee314c9f92430064757a7edf965a6de00e21a5fc903745ae19eec0efbd0e047",
+   "bytes": 5751
+  },
+  {
+   "model": "kimi-k2.7-code",
+   "step": "L1-initial-assessment",
+   "path": "jobs/heldout_kimik27code_r2/intracranial_mesenchymal_journey__VLddYko/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "4ea57c4fee1d69c17b82a15ce59011b8f3ecbf2b0e7586cf031aacc7dcee9482",
+   "bytes": 6526
+  },
+  {
+   "model": "kimi-k2.7-code",
+   "step": "L2-molecular-access",
+   "path": "jobs/heldout_kimik27code_r2/intracranial_mesenchymal_journey__VLddYko/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "0dd445907738b5d98b63f95068a55244f60a79c7a35b4b4a437b7b48cf045b80",
+   "bytes": 1947
+  },
+  {
+   "model": "kimi-k2.7-code",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/heldout_kimik27code_r2/intracranial_mesenchymal_journey__VLddYko/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "e6ce688a2f4dc5f01ca37acc49956050bc2c22f42c718812d714e9d87f08390c",
+   "bytes": 2403
+  },
+  {
+   "model": "mimo-v2.6-pro",
+   "step": "L1-initial-assessment",
+   "path": "jobs/heldout_mimov26pro_r2/intracranial_mesenchymal_journey__zghwe3X/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "a0acb843fad5aa465a787784736ab79e85148117794a002d88965376f54b08fc",
+   "bytes": 9228
+  },
+  {
+   "model": "mimo-v2.6-pro",
+   "step": "L2-molecular-access",
+   "path": "jobs/heldout_mimov26pro_r2/intracranial_mesenchymal_journey__zghwe3X/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "e789137ce472a0e361bf3f62521f21fe6a5b25775290de8a4473fa5b1ff60176",
+   "bytes": 5359
+  },
+  {
+   "model": "mimo-v2.6-pro",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/heldout_mimov26pro_r2/intracranial_mesenchymal_journey__zghwe3X/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "7ab4b0b6c0cfe6327e3dc594605f44be5ff389067bfc8eaa35374bf18bc3ec90",
+   "bytes": 7389
   }
  ]
 }
