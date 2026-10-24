@@ -223,3 +223,27 @@ and re-run `rescore_mesenchymal_trials.py` (with `ONCOWORLD_GRADER=hybrid` set) 
 item's rate actually drops. Re-check this whole list again once a meaningfully larger batch of trials exists -
 10-13 evaluations per item is enough to stop treating single disagreements as noise, but still thin for the
 clean items at the bottom of the table.
+
+**Update 2026-10-24, the sentence-scoping experiment (timeboxed, succeeded on first real try):** item 2's
+limitation now has a real tool, not just a documented gap. Added an opt-in `scope = "sentence"` key for `all`
+items (`graders/oncoworld_grader/grader_v2.py`'s `rule_met()`) - when set, every `all` condition must match
+within the same sentence, not just independently anywhere in the document. Deliberately additive: checked
+before the existing whole-document `all` path runs, so every item without the key (everything else) takes the
+exact same code path as before - this is what the prior, reverted attempt didn't do (it changed shared
+matching internals and broke `affirms()`'s own negation detection). Tested the adversarial negation cases
+first (`graders/oncoworld_grader/test_sentence_scope.py`): sentence-scoping fixes cross-sentence contamination
+but does **not** catch same-sentence negation ("repeat biopsy is not appropriate" still reads as met) - a
+known, separate, documented limitation, not assumed solved.
+
+Applied to `mol_not_sufficient_alone` (32% -> 11%, i.e. 6 -> 2 disagreements, one of which is a duplicate count
+of the same residual case): read all 6 original disagreements, found the two conditions matched in completely
+unrelated sentences in 5/6 (molecular-test-ordering language paired with an unrelated "not established" phrase
+elsewhere) - fixed by scope="sentence". The 6th (DeepSeek) still over-fires even same-sentence ("integrated
+molecular classification can be assigned" reads as the item's "molecular result alone" point but means
+something different - no molecular testing has happened at all, not "a result, once obtained, isn't enough by
+itself") - a vocabulary-precision gap this mechanism can't reach, left as a documented residual.
+
+`tgt_bbb_penetration_caveat`'s over-firing is a different shape and this mechanism does not apply to it - its
+bare alternatives already match within one sentence (the problem is "right sentence, wrong drug class", not
+cross-sentence contamination), confirmed by the window-sweep audit above. No other item in this case currently
+uses a bare, unscoped multi-condition `all` the way `mol_not_sufficient_alone` did.
