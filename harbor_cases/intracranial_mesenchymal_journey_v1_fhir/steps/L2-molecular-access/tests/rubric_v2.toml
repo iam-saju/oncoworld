@@ -123,6 +123,26 @@ text = "The response notes the lower sensitivity of a peripheral blood liquid bi
 # can be low-yield for CNS-confined disease" - clinically identical to "reduced yield" but missed because "low"
 # wasn't in the modifier list and the hyphenated "low-yield" compound doesn't have the required space before
 # "yield".
-any = ['(?:lower|reduced|limited|decreased|lesser|low)[\s-]+(?:sensitivity|yield)[^.\n]{0,80}(?:blood|plasma|peripheral)',
-       '(?:blood|plasma|peripheral)[^.\n]{0,80}(?:lower|reduced|limited|decreased|lesser|low)[\s-]+(?:sensitivity|yield)',
-       'blood[- ]brain barrier[^.\n]{0,60}(?:ctdna|shed|sensitiv|limit)']
+#
+# Widened again same day (hybrid judge/regex disagreement watchlist, docs/grader-known-issues.md item 3 - this
+# item was tied for the #1 spot, 6/8 models disagreeing, all in the same regex=False/judge=True direction): every
+# existing alternative requires modifier-then-noun order ("lower sensitivity"), but most real disagreeing answers
+# phrase it the other way round - "sensitivity is lower"/"can be lower"/"is modest" (DeepSeek-go, Grok-4.7 x2,
+# GPT-6-Luna, GLM-go) or "yield from CNS tumours is often low" (OpenCode-Haiku-go). Added a noun-then-modifier
+# alternative for "sensitivity" (no blood/plasma anchor needed - every real instance of this exact phrasing,
+# checked across the full saved-trial corpus, was already about blood/plasma/CNS, and "sensitivity" alone, unlike
+# "yield", never turned up describing something else) and two anchored alternatives for "yield" specifically
+# (anchor word before or after the modifier), since bare "yield...low" also fires on unrelated tissue-sample-yield
+# and CSF-yield sentences - confirmed as real false-positive risks in this same batch (opencode-go/haiku-go's own
+# L2-q2 tissue yield, MiMo-go's CSF cfDNA yield) and kept out by requiring blood/plasma/peripheral/cns/
+# intracranial/cerebral/brain within reach. Also widened the two original alternatives' proximity window
+# (80 -> 150 chars): a real OpenCode-Haiku-go answer ("...use plasma cell-free DNA...recognising its limited
+# sensitivity...") already used the correct modifier-first order but had "plasma" 105 chars before "sensitivity",
+# just past the old window. Fixed a latent bug surfaced by the same check: the naive `is`/`are` match (no word
+# boundary) matched inside "tissue" (t-is-sue) - added \b.
+any = ['(?:lower|reduced|limited|decreased|lesser|low)[\s-]+(?:sensitivity|yield)[^.\n]{0,150}(?:blood|plasma|peripheral)',
+       '(?:blood|plasma|peripheral)[^.\n]{0,150}(?:lower|reduced|limited|decreased|lesser|low)[\s-]+(?:sensitivity|yield)',
+       'blood[- ]brain barrier[^.\n]{0,60}(?:ctdna|shed|sensitiv|limit)',
+       'sensitivity[^.\n]{0,25}(?:\bis\b|\bare\b|can be|remains?|stays?)[^.\n]{0,25}(?:much |somewhat |significantly )?(?:lower|reduced|limited|decreased|lesser|low|modest)',
+       'yield[^.\n]{0,20}(?:\bis\b|\bare\b|can be|remains?|stays?)[^.\n]{0,20}(?:lower|reduced|limited|decreased|lesser|low)[^.\n]{0,60}(?:cns|intracranial|cerebral|brain|blood|plasma|peripheral)',
+       'yield[^.\n]{0,20}(?:cns|intracranial|cerebral|brain|plasma|blood|peripheral)[^.\n]{0,20}(?:\bis\b|\bare\b|can be|remains?|stays?)[^.\n]{0,20}(?:lower|reduced|limited|decreased|lesser|low)']
