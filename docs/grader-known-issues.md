@@ -107,10 +107,10 @@ items). Current state:
 | item | evals | disagree | models | rate |
 |---|---|---|---|---|
 | `tgt_bbb_penetration_caveat` | 18 | 5 | 4 | 28% | one real miss fixed; residual is over-firing, see note below |
-| `tx_surgery_assessment` | 19 | 6 | 4 | 32% |
+| `tx_surgery_assessment` | 19 | 6 | 4 | 32% | investigated, no fix needed - see note below |
 | `mol_not_sufficient_alone` | 19 | 6 | 6 | 32% | bare doc-wide `all`, item 2's limitation |
-| `chemo_options_entity_pragmatic` | 18 | 5 | 4 | 28% |
-| `sup_symptoms` | 19 | 5 | 3 | 26% |
+| `chemo_options_entity_pragmatic` | 18 | 0 | 0 | clean (fifth widening - bridge/choice/empiric phrasing) |
+| `sup_symptoms` | 19 | 5 | 3 | 26% | investigated, no fix needed - see note below |
 | `chemo_escalation_monitoring` | 18 | 4 | 3 | 22% |
 | `tgt_atypical_comutation_pattern` | 18 | 4 | 2 | 22% |
 | `chemo_escalation_rationale` | 18 | 3 | 3 | 17% |
@@ -150,6 +150,29 @@ trades one failure mode for another on the strength of a six-point parameter swe
 limitation (bare doc-wide `all`, no sentence scoping) on a different item than item 2's own example - a
 sentence-scoped rewrite was already prototyped once and reverted for breaking `affirms()`'s negation check; this
 item needs that same unresolved design work, not a quick regex patch.
+
+**`tx_surgery_assessment` investigated, no fix made:** read all 6 disagreements. The 5 regex=True/judge=False
+cases (GLM-go x2, GPT-6-Luna x2, Qwen3.7-Plus) all genuinely say "maximal safe resection" in a reasonable
+tissue-acquisition context for this pre-diagnosis step ("assess whether maximal safe resection is feasible and
+whether further tissue is needed") - the judge is simply wrong on all 5, consistent with this item's own
+2026-10-23 history ("the judge itself wasn't simply right every time either"). The 1 regex=False/judge=True case
+(OpenCode-Haiku-go) is the already-known, deliberately-left-narrow miss: its evidence quote ("Neuro-oncology and
+neurosurgery review within days to decide resectability...") never says "maximal safe"/"gross total" at all -
+the judge over-credited a generic resectability mention, and widening regex to catch generic resectability
+language was already tried (the "extent of resection" paraphrase) and reverted the same day for picking up an
+unrelated prognosis-section mention elsewhere. Net: the judge is just noisy on this item in both directions: no
+rubric change, since hybrid mode's regex-authoritative design already protects the score from it either way.
+
+**`sup_symptoms` investigated, no fix made:** read all 5 regex=True/judge=False disagreements (Haiku x3,
+Qwen3.7-Plus x2). 3 of 5 (Haiku-hybrid4, OpenCode-Haiku-go x2) have a completely **empty judge evidence
+field** despite real text that explicitly addresses all four required elements - one answer literally has a
+"Seizure assessment:" heading ("no seizure is documented; take a seizure history and EEG only if clinically
+indicated") and "urgent neurological assessment for raised intracranial pressure given headache and vomiting."
+That's a judge failure, not a regex gap. The other 2 (Qwen3.7-Plus x2) have real quoted evidence but treat
+ICP/seizure risk prophylactically (dexamethasone, anticonvulsant prophylaxis) rather than stating an explicit
+assessment step - a defensible but genuinely debatable reading of "assesses for," not a clear miss, and
+tightening the regex to require explicit assessment language risks breaking the (already loose by design)
+rule for every other real trial that treats without narrating an assessment step first. No change made.
 
 (Reproduce with `ONCOWORLD_GRADER=hybrid python3 scripts/rescore_mesenchymal_trials.py "jobs/*mesenchymal_journey*"`
 - **the env var is not optional**: `score()` only takes the regex-authoritative hybrid branch when
