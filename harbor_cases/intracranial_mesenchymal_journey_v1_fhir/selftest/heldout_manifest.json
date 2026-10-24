@@ -2,6 +2,13 @@
  "case": "intracranial_mesenchymal_journey_v1_fhir",
  "frozen_at": "2026-10-24T14:30:00Z",
  "note": "Held-out set per the hardening plan's item 0/6. Generated with --disable-verification (no grading, no review.json ever produced). Answers recovered from agent/opencode.txt (the write tool, or for qwen3.8-max's L3 step, a bash-heredoc python script - see scripts/extract_opencode_answer.py) since test.sh's normal final_answer.json copy only runs as part of verification. Nothing in items 2-5 of the hardening plan read this content; sha256 here is the integrity check for that claim. Score once against the final grader, after oncologist blind labeling (see scripts/generate_blind_label_worksheet.py), not before.",
+ "attempted_but_failed": [
+  {
+   "model": "minimax-m3.1-flash-free",
+   "when": "2026-10-24T17:27Z",
+   "what": "harbor run with configs/harbor-minimax31flash-go-mesenchymal-journey-fhir-heldout.json failed at L1 - the opencode-go API returned HTTP 410, \"Model minimax-m3.1-flash-free has been deprecated\" (non-retryable). No tokens spent, no content produced, nothing added to this manifest. The config file was built from an old, pre-deprecation reference without checking the model was still live - do not re-run it as-is; check the opencode-go model list first if this model is wanted again."
+  }
+ ],
  "known_exposure": [
   {
    "model": "qwen3.8-max",
@@ -75,6 +82,27 @@
    "path": "jobs/kimik3_mesenchymal_journey_heldout/2026-10-24__14-02-17/intracranial_mesenchymal_journey__bvfSQy8/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
    "sha256": "42927fe0625eafef03ce3062aa0eac6adc38f217563ca54bbae3d7dd204721b0",
    "bytes": 5619
+  },
+  {
+   "model": "glm-5.3",
+   "step": "L1-initial-assessment",
+   "path": "jobs/2026-10-24__17-28-23/intracranial_mesenchymal_journey__7C5Mn4x/steps/L1-initial-assessment/verifier/final_answer.json",
+   "sha256": "cdba1e7718e9048aba191ff820edaf1ea2d0bd20451c29293102dc00573b3537",
+   "bytes": 7816
+  },
+  {
+   "model": "glm-5.3",
+   "step": "L2-molecular-access",
+   "path": "jobs/2026-10-24__17-28-23/intracranial_mesenchymal_journey__7C5Mn4x/steps/L2-molecular-access/verifier/final_answer.json",
+   "sha256": "d98f58a0a6bbf99d7b104d3921e3d38268ada567ce503e4223485aebcb0877cc",
+   "bytes": 8286
+  },
+  {
+   "model": "glm-5.3",
+   "step": "L3-chemo-and-targeted-therapy",
+   "path": "jobs/2026-10-24__17-28-23/intracranial_mesenchymal_journey__7C5Mn4x/steps/L3-chemo-and-targeted-therapy/verifier/final_answer.json",
+   "sha256": "724fefda529878a7a4ead6ae18dd81f7bad63bd028f6a62006097e501872598e",
+   "bytes": 7305
   }
  ]
 }
