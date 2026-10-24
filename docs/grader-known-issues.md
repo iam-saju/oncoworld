@@ -131,10 +131,20 @@ about FGFR inhibitors, missed because the only reversed-order alternative requir
 regex=True/judge=False disagreements, 3 (DeepSeek-go, Qwen3.7-Plus x2) are genuinely about chemo-CNS-penetration
 (temozolomide, doxorubicin, lomustine) or ctDNA/blood-brain-barrier shedding - unrelated to FGFR inhibitors, so
 the judge was right and the regex over-fired; only GLM-go's ("blood-brain-barrier constraints of fgfr
-inhibitors") looks like a genuine judge error. **The over-firing is not fixed** - the two pre-existing
-alternatives (`blood[- ]brain[- ]barrier` bare, and `penetrat...brain/cns` bare) have no FGFR/inhibitor anchor
-at all, and narrowing them risks breaking other real credits that already rely on their current breadth (not
-checked here) - that's a separate, careful pass, not a same-day bundle with the addition above.
+inhibitors") looks like a genuine judge error.
+
+**Audited the over-firing directly (same day) rather than leaving it as a guess:** checked every real trial on
+record that fires the two bare alternatives (`blood[- ]brain[- ]barrier`, `penetrat...brain/cns`) - 20 trials,
+of which only 3 (gold x2, GLM-go) are genuinely about FGFR inhibitors; the other 17 are chemo agents crossing
+the BBB (temozolomide, doxorubicin, lomustine/carmustine, irinotecan) or ctDNA shedding across it, unrelated to
+the item's actual text. Tried anchoring both bare alternatives to an FGFR/inhibitor/drug-name mention within a
+proximity window, at six window sizes (60-250 chars): **every size either stays too loose (12-15 of the 17 false
+positives still fire, because a long L3 answer mentions "fgfr" somewhere reasonably close to the chemo-BBB
+sentence even when the two concepts aren't connected) or risks cutting the genuine MiMo-go match, which itself
+needs ~170 chars.** This is not a parameter-tuning problem - it's the same unsolved primitive item 2 already
+documents (no sentence-scoped `all`/`any`, and the one sentence-scoped rewrite attempted broke `affirms()`'s
+negation check). **Leaving the two bare alternatives as-is**, rather than shipping a narrower version that
+trades one failure mode for another on the strength of a six-point parameter sweep.
 
 **`mol_not_sufficient_alone` checked and NOT fixed:** this is item 2's documented, deliberately-unfixed
 limitation (bare doc-wide `all`, no sentence scoping) on a different item than item 2's own example - a
