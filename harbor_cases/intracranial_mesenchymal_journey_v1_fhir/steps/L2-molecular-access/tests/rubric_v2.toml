@@ -53,13 +53,24 @@ text = "If the current tissue is inadequate for molecular testing, the response 
 # tissue by maximal safe re-resection or targeted biopsy" - clinically exactly what this item wants, missed
 # because "additional" modified "testing" not the tissue noun, and neither "new tumor tissue" nor "targeted
 # biopsy" matched any existing alternative's fixed phrasing.
+#
+# Widened again same day (real MiMo answer, found re-scoring saved trials in hybrid mode after the majority-vote
+# recheck was removed - this item had been silently rescued by that old mechanism, masking the gap): "unused FFPE
+# blocks/unstained slides", "paraffin blocks", "archived FFPE tissue" - none matched because the fixed alternative
+# required the exact word "archival", not "archived"/"FFPE"/"paraffin" alone. Added a pattern covering
+# archiv*/ffpe/paraffin + tissue/block/specimen/material/slide, without requiring "archival" specifically - FFPE
+# (formalin-fixed paraffin-embedded) and "paraffin block" are themselves inherently already-processed, existing
+# tissue by definition, the same reasoning used for the matching L3 widening the same day. Verified against the
+# real MiMo text (fires, only via this new alternative) and the weak_no_molecular_access negative control (stays
+# clean - no archival/FFPE/paraffin language at all).
 any = ['(?:additional|more|further|repeat)[^.\n]{0,40}(?:tissue|sections?|block|specimen|sample)',
        're-?biops\w*',
        'archival (?:tissue|block|specimen|material)',
        'new biopsy',
        '(?:existing|prior)[^.\n]{0,25}(?:tissue|sections?|blocks?|specimens?|samples?|slides?)',
        'new[^.\n]{0,15}tum\w+ tissue',
-       'targeted biops\w*']
+       'targeted biops\w*',
+       '(?:archiv\w*|ffpe|paraffin)[^.\n]{0,15}(?:tissue|block|specimen|material|slide\w*)']
 
 # ---------------- q3: family refuses repeat brain biopsy
 [[items]]
